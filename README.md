@@ -212,19 +212,339 @@ graph LR
 
 ---
 
-## 📑 Table of Contents
+## 📑 Master Contents Index
 
-- [🎬 GitHub News & Developer Updates](#-github-news--developer-updates)
-- [🖥️ CLI/IDE Tools & AI Coding Assistants](#️-cliide-tools--ai-coding-assistants)
-- [🤖 OpenAI Official Repositories](#-openai-official-repositories)
-- [🔵 Awesome Google](#-awesome-google)
-- [🎵 Awesome Audio/Video Production](#-awesome-audiovideo-production)
-- [⭐ Awesome Lists of Awesome Lists](#-awesome-lists-of-awesome-lists)
-- [📋 GitHub Cheatsheets](#-github-cheatsheets)
-- [💻 VS Code Extensions & Tools](#-vs-code-extensions--tools)
-- [🧠 AI Development Frameworks](#-ai-development-frameworks)
-- [🔌 MCP Servers & AI Agents](#-mcp-servers--ai-agents)
-- [🚀 Quick Start Guides](#-quick-start-guides)
+> **The GitHub Master Encyclopedia** - A comprehensive index of everything that matters in AI development, open source, and developer tools. Navigate to any section below.
+
+---
+
+### 🎬 Media & Updates
+- [GitHub News & Developer Updates](#-github-news--developer-updates)
+  - [GitHub Universe Conferences](#-latest-github-universe--developer-conferences)
+  - [Live YouTube Channels](#-live-channels--continuous-updates)
+  - [Developer Podcasts](#-developer-podcasts)
+  - [Tech News Sources](#-tech-news-sources)
+
+### 🤖 Artificial Intelligence
+- [OpenAI Official Repositories](#-openai-official-repositories)
+  - [Featured Repos (90k+ ⭐)](#-featured--most-popular-90k-)
+  - [Language Models & GPT](#-language-models--gpt)
+  - [AI Agents & Multi-Agent Systems](#-ai-agents--multi-agent-systems)
+  - [Generative AI & Vision](#-generative-ai--vision)
+  - [Official SDKs & Libraries](#-official-sdks--libraries)
+  - [Evaluation & Benchmarks](#-evaluation--benchmarks)
+  - [Reinforcement Learning](#-reinforcement-learning)
+  - [Plugins & Integrations](#-plugins--integrations)
+  - [Realtime & Voice](#️-realtime--voice)
+  - [Developer Tools & Demos](#️-developer-tools--demos)
+  - [Research & Papers](#-research--papers)
+  - [Safety & Guardrails](#-safety--guardrails)
+  - [Apps & ChatKit](#-apps--chatkit)
+  - [Infrastructure & Tools](#️-infrastructure--tools)
+- [Awesome Google](#-awesome-google)
+  - [Google AI & Gemini](#-google-ai--gemini)
+  - [Google Developer Tools](#-google-developer-tools)
+  - [Google AI Projects](#-google-ai-projects)
+  - [Google Web & Mobile](#-google-web--mobile)
+- [Anthropic & Claude](#-anthropic--claude)
+  - [Claude Code](#-claude-code)
+  - [Claude Skills](#-claude-skills)
+  - [Claude API & SDKs](#-claude-api--sdks)
+- [AI Development Frameworks](#-ai-development-frameworks)
+  - [LLM Frameworks](#-llm-frameworks)
+  - [AI Agent Frameworks](#-ai-agent-frameworks)
+  - [Local LLM Tools](#️-local-llm-tools)
+- [MCP Servers & AI Agents](#-mcp-servers--ai-agents)
+  - [Model Context Protocol](#-model-context-protocol)
+  - [Popular MCP Servers](#️-popular-mcp-servers)
+
+### 🖥️ Development Tools
+- [CLI/IDE Tools & AI Coding Assistants](#️-cliide-tools--ai-coding-assistants)
+  - [Major Players - AI-Powered IDEs](#-the-major-players---ai-powered-ides--clis)
+  - [AI Coding Assistants & Extensions](#-ai-coding-assistants--extensions)
+  - [CLI Tools & Terminal Assistants](#️-cli-tools--terminal-assistants)
+  - [Awesome AI Coding Resources](#-awesome-ai-coding-resources)
+- [VS Code Extensions & Tools](#-vs-code-extensions--tools)
+  - [AI-Powered Extensions](#-ai-powered-extensions)
+  - [Productivity & UI](#-productivity--ui)
+  - [Language Support](#-language-support)
+  - [DevOps & Containers](#-devops--containers)
+- [Text Editors & IDEs](#-text-editors--ides)
+  - [Modern Editors](#-modern-editors)
+  - [Classic Editors](#-classic-editors)
+  - [Cloud IDEs](#-cloud-ides)
+- [Terminal & Shell](#-terminal--shell)
+  - [Terminal Emulators](#-terminal-emulators)
+  - [Shell Frameworks](#-shell-frameworks)
+  - [Command Line Tools](#-command-line-tools)
+
+### 💻 Programming Languages
+- [Awesome Python](#-awesome-python)
+  - [Python Frameworks](#-python-frameworks)
+  - [Python Libraries](#-python-libraries)
+  - [Python Tools](#-python-tools)
+- [Awesome JavaScript](#-awesome-javascript)
+  - [JavaScript Frameworks](#-javascript-frameworks)
+  - [Node.js Ecosystem](#-nodejs-ecosystem)
+  - [TypeScript](#-typescript)
+- [Awesome Go](#-awesome-go)
+  - [Go Frameworks](#-go-frameworks)
+  - [Go Tools](#-go-tools)
+- [Awesome Rust](#-awesome-rust)
+  - [Rust Frameworks](#-rust-frameworks)
+  - [Rust Tools](#-rust-tools)
+- [Awesome Java](#-awesome-java)
+- [Awesome C/C++](#-awesome-cc)
+- [Awesome Swift](#-awesome-swift)
+- [Awesome Kotlin](#-awesome-kotlin)
+- [Awesome Ruby](#-awesome-ruby)
+- [Awesome PHP](#-awesome-php)
+- [Awesome Elixir](#-awesome-elixir)
+- [Awesome Scala](#-awesome-scala)
+- [Awesome Haskell](#-awesome-haskell)
+- [Awesome R](#-awesome-r)
+- [Awesome Julia](#-awesome-julia)
+- [Awesome Zig](#-awesome-zig)
+
+### 🌐 Web Development
+- [Frontend Frameworks](#-frontend-frameworks)
+  - [React Ecosystem](#-react-ecosystem)
+  - [Vue Ecosystem](#-vue-ecosystem)
+  - [Angular Ecosystem](#-angular-ecosystem)
+  - [Svelte Ecosystem](#-svelte-ecosystem)
+  - [Solid.js](#-solidjs)
+  - [Astro](#-astro)
+  - [Qwik](#-qwik)
+- [Backend Frameworks](#-backend-frameworks)
+  - [Node.js Frameworks](#-nodejs-frameworks)
+  - [Python Web Frameworks](#-python-web-frameworks)
+  - [Go Web Frameworks](#-go-web-frameworks)
+  - [Rust Web Frameworks](#-rust-web-frameworks)
+- [Full-Stack Frameworks](#-full-stack-frameworks)
+  - [Next.js](#-nextjs)
+  - [Nuxt.js](#-nuxtjs)
+  - [Remix](#-remix)
+  - [SvelteKit](#-sveltekit)
+- [CSS & Styling](#-css--styling)
+  - [CSS Frameworks](#-css-frameworks)
+  - [CSS-in-JS](#-css-in-js)
+  - [UI Component Libraries](#-ui-component-libraries)
+- [Build Tools](#-build-tools)
+  - [Bundlers](#-bundlers)
+  - [Task Runners](#-task-runners)
+  - [Package Managers](#-package-managers)
+
+### 📱 Mobile Development
+- [Awesome iOS](#-awesome-ios)
+  - [Swift Libraries](#-swift-libraries)
+  - [iOS Tools](#-ios-tools)
+- [Awesome Android](#-awesome-android)
+  - [Kotlin Libraries](#-kotlin-libraries)
+  - [Android Tools](#-android-tools)
+- [Cross-Platform](#-cross-platform)
+  - [React Native](#-react-native)
+  - [Flutter](#-flutter)
+  - [Expo](#-expo)
+  - [Capacitor](#-capacitor)
+  - [Tauri](#-tauri)
+
+### ☁️ Cloud & DevOps
+- [Cloud Platforms](#-cloud-platforms)
+  - [AWS](#-aws)
+  - [Google Cloud](#-google-cloud)
+  - [Azure](#-azure)
+  - [DigitalOcean](#-digitalocean)
+  - [Vercel](#-vercel)
+  - [Netlify](#-netlify)
+  - [Cloudflare](#-cloudflare)
+- [Infrastructure as Code](#-infrastructure-as-code)
+  - [Terraform](#-terraform)
+  - [Pulumi](#-pulumi)
+  - [Ansible](#-ansible)
+  - [Chef](#-chef)
+  - [Puppet](#-puppet)
+- [Containers & Orchestration](#-containers--orchestration)
+  - [Docker](#-docker)
+  - [Kubernetes](#-kubernetes)
+  - [Helm](#-helm)
+  - [Podman](#-podman)
+- [CI/CD](#-cicd)
+  - [GitHub Actions](#-github-actions)
+  - [GitLab CI](#-gitlab-ci)
+  - [Jenkins](#-jenkins)
+  - [CircleCI](#-circleci)
+  - [ArgoCD](#-argocd)
+- [Monitoring & Observability](#-monitoring--observability)
+  - [Prometheus](#-prometheus)
+  - [Grafana](#-grafana)
+  - [Datadog](#-datadog)
+  - [OpenTelemetry](#-opentelemetry)
+
+### 🗃️ Databases
+- [SQL Databases](#-sql-databases)
+  - [PostgreSQL](#-postgresql)
+  - [MySQL](#-mysql)
+  - [SQLite](#-sqlite)
+- [NoSQL Databases](#-nosql-databases)
+  - [MongoDB](#-mongodb)
+  - [Redis](#-redis)
+  - [Elasticsearch](#-elasticsearch)
+- [Vector Databases](#-vector-databases)
+  - [Pinecone](#-pinecone)
+  - [Weaviate](#-weaviate)
+  - [Milvus](#-milvus)
+  - [Chroma](#-chroma)
+- [Graph Databases](#-graph-databases)
+  - [Neo4j](#-neo4j)
+  - [ArangoDB](#-arangodb)
+- [Database Tools](#-database-tools)
+  - [ORMs](#-orms)
+  - [Migration Tools](#-migration-tools)
+  - [Admin Tools](#-admin-tools)
+
+### 🔒 Security
+- [Application Security](#-application-security)
+  - [Authentication](#-authentication)
+  - [Authorization](#-authorization)
+  - [Encryption](#-encryption)
+- [Network Security](#-network-security)
+  - [Firewalls](#-firewalls)
+  - [VPNs](#-vpns)
+  - [Intrusion Detection](#-intrusion-detection)
+- [Security Tools](#-security-tools)
+  - [Penetration Testing](#-penetration-testing)
+  - [Vulnerability Scanning](#-vulnerability-scanning)
+  - [SIEM](#-siem)
+- [Security Resources](#-security-resources)
+  - [OWASP](#-owasp)
+  - [Security Cheatsheets](#-security-cheatsheets)
+  - [CTF Resources](#-ctf-resources)
+
+### 🎨 Creative & Media
+- [Awesome Audio/Video Production](#-awesome-audiovideo-production)
+  - [Video Editing & Production](#-video-editing--production)
+  - [Audio Production & DAWs](#-audio-production--daws)
+  - [AI Audio & Voice](#-ai-audio--voice)
+  - [AI Video Generation](#-ai-video-generation)
+  - [Audio Libraries & Tools](#️-audio-libraries--tools)
+  - [Streaming & Broadcasting](#-streaming--broadcasting)
+- [Design Tools](#-design-tools)
+  - [UI/UX Design](#-uiux-design)
+  - [Graphic Design](#-graphic-design)
+  - [3D & Animation](#-3d--animation)
+  - [Icon Libraries](#-icon-libraries)
+- [Image Processing](#-image-processing)
+  - [Image Editors](#-image-editors)
+  - [Image Libraries](#-image-libraries)
+  - [AI Image Tools](#-ai-image-tools)
+
+### 🎮 Game Development
+- [Game Engines](#-game-engines)
+  - [Unity](#-unity)
+  - [Unreal Engine](#-unreal-engine)
+  - [Godot](#-godot)
+  - [Bevy](#-bevy)
+- [Game Libraries](#-game-libraries)
+  - [Graphics Libraries](#-graphics-libraries)
+  - [Physics Engines](#-physics-engines)
+  - [Audio Libraries](#-audio-libraries)
+- [Game Tools](#-game-tools)
+  - [Asset Creation](#-asset-creation)
+  - [Level Design](#-level-design)
+  - [Game Analytics](#-game-analytics)
+
+### 📊 Data Science & ML
+- [Machine Learning](#-machine-learning)
+  - [ML Frameworks](#-ml-frameworks)
+  - [Deep Learning](#-deep-learning)
+  - [AutoML](#-automl)
+- [Data Processing](#-data-processing)
+  - [Data Pipelines](#-data-pipelines)
+  - [ETL Tools](#-etl-tools)
+  - [Data Validation](#-data-validation)
+- [Data Visualization](#-data-visualization)
+  - [Charting Libraries](#-charting-libraries)
+  - [Dashboard Tools](#-dashboard-tools)
+  - [BI Tools](#-bi-tools)
+- [MLOps](#-mlops)
+  - [Model Training](#-model-training)
+  - [Model Serving](#-model-serving)
+  - [Experiment Tracking](#-experiment-tracking)
+
+### 🔗 Blockchain & Web3
+- [Blockchain Platforms](#-blockchain-platforms)
+  - [Ethereum](#-ethereum)
+  - [Solana](#-solana)
+  - [Polygon](#-polygon)
+- [Smart Contracts](#-smart-contracts)
+  - [Solidity](#-solidity)
+  - [Rust Contracts](#-rust-contracts)
+- [Web3 Tools](#-web3-tools)
+  - [Wallets](#-wallets)
+  - [DeFi](#-defi)
+  - [NFT Tools](#-nft-tools)
+
+### 📚 Learning & Resources
+- [Awesome Lists of Awesome Lists](#-awesome-lists-of-awesome-lists)
+  - [Meta Awesome Lists](#-the-ultimate-meta-awesome-lists)
+  - [Programming Languages](#-programming-languages)
+  - [AI & Machine Learning](#-ai--machine-learning)
+  - [Web Development](#-web-development)
+  - [DevOps & Infrastructure](#-devops--infrastructure)
+  - [Security](#-security-1)
+  - [Mobile & Desktop](#-mobile--desktop)
+  - [Learning & Career](#-learning--career)
+  - [Design & Creative](#-design--creative)
+  - [Tools & Utilities](#-tools--utilities)
+  - [Data & Databases](#-data--databases)
+  - [Other Awesome Lists](#-other-awesome-lists)
+- [GitHub Cheatsheets](#-github-cheatsheets)
+  - [Git & GitHub Cheatsheets](#-essential-git--github-cheatsheets)
+  - [Security Cheatsheets](#️-security-cheatsheets)
+  - [Development Cheatsheets](#-development-cheatsheets)
+- [Books & Courses](#-books--courses)
+  - [Free Programming Books](#-free-programming-books)
+  - [Online Courses](#-online-courses)
+  - [Interactive Learning](#-interactive-learning)
+- [Interview Prep](#-interview-prep)
+  - [Coding Interview](#-coding-interview)
+  - [System Design](#-system-design)
+  - [Behavioral Interview](#-behavioral-interview)
+
+### 🚀 Getting Started
+- [Quick Start Guides](#-quick-start-guides)
+  - [Getting Started with OpenAI](#getting-started-with-openai)
+  - [Setting Up Codex CLI](#setting-up-codex-cli)
+  - [Running Local LLMs with Ollama](#running-local-llms-with-ollama)
+  - [VS Code Workspace Setup](#vs-code-workspace-setup)
+- [Resources & Documentation](#-resources--documentation)
+  - [Official Documentation](#-official-documentation)
+  - [Learning Resources](#-learning-resources)
+  - [Stay Updated](#-stay-updated)
+- [Technology Ecosystem](#-technology-ecosystem)
+- [Project Timeline](#-project-timeline)
+- [Feature Matrix](#-feature-matrix)
+- [Contributing](#-contributing)
+- [Acknowledgments](#-acknowledgments)
+- [License](#-license)
+
+---
+
+## 📊 Repository Statistics
+
+<div align="center">
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| 📦 **Total Resources** | 1,000+ | Curated tools, libraries & repos |
+| 🤖 **AI/ML Resources** | 500+ | AI platforms, models & tools |
+| 🛠️ **Developer Tools** | 300+ | IDEs, CLIs, extensions |
+| 📚 **Awesome Lists** | 200+ | Curated awesome collections |
+| 🎨 **Creative Tools** | 100+ | Audio, video, design tools |
+| 📋 **Cheatsheets** | 50+ | Quick reference guides |
+| 🎓 **Learning Resources** | 150+ | Courses, books, tutorials |
+
+</div>
 
 ---
 
@@ -620,6 +940,8 @@ graph LR
 | [awesome-awesomeness](https://github.com/bayandin/awesome-awesomeness) | A curated list of awesome awesomeness | 33k+ |
 | [awesome](https://github.com/sindresorhus/awesome) | 😎 Awesome lists about all kinds of topics | 350k+ |
 | [lists](https://github.com/jnv/lists) | The definitive list of lists | 10k+ |
+| [awesome-awesome](https://github.com/emijrp/awesome-awesome) | A curated list of awesome curated lists | 3k+ |
+| [awesome-all](https://github.com/bradoyler/awesome-all) | A curated list of awesome lists of awesome | 500+ |
 
 ### 💻 Programming Languages
 
@@ -634,6 +956,22 @@ graph LR
 | [awesome-swift](https://github.com/matteocrippa/awesome-swift) | Awesome Swift libraries and resources | 25k+ |
 | [awesome-php](https://github.com/ziadoz/awesome-php) | Awesome PHP libraries & resources | 32k+ |
 | [awesome-elixir](https://github.com/h4cc/awesome-elixir) | Awesome Elixir and Erlang libraries | 13k+ |
+| [awesome-ruby](https://github.com/markets/awesome-ruby) | Awesome Ruby libraries & tools | 14k+ |
+| [awesome-scala](https://github.com/lauris/awesome-scala) | Awesome Scala libraries | 9k+ |
+| [awesome-kotlin](https://github.com/KotlinBy/awesome-kotlin) | Awesome Kotlin resources | 11k+ |
+| [awesome-c](https://github.com/inputsh/awesome-c) | Awesome C libraries & frameworks | 4k+ |
+| [awesome-haskell](https://github.com/krispo/awesome-haskell) | Awesome Haskell resources | 3k+ |
+| [awesome-r](https://github.com/qinwf/awesome-R) | Awesome R packages & tools | 6k+ |
+| [awesome-julia](https://github.com/svaksha/Julia.jl) | Awesome Julia resources | 1.5k+ |
+| [awesome-clojure](https://github.com/razum2um/awesome-clojure) | Awesome Clojure libraries | 2.7k+ |
+| [awesome-perl](https://github.com/hachiojipm/awesome-perl) | Awesome Perl resources | 700+ |
+| [awesome-lua](https://github.com/LewisJEllis/awesome-lua) | Awesome Lua resources | 4k+ |
+| [awesome-dart](https://github.com/yissachar/awesome-dart) | Awesome Dart resources | 2.5k+ |
+| [awesome-zig](https://github.com/catdevnull/awesome-zig) | Awesome Zig resources | 1k+ |
+| [awesome-nim](https://github.com/VPashkov/awesome-nim) | Awesome Nim resources | 2k+ |
+| [awesome-crystal](https://github.com/veelenga/awesome-crystal) | Awesome Crystal resources | 3.5k+ |
+| [awesome-v](https://github.com/vlang/awesome-v) | Awesome V resources | 2k+ |
+| [awesome-ocaml](https://github.com/ocaml-community/awesome-ocaml) | Awesome OCaml resources | 3k+ |
 
 ### 🤖 AI & Machine Learning
 
@@ -651,17 +989,48 @@ graph LR
 | [best-of-ml-python](https://github.com/lukasmasuch/best-of-ml-python) | Ranked ML Python libraries | 22k+ |
 | [awesome-langchain](https://github.com/kyrolabs/awesome-langchain) | Awesome LangChain tools & projects | 8.9k+ |
 | [awesome-mcp-servers](https://github.com/appcypher/awesome-mcp-servers) | Model Context Protocol servers | 4.9k+ |
+| [awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai) | Generative AI resources | 10k+ |
+| [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) | ChatGPT prompt curation | 120k+ |
+| [awesome-gpt3](https://github.com/elyase/awesome-gpt3) | GPT-3 resources | 5k+ |
+| [awesome-transformers](https://github.com/huggingface/transformers) | Hugging Face Transformers | 140k+ |
+| [awesome-deep-learning-papers](https://github.com/terryum/awesome-deep-learning-papers) | Most cited DL papers | 25k+ |
+| [awesome-reinforcement-learning](https://github.com/aikorea/awesome-rl) | RL resources | 9k+ |
+| [awesome-speech-recognition](https://github.com/zzw922cn/awesome-speech-recognition-speech-synthesis-papers) | Speech recognition resources | 3k+ |
+| [awesome-bert](https://github.com/Jiakui/awesome-bert) | BERT resources | 4k+ |
+| [awesome-text-summarization](https://github.com/mathsyber/awesome-text-summarization) | Text summarization resources | 700+ |
+| [awesome-question-answering](https://github.com/dapurv5/awesome-question-answering) | QA resources | 1k+ |
+| [awesome-knowledge-graph](https://github.com/totogo/awesome-knowledge-graph) | Knowledge graph resources | 3k+ |
+| [awesome-ai-ml-dl](https://github.com/neomatrix369/awesome-ai-ml-dl) | AI/ML/DL resources | 2k+ |
+| [awesome-automl](https://github.com/hibayesian/awesome-automl-papers) | AutoML resources | 4k+ |
+| [awesome-mlops](https://github.com/visenger/awesome-mlops) | MLOps resources | 13k+ |
 
 ### 🌐 Web Development
 
 | Repository | Description | Stars |
 |------------|-------------|-------|
 | [awesome-vue](https://github.com/vuejs/awesome-vue) | Awesome things related to Vue.js | 73k+ |
+| [awesome-react](https://github.com/enaqx/awesome-react) | Awesome things related to React | 70k+ |
 | [awesome-react-components](https://github.com/brillout/awesome-react-components) | Curated React Components | 46k+ |
 | [awesome-flutter](https://github.com/Solido/awesome-flutter) | Awesome Flutter libraries & tools | 58k+ |
 | [awesome-vite](https://github.com/vitejs/awesome-vite) | Awesome things related to Vite.js | 16k+ |
 | [awesome-nestjs](https://github.com/nestjs/awesome-nestjs) | Awesome things related to NestJS | 12k+ |
 | [awesome-graphql](https://github.com/chentsulin/awesome-graphql) | Awesome GraphQL list | 14k+ |
+| [awesome-nextjs](https://github.com/unicodeveloper/awesome-nextjs) | Awesome Next.js resources | 10k+ |
+| [awesome-svelte](https://github.com/TheComputerM/awesome-svelte) | Awesome Svelte resources | 3k+ |
+| [awesome-angular](https://github.com/PatrickJS/awesome-angular) | Awesome Angular resources | 9k+ |
+| [awesome-ember](https://github.com/ember-community-russia/awesome-ember) | Awesome Ember resources | 200+ |
+| [awesome-preact](https://github.com/preactjs/awesome-preact) | Awesome Preact resources | 900+ |
+| [awesome-solid](https://github.com/solidjs/awesome-solid) | Awesome Solid.js resources | 600+ |
+| [awesome-remix](https://github.com/sergiodxa/awesome-remix) | Awesome Remix resources | 3k+ |
+| [awesome-astro](https://github.com/one-aalam/awesome-astro) | Awesome Astro resources | 700+ |
+| [awesome-tailwindcss](https://github.com/aniftyco/awesome-tailwindcss) | Awesome Tailwind CSS resources | 14k+ |
+| [awesome-sass](https://github.com/Famolus/awesome-sass) | Awesome Sass resources | 2k+ |
+| [awesome-css](https://github.com/awesome-css-group/awesome-css) | Awesome CSS resources | 5k+ |
+| [awesome-html5](https://github.com/diegocard/awesome-html5) | Awesome HTML5 resources | 2.5k+ |
+| [awesome-webpack](https://github.com/webpack-contrib/awesome-webpack) | Awesome Webpack resources | 5k+ |
+| [awesome-nuxt](https://github.com/nuxt/awesome) | Awesome Nuxt resources | 4k+ |
+| [awesome-deno](https://github.com/denolib/awesome-deno) | Awesome Deno resources | 4k+ |
+| [awesome-bun](https://github.com/apvarun/awesome-bun) | Awesome Bun resources | 2k+ |
 
 ### 🔧 DevOps & Infrastructure
 
@@ -672,7 +1041,20 @@ graph LR
 | [awesome-kubernetes](https://github.com/ramitsurana/awesome-kubernetes) | Awesome Kubernetes sources | 15k+ |
 | [awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin) | Awesome sysadmin resources | 31k+ |
 | [awesome-aws](https://github.com/donnemartin/awesome-aws) | Awesome AWS libraries & resources | 13k+ |
-| [awesome-mlops](https://github.com/visenger/awesome-mlops) | MLOps resources | 13k+ |
+| [awesome-terraform](https://github.com/shuaibiyy/awesome-terraform) | Awesome Terraform resources | 6k+ |
+| [awesome-ansible](https://github.com/ansible-community/awesome-ansible) | Awesome Ansible resources | 2k+ |
+| [awesome-github-actions](https://github.com/sdras/awesome-actions) | Awesome GitHub Actions | 27k+ |
+| [awesome-ciandcd](https://github.com/cicdops/awesome-ciandcd) | CI/CD resources | 2k+ |
+| [awesome-helm](https://github.com/cdwv/awesome-helm) | Awesome Helm resources | 1k+ |
+| [awesome-cloud-native](https://github.com/rootsongjc/awesome-cloud-native) | Cloud Native resources | 2k+ |
+| [awesome-azure](https://github.com/kristofferandreasen/awesome-azure) | Awesome Azure resources | 900+ |
+| [awesome-gcp](https://github.com/GoogleCloudPlatform/awesome-google-cloud) | Awesome GCP resources | 1.5k+ |
+| [awesome-prometheus](https://github.com/roaldnefs/awesome-prometheus) | Awesome Prometheus resources | 1.5k+ |
+| [awesome-grafana](https://github.com/zuchka/awesome-grafana) | Awesome Grafana resources | 700+ |
+| [awesome-nginx](https://github.com/fcambus/nginx-resources) | Awesome Nginx resources | 3k+ |
+| [awesome-linux](https://github.com/inputsh/awesome-linux) | Awesome Linux resources | 4k+ |
+| [awesome-macos](https://github.com/jaywcjlove/awesome-mac) | Awesome macOS resources | 93k+ |
+| [awesome-windows](https://github.com/Awesome-Windows/Awesome) | Awesome Windows resources | 30k+ |
 
 ### 🔒 Security
 
@@ -681,6 +1063,18 @@ graph LR
 | [awesome-hacking](https://github.com/carpedm20/awesome-hacking) | Awesome hacking tutorials & tools | 15k+ |
 | [awesome-web-security](https://github.com/qazbnm456/awesome-web-security) | Web Security materials | 12k+ |
 | [awesome-osint](https://github.com/jivoi/awesome-osint) | Awesome OSINT | 23k+ |
+| [awesome-pentest](https://github.com/enaqx/awesome-pentest) | Penetration testing resources | 23k+ |
+| [awesome-ctf](https://github.com/apsdehal/awesome-ctf) | CTF resources | 10k+ |
+| [awesome-security](https://github.com/sbilly/awesome-security) | Security resources | 13k+ |
+| [awesome-malware-analysis](https://github.com/rshipp/awesome-malware-analysis) | Malware analysis resources | 13k+ |
+| [awesome-appsec](https://github.com/paragonie/awesome-appsec) | Application security resources | 6k+ |
+| [awesome-threat-intelligence](https://github.com/hslatman/awesome-threat-intelligence) | Threat intelligence resources | 8k+ |
+| [awesome-incident-response](https://github.com/meirwah/awesome-incident-response) | Incident response resources | 8k+ |
+| [awesome-honeypots](https://github.com/paralax/awesome-honeypots) | Honeypot resources | 8k+ |
+| [awesome-forensics](https://github.com/cugu/awesome-forensics) | Forensics resources | 4k+ |
+| [awesome-cybersecurity-blueteam](https://github.com/fabacab/awesome-cybersecurity-blueteam) | Blue team resources | 4k+ |
+| [awesome-devsecops](https://github.com/devsecops/awesome-devsecops) | DevSecOps resources | 5k+ |
+| [awesome-bug-bounty](https://github.com/djadmin/awesome-bug-bounty) | Bug bounty resources | 5k+ |
 
 ### 📱 Mobile & Desktop
 
@@ -688,10 +1082,18 @@ graph LR
 |------------|-------------|-------|
 | [awesome-ios](https://github.com/vsouza/awesome-ios) | Awesome iOS ecosystem | 50k+ |
 | [awesome-android-ui](https://github.com/wasabeef/awesome-android-ui) | Android UI/UX libraries | 54k+ |
+| [awesome-android](https://github.com/JStumpp/awesome-android) | Awesome Android resources | 11k+ |
 | [open-source-ios-apps](https://github.com/dkhamsing/open-source-ios-apps) | Open-Source iOS Apps | 47k+ |
 | [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps) | Open-source macOS applications | 46k+ |
 | [awesome-mac](https://github.com/jaywcjlove/awesome-mac) | Awesome macOS software | 93k+ |
 | [awesome-electron](https://github.com/sindresorhus/awesome-electron) | Electron resources | 26k+ |
+| [awesome-react-native](https://github.com/jondot/awesome-react-native) | React Native resources | 35k+ |
+| [awesome-flutter](https://github.com/Solido/awesome-flutter) | Flutter resources | 58k+ |
+| [awesome-ionic](https://github.com/candelibas/awesome-ionic) | Ionic resources | 900+ |
+| [awesome-xamarin](https://github.com/XamSome/awesome-xamarin) | Xamarin resources | 2k+ |
+| [awesome-qt](https://github.com/mikalv/awesome-qt) | Qt resources | 1k+ |
+| [awesome-tauri](https://github.com/tauri-apps/awesome-tauri) | Tauri resources | 1k+ |
+| [awesome-wails](https://github.com/wailsapp/awesome-wails) | Wails resources | 400+ |
 
 ### 📚 Learning & Career
 
@@ -701,6 +1103,33 @@ graph LR
 | [awesome-interview-questions](https://github.com/DopplerHQ/awesome-interview-questions) | Interview questions | 78k+ |
 | [awesome-for-beginners](https://github.com/MunGell/awesome-for-beginners) | Beginner-friendly projects | 80k+ |
 | [Free-Certifications](https://github.com/cloudcommunity/Free-Certifications) | Free courses with certs | 44k+ |
+| [free-programming-books](https://github.com/EbookFoundation/free-programming-books) | Free programming books | 370k+ |
+| [project-based-learning](https://github.com/practical-tutorials/project-based-learning) | Project-based tutorials | 250k+ |
+| [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) | Build your own tutorials | 370k+ |
+| [coding-interview-university](https://github.com/jwasham/coding-interview-university) | Interview prep study plan | 330k+ |
+| [system-design-primer](https://github.com/donnemartin/system-design-primer) | System design primer | 300k+ |
+| [awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources) | System design resources | 25k+ |
+| [tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook) | Tech interview handbook | 130k+ |
+| [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) | Developer roadmaps | 330k+ |
+| [cs-video-courses](https://github.com/Developer-Y/cs-video-courses) | CS video courses | 70k+ |
+| [awesome-computer-science](https://github.com/ossu/computer-science) | CS curriculum | 180k+ |
+| [learn-anything](https://github.com/learn-anything/learn-anything) | Learn anything | 16k+ |
+
+### 🎨 Design & Creative
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [awesome-design-tools](https://github.com/goabstract/Awesome-Design-Tools) | Design tools | 35k+ |
+| [awesome-design](https://github.com/gztchan/awesome-design) | Design resources | 16k+ |
+| [awesome-design-patterns](https://github.com/DovAmir/awesome-design-patterns) | Design patterns | 44k+ |
+| [awesome-ux](https://github.com/netoguimaraes/awesome-ux) | UX resources | 1k+ |
+| [awesome-sketch](https://github.com/diessica/awesome-sketch) | Sketch resources | 700+ |
+| [awesome-figma](https://github.com/react-figma/awesome-figma) | Figma resources | 1k+ |
+| [awesome-icons](https://github.com/notlmn/awesome-icons) | Icon resources | 1k+ |
+| [awesome-fonts](https://github.com/brabadu/awesome-fonts) | Font resources | 1.5k+ |
+| [awesome-creative-coding](https://github.com/terkelg/awesome-creative-coding) | Creative coding resources | 14k+ |
+| [awesome-generative-art](https://github.com/kosmos/awesome-generative-art) | Generative art resources | 2k+ |
+| [awesome-audio-visualization](https://github.com/willianjusten/awesome-audio-visualization) | Audio visualization | 4.5k+ |
 
 ### 🔧 Tools & Utilities
 
@@ -711,6 +1140,76 @@ graph LR
 | [awesome-vscode](https://github.com/viatsko/awesome-vscode) | Awesome VS Code packages | 28k+ |
 | [awesome-actions](https://github.com/sdras/awesome-actions) | GitHub Actions list | 27k+ |
 | [awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) | GitHub Profile READMEs | 28k+ |
+| [awesome-vim](https://github.com/mhinz/vim-galore) | Vim resources | 17k+ |
+| [awesome-neovim](https://github.com/rockerBOO/awesome-neovim) | Neovim resources | 18k+ |
+| [awesome-emacs](https://github.com/emacs-tw/awesome-emacs) | Emacs resources | 8k+ |
+| [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) | ZSH plugins | 17k+ |
+| [awesome-bash](https://github.com/awesome-lists/awesome-bash) | Bash resources | 8k+ |
+| [awesome-fish](https://github.com/jorgebucaran/awsm.fish) | Fish shell resources | 5k+ |
+| [awesome-tmux](https://github.com/rothgar/awesome-tmux) | Tmux resources | 8k+ |
+| [awesome-git](https://github.com/dictcp/awesome-git) | Git resources | 2k+ |
+| [awesome-terminals-are-sexy](https://github.com/k4m4/terminals-are-sexy) | Terminal resources | 13k+ |
+
+### 🗃️ Data & Databases
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets) | Public datasets | 70k+ |
+| [awesome-datascience](https://github.com/academic/awesome-datascience) | Data science resources | 27k+ |
+| [awesome-bigdata](https://github.com/oxnr/awesome-bigdata) | Big data resources | 14k+ |
+| [awesome-postgres](https://github.com/dhamaniasad/awesome-postgres) | PostgreSQL resources | 11k+ |
+| [awesome-mysql](https://github.com/shlomi-noach/awesome-mysql) | MySQL resources | 2.5k+ |
+| [awesome-mongodb](https://github.com/ramnes/awesome-mongodb) | MongoDB resources | 2.5k+ |
+| [awesome-redis](https://github.com/JamzyWang/awesome-redis) | Redis resources | 2k+ |
+| [awesome-elasticsearch](https://github.com/dzharii/awesome-elasticsearch) | Elasticsearch resources | 5k+ |
+| [awesome-neo4j](https://github.com/neueda/awesome-neo4j) | Neo4j resources | 500+ |
+| [awesome-cassandra](https://github.com/Anant/awesome-cassandra) | Cassandra resources | 300+ |
+| [awesome-database-learning](https://github.com/pingcap/awesome-database-learning) | Database learning | 6k+ |
+| [awesome-etl](https://github.com/pawl/awesome-etl) | ETL resources | 3k+ |
+| [awesome-data-engineering](https://github.com/igorbarinov/awesome-data-engineering) | Data engineering resources | 7k+ |
+
+### 🎮 Gaming & Entertainment
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [awesome-gamedev](https://github.com/mbrukman/awesome-gamedev) | Game development resources | 1k+ |
+| [awesome-unity](https://github.com/RyanNielson/awesome-unity) | Unity resources | 7k+ |
+| [awesome-godot](https://github.com/godotengine/awesome-godot) | Godot resources | 7k+ |
+| [awesome-unreal](https://github.com/insthync/awesome-unreal) | Unreal Engine resources | 1k+ |
+| [awesome-bevy](https://github.com/bevyengine/awesome-bevy) | Bevy resources | 2k+ |
+| [awesome-love2d](https://github.com/love2d-community/awesome-love2d) | LÖVE 2D resources | 3k+ |
+| [awesome-game-engine-dev](https://github.com/stevinz/awesome-game-engine-dev) | Game engine development | 1k+ |
+| [magictools](https://github.com/ellisonleao/magictools) | Game dev tools | 15k+ |
+| [awesome-piracy](https://github.com/Igglybuff/awesome-piracy) | Piracy resources | 25k+ |
+
+### 🌍 Other Awesome Lists
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [awesome-remote-job](https://github.com/lukasz-madon/awesome-remote-job) | Remote work resources | 41k+ |
+| [awesome-cto](https://github.com/kuchin/awesome-cto) | CTO resources | 31k+ |
+| [awesome-leading-and-managing](https://github.com/LappleApple/awesome-leading-and-managing) | Leadership resources | 8k+ |
+| [awesome-free-software](https://github.com/johnjago/awesome-free-software) | Free software | 2k+ |
+| [awesome-privacy](https://github.com/pluja/awesome-privacy) | Privacy resources | 17k+ |
+| [awesome-home-assistant](https://github.com/frenck/awesome-home-assistant) | Home Assistant | 7k+ |
+| [awesome-raspberry-pi](https://github.com/thibmaek/awesome-raspberry-pi) | Raspberry Pi | 15k+ |
+| [awesome-iot](https://github.com/HQarroum/awesome-iot) | IoT resources | 3k+ |
+| [awesome-blockchain](https://github.com/yjjnls/awesome-blockchain) | Blockchain resources | 2k+ |
+| [awesome-crypto](https://github.com/cmahon/awesome-cryptocurrency) | Cryptocurrency resources | 500+ |
+| [awesome-solidity](https://github.com/bkrem/awesome-solidity) | Solidity resources | 8k+ |
+| [awesome-web3](https://github.com/ahmet/awesome-web3) | Web3 resources | 2k+ |
+| [awesome-lowcode](https://github.com/taowen/awesome-lowcode) | Low-code resources | 15k+ |
+| [awesome-nocode](https://github.com/kairichard/awesome-nocode) | No-code resources | 1k+ |
+| [awesome-readme](https://github.com/matiassingers/awesome-readme) | README resources | 20k+ |
+| [awesome-github](https://github.com/phillipadsmith/awesome-github) | GitHub resources | 1k+ |
+| [awesome-newsletters](https://github.com/zudochkin/awesome-newsletters) | Newsletter resources | 4k+ |
+| [awesome-podcasts](https://github.com/rShetty/awesome-podcasts) | Podcast resources | 12k+ |
+| [awesome-discord-communities](https://github.com/mhxion/awesome-discord-communities) | Discord communities | 3k+ |
+| [awesome-slack](https://github.com/matiassingers/awesome-slack) | Slack resources | 900+ |
+| [awesome-social-enterprise](https://github.com/RayBB/awesome-social-enterprise) | Social enterprise | 400+ |
+| [awesome-startup](https://github.com/KrishMunot/awesome-startup) | Startup resources | 800+ |
+| [awesome-product-management](https://github.com/dend/awesome-product-management) | Product management | 1.5k+ |
+| [awesome-project-management](https://github.com/shahedbd/awesome-project-management) | Project management | 1k+ |
 
 ---
 
