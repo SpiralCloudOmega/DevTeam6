@@ -2,69 +2,181 @@
 
 <div align="center">
 
-> **The Ultimate AI Developer Workspace Toolkit for VS Code**
+> **🔮 The Ultimate AI Developer Workspace Toolkit for VS Code 🔮**
 > 
-> An Awesome List of All Awesome Lists - 10x Curated for AI Development
+> *An Awesome List of All Awesome Lists - 10x Curated for AI Development*
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![GitHub Stars](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=social)](https://github.com/SpiralCloudOmega/DevTeam6)
-[![GitHub Forks](https://img.shields.io/github/forks/SpiralCloudOmega/DevTeam6?style=social)](https://github.com/SpiralCloudOmega/DevTeam6/fork)
-[![GitHub Watchers](https://img.shields.io/github/watchers/SpiralCloudOmega/DevTeam6?style=social)](https://github.com/SpiralCloudOmega/DevTeam6)
-[![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+[![MIT License](https://img.shields.io/badge/📜_License-MIT-00ff00?style=for-the-badge&logoColor=white)](LICENSE)
+[![Awesome](https://img.shields.io/badge/⭐_Awesome-List-ff00ff?style=for-the-badge)](https://awesome.re)
+[![GitHub Stars](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ffff)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![GitHub Forks](https://img.shields.io/github/forks/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=ff6600)](https://github.com/SpiralCloudOmega/DevTeam6/fork)
+[![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
+[![PRs Welcome](https://img.shields.io/badge/🚀_PRs-Welcome-00ff00?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 
 </div>
 
 ---
 
-## 🗺️ Omega Tool Kit Mind Map
+## 🎨 Omega Tool Kit - System Architecture
+
+> **🔮 Build Process Flow: From Foundation to Production**
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0ff', 'primaryTextColor': '#fff', 'primaryBorderColor': '#0ff', 'lineColor': '#f0f', 'secondaryColor': '#1a1a2e', 'tertiaryColor': '#16213e', 'background': '#0d1117', 'mainBkg': '#1a1a2e', 'nodeBorder': '#0ff', 'clusterBkg': '#16213e', 'clusterBorder': '#f0f', 'titleColor': '#0ff', 'edgeLabelBackground':'#1a1a2e'}}}%%
+flowchart TB
+    subgraph LAYER1["🏗️ PHASE 1: FOUNDATION"]
+        direction LR
+        A1[/"📦 Package Managers<br/>npm • pip • cargo"/]
+        A2[/"🔧 Build Tools<br/>Vite • Webpack • esbuild"/]
+        A3[/"📋 Version Control<br/>Git • GitHub CLI"/]
+    end
+    
+    subgraph LAYER2["🤖 PHASE 2: AI CORE"]
+        direction LR
+        B1[/"🧠 OpenAI<br/>GPT • Whisper • DALL-E"/]
+        B2[/"🔵 Google AI<br/>Gemini • TensorFlow • JAX"/]
+        B3[/"🟠 Anthropic<br/>Claude • Claude Code"/]
+        B4[/"⚛️ Quantum<br/>Qiskit • Cirq • PennyLane"/]
+    end
+    
+    subgraph LAYER3["🖥️ PHASE 3: DEVELOPMENT"]
+        direction LR
+        C1[/"💻 IDEs<br/>Cursor • VS Code • Zed"/]
+        C2[/"🛠️ CLI Tools<br/>Warp • GitHub CLI • Fig"/]
+        C3[/"🔌 Extensions<br/>Copilot • Codeium • Tabnine"/]
+    end
+    
+    subgraph LAYER4["🎨 PHASE 4: CREATIVE"]
+        direction LR
+        D1[/"🎵 Audio<br/>Whisper • Bark • Audacity"/]
+        D2[/"🎬 Video<br/>FFmpeg • OBS • Kdenlive"/]
+        D3[/"🖼️ Image<br/>Stable Diffusion • DALL-E"/]
+    end
+    
+    subgraph LAYER5["📚 PHASE 5: KNOWLEDGE"]
+        direction LR
+        E1[/"⭐ Awesome Lists<br/>300+ Curated"/]
+        E2[/"📋 Cheatsheets<br/>50+ Guides"/]
+        E3[/"🔬 Research<br/>AlphaXiv • arXiv"/]
+    end
+    
+    subgraph LAYER6["🚀 PHASE 6: PRODUCTION"]
+        direction LR
+        F1[/"☁️ Cloud Deploy<br/>AWS • GCP • Azure"/]
+        F2[/"🐳 Containers<br/>Docker • Kubernetes"/]
+        F3[/"📊 Monitoring<br/>Grafana • Prometheus"/]
+    end
+    
+    LAYER1 --> LAYER2
+    LAYER2 --> LAYER3
+    LAYER3 --> LAYER4
+    LAYER4 --> LAYER5
+    LAYER5 --> LAYER6
+    
+    style LAYER1 fill:#0d1117,stroke:#00ffff,stroke-width:3px,color:#00ffff
+    style LAYER2 fill:#0d1117,stroke:#ff00ff,stroke-width:3px,color:#ff00ff
+    style LAYER3 fill:#0d1117,stroke:#00ff00,stroke-width:3px,color:#00ff00
+    style LAYER4 fill:#0d1117,stroke:#ff6600,stroke-width:3px,color:#ff6600
+    style LAYER5 fill:#0d1117,stroke:#ffff00,stroke-width:3px,color:#ffff00
+    style LAYER6 fill:#0d1117,stroke:#00ffff,stroke-width:3px,color:#00ffff
+```
+
+---
+
+## 🔮 Mind Map - The Complete Ecosystem
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#ff00ff', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'secondaryColor': '#1a1a2e', 'tertiaryColor': '#16213e'}}}%%
 mindmap
-  root((🌀 Omega Tool Kit))
-    🤖 AI Platforms
-      OpenAI
-        GPT Models
+  root((🌀 OMEGA<br/>TOOL KIT))
+    🤖 AI PLATFORMS
+      🧠 OpenAI
+        GPT-4/GPT-5
         Whisper
-        DALL-E
+        DALL-E 3
         Codex CLI
         Agents SDK
-      Google AI
+        Swarm
+      🔵 Google AI
+        Gemini 2.0
         Gemini CLI
         TensorFlow
-        JAX
-      Anthropic
+        JAX/Flax
+        AlphaFold
+        Gemma
+      🟠 Anthropic
+        Claude 3.5
         Claude Code
         Claude Skills
-      Microsoft
-        GitHub Copilot
+        MCP SDK
+      🔷 Microsoft
+        Copilot
         Azure AI
-    🖥️ IDEs & Editors
-      Cursor
-      VS Code
-      Zed
-      Windsurf
-    🛠️ CLI Tools
-      GitHub CLI
-      Warp
-      Ollama
-      LM Studio
-    🎨 Creative AI
-      Image Gen
-        Stable Diffusion
-        DALL-E
-        Midjourney
-      Audio/Video
+        Phi Models
+      ⚛️ Quantum AI
+        Qiskit
+        Cirq
+        PennyLane
+        Q#
+    🖥️ DEV TOOLS
+      💻 IDEs
+        Cursor
+        VS Code
+        Zed
+        Windsurf
+        Neovim
+      🛠️ CLI
+        GitHub CLI
+        Warp
+        Fig
+        Ollama
+        LM Studio
+      🔌 Extensions
+        Copilot
+        Codeium
+        Tabnine
+        Continue
+    🎨 CREATIVE
+      🎵 Audio
         Whisper
         Bark
+        Coqui TTS
+        Audacity
+        LMMS
+      🎬 Video
         FFmpeg
         OBS
-    📚 Learning
-      Awesome Lists
-      Cheatsheets
-      Tutorials
-      Conferences
+        Kdenlive
+        DaVinci
+      🖼️ Image
+        Stable Diffusion
+        ComfyUI
+        Fooocus
+        Midjourney
+    📚 LEARNING
+      ⭐ Awesome
+        300+ Lists
+        Curated
+      📋 Cheatsheets
+        Git
+        Docker
+        K8s
+      🔬 Research
+        AlphaXiv
+        arXiv
+        Papers
+    ☁️ DEPLOY
+      🐳 Containers
+        Docker
+        Kubernetes
+        Podman
+      🌐 Cloud
+        AWS
+        GCP
+        Azure
+      📊 Monitor
+        Grafana
+        Prometheus
 ```
 
 ---
@@ -72,6 +184,7 @@ mindmap
 ## 🏗️ Architecture Overview
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00ffff', 'primaryTextColor': '#fff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#00ffff', 'secondaryColor': '#1a1a2e', 'tertiaryColor': '#16213e', 'clusterBkg': '#0d1117', 'clusterBorder': '#00ffff'}}}%%
 graph TB
     subgraph "🌀 OMEGA TOOL KIT"
         direction TB
@@ -83,16 +196,17 @@ graph TB
         end
         
         subgraph "🤖 AI Development"
-            OPENAI[OpenAI Repos]
-            GOOGLE[Google AI]
-            CLAUDE[Claude/Anthropic]
-            AGENTS[AI Agents]
+            OPENAI[🧠 OpenAI Repos]
+            GOOGLE[🔵 Google AI]
+            CLAUDE[🟠 Claude/Anthropic]
+            AGENTS[🤖 AI Agents]
+            QUANTUM[⚛️ Quantum Computing]
         end
         
         subgraph "🖥️ Development Tools"
-            IDE[IDEs & Editors]
-            CLI[CLI Tools]
-            EXT[VS Code Extensions]
+            IDE[💻 IDEs & Editors]
+            CLI[🛠️ CLI Tools]
+            EXT[🔌 VS Code Extensions]
         end
         
         subgraph "🎨 Creative Tools"
@@ -105,6 +219,7 @@ graph TB
             AWESOME[⭐ Awesome Lists]
             CHEAT[📋 Cheatsheets]
             DOCS[📖 Documentation]
+            RESEARCH[🔬 Research Papers]
         end
     end
     
@@ -114,17 +229,20 @@ graph TB
     GOOGLE --> CLI
     CLAUDE --> EXT
     AGENTS --> AUDIO
+    QUANTUM --> RESEARCH
     IDE --> AWESOME
     CLI --> CHEAT
     AUDIO --> STREAM
     VIDEO --> STREAM
     
-    style OPENAI fill:#10a37f,color:#fff
-    style GOOGLE fill:#4285f4,color:#fff
-    style CLAUDE fill:#d97706,color:#fff
-    style IDE fill:#007acc,color:#fff
-    style AUDIO fill:#1db954,color:#fff
-    style VIDEO fill:#ff0000,color:#fff
+    style OPENAI fill:#10a37f,stroke:#00ffff,stroke-width:2px,color:#fff
+    style GOOGLE fill:#4285f4,stroke:#00ffff,stroke-width:2px,color:#fff
+    style CLAUDE fill:#d97706,stroke:#00ffff,stroke-width:2px,color:#fff
+    style QUANTUM fill:#9945ff,stroke:#ff00ff,stroke-width:2px,color:#fff
+    style IDE fill:#007acc,stroke:#00ffff,stroke-width:2px,color:#fff
+    style AUDIO fill:#1db954,stroke:#00ffff,stroke-width:2px,color:#fff
+    style VIDEO fill:#ff0000,stroke:#00ffff,stroke-width:2px,color:#fff
+    style RESEARCH fill:#ff00ff,stroke:#00ffff,stroke-width:2px,color:#fff
 ```
 
 ---
@@ -133,14 +251,16 @@ graph TB
 
 <div align="center">
 
-| Metric | Value |
-|--------|-------|
-| 📦 **Total Resources** | 500+ curated tools & repos |
-| 🤖 **OpenAI Repos** | 196+ official repositories |
-| ⭐ **Awesome Lists** | 100+ curated lists |
-| 🛠️ **CLI/IDE Tools** | 50+ development tools |
-| 🎵 **Audio/Video Tools** | 40+ creative tools |
-| 📋 **Cheatsheets** | 25+ reference guides |
+| 📦 Category | 🔢 Count | 📝 Description |
+|:------------|:--------:|:---------------|
+| 🌐 **Total Resources** | `1,000+` | Curated tools, libraries & repos |
+| 🤖 **AI/ML Resources** | `500+` | AI platforms, models & tools |
+| 🛠️ **Developer Tools** | `300+` | IDEs, CLIs, extensions |
+| ⭐ **Awesome Lists** | `300+` | Curated awesome collections |
+| ⚛️ **Quantum Computing** | `50+` | Quantum frameworks & tools |
+| 🎨 **Creative Tools** | `100+` | Audio, video, design tools |
+| 📋 **Cheatsheets** | `50+` | Quick reference guides |
+| 🎓 **Learning Resources** | `150+` | Courses, books, tutorials |
 
 </div>
 
@@ -149,12 +269,14 @@ graph TB
 ## 🔗 Quick Navigation
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00ffff', 'primaryTextColor': '#fff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a1a2e'}}}%%
 graph LR
     A[🏠 Start] --> B{What do you need?}
     B --> C[🤖 AI Development]
     B --> D[🖥️ IDE/CLI Tools]
     B --> E[🎨 Creative Tools]
     B --> F[📚 Learning]
+    B --> G[⚛️ Quantum]
     
     C --> C1[OpenAI Repos]
     C --> C2[Google AI]
@@ -172,12 +294,17 @@ graph LR
     F --> F2[Cheatsheets]
     F --> F3[Tutorials]
     
-    style A fill:#10a37f,color:#fff
-    style B fill:#6366f1,color:#fff
-    style C fill:#10a37f,color:#fff
-    style D fill:#007acc,color:#fff
-    style E fill:#f43f5e,color:#fff
-    style F fill:#f59e0b,color:#fff
+    G --> G1[Qiskit]
+    G --> G2[Cirq]
+    G --> G3[PennyLane]
+    
+    style A fill:#10a37f,stroke:#00ffff,stroke-width:2px,color:#fff
+    style B fill:#6366f1,stroke:#ff00ff,stroke-width:2px,color:#fff
+    style C fill:#10a37f,stroke:#00ffff,stroke-width:2px,color:#fff
+    style D fill:#007acc,stroke:#00ffff,stroke-width:2px,color:#fff
+    style E fill:#f43f5e,stroke:#00ffff,stroke-width:2px,color:#fff
+    style F fill:#f59e0b,stroke:#00ffff,stroke-width:2px,color:#fff
+    style G fill:#9945ff,stroke:#ff00ff,stroke-width:2px,color:#fff
 ```
 
 ---
@@ -470,6 +597,21 @@ graph LR
   - [Model Training](#-model-training)
   - [Model Serving](#-model-serving)
   - [Experiment Tracking](#-experiment-tracking)
+
+### ⚛️ Quantum Computing
+- [Quantum Frameworks](#-quantum-frameworks)
+  - [Qiskit (IBM)](#-qiskit-ibm)
+  - [Cirq (Google)](#-cirq-google)
+  - [PennyLane](#-pennylane)
+  - [Q# (Microsoft)](#-q-microsoft)
+- [Quantum Hardware](#-quantum-hardware)
+  - [IBM Quantum](#-ibm-quantum)
+  - [Google Quantum AI](#-google-quantum-ai)
+  - [Amazon Braket](#-amazon-braket)
+- [Quantum Resources](#-quantum-resources)
+  - [Quantum ML](#-quantum-ml)
+  - [Quantum Algorithms](#-quantum-algorithms)
+  - [Quantum Learning](#-quantum-learning)
 
 ### 🔗 Blockchain & Web3
 - [Blockchain Platforms](#-blockchain-platforms)
@@ -956,6 +1098,66 @@ graph LR
 | [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) | (Audio/Video sections) | 68k+ |
 | [karlstav/cava](https://github.com/karlstav/cava) | Console audio visualizer | 4k+ |
 | [Shubham0211/Awesome-Audio-Processing](https://github.com/Shubham0211/Awesome-Audio-Processing) | Audio processing resources | 500+ |
+
+---
+
+## ⚛️ Awesome Quantum Computing
+
+> **🔮 The Future of Computing - Quantum Resources & Frameworks**
+
+<div align="center">
+
+[![Quantum](https://img.shields.io/badge/⚛️_Quantum-Computing-9945ff?style=for-the-badge)](https://quantum-computing.ibm.com/)
+[![Qiskit](https://img.shields.io/badge/Qiskit-IBM-6929c4?style=for-the-badge&logo=ibm)](https://qiskit.org/)
+[![Cirq](https://img.shields.io/badge/Cirq-Google-4285f4?style=for-the-badge&logo=google)](https://quantumai.google/cirq)
+
+</div>
+
+### 🧪 Quantum Frameworks & SDKs
+
+| Framework | Company | Description | Link |
+|-----------|---------|-------------|------|
+| **Qiskit** | IBM | Open-source quantum computing SDK | [![Qiskit](https://img.shields.io/badge/GitHub-Qiskit-6929c4?logo=github)](https://github.com/Qiskit/qiskit) |
+| **Cirq** | Google | Python framework for quantum circuits | [![Cirq](https://img.shields.io/badge/GitHub-Cirq-4285f4?logo=github)](https://github.com/quantumlib/Cirq) |
+| **PennyLane** | Xanadu | Quantum ML library | [![PennyLane](https://img.shields.io/badge/GitHub-PennyLane-00cc99?logo=github)](https://github.com/PennyLaneAI/pennylane) |
+| **Q#** | Microsoft | Quantum programming language | [![Q#](https://img.shields.io/badge/GitHub-QSharp-00a4ef?logo=microsoft)](https://github.com/microsoft/qsharp) |
+| **Braket** | Amazon | Quantum computing service SDK | [![Braket](https://img.shields.io/badge/GitHub-Braket-ff9900?logo=amazon)](https://github.com/aws/amazon-braket-sdk-python) |
+| **TensorFlow Quantum** | Google | Hybrid quantum-classical ML | [![TFQ](https://img.shields.io/badge/GitHub-TFQuantum-ff6f00?logo=tensorflow)](https://github.com/tensorflow/quantum) |
+| **Ocean** | D-Wave | Quantum annealing tools | [![Ocean](https://img.shields.io/badge/GitHub-Ocean-00adef?logo=github)](https://github.com/dwavesystems/dwave-ocean-sdk) |
+
+### 🖥️ Quantum Hardware & Cloud Platforms
+
+| Platform | Provider | Description | Link |
+|----------|----------|-------------|------|
+| **IBM Quantum** | IBM | 100+ qubit systems | [![IBM](https://img.shields.io/badge/IBM_Quantum-Access-6929c4?logo=ibm)](https://quantum-computing.ibm.com/) |
+| **Google Quantum AI** | Google | Sycamore processor | [![Google](https://img.shields.io/badge/Google_Quantum-AI-4285f4?logo=google)](https://quantumai.google/) |
+| **Amazon Braket** | AWS | Quantum cloud service | [![Braket](https://img.shields.io/badge/Amazon_Braket-AWS-ff9900?logo=amazon)](https://aws.amazon.com/braket/) |
+| **Azure Quantum** | Microsoft | Quantum cloud platform | [![Azure](https://img.shields.io/badge/Azure_Quantum-Cloud-00a4ef?logo=microsoft)](https://azure.microsoft.com/en-us/products/quantum) |
+| **IonQ** | IonQ | Trapped ion quantum computers | [![IonQ](https://img.shields.io/badge/IonQ-Hardware-7c3aed)](https://ionq.com/) |
+| **Rigetti** | Rigetti | Superconducting qubits | [![Rigetti](https://img.shields.io/badge/Rigetti-QCS-10b981)](https://www.rigetti.com/) |
+
+### 📚 Quantum Learning Resources
+
+| Resource | Description | Link |
+|----------|-------------|------|
+| **Qiskit Textbook** | Interactive quantum computing | [![Textbook](https://img.shields.io/badge/Qiskit-Textbook-6929c4)](https://qiskit.org/textbook/) |
+| **Quantum Computing UK** | Tutorials & courses | [![QCUK](https://img.shields.io/badge/QC_UK-Learn-blue)](https://quantumcomputinguk.org/) |
+| **Brilliant Quantum** | Interactive courses | [![Brilliant](https://img.shields.io/badge/Brilliant-Quantum-ff9800)](https://brilliant.org/courses/quantum-computing/) |
+| **MIT OpenCourseWare** | University courses | [![MIT](https://img.shields.io/badge/MIT-OCW-a31f34)](https://ocw.mit.edu/courses/physics/) |
+| **Quantum Country** | Mnemonic medium | [![QC](https://img.shields.io/badge/Quantum-Country-purple)](https://quantum.country/) |
+
+### 🔬 Quantum Algorithms & Research
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [awesome-quantum-computing](https://github.com/desireevl/awesome-quantum-computing) | Curated quantum resources | 2.5k+ |
+| [awesome-quantum-machine-learning](https://github.com/krishnakumarsekar/awesome-quantum-machine-learning) | Quantum ML resources | 2k+ |
+| [quantum-algorithm-zoo](https://github.com/quantumalgorithmzoo/quantumalgorithmzoo.github.io) | Comprehensive algorithm list | 500+ |
+| [ProjectQ](https://github.com/ProjectQ-Framework/ProjectQ) | Open-source quantum framework | 900+ |
+| [Strawberry Fields](https://github.com/XanaduAI/strawberryfields) | Photonic quantum computing | 800+ |
+| [QuTiP](https://github.com/qutip/qutip) | Quantum toolbox in Python | 1.8k+ |
+| [OpenFermion](https://github.com/quantumlib/OpenFermion) | Quantum chemistry simulations | 1.5k+ |
+| [Mitiq](https://github.com/unitaryfund/mitiq) | Quantum error mitigation | 400+ |
 
 ---
 
