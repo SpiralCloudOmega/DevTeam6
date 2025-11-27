@@ -511,6 +511,34 @@ graph LR
   - [System Design](#-system-design)
   - [Behavioral Interview](#-behavioral-interview)
 
+### 🔬 Research & Papers
+- [AI Research Platforms](#-ai-research-platforms)
+  - [AlphaXiv](#-alphaxiv)
+  - [arXiv](#-arxiv)
+  - [Semantic Scholar](#-semantic-scholar)
+  - [Papers With Code](#-papers-with-code)
+  - [Google Scholar](#-google-scholar)
+- [Research Tools](#-research-tools)
+  - [Citation Managers](#-citation-managers)
+  - [Research Writing](#-research-writing)
+
+### 🧪 Interactive Development
+- [Notebooks & Playgrounds](#-notebooks--playgrounds)
+  - [Google Colab](#-google-colab)
+  - [Jupyter Notebooks](#-jupyter-notebooks)
+  - [Observable](#-observable)
+  - [Kaggle Notebooks](#-kaggle-notebooks)
+- [CLI Playgrounds](#-cli-playgrounds)
+  - [GitHub CLI](#-github-cli-playground)
+  - [Terminal Emulators](#-online-terminal-emulators)
+- [AI Playgrounds](#-ai-playgrounds)
+  - [OpenAI Playground](#-openai-playground)
+  - [Google AI Studio](#-google-ai-studio)
+  - [Anthropic Console](#-anthropic-console)
+- [Git Visualization](#-git-visualization)
+  - [GitKraken](#-gitkraken)
+  - [Git Graph Tools](#-git-graph-tools)
+
 ### 🚀 Getting Started
 - [Quick Start Guides](#-quick-start-guides)
   - [Getting Started with OpenAI](#getting-started-with-openai)
@@ -1210,6 +1238,144 @@ graph LR
 | [awesome-startup](https://github.com/KrishMunot/awesome-startup) | Startup resources | 800+ |
 | [awesome-product-management](https://github.com/dend/awesome-product-management) | Product management | 1.5k+ |
 | [awesome-project-management](https://github.com/shahedbd/awesome-project-management) | Project management | 1k+ |
+
+---
+
+## 🔬 AI Research Platforms
+
+> **Essential platforms for staying current with AI research and discovering breakthrough papers.**
+
+### 📚 AlphaXiv
+
+| Platform | Description | Link |
+|----------|-------------|------|
+| **AlphaXiv** | AI-powered research discovery & summaries | [![AlphaXiv](https://img.shields.io/badge/AlphaXiv-Research-purple)](https://alphaxiv.org/) |
+| **AlphaXiv Daily** | Daily curated AI paper summaries | [alphaxiv.org/daily](https://alphaxiv.org/) |
+| **AlphaXiv Collections** | Curated research collections by topic | [Collections](https://alphaxiv.org/) |
+
+### 📄 Research Platforms
+
+| Platform | Description | Link |
+|----------|-------------|------|
+| **arXiv** | Open-access research archive | [![arXiv](https://img.shields.io/badge/arXiv-Research-b31b1b)](https://arxiv.org/) |
+| **Semantic Scholar** | AI-powered research tool | [![Semantic Scholar](https://img.shields.io/badge/Semantic_Scholar-Research-blue)](https://www.semanticscholar.org/) |
+| **Papers With Code** | ML papers with code implementations | [![Papers](https://img.shields.io/badge/Papers_With_Code-Research-21cbce)](https://paperswithcode.com/) |
+| **Google Scholar** | Academic search engine | [![Scholar](https://img.shields.io/badge/Google_Scholar-Research-4285f4)](https://scholar.google.com/) |
+| **Connected Papers** | Visual paper exploration | [![Connected](https://img.shields.io/badge/Connected_Papers-Research-green)](https://www.connectedpapers.com/) |
+| **Hugging Face Papers** | ML papers with models | [![HF Papers](https://img.shields.io/badge/🤗_Papers-Research-yellow)](https://huggingface.co/papers) |
+| **OpenReview** | Open peer review platform | [![OpenReview](https://img.shields.io/badge/OpenReview-Research-red)](https://openreview.net/) |
+
+### 🛠️ Research Tools
+
+| Tool | Description | Link |
+|------|-------------|------|
+| **Zotero** | Free reference manager | [zotero.org](https://www.zotero.org/) |
+| **Mendeley** | Reference manager & academic network | [mendeley.com](https://www.mendeley.com/) |
+| **Notion** | Research notes & organization | [notion.so](https://www.notion.so/) |
+| **Obsidian** | Knowledge management | [obsidian.md](https://obsidian.md/) |
+| **Roam Research** | Networked thought | [roamresearch.com](https://roamresearch.com/) |
+| **Elicit** | AI research assistant | [elicit.com](https://elicit.com/) |
+| **Consensus** | AI-powered research answers | [consensus.app](https://consensus.app/) |
+
+---
+
+## 🧪 Interactive Development Environments
+
+> **Notebooks, playgrounds, and interactive tools for experimentation and learning.**
+
+### 📓 Notebooks & Playgrounds
+
+| Platform | Description | Link |
+|----------|-------------|------|
+| **Google Colab** | Free Jupyter notebooks with GPU/TPU | [![Colab](https://img.shields.io/badge/Google_Colab-Notebook-F9AB00?logo=googlecolab)](https://colab.research.google.com/) |
+| **Jupyter** | The original interactive notebook | [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter)](https://jupyter.org/) |
+| **JupyterLab** | Next-gen Jupyter interface | [![JupyterLab](https://img.shields.io/badge/JupyterLab-Notebook-F37626?logo=jupyter)](https://jupyterlab.readthedocs.io/) |
+| **Kaggle Notebooks** | Free notebooks with datasets & GPU | [![Kaggle](https://img.shields.io/badge/Kaggle-Notebook-20BEFF?logo=kaggle)](https://www.kaggle.com/code) |
+| **Observable** | JavaScript notebooks for visualization | [![Observable](https://img.shields.io/badge/Observable-Notebook-4269D7)](https://observablehq.com/) |
+| **Deepnote** | Collaborative data notebooks | [![Deepnote](https://img.shields.io/badge/Deepnote-Notebook-3793EF)](https://deepnote.com/) |
+| **Hex** | Collaborative data workspace | [![Hex](https://img.shields.io/badge/Hex-Notebook-FF6B6B)](https://hex.tech/) |
+| **Noteable** | Enterprise notebooks | [![Noteable](https://img.shields.io/badge/Noteable-Notebook-4A90E2)](https://noteable.io/) |
+
+### 🤖 AI Playgrounds
+
+| Platform | Description | Link |
+|----------|-------------|------|
+| **OpenAI Playground** | Test GPT models interactively | [![OpenAI](https://img.shields.io/badge/OpenAI-Playground-412991?logo=openai)](https://platform.openai.com/playground) |
+| **Google AI Studio** | Gemini model playground | [![Google AI](https://img.shields.io/badge/Google_AI-Studio-4285F4?logo=google)](https://aistudio.google.com/) |
+| **Anthropic Console** | Claude model testing | [![Anthropic](https://img.shields.io/badge/Anthropic-Console-D97706)](https://console.anthropic.com/) |
+| **Hugging Face Spaces** | ML model demos & apps | [![HF Spaces](https://img.shields.io/badge/🤗_Spaces-Playground-yellow)](https://huggingface.co/spaces) |
+| **Replicate** | Run ML models in the cloud | [![Replicate](https://img.shields.io/badge/Replicate-Playground-black)](https://replicate.com/) |
+| **Together AI** | Open models playground | [![Together](https://img.shields.io/badge/Together_AI-Playground-blue)](https://www.together.ai/) |
+| **Groq** | Fast inference playground | [![Groq](https://img.shields.io/badge/Groq-Playground-orange)](https://console.groq.com/) |
+| **Perplexity Labs** | AI-powered search playground | [![Perplexity](https://img.shields.io/badge/Perplexity-Labs-teal)](https://labs.perplexity.ai/) |
+
+### 💻 CLI & Terminal Playgrounds
+
+| Platform | Description | Link |
+|----------|-------------|------|
+| **GitHub CLI** | GitHub from your terminal | [![gh](https://img.shields.io/badge/GitHub_CLI-Terminal-181717?logo=github)](https://cli.github.com/) |
+| **GitHub Codespaces** | Cloud dev environments | [![Codespaces](https://img.shields.io/badge/Codespaces-Cloud_IDE-181717?logo=github)](https://github.com/features/codespaces) |
+| **Replit** | Collaborative browser IDE | [![Replit](https://img.shields.io/badge/Replit-IDE-F26207?logo=replit)](https://replit.com/) |
+| **StackBlitz** | Instant dev environments | [![StackBlitz](https://img.shields.io/badge/StackBlitz-IDE-1389FD)](https://stackblitz.com/) |
+| **CodeSandbox** | Online code editor | [![CodeSandbox](https://img.shields.io/badge/CodeSandbox-IDE-000000?logo=codesandbox)](https://codesandbox.io/) |
+| **Gitpod** | Cloud development environments | [![Gitpod](https://img.shields.io/badge/Gitpod-IDE-FFAE33?logo=gitpod)](https://www.gitpod.io/) |
+| **GitHub.dev** | VS Code in the browser | [![github.dev](https://img.shields.io/badge/GitHub.dev-Editor-181717?logo=github)](https://github.dev/) |
+
+### 🌳 Git Visualization Tools
+
+| Tool | Description | Link |
+|------|-------------|------|
+| **GitKraken** | Legendary Git GUI with Tron-like graph | [![GitKraken](https://img.shields.io/badge/GitKraken-Git_GUI-179287?logo=gitkraken)](https://www.gitkraken.com/) |
+| **Sourcetree** | Free Git GUI for Mac/Windows | [![Sourcetree](https://img.shields.io/badge/Sourcetree-Git_GUI-0052CC?logo=sourcetree)](https://www.sourcetreeapp.com/) |
+| **Fork** | Fast Git client | [![Fork](https://img.shields.io/badge/Fork-Git_GUI-5B7E91)](https://git-fork.com/) |
+| **GitHub Desktop** | Official GitHub GUI | [![GitHub Desktop](https://img.shields.io/badge/GitHub_Desktop-Git_GUI-181717?logo=github)](https://desktop.github.com/) |
+| **Sublime Merge** | Git client from Sublime HQ | [![Sublime Merge](https://img.shields.io/badge/Sublime_Merge-Git_GUI-FF9800)](https://www.sublimemerge.com/) |
+| **lazygit** | Terminal UI for git commands | [![lazygit](https://img.shields.io/badge/lazygit-Terminal-00ADD8)](https://github.com/jesseduffield/lazygit) |
+| **tig** | Text-mode interface for Git | [![tig](https://img.shields.io/badge/tig-Terminal-green)](https://github.com/jonas/tig) |
+
+### 🎨 Diagram & Visualization Tools
+
+| Tool | Description | Link |
+|------|-------------|------|
+| **Mermaid Live** | Live Mermaid diagram editor | [![Mermaid](https://img.shields.io/badge/Mermaid-Live_Editor-FF3670)](https://mermaid.live/) |
+| **Excalidraw** | Whiteboard & diagrams | [![Excalidraw](https://img.shields.io/badge/Excalidraw-Whiteboard-6965DB)](https://excalidraw.com/) |
+| **Draw.io** | Free diagramming tool | [![Draw.io](https://img.shields.io/badge/Draw.io-Diagrams-F08705)](https://app.diagrams.net/) |
+| **Lucidchart** | Intelligent diagramming | [![Lucidchart](https://img.shields.io/badge/Lucidchart-Diagrams-FF8F00)](https://www.lucidchart.com/) |
+| **Whimsical** | Visual workspace | [![Whimsical](https://img.shields.io/badge/Whimsical-Workspace-7B68EE)](https://whimsical.com/) |
+| **tldraw** | Collaborative whiteboard | [![tldraw](https://img.shields.io/badge/tldraw-Whiteboard-1D1D1D)](https://www.tldraw.com/) |
+
+---
+
+## 🤖 AI Agent Integration
+
+> **Tools and resources for AI agents to interact with this repository.**
+
+### 📋 Agent Instructions
+
+This repository is designed to be AI-agent friendly. Key files for AI interaction:
+
+| File | Purpose |
+|------|---------|
+| `README.md` | Main documentation - use as knowledge base |
+| `AGENTS.md` | (Coming soon) Specific instructions for AI agents |
+| `.github/copilot-instructions.md` | (Coming soon) GitHub Copilot custom instructions |
+
+### 🔌 MCP Integration
+
+This toolkit is compatible with Model Context Protocol (MCP) servers:
+
+| Server | Use Case |
+|--------|----------|
+| `@modelcontextprotocol/server-github` | Access GitHub repos and issues |
+| `@modelcontextprotocol/server-filesystem` | Read/write local files |
+| `@anthropic/mcp-server-memory` | Persistent memory for agents |
+
+### 🧠 AI-Friendly Features
+
+- **Structured sections** for easy parsing
+- **Consistent formatting** for reliable extraction
+- **Curated links** verified and categorized
+- **Regular updates** to keep information current
 
 ---
 
