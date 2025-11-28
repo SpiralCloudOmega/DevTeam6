@@ -1,94 +1,94 @@
-# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=50&lines=🌀+DevTeam6+-+The+Omega+Tool+Kit+🚀" alt="DevTeam6 - The Omega Tool Kit" />
+# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=600&height=50&lines=DEVTEAM6+-+THE+OMEGA+TOOL+KIT" alt="DevTeam6 - The Omega Tool Kit" />
 
 <div align="center">
 
-> **🔮 The Master GitHub Dictionary Index for Software Development 🔮**
+> **The Master GitHub Dictionary Index for Software Development**
 > 
 > *A comprehensive encyclopedia of everything GitHub has to offer: Languages, Frameworks, AI, Cloud, DevOps, Security, Research & Beyond — An AI-Ready Toolbox for Building Anything*
 
-[![MIT License](https://img.shields.io/badge/📜_License-MIT-c0c0c0?style=for-the-badge&logoColor=white)](LICENSE)
-[![Awesome](https://img.shields.io/badge/⭐_Awesome-List-c0c0c0?style=for-the-badge)](https://awesome.re)
-[![GitHub Stars](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=c0c0c0)](https://github.com/SpiralCloudOmega/DevTeam6)
-[![GitHub Forks](https://img.shields.io/github/forks/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=a8a8a8)](https://github.com/SpiralCloudOmega/DevTeam6/fork)
-[![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=c0c0c0)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
-[![PRs Welcome](https://img.shields.io/badge/🚀_PRs-Welcome-c0c0c0?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
-[![AI Toolbox](https://img.shields.io/badge/🤖_AI-Toolbox-c0c0c0?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![MIT License](https://img.shields.io/badge/License-MIT-00f0ff?style=for-the-badge&logoColor=white)](LICENSE)
+[![Awesome](https://img.shields.io/badge/Awesome-List-ff00ff?style=for-the-badge)](https://awesome.re)
+[![GitHub Stars](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00f0ff)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![GitHub Forks](https://img.shields.io/github/forks/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6/fork)
+[![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+[![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
 
 </div>
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=700&height=45&lines=🎨+OMEGA+TOOL+KIT+-+MASTER+INDEX" alt="Omega Tool Kit - Master Index" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=700&height=45&lines=OMEGA+TOOL+KIT+-+MASTER+INDEX" alt="Omega Tool Kit - Master Index" />
 
-> **🔮 The Complete Software Development Universe — From Concept to Deployment**
+> **The Complete Software Development Universe — From Concept to Deployment**
 > 
 > *A comprehensive encyclopedia of everything GitHub has to offer: Languages, Frameworks, Tools, AI, DevOps, Security, Research & Beyond*
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0ff', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#0ff', 'lineColor': '#c0c0c0', 'secondaryColor': '#1a1a2e', 'tertiaryColor': '#16213e', 'background': '#0d1117', 'mainBkg': '#1a1a2e', 'nodeBorder': '#c0c0c0', 'clusterBkg': '#16213e', 'clusterBorder': '#c0c0c0', 'titleColor': '#e8e8e8', 'edgeLabelBackground':'#1a1a2e'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00f0ff', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'tertiaryColor': '#1a0a2e', 'background': '#0a0a0f', 'mainBkg': '#0a0a1a', 'nodeBorder': '#00f0ff', 'clusterBkg': '#0d0d1a', 'clusterBorder': '#00f0ff', 'titleColor': '#ffffff', 'edgeLabelBackground':'#1a0a2e', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 flowchart TB
-    subgraph LAYER1["⚙️ FOUNDATIONS & CORE INFRASTRUCTURE"]
+    subgraph LAYER1["FOUNDATIONS & CORE INFRASTRUCTURE"]
         direction LR
-        A1[/"📦 Package Managers<br/>npm • pip • cargo • maven • go"/]
-        A2[/"🔧 Build Systems<br/>Vite • Webpack • CMake • Gradle"/]
-        A3[/"📋 Version Control<br/>Git • GitHub • GitLab • SVN"/]
-        A4[/"🏗️ Architecture<br/>Monorepo • Microservices • Serverless"/]
+        A1[/"Package Managers<br/>npm - pip - cargo - maven - go"/]
+        A2[/"Build Systems<br/>Vite - Webpack - CMake - Gradle"/]
+        A3[/"Version Control<br/>Git - GitHub - GitLab - SVN"/]
+        A4[/"Architecture<br/>Monorepo - Microservices - Serverless"/]
     end
     
-    subgraph LAYER2["💻 LANGUAGES & DEVELOPMENT ENVIRONMENTS"]
+    subgraph LAYER2["LANGUAGES & DEVELOPMENT ENVIRONMENTS"]
         direction LR
-        B1[/"🐍 Languages<br/>Python • JS • Go • Rust • C++"/]
-        B2[/"💻 IDEs & Editors<br/>VS Code • Cursor • Zed • Neovim"/]
-        B3[/"🔌 Extensions<br/>Copilot • Codeium • Continue"/]
-        B4[/"🖥️ Terminals<br/>Warp • iTerm • Windows Terminal"/]
+        B1[/"Languages<br/>Python - JS - Go - Rust - C++"/]
+        B2[/"IDEs & Editors<br/>VS Code - Cursor - Zed - Neovim"/]
+        B3[/"Extensions<br/>Copilot - Codeium - Continue"/]
+        B4[/"Terminals<br/>Warp - iTerm - Windows Terminal"/]
     end
     
-    subgraph LAYER3["🌐 FRAMEWORKS & LIBRARIES"]
+    subgraph LAYER3["FRAMEWORKS & LIBRARIES"]
         direction LR
-        C1[/"⚛️ Frontend<br/>React • Vue • Angular • Svelte"/]
-        C2[/"🔙 Backend<br/>Node • Django • FastAPI • Spring"/]
-        C3[/"📱 Mobile<br/>React Native • Flutter • Swift"/]
-        C4[/"🎮 Gaming & 3D<br/>Unity • Unreal • Godot • Bevy"/]
+        C1[/"Frontend<br/>React - Vue - Angular - Svelte"/]
+        C2[/"Backend<br/>Node - Django - FastAPI - Spring"/]
+        C3[/"Mobile<br/>React Native - Flutter - Swift"/]
+        C4[/"Gaming & 3D<br/>Unity - Unreal - Godot - Bevy"/]
     end
     
-    subgraph LAYER4["🤖 AI & MACHINE LEARNING"]
+    subgraph LAYER4["AI & MACHINE LEARNING"]
         direction LR
-        D1[/"🧠 AI Platforms<br/>OpenAI • Google AI • Anthropic"/]
-        D2[/"🦙 Local AI<br/>Ollama • LM Studio • GPT4All"/]
-        D3[/"🔗 AI Frameworks<br/>LangChain • LlamaIndex • AutoGen"/]
-        D4[/"📊 ML Tools<br/>PyTorch • TensorFlow • JAX"/]
+        D1[/"AI Platforms<br/>OpenAI - Google AI - Anthropic"/]
+        D2[/"Local AI<br/>Ollama - LM Studio - GPT4All"/]
+        D3[/"AI Frameworks<br/>LangChain - LlamaIndex - AutoGen"/]
+        D4[/"ML Tools<br/>PyTorch - TensorFlow - JAX"/]
     end
     
-    subgraph LAYER5["🗃️ DATA & STORAGE"]
+    subgraph LAYER5["DATA & STORAGE"]
         direction LR
-        E1[/"🗄️ SQL Databases<br/>PostgreSQL • MySQL • SQLite"/]
-        E2[/"🔥 NoSQL & Cloud<br/>Firestore • MongoDB • Redis"/]
-        E3[/"🧮 Vector DBs<br/>Pinecone • Weaviate • Chroma"/]
-        E4[/"📈 Analytics<br/>BigQuery • Snowflake • Databricks"/]
+        E1[/"SQL Databases<br/>PostgreSQL - MySQL - SQLite"/]
+        E2[/"NoSQL & Cloud<br/>Firestore - MongoDB - Redis"/]
+        E3[/"Vector DBs<br/>Pinecone - Weaviate - Chroma"/]
+        E4[/"Analytics<br/>BigQuery - Snowflake - Databricks"/]
     end
     
-    subgraph LAYER6["☁️ CLOUD & DEVOPS"]
+    subgraph LAYER6["CLOUD & DEVOPS"]
         direction LR
-        F1[/"☁️ Cloud Providers<br/>AWS • GCP • Azure • Vercel"/]
-        F2[/"🐳 Containers<br/>Docker • Kubernetes • Podman"/]
-        F3[/"🔄 CI/CD<br/>GitHub Actions • Jenkins • ArgoCD"/]
-        F4[/"📊 Monitoring<br/>Grafana • Prometheus • Datadog"/]
+        F1[/"Cloud Providers<br/>AWS - GCP - Azure - Vercel"/]
+        F2[/"Containers<br/>Docker - Kubernetes - Podman"/]
+        F3[/"CI/CD<br/>GitHub Actions - Jenkins - ArgoCD"/]
+        F4[/"Monitoring<br/>Grafana - Prometheus - Datadog"/]
     end
     
-    subgraph LAYER7["🔒 SECURITY & TESTING"]
+    subgraph LAYER7["SECURITY & TESTING"]
         direction LR
-        G1[/"🛡️ Security<br/>OWASP • Snyk • CodeQL • Vault"/]
-        G2[/"🧪 Testing<br/>Jest • Pytest • Cypress • Playwright"/]
-        G3[/"🔐 Auth<br/>OAuth • JWT • SAML • SSO"/]
-        G4[/"📝 Compliance<br/>SOC2 • GDPR • HIPAA"/]
+        G1[/"Security<br/>OWASP - Snyk - CodeQL - Vault"/]
+        G2[/"Testing<br/>Jest - Pytest - Cypress - Playwright"/]
+        G3[/"Auth<br/>OAuth - JWT - SAML - SSO"/]
+        G4[/"Compliance<br/>SOC2 - GDPR - HIPAA"/]
     end
     
-    subgraph LAYER8["📚 RESEARCH & LEARNING"]
+    subgraph LAYER8["RESEARCH & LEARNING"]
         direction LR
-        H1[/"📄 Research<br/>arXiv • Papers With Code • Scholar"/]
-        H2[/"📖 Documentation<br/>Docusaurus • Sphinx • MkDocs"/]
-        H3[/"🎓 Learning<br/>Courses • Tutorials • Books"/]
-        H4[/"⭐ Awesome Lists<br/>300+ Curated Collections"/]
+        H1[/"Research<br/>arXiv - Papers With Code - Scholar"/]
+        H2[/"Documentation<br/>Docusaurus - Sphinx - MkDocs"/]
+        H3[/"Learning<br/>Courses - Tutorials - Books"/]
+        H4[/"Awesome Lists<br/>300+ Curated Collections"/]
     end
     
     LAYER1 ---|Build| LAYER2
@@ -100,154 +100,154 @@ flowchart TB
     LAYER7 ---|Document| LAYER8
     LAYER8 -.->|Iterate| LAYER1
     
-    style LAYER1 fill:#0d1117,stroke:#c0c0c0,stroke-width:3px,color:#e8e8e8
-    style LAYER2 fill:#0d1117,stroke:#b8b8b8,stroke-width:3px,color:#e8e8e8
-    style LAYER3 fill:#0d1117,stroke:#a8a8a8,stroke-width:3px,color:#e8e8e8
-    style LAYER4 fill:#0d1117,stroke:#98d8ff,stroke-width:3px,color:#e8e8e8
-    style LAYER5 fill:#0d1117,stroke:#ffb898,stroke-width:3px,color:#e8e8e8
-    style LAYER6 fill:#0d1117,stroke:#98ffb8,stroke-width:3px,color:#e8e8e8
-    style LAYER7 fill:#0d1117,stroke:#ff9898,stroke-width:3px,color:#e8e8e8
-    style LAYER8 fill:#0d1117,stroke:#d898ff,stroke-width:3px,color:#e8e8e8
+    style LAYER1 fill:#0a0a1a,stroke:#00f0ff,stroke-width:3px,color:#00f0ff
+    style LAYER2 fill:#0a0a1a,stroke:#00d4aa,stroke-width:3px,color:#00d4aa
+    style LAYER3 fill:#0a0a1a,stroke:#00ff88,stroke-width:3px,color:#00ff88
+    style LAYER4 fill:#0a0a1a,stroke:#ff00ff,stroke-width:3px,color:#ff00ff
+    style LAYER5 fill:#0a0a1a,stroke:#ff6600,stroke-width:3px,color:#ff6600
+    style LAYER6 fill:#0a0a1a,stroke:#ffcc00,stroke-width:3px,color:#ffcc00
+    style LAYER7 fill:#0a0a1a,stroke:#ff0066,stroke-width:3px,color:#ff0066
+    style LAYER8 fill:#0a0a1a,stroke:#aa00ff,stroke-width:3px,color:#aa00ff
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🔮+ECOSYSTEM+MIND+MAP" alt="Ecosystem Mind Map" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=ECOSYSTEM+MIND+MAP" alt="Ecosystem Mind Map" />
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0', 'secondaryColor': '#2d2d44', 'tertiaryColor': '#16213e', 'background': '#0d1117', 'fontSize': '14px', 'fontFamily': 'Arial'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#00f0ff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'background': '#0a0a0f', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, Arial, sans-serif'}}}%%
 mindmap
-  root((🌀 THE COMPLETE<br/>DEVELOPER<br/>UNIVERSE))
-    🤖 AI & ML PLATFORMS
-      🧠 OpenAI
+  root((THE COMPLETE<br/>DEVELOPER<br/>UNIVERSE))
+    AI & ML PLATFORMS
+      OpenAI
         GPT-4o/GPT-5
         Whisper
         DALL-E 3
         Codex CLI
         Agents SDK
-      🔵 Google AI
+      Google AI
         Gemini 2.5
         Gemini CLI
         Vertex AI
         AI Studio
         AntiGravity IDE
         Firebase Genkit
-      🟠 Anthropic
+      Anthropic
         Claude 3.5/4
         Claude Code
         MCP SDK
-      🔷 Microsoft
+      Microsoft
         Azure AI Foundry
         GitHub Copilot
         Copilot CLI
-      🦙 Local AI
+      Local AI
         Ollama
         Open WebUI
         LM Studio
         GPT4All
-    💻 DEVELOPMENT
-      🖥️ IDEs & Editors
+    DEVELOPMENT
+      IDEs & Editors
         VS Code
         Cursor
         Zed
         Windsurf
         Neovim
         Void
-      🛠️ Build Tools
+      Build Tools
         Vite
         Webpack
         esbuild
         Turbopack
         Gradle
         CMake
-      📦 Package Mgrs
+      Package Mgrs
         npm/pnpm/yarn
         pip/uv/poetry
         cargo
         maven
         go mod
-    🌐 WEB & MOBILE
-      ⚛️ Frontend
+    WEB & MOBILE
+      Frontend
         React/Next.js
         Vue/Nuxt
         Angular
         Svelte/SvelteKit
         Astro
-      🔙 Backend
+      Backend
         Node/Express
         Django/FastAPI
         Spring Boot
         Go/Gin
         Rust/Axum
-      📱 Mobile
+      Mobile
         React Native
         Flutter
         Swift/SwiftUI
         Kotlin/Compose
-    ☁️ CLOUD & INFRA
-      🌩️ Providers
+    CLOUD & INFRA
+      Providers
         AWS
         Google Cloud
         Azure
         Vercel/Netlify
-      🐳 Containers
+      Containers
         Docker
         Kubernetes
         Podman
         Helm
-      🔄 CI/CD
+      CI/CD
         GitHub Actions
         Jenkins
         ArgoCD
         GitLab CI
-    🗃️ DATA & STORAGE
-      🗄️ SQL
+    DATA & STORAGE
+      SQL
         PostgreSQL
         MySQL
         SQLite
-      🔥 NoSQL
+      NoSQL
         Firestore
         MongoDB
         Redis
-      🧮 Vector DBs
+      Vector DBs
         Pinecone
         Weaviate
         Chroma
-    🔒 SECURITY
-      🛡️ AppSec
+    SECURITY
+      AppSec
         OWASP
         Snyk
         CodeQL
-      🔐 Auth
+      Auth
         OAuth 2.0
         JWT
         Auth0
-      🔍 Testing
+      Testing
         Penetration
         SAST/DAST
         Bug Bounty
-    📚 RESOURCES
-      ⭐ Awesome Lists
+    RESOURCES
+      Awesome Lists
         300+ Collections
         Curated
-      📋 Cheatsheets
+      Cheatsheets
         Git
         Docker
         K8s
-      🔬 Research
+      Research
         arXiv
         Papers w/ Code
         AlphaXiv
-    ⚛️ EMERGING TECH
-      🔮 Quantum
+    EMERGING TECH
+      Quantum
         Qiskit
         Cirq
         PennyLane
-      🔗 Web3
+      Web3
         Ethereum
         Solana
         Smart Contracts
-      🎮 Gaming
+      Gaming
         Unity
         Unreal
         Godot
@@ -255,45 +255,45 @@ mindmap
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🏗️+ARCHITECTURE+OVERVIEW" alt="Architecture Overview" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=ARCHITECTURE+OVERVIEW" alt="Architecture Overview" />
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0', 'secondaryColor': '#2d2d44', 'tertiaryColor': '#16213e', 'clusterBkg': '#0d1117', 'clusterBorder': '#c0c0c0'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'clusterBkg': '#0a0a1a', 'clusterBorder': '#00f0ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph TB
-    subgraph "🌀 THE COMPLETE SOFTWARE DEVELOPMENT UNIVERSE"
+    subgraph "THE COMPLETE SOFTWARE DEVELOPMENT UNIVERSE"
         direction TB
         
-        subgraph "🎬 Content & Updates"
-            YT[📺 YouTube Channels]
-            CONF[🎪 Conferences]
-            NEWS[📰 Changelogs]
+        subgraph "Content & Updates"
+            YT[YouTube Channels]
+            CONF[Conferences]
+            NEWS[Changelogs]
         end
         
-        subgraph "🤖 AI Development"
-            OPENAI[🧠 OpenAI Repos]
-            GOOGLE[🔵 Google AI & AntiGravity]
-            CLAUDE[🟠 Claude/Anthropic]
-            AGENTS[🤖 AI Agents]
-            QUANTUM[⚛️ Quantum Computing]
+        subgraph "AI Development"
+            OPENAI[OpenAI Repos]
+            GOOGLE[Google AI & AntiGravity]
+            CLAUDE[Claude/Anthropic]
+            AGENTS[AI Agents]
+            QUANTUM[Quantum Computing]
         end
         
-        subgraph "🖥️ Development Tools"
-            IDE[💻 IDEs & Editors]
-            CLI[🛠️ CLI Tools]
-            EXT[🔌 VS Code Extensions]
+        subgraph "Development Tools"
+            IDE[IDEs & Editors]
+            CLI[CLI Tools]
+            EXT[VS Code Extensions]
         end
         
-        subgraph "🎨 Creative Tools"
-            AUDIO[🎵 Audio Production]
-            VIDEO[🎬 Video Editing]
-            STREAM[📡 Streaming]
+        subgraph "Creative Tools"
+            AUDIO[Audio Production]
+            VIDEO[Video Editing]
+            STREAM[Streaming]
         end
         
-        subgraph "📚 Resources"
-            AWESOME[⭐ Awesome Lists]
-            CHEAT[📋 Cheatsheets]
-            DOCS[📖 Documentation]
-            RESEARCH[🔬 Research Papers]
+        subgraph "Resources"
+            AWESOME[Awesome Lists]
+            CHEAT[Cheatsheets]
+            DOCS[Documentation]
+            RESEARCH[Research Papers]
         end
     end
     
@@ -309,19 +309,19 @@ graph TB
     AUDIO --> STREAM
     VIDEO --> STREAM
     
-    style OPENAI fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style GOOGLE fill:#4285f4,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style CLAUDE fill:#d97706,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style QUANTUM fill:#9945ff,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style IDE fill:#007acc,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style AUDIO fill:#1db954,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style VIDEO fill:#ff0000,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style RESEARCH fill:#9945ff,stroke:#c0c0c0,stroke-width:2px,color:#fff
+    style OPENAI fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style GOOGLE fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style CLAUDE fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style QUANTUM fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
+    style IDE fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style AUDIO fill:#0a0a1a,stroke:#00ff66,stroke-width:2px,color:#00ff66
+    style VIDEO fill:#0a0a1a,stroke:#ff0066,stroke-width:2px,color:#ff0066
+    style RESEARCH fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=📊+REPOSITORY+STATS" alt="Repository Stats" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=400&height=40&lines=REPOSITORY+STATS" alt="Repository Stats" />
 
 <div align="center">
 
@@ -340,17 +340,17 @@ graph TB
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=🔗+QUICK+NAVIGATION" alt="Quick Navigation" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=400&height=40&lines=QUICK+NAVIGATION" alt="Quick Navigation" />
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0', 'secondaryColor': '#1a1a2e'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph LR
-    A[🏠 Start] --> B{What do you need?}
-    B --> C[🤖 AI Development]
-    B --> D[🖥️ IDE/CLI Tools]
-    B --> E[🦙 Local AI]
-    B --> F[🔥 Firebase/Cloud]
-    B --> G[📚 Learning]
+    A[START] --> B{What do you need?}
+    B --> C[AI Development]
+    B --> D[IDE/CLI Tools]
+    B --> E[Local AI]
+    B --> F[Firebase/Cloud]
+    B --> G[Learning]
     
     C --> C1[OpenAI Repos]
     C --> C2[Google AI]
@@ -372,18 +372,18 @@ graph LR
     G --> G2[Cheatsheets]
     G --> G3[Tutorials]
     
-    style A fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style B fill:#6366f1,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style C fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style D fill:#007acc,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style E fill:#1a1a2e,stroke:#c0c0c0,stroke-width:2px,color:#e8e8e8
-    style F fill:#FFCA28,stroke:#c0c0c0,stroke-width:2px,color:#000
-    style G fill:#f59e0b,stroke:#c0c0c0,stroke-width:2px,color:#fff
+    style A fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style B fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
+    style C fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style D fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style E fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style F fill:#0a0a1a,stroke:#ffcc00,stroke-width:2px,color:#ffcc00
+    style G fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=🎬+GITHUB+NEWS+%26+DEVELOPER+UPDATES" alt="GitHub News & Developer Updates" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=600&height=40&lines=GITHUB+NEWS+%26+DEVELOPER+UPDATES" alt="GitHub News & Developer Updates" />
 
 <div align="center">
 
@@ -413,7 +413,7 @@ graph LR
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=📑+MASTER+CONTENTS+INDEX" alt="Master Contents Index" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=MASTER+CONTENTS+INDEX" alt="Master Contents Index" />
 
 > **🔮 The Complete GitHub Master Encyclopedia** — *A comprehensive index of the entire software development universe: from languages and frameworks to AI, cloud infrastructure, security, and research. Your one-stop reference for building anything from simple scripts to complex operating systems.*
 
@@ -795,7 +795,7 @@ graph LR
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=🖥️+CLI/IDE+TOOLS+%26+AI+CODING+ASSISTANTS" alt="CLI/IDE Tools" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=600&height=40&lines=CLI/IDE+TOOLS+%26+AI+CODING+ASSISTANTS" alt="CLI/IDE Tools" />
 
 ### 🔥 The Major Players - AI-Powered IDEs & CLIs
 
@@ -1344,7 +1344,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=⚛️+QUANTUM+COMPUTING" alt="Quantum Computing" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=QUANTUM+COMPUTING" alt="Quantum Computing" />
 
 > **🔮 The Future of Computing - Quantum Resources & Frameworks**
 
@@ -1404,7 +1404,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=⭐+AWESOME+LISTS+OF+AWESOME+LISTS" alt="Awesome Lists of Awesome Lists" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=600&height=40&lines=AWESOME+LISTS+OF+AWESOME+LISTS" alt="Awesome Lists of Awesome Lists" />
 
 ### 🏆 The Ultimate Meta-Awesome Lists
 
@@ -1686,7 +1686,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🔬+AI+RESEARCH+PLATFORMS" alt="AI Research Platforms" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=AI+RESEARCH+PLATFORMS" alt="AI Research Platforms" />
 
 > **Essential platforms for staying current with AI research and discovering breakthrough papers.**
 
@@ -1724,7 +1724,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=🧪+INTERACTIVE+DEVELOPMENT+ENVIRONMENTS" alt="Interactive Development Environments" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=600&height=40&lines=INTERACTIVE+DEVELOPMENT+ENVIRONMENTS" alt="Interactive Development Environments" />
 
 > **Notebooks, playgrounds, and interactive tools for experimentation and learning.**
 
@@ -1791,7 +1791,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🤖+AI+AGENT+TOOLBOX" alt="AI Agent Toolbox" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=AI+AGENT+TOOLBOX" alt="AI Agent Toolbox" />
 
 > **🔮 The Complete AI Development Companion** — *This repository is designed as a comprehensive toolbox for AI agents. Use this as your knowledge base, instruction manual, and resource library for building software.*
 
@@ -1856,28 +1856,28 @@ This toolkit is fully compatible with Model Context Protocol (MCP) servers:
 ### 🧠 AI-Friendly Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph TB
-    subgraph INPUT["📥 AI Agent Input"]
+    subgraph INPUT["AI Agent Input"]
         QUERY[User Query/Task]
         CONTEXT[Repository Context]
     end
     
-    subgraph KNOWLEDGE["📚 Knowledge Base - This Repo"]
-        TOOLS[🛠️ Tool References]
-        COMMANDS[💻 Command Syntax]
-        PATTERNS[🎨 Code Patterns]
-        LINKS[🔗 Resource Links]
+    subgraph KNOWLEDGE["Knowledge Base - This Repo"]
+        TOOLS[Tool References]
+        COMMANDS[Command Syntax]
+        PATTERNS[Code Patterns]
+        LINKS[Resource Links]
     end
     
-    subgraph ACTIONS["⚡ AI Actions"]
+    subgraph ACTIONS["AI Actions"]
         SEARCH[Search Resources]
         GENERATE[Generate Code]
         CONFIGURE[Configure Tools]
         DEPLOY[Deploy Solutions]
     end
     
-    subgraph OUTPUT["📤 Output"]
+    subgraph OUTPUT["Output"]
         CODE[Generated Code]
         DOCS[Documentation]
         CONFIG[Configuration]
@@ -1892,9 +1892,9 @@ graph TB
     LINKS --> DEPLOY
     ACTIONS --> OUTPUT
     
-    style KNOWLEDGE fill:#1a1a2e,stroke:#c0c0c0,stroke-width:2px,color:#e8e8e8
-    style INPUT fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style OUTPUT fill:#4285f4,stroke:#c0c0c0,stroke-width:2px,color:#fff
+    style KNOWLEDGE fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style INPUT fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style OUTPUT fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
 ```
 
 ### 📖 How AI Agents Should Use This Repository
@@ -1920,7 +1920,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=📋+GITHUB+CHEATSHEETS" alt="GitHub Cheatsheets" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=400&height=40&lines=GITHUB+CHEATSHEETS" alt="GitHub Cheatsheets" />
 
 ### 🔥 Essential Git & GitHub Cheatsheets
 
@@ -1953,7 +1953,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=💻+VS+CODE+EXTENSIONS+%26+TOOLS" alt="VS Code Extensions & Tools" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=VS+CODE+EXTENSIONS+%26+TOOLS" alt="VS Code Extensions & Tools" />
 
 ### 🤖 AI-Powered Extensions
 
@@ -1998,7 +1998,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🧠+AI+DEVELOPMENT+FRAMEWORKS" alt="AI Development Frameworks" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=AI+DEVELOPMENT+FRAMEWORKS" alt="AI Development Frameworks" />
 
 ### 🔧 LLM Frameworks
 
@@ -2047,7 +2047,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🔌+MCP+SERVERS+%26+AI+AGENTS" alt="MCP Servers & AI Agents" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=500&height=40&lines=MCP+SERVERS+%26+AI+AGENTS" alt="MCP Servers & AI Agents" />
 
 ### 🌐 Model Context Protocol
 
@@ -2073,7 +2073,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=🚀+QUICK+START+GUIDES" alt="Quick Start Guides" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=400&height=40&lines=QUICK+START+GUIDES" alt="Quick Start Guides" />
 
 ### Getting Started with OpenAI
 
@@ -2165,15 +2165,16 @@ Create a `.vscode/settings.json`:
 ## 🌐 Technology Ecosystem
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph TD
-    subgraph "🧠 AI Layer"
+    subgraph "AI Layer"
         GPT[GPT Models]
         GEMINI[Gemini]
         CLAUDE[Claude]
         LLAMA[LLaMA]
     end
     
-    subgraph "🔧 Tools Layer"
+    subgraph "Tools Layer"
         CURSOR[Cursor IDE]
         VSCODE[VS Code]
         COPILOT[GitHub Copilot]
@@ -2181,21 +2182,21 @@ graph TD
         CODEX[Codex CLI]
     end
     
-    subgraph "🦙 Local AI Layer"
+    subgraph "Local AI Layer"
         OLLAMA[Ollama]
         OPENWEBUI[Open WebUI]
         LMSTUDIO[LM Studio]
         LOCALAI[LocalAI]
     end
     
-    subgraph "☁️ Cloud Layer"
+    subgraph "Cloud Layer"
         AZURE[Azure AI Foundry]
         VERTEX[Vertex AI]
         FIRESTORE[Firestore]
         BEDROCK[Amazon Bedrock]
     end
     
-    subgraph "📦 Framework Layer"
+    subgraph "Framework Layer"
         LANGCHAIN[LangChain]
         LLAMAINDEX[LlamaIndex]
         AUTOGEN[AutoGen]
@@ -2221,14 +2222,14 @@ graph TD
     AZURE --> COPILOT
     VERTEX --> FIRESTORE
     
-    style GPT fill:#10a37f,color:#fff
-    style GEMINI fill:#4285f4,color:#fff
-    style CLAUDE fill:#d97706,color:#fff
-    style CURSOR fill:#007acc,color:#fff
-    style LANGCHAIN fill:#22c55e,color:#fff
-    style OLLAMA fill:#000000,color:#fff
-    style AZURE fill:#0078D4,color:#fff
-    style FIRESTORE fill:#FFCA28,color:#000
+    style GPT fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style GEMINI fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style CLAUDE fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style CURSOR fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style LANGCHAIN fill:#0a0a1a,stroke:#00ff66,stroke-width:2px,color:#00ff66
+    style OLLAMA fill:#0a0a1a,stroke:#ff00ff,stroke-width:2px,color:#ff00ff
+    style AZURE fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style FIRESTORE fill:#0a0a1a,stroke:#ffcc00,stroke-width:2px,color:#ffcc00
 ```
 
 ---
@@ -2299,16 +2300,17 @@ quadrantChart
 </div>
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 flowchart LR
-    A[🍴 Fork] --> B[🌿 Branch]
-    B --> C[✏️ Edit]
-    C --> D[📝 Commit]
-    D --> E[🚀 Push]
-    E --> F[🔄 Pull Request]
-    F --> G[✅ Merged!]
+    A[Fork] --> B[Branch]
+    B --> C[Edit]
+    C --> D[Commit]
+    D --> E[Push]
+    E --> F[Pull Request]
+    F --> G[Merged!]
     
-    style A fill:#238636,color:#fff
-    style G fill:#238636,color:#fff
+    style A fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style G fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
 ```
 
 ### How to Contribute
