@@ -1,10 +1,12 @@
-# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=600&height=50&lines=DEVTEAM6+-+THE+OMEGA+TOOL+KIT" alt="DevTeam6 - The Omega Tool Kit" />
-
 <div align="center">
 
-> **The Master GitHub Dictionary Index for Software Development**
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,50:ff00ff,100:aa00ff&height=200&section=header&text=DEVTEAM6&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=THE%20OMEGA%20TOOL%20KIT&descSize=25&descAlignY=55&descAlign=50" width="100%"/>
+
+# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=700&height=50&lines=THE+MASTER+GITHUB+DICTIONARY;1000%2B+CURATED+RESOURCES;AI+%7C+DEVOPS+%7C+CLOUD+%7C+SECURITY;YOUR+AI-READY+TOOLBOX" alt="DevTeam6 - The Omega Tool Kit" />
+
+> **The Ultimate Software Development Encyclopedia**
 > 
-> *A comprehensive encyclopedia of everything GitHub has to offer: Languages, Frameworks, AI, Cloud, DevOps, Security, Research & Beyond — An AI-Ready Toolbox for Building Anything*
+> *Everything GitHub has to offer: Languages, Frameworks, AI, Cloud, DevOps, Security, Research & Beyond — An AI-Ready Toolbox for Building Anything*
 
 [![MIT License](https://img.shields.io/badge/License-MIT-00f0ff?style=for-the-badge&logoColor=white)](LICENSE)
 [![Awesome](https://img.shields.io/badge/Awesome-List-ff00ff?style=for-the-badge)](https://awesome.re)
@@ -13,6 +15,55 @@
 [![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 [![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
+
+---
+
+### QUICK NAVIGATION
+
+[![AI Tools](https://img.shields.io/badge/AI_TOOLS-00f0ff?style=for-the-badge&logo=openai&logoColor=white)](#-ai--machine-learning)
+[![Dev Tools](https://img.shields.io/badge/DEV_TOOLS-ff00ff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](#-cliide-tools--ai-coding-assistants)
+[![Cloud](https://img.shields.io/badge/CLOUD-00ff88?style=for-the-badge&logo=googlecloud&logoColor=white)](#-cloud-platforms)
+[![Security](https://img.shields.io/badge/SECURITY-ff0066?style=for-the-badge&logo=hackerone&logoColor=white)](#-security--testing)
+[![Awesome Lists](https://img.shields.io/badge/AWESOME_LISTS-aa00ff?style=for-the-badge&logo=awesome-lists&logoColor=white)](#-awesome-lists-of-awesome-lists)
+[![Learning](https://img.shields.io/badge/LEARNING-ffcc00?style=for-the-badge&logo=udemy&logoColor=white)](#-books--courses)
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FFCC00&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=QUICK+START+GUIDE" alt="Quick Start" />
+
+<div align="center">
+
+**Get up and running with the best AI tools in seconds!**
+
+</div>
+
+```bash
+# Install the most popular AI CLI tools
+
+# Ollama - Run LLMs locally
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3.2
+
+# GitHub Copilot CLI
+gh extension install github/gh-copilot
+
+# OpenAI Codex CLI
+npm install -g @openai/codex
+
+# Google Gemini CLI
+npm install -g @anthropic-ai/claude-code
+```
+
+<div align="center">
+
+| Tool | One-Line Install | What It Does |
+|------|-----------------|--------------|
+| **Ollama** | `curl -fsSL https://ollama.com/install.sh \| sh` | Run LLMs locally |
+| **Copilot CLI** | `gh extension install github/gh-copilot` | AI in your terminal |
+| **Codex CLI** | `npm install -g @openai/codex` | OpenAI coding agent |
+| **LM Studio** | [Download](https://lmstudio.ai/) | GUI for local models |
 
 </div>
 
@@ -108,6 +159,55 @@ flowchart TB
     style LAYER6 fill:#0a0a1a,stroke:#ffcc00,stroke-width:3px,color:#ffcc00
     style LAYER7 fill:#0a0a1a,stroke:#ff0066,stroke-width:3px,color:#ff0066
     style LAYER8 fill:#0a0a1a,stroke:#aa00ff,stroke-width:3px,color:#aa00ff
+```
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF00FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=WHAT'S+HOT+RIGHT+NOW" alt="What's Hot" />
+
+<div align="center">
+
+### Trending Technologies & Tools
+
+| Category | Hot Tools | Why It's Trending |
+|----------|-----------|-------------------|
+| **AI Coding** | Cursor, Claude Code, Copilot | AI-first development is the new standard |
+| **Local LLMs** | Ollama, Open WebUI, LM Studio | Privacy-first AI, run models locally |
+| **AI Agents** | AutoGen, CrewAI, LangGraph | Multi-agent systems revolutionizing automation |
+| **Vector DBs** | Pinecone, Weaviate, Chroma | RAG & semantic search powering AI apps |
+| **Edge AI** | Gemini Nano, Phi-3, Llama 3.2 | AI on device - fast, private, efficient |
+| **Dev Containers** | Devcontainers, Codespaces, Gitpod | Reproducible dev environments |
+
+### Featured This Month
+
+[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE_Revolution-00f0ff?style=for-the-badge)](https://cursor.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-Local_AI_Leader-ff00ff?style=for-the-badge)](https://ollama.com/)
+[![Claude_Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-00ff88?style=for-the-badge)](https://www.anthropic.com/claude)
+[![Gemini_2](https://img.shields.io/badge/Gemini_2.5-Google_AI-ff6600?style=for-the-badge)](https://deepmind.google/technologies/gemini/)
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00FF88&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=PROJECT+ROADMAP" alt="Roadmap" />
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
+gantt
+    title DevTeam6 Evolution Roadmap
+    dateFormat  YYYY-MM
+    section Foundation
+    Core Structure           :done, 2024-10, 2024-12
+    AI Resources             :done, 2024-11, 2025-01
+    Awesome Lists            :done, 2024-12, 2025-02
+    section Enhancement
+    Cyberpunk Theme          :done, 2025-01, 2025-02
+    Interactive Diagrams     :active, 2025-02, 2025-03
+    Community Features       :2025-03, 2025-04
+    section Future
+    API Integration          :2025-04, 2025-06
+    AI-Powered Search        :2025-05, 2025-07
+    Mobile Companion         :2025-06, 2025-08
 ```
 
 ---
@@ -803,7 +903,7 @@ graph LR
 
 [![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-00f0ff?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/)
 [![Copilot](https://img.shields.io/badge/GitHub_Copilot-AI_Pair_Programmer-ff00ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-ff6600?style=for-the-badge)](https://www.anthropic.com/claude-code)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-ff6600?style=for-the-badge)](https://www.anthropic.com/claude)
 [![Gemini](https://img.shields.io/badge/Gemini_CLI-Google_AI-00ff88?style=for-the-badge&logo=google&logoColor=white)](https://github.com/google-gemini/gemini-cli)
 [![AntiGravity](https://img.shields.io/badge/AntiGravity_IDE-Google_Gemini_3-aa00ff?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
 
@@ -812,7 +912,7 @@ graph LR
 | Tool | Description | Link | Stars |
 |------|-------------|------|:-----:|
 | **Cursor** | The AI-first code editor built on VS Code | [cursor.com](https://cursor.com/) | HOT |
-| **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude-code) | HOT |
+| **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude) | HOT |
 | **GitHub Copilot** | AI pair programmer by GitHub/OpenAI | [github.com/features/copilot](https://github.com/features/copilot) | HOT |
 | **GitHub Copilot CLI** | AI in your terminal for shell commands | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) | HOT |
 | **Google AntiGravity IDE** | Google Gemini 3 powered development environment | [antigravity.google](https://antigravity.google/) | NEW |
@@ -2290,14 +2390,15 @@ quadrantChart
 
 ---
 
-## Contributing
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00FF88&background=0A0A1AFF&vCenter=true&width=300&height=40&lines=CONTRIBUTING" alt="Contributing" />
 
 <div align="center">
 
-**We welcome contributions from the community!**
+**Join the Community - Help Build the Ultimate Developer Resource!**
 
 [![GitHub Issues](https://img.shields.io/github/issues/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=00f0ff)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+[![Contributors](https://img.shields.io/github/contributors/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/graphs/contributors)
 
 </div>
 
@@ -2311,29 +2412,66 @@ flowchart LR
     E --> F[Pull Request]
     F --> G[Merged!]
     
-    style A fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
-    style G fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style A fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style B fill:#0a0a1a,stroke:#ff00ff,stroke-width:2px,color:#ff00ff
+    style C fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style D fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style E fill:#0a0a1a,stroke:#ffcc00,stroke-width:2px,color:#ffcc00
+    style F fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
+    style G fill:#0a0a1a,stroke:#00ff88,stroke-width:3px,color:#00ff88
 ```
 
-### How to Contribute
+<div align="center">
 
-1. **Fork** the repository
-2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
+### Contribution Quick Start
 
-### Contribution Ideas
+| Step | Action | Command |
+|:----:|--------|---------|
+| 1 | Fork the repo | Click "Fork" button |
+| 2 | Clone your fork | `git clone https://github.com/YOUR_USERNAME/DevTeam6` |
+| 3 | Create branch | `git checkout -b feature/your-feature` |
+| 4 | Make changes | Edit files, add resources |
+| 5 | Commit | `git commit -m "Add: your feature"` |
+| 6 | Push | `git push origin feature/your-feature` |
+| 7 | Open PR | Create Pull Request on GitHub |
 
-- 🆕 Add new AI tools and resources
-- 📝 Improve documentation
-- 🐛 Report bugs or issues
-- 💡 Suggest new features
-- 🌐 Translate to other languages
+### Ways to Contribute
+
+| Type | Description | Difficulty |
+|------|-------------|:----------:|
+| Add Resources | Add new tools, libraries, or repos | Easy |
+| Fix Links | Report or fix broken links | Easy |
+| Improve Docs | Enhance descriptions or add examples | Medium |
+| Add Sections | Create new categories or sections | Medium |
+| Translations | Translate to other languages | Medium |
+| Diagrams | Create new visualizations | Advanced |
+
+</div>
 
 ---
 
-## 📊 GitHub Activity
+## Support the Project
+
+<div align="center">
+
+**If you find this resource helpful, consider supporting its development!**
+
+[![Star](https://img.shields.io/badge/Star_This_Repo-00f0ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![Share](https://img.shields.io/badge/Share_on_Twitter-ff00ff?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?text=Check%20out%20DevTeam6%20-%20The%20Omega%20Tool%20Kit!%20A%20comprehensive%20encyclopedia%20for%20software%20development.%20https://github.com/SpiralCloudOmega/DevTeam6)
+[![Follow](https://img.shields.io/badge/Follow_@SpiralCloudOmega-00ff88?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpiralCloudOmega)
+
+### Spread the Word
+
+```
+If this repo helped you, give it a ⭐ and share it with others!
+Together we can build the most comprehensive developer resource.
+```
+
+</div>
+
+---
+
+## GitHub Activity
 
 <div align="center">
 
@@ -2356,6 +2494,8 @@ Special thanks to all the amazing projects and communities that make this toolki
 | ![Anthropic](https://img.shields.io/badge/Anthropic-ff6600?style=flat&logoColor=white) | Claude AI |
 | ![GitHub](https://img.shields.io/badge/GitHub-ff00ff?style=flat&logo=github&logoColor=white) | Copilot & Platform |
 | ![Microsoft](https://img.shields.io/badge/Microsoft-00d4ff?style=flat&logo=microsoft&logoColor=white) | VS Code & Azure |
+| ![Meta](https://img.shields.io/badge/Meta-aa00ff?style=flat&logo=meta&logoColor=white) | Llama Models |
+| ![Hugging Face](https://img.shields.io/badge/Hugging_Face-ffcc00?style=flat&logo=huggingface&logoColor=white) | ML Community |
 
 </div>
 
@@ -2363,7 +2503,15 @@ Special thanks to all the amazing projects and communities that make this toolki
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<div align="center">
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-00f0ff?style=for-the-badge)](LICENSE)
+
+*Free to use, modify, and distribute. Attribution appreciated but not required.*
+
+</div>
 
 ---
 
@@ -2375,12 +2523,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**THE OMEGA TOOL KIT - 10x YOUR AI DEVELOPMENT**
+### Connect With Us
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,50:ff00ff,100:aa00ff&height=100&section=footer" width="100%"/>
+[![GitHub](https://img.shields.io/badge/GitHub-SpiralCloudOmega-00f0ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpiralCloudOmega)
+[![Star](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![Follow](https://img.shields.io/github/followers/SpiralCloudOmega?style=for-the-badge&logo=github&color=00ff88)](https://github.com/SpiralCloudOmega)
 
-Made with passion by [SpiralCloudOmega](https://github.com/SpiralCloudOmega)
+---
 
-[![Follow](https://img.shields.io/github/followers/SpiralCloudOmega?label=Follow&style=social)](https://github.com/SpiralCloudOmega)
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=24&duration=3000&pause=1000&color=FF00FF&background=0A0A1AFF&center=true&vCenter=true&width=600&height=50&lines=THE+OMEGA+TOOL+KIT;10X+YOUR+AI+DEVELOPMENT;BUILD+ANYTHING+%7C+LEARN+EVERYTHING" alt="Footer Typing" />
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,25:ff00ff,50:aa00ff,75:ff00ff,100:00f0ff&height=120&section=footer&animation=twinkling" width="100%"/>
+
+<sub>Made with passion by <a href="https://github.com/SpiralCloudOmega">SpiralCloudOmega</a> | The Omega Tool Kit © 2025</sub>
 
 </div>
