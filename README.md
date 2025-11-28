@@ -16,16 +16,24 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 [![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
 [![3D Demo](https://img.shields.io/badge/3D_DEMO-LIVE-ff0066?style=for-the-badge&logo=threedotjs&logoColor=white)](https://spiralcloudomega.github.io/DevTeam6/)
+[![Leaderboard](https://img.shields.io/badge/🏆_LEADERBOARD-ff6600?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/gamification)
+[![Onboarding](https://img.shields.io/badge/🚀_GET_STARTED-00ff88?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/onboarding)
 
 ---
 
-### 🎮 INTERACTIVE 3D EXPERIENCE
+### 🎮 INTERACTIVE EXPERIENCE HUB
 
 <a href="https://spiralcloudomega.github.io/DevTeam6/">
-  <img src="https://img.shields.io/badge/🚀_LAUNCH_3D_DEMO-00f0ff?style=for-the-badge&logoColor=white" alt="Launch 3D Demo" />
+  <img src="https://img.shields.io/badge/🎮_3D_DEMO-00f0ff?style=for-the-badge&logoColor=white" alt="Launch 3D Demo" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/gamification">
+  <img src="https://img.shields.io/badge/🏆_GAMIFICATION_DASHBOARD-ff6600?style=for-the-badge&logoColor=white" alt="Gamification Dashboard" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/onboarding">
+  <img src="https://img.shields.io/badge/🚀_ONBOARDING_WIZARD-00ff88?style=for-the-badge&logoColor=white" alt="Onboarding Wizard" />
 </a>
 
-*Experience DevTeam6 in immersive 3D - Built with Three.js & React Three Fiber*
+*Experience DevTeam6 in immersive 3D • Track contributions on the Leaderboard • Get started with the Onboarding Wizard*
 
 ---
 
@@ -2738,6 +2746,7 @@ const { text } = await generateText({
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| **v3.1** | Nov 2025 | Gamification Dashboard, Onboarding Wizard, CVS Pipeline |
 | **v3.0** | Nov 2025 | Interactive 3D Demo (Three.js/R3F), AR/VR/XR section, GitHub Pages deployment |
 | **v2.6** | Nov 2025 | Updated to GPT-5.1, Claude Opus 4.5, Gemini 3, GitHub Action automation |
 | **v2.5** | Nov 2025 | Tech Stack Comparisons, Learning Paths, API Reference |
@@ -2752,16 +2761,16 @@ const { text } = await generateText({
 ### Recent Updates
 
 ```diff
-+ Added: Interactive 3D Demo with Three.js & React Three Fiber
-+ Added: GitHub Pages deployment for 3D experience
-+ Added: 3D/WebGL section with 50+ resources
-+ Added: AR/VR/XR resources section
-+ Added: Motion & Animation libraries section
-+ Added: Creative Coding & Shaders section
-+ Added: Devcontainer for one-click development
-+ Added: 3D Demo quick navigation button
-+ Updated: Resource counter with 3D/WebGL badge
-+ Improved: Decoupled Dual-Layer architecture
++ Added: Gamification Dashboard with Leaderboard & Achievements
++ Added: Interactive Onboarding Wizard with progress tracking
++ Added: Continuous Visual Synchronization (CVS) pipeline
++ Added: Chart.js integration for contribution statistics
++ Added: React Router for multi-page navigation
++ Added: Animated score counters and celebration effects
++ Added: 10 collectible achievement badges
++ Updated: App version to 2.0.0
++ Updated: Interactive Experience Hub section in README
++ Improved: Navigation between 3D Demo, Dashboard, and Wizard
 ```
 
 </div>

@@ -1,0 +1,147 @@
+# Continuous Visual Synchronization (CVS) Pipeline
+# Synchronizes dynamic metrics from GitHub to README
+
+name: Continuous Visual Synchronization
+
+on:
+  schedule:
+    # Run every hour to keep metrics fresh
+    - cron: '0 * * * *'
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - 'README.md'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate Repository Stats
+        id: stats
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Fetch repository statistics using authenticated requests
+          REPO_OWNER="SpiralCloudOmega"
+          REPO_NAME="DevTeam6"
+          
+          # Get contributor count (paginated for accuracy)
+          CONTRIBUTORS=$(gh api repos/${REPO_OWNER}/${REPO_NAME}/contributors --paginate | jq length)
+          
+          # Get commit count
+          COMMITS=$(git rev-list --count HEAD)
+          
+          # Get star count
+          STARS=$(gh api repos/${REPO_OWNER}/${REPO_NAME} --jq '.stargazers_count // 0')
+          
+          # Get fork count
+          FORKS=$(gh api repos/${REPO_OWNER}/${REPO_NAME} --jq '.forks_count // 0')
+          
+          # Get open issues count
+          ISSUES=$(gh api repos/${REPO_OWNER}/${REPO_NAME} --jq '.open_issues_count // 0')
+          
+          # Get last update timestamp
+          LAST_UPDATE=$(date -u '+%Y-%m-%d %H:%M UTC')
+          
+          echo "contributors=${CONTRIBUTORS}" >> $GITHUB_OUTPUT
+          echo "commits=${COMMITS}" >> $GITHUB_OUTPUT
+          echo "stars=${STARS}" >> $GITHUB_OUTPUT
+          echo "forks=${FORKS}" >> $GITHUB_OUTPUT
+          echo "issues=${ISSUES}" >> $GITHUB_OUTPUT
+          echo "last_update=${LAST_UPDATE}" >> $GITHUB_OUTPUT
+          
+          echo "📊 Repository Statistics:"
+          echo "  Contributors: ${CONTRIBUTORS}"
+          echo "  Commits: ${COMMITS}"
+          echo "  Stars: ${STARS}"
+          echo "  Forks: ${FORKS}"
+          echo "  Open Issues: ${ISSUES}"
+
+      - name: Generate Top Contributors
+        id: contributors
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          REPO_OWNER="SpiralCloudOmega"
+          REPO_NAME="DevTeam6"
+          
+          # Get top 5 contributors with their contribution counts (authenticated)
+          TOP_CONTRIBUTORS=$(gh api "repos/${REPO_OWNER}/${REPO_NAME}/contributors?per_page=5" | \
+            jq -r '.[] | "| [\(.login)](https://github.com/\(.login)) | \(.contributions) | ![\(.login)](https://github.com/\(.login).png?size=32) |"' | head -5)
+          
+          echo "top_contributors<<EOF" >> $GITHUB_OUTPUT
+          echo "${TOP_CONTRIBUTORS}" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Update README with Live Stats
+        run: |
+          # Create dynamic stats section content
+          STATS_SECTION="<!-- CVS-STATS-START -->
+          <div align=\"center\">
+          
+          ### 📊 LIVE REPOSITORY STATS
+          
+          *Last synced: ${{ steps.stats.outputs.last_update }}*
+          
+          | Metric | Count |
+          |--------|-------|
+          | ⭐ Stars | ${{ steps.stats.outputs.stars }} |
+          | 🍴 Forks | ${{ steps.stats.outputs.forks }} |
+          | 👥 Contributors | ${{ steps.stats.outputs.contributors }} |
+          | 📝 Commits | ${{ steps.stats.outputs.commits }} |
+          | 🐛 Open Issues | ${{ steps.stats.outputs.issues }} |
+          
+          [![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=SpiralCloudOmega&repo=DevTeam6&theme=react-dark&hide_border=true&area=true&custom_title=DevTeam6%20Contribution%20Activity)](https://github.com/SpiralCloudOmega/DevTeam6)
+          
+          </div>
+          <!-- CVS-STATS-END -->"
+          
+          # Check if CVS section exists in README
+          if grep -q "<!-- CVS-STATS-START -->" README.md; then
+            # Update existing section
+            sed -i '/<!-- CVS-STATS-START -->/,/<!-- CVS-STATS-END -->/d' README.md
+          fi
+          
+          # Append stats section before the footer (look for the footer wave)
+          if grep -q "capsule-render.*section=footer" README.md; then
+            sed -i "/capsule-render.*section=footer/i\\${STATS_SECTION}" README.md
+          else
+            # If no footer found, append at the end
+            echo "${STATS_SECTION}" >> README.md
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes
+          if git diff --quiet README.md; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git add README.md
+          git commit -m "chore(cvs): sync repository metrics [skip ci]"
+          git push
+
+      - name: Summary
+        run: |
+          echo "## 📊 CVS Sync Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Stars | ${{ steps.stats.outputs.stars }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Forks | ${{ steps.stats.outputs.forks }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Contributors | ${{ steps.stats.outputs.contributors }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commits | ${{ steps.stats.outputs.commits }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Last Sync | ${{ steps.stats.outputs.last_update }} |" >> $GITHUB_STEP_SUMMARY

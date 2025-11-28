@@ -177,8 +177,11 @@ function App() {
           <a href="https://github.com/SpiralCloudOmega/DevTeam6" target="_blank" rel="noopener noreferrer" className="btn">
             View Repository
           </a>
-          <a href="https://github.com/SpiralCloudOmega/DevTeam6#readme" target="_blank" rel="noopener noreferrer" className="btn primary">
-            Explore Resources
+          <a href="/DevTeam6/gamification" className="btn secondary">
+            🏆 Leaderboard
+          </a>
+          <a href="/DevTeam6/onboarding" className="btn primary">
+            🚀 Get Started
           </a>
         </div>
       </div>

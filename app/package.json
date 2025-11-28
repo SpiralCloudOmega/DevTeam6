@@ -1,7 +1,7 @@
 {
   "name": "devteam6-3d-demo",
-  "version": "1.0.0",
-  "description": "Interactive 3D demo for DevTeam6 - The Omega Tool Kit",
+  "version": "2.0.0",
+  "description": "Interactive 3D demo with Gamification Dashboard for DevTeam6 - The Omega Tool Kit",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,9 +12,12 @@
   "dependencies": {
     "@react-three/drei": "^9.92.0",
     "@react-three/fiber": "^8.15.12",
+    "chart.js": "^4.4.1",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
     "three": "^0.160.0"
   },
   "devDependencies": {
