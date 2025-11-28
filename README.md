@@ -325,16 +325,16 @@ graph TB
 
 <div align="center">
 
-| 📦 Category | 🔢 Count | 📝 Description |
-|:------------|:--------:|:---------------|
-| 🌐 **Total Resources** | `1,000+` | Curated tools, libraries & repos |
-| 🤖 **AI/ML Resources** | `500+` | AI platforms, models & tools |
-| 🛠️ **Developer Tools** | `300+` | IDEs, CLIs, extensions |
-| ⭐ **Awesome Lists** | `300+` | Curated awesome collections |
-| ⚛️ **Quantum Computing** | `50+` | Quantum frameworks & tools |
-| 🎨 **Creative Tools** | `100+` | Audio, video, design tools |
-| 📋 **Cheatsheets** | `50+` | Quick reference guides |
-| 🎓 **Learning Resources** | `150+` | Courses, books, tutorials |
+| Category | Count | Description |
+|:---------|:-----:|:------------|
+| **Total Resources** | `1,000+` | Curated tools, libraries & repos |
+| **AI/ML Resources** | `500+` | AI platforms, models & tools |
+| **Developer Tools** | `300+` | IDEs, CLIs, extensions |
+| **Awesome Lists** | `300+` | Curated awesome collections |
+| **Quantum Computing** | `50+` | Quantum frameworks & tools |
+| **Creative Tools** | `100+` | Audio, video, design tools |
+| **Cheatsheets** | `50+` | Quick reference guides |
+| **Learning Resources** | `150+` | Courses, books, tutorials |
 
 </div>
 
@@ -777,19 +777,19 @@ graph LR
 
 ---
 
-## 📊 Repository Statistics
+## Repository Statistics
 
 <div align="center">
 
 | Category | Count | Description |
-|----------|-------|-------------|
-| 📦 **Total Resources** | 1,000+ | Curated tools, libraries & repos |
-| 🤖 **AI/ML Resources** | 500+ | AI platforms, models & tools |
-| 🛠️ **Developer Tools** | 300+ | IDEs, CLIs, extensions |
-| 📚 **Awesome Lists** | 200+ | Curated awesome collections |
-| 🎨 **Creative Tools** | 100+ | Audio, video, design tools |
-| 📋 **Cheatsheets** | 50+ | Quick reference guides |
-| 🎓 **Learning Resources** | 150+ | Courses, books, tutorials |
+|----------|:-----:|-------------|
+| **Total Resources** | 1,000+ | Curated tools, libraries & repos |
+| **AI/ML Resources** | 500+ | AI platforms, models & tools |
+| **Developer Tools** | 300+ | IDEs, CLIs, extensions |
+| **Awesome Lists** | 200+ | Curated awesome collections |
+| **Creative Tools** | 100+ | Audio, video, design tools |
+| **Cheatsheets** | 50+ | Quick reference guides |
+| **Learning Resources** | 150+ | Courses, books, tutorials |
 
 </div>
 
@@ -797,83 +797,83 @@ graph LR
 
 ## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1A00&vCenter=true&width=600&height=40&lines=CLI/IDE+TOOLS+%26+AI+CODING+ASSISTANTS" alt="CLI/IDE Tools" />
 
-### 🔥 The Major Players - AI-Powered IDEs & CLIs
+### The Major Players - AI-Powered IDEs & CLIs
 
 <div align="center">
 
-[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-00D9FF?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/)
-[![Copilot](https://img.shields.io/badge/GitHub_Copilot-AI_Pair_Programmer-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-D97706?style=for-the-badge)](https://www.anthropic.com/claude-code)
-[![Gemini](https://img.shields.io/badge/Gemini_CLI-Google_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://github.com/google-gemini/gemini-cli)
-[![AntiGravity](https://img.shields.io/badge/AntiGravity_IDE-Google_Gemini_3-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
+[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-00f0ff?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/)
+[![Copilot](https://img.shields.io/badge/GitHub_Copilot-AI_Pair_Programmer-ff00ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-ff6600?style=for-the-badge)](https://www.anthropic.com/claude-code)
+[![Gemini](https://img.shields.io/badge/Gemini_CLI-Google_AI-00ff88?style=for-the-badge&logo=google&logoColor=white)](https://github.com/google-gemini/gemini-cli)
+[![AntiGravity](https://img.shields.io/badge/AntiGravity_IDE-Google_Gemini_3-aa00ff?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
 
 </div>
 
 | Tool | Description | Link | Stars |
-|------|-------------|------|-------|
-| **Cursor** | The AI-first code editor built on VS Code | [cursor.com](https://cursor.com/) | 🔥 Hot |
-| **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude-code) | 🔥 Hot |
-| **GitHub Copilot** | AI pair programmer by GitHub/OpenAI | [github.com/features/copilot](https://github.com/features/copilot) | 🔥 Hot |
-| **GitHub Copilot CLI** | AI in your terminal for shell commands | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) | 🔥 Hot |
-| **Google AntiGravity IDE** | Google Gemini 3 powered development environment | [antigravity.google](https://antigravity.google/) | 🆕 **NEW** |
+|------|-------------|------|:-----:|
+| **Cursor** | The AI-first code editor built on VS Code | [cursor.com](https://cursor.com/) | HOT |
+| **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude-code) | HOT |
+| **GitHub Copilot** | AI pair programmer by GitHub/OpenAI | [github.com/features/copilot](https://github.com/features/copilot) | HOT |
+| **GitHub Copilot CLI** | AI in your terminal for shell commands | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) | HOT |
+| **Google AntiGravity IDE** | Google Gemini 3 powered development environment | [antigravity.google](https://antigravity.google/) | NEW |
 | **OpenAI Codex CLI** | Lightweight coding agent in terminal | [openai/codex](https://github.com/openai/codex) | 51k+ |
-| **Google Gemini CLI** | Google's AI in your terminal | [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 🔥 New |
-| **Windsurf** | Codeium's AI-native IDE | [codeium.com/windsurf](https://codeium.com/windsurf) | 🔥 Hot |
+| **Google Gemini CLI** | Google's AI in your terminal | [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | NEW |
+| **Windsurf** | Codeium's AI-native IDE | [codeium.com/windsurf](https://codeium.com/windsurf) | HOT |
 | **Zed** | High-performance multiplayer code editor | [zed.dev](https://zed.dev/) | 55k+ |
-| **Warp** | The terminal for the 21st century | [warp.dev](https://www.warp.dev/) | 🔥 Hot |
-| **Void** | Open-source Cursor alternative | [voideditor.com](https://voideditor.com/) | 🆕 New |
+| **Warp** | The terminal for the 21st century | [warp.dev](https://www.warp.dev/) | HOT |
+| **Void** | Open-source Cursor alternative | [voideditor.com](https://voideditor.com/) | NEW |
 
-### ☁️ Enterprise AI Platforms & Cloud Tools
+### Enterprise AI Platforms & Cloud Tools
 
 <div align="center">
 
-[![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Microsoft-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://ai.azure.com/)
-[![Vertex AI](https://img.shields.io/badge/Vertex_AI-Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Microsoft-00f0ff?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://ai.azure.com/)
+[![Vertex AI](https://img.shields.io/badge/Vertex_AI-Google_Cloud-00ff88?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-AWS-ff6600?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
 
 </div>
 
 | Platform | Provider | Description | Link |
 |----------|----------|-------------|------|
-| **Azure AI Foundry** | Microsoft | Unified AI development platform | [![Azure](https://img.shields.io/badge/Azure-AI_Foundry-0078D4?logo=microsoft-azure)](https://ai.azure.com/) |
-| **Azure OpenAI Service** | Microsoft | OpenAI models on Azure | [![Azure OpenAI](https://img.shields.io/badge/Azure-OpenAI-0078D4?logo=microsoft-azure)](https://azure.microsoft.com/products/ai-services/openai-service) |
-| **GitHub Copilot for Business** | GitHub/Microsoft | Enterprise AI coding | [![Enterprise](https://img.shields.io/badge/Copilot-Enterprise-181717?logo=github)](https://github.com/features/copilot/business) |
-| **Google Vertex AI** | Google | Enterprise ML platform | [![Vertex](https://img.shields.io/badge/Vertex-AI-4285F4?logo=google-cloud)](https://cloud.google.com/vertex-ai) |
-| **Google AI Studio** | Google | Gemini model playground | [![AI Studio](https://img.shields.io/badge/AI-Studio-4285F4?logo=google)](https://aistudio.google.com/) |
-| **Firebase Genkit** | Google | AI-powered app framework | [![Genkit](https://img.shields.io/badge/Firebase-Genkit-FFCA28?logo=firebase)](https://firebase.google.com/docs/genkit) |
-| **Amazon Bedrock** | AWS | Foundation models as a service | [![Bedrock](https://img.shields.io/badge/Amazon-Bedrock-FF9900?logo=amazon-aws)](https://aws.amazon.com/bedrock/) |
-| **Amazon Q Developer** | AWS | AI coding companion | [![Q Developer](https://img.shields.io/badge/Amazon-Q_Developer-FF9900?logo=amazon-aws)](https://aws.amazon.com/q/developer/) |
+| **Azure AI Foundry** | Microsoft | Unified AI development platform | [![Azure](https://img.shields.io/badge/Azure-AI_Foundry-00f0ff?logo=microsoft-azure)](https://ai.azure.com/) |
+| **Azure OpenAI Service** | Microsoft | OpenAI models on Azure | [![Azure OpenAI](https://img.shields.io/badge/Azure-OpenAI-00f0ff?logo=microsoft-azure)](https://azure.microsoft.com/products/ai-services/openai-service) |
+| **GitHub Copilot for Business** | GitHub/Microsoft | Enterprise AI coding | [![Enterprise](https://img.shields.io/badge/Copilot-Enterprise-ff00ff?logo=github)](https://github.com/features/copilot/business) |
+| **Google Vertex AI** | Google | Enterprise ML platform | [![Vertex](https://img.shields.io/badge/Vertex-AI-00ff88?logo=google-cloud)](https://cloud.google.com/vertex-ai) |
+| **Google AI Studio** | Google | Gemini model playground | [![AI Studio](https://img.shields.io/badge/AI-Studio-00ff88?logo=google)](https://aistudio.google.com/) |
+| **Firebase Genkit** | Google | AI-powered app framework | [![Genkit](https://img.shields.io/badge/Firebase-Genkit-ffcc00?logo=firebase)](https://firebase.google.com/docs/genkit) |
+| **Amazon Bedrock** | AWS | Foundation models as a service | [![Bedrock](https://img.shields.io/badge/Amazon-Bedrock-ff6600?logo=amazon-aws)](https://aws.amazon.com/bedrock/) |
+| **Amazon Q Developer** | AWS | AI coding companion | [![Q Developer](https://img.shields.io/badge/Amazon-Q_Developer-ff6600?logo=amazon-aws)](https://aws.amazon.com/q/developer/) |
 
-### 🔥 Google Cloud & Firebase Ecosystem
+### Google Cloud & Firebase Ecosystem
 
 <div align="center">
 
-[![Firebase](https://img.shields.io/badge/Firebase-Cloud_Platform-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Firestore](https://img.shields.io/badge/Cloud_Firestore-NoSQL_Database-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
-[![Gemini](https://img.shields.io/badge/Gemini_API-AI_Model-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
-[![AntiGravity](https://img.shields.io/badge/AntiGravity-Gemini_3_IDE-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
+[![Firebase](https://img.shields.io/badge/Firebase-Cloud_Platform-ffcc00?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Firestore](https://img.shields.io/badge/Cloud_Firestore-NoSQL_Database-ffcc00?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
+[![Gemini](https://img.shields.io/badge/Gemini_API-AI_Model-00ff88?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![AntiGravity](https://img.shields.io/badge/AntiGravity-Gemini_3_IDE-aa00ff?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
 
 </div>
 
 | Service | Description | Link |
 |---------|-------------|------|
-| **Google AntiGravity IDE** | Gemini 3 powered development environment | [![AntiGravity](https://img.shields.io/badge/AntiGravity-IDE-4285F4?logo=google)](https://antigravity.google/) |
-| **Cloud Firestore** | Flexible, scalable NoSQL cloud database | [![Firestore](https://img.shields.io/badge/Cloud-Firestore-FFCA28?logo=firebase)](https://firebase.google.com/docs/firestore) |
-| **Firebase Realtime DB** | Store and sync data in real-time | [![Realtime](https://img.shields.io/badge/Realtime-Database-FFCA28?logo=firebase)](https://firebase.google.com/docs/database) |
-| **Firebase Authentication** | Drop-in auth solution | [![Auth](https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase)](https://firebase.google.com/docs/auth) |
-| **Firebase Hosting** | Fast, secure web hosting | [![Hosting](https://img.shields.io/badge/Firebase-Hosting-FFCA28?logo=firebase)](https://firebase.google.com/docs/hosting) |
-| **Firebase Functions** | Serverless backend functions | [![Functions](https://img.shields.io/badge/Cloud-Functions-FFCA28?logo=firebase)](https://firebase.google.com/docs/functions) |
-| **Firebase Extensions** | Pre-built solutions | [![Extensions](https://img.shields.io/badge/Firebase-Extensions-FFCA28?logo=firebase)](https://firebase.google.com/docs/extensions) |
-| **Gemini API** | Google's most capable AI model | [![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=google)](https://ai.google.dev/) |
-| **Google IDX** | AI-powered cloud workspace | [![IDX](https://img.shields.io/badge/Project-IDX-4285F4?logo=google)](https://idx.google.com/) |
+| **Google AntiGravity IDE** | Gemini 3 powered development environment | [![AntiGravity](https://img.shields.io/badge/AntiGravity-IDE-aa00ff?logo=google)](https://antigravity.google/) |
+| **Cloud Firestore** | Flexible, scalable NoSQL cloud database | [![Firestore](https://img.shields.io/badge/Cloud-Firestore-ffcc00?logo=firebase)](https://firebase.google.com/docs/firestore) |
+| **Firebase Realtime DB** | Store and sync data in real-time | [![Realtime](https://img.shields.io/badge/Realtime-Database-ffcc00?logo=firebase)](https://firebase.google.com/docs/database) |
+| **Firebase Authentication** | Drop-in auth solution | [![Auth](https://img.shields.io/badge/Firebase-Auth-ffcc00?logo=firebase)](https://firebase.google.com/docs/auth) |
+| **Firebase Hosting** | Fast, secure web hosting | [![Hosting](https://img.shields.io/badge/Firebase-Hosting-ffcc00?logo=firebase)](https://firebase.google.com/docs/hosting) |
+| **Firebase Functions** | Serverless backend functions | [![Functions](https://img.shields.io/badge/Cloud-Functions-ffcc00?logo=firebase)](https://firebase.google.com/docs/functions) |
+| **Firebase Extensions** | Pre-built solutions | [![Extensions](https://img.shields.io/badge/Firebase-Extensions-ffcc00?logo=firebase)](https://firebase.google.com/docs/extensions) |
+| **Gemini API** | Google's most capable AI model | [![Gemini](https://img.shields.io/badge/Gemini-API-00ff88?logo=google)](https://ai.google.dev/) |
+| **Google IDX** | AI-powered cloud workspace | [![IDX](https://img.shields.io/badge/Project-IDX-00ff88?logo=google)](https://idx.google.com/) |
 
-### 🦙 Local AI & Self-Hosted Solutions
+### Local AI & Self-Hosted Solutions
 
 <div align="center">
 
-[![Ollama](https://img.shields.io/badge/Ollama-Run_LLMs_Locally-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
-[![Open WebUI](https://img.shields.io/badge/Open_WebUI-Chat_Interface-4A90E2?style=for-the-badge)](https://openwebui.com/)
-[![LM Studio](https://img.shields.io/badge/LM_Studio-Desktop_LLMs-FF6B6B?style=for-the-badge)](https://lmstudio.ai/)
+[![Ollama](https://img.shields.io/badge/Ollama-Run_LLMs_Locally-ff00ff?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
+[![Open WebUI](https://img.shields.io/badge/Open_WebUI-Chat_Interface-00f0ff?style=for-the-badge)](https://openwebui.com/)
+[![LM Studio](https://img.shields.io/badge/LM_Studio-Desktop_LLMs-ff0066?style=for-the-badge)](https://lmstudio.ai/)
 
 </div>
 
@@ -2234,9 +2234,10 @@ graph TD
 
 ---
 
-## 📈 Project Timeline
+## Project Timeline
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'cScale0': '#00f0ff', 'cScale1': '#ff00ff', 'cScale2': '#00ff88', 'cScale3': '#ffcc00', 'cScale4': '#aa00ff', 'cScale5': '#ff6600'}}}%%
 timeline
     title Omega Tool Kit Evolution
     2024-Q4 : Project Inception
@@ -2261,9 +2262,10 @@ timeline
 
 ---
 
-## 🎯 Feature Matrix
+## Feature Matrix
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'quadrant1Fill': '#0a2a1a', 'quadrant2Fill': '#0a1a2a', 'quadrant3Fill': '#1a0a2a', 'quadrant4Fill': '#2a0a1a', 'quadrant1TextFill': '#00ff88', 'quadrant2TextFill': '#00f0ff', 'quadrant3TextFill': '#aa00ff', 'quadrant4TextFill': '#ff6600', 'quadrantPointFill': '#ff00ff', 'quadrantPointTextFill': '#ffffff', 'quadrantXAxisTextFill': '#00f0ff', 'quadrantYAxisTextFill': '#00f0ff', 'quadrantTitleFill': '#00f0ff'}}}%%
 quadrantChart
     title Tool Categories by Popularity vs Utility
     x-axis Low Utility --> High Utility
@@ -2288,14 +2290,14 @@ quadrantChart
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 <div align="center">
 
 **We welcome contributions from the community!**
 
-[![GitHub Issues](https://img.shields.io/github/issues/SpiralCloudOmega/DevTeam6)](https://github.com/SpiralCloudOmega/DevTeam6/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SpiralCloudOmega/DevTeam6)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=00f0ff)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 
 </div>
 
@@ -2359,7 +2361,7 @@ Special thanks to all the amazing projects and communities that make this toolki
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -2367,17 +2369,17 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-## ⭐ Star History
+## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=SpiralCloudOmega/DevTeam6&type=Date)](https://star-history.com/#SpiralCloudOmega/DevTeam6&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=SpiralCloudOmega/DevTeam6&type=Date&theme=dark)](https://star-history.com/#SpiralCloudOmega/DevTeam6&Date)
 
 ---
 
-**🌀 The Omega Tool Kit - 10x Your AI Development 🚀**
+**THE OMEGA TOOL KIT - 10x YOUR AI DEVELOPMENT**
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,50:ff00ff,100:aa00ff&height=100&section=footer" width="100%"/>
 
-Made with ❤️ by [SpiralCloudOmega](https://github.com/SpiralCloudOmega)
+Made with passion by [SpiralCloudOmega](https://github.com/SpiralCloudOmega)
 
 [![Follow](https://img.shields.io/github/followers/SpiralCloudOmega?label=Follow&style=social)](https://github.com/SpiralCloudOmega)
 
