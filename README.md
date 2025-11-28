@@ -15,6 +15,17 @@
 [![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 [![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![3D Demo](https://img.shields.io/badge/3D_DEMO-LIVE-ff0066?style=for-the-badge&logo=threedotjs&logoColor=white)](https://spiralcloudomega.github.io/DevTeam6/)
+
+---
+
+### 🎮 INTERACTIVE 3D EXPERIENCE
+
+<a href="https://spiralcloudomega.github.io/DevTeam6/">
+  <img src="https://img.shields.io/badge/🚀_LAUNCH_3D_DEMO-00f0ff?style=for-the-badge&logoColor=white" alt="Launch 3D Demo" />
+</a>
+
+*Experience DevTeam6 in immersive 3D - Built with Three.js & React Three Fiber*
 
 ---
 
@@ -24,6 +35,7 @@
 [![Dev Tools](https://img.shields.io/badge/DEV_TOOLS-ff00ff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](#-cliide-tools--ai-coding-assistants)
 [![Cloud](https://img.shields.io/badge/CLOUD-00ff88?style=for-the-badge&logo=googlecloud&logoColor=white)](#-cloud-platforms)
 [![Security](https://img.shields.io/badge/SECURITY-ff0066?style=for-the-badge&logo=hackerone&logoColor=white)](#-security--testing)
+[![3D/WebGL](https://img.shields.io/badge/3D/WebGL-7b2fff?style=for-the-badge&logo=threedotjs&logoColor=white)](#-3dwebgl--interactive-graphics)
 [![Awesome Lists](https://img.shields.io/badge/AWESOME_LISTS-aa00ff?style=for-the-badge&logo=awesome-lists&logoColor=white)](#-awesome-lists-of-awesome-lists)
 [![Learning](https://img.shields.io/badge/LEARNING-ffcc00?style=for-the-badge&logo=udemy&logoColor=white)](#-books--courses)
 
@@ -34,6 +46,7 @@
 ![AI Resources](https://img.shields.io/badge/AI_Resources-500+-00f0ff?style=flat-square)
 ![Dev Tools](https://img.shields.io/badge/Dev_Tools-300+-ff00ff?style=flat-square)
 ![Frameworks](https://img.shields.io/badge/Frameworks-200+-00ff88?style=flat-square)
+![3D/WebGL](https://img.shields.io/badge/3D/WebGL-50+-7b2fff?style=flat-square)
 ![Awesome Lists](https://img.shields.io/badge/Awesome_Lists-300+-ff6600?style=flat-square)
 ![Cheatsheets](https://img.shields.io/badge/Cheatsheets-50+-aa00ff?style=flat-square)
 ![Learning](https://img.shields.io/badge/Learning-150+-ffcc00?style=flat-square)
@@ -946,6 +959,25 @@ graph LR
   - [Asset Creation](#-asset-creation)
   - [Level Design](#-level-design)
   - [Game Analytics](#-game-analytics)
+
+### 🌐 3D/WebGL & Interactive Graphics
+- [3D Libraries](#-3d-libraries)
+  - [Three.js Ecosystem](#-threejs-ecosystem)
+  - [React Three Fiber](#-react-three-fiber)
+  - [Babylon.js](#-babylonjs)
+  - [WebGL/WebGPU](#-webglwebgpu)
+- [AR/VR/XR](#-arvrxr)
+  - [WebXR](#-webxr)
+  - [AR Libraries](#-ar-libraries)
+  - [VR Frameworks](#-vr-frameworks)
+- [Motion & Animation](#-motion--animation)
+  - [Animation Libraries](#-animation-libraries)
+  - [Physics Simulation](#-physics-simulation)
+  - [Scroll Animation](#-scroll-animation)
+- [Creative Coding](#-creative-coding)
+  - [Generative Art](#-generative-art)
+  - [Shaders](#-shaders)
+  - [Procedural Graphics](#-procedural-graphics)
 
 ### 📊 Data Science & ML
 - [Machine Learning](#-machine-learning)
@@ -1931,6 +1963,61 @@ alias ghce='gh copilot explain'
 | [awesome-etl](https://github.com/pawl/awesome-etl) | ETL resources | 3k+ |
 | [awesome-data-engineering](https://github.com/igorbarinov/awesome-data-engineering) | Data engineering resources | 7k+ |
 
+### 🌐 3D/WebGL & Interactive Graphics
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [three.js](https://github.com/mrdoob/three.js) | JavaScript 3D library | 103k+ |
+| [react-three-fiber](https://github.com/pmndrs/react-three-fiber) | React renderer for Three.js | 28k+ |
+| [drei](https://github.com/pmndrs/drei) | Useful helpers for R3F | 9k+ |
+| [babylonjs](https://github.com/BabylonJS/Babylon.js) | Powerful 3D game engine | 23k+ |
+| [A-Frame](https://github.com/aframevr/aframe) | Web VR framework | 16k+ |
+| [model-viewer](https://github.com/google/model-viewer) | 3D model viewer by Google | 7k+ |
+| [spline](https://github.com/splinetool/runtime) | 3D design tool for web | 5k+ |
+| [theatre](https://github.com/theatre-js/theatre) | Animation tooling for Three.js | 12k+ |
+| [leva](https://github.com/pmndrs/leva) | React GUI controls | 5k+ |
+| [r3f-perf](https://github.com/utsuboco/r3f-perf) | Performance monitoring for R3F | 1k+ |
+
+### 🕶️ AR/VR/XR & Immersive Web
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [AR.js](https://github.com/AR-js-org/AR.js) | AR for the web | 16k+ |
+| [8thwall](https://github.com/nickkraakman/8thwall-ar-course) | WebAR platform resources | 500+ |
+| [react-xr](https://github.com/pmndrs/xr) | VR/AR for React Three Fiber | 2k+ |
+| [webxr](https://github.com/nickkraakman/webxr-projects) | WebXR projects | 300+ |
+| [aframe-extras](https://github.com/n5ro/aframe-extras) | A-Frame components | 2k+ |
+| [mind-ar-js](https://github.com/hiukim/mind-ar-js) | Web AR with image tracking | 2k+ |
+| [spatial-audio](https://github.com/mrdoob/three.js/tree/dev/examples/jsm/objects) | Three.js spatial audio | - |
+
+### 🎬 Motion & Animation Libraries
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [gsap](https://github.com/greensock/GSAP) | Professional animation library | 20k+ |
+| [framer-motion](https://github.com/framer/motion) | React animation library | 25k+ |
+| [lottie-web](https://github.com/airbnb/lottie-web) | After Effects animations | 31k+ |
+| [anime.js](https://github.com/juliangarnier/anime) | Lightweight animation engine | 51k+ |
+| [popmotion](https://github.com/Popmotion/popmotion) | Functional animation library | 20k+ |
+| [velocity](https://github.com/julianshapiro/velocity) | Accelerated animation | 17k+ |
+| [motion-canvas](https://github.com/motion-canvas/motion-canvas) | Programmatic animations | 16k+ |
+| [rive](https://github.com/rive-app/rive-wasm) | Interactive animations | 4k+ |
+| [scroll-trigger](https://github.com/greensock/GSAP) | GSAP scroll animations | - |
+
+### 🎨 Creative Coding & Shaders
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [p5.js](https://github.com/processing/p5.js) | Creative coding library | 22k+ |
+| [paper.js](https://github.com/paperjs/paper.js) | Vector graphics scripting | 14k+ |
+| [pixi.js](https://github.com/pixijs/pixijs) | 2D WebGL renderer | 44k+ |
+| [fabric.js](https://github.com/fabricjs/fabric.js) | Canvas library | 29k+ |
+| [shaderpark](https://github.com/shader-park/shader-park-core) | Shader creation toolkit | 800+ |
+| [glsl-sandbox](https://github.com/mrdoob/glsl-sandbox) | GLSL fragment shader editor | 2k+ |
+| [shadertoy](https://www.shadertoy.com) | Shader creation platform | - |
+| [openframeworks](https://github.com/openframeworks/openFrameworks) | C++ creative coding | 10k+ |
+| [nannou](https://github.com/nannou-org/nannou) | Rust creative coding | 5k+ |
+
 ### 🎮 Gaming & Entertainment
 
 | Repository | Description | Stars |
@@ -2651,6 +2738,7 @@ const { text } = await generateText({
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| **v3.0** | Nov 2025 | Interactive 3D Demo (Three.js/R3F), AR/VR/XR section, GitHub Pages deployment |
 | **v2.6** | Nov 2025 | Updated to GPT-5.1, Claude Opus 4.5, Gemini 3, GitHub Action automation |
 | **v2.5** | Nov 2025 | Tech Stack Comparisons, Learning Paths, API Reference |
 | **v2.4** | Nov 2025 | Animated header, Roadmap, What's Hot section |
@@ -2664,14 +2752,16 @@ const { text } = await generateText({
 ### Recent Updates
 
 ```diff
-+ Added: GitHub Action for bi-monthly auto-updates
-+ Added: More rotating text animations
-+ Added: Quantum gradient color schemes
-+ Updated: AI models to GPT-5.1, Claude Opus 4.5, Gemini 3
-+ Updated: Header to display "DevTeam6" properly
-+ Updated: All code snippets with latest model versions
-+ Improved: Footer animations with more gradient stops
-+ Improved: Section headers with multiple rotating lines
++ Added: Interactive 3D Demo with Three.js & React Three Fiber
++ Added: GitHub Pages deployment for 3D experience
++ Added: 3D/WebGL section with 50+ resources
++ Added: AR/VR/XR resources section
++ Added: Motion & Animation libraries section
++ Added: Creative Coding & Shaders section
++ Added: Devcontainer for one-click development
++ Added: 3D Demo quick navigation button
++ Updated: Resource counter with 3D/WebGL badge
++ Improved: Decoupled Dual-Layer architecture
 ```
 
 </div>
