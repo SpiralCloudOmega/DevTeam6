@@ -28,43 +28,43 @@ flowchart TB
         direction LR
         A1[/"📦 Package Managers<br/>npm • pip • cargo"/]
         A2[/"🔧 Build Tools<br/>Vite • Webpack • esbuild"/]
-        A3[/"📋 Version Control<br/>Git • GitHub CLI"/]
+        A3[/"📋 Version Control<br/>Git • GitHub CLI • Copilot CLI"/]
     end
     
     subgraph LAYER2["🤖 PHASE 2: AI CORE"]
         direction LR
         B1[/"🧠 OpenAI<br/>GPT • Whisper • DALL-E"/]
-        B2[/"🔵 Google AI<br/>Gemini • TensorFlow • JAX"/]
+        B2[/"🔵 Google AI<br/>Gemini • Vertex AI • Genkit"/]
         B3[/"🟠 Anthropic<br/>Claude • Claude Code"/]
-        B4[/"⚛️ Quantum<br/>Qiskit • Cirq • PennyLane"/]
+        B4[/"🔷 Microsoft<br/>Azure AI Foundry • Copilot"/]
     end
     
     subgraph LAYER3["🖥️ PHASE 3: DEVELOPMENT"]
         direction LR
-        C1[/"💻 IDEs<br/>Cursor • VS Code • Zed"/]
-        C2[/"🛠️ CLI Tools<br/>Warp • GitHub CLI • Fig"/]
-        C3[/"🔌 Extensions<br/>Copilot • Codeium • Tabnine"/]
+        C1[/"💻 IDEs<br/>Cursor • VS Code • Zed • Void"/]
+        C2[/"🛠️ CLI Tools<br/>Warp • Copilot CLI • Fig"/]
+        C3[/"🔌 Extensions<br/>Copilot • Codeium • Continue"/]
     end
     
-    subgraph LAYER4["🎨 PHASE 4: CREATIVE"]
+    subgraph LAYER4["🦙 PHASE 4: LOCAL AI"]
         direction LR
-        D1[/"🎵 Audio<br/>Whisper • Bark • Audacity"/]
-        D2[/"🎬 Video<br/>FFmpeg • OBS • Kdenlive"/]
-        D3[/"🖼️ Image<br/>Stable Diffusion • DALL-E"/]
+        L1[/"🏠 Ollama<br/>Run LLMs Locally"/]
+        L2[/"🌐 Open WebUI<br/>Chat Interface"/]
+        L3[/"📦 Models<br/>Llama • Mistral • Phi"/]
     end
     
-    subgraph LAYER5["📚 PHASE 5: KNOWLEDGE"]
+    subgraph LAYER5["🔥 PHASE 5: FIREBASE & CLOUD"]
         direction LR
-        E1[/"⭐ Awesome Lists<br/>300+ Curated"/]
-        E2[/"📋 Cheatsheets<br/>50+ Guides"/]
-        E3[/"🔬 Research<br/>AlphaXiv • arXiv"/]
+        F1[/"📊 Firestore<br/>NoSQL Database"/]
+        F2[/"☁️ Cloud Functions<br/>Serverless Backend"/]
+        F3[/"🔐 Auth & Hosting<br/>Firebase Services"/]
     end
     
     subgraph LAYER6["🚀 PHASE 6: PRODUCTION"]
         direction LR
-        F1[/"☁️ Cloud Deploy<br/>AWS • GCP • Azure"/]
-        F2[/"🐳 Containers<br/>Docker • Kubernetes"/]
-        F3[/"📊 Monitoring<br/>Grafana • Prometheus"/]
+        P1[/"☁️ Cloud Deploy<br/>AWS • GCP • Azure"/]
+        P2[/"🐳 Containers<br/>Docker • Kubernetes"/]
+        P3[/"📊 Monitoring<br/>Grafana • Prometheus"/]
     end
     
     LAYER1 --> LAYER2
@@ -76,8 +76,8 @@ flowchart TB
     style LAYER1 fill:#0d1117,stroke:#00ffff,stroke-width:3px,color:#00ffff
     style LAYER2 fill:#0d1117,stroke:#ff00ff,stroke-width:3px,color:#ff00ff
     style LAYER3 fill:#0d1117,stroke:#00ff00,stroke-width:3px,color:#00ff00
-    style LAYER4 fill:#0d1117,stroke:#ff6600,stroke-width:3px,color:#ff6600
-    style LAYER5 fill:#0d1117,stroke:#ffff00,stroke-width:3px,color:#ffff00
+    style LAYER4 fill:#0d1117,stroke:#ffaa00,stroke-width:3px,color:#ffaa00
+    style LAYER5 fill:#0d1117,stroke:#FFCA28,stroke-width:3px,color:#FFCA28
     style LAYER6 fill:#0d1117,stroke:#00ffff,stroke-width:3px,color:#00ffff
 ```
 
@@ -100,18 +100,22 @@ mindmap
       🔵 Google AI
         Gemini 2.0
         Gemini CLI
+        Vertex AI
+        AI Studio
+        Project IDX
+        Firebase Genkit
         TensorFlow
         JAX/Flax
-        AlphaFold
-        Gemma
       🟠 Anthropic
         Claude 3.5
         Claude Code
         Claude Skills
         MCP SDK
       🔷 Microsoft
-        Copilot
-        Azure AI
+        Azure AI Foundry
+        GitHub Copilot
+        Copilot CLI
+        Azure OpenAI
         Phi Models
       ⚛️ Quantum AI
         Qiskit
@@ -124,9 +128,11 @@ mindmap
         VS Code
         Zed
         Windsurf
+        Void
         Neovim
       🛠️ CLI
         GitHub CLI
+        Copilot CLI
         Warp
         Fig
         Ollama
@@ -136,6 +142,34 @@ mindmap
         Codeium
         Tabnine
         Continue
+    🦙 LOCAL AI
+      🏠 Self-Hosted
+        Ollama
+        Open WebUI
+        LocalAI
+        GPT4All
+        Jan
+        AnythingLLM
+      📦 Models
+        Llama 3
+        Mistral
+        CodeLlama
+        Phi
+        Gemma
+    🔥 FIREBASE
+      📊 Databases
+        Firestore
+        Realtime DB
+      🔐 Auth
+        Firebase Auth
+        Identity Platform
+      ☁️ Backend
+        Cloud Functions
+        Hosting
+        Extensions
+      🤖 AI
+        Genkit
+        Vertex AI
     🎨 CREATIVE
       🎵 Audio
         Whisper
@@ -274,37 +308,37 @@ graph LR
     A[🏠 Start] --> B{What do you need?}
     B --> C[🤖 AI Development]
     B --> D[🖥️ IDE/CLI Tools]
-    B --> E[🎨 Creative Tools]
-    B --> F[📚 Learning]
-    B --> G[⚛️ Quantum]
+    B --> E[🦙 Local AI]
+    B --> F[🔥 Firebase/Cloud]
+    B --> G[📚 Learning]
     
     C --> C1[OpenAI Repos]
     C --> C2[Google AI]
     C --> C3[AI Agents]
     
     D --> D1[Cursor/VS Code]
-    D --> D2[Terminal Tools]
+    D --> D2[Copilot CLI]
     D --> D3[Extensions]
     
-    E --> E1[Audio Production]
-    E --> E2[Video Editing]
-    E --> E3[Streaming]
+    E --> E1[Ollama]
+    E --> E2[Open WebUI]
+    E --> E3[LM Studio]
     
-    F --> F1[Awesome Lists]
-    F --> F2[Cheatsheets]
-    F --> F3[Tutorials]
+    F --> F1[Firestore]
+    F --> F2[Vertex AI]
+    F --> F3[Azure AI Foundry]
     
-    G --> G1[Qiskit]
-    G --> G2[Cirq]
-    G --> G3[PennyLane]
+    G --> G1[Awesome Lists]
+    G --> G2[Cheatsheets]
+    G --> G3[Tutorials]
     
     style A fill:#10a37f,stroke:#00ffff,stroke-width:2px,color:#fff
     style B fill:#6366f1,stroke:#ff00ff,stroke-width:2px,color:#fff
     style C fill:#10a37f,stroke:#00ffff,stroke-width:2px,color:#fff
     style D fill:#007acc,stroke:#00ffff,stroke-width:2px,color:#fff
-    style E fill:#f43f5e,stroke:#00ffff,stroke-width:2px,color:#fff
-    style F fill:#f59e0b,stroke:#00ffff,stroke-width:2px,color:#fff
-    style G fill:#9945ff,stroke:#ff00ff,stroke-width:2px,color:#fff
+    style E fill:#000000,stroke:#00ffff,stroke-width:2px,color:#fff
+    style F fill:#FFCA28,stroke:#00ffff,stroke-width:2px,color:#000
+    style G fill:#f59e0b,stroke:#00ffff,stroke-width:2px,color:#fff
 ```
 
 ---
@@ -388,6 +422,9 @@ graph LR
 ### 🖥️ Development Tools
 - [CLI/IDE Tools & AI Coding Assistants](#️-cliide-tools--ai-coding-assistants)
   - [Major Players - AI-Powered IDEs](#-the-major-players---ai-powered-ides--clis)
+  - [Enterprise AI Platforms & Cloud Tools](#️-enterprise-ai-platforms--cloud-tools)
+  - [Google Cloud & Firebase Ecosystem](#-google-cloud--firebase-ecosystem)
+  - [Local AI & Self-Hosted Solutions](#-local-ai--self-hosted-solutions)
   - [AI Coding Assistants & Extensions](#-ai-coding-assistants--extensions)
   - [CLI Tools & Terminal Assistants](#️-cli-tools--terminal-assistants)
   - [Awesome AI Coding Resources](#-awesome-ai-coding-resources)
@@ -722,18 +759,145 @@ graph LR
 
 ### 🔥 The Major Players - AI-Powered IDEs & CLIs
 
+<div align="center">
+
+[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-00D9FF?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/)
+[![Copilot](https://img.shields.io/badge/GitHub_Copilot-AI_Pair_Programmer-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-D97706?style=for-the-badge)](https://www.anthropic.com/claude-code)
+[![Gemini](https://img.shields.io/badge/Gemini_CLI-Google_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://github.com/google-gemini/gemini-cli)
+
+</div>
+
 | Tool | Description | Link | Stars |
 |------|-------------|------|-------|
 | **Cursor** | The AI-first code editor built on VS Code | [cursor.com](https://cursor.com/) | 🔥 Hot |
 | **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude-code) | 🔥 Hot |
 | **GitHub Copilot** | AI pair programmer by GitHub/OpenAI | [github.com/features/copilot](https://github.com/features/copilot) | 🔥 Hot |
+| **GitHub Copilot CLI** | AI in your terminal for shell commands | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) | 🔥 Hot |
 | **OpenAI Codex CLI** | Lightweight coding agent in terminal | [openai/codex](https://github.com/openai/codex) | 51k+ |
 | **Google Gemini CLI** | Google's AI in your terminal | [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 🔥 New |
 | **Windsurf** | Codeium's AI-native IDE | [codeium.com/windsurf](https://codeium.com/windsurf) | 🔥 Hot |
 | **Zed** | High-performance multiplayer code editor | [zed.dev](https://zed.dev/) | 55k+ |
 | **Warp** | The terminal for the 21st century | [warp.dev](https://www.warp.dev/) | 🔥 Hot |
+| **Void** | Open-source Cursor alternative | [voideditor.com](https://voideditor.com/) | 🆕 New |
+
+### ☁️ Enterprise AI Platforms & Cloud Tools
+
+<div align="center">
+
+[![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Microsoft-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://ai.azure.com/)
+[![Vertex AI](https://img.shields.io/badge/Vertex_AI-Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
+
+</div>
+
+| Platform | Provider | Description | Link |
+|----------|----------|-------------|------|
+| **Azure AI Foundry** | Microsoft | Unified AI development platform | [![Azure](https://img.shields.io/badge/Azure-AI_Foundry-0078D4?logo=microsoft-azure)](https://ai.azure.com/) |
+| **Azure OpenAI Service** | Microsoft | OpenAI models on Azure | [![Azure OpenAI](https://img.shields.io/badge/Azure-OpenAI-0078D4?logo=microsoft-azure)](https://azure.microsoft.com/products/ai-services/openai-service) |
+| **GitHub Copilot for Business** | GitHub/Microsoft | Enterprise AI coding | [![Enterprise](https://img.shields.io/badge/Copilot-Enterprise-181717?logo=github)](https://github.com/features/copilot/business) |
+| **Google Vertex AI** | Google | Enterprise ML platform | [![Vertex](https://img.shields.io/badge/Vertex-AI-4285F4?logo=google-cloud)](https://cloud.google.com/vertex-ai) |
+| **Google AI Studio** | Google | Gemini model playground | [![AI Studio](https://img.shields.io/badge/AI-Studio-4285F4?logo=google)](https://aistudio.google.com/) |
+| **Firebase Genkit** | Google | AI-powered app framework | [![Genkit](https://img.shields.io/badge/Firebase-Genkit-FFCA28?logo=firebase)](https://firebase.google.com/docs/genkit) |
+| **Amazon Bedrock** | AWS | Foundation models as a service | [![Bedrock](https://img.shields.io/badge/Amazon-Bedrock-FF9900?logo=amazon-aws)](https://aws.amazon.com/bedrock/) |
+| **Amazon Q Developer** | AWS | AI coding companion | [![Q Developer](https://img.shields.io/badge/Amazon-Q_Developer-FF9900?logo=amazon-aws)](https://aws.amazon.com/q/developer/) |
+
+### 🔥 Google Cloud & Firebase Ecosystem
+
+<div align="center">
+
+[![Firebase](https://img.shields.io/badge/Firebase-Cloud_Platform-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Firestore](https://img.shields.io/badge/Cloud_Firestore-NoSQL_Database-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
+[![Gemini](https://img.shields.io/badge/Gemini_API-AI_Model-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+
+</div>
+
+| Service | Description | Link |
+|---------|-------------|------|
+| **Cloud Firestore** | Flexible, scalable NoSQL cloud database | [![Firestore](https://img.shields.io/badge/Cloud-Firestore-FFCA28?logo=firebase)](https://firebase.google.com/docs/firestore) |
+| **Firebase Realtime DB** | Store and sync data in real-time | [![Realtime](https://img.shields.io/badge/Realtime-Database-FFCA28?logo=firebase)](https://firebase.google.com/docs/database) |
+| **Firebase Authentication** | Drop-in auth solution | [![Auth](https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase)](https://firebase.google.com/docs/auth) |
+| **Firebase Hosting** | Fast, secure web hosting | [![Hosting](https://img.shields.io/badge/Firebase-Hosting-FFCA28?logo=firebase)](https://firebase.google.com/docs/hosting) |
+| **Firebase Functions** | Serverless backend functions | [![Functions](https://img.shields.io/badge/Cloud-Functions-FFCA28?logo=firebase)](https://firebase.google.com/docs/functions) |
+| **Firebase Extensions** | Pre-built solutions | [![Extensions](https://img.shields.io/badge/Firebase-Extensions-FFCA28?logo=firebase)](https://firebase.google.com/docs/extensions) |
+| **Gemini API** | Google's most capable AI model | [![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=google)](https://ai.google.dev/) |
+| **Google IDX** | AI-powered cloud workspace | [![IDX](https://img.shields.io/badge/Project-IDX-4285F4?logo=google)](https://idx.google.com/) |
+
+### 🦙 Local AI & Self-Hosted Solutions
+
+<div align="center">
+
+[![Ollama](https://img.shields.io/badge/Ollama-Run_LLMs_Locally-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
+[![Open WebUI](https://img.shields.io/badge/Open_WebUI-Chat_Interface-4A90E2?style=for-the-badge)](https://openwebui.com/)
+[![LM Studio](https://img.shields.io/badge/LM_Studio-Desktop_LLMs-FF6B6B?style=for-the-badge)](https://lmstudio.ai/)
+
+</div>
+
+| Tool | Description | Link | Stars |
+|------|-------------|------|-------|
+| **Ollama** | Run LLMs locally with one command | [![Ollama](https://img.shields.io/badge/GitHub-ollama/ollama-000000?logo=github)](https://github.com/ollama/ollama) | 130k+ |
+| **Open WebUI** | User-friendly WebUI for LLMs (fka Ollama WebUI) | [![Open WebUI](https://img.shields.io/badge/GitHub-open--webui-4A90E2?logo=github)](https://github.com/open-webui/open-webui) | 90k+ |
+| **LM Studio** | Discover, download, and run local LLMs | [![LM Studio](https://img.shields.io/badge/Website-lmstudio.ai-FF6B6B)](https://lmstudio.ai/) | 🔥 Hot |
+| **LocalAI** | OpenAI-compatible local inference | [![LocalAI](https://img.shields.io/badge/GitHub-LocalAI-22c55e?logo=github)](https://github.com/mudler/LocalAI) | 35k+ |
+| **GPT4All** | Open-source LLM ecosystem | [![GPT4All](https://img.shields.io/badge/GitHub-GPT4All-blue?logo=github)](https://github.com/nomic-ai/gpt4all) | 74k+ |
+| **Jan** | Offline AI assistant | [![Jan](https://img.shields.io/badge/GitHub-Jan-purple?logo=github)](https://github.com/janhq/jan) | 30k+ |
+| **Msty** | Beautiful local AI chat interface | [![Msty](https://img.shields.io/badge/Website-Msty-pink)](https://msty.app/) | 🆕 New |
+| **AnythingLLM** | All-in-one AI desktop app | [![AnythingLLM](https://img.shields.io/badge/GitHub-AnythingLLM-orange?logo=github)](https://github.com/Mintplex-Labs/anything-llm) | 45k+ |
+| **Ollama CLI** | Command-line interface for Ollama | [![CLI](https://img.shields.io/badge/Docs-CLI_Reference-000000)](https://github.com/ollama/ollama#cli-reference) | - |
+
+#### 🚀 Quick Start: Ollama + Open WebUI
+
+```bash
+# Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Pull a model
+ollama pull llama3.2
+
+# Run Open WebUI with Docker (connects to Ollama automatically)
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway \
+  -v open-webui:/app/backend/data --name open-webui --restart always \
+  ghcr.io/open-webui/open-webui:main
+
+# Access at http://localhost:3000
+```
+
+#### 🔧 Ollama CLI Reference
+
+```bash
+# List available models
+ollama list
+
+# Pull a model
+ollama pull llama3.2
+ollama pull codellama
+ollama pull mistral
+
+# Run a model interactively
+ollama run llama3.2
+
+# Run with a prompt
+ollama run llama3.2 "Explain Docker containers"
+
+# Create a custom model
+ollama create mymodel -f Modelfile
+
+# API access
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama3.2",
+  "prompt": "Hello world"
+}'
+```
 
 ### 🤖 AI Coding Assistants & Extensions
+
+<div align="center">
+
+[![Codeium](https://img.shields.io/badge/Codeium-Free_AI_Code-09B6A2?style=for-the-badge)](https://codeium.com/)
+[![Tabnine](https://img.shields.io/badge/Tabnine-AI_Assistant-6B45BC?style=for-the-badge)](https://www.tabnine.com/)
+[![Continue](https://img.shields.io/badge/Continue-Open_Source-000000?style=for-the-badge)](https://continue.dev/)
+
+</div>
 
 | Tool | Description | Link |
 |------|-------------|------|
@@ -745,18 +909,53 @@ graph LR
 | **Continue** | Open-source AI code assistant | [continue.dev](https://continue.dev/) |
 | **Supermaven** | Fastest code completion | [supermaven.com](https://supermaven.com/) |
 | **Pieces** | AI workflow copilot | [pieces.app](https://pieces.app/) |
+| **Qodo (formerly Codium)** | AI code integrity tool | [qodo.ai](https://www.qodo.ai/) |
+| **Blackbox AI** | AI code generation & chat | [blackbox.ai](https://www.blackbox.ai/) |
 
 ### 🛠️ CLI Tools & Terminal Assistants
+
+<div align="center">
+
+[![GitHub CLI](https://img.shields.io/badge/GitHub_CLI-gh-181717?style=for-the-badge&logo=github&logoColor=white)](https://cli.github.com/)
+[![Warp](https://img.shields.io/badge/Warp-Terminal-01A4FF?style=for-the-badge)](https://www.warp.dev/)
+[![ShellGPT](https://img.shields.io/badge/ShellGPT-AI_Shell-10a37f?style=for-the-badge)](https://github.com/TheR1D/shell_gpt)
+
+</div>
 
 | Tool | Description | Link |
 |------|-------------|------|
 | **GitHub CLI** | GitHub from the command line | [cli.github.com](https://cli.github.com/) |
+| **GitHub Copilot CLI** | AI-powered shell command suggestions | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) |
 | **Warp AI** | AI-powered terminal commands | [warp.dev](https://www.warp.dev/) |
 | **Fig** | Terminal autocomplete & AI | [fig.io](https://fig.io/) |
 | **ShellGPT** | ChatGPT in your terminal | [github.com/TheR1D/shell_gpt](https://github.com/TheR1D/shell_gpt) |
 | **AI Shell** | AI-powered shell assistant | [github.com/BuilderIO/ai-shell](https://github.com/BuilderIO/ai-shell) |
 | **Ollama** | Run LLMs locally | [ollama.com](https://ollama.com/) |
 | **LM Studio** | Discover & run local LLMs | [lmstudio.ai](https://lmstudio.ai/) |
+| **Aichat** | All-in-one AI CLI tool | [github.com/sigoden/aichat](https://github.com/sigoden/aichat) |
+| **Mods** | AI on the command line | [github.com/charmbracelet/mods](https://github.com/charmbracelet/mods) |
+
+#### 💡 GitHub Copilot CLI Quick Start
+
+```bash
+# Install GitHub CLI if not already installed
+brew install gh  # macOS
+# or: winget install GitHub.cli  # Windows
+
+# Install Copilot CLI extension
+gh extension install github/gh-copilot
+
+# Authenticate
+gh auth login
+
+# Use Copilot in your terminal
+gh copilot suggest "find all .js files modified in the last week"
+gh copilot explain "git rebase -i HEAD~5"
+
+# Aliases for quick access
+alias ghcs='gh copilot suggest'
+alias ghce='gh copilot explain'
+```
 
 ### 🎯 Awesome AI Coding Resources
 
@@ -1683,12 +1882,28 @@ This toolkit is compatible with Model Context Protocol (MCP) servers:
 
 ### 🖥️ Local LLM Tools
 
+> **🦙 Run AI Models Locally - Privacy-First, No API Required**
+
+<div align="center">
+
+[![Ollama](https://img.shields.io/badge/Ollama-Run_LLMs-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
+[![Open WebUI](https://img.shields.io/badge/Open_WebUI-Interface-4A90E2?style=for-the-badge)](https://openwebui.com/)
+[![LM Studio](https://img.shields.io/badge/LM_Studio-Desktop-FF6B6B?style=for-the-badge)](https://lmstudio.ai/)
+
+</div>
+
 | Tool | Description | Link |
 |------|-------------|------|
-| Ollama | Run LLMs locally | [ollama/ollama](https://github.com/ollama/ollama) |
-| LM Studio | Discover and run local LLMs | [lmstudio](https://lmstudio.ai/) |
+| Ollama | Run LLMs locally with one command | [ollama/ollama](https://github.com/ollama/ollama) |
+| Open WebUI | Feature-rich WebUI for LLMs (Ollama compatible) | [open-webui/open-webui](https://github.com/open-webui/open-webui) |
+| LM Studio | Discover and run local LLMs with GUI | [lmstudio](https://lmstudio.ai/) |
 | GPT4All | Open-source LLM ecosystem | [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all) |
 | LocalAI | OpenAI-compatible local inference | [mudler/LocalAI](https://github.com/mudler/LocalAI) |
+| Jan | Offline AI assistant with beautiful UI | [janhq/jan](https://github.com/janhq/jan) |
+| AnythingLLM | All-in-one AI desktop app | [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) |
+| Text Generation WebUI | Gradio web UI for LLMs | [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui) |
+| llama.cpp | LLM inference in C/C++ | [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) |
+| Msty | Beautiful local AI chat interface | [msty.app](https://msty.app/) |
 
 ---
 
@@ -1822,7 +2037,22 @@ graph TD
         CURSOR[Cursor IDE]
         VSCODE[VS Code]
         COPILOT[GitHub Copilot]
+        COPILOTCLI[Copilot CLI]
         CODEX[Codex CLI]
+    end
+    
+    subgraph "🦙 Local AI Layer"
+        OLLAMA[Ollama]
+        OPENWEBUI[Open WebUI]
+        LMSTUDIO[LM Studio]
+        LOCALAI[LocalAI]
+    end
+    
+    subgraph "☁️ Cloud Layer"
+        AZURE[Azure AI Foundry]
+        VERTEX[Vertex AI]
+        FIRESTORE[Firestore]
+        BEDROCK[Amazon Bedrock]
     end
     
     subgraph "📦 Framework Layer"
@@ -1832,31 +2062,33 @@ graph TD
         CREWAI[CrewAI]
     end
     
-    subgraph "🎨 Creative Layer"
-        WHISPER[Whisper]
-        DALLE[DALL-E]
-        SD[Stable Diffusion]
-        BARK[Bark TTS]
-    end
-    
     GPT --> COPILOT
+    GPT --> COPILOTCLI
     GPT --> CODEX
     GEMINI --> LANGCHAIN
+    GEMINI --> VERTEX
     CLAUDE --> CURSOR
+    LLAMA --> OLLAMA
     LLAMA --> LLAMAINDEX
+    
+    OLLAMA --> OPENWEBUI
+    OLLAMA --> LMSTUDIO
     
     CURSOR --> LANGCHAIN
     VSCODE --> AUTOGEN
     COPILOT --> CREWAI
     
-    WHISPER --> SD
-    DALLE --> BARK
+    AZURE --> COPILOT
+    VERTEX --> FIRESTORE
     
     style GPT fill:#10a37f,color:#fff
     style GEMINI fill:#4285f4,color:#fff
     style CLAUDE fill:#d97706,color:#fff
     style CURSOR fill:#007acc,color:#fff
     style LANGCHAIN fill:#22c55e,color:#fff
+    style OLLAMA fill:#000000,color:#fff
+    style AZURE fill:#0078D4,color:#fff
+    style FIRESTORE fill:#FFCA28,color:#000
 ```
 
 ---
@@ -1904,8 +2136,12 @@ quadrantChart
     Claude Code: [0.8, 0.75]
     VS Code: [0.95, 0.9]
     Whisper: [0.85, 0.85]
+    Ollama: [0.88, 0.82]
+    Open WebUI: [0.82, 0.7]
+    Firestore: [0.9, 0.88]
+    Azure AI Foundry: [0.85, 0.65]
+    Copilot CLI: [0.78, 0.6]
     LangChain: [0.8, 0.7]
-    Ollama: [0.75, 0.6]
     Zed: [0.7, 0.5]
 ```
 
