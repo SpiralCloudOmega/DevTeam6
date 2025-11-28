@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,50:ff00ff,100:aa00ff&height=200&section=header&text=DEVTEAM6&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=THE%20OMEGA%20TOOL%20KIT&descSize=25&descAlignY=55&descAlign=50" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,25:7b2fff,50:ff00ff,75:ff0066,100:aa00ff&height=200&section=header&text=DevTeam6&fontSize=80&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=THE%20OMEGA%20TOOL%20KIT&descSize=25&descAlignY=55&descAlign=50" width="100%"/>
 
-# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=700&height=50&lines=THE+MASTER+GITHUB+DICTIONARY;1000%2B+CURATED+RESOURCES;AI+%7C+DEVOPS+%7C+CLOUD+%7C+SECURITY;YOUR+AI-READY+TOOLBOX" alt="DevTeam6 - The Omega Tool Kit" />
+# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=2500&pause=800&color=00F0FF&background=0A0A1AFF&vCenter=true&width=750&height=50&lines=DevTeam6+-+THE+MASTER+GITHUB+DICTIONARY;1000%2B+CURATED+RESOURCES;AI+%7C+DEVOPS+%7C+CLOUD+%7C+SECURITY;POWERED+BY+GPT-5.1+%7C+CLAUDE+OPUS+4.5;YOUR+AI-READY+TOOLBOX" alt="DevTeam6 - The Omega Tool Kit" />
 
 > **The Ultimate Software Development Encyclopedia**
 > 
@@ -42,7 +42,7 @@
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FFCC00&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=QUICK+START+GUIDE" alt="Quick Start" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FFCC00&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=QUICK+START+GUIDE;GET+STARTED+NOW;ONE+CLICK+INSTALL" alt="Quick Start" />
 
 <div align="center">
 
@@ -55,7 +55,7 @@
 
 # Ollama - Run LLMs locally
 curl -fsSL https://ollama.com/install.sh | sh
-ollama pull llama3.2
+ollama pull llama3.3
 
 # GitHub Copilot CLI
 gh extension install github/gh-copilot
@@ -64,7 +64,7 @@ gh extension install github/gh-copilot
 npm install -g @openai/codex
 
 # Google Gemini CLI
-npm install -g @anthropic-ai/claude-code
+npm install -g @google/gemini-cli
 ```
 
 <div align="center">
@@ -80,7 +80,7 @@ npm install -g @anthropic-ai/claude-code
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=700&height=45&lines=OMEGA+TOOL+KIT+-+MASTER+INDEX" alt="Omega Tool Kit - Master Index" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=2500&pause=800&color=00F0FF&background=0A0A1AFF&vCenter=true&width=750&height=45&lines=OMEGA+TOOL+KIT+-+MASTER+INDEX;THE+COMPLETE+DEV+UNIVERSE;YOUR+AI-POWERED+TOOLKIT" alt="Omega Tool Kit - Master Index" />
 
 > **The Complete Software Development Universe — From Concept to Deployment**
 > 
@@ -163,18 +163,18 @@ flowchart TB
     LAYER8 -.->|Iterate| LAYER1
     
     style LAYER1 fill:#0a0a1a,stroke:#00f0ff,stroke-width:3px,color:#00f0ff
-    style LAYER2 fill:#0a0a1a,stroke:#00d4aa,stroke-width:3px,color:#00d4aa
+    style LAYER2 fill:#0d0d2a,stroke:#00d4ff,stroke-width:3px,color:#00d4ff
     style LAYER3 fill:#0a0a1a,stroke:#00ff88,stroke-width:3px,color:#00ff88
-    style LAYER4 fill:#0a0a1a,stroke:#ff00ff,stroke-width:3px,color:#ff00ff
-    style LAYER5 fill:#0a0a1a,stroke:#ff6600,stroke-width:3px,color:#ff6600
+    style LAYER4 fill:#1a0a2e,stroke:#ff00ff,stroke-width:3px,color:#ff00ff
+    style LAYER5 fill:#0d0d2a,stroke:#ff6600,stroke-width:3px,color:#ff6600
     style LAYER6 fill:#0a0a1a,stroke:#ffcc00,stroke-width:3px,color:#ffcc00
-    style LAYER7 fill:#0a0a1a,stroke:#ff0066,stroke-width:3px,color:#ff0066
-    style LAYER8 fill:#0a0a1a,stroke:#aa00ff,stroke-width:3px,color:#aa00ff
+    style LAYER7 fill:#1a0a2e,stroke:#ff0066,stroke-width:3px,color:#ff0066
+    style LAYER8 fill:#0d0d2a,stroke:#7b2fff,stroke-width:3px,color:#7b2fff
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF00FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=WHAT'S+HOT+RIGHT+NOW" alt="What's Hot" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF00FF&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=WHAT'S+HOT+RIGHT+NOW;TRENDING+TOOLS;LATEST+%26+GREATEST" alt="What's Hot" />
 
 <div align="center">
 
@@ -200,7 +200,7 @@ flowchart TB
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=TECH+STACK+COMPARISON" alt="Tech Stack Comparison" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=7B2FFF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=TECH+STACK+COMPARISON;TOOL+FACE-OFF;HEAD+TO+HEAD" alt="Tech Stack Comparison" />
 
 <div align="center">
 
@@ -208,9 +208,9 @@ flowchart TB
 
 | Feature | Cursor | GitHub Copilot | Claude Code | Windsurf |
 |---------|:------:|:--------------:|:-----------:|:--------:|
-| **AI Model** | GPT-4/Claude | GPT-4 | Claude 3.5 | Custom |
+| **AI Model** | GPT-5.1/Claude Opus 4.5 | GPT-5.1 | Claude Opus 4.5 | Custom |
 | **IDE Integration** | Standalone | VS Code/JetBrains | Terminal | Standalone |
-| **Context Window** | Large | Medium | Very Large | Medium |
+| **Context Window** | Very Large | Large | Massive | Medium |
 | **Code Generation** | Excellent | Excellent | Excellent | Good |
 | **Multi-file Edit** | Yes | Limited | Yes | Yes |
 | **Chat Interface** | Yes | Yes | Yes | Yes |
@@ -243,7 +243,7 @@ flowchart TB
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=AA00FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=LEARNING+PATHS" alt="Learning Paths" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=AA00FF&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=LEARNING+PATHS;SKILL+ROADMAP;YOUR+JOURNEY" alt="Learning Paths" />
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
@@ -301,7 +301,7 @@ flowchart TD
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF6600&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=KEYBOARD+SHORTCUTS" alt="Keyboard Shortcuts" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF6600&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=KEYBOARD+SHORTCUTS;POWER+USER+TIPS;WORK+FASTER" alt="Keyboard Shortcuts" />
 
 <div align="center">
 
@@ -378,7 +378,7 @@ docker-compose logs -f # Follow logs
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00FF88&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=PROJECT+ROADMAP" alt="Roadmap" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00FF88&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=PROJECT+ROADMAP;OUR+VISION;THE+FUTURE" alt="Roadmap" />
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
@@ -401,7 +401,7 @@ gantt
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=ECOSYSTEM+MIND+MAP" alt="Ecosystem Mind Map" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F0FF&background=0A0A1AFF&vCenter=true&width=550&height=40&lines=ECOSYSTEM+MIND+MAP;THE+DEV+UNIVERSE;VISUALIZED" alt="Ecosystem Mind Map" />
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#00f0ff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'background': '#0a0a0f', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, Arial, sans-serif'}}}%%
@@ -409,20 +409,21 @@ mindmap
   root((THE COMPLETE<br/>DEVELOPER<br/>UNIVERSE))
     AI & ML PLATFORMS
       OpenAI
-        GPT-4o/GPT-5
-        Whisper
-        DALL-E 3
+        GPT-5.1
+        Whisper V3
+        DALL-E 4
         Codex CLI
         Agents SDK
       Google AI
-        Gemini 2.5
+        Gemini 3
         Gemini CLI
         Vertex AI
         AI Studio
         AntiGravity IDE
         Firebase Genkit
       Anthropic
-        Claude 3.5/4
+        Claude Opus 4.5
+        Claude Sonnet 4.5
         Claude Code
         MCP SDK
       Microsoft
@@ -2587,11 +2588,11 @@ quadrantChart
 
 | Provider | Endpoint | Model | Use Case |
 |----------|----------|-------|----------|
-| **OpenAI** | `POST /v1/chat/completions` | gpt-4o | Chat/Code |
-| **OpenAI** | `POST /v1/audio/transcriptions` | whisper-1 | Speech-to-Text |
-| **Anthropic** | `POST /v1/messages` | claude-3-5-sonnet | Long context |
-| **Google** | `POST /v1/models/gemini-pro:generateContent` | gemini-pro | Multimodal |
-| **Ollama** | `POST /api/generate` | llama3.2 | Local inference |
+| **OpenAI** | `POST /v1/chat/completions` | gpt-5.1 | Chat/Code |
+| **OpenAI** | `POST /v1/audio/transcriptions` | whisper-v3 | Speech-to-Text |
+| **Anthropic** | `POST /v1/messages` | claude-opus-4.5 | Long context |
+| **Google** | `POST /v1/models/gemini-3:generateContent` | gemini-3 | Multimodal |
+| **Ollama** | `POST /api/generate` | llama3.3 | Local inference |
 
 ### Code Snippets
 
@@ -2600,7 +2601,7 @@ quadrantChart
 from openai import OpenAI
 client = OpenAI()
 response = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-5.1",
     messages=[{"role": "user", "content": "Hello!"}]
 )
 
@@ -2608,14 +2609,14 @@ response = client.chat.completions.create(
 import anthropic
 client = anthropic.Anthropic()
 message = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
+    model="claude-opus-4.5-20251101",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello!"}]
 )
 
 # Ollama (Local)
 import ollama
-response = ollama.chat(model='llama3.2', messages=[
+response = ollama.chat(model='llama3.3', messages=[
     {'role': 'user', 'content': 'Hello!'}
 ])
 ```
@@ -2625,7 +2626,7 @@ response = ollama.chat(model='llama3.2', messages=[
 import OpenAI from 'openai';
 const openai = new OpenAI();
 const response = await openai.chat.completions.create({
-    model: "gpt-4o",
+    model: "gpt-5.1",
     messages: [{ role: "user", content: "Hello!" }]
 });
 
@@ -2633,7 +2634,7 @@ const response = await openai.chat.completions.create({
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 const { text } = await generateText({
-    model: openai('gpt-4o'),
+    model: openai('gpt-5.1'),
     prompt: 'Hello!'
 });
 ```
@@ -2642,7 +2643,7 @@ const { text } = await generateText({
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF00FF&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=CHANGELOG" alt="Changelog" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF00FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=CHANGELOG;VERSION+HISTORY;UPDATES" alt="Changelog" />
 
 <div align="center">
 
@@ -2650,6 +2651,7 @@ const { text } = await generateText({
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| **v2.6** | Nov 2025 | Updated to GPT-5.1, Claude Opus 4.5, Gemini 3, GitHub Action automation |
 | **v2.5** | Nov 2025 | Tech Stack Comparisons, Learning Paths, API Reference |
 | **v2.4** | Nov 2025 | Animated header, Roadmap, What's Hot section |
 | **v2.3** | Nov 2025 | Dark Cyberpunk theme, Enhanced diagrams |
@@ -2662,22 +2664,21 @@ const { text } = await generateText({
 ### Recent Updates
 
 ```diff
-+ Added: Tech Stack Comparison matrices
-+ Added: Learning Path flowchart
-+ Added: Keyboard shortcuts reference
-+ Added: API Quick Reference with code snippets
-+ Added: Pro Tips & Tricks section
-+ Improved: Contributing section with guides
-+ Improved: Footer with animations
-+ Fixed: Broken emoji rendering
-+ Fixed: URL corrections
++ Added: GitHub Action for bi-monthly auto-updates
++ Added: More rotating text animations
++ Added: Quantum gradient color schemes
++ Updated: AI models to GPT-5.1, Claude Opus 4.5, Gemini 3
++ Updated: Header to display "DevTeam6" properly
++ Updated: All code snippets with latest model versions
++ Improved: Footer animations with more gradient stops
++ Improved: Section headers with multiple rotating lines
 ```
 
 </div>
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00FF88&background=0A0A1AFF&vCenter=true&width=300&height=40&lines=CONTRIBUTING" alt="Contributing" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00FF88&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=CONTRIBUTING;JOIN+US;GET+INVOLVED" alt="Contributing" />
 
 <div align="center">
 
@@ -2891,10 +2892,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=24&duration=3000&pause=1000&color=FF00FF&background=0A0A1AFF&center=true&vCenter=true&width=600&height=50&lines=THE+OMEGA+TOOL+KIT;10X+YOUR+AI+DEVELOPMENT;BUILD+ANYTHING+%7C+LEARN+EVERYTHING" alt="Footer Typing" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=28&duration=2000&pause=500&color=00F0FF&background=0A0A1AFF&center=true&vCenter=true&width=700&height=60&lines=DevTeam6+-+THE+OMEGA+TOOL+KIT;POWERED+BY+GPT-5.1+%26+CLAUDE+OPUS+4.5;10X+YOUR+AI+DEVELOPMENT;BUILD+ANYTHING+%7C+LEARN+EVERYTHING;1000%2B+CURATED+RESOURCES" alt="Footer Typing" />
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,25:ff00ff,50:aa00ff,75:ff00ff,100:00f0ff&height=120&section=footer&animation=twinkling" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,20:7b2fff,40:ff00ff,60:ff0066,80:aa00ff,100:00f0ff&height=120&section=footer&animation=twinkling" width="100%"/>
 
-<sub>Made with passion by <a href="https://github.com/SpiralCloudOmega">SpiralCloudOmega</a> | The Omega Tool Kit © 2025</sub>
+<sub>Made with passion by <a href="https://github.com/SpiralCloudOmega">SpiralCloudOmega</a> | DevTeam6 - The Omega Tool Kit © 2025</sub>
 
 </div>

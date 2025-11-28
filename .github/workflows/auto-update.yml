@@ -1,0 +1,154 @@
+# DevTeam6 Auto-Update Workflow
+# Runs twice a month to check for and report repository updates
+# Can also be triggered manually
+
+name: DevTeam6 Auto-Update
+
+on:
+  schedule:
+    # Run on 1st and 15th of every month at midnight UTC
+    - cron: '0 0 1 * *'
+    - cron: '0 0 15 * *'
+  workflow_dispatch:
+    inputs:
+      update_type:
+        description: 'Type of update to perform'
+        required: true
+        default: 'check'
+        type: choice
+        options:
+          - check
+          - full-update
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  update-check:
+    runs-on: ubuntu-latest
+    name: Check for Updates
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Get Repository Stats
+        id: repo-stats
+        run: |
+          echo "📊 Gathering Repository Statistics..."
+          
+          # Count resources in README
+          TOTAL_LINKS=$(grep -c 'https://' README.md || echo "0")
+          TOTAL_BADGES=$(grep -c 'img.shields.io' README.md || echo "0")
+          TOTAL_TABLES=$(grep -c '^\|' README.md || echo "0")
+          
+          echo "total_links=$TOTAL_LINKS" >> $GITHUB_OUTPUT
+          echo "total_badges=$TOTAL_BADGES" >> $GITHUB_OUTPUT
+          echo "total_tables=$TOTAL_TABLES" >> $GITHUB_OUTPUT
+          
+          echo "✅ Stats gathered:"
+          echo "   - Total Links: $TOTAL_LINKS"
+          echo "   - Total Badges: $TOTAL_BADGES"
+          echo "   - Table Rows: $TOTAL_TABLES"
+          
+      - name: Check for Broken Links
+        id: link-check
+        continue-on-error: true
+        run: |
+          echo "🔗 Checking for broken links..."
+          
+          # Extract unique URLs and check a sample
+          grep -oP 'https://[^\s\)\]"<>]+' README.md | sort -u | head -20 > /tmp/urls.txt
+          
+          BROKEN_COUNT=0
+          while read url; do
+            if ! curl -s -o /dev/null -w "%{http_code}" --max-time 5 "$url" | grep -q "^[23]"; then
+              echo "⚠️ Potentially broken: $url"
+              BROKEN_COUNT=$((BROKEN_COUNT + 1))
+            fi
+          done < /tmp/urls.txt
+          
+          echo "broken_count=$BROKEN_COUNT" >> $GITHUB_OUTPUT
+          echo "✅ Link check complete. Issues found: $BROKEN_COUNT"
+          
+      - name: Generate Update Report
+        id: report
+        run: |
+          echo "📝 Generating Update Report..."
+          
+          # Get current date
+          CURRENT_DATE=$(date +'%Y-%m-%d')
+          
+          # Create report
+          cat << EOF > /tmp/update-report.md
+          # DevTeam6 Auto-Update Report
+          
+          **Date:** $CURRENT_DATE
+          **Repository:** SpiralCloudOmega/DevTeam6
+          
+          ## 📊 Repository Statistics
+          
+          | Metric | Count |
+          |--------|-------|
+          | Total Links | ${{ steps.repo-stats.outputs.total_links }} |
+          | Total Badges | ${{ steps.repo-stats.outputs.total_badges }} |
+          | Table Rows | ${{ steps.repo-stats.outputs.total_tables }} |
+          
+          ## 🔗 Link Health
+          
+          Broken links found: ${{ steps.link-check.outputs.broken_count || '0' }}
+          
+          ## 📅 Schedule
+          
+          This workflow runs automatically on:
+          - 1st of every month
+          - 15th of every month
+          
+          ## 🚀 Next Steps
+          
+          - [ ] Review broken links
+          - [ ] Update outdated resources
+          - [ ] Add new trending tools
+          - [ ] Update AI model versions
+          
+          ---
+          *Generated automatically by DevTeam6 Auto-Update Workflow*
+          EOF
+          
+          cat /tmp/update-report.md
+          
+      - name: Create Issue for Updates
+        if: steps.link-check.outputs.broken_count != '0' || github.event.inputs.update_type == 'full-update'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/update-report.md', 'utf8');
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🔄 Auto-Update Report - ${new Date().toISOString().split('T')[0]}`,
+              body: report,
+              labels: ['auto-update', 'maintenance']
+            });
+            
+      - name: Summary
+        run: |
+          echo "## DevTeam6 Auto-Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Update check completed successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Links:** ${{ steps.repo-stats.outputs.total_links }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Badges:** ${{ steps.repo-stats.outputs.total_badges }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Broken Links:** ${{ steps.link-check.outputs.broken_count || '0' }}" >> $GITHUB_STEP_SUMMARY
