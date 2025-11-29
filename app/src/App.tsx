@@ -183,6 +183,12 @@ function App() {
           <a href="/DevTeam6/genui" className="btn primary">
             🎨 GenUI
           </a>
+          <a href="/DevTeam6/node-graph" className="btn secondary">
+            ⚡ Node Graph
+          </a>
+          <a href="/DevTeam6/videos" className="btn primary">
+            🎬 Videos
+          </a>
           <a href="/DevTeam6/gamification" className="btn secondary">
             🏆 Leaderboard
           </a>

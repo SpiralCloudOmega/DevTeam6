@@ -7,6 +7,8 @@ import OnboardingWizard from './pages/OnboardingWizard'
 import GenUIPlayground from './pages/GenUIPlayground'
 import ImmersiveLanding from './pages/ImmersiveLanding'
 import ProjectRoadmap from './pages/ProjectRoadmap'
+import NodeGraphEditor from './pages/NodeGraphEditor'
+import VideoStorytelling from './pages/VideoStorytelling'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -19,6 +21,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/genui" element={<GenUIPlayground />} />
         <Route path="/landing" element={<ImmersiveLanding />} />
         <Route path="/roadmap" element={<ProjectRoadmap />} />
+        <Route path="/node-graph" element={<NodeGraphEditor />} />
+        <Route path="/videos" element={<VideoStorytelling />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

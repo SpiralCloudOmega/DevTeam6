@@ -21,6 +21,8 @@
 [![GenUI](https://img.shields.io/badge/🎨_GENUI_PLAYGROUND-7b2fff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/genui)
 [![Landing](https://img.shields.io/badge/🌊_LANDING_PAGE-ff0066?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/landing)
 [![Roadmap](https://img.shields.io/badge/📋_PROJECT_ROADMAP-ffcc00?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/roadmap)
+[![Node Graph](https://img.shields.io/badge/⚡_NODE_GRAPH-00f0ff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/node-graph)
+[![Videos](https://img.shields.io/badge/🎬_VIDEO_STORIES-ff0066?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/videos)
 
 ---
 
@@ -35,6 +37,12 @@
 <a href="https://spiralcloudomega.github.io/DevTeam6/genui">
   <img src="https://img.shields.io/badge/🎨_GENUI_PLAYGROUND-7b2fff?style=for-the-badge&logoColor=white" alt="GenUI Playground" />
 </a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/node-graph">
+  <img src="https://img.shields.io/badge/⚡_NODE_GRAPH_EDITOR-00f0ff?style=for-the-badge&logoColor=white" alt="Node Graph Editor" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/videos">
+  <img src="https://img.shields.io/badge/🎬_VIDEO_STORYTELLING-ff0066?style=for-the-badge&logoColor=white" alt="Video Storytelling" />
+</a>
 <a href="https://spiralcloudomega.github.io/DevTeam6/gamification">
   <img src="https://img.shields.io/badge/🏆_GAMIFICATION_DASHBOARD-ff6600?style=for-the-badge&logoColor=white" alt="Gamification Dashboard" />
 </a>
@@ -45,16 +53,82 @@
   <img src="https://img.shields.io/badge/🚀_ONBOARDING_WIZARD-00ff88?style=for-the-badge&logoColor=white" alt="Onboarding Wizard" />
 </a>
 
-*Experience DevTeam6 in immersive 3D • Generate UI with natural language • Track contributions on the Leaderboard • Get started with the Onboarding Wizard*
+*Experience DevTeam6 in immersive 3D • Generate UI with natural language • Explore Node Graph workflows • Watch video tutorials • Track contributions on the Leaderboard*
 
 | Experience | Description | Status |
 |------------|-------------|--------|
 | **3D Demo** | Interactive Three.js visualization with cyberpunk aesthetics | Live |
 | **Immersive Landing** | GSAP scroll-animated landing page with parallax effects | Live |
 | **GenUI Playground** | AI-powered component generator using natural language prompts | Live |
+| **Node Graph Editor** | n8n-style interactive workflow visualization with clickable nodes | Live |
+| **Video Storytelling** | Chapter-based video guides with interactive timeline navigation | Live |
 | **Gamification Dashboard** | Contributor leaderboard, achievements, and statistics | Live |
 | **Project Roadmap** | Interactive board/timeline/list view of project progress | Live |
 | **Onboarding Wizard** | Step-by-step contributor guide with progress tracking | Live |
+
+---
+
+<!-- NODE-GRAPH-STATS-START -->
+### ⚡ Repository Architecture (Node Graph Preview)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00f0ff', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'tertiaryColor': '#1a0a2e', 'background': '#0a0a0f', 'mainBkg': '#0a0a1a', 'nodeBorder': '#00f0ff', 'clusterBkg': '#0d0d1a', 'clusterBorder': '#00f0ff', 'titleColor': '#ffffff', 'edgeLabelBackground':'#1a0a2e', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
+flowchart TB
+    subgraph ENTRY["🚀 DEVTEAM6 ENTRY"]
+        START([DevTeam6<br/>Repository]) --> README
+        START --> PAGES
+    end
+    
+    subgraph VISIBILITY["📄 VISIBILITY LAYER"]
+        README[README.md<br/>Dashboard]
+        README --> RESOURCES[📚 Resources<br/>1000+ Tools]
+        README --> NAV[🧭 Navigation]
+        README --> BADGES[🏅 Badges]
+    end
+    
+    subgraph INTERACTION["🌐 INTERACTION LAYER"]
+        PAGES[GitHub Pages<br/>Live Apps]
+        PAGES --> DEMO[🎮 3D Demo]
+        PAGES --> GENUI[🎨 GenUI]
+        PAGES --> GRAPH[⚡ Node Graph]
+        PAGES --> VIDEO[🎬 Videos]
+        PAGES --> DASH[📊 Dashboard]
+    end
+    
+    subgraph AUTOMATION["⚡ GITHUB ACTIONS"]
+        DEPLOY[🚀 Deploy<br/>Pages CI/CD]
+        CVS[🔄 CVS Sync<br/>Hourly]
+        ROADMAP[📋 Roadmap Sync<br/>6hr]
+        NODEGRAPH[⚡ Graph Sync<br/>4hr]
+    end
+    
+    PAGES --> DEPLOY
+    README --> CVS
+    README --> ROADMAP
+    README --> NODEGRAPH
+    
+    style START fill:#00f0ff,stroke:#00f0ff,color:#0a0a1a
+    style PAGES fill:#7b2fff,stroke:#7b2fff,color:#ffffff
+    style README fill:#ff00ff,stroke:#ff00ff,color:#ffffff
+    style DEMO fill:#00f0ff,stroke:#00f0ff,color:#0a0a1a
+    style GENUI fill:#ff00ff,stroke:#ff00ff,color:#ffffff
+    style GRAPH fill:#00ff88,stroke:#00ff88,color:#0a0a1a
+    style VIDEO fill:#ff6600,stroke:#ff6600,color:#ffffff
+    style DASH fill:#ffcc00,stroke:#ffcc00,color:#0a0a1a
+    style DEPLOY fill:#00ff88,stroke:#00ff88,color:#0a0a1a
+    style CVS fill:#00f0ff,stroke:#00f0ff,color:#0a0a1a
+    style ROADMAP fill:#ff00ff,stroke:#ff00ff,color:#ffffff
+    style NODEGRAPH fill:#aa00ff,stroke:#aa00ff,color:#ffffff
+```
+
+<div align="center">
+
+[![Launch Node Graph](https://img.shields.io/badge/⚡_LAUNCH_INTERACTIVE_NODE_GRAPH-00f0ff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/node-graph)
+
+*Click to explore the full interactive n8n-style workflow editor with draggable nodes*
+
+</div>
+<!-- NODE-GRAPH-STATS-END -->
 
 ---
 
@@ -2781,6 +2855,7 @@ const { text } = await generateText({
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| **v3.3** | Nov 2025 | Node Graph Editor (n8n-style), Video Storytelling Module, Enhanced CVS |
 | **v3.2** | Nov 2025 | GenUI Playground, Immersive Landing, Project Roadmap Board, Autonomous Sync |
 | **v3.1** | Nov 2025 | Gamification Dashboard, Onboarding Wizard, CVS Pipeline |
 | **v3.0** | Nov 2025 | Interactive 3D Demo (Three.js/R3F), AR/VR/XR section, GitHub Pages deployment |
@@ -2797,13 +2872,14 @@ const { text } = await generateText({
 ### Recent Updates
 
 ```diff
-+ Added: GenUI Playground - AI-powered component generator
-+ Added: Immersive Landing Page with GSAP scroll animations
-+ Added: Project Roadmap Board (board/timeline/list views)
-+ Added: Autonomous Roadmap Sync workflow (6-hour schedule)
-+ Added: Dynamic progress badges and milestone tracking
-+ Added: Multi-page navigation with React Router
-+ Added: 10+ pre-built cyberpunk UI component templates
++ Added: Node Graph Editor - Interactive n8n-style workflow visualization
++ Added: Video Storytelling Module - Chapter-based video guides
++ Added: Node Graph CVS Sync workflow (4-hour schedule)
++ Added: Clickable nodes with status tracking (completed/active/pending)
++ Added: Draggable node positioning with SVG animations
++ Added: Video library with 5+ tutorial categories
++ Added: Chapter timeline with progress tracking
++ Added: Mermaid diagram for static node graph preview
 + Updated: Interactive Experience Hub with 6 experiences
 + Updated: Live Project Status section in README
 + Updated: App version to 3.0.0 with full routing
