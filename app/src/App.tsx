@@ -177,6 +177,9 @@ function App() {
           <a href="https://github.com/SpiralCloudOmega/DevTeam6" target="_blank" rel="noopener noreferrer" className="btn">
             View Repository
           </a>
+          <a href="/DevTeam6/knowledge-hub" className="btn primary">
+            🧠 Knowledge Hub
+          </a>
           <a href="/DevTeam6/landing" className="btn secondary">
             🌊 Landing
           </a>

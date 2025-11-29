@@ -31,6 +31,9 @@
 <a href="https://spiralcloudomega.github.io/DevTeam6/">
   <img src="https://img.shields.io/badge/🎮_3D_DEMO-00f0ff?style=for-the-badge&logoColor=white" alt="Launch 3D Demo" />
 </a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/knowledge-hub">
+  <img src="https://img.shields.io/badge/🧠_KNOWLEDGE_HUB-aa00ff?style=for-the-badge&logoColor=white" alt="Semantic Knowledge Hub" />
+</a>
 <a href="https://spiralcloudomega.github.io/DevTeam6/landing">
   <img src="https://img.shields.io/badge/🌊_IMMERSIVE_LANDING-ff0066?style=for-the-badge&logoColor=white" alt="Immersive Landing" />
 </a>
@@ -53,11 +56,12 @@
   <img src="https://img.shields.io/badge/🚀_ONBOARDING_WIZARD-00ff88?style=for-the-badge&logoColor=white" alt="Onboarding Wizard" />
 </a>
 
-*Experience DevTeam6 in immersive 3D • Generate UI with natural language • Explore Node Graph workflows • Watch video tutorials • Track contributions on the Leaderboard*
+*Experience DevTeam6 in immersive 3D • Navigate the Semantic Knowledge Hub • Generate UI with natural language • Explore Node Graph workflows • Watch video tutorials • Track contributions on the Leaderboard*
 
 | Experience | Description | Status |
 |------------|-------------|--------|
 | **3D Demo** | Interactive Three.js visualization with cyberpunk aesthetics | Live |
+| **Semantic Knowledge Hub** | AI-first knowledge graph with semantic search and completeness meters | NEW |
 | **Immersive Landing** | GSAP scroll-animated landing page with parallax effects | Live |
 | **GenUI Playground** | AI-powered component generator using natural language prompts | Live |
 | **Node Graph Editor** | n8n-style interactive workflow visualization with clickable nodes | Live |
@@ -2855,6 +2859,7 @@ const { text } = await generateText({
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| **v3.4** | Nov 2025 | Semantic Knowledge Hub (GitFather), AI-first navigation, Completeness Meters |
 | **v3.3** | Nov 2025 | Node Graph Editor (n8n-style), Video Storytelling Module, Enhanced CVS |
 | **v3.2** | Nov 2025 | GenUI Playground, Immersive Landing, Project Roadmap Board, Autonomous Sync |
 | **v3.1** | Nov 2025 | Gamification Dashboard, Onboarding Wizard, CVS Pipeline |
@@ -2872,17 +2877,17 @@ const { text } = await generateText({
 ### Recent Updates
 
 ```diff
++ Added: Semantic Knowledge Hub - AI-first GitFather knowledge graph
++ Added: Semantic search with intelligent keyword matching
++ Added: Completeness meters for each knowledge node
++ Added: Graph/List/Categories view modes
++ Added: 16 knowledge nodes with interconnected architecture
++ Added: Non-standard navigation via clickable nodes
++ Added: Progressive disclosure for node details
 + Added: Node Graph Editor - Interactive n8n-style workflow visualization
 + Added: Video Storytelling Module - Chapter-based video guides
-+ Added: Node Graph CVS Sync workflow (4-hour schedule)
-+ Added: Clickable nodes with status tracking (completed/active/pending)
-+ Added: Draggable node positioning with SVG animations
-+ Added: Video library with 5+ tutorial categories
-+ Added: Chapter timeline with progress tracking
-+ Added: Mermaid diagram for static node graph preview
-+ Updated: Interactive Experience Hub with 6 experiences
-+ Updated: Live Project Status section in README
-+ Updated: App version to 3.0.0 with full routing
++ Updated: Interactive Experience Hub with 9 experiences
++ Updated: App version to 3.4.0 with full routing
 + Improved: Feature discoverability with prominent badges
 ```
 

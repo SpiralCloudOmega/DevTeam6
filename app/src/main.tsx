@@ -9,6 +9,7 @@ import ImmersiveLanding from './pages/ImmersiveLanding'
 import ProjectRoadmap from './pages/ProjectRoadmap'
 import NodeGraphEditor from './pages/NodeGraphEditor'
 import VideoStorytelling from './pages/VideoStorytelling'
+import SemanticKnowledgeHub from './pages/SemanticKnowledgeHub'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/roadmap" element={<ProjectRoadmap />} />
         <Route path="/node-graph" element={<NodeGraphEditor />} />
         <Route path="/videos" element={<VideoStorytelling />} />
+        <Route path="/knowledge-hub" element={<SemanticKnowledgeHub />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
