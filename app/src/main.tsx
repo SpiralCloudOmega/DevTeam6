@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
 import GamificationDashboard from './pages/GamificationDashboard'
 import OnboardingWizard from './pages/OnboardingWizard'
+import GenUIPlayground from './pages/GenUIPlayground'
+import ImmersiveLanding from './pages/ImmersiveLanding'
+import ProjectRoadmap from './pages/ProjectRoadmap'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -13,6 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         <Route path="/gamification" element={<GamificationDashboard />} />
         <Route path="/onboarding" element={<OnboardingWizard />} />
+        <Route path="/genui" element={<GenUIPlayground />} />
+        <Route path="/landing" element={<ImmersiveLanding />} />
+        <Route path="/roadmap" element={<ProjectRoadmap />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
