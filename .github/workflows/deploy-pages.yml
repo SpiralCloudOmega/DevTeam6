@@ -5,10 +5,11 @@ name: Deploy 3D Demo to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "copilot/fix-*"]
     paths:
       - 'app/**'
       - '.github/workflows/deploy-pages.yml'
+      - 'README.md'
   workflow_dispatch:
 
 permissions:

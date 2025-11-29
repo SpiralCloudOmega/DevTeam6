@@ -538,7 +538,7 @@ gantt
 ## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F0FF&background=0A0A1AFF&vCenter=true&width=550&height=40&lines=ECOSYSTEM+MIND+MAP;THE+DEV+UNIVERSE;VISUALIZED" alt="Ecosystem Mind Map" />
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#00f0ff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'background': '#0a0a0f', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, Arial, sans-serif'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'background': '#0a0a0f', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, Arial, sans-serif'}}}%%
 mindmap
   root((THE COMPLETE<br/>DEVELOPER<br/>UNIVERSE))
     AI & ML PLATFORMS
