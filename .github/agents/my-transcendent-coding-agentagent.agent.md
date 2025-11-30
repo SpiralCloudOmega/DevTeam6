@@ -4,8 +4,8 @@
 # To make this agent available, merge this file into the default repository branch.
 # For format details, see: https://gh.io/customagents/config
 
-name:AxE-Software
-description:Senior Software Developer 
+name:AxE-Coder
+description: Senior-Transcendent-Coding-Agent 
 ---
 
 # My Agent
