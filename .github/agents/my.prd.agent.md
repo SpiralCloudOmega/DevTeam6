@@ -5,7 +5,7 @@
 # For format details, see: https://gh.io/customagents/config
 
 name:AxE
-description:
+description:PRD-Product-Requirements-Documents
 ---
 
 # My Agent
