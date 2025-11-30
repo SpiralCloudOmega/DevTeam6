@@ -1,94 +1,290 @@
-# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=50&lines=🌀+DevTeam6+-+The+Omega+Tool+Kit+🚀" alt="DevTeam6 - The Omega Tool Kit" />
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,25:7b2fff,50:ff00ff,75:ff0066,100:aa00ff&height=200&section=header&text=DevTeam6&fontSize=80&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=THE%20OMEGA%20TOOL%20KIT&descSize=25&descAlignY=55&descAlign=50" width="100%"/>
+
+# <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=32&duration=2500&pause=800&color=00F0FF&background=0A0A1AFF&vCenter=true&width=750&height=50&lines=DevTeam6+-+THE+MASTER+GITHUB+DICTIONARY;1000%2B+CURATED+RESOURCES;AI+%7C+DEVOPS+%7C+CLOUD+%7C+SECURITY;POWERED+BY+GPT-5.1+%7C+CLAUDE+OPUS+4.5;YOUR+AI-READY+TOOLBOX" alt="DevTeam6 - The Omega Tool Kit" />
+
+> **The Ultimate Software Development Encyclopedia**
+> 
+> *Everything GitHub has to offer: Languages, Frameworks, AI, Cloud, DevOps, Security, Research & Beyond — An AI-Ready Toolbox for Building Anything*
+
+[![MIT License](https://img.shields.io/badge/License-MIT-00f0ff?style=for-the-badge&logoColor=white)](LICENSE)
+[![Awesome](https://img.shields.io/badge/Awesome-List-ff00ff?style=for-the-badge)](https://awesome.re)
+[![GitHub Stars](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00f0ff)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![GitHub Forks](https://img.shields.io/github/forks/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6/fork)
+[![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+[![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![3D Demo](https://img.shields.io/badge/3D_DEMO-LIVE-ff0066?style=for-the-badge&logo=threedotjs&logoColor=white)](https://spiralcloudomega.github.io/DevTeam6/)
+[![Leaderboard](https://img.shields.io/badge/🏆_LEADERBOARD-ff6600?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/gamification)
+[![Onboarding](https://img.shields.io/badge/🚀_GET_STARTED-00ff88?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/onboarding)
+[![GenUI](https://img.shields.io/badge/🎨_GENUI_PLAYGROUND-7b2fff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/genui)
+[![Landing](https://img.shields.io/badge/🌊_LANDING_PAGE-ff0066?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/landing)
+[![Roadmap](https://img.shields.io/badge/📋_PROJECT_ROADMAP-ffcc00?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/roadmap)
+[![Node Graph](https://img.shields.io/badge/⚡_NODE_GRAPH-00f0ff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/node-graph)
+[![Videos](https://img.shields.io/badge/🎬_VIDEO_STORIES-ff0066?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/videos)
+
+---
+
+### 🎮 INTERACTIVE EXPERIENCE HUB
+
+<a href="https://spiralcloudomega.github.io/DevTeam6/">
+  <img src="https://img.shields.io/badge/🎮_3D_DEMO-00f0ff?style=for-the-badge&logoColor=white" alt="Launch 3D Demo" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/knowledge-hub">
+  <img src="https://img.shields.io/badge/🧠_KNOWLEDGE_HUB-aa00ff?style=for-the-badge&logoColor=white" alt="Semantic Knowledge Hub" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/landing">
+  <img src="https://img.shields.io/badge/🌊_IMMERSIVE_LANDING-ff0066?style=for-the-badge&logoColor=white" alt="Immersive Landing" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/genui">
+  <img src="https://img.shields.io/badge/🎨_GENUI_PLAYGROUND-7b2fff?style=for-the-badge&logoColor=white" alt="GenUI Playground" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/node-graph">
+  <img src="https://img.shields.io/badge/⚡_NODE_GRAPH_EDITOR-00f0ff?style=for-the-badge&logoColor=white" alt="Node Graph Editor" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/videos">
+  <img src="https://img.shields.io/badge/🎬_VIDEO_STORYTELLING-ff0066?style=for-the-badge&logoColor=white" alt="Video Storytelling" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/gamification">
+  <img src="https://img.shields.io/badge/🏆_GAMIFICATION_DASHBOARD-ff6600?style=for-the-badge&logoColor=white" alt="Gamification Dashboard" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/roadmap">
+  <img src="https://img.shields.io/badge/📋_PROJECT_ROADMAP-ffcc00?style=for-the-badge&logoColor=white" alt="Project Roadmap" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/onboarding">
+  <img src="https://img.shields.io/badge/🚀_ONBOARDING_WIZARD-00ff88?style=for-the-badge&logoColor=white" alt="Onboarding Wizard" />
+</a>
+
+*Experience DevTeam6 in immersive 3D • Navigate the Semantic Knowledge Hub • Generate UI with natural language • Explore Node Graph workflows • Watch video tutorials • Track contributions on the Leaderboard*
+
+| Experience | Description | Status |
+|------------|-------------|--------|
+| **3D Demo** | Interactive Three.js visualization with cyberpunk aesthetics | Live |
+| **Semantic Knowledge Hub** | AI-first knowledge graph with semantic search and completeness meters | NEW |
+| **Immersive Landing** | GSAP scroll-animated landing page with parallax effects | Live |
+| **GenUI Playground** | AI-powered component generator using natural language prompts | Live |
+| **Node Graph Editor** | n8n-style interactive workflow visualization with clickable nodes | Live |
+| **Video Storytelling** | Chapter-based video guides with interactive timeline navigation | Live |
+| **Gamification Dashboard** | Contributor leaderboard, achievements, and statistics | Live |
+| **Project Roadmap** | Interactive board/timeline/list view of project progress | Live |
+| **Onboarding Wizard** | Step-by-step contributor guide with progress tracking | Live |
+
+---
+
+<!-- NODE-GRAPH-STATS-START -->
+### ⚡ Repository Architecture (Node Graph Preview)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00f0ff', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'tertiaryColor': '#1a0a2e', 'background': '#0a0a0f', 'mainBkg': '#0a0a1a', 'nodeBorder': '#00f0ff', 'clusterBkg': '#0d0d1a', 'clusterBorder': '#00f0ff', 'titleColor': '#ffffff', 'edgeLabelBackground':'#1a0a2e', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
+flowchart TB
+    subgraph ENTRY["🚀 DEVTEAM6 ENTRY"]
+        START([DevTeam6<br/>Repository]) --> README
+        START --> PAGES
+    end
+    
+    subgraph VISIBILITY["📄 VISIBILITY LAYER"]
+        README[README.md<br/>Dashboard]
+        README --> RESOURCES[📚 Resources<br/>1000+ Tools]
+        README --> NAV[🧭 Navigation]
+        README --> BADGES[🏅 Badges]
+    end
+    
+    subgraph INTERACTION["🌐 INTERACTION LAYER"]
+        PAGES[GitHub Pages<br/>Live Apps]
+        PAGES --> DEMO[🎮 3D Demo]
+        PAGES --> GENUI[🎨 GenUI]
+        PAGES --> GRAPH[⚡ Node Graph]
+        PAGES --> VIDEO[🎬 Videos]
+        PAGES --> DASH[📊 Dashboard]
+    end
+    
+    subgraph AUTOMATION["⚡ GITHUB ACTIONS"]
+        DEPLOY[🚀 Deploy<br/>Pages CI/CD]
+        CVS[🔄 CVS Sync<br/>Hourly]
+        ROADMAP[📋 Roadmap Sync<br/>6hr]
+        NODEGRAPH[⚡ Graph Sync<br/>4hr]
+    end
+    
+    PAGES --> DEPLOY
+    README --> CVS
+    README --> ROADMAP
+    README --> NODEGRAPH
+    
+    style START fill:#00f0ff,stroke:#00f0ff,color:#0a0a1a
+    style PAGES fill:#7b2fff,stroke:#7b2fff,color:#ffffff
+    style README fill:#ff00ff,stroke:#ff00ff,color:#ffffff
+    style DEMO fill:#00f0ff,stroke:#00f0ff,color:#0a0a1a
+    style GENUI fill:#ff00ff,stroke:#ff00ff,color:#ffffff
+    style GRAPH fill:#00ff88,stroke:#00ff88,color:#0a0a1a
+    style VIDEO fill:#ff6600,stroke:#ff6600,color:#ffffff
+    style DASH fill:#ffcc00,stroke:#ffcc00,color:#0a0a1a
+    style DEPLOY fill:#00ff88,stroke:#00ff88,color:#0a0a1a
+    style CVS fill:#00f0ff,stroke:#00f0ff,color:#0a0a1a
+    style ROADMAP fill:#ff00ff,stroke:#ff00ff,color:#ffffff
+    style NODEGRAPH fill:#aa00ff,stroke:#aa00ff,color:#ffffff
+```
 
 <div align="center">
 
-> **🔮 The Master GitHub Dictionary Index for Software Development 🔮**
-> 
-> *A comprehensive encyclopedia of everything GitHub has to offer: Languages, Frameworks, AI, Cloud, DevOps, Security, Research & Beyond — An AI-Ready Toolbox for Building Anything*
+[![Launch Node Graph](https://img.shields.io/badge/⚡_LAUNCH_INTERACTIVE_NODE_GRAPH-00f0ff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/node-graph)
 
-[![MIT License](https://img.shields.io/badge/📜_License-MIT-c0c0c0?style=for-the-badge&logoColor=white)](LICENSE)
-[![Awesome](https://img.shields.io/badge/⭐_Awesome-List-c0c0c0?style=for-the-badge)](https://awesome.re)
-[![GitHub Stars](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=c0c0c0)](https://github.com/SpiralCloudOmega/DevTeam6)
-[![GitHub Forks](https://img.shields.io/github/forks/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=a8a8a8)](https://github.com/SpiralCloudOmega/DevTeam6/fork)
-[![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=c0c0c0)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
-[![PRs Welcome](https://img.shields.io/badge/🚀_PRs-Welcome-c0c0c0?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
-[![AI Toolbox](https://img.shields.io/badge/🤖_AI-Toolbox-c0c0c0?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
+*Click to explore the full interactive n8n-style workflow editor with draggable nodes*
+
+</div>
+<!-- NODE-GRAPH-STATS-END -->
+
+---
+
+<!-- ROADMAP-STATS-START -->
+### 📊 Live Project Status
+
+| Metric | Value |
+|--------|-------|
+| **Overall Progress** | 64% |
+| **Current Phase** | Generative UI |
+| **Completed Phases** | 4/7 |
+| **Next Milestone** | Community Growth |
+
+<!-- ROADMAP-STATS-END -->
+
+---
+
+### QUICK NAVIGATION
+
+[![AI Tools](https://img.shields.io/badge/AI_TOOLS-00f0ff?style=for-the-badge&logo=openai&logoColor=white)](#-ai--machine-learning)
+[![Dev Tools](https://img.shields.io/badge/DEV_TOOLS-ff00ff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](#-cliide-tools--ai-coding-assistants)
+[![Cloud](https://img.shields.io/badge/CLOUD-00ff88?style=for-the-badge&logo=googlecloud&logoColor=white)](#-cloud-platforms)
+[![Security](https://img.shields.io/badge/SECURITY-ff0066?style=for-the-badge&logo=hackerone&logoColor=white)](#-security--testing)
+[![3D/WebGL](https://img.shields.io/badge/3D/WebGL-7b2fff?style=for-the-badge&logo=threedotjs&logoColor=white)](#-3dwebgl--interactive-graphics)
+[![Awesome Lists](https://img.shields.io/badge/AWESOME_LISTS-aa00ff?style=for-the-badge&logo=awesome-lists&logoColor=white)](#-awesome-lists-of-awesome-lists)
+[![Learning](https://img.shields.io/badge/LEARNING-ffcc00?style=for-the-badge&logo=udemy&logoColor=white)](#-books--courses)
+
+---
+
+### RESOURCE COUNTER
+
+![AI Resources](https://img.shields.io/badge/AI_Resources-500+-00f0ff?style=flat-square)
+![Dev Tools](https://img.shields.io/badge/Dev_Tools-300+-ff00ff?style=flat-square)
+![Frameworks](https://img.shields.io/badge/Frameworks-200+-00ff88?style=flat-square)
+![3D/WebGL](https://img.shields.io/badge/3D/WebGL-50+-7b2fff?style=flat-square)
+![Awesome Lists](https://img.shields.io/badge/Awesome_Lists-300+-ff6600?style=flat-square)
+![Cheatsheets](https://img.shields.io/badge/Cheatsheets-50+-aa00ff?style=flat-square)
+![Learning](https://img.shields.io/badge/Learning-150+-ffcc00?style=flat-square)
 
 </div>
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=700&height=45&lines=🎨+OMEGA+TOOL+KIT+-+MASTER+INDEX" alt="Omega Tool Kit - Master Index" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FFCC00&background=0A0A1AFF&vCenter=true&width=350&height=40&lines=QUICK+START+GUIDE;GET+STARTED+NOW;ONE+CLICK+INSTALL" alt="Quick Start" />
 
-> **🔮 The Complete Software Development Universe — From Concept to Deployment**
+<div align="center">
+
+**Get up and running with the best AI tools in seconds!**
+
+</div>
+
+```bash
+# Install the most popular AI CLI tools
+
+# Ollama - Run LLMs locally
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3.3
+
+# GitHub Copilot CLI
+gh extension install github/gh-copilot
+
+# OpenAI Codex CLI
+npm install -g @openai/codex
+
+# Google Gemini CLI
+npm install -g @google/gemini-cli
+```
+
+<div align="center">
+
+| Tool | One-Line Install | What It Does |
+|------|-----------------|--------------|
+| **Ollama** | `curl -fsSL https://ollama.com/install.sh \| sh` | Run LLMs locally |
+| **Copilot CLI** | `gh extension install github/gh-copilot` | AI in your terminal |
+| **Codex CLI** | `npm install -g @openai/codex` | OpenAI coding agent |
+| **LM Studio** | [Download](https://lmstudio.ai/) | GUI for local models |
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=2500&pause=800&color=00F0FF&background=0A0A1AFF&vCenter=true&width=750&height=45&lines=OMEGA+TOOL+KIT+-+MASTER+INDEX;THE+COMPLETE+DEV+UNIVERSE;YOUR+AI-POWERED+TOOLKIT" alt="Omega Tool Kit - Master Index" />
+
+> **The Complete Software Development Universe — From Concept to Deployment**
 > 
 > *A comprehensive encyclopedia of everything GitHub has to offer: Languages, Frameworks, Tools, AI, DevOps, Security, Research & Beyond*
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0ff', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#0ff', 'lineColor': '#c0c0c0', 'secondaryColor': '#1a1a2e', 'tertiaryColor': '#16213e', 'background': '#0d1117', 'mainBkg': '#1a1a2e', 'nodeBorder': '#c0c0c0', 'clusterBkg': '#16213e', 'clusterBorder': '#c0c0c0', 'titleColor': '#e8e8e8', 'edgeLabelBackground':'#1a1a2e'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00f0ff', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'tertiaryColor': '#1a0a2e', 'background': '#0a0a0f', 'mainBkg': '#0a0a1a', 'nodeBorder': '#00f0ff', 'clusterBkg': '#0d0d1a', 'clusterBorder': '#00f0ff', 'titleColor': '#ffffff', 'edgeLabelBackground':'#1a0a2e', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 flowchart TB
-    subgraph LAYER1["⚙️ FOUNDATIONS & CORE INFRASTRUCTURE"]
+    subgraph LAYER1["FOUNDATIONS & CORE INFRASTRUCTURE"]
         direction LR
-        A1[/"📦 Package Managers<br/>npm • pip • cargo • maven • go"/]
-        A2[/"🔧 Build Systems<br/>Vite • Webpack • CMake • Gradle"/]
-        A3[/"📋 Version Control<br/>Git • GitHub • GitLab • SVN"/]
-        A4[/"🏗️ Architecture<br/>Monorepo • Microservices • Serverless"/]
+        A1[/"Package Managers<br/>npm - pip - cargo - maven - go"/]
+        A2[/"Build Systems<br/>Vite - Webpack - CMake - Gradle"/]
+        A3[/"Version Control<br/>Git - GitHub - GitLab - SVN"/]
+        A4[/"Architecture<br/>Monorepo - Microservices - Serverless"/]
     end
     
-    subgraph LAYER2["💻 LANGUAGES & DEVELOPMENT ENVIRONMENTS"]
+    subgraph LAYER2["LANGUAGES & DEVELOPMENT ENVIRONMENTS"]
         direction LR
-        B1[/"🐍 Languages<br/>Python • JS • Go • Rust • C++"/]
-        B2[/"💻 IDEs & Editors<br/>VS Code • Cursor • Zed • Neovim"/]
-        B3[/"🔌 Extensions<br/>Copilot • Codeium • Continue"/]
-        B4[/"🖥️ Terminals<br/>Warp • iTerm • Windows Terminal"/]
+        B1[/"Languages<br/>Python - JS - Go - Rust - C++"/]
+        B2[/"IDEs & Editors<br/>VS Code - Cursor - Zed - Neovim"/]
+        B3[/"Extensions<br/>Copilot - Codeium - Continue"/]
+        B4[/"Terminals<br/>Warp - iTerm - Windows Terminal"/]
     end
     
-    subgraph LAYER3["🌐 FRAMEWORKS & LIBRARIES"]
+    subgraph LAYER3["FRAMEWORKS & LIBRARIES"]
         direction LR
-        C1[/"⚛️ Frontend<br/>React • Vue • Angular • Svelte"/]
-        C2[/"🔙 Backend<br/>Node • Django • FastAPI • Spring"/]
-        C3[/"📱 Mobile<br/>React Native • Flutter • Swift"/]
-        C4[/"🎮 Gaming & 3D<br/>Unity • Unreal • Godot • Bevy"/]
+        C1[/"Frontend<br/>React - Vue - Angular - Svelte"/]
+        C2[/"Backend<br/>Node - Django - FastAPI - Spring"/]
+        C3[/"Mobile<br/>React Native - Flutter - Swift"/]
+        C4[/"Gaming & 3D<br/>Unity - Unreal - Godot - Bevy"/]
     end
     
-    subgraph LAYER4["🤖 AI & MACHINE LEARNING"]
+    subgraph LAYER4["AI & MACHINE LEARNING"]
         direction LR
-        D1[/"🧠 AI Platforms<br/>OpenAI • Google AI • Anthropic"/]
-        D2[/"🦙 Local AI<br/>Ollama • LM Studio • GPT4All"/]
-        D3[/"🔗 AI Frameworks<br/>LangChain • LlamaIndex • AutoGen"/]
-        D4[/"📊 ML Tools<br/>PyTorch • TensorFlow • JAX"/]
+        D1[/"AI Platforms<br/>OpenAI - Google AI - Anthropic"/]
+        D2[/"Local AI<br/>Ollama - LM Studio - GPT4All"/]
+        D3[/"AI Frameworks<br/>LangChain - LlamaIndex - AutoGen"/]
+        D4[/"ML Tools<br/>PyTorch - TensorFlow - JAX"/]
     end
     
-    subgraph LAYER5["🗃️ DATA & STORAGE"]
+    subgraph LAYER5["DATA & STORAGE"]
         direction LR
-        E1[/"🗄️ SQL Databases<br/>PostgreSQL • MySQL • SQLite"/]
-        E2[/"🔥 NoSQL & Cloud<br/>Firestore • MongoDB • Redis"/]
-        E3[/"🧮 Vector DBs<br/>Pinecone • Weaviate • Chroma"/]
-        E4[/"📈 Analytics<br/>BigQuery • Snowflake • Databricks"/]
+        E1[/"SQL Databases<br/>PostgreSQL - MySQL - SQLite"/]
+        E2[/"NoSQL & Cloud<br/>Firestore - MongoDB - Redis"/]
+        E3[/"Vector DBs<br/>Pinecone - Weaviate - Chroma"/]
+        E4[/"Analytics<br/>BigQuery - Snowflake - Databricks"/]
     end
     
-    subgraph LAYER6["☁️ CLOUD & DEVOPS"]
+    subgraph LAYER6["CLOUD & DEVOPS"]
         direction LR
-        F1[/"☁️ Cloud Providers<br/>AWS • GCP • Azure • Vercel"/]
-        F2[/"🐳 Containers<br/>Docker • Kubernetes • Podman"/]
-        F3[/"🔄 CI/CD<br/>GitHub Actions • Jenkins • ArgoCD"/]
-        F4[/"📊 Monitoring<br/>Grafana • Prometheus • Datadog"/]
+        F1[/"Cloud Providers<br/>AWS - GCP - Azure - Vercel"/]
+        F2[/"Containers<br/>Docker - Kubernetes - Podman"/]
+        F3[/"CI/CD<br/>GitHub Actions - Jenkins - ArgoCD"/]
+        F4[/"Monitoring<br/>Grafana - Prometheus - Datadog"/]
     end
     
-    subgraph LAYER7["🔒 SECURITY & TESTING"]
+    subgraph LAYER7["SECURITY & TESTING"]
         direction LR
-        G1[/"🛡️ Security<br/>OWASP • Snyk • CodeQL • Vault"/]
-        G2[/"🧪 Testing<br/>Jest • Pytest • Cypress • Playwright"/]
-        G3[/"🔐 Auth<br/>OAuth • JWT • SAML • SSO"/]
-        G4[/"📝 Compliance<br/>SOC2 • GDPR • HIPAA"/]
+        G1[/"Security<br/>OWASP - Snyk - CodeQL - Vault"/]
+        G2[/"Testing<br/>Jest - Pytest - Cypress - Playwright"/]
+        G3[/"Auth<br/>OAuth - JWT - SAML - SSO"/]
+        G4[/"Compliance<br/>SOC2 - GDPR - HIPAA"/]
     end
     
-    subgraph LAYER8["📚 RESEARCH & LEARNING"]
+    subgraph LAYER8["RESEARCH & LEARNING"]
         direction LR
-        H1[/"📄 Research<br/>arXiv • Papers With Code • Scholar"/]
-        H2[/"📖 Documentation<br/>Docusaurus • Sphinx • MkDocs"/]
-        H3[/"🎓 Learning<br/>Courses • Tutorials • Books"/]
-        H4[/"⭐ Awesome Lists<br/>300+ Curated Collections"/]
+        H1[/"Research<br/>arXiv - Papers With Code - Scholar"/]
+        H2[/"Documentation<br/>Docusaurus - Sphinx - MkDocs"/]
+        H3[/"Learning<br/>Courses - Tutorials - Books"/]
+        H4[/"Awesome Lists<br/>300+ Curated Collections"/]
     end
     
     LAYER1 ---|Build| LAYER2
@@ -100,154 +296,382 @@ flowchart TB
     LAYER7 ---|Document| LAYER8
     LAYER8 -.->|Iterate| LAYER1
     
-    style LAYER1 fill:#0d1117,stroke:#c0c0c0,stroke-width:3px,color:#e8e8e8
-    style LAYER2 fill:#0d1117,stroke:#b8b8b8,stroke-width:3px,color:#e8e8e8
-    style LAYER3 fill:#0d1117,stroke:#a8a8a8,stroke-width:3px,color:#e8e8e8
-    style LAYER4 fill:#0d1117,stroke:#98d8ff,stroke-width:3px,color:#e8e8e8
-    style LAYER5 fill:#0d1117,stroke:#ffb898,stroke-width:3px,color:#e8e8e8
-    style LAYER6 fill:#0d1117,stroke:#98ffb8,stroke-width:3px,color:#e8e8e8
-    style LAYER7 fill:#0d1117,stroke:#ff9898,stroke-width:3px,color:#e8e8e8
-    style LAYER8 fill:#0d1117,stroke:#d898ff,stroke-width:3px,color:#e8e8e8
+    style LAYER1 fill:#0a0a1a,stroke:#00f0ff,stroke-width:3px,color:#00f0ff
+    style LAYER2 fill:#0d0d2a,stroke:#00d4ff,stroke-width:3px,color:#00d4ff
+    style LAYER3 fill:#0a0a1a,stroke:#00ff88,stroke-width:3px,color:#00ff88
+    style LAYER4 fill:#1a0a2e,stroke:#ff00ff,stroke-width:3px,color:#ff00ff
+    style LAYER5 fill:#0d0d2a,stroke:#ff6600,stroke-width:3px,color:#ff6600
+    style LAYER6 fill:#0a0a1a,stroke:#ffcc00,stroke-width:3px,color:#ffcc00
+    style LAYER7 fill:#1a0a2e,stroke:#ff0066,stroke-width:3px,color:#ff0066
+    style LAYER8 fill:#0d0d2a,stroke:#7b2fff,stroke-width:3px,color:#7b2fff
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🔮+ECOSYSTEM+MIND+MAP" alt="Ecosystem Mind Map" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF00FF&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=WHAT'S+HOT+RIGHT+NOW;TRENDING+TOOLS;LATEST+%26+GREATEST" alt="What's Hot" />
+
+<div align="center">
+
+### Trending Technologies & Tools
+
+| Category | Hot Tools | Why It's Trending |
+|----------|-----------|-------------------|
+| **AI Coding** | Cursor, Claude Code, Copilot | AI-first development is the new standard |
+| **Local LLMs** | Ollama, Open WebUI, LM Studio | Privacy-first AI, run models locally |
+| **AI Agents** | AutoGen, CrewAI, LangGraph | Multi-agent systems revolutionizing automation |
+| **Vector DBs** | Pinecone, Weaviate, Chroma | RAG & semantic search powering AI apps |
+| **Edge AI** | Gemini Nano, Phi-3, Llama 3.2 | AI on device - fast, private, efficient |
+| **Dev Containers** | Devcontainers, Codespaces, Gitpod | Reproducible dev environments |
+
+### Featured This Month
+
+[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE_Revolution-00f0ff?style=for-the-badge)](https://cursor.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-Local_AI_Leader-ff00ff?style=for-the-badge)](https://ollama.com/)
+[![Claude_Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-00ff88?style=for-the-badge)](https://www.anthropic.com/claude)
+[![Gemini_2](https://img.shields.io/badge/Gemini_2.5-Google_AI-ff6600?style=for-the-badge)](https://deepmind.google/technologies/gemini/)
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=7B2FFF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=TECH+STACK+COMPARISON;TOOL+FACE-OFF;HEAD+TO+HEAD" alt="Tech Stack Comparison" />
+
+<div align="center">
+
+### AI Coding Assistants - Head to Head
+
+| Feature | Cursor | GitHub Copilot | Claude Code | Windsurf |
+|---------|:------:|:--------------:|:-----------:|:--------:|
+| **AI Model** | GPT-5.1/Claude Opus 4.5 | GPT-5.1 | Claude Opus 4.5 | Custom |
+| **IDE Integration** | Standalone | VS Code/JetBrains | Terminal | Standalone |
+| **Context Window** | Very Large | Large | Massive | Medium |
+| **Code Generation** | Excellent | Excellent | Excellent | Good |
+| **Multi-file Edit** | Yes | Limited | Yes | Yes |
+| **Chat Interface** | Yes | Yes | Yes | Yes |
+| **Local Models** | No | No | No | Yes |
+| **Price** | $20/mo | $10/mo | $20/mo | Free+ |
+| **Best For** | Full IDE | Quick completions | Complex tasks | Privacy |
+
+### Local LLM Solutions Compared
+
+| Feature | Ollama | LM Studio | GPT4All | Open WebUI |
+|---------|:------:|:---------:|:-------:|:----------:|
+| **Ease of Setup** | Very Easy | Easy | Easy | Medium |
+| **Model Support** | 100+ | 100+ | 50+ | Via Ollama |
+| **GUI** | No (CLI) | Yes | Yes | Yes (Web) |
+| **API Compatible** | Yes | Yes | Yes | Yes |
+| **Resource Usage** | Low | Medium | Low | Low |
+| **Best For** | Developers | Beginners | Offline | Teams |
+
+### Cloud Platforms at a Glance
+
+| Platform | AI Services | Free Tier | Best For |
+|----------|:-----------:|:---------:|----------|
+| **AWS** | Bedrock, SageMaker | 12 months | Enterprise scale |
+| **Google Cloud** | Vertex AI, Gemini | $300 credit | AI/ML workloads |
+| **Azure** | OpenAI, AI Foundry | $200 credit | Microsoft stack |
+| **Vercel** | AI SDK | Generous | Frontend/Edge |
+| **Cloudflare** | Workers AI | Free tier | Edge computing |
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=AA00FF&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=LEARNING+PATHS;SKILL+ROADMAP;YOUR+JOURNEY" alt="Learning Paths" />
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0', 'secondaryColor': '#2d2d44', 'tertiaryColor': '#16213e', 'background': '#0d1117', 'fontSize': '14px', 'fontFamily': 'Arial'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
+flowchart TD
+    START[Start Your Journey] --> Q1{What interests you?}
+    
+    Q1 -->|AI/ML| AI[AI Development Path]
+    Q1 -->|Web| WEB[Web Development Path]
+    Q1 -->|DevOps| DEVOPS[DevOps Path]
+    Q1 -->|Security| SEC[Security Path]
+    
+    AI --> AI1[Python Basics]
+    AI1 --> AI2[ML Fundamentals]
+    AI2 --> AI3[Deep Learning]
+    AI3 --> AI4[LLM Development]
+    AI4 --> AI5[AI Agents]
+    
+    WEB --> WEB1[HTML/CSS/JS]
+    WEB1 --> WEB2[React/Vue/Angular]
+    WEB2 --> WEB3[Backend APIs]
+    WEB3 --> WEB4[Databases]
+    WEB4 --> WEB5[Full Stack]
+    
+    DEVOPS --> DEV1[Linux/Shell]
+    DEV1 --> DEV2[Docker]
+    DEV2 --> DEV3[Kubernetes]
+    DEV3 --> DEV4[CI/CD]
+    DEV4 --> DEV5[Cloud Platforms]
+    
+    SEC --> SEC1[Security Basics]
+    SEC1 --> SEC2[Web Security]
+    SEC2 --> SEC3[Penetration Testing]
+    SEC3 --> SEC4[Cloud Security]
+    SEC4 --> SEC5[Security Engineering]
+    
+    style START fill:#0a0a1a,stroke:#00f0ff,stroke-width:3px,color:#00f0ff
+    style AI fill:#0a0a1a,stroke:#ff00ff,stroke-width:2px,color:#ff00ff
+    style WEB fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style DEVOPS fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style SEC fill:#0a0a1a,stroke:#ff0066,stroke-width:2px,color:#ff0066
+```
+
+<div align="center">
+
+### Recommended Learning Resources by Path
+
+| Path | Beginner | Intermediate | Advanced |
+|------|----------|--------------|----------|
+| **AI/ML** | fast.ai, Coursera ML | Hugging Face Course | Papers With Code |
+| **Web Dev** | freeCodeCamp, MDN | Full Stack Open | System Design |
+| **DevOps** | Linux Journey | KodeKloud | CKA/CKAD Cert |
+| **Security** | TryHackMe | HackTheBox | OSCP Prep |
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF6600&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=KEYBOARD+SHORTCUTS;POWER+USER+TIPS;WORK+FASTER" alt="Keyboard Shortcuts" />
+
+<div align="center">
+
+### Essential IDE Shortcuts
+
+| Action | VS Code | Cursor | JetBrains |
+|--------|---------|--------|-----------|
+| **Command Palette** | `Ctrl+Shift+P` | `Ctrl+Shift+P` | `Ctrl+Shift+A` |
+| **Quick Open** | `Ctrl+P` | `Ctrl+P` | `Ctrl+Shift+N` |
+| **Find in Files** | `Ctrl+Shift+F` | `Ctrl+Shift+F` | `Ctrl+Shift+F` |
+| **Go to Definition** | `F12` | `F12` | `Ctrl+B` |
+| **Rename Symbol** | `F2` | `F2` | `Shift+F6` |
+| **Toggle Terminal** | `` Ctrl+` `` | `` Ctrl+` `` | `Alt+F12` |
+| **Split Editor** | `Ctrl+\` | `Ctrl+\` | `Ctrl+Shift+A` |
+| **AI Chat** | `Ctrl+I` | `Ctrl+K` | `Alt+Enter` |
+| **AI Inline** | `Ctrl+I` | `Ctrl+L` | `Alt+/` |
+
+### Terminal Power Commands
+
+```bash
+# Navigation
+cd -                    # Go to previous directory
+pushd/popd             # Directory stack
+ctrl+r                  # Reverse search history
+
+# Process Management
+ctrl+z / fg / bg       # Job control
+lsof -i :3000          # Find process on port
+kill $(lsof -t -i:3000)  # Graceful kill on port
+
+# Git Shortcuts
+git log --oneline -10   # Quick history
+git stash -u           # Stash including untracked
+git rebase -i HEAD~3   # Interactive rebase
+
+# Docker Quick Commands
+docker system prune -a  # Clean everything
+docker stats           # Live container stats
+docker-compose logs -f # Follow logs
+```
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FFCC00&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=PRO+TIPS+%26+TRICKS" alt="Pro Tips" />
+
+<div align="center">
+
+### Daily Developer Tips
+
+| Category | Tip | Why It Matters |
+|----------|-----|----------------|
+| **Git** | Use `git commit --amend` for quick fixes | Keeps history clean |
+| **Terminal** | Create aliases for common commands | Save hours per week |
+| **IDE** | Learn 3 new shortcuts per week | 10x productivity |
+| **AI** | Be specific in prompts with context | Better AI responses |
+| **Debug** | Use breakpoints, not print statements | Professional debugging |
+| **Code** | Write tests before fixing bugs | Prevent regressions |
+| **Docs** | Document as you code | Future you will thank you |
+| **Security** | Never commit secrets | Use env vars or vaults |
+
+### Tool Combinations That Work Great Together
+
+```
+🔥 Cursor + Claude API + Ollama (local fallback)
+🔥 VS Code + Copilot + GitLens + Thunder Client
+🔥 Warp Terminal + Starship Prompt + fzf + ripgrep
+🔥 Docker + k3s + Lens + ArgoCD
+🔥 Vercel + PlanetScale + Clerk + Stripe
+```
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00FF88&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=PROJECT+ROADMAP;OUR+VISION;THE+FUTURE" alt="Roadmap" />
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
+gantt
+    title DevTeam6 Evolution Roadmap
+    dateFormat  YYYY-MM
+    section Foundation
+    Core Structure           :done, 2024-10, 2024-12
+    AI Resources             :done, 2024-11, 2025-01
+    Awesome Lists            :done, 2024-12, 2025-02
+    section Enhancement
+    Cyberpunk Theme          :done, 2025-01, 2025-02
+    Interactive Diagrams     :active, 2025-02, 2025-03
+    Community Features       :2025-03, 2025-04
+    section Future
+    API Integration          :2025-04, 2025-06
+    AI-Powered Search        :2025-05, 2025-07
+    Mobile Companion         :2025-06, 2025-08
+```
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00F0FF&background=0A0A1AFF&vCenter=true&width=550&height=40&lines=ECOSYSTEM+MIND+MAP;THE+DEV+UNIVERSE;VISUALIZED" alt="Ecosystem Mind Map" />
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#ff00ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'background': '#0a0a0f', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, Arial, sans-serif'}}}%%
 mindmap
-  root((🌀 THE COMPLETE<br/>DEVELOPER<br/>UNIVERSE))
-    🤖 AI & ML PLATFORMS
-      🧠 OpenAI
-        GPT-4o/GPT-5
-        Whisper
-        DALL-E 3
+  root((THE COMPLETE<br/>DEVELOPER<br/>UNIVERSE))
+    AI & ML PLATFORMS
+      OpenAI
+        GPT-5.1
+        Whisper V3
+        DALL-E 4
         Codex CLI
         Agents SDK
-      🔵 Google AI
-        Gemini 2.5
+      Google AI
+        Gemini 3
         Gemini CLI
         Vertex AI
         AI Studio
         AntiGravity IDE
         Firebase Genkit
-      🟠 Anthropic
-        Claude 3.5/4
+      Anthropic
+        Claude Opus 4.5
+        Claude Sonnet 4.5
         Claude Code
         MCP SDK
-      🔷 Microsoft
+      Microsoft
         Azure AI Foundry
         GitHub Copilot
         Copilot CLI
-      🦙 Local AI
+      Local AI
         Ollama
         Open WebUI
         LM Studio
         GPT4All
-    💻 DEVELOPMENT
-      🖥️ IDEs & Editors
+    DEVELOPMENT
+      IDEs & Editors
         VS Code
         Cursor
         Zed
         Windsurf
         Neovim
         Void
-      🛠️ Build Tools
+      Build Tools
         Vite
         Webpack
         esbuild
         Turbopack
         Gradle
         CMake
-      📦 Package Mgrs
+      Package Mgrs
         npm/pnpm/yarn
         pip/uv/poetry
         cargo
         maven
         go mod
-    🌐 WEB & MOBILE
-      ⚛️ Frontend
+    WEB & MOBILE
+      Frontend
         React/Next.js
         Vue/Nuxt
         Angular
         Svelte/SvelteKit
         Astro
-      🔙 Backend
+      Backend
         Node/Express
         Django/FastAPI
         Spring Boot
         Go/Gin
         Rust/Axum
-      📱 Mobile
+      Mobile
         React Native
         Flutter
         Swift/SwiftUI
         Kotlin/Compose
-    ☁️ CLOUD & INFRA
-      🌩️ Providers
+    CLOUD & INFRA
+      Providers
         AWS
         Google Cloud
         Azure
         Vercel/Netlify
-      🐳 Containers
+      Containers
         Docker
         Kubernetes
         Podman
         Helm
-      🔄 CI/CD
+      CI/CD
         GitHub Actions
         Jenkins
         ArgoCD
         GitLab CI
-    🗃️ DATA & STORAGE
-      🗄️ SQL
+    DATA & STORAGE
+      SQL
         PostgreSQL
         MySQL
         SQLite
-      🔥 NoSQL
+      NoSQL
         Firestore
         MongoDB
         Redis
-      🧮 Vector DBs
+      Vector DBs
         Pinecone
         Weaviate
         Chroma
-    🔒 SECURITY
-      🛡️ AppSec
+    SECURITY
+      AppSec
         OWASP
         Snyk
         CodeQL
-      🔐 Auth
+      Auth
         OAuth 2.0
         JWT
         Auth0
-      🔍 Testing
+      Testing
         Penetration
         SAST/DAST
         Bug Bounty
-    📚 RESOURCES
-      ⭐ Awesome Lists
+    RESOURCES
+      Awesome Lists
         300+ Collections
         Curated
-      📋 Cheatsheets
+      Cheatsheets
         Git
         Docker
         K8s
-      🔬 Research
+      Research
         arXiv
         Papers w/ Code
         AlphaXiv
-    ⚛️ EMERGING TECH
-      🔮 Quantum
+    EMERGING TECH
+      Quantum
         Qiskit
         Cirq
         PennyLane
-      🔗 Web3
+      Web3
         Ethereum
         Solana
         Smart Contracts
-      🎮 Gaming
+      Gaming
         Unity
         Unreal
         Godot
@@ -255,45 +679,45 @@ mindmap
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🏗️+ARCHITECTURE+OVERVIEW" alt="Architecture Overview" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=ARCHITECTURE+OVERVIEW" alt="Architecture Overview" />
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0', 'secondaryColor': '#2d2d44', 'tertiaryColor': '#16213e', 'clusterBkg': '#0d1117', 'clusterBorder': '#c0c0c0'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#1a0a2e', 'tertiaryColor': '#0d0d1a', 'clusterBkg': '#0a0a1a', 'clusterBorder': '#00f0ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph TB
-    subgraph "🌀 THE COMPLETE SOFTWARE DEVELOPMENT UNIVERSE"
+    subgraph "THE COMPLETE SOFTWARE DEVELOPMENT UNIVERSE"
         direction TB
         
-        subgraph "🎬 Content & Updates"
-            YT[📺 YouTube Channels]
-            CONF[🎪 Conferences]
-            NEWS[📰 Changelogs]
+        subgraph "Content & Updates"
+            YT[YouTube Channels]
+            CONF[Conferences]
+            NEWS[Changelogs]
         end
         
-        subgraph "🤖 AI Development"
-            OPENAI[🧠 OpenAI Repos]
-            GOOGLE[🔵 Google AI & AntiGravity]
-            CLAUDE[🟠 Claude/Anthropic]
-            AGENTS[🤖 AI Agents]
-            QUANTUM[⚛️ Quantum Computing]
+        subgraph "AI Development"
+            OPENAI[OpenAI Repos]
+            GOOGLE[Google AI & AntiGravity]
+            CLAUDE[Claude/Anthropic]
+            AGENTS[AI Agents]
+            QUANTUM[Quantum Computing]
         end
         
-        subgraph "🖥️ Development Tools"
-            IDE[💻 IDEs & Editors]
-            CLI[🛠️ CLI Tools]
-            EXT[🔌 VS Code Extensions]
+        subgraph "Development Tools"
+            IDE[IDEs & Editors]
+            CLI[CLI Tools]
+            EXT[VS Code Extensions]
         end
         
-        subgraph "🎨 Creative Tools"
-            AUDIO[🎵 Audio Production]
-            VIDEO[🎬 Video Editing]
-            STREAM[📡 Streaming]
+        subgraph "Creative Tools"
+            AUDIO[Audio Production]
+            VIDEO[Video Editing]
+            STREAM[Streaming]
         end
         
-        subgraph "📚 Resources"
-            AWESOME[⭐ Awesome Lists]
-            CHEAT[📋 Cheatsheets]
-            DOCS[📖 Documentation]
-            RESEARCH[🔬 Research Papers]
+        subgraph "Resources"
+            AWESOME[Awesome Lists]
+            CHEAT[Cheatsheets]
+            DOCS[Documentation]
+            RESEARCH[Research Papers]
         end
     end
     
@@ -309,48 +733,48 @@ graph TB
     AUDIO --> STREAM
     VIDEO --> STREAM
     
-    style OPENAI fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style GOOGLE fill:#4285f4,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style CLAUDE fill:#d97706,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style QUANTUM fill:#9945ff,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style IDE fill:#007acc,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style AUDIO fill:#1db954,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style VIDEO fill:#ff0000,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style RESEARCH fill:#9945ff,stroke:#c0c0c0,stroke-width:2px,color:#fff
+    style OPENAI fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style GOOGLE fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style CLAUDE fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style QUANTUM fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
+    style IDE fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style AUDIO fill:#0a0a1a,stroke:#00ff66,stroke-width:2px,color:#00ff66
+    style VIDEO fill:#0a0a1a,stroke:#ff0066,stroke-width:2px,color:#ff0066
+    style RESEARCH fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=📊+REPOSITORY+STATS" alt="Repository Stats" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=REPOSITORY+STATS" alt="Repository Stats" />
 
 <div align="center">
 
-| 📦 Category | 🔢 Count | 📝 Description |
-|:------------|:--------:|:---------------|
-| 🌐 **Total Resources** | `1,000+` | Curated tools, libraries & repos |
-| 🤖 **AI/ML Resources** | `500+` | AI platforms, models & tools |
-| 🛠️ **Developer Tools** | `300+` | IDEs, CLIs, extensions |
-| ⭐ **Awesome Lists** | `300+` | Curated awesome collections |
-| ⚛️ **Quantum Computing** | `50+` | Quantum frameworks & tools |
-| 🎨 **Creative Tools** | `100+` | Audio, video, design tools |
-| 📋 **Cheatsheets** | `50+` | Quick reference guides |
-| 🎓 **Learning Resources** | `150+` | Courses, books, tutorials |
+| Category | Count | Description |
+|:---------|:-----:|:------------|
+| **Total Resources** | `1,000+` | Curated tools, libraries & repos |
+| **AI/ML Resources** | `500+` | AI platforms, models & tools |
+| **Developer Tools** | `300+` | IDEs, CLIs, extensions |
+| **Awesome Lists** | `300+` | Curated awesome collections |
+| **Quantum Computing** | `50+` | Quantum frameworks & tools |
+| **Creative Tools** | `100+` | Audio, video, design tools |
+| **Cheatsheets** | `50+` | Quick reference guides |
+| **Learning Resources** | `150+` | Courses, books, tutorials |
 
 </div>
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=🔗+QUICK+NAVIGATION" alt="Quick Navigation" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=QUICK+NAVIGATION" alt="Quick Navigation" />
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0', 'secondaryColor': '#1a1a2e'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph LR
-    A[🏠 Start] --> B{What do you need?}
-    B --> C[🤖 AI Development]
-    B --> D[🖥️ IDE/CLI Tools]
-    B --> E[🦙 Local AI]
-    B --> F[🔥 Firebase/Cloud]
-    B --> G[📚 Learning]
+    A[START] --> B{What do you need?}
+    B --> C[AI Development]
+    B --> D[IDE/CLI Tools]
+    B --> E[Local AI]
+    B --> F[Firebase/Cloud]
+    B --> G[Learning]
     
     C --> C1[OpenAI Repos]
     C --> C2[Google AI]
@@ -372,50 +796,63 @@ graph LR
     G --> G2[Cheatsheets]
     G --> G3[Tutorials]
     
-    style A fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style B fill:#6366f1,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style C fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style D fill:#007acc,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style E fill:#1a1a2e,stroke:#c0c0c0,stroke-width:2px,color:#e8e8e8
-    style F fill:#FFCA28,stroke:#c0c0c0,stroke-width:2px,color:#000
-    style G fill:#f59e0b,stroke:#c0c0c0,stroke-width:2px,color:#fff
+    style A fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style B fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
+    style C fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style D fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style E fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style F fill:#0a0a1a,stroke:#ffcc00,stroke-width:2px,color:#ffcc00
+    style G fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
 ```
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=🎬+GITHUB+NEWS+%26+DEVELOPER+UPDATES" alt="GitHub News & Developer Updates" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=600&height=40&lines=GITHUB+NEWS+%26+DEVELOPER+UPDATES" alt="GitHub News & Developer Updates" />
 
 <div align="center">
 
-### 📺 Latest GitHub Universe & Developer Conferences
+### Featured Video - GitHub Awesome
+
+<a href="https://www.youtube.com/watch?v=wu3522-is9w">
+  <img src="https://img.youtube.com/vi/wu3522-is9w/maxresdefault.jpg" alt="GitHub Awesome" width="100%" style="border-radius: 12px; border: 2px solid #00f0ff;"/>
+</a>
+
+[![Watch on YouTube](https://img.shields.io/badge/▶_WATCH_NOW-GitHub_Awesome-ff0066?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=wu3522-is9w&t=29s)
+
+*Discover amazing GitHub repositories, tools, and resources in this curated video guide*
+
+---
+
+### Latest GitHub Universe & Developer Conferences
 
 | Event | Description | Watch |
 |-------|-------------|-------|
-| **GitHub Universe 2025** | The latest global developer event | [![Watch](https://img.shields.io/badge/YouTube-Watch-red?logo=youtube)](https://www.youtube.com/@GitHub) |
-| **GitHub Universe 2024** | AI-powered developer experience | [![Watch](https://img.shields.io/badge/YouTube-Watch-red?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEFmtstItnKlhJJVmMghxc0P) |
-| **GitHub Universe 2023** | The future of software development | [![Watch](https://img.shields.io/badge/YouTube-Watch-red?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEEK4j-gRy2svO-f-FJKwCeS) |
-| **GitHub Changelog** | Weekly product updates | [![Watch](https://img.shields.io/badge/YouTube-Watch-red?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEGNm57nZQXnNo_VSA_8tUbI) |
-| **GitHub Copilot Demos** | AI coding assistant tutorials | [![Watch](https://img.shields.io/badge/YouTube-Watch-red?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEGvsbgB8eRxKD2Qy0A_gsVy) |
-| **GitHub Actions** | CI/CD automation tutorials | [![Watch](https://img.shields.io/badge/YouTube-Watch-red?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEHxJgZXDqULenQ2VlY7sJ_F) |
+| **GitHub Awesome** | Curated guide to amazing repos | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/watch?v=wu3522-is9w&t=29s) |
+| **GitHub Universe 2025** | The latest global developer event | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/@GitHub) |
+| **GitHub Universe 2024** | AI-powered developer experience | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEFmtstItnKlhJJVmMghxc0P) |
+| **GitHub Universe 2023** | The future of software development | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEEK4j-gRy2svO-f-FJKwCeS) |
+| **GitHub Changelog** | Weekly product updates | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEGNm57nZQXnNo_VSA_8tUbI) |
+| **GitHub Copilot Demos** | AI coding assistant tutorials | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEGvsbgB8eRxKD2Qy0A_gsVy) |
+| **GitHub Actions** | CI/CD automation tutorials | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEHxJgZXDqULenQ2VlY7sJ_F) |
 
-### 🔴 Live Channels & Continuous Updates
+### Live Channels & Continuous Updates
 
 | Channel | Content | Link |
 |---------|---------|------|
-| **GitHub** | Official GitHub channel | [![YouTube](https://img.shields.io/badge/Subscribe-FF0000?logo=youtube)](https://www.youtube.com/@GitHub) |
-| **GitHub Developer** | Technical deep dives | [![YouTube](https://img.shields.io/badge/Subscribe-FF0000?logo=youtube)](https://www.youtube.com/@GitHubDeveloper) |
-| **OpenAI** | AI research & updates | [![YouTube](https://img.shields.io/badge/Subscribe-FF0000?logo=youtube)](https://www.youtube.com/@OpenAI) |
-| **Google AI** | Google AI innovations | [![YouTube](https://img.shields.io/badge/Subscribe-FF0000?logo=youtube)](https://www.youtube.com/@GoogleAI) |
-| **Anthropic** | Claude & AI safety | [![YouTube](https://img.shields.io/badge/Subscribe-FF0000?logo=youtube)](https://www.youtube.com/@AnthropicAI) |
-| **Microsoft Developer** | Dev tools & Azure AI | [![YouTube](https://img.shields.io/badge/Subscribe-FF0000?logo=youtube)](https://www.youtube.com/@MicrosoftDeveloper) |
+| **GitHub** | Official GitHub channel | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GitHub) |
+| **GitHub Developer** | Technical deep dives | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GitHubDeveloper) |
+| **OpenAI** | AI research & updates | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@OpenAI) |
+| **Google AI** | Google AI innovations | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GoogleAI) |
+| **Anthropic** | Claude & AI safety | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@AnthropicAI) |
+| **Microsoft Developer** | Dev tools & Azure AI | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@MicrosoftDeveloper) |
 
 </div>
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=📑+MASTER+CONTENTS+INDEX" alt="Master Contents Index" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=MASTER+CONTENTS+INDEX" alt="Master Contents Index" />
 
-> **🔮 The Complete GitHub Master Encyclopedia** — *A comprehensive index of the entire software development universe: from languages and frameworks to AI, cloud infrastructure, security, and research. Your one-stop reference for building anything from simple scripts to complex operating systems.*
+> **The Complete GitHub Master Encyclopedia** — *A comprehensive index of the entire software development universe: from languages and frameworks to AI, cloud infrastructure, security, and research. Your one-stop reference for building anything from simple scripts to complex operating systems.*
 
 ---
 
@@ -657,6 +1094,25 @@ graph LR
   - [Level Design](#-level-design)
   - [Game Analytics](#-game-analytics)
 
+### 🌐 3D/WebGL & Interactive Graphics
+- [3D Libraries](#-3d-libraries)
+  - [Three.js Ecosystem](#-threejs-ecosystem)
+  - [React Three Fiber](#-react-three-fiber)
+  - [Babylon.js](#-babylonjs)
+  - [WebGL/WebGPU](#-webglwebgpu)
+- [AR/VR/XR](#-arvrxr)
+  - [WebXR](#-webxr)
+  - [AR Libraries](#-ar-libraries)
+  - [VR Frameworks](#-vr-frameworks)
+- [Motion & Animation](#-motion--animation)
+  - [Animation Libraries](#-animation-libraries)
+  - [Physics Simulation](#-physics-simulation)
+  - [Scroll Animation](#-scroll-animation)
+- [Creative Coding](#-creative-coding)
+  - [Generative Art](#-generative-art)
+  - [Shaders](#-shaders)
+  - [Procedural Graphics](#-procedural-graphics)
+
 ### 📊 Data Science & ML
 - [Machine Learning](#-machine-learning)
   - [ML Frameworks](#-ml-frameworks)
@@ -777,103 +1233,103 @@ graph LR
 
 ---
 
-## 📊 Repository Statistics
+## Repository Statistics
 
 <div align="center">
 
 | Category | Count | Description |
-|----------|-------|-------------|
-| 📦 **Total Resources** | 1,000+ | Curated tools, libraries & repos |
-| 🤖 **AI/ML Resources** | 500+ | AI platforms, models & tools |
-| 🛠️ **Developer Tools** | 300+ | IDEs, CLIs, extensions |
-| 📚 **Awesome Lists** | 200+ | Curated awesome collections |
-| 🎨 **Creative Tools** | 100+ | Audio, video, design tools |
-| 📋 **Cheatsheets** | 50+ | Quick reference guides |
-| 🎓 **Learning Resources** | 150+ | Courses, books, tutorials |
+|----------|:-----:|-------------|
+| **Total Resources** | 1,000+ | Curated tools, libraries & repos |
+| **AI/ML Resources** | 500+ | AI platforms, models & tools |
+| **Developer Tools** | 300+ | IDEs, CLIs, extensions |
+| **Awesome Lists** | 200+ | Curated awesome collections |
+| **Creative Tools** | 100+ | Audio, video, design tools |
+| **Cheatsheets** | 50+ | Quick reference guides |
+| **Learning Resources** | 150+ | Courses, books, tutorials |
 
 </div>
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=🖥️+CLI/IDE+TOOLS+%26+AI+CODING+ASSISTANTS" alt="CLI/IDE Tools" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=600&height=40&lines=CLI/IDE+TOOLS+%26+AI+CODING+ASSISTANTS" alt="CLI/IDE Tools" />
 
-### 🔥 The Major Players - AI-Powered IDEs & CLIs
+### The Major Players - AI-Powered IDEs & CLIs
 
 <div align="center">
 
-[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-00D9FF?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/)
-[![Copilot](https://img.shields.io/badge/GitHub_Copilot-AI_Pair_Programmer-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-D97706?style=for-the-badge)](https://www.anthropic.com/claude-code)
-[![Gemini](https://img.shields.io/badge/Gemini_CLI-Google_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://github.com/google-gemini/gemini-cli)
-[![AntiGravity](https://img.shields.io/badge/AntiGravity_IDE-Google_Gemini_3-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
+[![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-00f0ff?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/)
+[![Copilot](https://img.shields.io/badge/GitHub_Copilot-AI_Pair_Programmer-ff00ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_Coding-ff6600?style=for-the-badge)](https://www.anthropic.com/claude)
+[![Gemini](https://img.shields.io/badge/Gemini_CLI-Google_AI-00ff88?style=for-the-badge&logo=google&logoColor=white)](https://github.com/google-gemini/gemini-cli)
+[![AntiGravity](https://img.shields.io/badge/AntiGravity_IDE-Google_Gemini_3-aa00ff?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
 
 </div>
 
 | Tool | Description | Link | Stars |
-|------|-------------|------|-------|
-| **Cursor** | The AI-first code editor built on VS Code | [cursor.com](https://cursor.com/) | 🔥 Hot |
-| **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude-code) | 🔥 Hot |
-| **GitHub Copilot** | AI pair programmer by GitHub/OpenAI | [github.com/features/copilot](https://github.com/features/copilot) | 🔥 Hot |
-| **GitHub Copilot CLI** | AI in your terminal for shell commands | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) | 🔥 Hot |
-| **Google AntiGravity IDE** | Google Gemini 3 powered development environment | [antigravity.google](https://antigravity.google/) | 🆕 **NEW** |
+|------|-------------|------|:-----:|
+| **Cursor** | The AI-first code editor built on VS Code | [cursor.com](https://cursor.com/) | HOT |
+| **Claude Code** | Anthropic's agentic coding tool | [anthropic.com](https://www.anthropic.com/claude) | HOT |
+| **GitHub Copilot** | AI pair programmer by GitHub/OpenAI | [github.com/features/copilot](https://github.com/features/copilot) | HOT |
+| **GitHub Copilot CLI** | AI in your terminal for shell commands | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) | HOT |
+| **Google AntiGravity IDE** | Google Gemini 3 powered development environment | [antigravity.google](https://antigravity.google/) | NEW |
 | **OpenAI Codex CLI** | Lightweight coding agent in terminal | [openai/codex](https://github.com/openai/codex) | 51k+ |
-| **Google Gemini CLI** | Google's AI in your terminal | [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 🔥 New |
-| **Windsurf** | Codeium's AI-native IDE | [codeium.com/windsurf](https://codeium.com/windsurf) | 🔥 Hot |
+| **Google Gemini CLI** | Google's AI in your terminal | [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | NEW |
+| **Windsurf** | Codeium's AI-native IDE | [codeium.com/windsurf](https://codeium.com/windsurf) | HOT |
 | **Zed** | High-performance multiplayer code editor | [zed.dev](https://zed.dev/) | 55k+ |
-| **Warp** | The terminal for the 21st century | [warp.dev](https://www.warp.dev/) | 🔥 Hot |
-| **Void** | Open-source Cursor alternative | [voideditor.com](https://voideditor.com/) | 🆕 New |
+| **Warp** | The terminal for the 21st century | [warp.dev](https://www.warp.dev/) | HOT |
+| **Void** | Open-source Cursor alternative | [voideditor.com](https://voideditor.com/) | NEW |
 
-### ☁️ Enterprise AI Platforms & Cloud Tools
+### Enterprise AI Platforms & Cloud Tools
 
 <div align="center">
 
-[![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Microsoft-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://ai.azure.com/)
-[![Vertex AI](https://img.shields.io/badge/Vertex_AI-Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Azure AI Foundry](https://img.shields.io/badge/Azure_AI_Foundry-Microsoft-00f0ff?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://ai.azure.com/)
+[![Vertex AI](https://img.shields.io/badge/Vertex_AI-Google_Cloud-00ff88?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vertex-ai)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-AWS-ff6600?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
 
 </div>
 
 | Platform | Provider | Description | Link |
 |----------|----------|-------------|------|
-| **Azure AI Foundry** | Microsoft | Unified AI development platform | [![Azure](https://img.shields.io/badge/Azure-AI_Foundry-0078D4?logo=microsoft-azure)](https://ai.azure.com/) |
-| **Azure OpenAI Service** | Microsoft | OpenAI models on Azure | [![Azure OpenAI](https://img.shields.io/badge/Azure-OpenAI-0078D4?logo=microsoft-azure)](https://azure.microsoft.com/products/ai-services/openai-service) |
-| **GitHub Copilot for Business** | GitHub/Microsoft | Enterprise AI coding | [![Enterprise](https://img.shields.io/badge/Copilot-Enterprise-181717?logo=github)](https://github.com/features/copilot/business) |
-| **Google Vertex AI** | Google | Enterprise ML platform | [![Vertex](https://img.shields.io/badge/Vertex-AI-4285F4?logo=google-cloud)](https://cloud.google.com/vertex-ai) |
-| **Google AI Studio** | Google | Gemini model playground | [![AI Studio](https://img.shields.io/badge/AI-Studio-4285F4?logo=google)](https://aistudio.google.com/) |
-| **Firebase Genkit** | Google | AI-powered app framework | [![Genkit](https://img.shields.io/badge/Firebase-Genkit-FFCA28?logo=firebase)](https://firebase.google.com/docs/genkit) |
-| **Amazon Bedrock** | AWS | Foundation models as a service | [![Bedrock](https://img.shields.io/badge/Amazon-Bedrock-FF9900?logo=amazon-aws)](https://aws.amazon.com/bedrock/) |
-| **Amazon Q Developer** | AWS | AI coding companion | [![Q Developer](https://img.shields.io/badge/Amazon-Q_Developer-FF9900?logo=amazon-aws)](https://aws.amazon.com/q/developer/) |
+| **Azure AI Foundry** | Microsoft | Unified AI development platform | [![Azure](https://img.shields.io/badge/Azure-AI_Foundry-00f0ff?logo=microsoft-azure)](https://ai.azure.com/) |
+| **Azure OpenAI Service** | Microsoft | OpenAI models on Azure | [![Azure OpenAI](https://img.shields.io/badge/Azure-OpenAI-00f0ff?logo=microsoft-azure)](https://azure.microsoft.com/products/ai-services/openai-service) |
+| **GitHub Copilot for Business** | GitHub/Microsoft | Enterprise AI coding | [![Enterprise](https://img.shields.io/badge/Copilot-Enterprise-ff00ff?logo=github)](https://github.com/features/copilot/business) |
+| **Google Vertex AI** | Google | Enterprise ML platform | [![Vertex](https://img.shields.io/badge/Vertex-AI-00ff88?logo=google-cloud)](https://cloud.google.com/vertex-ai) |
+| **Google AI Studio** | Google | Gemini model playground | [![AI Studio](https://img.shields.io/badge/AI-Studio-00ff88?logo=google)](https://aistudio.google.com/) |
+| **Firebase Genkit** | Google | AI-powered app framework | [![Genkit](https://img.shields.io/badge/Firebase-Genkit-ffcc00?logo=firebase)](https://firebase.google.com/docs/genkit) |
+| **Amazon Bedrock** | AWS | Foundation models as a service | [![Bedrock](https://img.shields.io/badge/Amazon-Bedrock-ff6600?logo=amazon-aws)](https://aws.amazon.com/bedrock/) |
+| **Amazon Q Developer** | AWS | AI coding companion | [![Q Developer](https://img.shields.io/badge/Amazon-Q_Developer-ff6600?logo=amazon-aws)](https://aws.amazon.com/q/developer/) |
 
-### 🔥 Google Cloud & Firebase Ecosystem
+### Google Cloud & Firebase Ecosystem
 
 <div align="center">
 
-[![Firebase](https://img.shields.io/badge/Firebase-Cloud_Platform-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Firestore](https://img.shields.io/badge/Cloud_Firestore-NoSQL_Database-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
-[![Gemini](https://img.shields.io/badge/Gemini_API-AI_Model-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
-[![AntiGravity](https://img.shields.io/badge/AntiGravity-Gemini_3_IDE-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
+[![Firebase](https://img.shields.io/badge/Firebase-Cloud_Platform-ffcc00?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Firestore](https://img.shields.io/badge/Cloud_Firestore-NoSQL_Database-ffcc00?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
+[![Gemini](https://img.shields.io/badge/Gemini_API-AI_Model-00ff88?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![AntiGravity](https://img.shields.io/badge/AntiGravity-Gemini_3_IDE-aa00ff?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google/)
 
 </div>
 
 | Service | Description | Link |
 |---------|-------------|------|
-| **Google AntiGravity IDE** | Gemini 3 powered development environment | [![AntiGravity](https://img.shields.io/badge/AntiGravity-IDE-4285F4?logo=google)](https://antigravity.google/) |
-| **Cloud Firestore** | Flexible, scalable NoSQL cloud database | [![Firestore](https://img.shields.io/badge/Cloud-Firestore-FFCA28?logo=firebase)](https://firebase.google.com/docs/firestore) |
-| **Firebase Realtime DB** | Store and sync data in real-time | [![Realtime](https://img.shields.io/badge/Realtime-Database-FFCA28?logo=firebase)](https://firebase.google.com/docs/database) |
-| **Firebase Authentication** | Drop-in auth solution | [![Auth](https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase)](https://firebase.google.com/docs/auth) |
-| **Firebase Hosting** | Fast, secure web hosting | [![Hosting](https://img.shields.io/badge/Firebase-Hosting-FFCA28?logo=firebase)](https://firebase.google.com/docs/hosting) |
-| **Firebase Functions** | Serverless backend functions | [![Functions](https://img.shields.io/badge/Cloud-Functions-FFCA28?logo=firebase)](https://firebase.google.com/docs/functions) |
-| **Firebase Extensions** | Pre-built solutions | [![Extensions](https://img.shields.io/badge/Firebase-Extensions-FFCA28?logo=firebase)](https://firebase.google.com/docs/extensions) |
-| **Gemini API** | Google's most capable AI model | [![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=google)](https://ai.google.dev/) |
-| **Google IDX** | AI-powered cloud workspace | [![IDX](https://img.shields.io/badge/Project-IDX-4285F4?logo=google)](https://idx.google.com/) |
+| **Google AntiGravity IDE** | Gemini 3 powered development environment | [![AntiGravity](https://img.shields.io/badge/AntiGravity-IDE-aa00ff?logo=google)](https://antigravity.google/) |
+| **Cloud Firestore** | Flexible, scalable NoSQL cloud database | [![Firestore](https://img.shields.io/badge/Cloud-Firestore-ffcc00?logo=firebase)](https://firebase.google.com/docs/firestore) |
+| **Firebase Realtime DB** | Store and sync data in real-time | [![Realtime](https://img.shields.io/badge/Realtime-Database-ffcc00?logo=firebase)](https://firebase.google.com/docs/database) |
+| **Firebase Authentication** | Drop-in auth solution | [![Auth](https://img.shields.io/badge/Firebase-Auth-ffcc00?logo=firebase)](https://firebase.google.com/docs/auth) |
+| **Firebase Hosting** | Fast, secure web hosting | [![Hosting](https://img.shields.io/badge/Firebase-Hosting-ffcc00?logo=firebase)](https://firebase.google.com/docs/hosting) |
+| **Firebase Functions** | Serverless backend functions | [![Functions](https://img.shields.io/badge/Cloud-Functions-ffcc00?logo=firebase)](https://firebase.google.com/docs/functions) |
+| **Firebase Extensions** | Pre-built solutions | [![Extensions](https://img.shields.io/badge/Firebase-Extensions-ffcc00?logo=firebase)](https://firebase.google.com/docs/extensions) |
+| **Gemini API** | Google's most capable AI model | [![Gemini](https://img.shields.io/badge/Gemini-API-00ff88?logo=google)](https://ai.google.dev/) |
+| **Google IDX** | AI-powered cloud workspace | [![IDX](https://img.shields.io/badge/Project-IDX-00ff88?logo=google)](https://idx.google.com/) |
 
-### 🦙 Local AI & Self-Hosted Solutions
+### Local AI & Self-Hosted Solutions
 
 <div align="center">
 
-[![Ollama](https://img.shields.io/badge/Ollama-Run_LLMs_Locally-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
-[![Open WebUI](https://img.shields.io/badge/Open_WebUI-Chat_Interface-4A90E2?style=for-the-badge)](https://openwebui.com/)
-[![LM Studio](https://img.shields.io/badge/LM_Studio-Desktop_LLMs-FF6B6B?style=for-the-badge)](https://lmstudio.ai/)
+[![Ollama](https://img.shields.io/badge/Ollama-Run_LLMs_Locally-ff00ff?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com/)
+[![Open WebUI](https://img.shields.io/badge/Open_WebUI-Chat_Interface-00f0ff?style=for-the-badge)](https://openwebui.com/)
+[![LM Studio](https://img.shields.io/badge/LM_Studio-Desktop_LLMs-ff0066?style=for-the-badge)](https://lmstudio.ai/)
 
 </div>
 
@@ -1344,7 +1800,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=⚛️+QUANTUM+COMPUTING" alt="Quantum Computing" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=QUANTUM+COMPUTING" alt="Quantum Computing" />
 
 > **🔮 The Future of Computing - Quantum Resources & Frameworks**
 
@@ -1404,7 +1860,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=⭐+AWESOME+LISTS+OF+AWESOME+LISTS" alt="Awesome Lists of Awesome Lists" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=600&height=40&lines=AWESOME+LISTS+OF+AWESOME+LISTS" alt="Awesome Lists of Awesome Lists" />
 
 ### 🏆 The Ultimate Meta-Awesome Lists
 
@@ -1641,6 +2097,61 @@ alias ghce='gh copilot explain'
 | [awesome-etl](https://github.com/pawl/awesome-etl) | ETL resources | 3k+ |
 | [awesome-data-engineering](https://github.com/igorbarinov/awesome-data-engineering) | Data engineering resources | 7k+ |
 
+### 🌐 3D/WebGL & Interactive Graphics
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [three.js](https://github.com/mrdoob/three.js) | JavaScript 3D library | 103k+ |
+| [react-three-fiber](https://github.com/pmndrs/react-three-fiber) | React renderer for Three.js | 28k+ |
+| [drei](https://github.com/pmndrs/drei) | Useful helpers for R3F | 9k+ |
+| [babylonjs](https://github.com/BabylonJS/Babylon.js) | Powerful 3D game engine | 23k+ |
+| [A-Frame](https://github.com/aframevr/aframe) | Web VR framework | 16k+ |
+| [model-viewer](https://github.com/google/model-viewer) | 3D model viewer by Google | 7k+ |
+| [spline](https://github.com/splinetool/runtime) | 3D design tool for web | 5k+ |
+| [theatre](https://github.com/theatre-js/theatre) | Animation tooling for Three.js | 12k+ |
+| [leva](https://github.com/pmndrs/leva) | React GUI controls | 5k+ |
+| [r3f-perf](https://github.com/utsuboco/r3f-perf) | Performance monitoring for R3F | 1k+ |
+
+### 🕶️ AR/VR/XR & Immersive Web
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [AR.js](https://github.com/AR-js-org/AR.js) | AR for the web | 16k+ |
+| [8thwall](https://github.com/nickkraakman/8thwall-ar-course) | WebAR platform resources | 500+ |
+| [react-xr](https://github.com/pmndrs/xr) | VR/AR for React Three Fiber | 2k+ |
+| [webxr](https://github.com/nickkraakman/webxr-projects) | WebXR projects | 300+ |
+| [aframe-extras](https://github.com/n5ro/aframe-extras) | A-Frame components | 2k+ |
+| [mind-ar-js](https://github.com/hiukim/mind-ar-js) | Web AR with image tracking | 2k+ |
+| [spatial-audio](https://github.com/mrdoob/three.js/tree/dev/examples/jsm/objects) | Three.js spatial audio | - |
+
+### 🎬 Motion & Animation Libraries
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [gsap](https://github.com/greensock/GSAP) | Professional animation library | 20k+ |
+| [framer-motion](https://github.com/framer/motion) | React animation library | 25k+ |
+| [lottie-web](https://github.com/airbnb/lottie-web) | After Effects animations | 31k+ |
+| [anime.js](https://github.com/juliangarnier/anime) | Lightweight animation engine | 51k+ |
+| [popmotion](https://github.com/Popmotion/popmotion) | Functional animation library | 20k+ |
+| [velocity](https://github.com/julianshapiro/velocity) | Accelerated animation | 17k+ |
+| [motion-canvas](https://github.com/motion-canvas/motion-canvas) | Programmatic animations | 16k+ |
+| [rive](https://github.com/rive-app/rive-wasm) | Interactive animations | 4k+ |
+| [scroll-trigger](https://github.com/greensock/GSAP) | GSAP scroll animations | - |
+
+### 🎨 Creative Coding & Shaders
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [p5.js](https://github.com/processing/p5.js) | Creative coding library | 22k+ |
+| [paper.js](https://github.com/paperjs/paper.js) | Vector graphics scripting | 14k+ |
+| [pixi.js](https://github.com/pixijs/pixijs) | 2D WebGL renderer | 44k+ |
+| [fabric.js](https://github.com/fabricjs/fabric.js) | Canvas library | 29k+ |
+| [shaderpark](https://github.com/shader-park/shader-park-core) | Shader creation toolkit | 800+ |
+| [glsl-sandbox](https://github.com/mrdoob/glsl-sandbox) | GLSL fragment shader editor | 2k+ |
+| [shadertoy](https://www.shadertoy.com) | Shader creation platform | - |
+| [openframeworks](https://github.com/openframeworks/openFrameworks) | C++ creative coding | 10k+ |
+| [nannou](https://github.com/nannou-org/nannou) | Rust creative coding | 5k+ |
+
 ### 🎮 Gaming & Entertainment
 
 | Repository | Description | Stars |
@@ -1686,7 +2197,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🔬+AI+RESEARCH+PLATFORMS" alt="AI Research Platforms" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=AI+RESEARCH+PLATFORMS" alt="AI Research Platforms" />
 
 > **Essential platforms for staying current with AI research and discovering breakthrough papers.**
 
@@ -1724,7 +2235,7 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=600&height=40&lines=🧪+INTERACTIVE+DEVELOPMENT+ENVIRONMENTS" alt="Interactive Development Environments" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=600&height=40&lines=INTERACTIVE+DEVELOPMENT+ENVIRONMENTS" alt="Interactive Development Environments" />
 
 > **Notebooks, playgrounds, and interactive tools for experimentation and learning.**
 
@@ -1791,46 +2302,46 @@ alias ghce='gh copilot explain'
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🤖+AI+AGENT+TOOLBOX" alt="AI Agent Toolbox" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=AI+AGENT+TOOLBOX" alt="AI Agent Toolbox" />
 
-> **🔮 The Complete AI Development Companion** — *This repository is designed as a comprehensive toolbox for AI agents. Use this as your knowledge base, instruction manual, and resource library for building software.*
+> **The Complete AI Development Companion** — *This repository is designed as a comprehensive toolbox for AI agents. Use this as your knowledge base, instruction manual, and resource library for building software.*
 
-### 📋 AI Agent Quick Reference
+### AI Agent Quick Reference
 
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  🤖 AI AGENT CHEAT SHEET - QUICK ACCESS GUIDE                               ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║                                                                              ║
-║  📦 PACKAGE MANAGERS          │  🔧 BUILD TOOLS          │  🌐 WEB FRAMEWORKS║
-║  ─────────────────────────────┼──────────────────────────┼───────────────────║
-║  npm install <pkg>            │  npm run build           │  React, Vue       ║
-║  pip install <pkg>            │  python setup.py build   │  Angular, Svelte  ║
-║  cargo add <pkg>              │  cargo build --release   │  Next.js, Nuxt    ║
-║  go get <pkg>                 │  go build                │  Django, FastAPI  ║
-║                               │                          │                   ║
-║  🐳 DOCKER COMMANDS           │  ☸️  KUBERNETES           │  🔄 GIT WORKFLOW  ║
-║  ─────────────────────────────┼──────────────────────────┼───────────────────║
-║  docker build -t <name> .     │  kubectl apply -f <f>    │  git clone <url>  ║
-║  docker run -p 3000:3000 <n>  │  kubectl get pods        │  git checkout -b  ║
-║  docker compose up -d         │  kubectl logs <pod>      │  git commit -m    ║
-║  docker ps                    │  kubectl port-forward    │  git push origin  ║
-║                               │                          │                   ║
-║  🤖 AI CLI TOOLS              │  🦙 LOCAL AI             │  ☁️  CLOUD DEPLOY  ║
-║  ─────────────────────────────┼──────────────────────────┼───────────────────║
-║  codex "prompt"               │  ollama run llama3       │  vercel deploy    ║
-║  gh copilot suggest           │  ollama pull <model>     │  netlify deploy   ║
-║  claude-code                  │  ollama list             │  fly launch       ║
-║  gemini-cli                   │  lm-studio               │  aws deploy       ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝
++==============================================================================+
+|  AI AGENT CHEAT SHEET - QUICK ACCESS GUIDE                                   |
++==============================================================================+
+|                                                                              |
+|  PACKAGE MANAGERS            |  BUILD TOOLS             |  WEB FRAMEWORKS    |
+|  ----------------------------+----------------------------+------------------|
+|  npm install <pkg>           |  npm run build            |  React, Vue       |
+|  pip install <pkg>           |  python setup.py build    |  Angular, Svelte  |
+|  cargo add <pkg>             |  cargo build --release    |  Next.js, Nuxt    |
+|  go get <pkg>                |  go build                 |  Django, FastAPI  |
+|                              |                           |                   |
+|  DOCKER COMMANDS             |  KUBERNETES               |  GIT WORKFLOW     |
+|  ----------------------------+----------------------------+------------------|
+|  docker build -t <name> .    |  kubectl apply -f <f>     |  git clone <url>  |
+|  docker run -p 3000:3000 <n> |  kubectl get pods         |  git checkout -b  |
+|  docker compose up -d        |  kubectl logs <pod>       |  git commit -m    |
+|  docker ps                   |  kubectl port-forward     |  git push origin  |
+|                              |                           |                   |
+|  AI CLI TOOLS                |  LOCAL AI                 |  CLOUD DEPLOY     |
+|  ----------------------------+----------------------------+------------------|
+|  codex "prompt"              |  ollama run llama3        |  vercel deploy    |
+|  gh copilot suggest          |  ollama pull <model>      |  netlify deploy   |
+|  claude-code                 |  ollama list              |  fly launch       |
+|  gemini-cli                  |  lm-studio                |  aws deploy       |
+|                                                                              |
++==============================================================================+
 ```
 
 </div>
 
-### 🎯 Structured Data for AI Parsing
+### Structured Data for AI Parsing
 
 This repository provides structured information that AI agents can easily parse:
 
@@ -1841,7 +2352,7 @@ This repository provides structured information that AI agents can easily parse:
 | **Category Trees** | Mermaid diagrams and nested lists | Mind Maps & TOC |
 | **Link Collections** | Badge links and direct URLs | All sections |
 
-### 🔌 MCP Server Integration
+### MCP Server Integration
 
 This toolkit is fully compatible with Model Context Protocol (MCP) servers:
 
@@ -1853,31 +2364,31 @@ This toolkit is fully compatible with Model Context Protocol (MCP) servers:
 | `@modelcontextprotocol/server-brave-search` | Web search capability | `npm install -g @modelcontextprotocol/server-brave-search` |
 | `@modelcontextprotocol/server-postgres` | Database operations | `npm install -g @modelcontextprotocol/server-postgres` |
 
-### 🧠 AI-Friendly Architecture
+### AI-Friendly Architecture
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#e8e8e8', 'primaryBorderColor': '#c0c0c0', 'lineColor': '#c0c0c0'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph TB
-    subgraph INPUT["📥 AI Agent Input"]
+    subgraph INPUT["AI Agent Input"]
         QUERY[User Query/Task]
         CONTEXT[Repository Context]
     end
     
-    subgraph KNOWLEDGE["📚 Knowledge Base - This Repo"]
-        TOOLS[🛠️ Tool References]
-        COMMANDS[💻 Command Syntax]
-        PATTERNS[🎨 Code Patterns]
-        LINKS[🔗 Resource Links]
+    subgraph KNOWLEDGE["Knowledge Base - This Repo"]
+        TOOLS[Tool References]
+        COMMANDS[Command Syntax]
+        PATTERNS[Code Patterns]
+        LINKS[Resource Links]
     end
     
-    subgraph ACTIONS["⚡ AI Actions"]
+    subgraph ACTIONS["AI Actions"]
         SEARCH[Search Resources]
         GENERATE[Generate Code]
         CONFIGURE[Configure Tools]
         DEPLOY[Deploy Solutions]
     end
     
-    subgraph OUTPUT["📤 Output"]
+    subgraph OUTPUT["Output"]
         CODE[Generated Code]
         DOCS[Documentation]
         CONFIG[Configuration]
@@ -1892,20 +2403,20 @@ graph TB
     LINKS --> DEPLOY
     ACTIONS --> OUTPUT
     
-    style KNOWLEDGE fill:#1a1a2e,stroke:#c0c0c0,stroke-width:2px,color:#e8e8e8
-    style INPUT fill:#10a37f,stroke:#c0c0c0,stroke-width:2px,color:#fff
-    style OUTPUT fill:#4285f4,stroke:#c0c0c0,stroke-width:2px,color:#fff
+    style KNOWLEDGE fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style INPUT fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style OUTPUT fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
 ```
 
-### 📖 How AI Agents Should Use This Repository
+### How AI Agents Should Use This Repository
 
-1. **🔍 Discovery**: Browse the Master Contents Index to find relevant sections
-2. **📋 Reference**: Use the tables and code blocks as authoritative references
-3. **🔗 Navigation**: Follow structured links to official documentation
-4. **📦 Implementation**: Copy code snippets and adapt for specific use cases
-5. **🔄 Iteration**: Check back for updates as the ecosystem evolves
+1. **Discovery**: Browse the Master Contents Index to find relevant sections
+2. **Reference**: Use the tables and code blocks as authoritative references
+3. **Navigation**: Follow structured links to official documentation
+4. **Implementation**: Copy code snippets and adapt for specific use cases
+5. **Iteration**: Check back for updates as the ecosystem evolves
 
-### 🏷️ Semantic Tags for AI
+### Semantic Tags for AI
 
 ```yaml
 # Repository Metadata for AI Parsing
@@ -1920,7 +2431,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=📋+GITHUB+CHEATSHEETS" alt="GitHub Cheatsheets" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=GITHUB+CHEATSHEETS" alt="GitHub Cheatsheets" />
 
 ### 🔥 Essential Git & GitHub Cheatsheets
 
@@ -1953,7 +2464,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=💻+VS+CODE+EXTENSIONS+%26+TOOLS" alt="VS Code Extensions & Tools" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=VS+CODE+EXTENSIONS+%26+TOOLS" alt="VS Code Extensions & Tools" />
 
 ### 🤖 AI-Powered Extensions
 
@@ -1998,7 +2509,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🧠+AI+DEVELOPMENT+FRAMEWORKS" alt="AI Development Frameworks" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=AI+DEVELOPMENT+FRAMEWORKS" alt="AI Development Frameworks" />
 
 ### 🔧 LLM Frameworks
 
@@ -2047,7 +2558,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=500&height=40&lines=🔌+MCP+SERVERS+%26+AI+AGENTS" alt="MCP Servers & AI Agents" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=MCP+SERVERS+%26+AI+AGENTS" alt="MCP Servers & AI Agents" />
 
 ### 🌐 Model Context Protocol
 
@@ -2073,7 +2584,7 @@ update_frequency: "weekly"
 
 ---
 
-## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=C0C0C0&background=0D111700&vCenter=true&width=400&height=40&lines=🚀+QUICK+START+GUIDES" alt="Quick Start Guides" />
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=QUICK+START+GUIDES" alt="Quick Start Guides" />
 
 ### Getting Started with OpenAI
 
@@ -2165,15 +2676,16 @@ Create a `.vscode/settings.json`:
 ## 🌐 Technology Ecosystem
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 graph TD
-    subgraph "🧠 AI Layer"
+    subgraph "AI Layer"
         GPT[GPT Models]
         GEMINI[Gemini]
         CLAUDE[Claude]
         LLAMA[LLaMA]
     end
     
-    subgraph "🔧 Tools Layer"
+    subgraph "Tools Layer"
         CURSOR[Cursor IDE]
         VSCODE[VS Code]
         COPILOT[GitHub Copilot]
@@ -2181,21 +2693,21 @@ graph TD
         CODEX[Codex CLI]
     end
     
-    subgraph "🦙 Local AI Layer"
+    subgraph "Local AI Layer"
         OLLAMA[Ollama]
         OPENWEBUI[Open WebUI]
         LMSTUDIO[LM Studio]
         LOCALAI[LocalAI]
     end
     
-    subgraph "☁️ Cloud Layer"
+    subgraph "Cloud Layer"
         AZURE[Azure AI Foundry]
         VERTEX[Vertex AI]
         FIRESTORE[Firestore]
         BEDROCK[Amazon Bedrock]
     end
     
-    subgraph "📦 Framework Layer"
+    subgraph "Framework Layer"
         LANGCHAIN[LangChain]
         LLAMAINDEX[LlamaIndex]
         AUTOGEN[AutoGen]
@@ -2221,21 +2733,22 @@ graph TD
     AZURE --> COPILOT
     VERTEX --> FIRESTORE
     
-    style GPT fill:#10a37f,color:#fff
-    style GEMINI fill:#4285f4,color:#fff
-    style CLAUDE fill:#d97706,color:#fff
-    style CURSOR fill:#007acc,color:#fff
-    style LANGCHAIN fill:#22c55e,color:#fff
-    style OLLAMA fill:#000000,color:#fff
-    style AZURE fill:#0078D4,color:#fff
-    style FIRESTORE fill:#FFCA28,color:#000
+    style GPT fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style GEMINI fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style CLAUDE fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style CURSOR fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style LANGCHAIN fill:#0a0a1a,stroke:#00ff66,stroke-width:2px,color:#00ff66
+    style OLLAMA fill:#0a0a1a,stroke:#ff00ff,stroke-width:2px,color:#ff00ff
+    style AZURE fill:#0a0a1a,stroke:#00d4ff,stroke-width:2px,color:#00d4ff
+    style FIRESTORE fill:#0a0a1a,stroke:#ffcc00,stroke-width:2px,color:#ffcc00
 ```
 
 ---
 
-## 📈 Project Timeline
+## Project Timeline
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'cScale0': '#00f0ff', 'cScale1': '#ff00ff', 'cScale2': '#00ff88', 'cScale3': '#ffcc00', 'cScale4': '#aa00ff', 'cScale5': '#ff6600'}}}%%
 timeline
     title Omega Tool Kit Evolution
     2024-Q4 : Project Inception
@@ -2260,9 +2773,10 @@ timeline
 
 ---
 
-## 🎯 Feature Matrix
+## Feature Matrix
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'quadrant1Fill': '#0a2a1a', 'quadrant2Fill': '#0a1a2a', 'quadrant3Fill': '#1a0a2a', 'quadrant4Fill': '#2a0a1a', 'quadrant1TextFill': '#00ff88', 'quadrant2TextFill': '#00f0ff', 'quadrant3TextFill': '#aa00ff', 'quadrant4TextFill': '#ff6600', 'quadrantPointFill': '#ff00ff', 'quadrantPointTextFill': '#ffffff', 'quadrantXAxisTextFill': '#00f0ff', 'quadrantYAxisTextFill': '#00f0ff', 'quadrantTitleFill': '#00f0ff'}}}%%
 quadrantChart
     title Tool Categories by Popularity vs Utility
     x-axis Low Utility --> High Utility
@@ -2287,59 +2801,278 @@ quadrantChart
 
 ---
 
-## 🤝 Contributing
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=450&height=40&lines=API+QUICK+REFERENCE" alt="API Quick Reference" />
 
 <div align="center">
 
-**We welcome contributions from the community!**
+### Popular AI API Endpoints
 
-[![GitHub Issues](https://img.shields.io/github/issues/SpiralCloudOmega/DevTeam6)](https://github.com/SpiralCloudOmega/DevTeam6/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SpiralCloudOmega/DevTeam6)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+| Provider | Endpoint | Model | Use Case |
+|----------|----------|-------|----------|
+| **OpenAI** | `POST /v1/chat/completions` | gpt-5.1 | Chat/Code |
+| **OpenAI** | `POST /v1/audio/transcriptions` | whisper-v3 | Speech-to-Text |
+| **Anthropic** | `POST /v1/messages` | claude-opus-4.5 | Long context |
+| **Google** | `POST /v1/models/gemini-3:generateContent` | gemini-3 | Multimodal |
+| **Ollama** | `POST /api/generate` | llama3.3 | Local inference |
+
+### Code Snippets
+
+```python
+# OpenAI Python SDK
+from openai import OpenAI
+client = OpenAI()
+response = client.chat.completions.create(
+    model="gpt-5.1",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+
+# Anthropic Python SDK  
+import anthropic
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-opus-4.5-20251101",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+
+# Ollama (Local)
+import ollama
+response = ollama.chat(model='llama3.3', messages=[
+    {'role': 'user', 'content': 'Hello!'}
+])
+```
+
+```javascript
+// OpenAI Node.js SDK
+import OpenAI from 'openai';
+const openai = new OpenAI();
+const response = await openai.chat.completions.create({
+    model: "gpt-5.1",
+    messages: [{ role: "user", content: "Hello!" }]
+});
+
+// Vercel AI SDK (Multi-provider)
+import { generateText } from 'ai';
+import { openai } from '@ai-sdk/openai';
+const { text } = await generateText({
+    model: openai('gpt-5.1'),
+    prompt: 'Hello!'
+});
+```
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF00FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=CHANGELOG;VERSION+HISTORY;UPDATES" alt="Changelog" />
+
+<div align="center">
+
+### Version History
+
+| Version | Date | Highlights |
+|---------|------|------------|
+| **v3.4** | Nov 2025 | Semantic Knowledge Hub (GitFather), AI-first navigation, Completeness Meters |
+| **v3.3** | Nov 2025 | Node Graph Editor (n8n-style), Video Storytelling Module, Enhanced CVS |
+| **v3.2** | Nov 2025 | GenUI Playground, Immersive Landing, Project Roadmap Board, Autonomous Sync |
+| **v3.1** | Nov 2025 | Gamification Dashboard, Onboarding Wizard, CVS Pipeline |
+| **v3.0** | Nov 2025 | Interactive 3D Demo (Three.js/R3F), AR/VR/XR section, GitHub Pages deployment |
+| **v2.6** | Nov 2025 | Updated to GPT-5.1, Claude Opus 4.5, Gemini 3, GitHub Action automation |
+| **v2.5** | Nov 2025 | Tech Stack Comparisons, Learning Paths, API Reference |
+| **v2.4** | Nov 2025 | Animated header, Roadmap, What's Hot section |
+| **v2.3** | Nov 2025 | Dark Cyberpunk theme, Enhanced diagrams |
+| **v2.2** | Oct 2025 | MCP Servers, AI Agent Toolbox |
+| **v2.1** | Sep 2025 | Interactive mindmaps, Mermaid diagrams |
+| **v2.0** | Aug 2025 | Major restructure, 1000+ resources |
+| **v1.5** | Jul 2025 | Quantum computing, Research platforms |
+| **v1.0** | Jun 2025 | Initial release, Core structure |
+
+### Recent Updates
+
+```diff
++ Added: Semantic Knowledge Hub - AI-first GitFather knowledge graph
++ Added: Semantic search with intelligent keyword matching
++ Added: Completeness meters for each knowledge node
++ Added: Graph/List/Categories view modes
++ Added: 16 knowledge nodes with interconnected architecture
++ Added: Non-standard navigation via clickable nodes
++ Added: Progressive disclosure for node details
++ Added: Node Graph Editor - Interactive n8n-style workflow visualization
++ Added: Video Storytelling Module - Chapter-based video guides
++ Updated: Interactive Experience Hub with 9 experiences
++ Updated: App version to 3.4.0 with full routing
++ Improved: Feature discoverability with prominent badges
+```
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00FF88&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=CONTRIBUTING;JOIN+US;GET+INVOLVED" alt="Contributing" />
+
+<div align="center">
+
+**Join the Community - Help Build the Ultimate Developer Resource!**
+
+[![GitHub Issues](https://img.shields.io/github/issues/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=00f0ff)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
+[![Contributors](https://img.shields.io/github/contributors/SpiralCloudOmega/DevTeam6?style=for-the-badge&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/graphs/contributors)
 
 </div>
 
 ```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#0a0a1a', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
 flowchart LR
-    A[🍴 Fork] --> B[🌿 Branch]
-    B --> C[✏️ Edit]
-    C --> D[📝 Commit]
-    D --> E[🚀 Push]
-    E --> F[🔄 Pull Request]
-    F --> G[✅ Merged!]
+    A[Fork] --> B[Branch]
+    B --> C[Edit]
+    C --> D[Commit]
+    D --> E[Push]
+    E --> F[Pull Request]
+    F --> G[Merged!]
     
-    style A fill:#238636,color:#fff
-    style G fill:#238636,color:#fff
+    style A fill:#0a0a1a,stroke:#00f0ff,stroke-width:2px,color:#00f0ff
+    style B fill:#0a0a1a,stroke:#ff00ff,stroke-width:2px,color:#ff00ff
+    style C fill:#0a0a1a,stroke:#00ff88,stroke-width:2px,color:#00ff88
+    style D fill:#0a0a1a,stroke:#ff6600,stroke-width:2px,color:#ff6600
+    style E fill:#0a0a1a,stroke:#ffcc00,stroke-width:2px,color:#ffcc00
+    style F fill:#0a0a1a,stroke:#aa00ff,stroke-width:2px,color:#aa00ff
+    style G fill:#0a0a1a,stroke:#00ff88,stroke-width:3px,color:#00ff88
 ```
-
-### How to Contribute
-
-1. **Fork** the repository
-2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-### Contribution Ideas
-
-- 🆕 Add new AI tools and resources
-- 📝 Improve documentation
-- 🐛 Report bugs or issues
-- 💡 Suggest new features
-- 🌐 Translate to other languages
-
----
-
-## 📊 GitHub Activity
 
 <div align="center">
 
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=SpiralCloudOmega&theme=github-compact&hide_border=true&area=true)
+### Contribution Quick Start
+
+| Step | Action | Command |
+|:----:|--------|---------|
+| 1 | Fork the repo | Click "Fork" button |
+| 2 | Clone your fork | `git clone https://github.com/YOUR_USERNAME/DevTeam6` |
+| 3 | Create branch | `git checkout -b feature/your-feature` |
+| 4 | Make changes | Edit files, add resources |
+| 5 | Commit | `git commit -m "Add: your feature"` |
+| 6 | Push | `git push origin feature/your-feature` |
+| 7 | Open PR | Create Pull Request on GitHub |
+
+### Ways to Contribute
+
+| Type | Description | Difficulty |
+|------|-------------|:----------:|
+| Add Resources | Add new tools, libraries, or repos | Easy |
+| Fix Links | Report or fix broken links | Easy |
+| Improve Docs | Enhance descriptions or add examples | Medium |
+| Add Sections | Create new categories or sections | Medium |
+| Translations | Translate to other languages | Medium |
+| Diagrams | Create new visualizations | Advanced |
 
 </div>
 
 ---
 
-## 🏆 Acknowledgments
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=FF6600&background=0A0A1AFF&vCenter=true&width=150&height=40&lines=FAQ" alt="FAQ" />
+
+<div align="center">
+
+### Frequently Asked Questions
+
+<details>
+<summary><b>What is DevTeam6 - The Omega Tool Kit?</b></summary>
+<br>
+A comprehensive, curated encyclopedia of 1000+ developer tools, AI platforms, frameworks, and resources. It's designed as an AI-ready toolbox that helps developers discover and use the best tools for any project.
+</details>
+
+<details>
+<summary><b>How do I use this repository?</b></summary>
+<br>
+
+- **Browse**: Use the Table of Contents or Quick Navigation buttons
+- **Search**: Use `Ctrl+F` to find specific tools or topics
+- **Reference**: Bookmark for quick access to tool documentation
+- **Contribute**: Add tools you use and love via Pull Requests
+</details>
+
+<details>
+<summary><b>How often is this updated?</b></summary>
+<br>
+The repository is actively maintained with weekly updates. New tools, frameworks, and resources are added as they emerge. Check the Changelog for recent updates.
+</details>
+
+<details>
+<summary><b>Can I use this for commercial projects?</b></summary>
+<br>
+Yes! This repository is MIT licensed. You can use, modify, and distribute freely. Attribution is appreciated but not required.
+</details>
+
+<details>
+<summary><b>How do I contribute?</b></summary>
+<br>
+
+1. Fork the repository
+2. Add your resource in the appropriate section
+3. Follow the existing format and style
+4. Submit a Pull Request with a clear description
+</details>
+
+<details>
+<summary><b>Which AI coding assistant should I use?</b></summary>
+<br>
+
+- **Cursor**: Best for full IDE experience with AI
+- **GitHub Copilot**: Best for quick code completions
+- **Claude Code**: Best for complex, multi-file tasks
+- **Ollama + Continue**: Best for privacy-focused local AI
+</details>
+
+<details>
+<summary><b>How do I run AI models locally?</b></summary>
+<br>
+
+```bash
+# Fastest way - Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3.2
+ollama run llama3.2
+
+# With GUI - LM Studio
+# Download from https://lmstudio.ai/
+```
+</details>
+
+</div>
+
+---
+
+## Support the Project
+
+<div align="center">
+
+**If you find this resource helpful, consider supporting its development!**
+
+[![Star](https://img.shields.io/badge/Star_This_Repo-00f0ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![Share](https://img.shields.io/badge/Share_on_Twitter-ff00ff?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?text=Check%20out%20DevTeam6%20-%20The%20Omega%20Tool%20Kit!%20A%20comprehensive%20encyclopedia%20for%20software%20development.%20https://github.com/SpiralCloudOmega/DevTeam6)
+[![Follow](https://img.shields.io/badge/Follow_@SpiralCloudOmega-00ff88?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpiralCloudOmega)
+
+### Spread the Word
+
+```
+If this repo helped you, give it a ⭐ and share it with others!
+Together we can build the most comprehensive developer resource.
+```
+
+</div>
+
+---
+
+## GitHub Activity
+
+<div align="center">
+
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=SpiralCloudOmega&theme=react-dark&hide_border=true&area=true&bg_color=0a0a1a&color=00f0ff&line=ff00ff&point=00ff88)
+
+</div>
+
+---
+
+## Acknowledgments
 
 <div align="center">
 
@@ -2347,36 +3080,52 @@ Special thanks to all the amazing projects and communities that make this toolki
 
 | Organization | Contribution |
 |--------------|-------------|
-| ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) | AI Models & APIs |
-| ![Google](https://img.shields.io/badge/Google-4285F4?style=flat&logo=google&logoColor=white) | Gemini & TensorFlow |
-| ![Anthropic](https://img.shields.io/badge/Anthropic-D97706?style=flat&logoColor=white) | Claude AI |
-| ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) | Copilot & Platform |
-| ![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?style=flat&logo=microsoft&logoColor=white) | VS Code & Azure |
+| ![OpenAI](https://img.shields.io/badge/OpenAI-00ff88?style=flat&logo=openai&logoColor=white) | AI Models & APIs |
+| ![Google](https://img.shields.io/badge/Google-00f0ff?style=flat&logo=google&logoColor=white) | Gemini & TensorFlow |
+| ![Anthropic](https://img.shields.io/badge/Anthropic-ff6600?style=flat&logoColor=white) | Claude AI |
+| ![GitHub](https://img.shields.io/badge/GitHub-ff00ff?style=flat&logo=github&logoColor=white) | Copilot & Platform |
+| ![Microsoft](https://img.shields.io/badge/Microsoft-00d4ff?style=flat&logo=microsoft&logoColor=white) | VS Code & Azure |
+| ![Meta](https://img.shields.io/badge/Meta-aa00ff?style=flat&logo=meta&logoColor=white) | Llama Models |
+| ![Hugging Face](https://img.shields.io/badge/Hugging_Face-ffcc00?style=flat&logo=huggingface&logoColor=white) | ML Community |
 
 </div>
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<div align="center">
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-00f0ff?style=for-the-badge)](LICENSE)
+
+*Free to use, modify, and distribute. Attribution appreciated but not required.*
+
+</div>
 
 ---
 
 <div align="center">
 
-## ⭐ Star History
+## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=SpiralCloudOmega/DevTeam6&type=Date)](https://star-history.com/#SpiralCloudOmega/DevTeam6&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=SpiralCloudOmega/DevTeam6&type=Date&theme=dark)](https://star-history.com/#SpiralCloudOmega/DevTeam6&Date)
 
 ---
 
-**🌀 The Omega Tool Kit - 10x Your AI Development 🚀**
+### Connect With Us
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
+[![GitHub](https://img.shields.io/badge/GitHub-SpiralCloudOmega-00f0ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpiralCloudOmega)
+[![Star](https://img.shields.io/github/stars/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&color=ff00ff)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![Follow](https://img.shields.io/github/followers/SpiralCloudOmega?style=for-the-badge&logo=github&color=00ff88)](https://github.com/SpiralCloudOmega)
 
-Made with ❤️ by [SpiralCloudOmega](https://github.com/SpiralCloudOmega)
+---
 
-[![Follow](https://img.shields.io/github/followers/SpiralCloudOmega?label=Follow&style=social)](https://github.com/SpiralCloudOmega)
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=28&duration=2000&pause=500&color=00F0FF&background=0A0A1AFF&center=true&vCenter=true&width=700&height=60&lines=DevTeam6+-+THE+OMEGA+TOOL+KIT;POWERED+BY+GPT-5.1+%26+CLAUDE+OPUS+4.5;10X+YOUR+AI+DEVELOPMENT;BUILD+ANYTHING+%7C+LEARN+EVERYTHING;1000%2B+CURATED+RESOURCES" alt="Footer Typing" />
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,20:7b2fff,40:ff00ff,60:ff0066,80:aa00ff,100:00f0ff&height=120&section=footer&animation=twinkling" width="100%"/>
+
+<sub>Made with passion by <a href="https://github.com/SpiralCloudOmega">SpiralCloudOmega</a> | DevTeam6 - The Omega Tool Kit © 2025</sub>
 
 </div>
