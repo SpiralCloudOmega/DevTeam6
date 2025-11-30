@@ -811,10 +811,23 @@ graph LR
 
 <div align="center">
 
+### Featured Video - GitHub Awesome
+
+<a href="https://www.youtube.com/watch?v=wu3522-is9w">
+  <img src="https://img.youtube.com/vi/wu3522-is9w/maxresdefault.jpg" alt="GitHub Awesome" width="100%" style="border-radius: 12px; border: 2px solid #00f0ff;"/>
+</a>
+
+[![Watch on YouTube](https://img.shields.io/badge/▶_WATCH_NOW-GitHub_Awesome-ff0066?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=wu3522-is9w&t=29s)
+
+*Discover amazing GitHub repositories, tools, and resources in this curated video guide*
+
+---
+
 ### Latest GitHub Universe & Developer Conferences
 
 | Event | Description | Watch |
 |-------|-------------|-------|
+| **GitHub Awesome** | Curated guide to amazing repos | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/watch?v=wu3522-is9w&t=29s) |
 | **GitHub Universe 2025** | The latest global developer event | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/@GitHub) |
 | **GitHub Universe 2024** | AI-powered developer experience | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEFmtstItnKlhJJVmMghxc0P) |
 | **GitHub Universe 2023** | The future of software development | [![Watch](https://img.shields.io/badge/YouTube-Watch-ff0066?logo=youtube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEEK4j-gRy2svO-f-FJKwCeS) |
