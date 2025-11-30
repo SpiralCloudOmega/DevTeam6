@@ -251,30 +251,34 @@ function ParticleRing() {
   )
 }
 
-// Floating Orbs for depth
+// Floating Orbs for depth - using deterministic positions based on index
 function FloatingOrbs() {
-  const orbs = useMemo(() => 
-    Array.from({ length: 8 }, (_, i) => ({
-      position: [
-        (Math.random() - 0.5) * 25,
-        (Math.random() - 0.5) * 15,
-        (Math.random() - 0.5) * 20 - 10
-      ] as [number, number, number],
-      scale: 0.3 + Math.random() * 0.4,
-      speed: 0.5 + Math.random() * 1,
-      color: ['#00f0ff', '#ff00ff', '#00ff88', '#7b2fff'][i % 4]
-    }))
-  , [])
+  // Pre-calculated positions for consistent rendering
+  const orbConfigs = [
+    { x: -10, y: 5, z: -15, scale: 0.5, speed: 1.0 },
+    { x: 8, y: -3, z: -12, scale: 0.4, speed: 1.2 },
+    { x: -5, y: 7, z: -18, scale: 0.6, speed: 0.8 },
+    { x: 12, y: -5, z: -10, scale: 0.35, speed: 1.4 },
+    { x: -8, y: -6, z: -16, scale: 0.45, speed: 0.9 },
+    { x: 6, y: 4, z: -14, scale: 0.55, speed: 1.1 },
+    { x: -3, y: -2, z: -20, scale: 0.4, speed: 0.7 },
+    { x: 10, y: 6, z: -8, scale: 0.5, speed: 1.3 },
+  ]
+  
+  const colors = ['#00f0ff', '#ff00ff', '#00ff88', '#7b2fff']
   
   return (
     <>
-      {orbs.map((orb, i) => (
-        <Float key={i} speed={orb.speed} floatIntensity={2}>
-          <mesh position={orb.position} scale={orb.scale}>
+      {orbConfigs.map((config, i) => (
+        <Float key={i} speed={config.speed} floatIntensity={2}>
+          <mesh 
+            position={[config.x, config.y, config.z]} 
+            scale={config.scale}
+          >
             <sphereGeometry args={[1, 16, 16]} />
             <meshStandardMaterial
-              color={orb.color}
-              emissive={orb.color}
+              color={colors[i % 4]}
+              emissive={colors[i % 4]}
               emissiveIntensity={0.8}
               transparent
               opacity={0.6}
