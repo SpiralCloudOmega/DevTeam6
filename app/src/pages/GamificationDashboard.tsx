@@ -300,8 +300,8 @@ function GamificationDashboard() {
       </main>
 
       <footer className="dashboard-footer">
-        <a href="/" className="back-link">← Back to 3D Demo</a>
-        <a href="/onboarding" className="next-link">Start Onboarding →</a>
+        <a href="/DevTeam6/" className="back-link">← Back to 3D Demo</a>
+        <a href="/DevTeam6/onboarding" className="next-link">Start Onboarding →</a>
       </footer>
     </div>
   )

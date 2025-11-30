@@ -271,8 +271,8 @@ function OnboardingWizard() {
       )}
 
       <footer className="wizard-footer">
-        <a href="/" className="back-link">← Back to 3D Demo</a>
-        <a href="/gamification" className="next-link">View Leaderboard →</a>
+        <a href="/DevTeam6/" className="back-link">← Back to 3D Demo</a>
+        <a href="/DevTeam6/gamification" className="next-link">View Leaderboard →</a>
       </footer>
     </div>
   )
