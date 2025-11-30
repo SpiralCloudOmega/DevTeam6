@@ -122,36 +122,14 @@ export default function ImmersiveLanding() {
         }
       });
 
-      // Stats counter animation
-      const animateStats = () => {
-        document.querySelectorAll('.stat-number').forEach(el => {
-          const target = el.getAttribute('data-target');
-          if (target) {
-            gsap.from(el, {
-              textContent: 0,
-              duration: 2,
-              ease: 'power1.out',
-              snap: { textContent: 1 },
-              scrollTrigger: {
-                trigger: el,
-                start: 'top 80%'
-              }
-            });
-          }
-        });
-      };
-
-      // Feature cards stagger animation on scroll
+      // Feature cards stagger animation with delay
       gsap.from('.feature-card', {
         opacity: 0,
         y: 80,
         stagger: 0.15,
         duration: 0.8,
+        delay: 1.2,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: featuresRef.current,
-          start: 'top 70%'
-        }
       });
 
       // Timeline items animation
@@ -160,11 +138,8 @@ export default function ImmersiveLanding() {
         x: (i) => i % 2 === 0 ? -50 : 50,
         stagger: 0.2,
         duration: 0.8,
+        delay: 1.5,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: timelineRef.current,
-          start: 'top 70%'
-        }
       });
 
       // CTA section animation
@@ -173,11 +148,8 @@ export default function ImmersiveLanding() {
         y: 50,
         stagger: 0.2,
         duration: 0.8,
+        delay: 1.8,
         ease: 'power2.out',
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: 'top 70%'
-        }
       });
     }, containerRef);
 

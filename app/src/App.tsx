@@ -1,8 +1,143 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Stars, Float, Text3D, Center } from '@react-three/drei'
-import { Suspense, useRef, useState } from 'react'
+import { OrbitControls, Stars, Float } from '@react-three/drei'
+import { Suspense, useRef, useState, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
+
+// Parametric Wave Background - Creates flowing wave mesh
+function ParametricBackground() {
+  const meshRef = useRef<THREE.Mesh>(null!)
+  
+  const { positions, indices } = useMemo(() => {
+    const width = 40
+    const height = 40
+    const segments = 80
+    const positions = new Float32Array((segments + 1) * (segments + 1) * 3)
+    const indices: number[] = []
+    
+    for (let y = 0; y <= segments; y++) {
+      for (let x = 0; x <= segments; x++) {
+        const idx = (y * (segments + 1) + x) * 3
+        positions[idx] = (x / segments - 0.5) * width
+        positions[idx + 1] = 0
+        positions[idx + 2] = (y / segments - 0.5) * height
+      }
+    }
+    
+    for (let y = 0; y < segments; y++) {
+      for (let x = 0; x < segments; x++) {
+        const a = y * (segments + 1) + x
+        const b = a + 1
+        const c = a + segments + 1
+        const d = c + 1
+        indices.push(a, c, b)
+        indices.push(b, c, d)
+      }
+    }
+    
+    return { positions, indices }
+  }, [])
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      const geometry = meshRef.current.geometry
+      const positionAttr = geometry.getAttribute('position')
+      const time = state.clock.elapsedTime
+      
+      for (let i = 0; i < positionAttr.count; i++) {
+        const x = positionAttr.getX(i)
+        const z = positionAttr.getZ(i)
+        const y = Math.sin(x * 0.3 + time * 0.5) * Math.cos(z * 0.3 + time * 0.3) * 1.5 +
+                  Math.sin(x * 0.5 + z * 0.5 + time * 0.8) * 0.5
+        positionAttr.setY(i, y)
+      }
+      positionAttr.needsUpdate = true
+      geometry.computeVertexNormals()
+    }
+  })
+  
+  return (
+    <mesh ref={meshRef} position={[0, -8, -5]} rotation={[-Math.PI / 4, 0, 0]}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="index"
+          count={indices.length}
+          array={new Uint16Array(indices)}
+          itemSize={1}
+        />
+      </bufferGeometry>
+      <meshStandardMaterial
+        color="#00f0ff"
+        emissive="#00f0ff"
+        emissiveIntensity={0.15}
+        wireframe
+        transparent
+        opacity={0.3}
+        side={THREE.DoubleSide}
+      />
+    </mesh>
+  )
+}
+
+// Flowing Helix Particles
+function HelixParticles() {
+  const pointsRef = useRef<THREE.Points>(null!)
+  const particleCount = 300
+  
+  const { positions, colors } = useMemo(() => {
+    const positions = new Float32Array(particleCount * 3)
+    const colors = new Float32Array(particleCount * 3)
+    
+    for (let i = 0; i < particleCount; i++) {
+      const t = (i / particleCount) * Math.PI * 8
+      const radius = 6 + Math.sin(t * 0.5) * 2
+      positions[i * 3] = Math.cos(t) * radius
+      positions[i * 3 + 1] = (i / particleCount - 0.5) * 20
+      positions[i * 3 + 2] = Math.sin(t) * radius
+      
+      // Gradient colors
+      const colorMix = i / particleCount
+      colors[i * 3] = colorMix
+      colors[i * 3 + 1] = 0.94 * (1 - colorMix) + 0.5 * colorMix
+      colors[i * 3 + 2] = 1 * (1 - colorMix)
+    }
+    
+    return { positions, colors }
+  }, [])
+  
+  useFrame((state) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y += 0.003
+      pointsRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.5
+    }
+  })
+  
+  return (
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={particleCount}
+          array={positions}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="attributes-color"
+          count={particleCount}
+          array={colors}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial size={0.08} vertexColors transparent opacity={0.9} />
+    </points>
+  )
+}
 
 // Animated Torus component with cyberpunk colors
 function CyberpunkTorus({ position, color }: { position: [number, number, number], color: string }) {
@@ -64,28 +199,32 @@ function ParticleRing() {
   const pointsRef = useRef<THREE.Points>(null!)
   const particleCount = 500
   
-  const positions = new Float32Array(particleCount * 3)
-  const colors = new Float32Array(particleCount * 3)
-  
-  for (let i = 0; i < particleCount; i++) {
-    const angle = (i / particleCount) * Math.PI * 2
-    const radius = 4 + Math.random() * 0.5
-    positions[i * 3] = Math.cos(angle) * radius
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 0.5
-    positions[i * 3 + 2] = Math.sin(angle) * radius
+  const { positions, colors } = useMemo(() => {
+    const positions = new Float32Array(particleCount * 3)
+    const colors = new Float32Array(particleCount * 3)
     
-    // Cyberpunk colors
-    const colorChoice = Math.random()
-    if (colorChoice < 0.33) {
-      colors[i * 3] = 0; colors[i * 3 + 1] = 0.94; colors[i * 3 + 2] = 1; // Cyan
-    } else if (colorChoice < 0.66) {
-      colors[i * 3] = 1; colors[i * 3 + 1] = 0; colors[i * 3 + 2] = 1; // Magenta
-    } else {
-      colors[i * 3] = 0; colors[i * 3 + 1] = 1; colors[i * 3 + 2] = 0.53; // Green
+    for (let i = 0; i < particleCount; i++) {
+      const angle = (i / particleCount) * Math.PI * 2
+      const radius = 4 + Math.random() * 0.5
+      positions[i * 3] = Math.cos(angle) * radius
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 0.5
+      positions[i * 3 + 2] = Math.sin(angle) * radius
+      
+      // Cyberpunk colors
+      const colorChoice = Math.random()
+      if (colorChoice < 0.33) {
+        colors[i * 3] = 0; colors[i * 3 + 1] = 0.94; colors[i * 3 + 2] = 1; // Cyan
+      } else if (colorChoice < 0.66) {
+        colors[i * 3] = 1; colors[i * 3 + 1] = 0; colors[i * 3 + 2] = 1; // Magenta
+      } else {
+        colors[i * 3] = 0; colors[i * 3 + 1] = 1; colors[i * 3 + 2] = 0.53; // Green
+      }
     }
-  }
+    
+    return { positions, colors }
+  }, [])
 
-  useFrame((state) => {
+  useFrame(() => {
     if (pointsRef.current) {
       pointsRef.current.rotation.y += 0.002
     }
@@ -112,6 +251,41 @@ function ParticleRing() {
   )
 }
 
+// Floating Orbs for depth
+function FloatingOrbs() {
+  const orbs = useMemo(() => 
+    Array.from({ length: 8 }, (_, i) => ({
+      position: [
+        (Math.random() - 0.5) * 25,
+        (Math.random() - 0.5) * 15,
+        (Math.random() - 0.5) * 20 - 10
+      ] as [number, number, number],
+      scale: 0.3 + Math.random() * 0.4,
+      speed: 0.5 + Math.random() * 1,
+      color: ['#00f0ff', '#ff00ff', '#00ff88', '#7b2fff'][i % 4]
+    }))
+  , [])
+  
+  return (
+    <>
+      {orbs.map((orb, i) => (
+        <Float key={i} speed={orb.speed} floatIntensity={2}>
+          <mesh position={orb.position} scale={orb.scale}>
+            <sphereGeometry args={[1, 16, 16]} />
+            <meshStandardMaterial
+              color={orb.color}
+              emissive={orb.color}
+              emissiveIntensity={0.8}
+              transparent
+              opacity={0.6}
+            />
+          </mesh>
+        </Float>
+      ))}
+    </>
+  )
+}
+
 // Scene component
 function Scene() {
   return (
@@ -120,6 +294,11 @@ function Scene() {
       <pointLight position={[10, 10, 10]} intensity={1} color="#00f0ff" />
       <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ff00ff" />
       <spotLight position={[0, 10, 0]} intensity={0.5} color="#00ff88" angle={0.3} />
+      
+      {/* Parametric 3D Background */}
+      <ParametricBackground />
+      <HelixParticles />
+      <FloatingOrbs />
       
       <CoreShape />
       <ParticleRing />
