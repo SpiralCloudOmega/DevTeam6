@@ -5,7 +5,7 @@
 # For format details, see: https://gh.io/customagents/config
 
 name:AxE-Sofware-Agent
-description:Software Engineer Agent
+description:Software-Engineer-Agent
 ---
 
 # My Agent
