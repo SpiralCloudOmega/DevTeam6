@@ -4,23 +4,39 @@ import { Suspense, useRef, useState, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-// Parametric Wave Background - Creates flowing wave mesh
-function ParametricBackground() {
+// Gravity Field Mesh - Einstein-style spacetime curvature
+// Objects create "wells" in the mesh like mass curves spacetime
+function GravityFieldMesh() {
   const meshRef = useRef<THREE.Mesh>(null!)
   
-  const { positions, indices } = useMemo(() => {
-    const width = 40
-    const height = 40
-    const segments = 80
+  // Gravity sources - positions and "mass" that warp the mesh
+  const gravitySources = useMemo(() => [
+    { x: 0, z: 0, mass: 4.0, radius: 6 },      // Center - main DevTeam6 logo
+    { x: -5, z: 2, mass: 1.5, radius: 3 },     // Left torus
+    { x: 5, z: 2, mass: 1.5, radius: 3 },      // Right torus
+    { x: 0, z: -4, mass: 1.2, radius: 2.5 },   // Core shape
+  ], [])
+  
+  const { positions, indices, uvs } = useMemo(() => {
+    const width = 60
+    const height = 80
+    const segments = 100
     const positions = new Float32Array((segments + 1) * (segments + 1) * 3)
+    const uvs = new Float32Array((segments + 1) * (segments + 1) * 2)
     const indices: number[] = []
     
     for (let y = 0; y <= segments; y++) {
       for (let x = 0; x <= segments; x++) {
-        const idx = (y * (segments + 1) + x) * 3
-        positions[idx] = (x / segments - 0.5) * width
-        positions[idx + 1] = 0
-        positions[idx + 2] = (y / segments - 0.5) * height
+        const idx = (y * (segments + 1) + x)
+        const posIdx = idx * 3
+        const uvIdx = idx * 2
+        
+        positions[posIdx] = (x / segments - 0.5) * width
+        positions[posIdx + 1] = 0
+        positions[posIdx + 2] = (y / segments - 0.5) * height
+        
+        uvs[uvIdx] = x / segments
+        uvs[uvIdx + 1] = y / segments
       }
     }
     
@@ -29,6 +45,114 @@ function ParametricBackground() {
         const a = y * (segments + 1) + x
         const b = a + 1
         const c = a + segments + 1
+        const d = c + 1
+        indices.push(a, c, b)
+        indices.push(b, c, d)
+      }
+    }
+    
+    return { positions, indices, uvs }
+  }, [])
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      const geometry = meshRef.current.geometry
+      const positionAttr = geometry.getAttribute('position')
+      const time = state.clock.elapsedTime
+      
+      for (let i = 0; i < positionAttr.count; i++) {
+        const x = positionAttr.getX(i)
+        const z = positionAttr.getZ(i)
+        
+        // Calculate gravity well depth from all sources
+        let gravityDepth = 0
+        for (const source of gravitySources) {
+          const dx = x - source.x
+          const dz = z - source.z
+          const distance = Math.sqrt(dx * dx + dz * dz)
+          
+          // Inverse square-ish falloff with smooth edges
+          if (distance < source.radius * 3) {
+            const normalizedDist = distance / (source.radius * 3)
+            const wellDepth = source.mass * Math.pow(1 - normalizedDist, 2)
+            gravityDepth += wellDepth
+          }
+        }
+        
+        // Add subtle wave animation
+        const wave = Math.sin(x * 0.15 + time * 0.3) * Math.cos(z * 0.15 + time * 0.2) * 0.3
+        
+        // Combine gravity wells with wave
+        const finalY = -gravityDepth + wave
+        positionAttr.setY(i, finalY)
+      }
+      
+      positionAttr.needsUpdate = true
+      geometry.computeVertexNormals()
+    }
+  })
+  
+  return (
+    <mesh ref={meshRef} position={[0, -3, 5]} rotation={[-Math.PI / 3, 0, 0]}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="attributes-uv"
+          count={uvs.length / 2}
+          array={uvs}
+          itemSize={2}
+        />
+        <bufferAttribute
+          attach="index"
+          count={indices.length}
+          array={new Uint32Array(indices)}
+          itemSize={1}
+        />
+      </bufferGeometry>
+      <meshStandardMaterial
+        color="#00f0ff"
+        emissive="#00f0ff"
+        emissiveIntensity={0.2}
+        wireframe
+        transparent
+        opacity={0.4}
+        side={THREE.DoubleSide}
+      />
+    </mesh>
+  )
+}
+
+// Holographic Grid Floor - extends far down
+function HolographicGrid() {
+  const meshRef = useRef<THREE.Mesh>(null!)
+  
+  const { positions, indices } = useMemo(() => {
+    const width = 100
+    const depth = 150
+    const segmentsX = 80
+    const segmentsZ = 120
+    const positions = new Float32Array((segmentsX + 1) * (segmentsZ + 1) * 3)
+    const indices: number[] = []
+    
+    for (let z = 0; z <= segmentsZ; z++) {
+      for (let x = 0; x <= segmentsX; x++) {
+        const idx = (z * (segmentsX + 1) + x) * 3
+        positions[idx] = (x / segmentsX - 0.5) * width
+        positions[idx + 1] = 0
+        positions[idx + 2] = (z / segmentsZ) * depth - 20
+      }
+    }
+    
+    for (let z = 0; z < segmentsZ; z++) {
+      for (let x = 0; x < segmentsX; x++) {
+        const a = z * (segmentsX + 1) + x
+        const b = a + 1
+        const c = a + segmentsX + 1
         const d = c + 1
         indices.push(a, c, b)
         indices.push(b, c, d)
@@ -47,17 +171,23 @@ function ParametricBackground() {
       for (let i = 0; i < positionAttr.count; i++) {
         const x = positionAttr.getX(i)
         const z = positionAttr.getZ(i)
-        const y = Math.sin(x * 0.3 + time * 0.5) * Math.cos(z * 0.3 + time * 0.3) * 1.5 +
-                  Math.sin(x * 0.5 + z * 0.5 + time * 0.8) * 0.5
-        positionAttr.setY(i, y)
+        
+        // Gentle waves that move toward viewer
+        const wave = Math.sin(z * 0.1 - time * 0.5) * 0.5 + 
+                     Math.sin(x * 0.08 + time * 0.3) * 0.3
+        
+        // Fade out waves in distance
+        const distanceFade = Math.max(0, 1 - z / 100)
+        
+        positionAttr.setY(i, wave * distanceFade)
       }
+      
       positionAttr.needsUpdate = true
-      geometry.computeVertexNormals()
     }
   })
   
   return (
-    <mesh ref={meshRef} position={[0, -8, -5]} rotation={[-Math.PI / 4, 0, 0]}>
+    <mesh ref={meshRef} position={[0, -12, 0]} rotation={[-Math.PI / 2.5, 0, 0]}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -68,44 +198,153 @@ function ParametricBackground() {
         <bufferAttribute
           attach="index"
           count={indices.length}
-          array={new Uint16Array(indices)}
+          array={new Uint32Array(indices)}
           itemSize={1}
         />
       </bufferGeometry>
       <meshStandardMaterial
-        color="#00f0ff"
-        emissive="#00f0ff"
+        color="#7b2fff"
+        emissive="#7b2fff"
         emissiveIntensity={0.15}
         wireframe
         transparent
-        opacity={0.3}
+        opacity={0.25}
         side={THREE.DoubleSide}
       />
     </mesh>
   )
 }
 
+// Holographic scanlines effect
+function HolographicScanlines() {
+  const linesRef = useRef<THREE.Group>(null!)
+  
+  useFrame((state) => {
+    if (linesRef.current) {
+      // Move scanlines up slowly
+      linesRef.current.position.y = (state.clock.elapsedTime * 0.5) % 20 - 10
+    }
+  })
+  
+  // Deterministic scanline configurations
+  const lines = useMemo(() => {
+    const result = []
+    for (let i = 0; i < 30; i++) {
+      // Use sine-based pseudo-random for deterministic values
+      const seed = i * 0.1
+      result.push({
+        y: i * 0.7 - 10,
+        opacity: 0.1 + (Math.sin(seed * 7.3) * 0.5 + 0.5) * 0.2,
+        width: 30 + (Math.sin(seed * 13.7) * 0.5 + 0.5) * 20
+      })
+    }
+    return result
+  }, [])
+  
+  return (
+    <group ref={linesRef}>
+      {lines.map((line, i) => (
+        <mesh key={i} position={[0, line.y, -5]}>
+          <planeGeometry args={[line.width, 0.02]} />
+          <meshBasicMaterial
+            color="#00f0ff"
+            transparent
+            opacity={line.opacity}
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
+// Glowing 3D Text that pushes through the mesh
+function GravityText() {
+  const groupRef = useRef<THREE.Group>(null!)
+  const glowRef = useRef<THREE.Mesh>(null!)
+  
+  useFrame((state) => {
+    if (groupRef.current) {
+      // Subtle floating animation
+      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.2
+    }
+    if (glowRef.current) {
+      // Pulsing glow
+      const scale = 1 + Math.sin(state.clock.elapsedTime * 2) * 0.05
+      glowRef.current.scale.set(scale, scale, 1)
+    }
+  })
+  
+  return (
+    <group ref={groupRef} position={[0, 2, 0]}>
+      {/* Glow backdrop */}
+      <mesh ref={glowRef} position={[0, 0, -0.5]}>
+        <planeGeometry args={[12, 3]} />
+        <meshBasicMaterial
+          color="#00f0ff"
+          transparent
+          opacity={0.1}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+      
+      {/* Main holographic rings around text area */}
+      <mesh rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[5, 0.05, 8, 64]} />
+        <meshStandardMaterial
+          color="#00f0ff"
+          emissive="#00f0ff"
+          emissiveIntensity={0.8}
+          transparent
+          opacity={0.6}
+        />
+      </mesh>
+      
+      <mesh rotation={[Math.PI / 2, 0, Math.PI / 4]}>
+        <torusGeometry args={[4.5, 0.03, 8, 64]} />
+        <meshStandardMaterial
+          color="#ff00ff"
+          emissive="#ff00ff"
+          emissiveIntensity={0.6}
+          transparent
+          opacity={0.4}
+        />
+      </mesh>
+    </group>
+  )
+}
+
 // Flowing Helix Particles
 function HelixParticles() {
   const pointsRef = useRef<THREE.Points>(null!)
-  const particleCount = 300
+  const particleCount = 400
   
   const { positions, colors } = useMemo(() => {
     const positions = new Float32Array(particleCount * 3)
     const colors = new Float32Array(particleCount * 3)
     
     for (let i = 0; i < particleCount; i++) {
-      const t = (i / particleCount) * Math.PI * 8
-      const radius = 6 + Math.sin(t * 0.5) * 2
+      const t = (i / particleCount) * Math.PI * 10
+      const radius = 8 + Math.sin(t * 0.5) * 3
       positions[i * 3] = Math.cos(t) * radius
-      positions[i * 3 + 1] = (i / particleCount - 0.5) * 20
+      positions[i * 3 + 1] = (i / particleCount - 0.5) * 30
       positions[i * 3 + 2] = Math.sin(t) * radius
       
-      // Gradient colors
+      // Gradient colors - cyan to magenta to purple
       const colorMix = i / particleCount
-      colors[i * 3] = colorMix
-      colors[i * 3 + 1] = 0.94 * (1 - colorMix) + 0.5 * colorMix
-      colors[i * 3 + 2] = 1 * (1 - colorMix)
+      if (colorMix < 0.33) {
+        colors[i * 3] = 0
+        colors[i * 3 + 1] = 0.94
+        colors[i * 3 + 2] = 1
+      } else if (colorMix < 0.66) {
+        colors[i * 3] = 1
+        colors[i * 3 + 1] = 0
+        colors[i * 3 + 2] = 1
+      } else {
+        colors[i * 3] = 0.48
+        colors[i * 3 + 1] = 0.18
+        colors[i * 3 + 2] = 1
+      }
     }
     
     return { positions, colors }
@@ -113,8 +352,8 @@ function HelixParticles() {
   
   useFrame((state) => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.y += 0.003
-      pointsRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.5
+      pointsRef.current.rotation.y += 0.002
+      pointsRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.15) * 0.5
     }
   })
   
@@ -134,7 +373,7 @@ function HelixParticles() {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.08} vertexColors transparent opacity={0.9} />
+      <pointsMaterial size={0.1} vertexColors transparent opacity={0.85} />
     </points>
   )
 }
@@ -164,40 +403,61 @@ function CyberpunkTorus({ position, color }: { position: [number, number, number
   )
 }
 
-// Central rotating icosahedron
+// Central rotating icosahedron with holographic effect
 function CoreShape() {
   const meshRef = useRef<THREE.Mesh>(null!)
+  const outerRef = useRef<THREE.Mesh>(null!)
   const [hovered, setHovered] = useState(false)
 
   useFrame((state) => {
     meshRef.current.rotation.x += 0.005
     meshRef.current.rotation.y += 0.01
-    meshRef.current.scale.setScalar(hovered ? 1.2 : 1 + Math.sin(state.clock.elapsedTime) * 0.1)
+    meshRef.current.scale.setScalar(hovered ? 1.3 : 1 + Math.sin(state.clock.elapsedTime) * 0.1)
+    
+    if (outerRef.current) {
+      outerRef.current.rotation.x -= 0.003
+      outerRef.current.rotation.y -= 0.005
+    }
   })
 
   return (
-    <mesh 
-      ref={meshRef}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-    >
-      <icosahedronGeometry args={[1.5, 1]} />
-      <meshStandardMaterial
-        color="#00f0ff"
-        emissive="#00f0ff"
-        emissiveIntensity={hovered ? 1 : 0.3}
-        wireframe
-        metalness={1}
-        roughness={0}
-      />
-    </mesh>
+    <group>
+      <mesh 
+        ref={meshRef}
+        onPointerOver={() => setHovered(true)}
+        onPointerOut={() => setHovered(false)}
+      >
+        <icosahedronGeometry args={[1.5, 1]} />
+        <meshStandardMaterial
+          color="#00f0ff"
+          emissive="#00f0ff"
+          emissiveIntensity={hovered ? 1.2 : 0.4}
+          wireframe
+          metalness={1}
+          roughness={0}
+        />
+      </mesh>
+      
+      {/* Outer holographic shell */}
+      <mesh ref={outerRef}>
+        <icosahedronGeometry args={[2, 0]} />
+        <meshStandardMaterial
+          color="#ff00ff"
+          emissive="#ff00ff"
+          emissiveIntensity={0.2}
+          wireframe
+          transparent
+          opacity={0.3}
+        />
+      </mesh>
+    </group>
   )
 }
 
 // Particle ring
 function ParticleRing() {
   const pointsRef = useRef<THREE.Points>(null!)
-  const particleCount = 500
+  const particleCount = 600
   
   const { positions, colors } = useMemo(() => {
     const positions = new Float32Array(particleCount * 3)
@@ -205,19 +465,19 @@ function ParticleRing() {
     
     for (let i = 0; i < particleCount; i++) {
       const angle = (i / particleCount) * Math.PI * 2
-      const radius = 4 + Math.random() * 0.5
+      const radius = 4.5 + Math.sin(i * 0.1) * 0.5
       positions[i * 3] = Math.cos(angle) * radius
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 0.5
+      positions[i * 3 + 1] = Math.sin(i * 0.3) * 0.3
       positions[i * 3 + 2] = Math.sin(angle) * radius
       
       // Cyberpunk colors
-      const colorChoice = Math.random()
+      const colorChoice = (i / particleCount)
       if (colorChoice < 0.33) {
-        colors[i * 3] = 0; colors[i * 3 + 1] = 0.94; colors[i * 3 + 2] = 1; // Cyan
+        colors[i * 3] = 0; colors[i * 3 + 1] = 0.94; colors[i * 3 + 2] = 1
       } else if (colorChoice < 0.66) {
-        colors[i * 3] = 1; colors[i * 3 + 1] = 0; colors[i * 3 + 2] = 1; // Magenta
+        colors[i * 3] = 1; colors[i * 3 + 1] = 0; colors[i * 3 + 2] = 1
       } else {
-        colors[i * 3] = 0; colors[i * 3 + 1] = 1; colors[i * 3 + 2] = 0.53; // Green
+        colors[i * 3] = 0; colors[i * 3 + 1] = 1; colors[i * 3 + 2] = 0.53
       }
     }
     
@@ -226,7 +486,7 @@ function ParticleRing() {
 
   useFrame(() => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.y += 0.002
+      pointsRef.current.rotation.y += 0.003
     }
   })
 
@@ -246,23 +506,24 @@ function ParticleRing() {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.05} vertexColors transparent opacity={0.8} />
+      <pointsMaterial size={0.06} vertexColors transparent opacity={0.9} />
     </points>
   )
 }
 
 // Floating Orbs for depth - using deterministic positions based on index
 function FloatingOrbs() {
-  // Pre-calculated positions for consistent rendering
   const orbConfigs = [
-    { x: -10, y: 5, z: -15, scale: 0.5, speed: 1.0 },
-    { x: 8, y: -3, z: -12, scale: 0.4, speed: 1.2 },
-    { x: -5, y: 7, z: -18, scale: 0.6, speed: 0.8 },
-    { x: 12, y: -5, z: -10, scale: 0.35, speed: 1.4 },
-    { x: -8, y: -6, z: -16, scale: 0.45, speed: 0.9 },
-    { x: 6, y: 4, z: -14, scale: 0.55, speed: 1.1 },
-    { x: -3, y: -2, z: -20, scale: 0.4, speed: 0.7 },
-    { x: 10, y: 6, z: -8, scale: 0.5, speed: 1.3 },
+    { x: -12, y: 6, z: -18, scale: 0.6, speed: 1.0 },
+    { x: 10, y: -4, z: -15, scale: 0.5, speed: 1.2 },
+    { x: -6, y: 8, z: -22, scale: 0.7, speed: 0.8 },
+    { x: 14, y: -6, z: -12, scale: 0.4, speed: 1.4 },
+    { x: -10, y: -7, z: -20, scale: 0.55, speed: 0.9 },
+    { x: 8, y: 5, z: -17, scale: 0.65, speed: 1.1 },
+    { x: -4, y: -3, z: -25, scale: 0.45, speed: 0.7 },
+    { x: 12, y: 7, z: -10, scale: 0.55, speed: 1.3 },
+    { x: 0, y: -8, z: -30, scale: 0.5, speed: 0.6 },
+    { x: -15, y: 3, z: -14, scale: 0.4, speed: 1.0 },
   ]
   
   const colors = ['#00f0ff', '#ff00ff', '#00ff88', '#7b2fff']
@@ -270,7 +531,7 @@ function FloatingOrbs() {
   return (
     <>
       {orbConfigs.map((config, i) => (
-        <Float key={i} speed={config.speed} floatIntensity={2}>
+        <Float key={i} speed={config.speed} floatIntensity={2.5}>
           <mesh 
             position={[config.x, config.y, config.z]} 
             scale={config.scale}
@@ -279,9 +540,9 @@ function FloatingOrbs() {
             <meshStandardMaterial
               color={colors[i % 4]}
               emissive={colors[i % 4]}
-              emissiveIntensity={0.8}
+              emissiveIntensity={0.9}
               transparent
-              opacity={0.6}
+              opacity={0.5}
             />
           </mesh>
         </Float>
@@ -290,17 +551,18 @@ function FloatingOrbs() {
   )
 }
 
-// DNA-like Double Helix structure
+// DNA-like Double Helix structure - enhanced
 function DNAHelix() {
   const groupRef = useRef<THREE.Group>(null!)
-  const nodeCount = 20
-  const radius = 2
-  const height = 12
-  const barThickness = 0.05
+  const nodeCount = 25
+  const radius = 2.5
+  const height = 16
+  const barThickness = 0.04
   
-  useFrame(() => {
+  useFrame((state) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.005
+      groupRef.current.rotation.y += 0.004
+      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.5
     }
   })
   
@@ -308,32 +570,29 @@ function DNAHelix() {
     const result = []
     for (let i = 0; i < nodeCount; i++) {
       const t = i / nodeCount
-      const angle = t * Math.PI * 4
+      const angle = t * Math.PI * 5
       const y = (t - 0.5) * height
       
-      // First strand
       result.push({
         pos: [Math.cos(angle) * radius, y, Math.sin(angle) * radius] as [number, number, number],
         color: '#00f0ff',
-        scale: 0.15
+        scale: 0.12
       })
       
-      // Second strand (offset by PI)
       result.push({
         pos: [Math.cos(angle + Math.PI) * radius, y, Math.sin(angle + Math.PI) * radius] as [number, number, number],
         color: '#ff00ff',
-        scale: 0.15
+        scale: 0.12
       })
     }
     return result
   }, [])
   
-  // Connecting bars between strands
   const bars = useMemo(() => {
     const result = []
     for (let i = 0; i < nodeCount; i += 2) {
       const t = i / nodeCount
-      const angle = t * Math.PI * 4
+      const angle = t * Math.PI * 5
       const y = (t - 0.5) * height
       result.push({
         y,
@@ -345,20 +604,18 @@ function DNAHelix() {
   }, [])
   
   return (
-    <group ref={groupRef} position={[8, 0, -5]}>
-      {/* DNA nodes */}
+    <group ref={groupRef} position={[10, 0, -8]}>
       {nodes.map((node, i) => (
         <mesh key={i} position={node.pos} scale={node.scale}>
           <sphereGeometry args={[1, 16, 16]} />
           <meshStandardMaterial
             color={node.color}
             emissive={node.color}
-            emissiveIntensity={0.8}
+            emissiveIntensity={0.9}
           />
         </mesh>
       ))}
       
-      {/* Connecting bars */}
       {bars.map((bar, i) => (
         <mesh 
           key={`bar-${i}`} 
@@ -369,9 +626,9 @@ function DNAHelix() {
           <meshStandardMaterial
             color={bar.color}
             emissive={bar.color}
-            emissiveIntensity={0.5}
+            emissiveIntensity={0.6}
             transparent
-            opacity={0.7}
+            opacity={0.8}
           />
         </mesh>
       ))}
@@ -383,13 +640,19 @@ function DNAHelix() {
 function Scene() {
   return (
     <>
-      <ambientLight intensity={0.2} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#00f0ff" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ff00ff" />
-      <spotLight position={[0, 10, 0]} intensity={0.5} color="#00ff88" angle={0.3} />
+      <ambientLight intensity={0.15} />
+      <pointLight position={[10, 10, 10]} intensity={1.2} color="#00f0ff" />
+      <pointLight position={[-10, -10, -10]} intensity={0.6} color="#ff00ff" />
+      <pointLight position={[0, 15, 0]} intensity={0.8} color="#00ff88" />
+      <spotLight position={[0, 20, 10]} intensity={0.6} color="#7b2fff" angle={0.4} />
       
-      {/* Parametric 3D Background */}
-      <ParametricBackground />
+      {/* Gravity Field Mesh - Einstein-style curvature */}
+      <GravityFieldMesh />
+      <HolographicGrid />
+      <HolographicScanlines />
+      <GravityText />
+      
+      {/* Particles and effects */}
       <HelixParticles />
       <FloatingOrbs />
       <DNAHelix />
@@ -397,19 +660,20 @@ function Scene() {
       <CoreShape />
       <ParticleRing />
       
-      <CyberpunkTorus position={[-4, 0, 0]} color="#ff00ff" />
-      <CyberpunkTorus position={[4, 0, 0]} color="#00ff88" />
-      <CyberpunkTorus position={[0, 3, 0]} color="#7b2fff" />
+      <CyberpunkTorus position={[-5, 0.5, 0]} color="#ff00ff" />
+      <CyberpunkTorus position={[5, 0.5, 0]} color="#00ff88" />
+      <CyberpunkTorus position={[0, 4, 0]} color="#7b2fff" />
       
-      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+      <Stars radius={150} depth={80} count={8000} factor={5} saturation={0} fade speed={0.8} />
       
       <OrbitControls 
         enableZoom={true}
         enablePan={false}
         autoRotate
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={0.3}
         minDistance={5}
-        maxDistance={20}
+        maxDistance={30}
+        maxPolarAngle={Math.PI / 1.8}
       />
     </>
   )

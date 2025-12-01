@@ -40,25 +40,67 @@ html, body, #root {
   transform: translateX(-50%);
   text-align: center;
   color: var(--color-cyan);
-  text-shadow: 0 0 20px var(--color-cyan), 0 0 40px var(--color-cyan);
+  text-shadow: 0 0 30px var(--color-cyan), 0 0 60px var(--color-cyan);
   pointer-events: auto;
-  background: rgba(10, 10, 26, 0.6);
+  background: linear-gradient(135deg, rgba(10, 10, 26, 0.7) 0%, rgba(26, 10, 46, 0.6) 50%, rgba(10, 10, 26, 0.7) 100%);
   padding: 1.5rem 3rem;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 0 40px rgba(0, 240, 255, 0.2),
+    inset 0 0 60px rgba(0, 240, 255, 0.05),
+    0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: headerFloat 6s ease-in-out infinite;
+}
+
+@keyframes headerFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--color-cyan), transparent, var(--color-magenta), transparent, var(--color-cyan));
+  background-size: 400% 400%;
+  border-radius: 22px;
+  z-index: -1;
+  animation: holoBorder 8s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes holoBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 900;
-  letter-spacing: 0.1em;
-  background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta), var(--color-quantum));
-  background-size: 200% auto;
+  letter-spacing: 0.15em;
+  background: linear-gradient(90deg, var(--color-cyan), #ffffff, var(--color-magenta), var(--color-quantum), var(--color-cyan));
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: glow 2s ease-in-out infinite alternate, shimmer 4s linear infinite;
+  animation: glow 2s ease-in-out infinite alternate, holoShimmer 5s linear infinite;
+  text-shadow: none;
+  position: relative;
+}
+
+@keyframes holoShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
 .header p {
