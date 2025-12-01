@@ -9,18 +9,22 @@ import * as THREE from 'three'
 function GravityFieldMesh() {
   const meshRef = useRef<THREE.Mesh>(null!)
   
+  // Constants for gravity calculations
+  const GRAVITY_RADIUS_MULTIPLIER = 4
+  const GRAVITY_FALLOFF_POWER = 2.5
+  
   // Gravity sources - positions and "mass" that warp the mesh
   const gravitySources = useMemo(() => [
-    { x: 0, z: 0, mass: 4.0, radius: 6 },      // Center - main DevTeam6 logo
-    { x: -5, z: 2, mass: 1.5, radius: 3 },     // Left torus
-    { x: 5, z: 2, mass: 1.5, radius: 3 },      // Right torus
-    { x: 0, z: -4, mass: 1.2, radius: 2.5 },   // Core shape
+    { x: 0, z: 0, mass: 5.0, radius: 8 },      // Center - main DevTeam6 logo
+    { x: -6, z: 3, mass: 2.5, radius: 4 },     // Left torus
+    { x: 6, z: 3, mass: 2.5, radius: 4 },      // Right torus
+    { x: 0, z: -5, mass: 2.0, radius: 3 },     // Core shape
   ], [])
   
   const { positions, indices, uvs } = useMemo(() => {
-    const width = 60
-    const height = 80
-    const segments = 100
+    const width = 80
+    const height = 100
+    const segments = 80
     const positions = new Float32Array((segments + 1) * (segments + 1) * 3)
     const uvs = new Float32Array((segments + 1) * (segments + 1) * 2)
     const indices: number[] = []
@@ -72,15 +76,15 @@ function GravityFieldMesh() {
           const distance = Math.sqrt(dx * dx + dz * dz)
           
           // Inverse square-ish falloff with smooth edges
-          if (distance < source.radius * 3) {
-            const normalizedDist = distance / (source.radius * 3)
-            const wellDepth = source.mass * Math.pow(1 - normalizedDist, 2)
+          if (distance < source.radius * GRAVITY_RADIUS_MULTIPLIER) {
+            const normalizedDist = distance / (source.radius * GRAVITY_RADIUS_MULTIPLIER)
+            const wellDepth = source.mass * Math.pow(1 - normalizedDist, GRAVITY_FALLOFF_POWER)
             gravityDepth += wellDepth
           }
         }
         
         // Add subtle wave animation
-        const wave = Math.sin(x * 0.15 + time * 0.3) * Math.cos(z * 0.15 + time * 0.2) * 0.3
+        const wave = Math.sin(x * 0.12 + time * 0.4) * Math.cos(z * 0.12 + time * 0.25) * 0.5
         
         // Combine gravity wells with wave
         const finalY = -gravityDepth + wave
@@ -93,58 +97,64 @@ function GravityFieldMesh() {
   })
   
   return (
-    <mesh ref={meshRef} position={[0, -3, 5]} rotation={[-Math.PI / 3, 0, 0]}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
+    <group>
+      {/* Main visible wireframe mesh */}
+      <mesh ref={meshRef} position={[0, -2, 8]} rotation={[-Math.PI / 2.8, 0, 0]}>
+        <bufferGeometry>
+          <bufferAttribute
+            attach="attributes-position"
+            count={positions.length / 3}
+            array={positions}
+            itemSize={3}
+          />
+          <bufferAttribute
+            attach="attributes-uv"
+            count={uvs.length / 2}
+            array={uvs}
+            itemSize={2}
+          />
+          <bufferAttribute
+            attach="index"
+            count={indices.length}
+            array={new Uint32Array(indices)}
+            itemSize={1}
+          />
+        </bufferGeometry>
+        <meshStandardMaterial
+          color="#00f0ff"
+          emissive="#00f0ff"
+          emissiveIntensity={0.4}
+          wireframe
+          transparent
+          opacity={0.6}
+          side={THREE.DoubleSide}
         />
-        <bufferAttribute
-          attach="attributes-uv"
-          count={uvs.length / 2}
-          array={uvs}
-          itemSize={2}
-        />
-        <bufferAttribute
-          attach="index"
-          count={indices.length}
-          array={new Uint32Array(indices)}
-          itemSize={1}
-        />
-      </bufferGeometry>
-      <meshStandardMaterial
-        color="#00f0ff"
-        emissive="#00f0ff"
-        emissiveIntensity={0.2}
-        wireframe
-        transparent
-        opacity={0.4}
-        side={THREE.DoubleSide}
-      />
-    </mesh>
+      </mesh>
+    </group>
   )
 }
 
-// Holographic Grid Floor - extends far down
+// Holographic Grid Floor - extends far down with visible depth
 function HolographicGrid() {
   const meshRef = useRef<THREE.Mesh>(null!)
   
+  // Grid configuration constants
+  const GRID_WIDTH = 120
+  const GRID_DEPTH = 200
+  const WAVE_FADE_DISTANCE = 120
+  
   const { positions, indices } = useMemo(() => {
-    const width = 100
-    const depth = 150
-    const segmentsX = 80
-    const segmentsZ = 120
+    const segmentsX = 60
+    const segmentsZ = 100
     const positions = new Float32Array((segmentsX + 1) * (segmentsZ + 1) * 3)
     const indices: number[] = []
     
     for (let z = 0; z <= segmentsZ; z++) {
       for (let x = 0; x <= segmentsX; x++) {
         const idx = (z * (segmentsX + 1) + x) * 3
-        positions[idx] = (x / segmentsX - 0.5) * width
+        positions[idx] = (x / segmentsX - 0.5) * GRID_WIDTH
         positions[idx + 1] = 0
-        positions[idx + 2] = (z / segmentsZ) * depth - 20
+        positions[idx + 2] = (z / segmentsZ) * GRID_DEPTH - 30
       }
     }
     
@@ -173,11 +183,11 @@ function HolographicGrid() {
         const z = positionAttr.getZ(i)
         
         // Gentle waves that move toward viewer
-        const wave = Math.sin(z * 0.1 - time * 0.5) * 0.5 + 
-                     Math.sin(x * 0.08 + time * 0.3) * 0.3
+        const wave = Math.sin(z * 0.08 - time * 0.6) * 0.8 + 
+                     Math.sin(x * 0.06 + time * 0.4) * 0.5
         
         // Fade out waves in distance
-        const distanceFade = Math.max(0, 1 - z / 100)
+        const distanceFade = Math.max(0, 1 - Math.abs(z) / WAVE_FADE_DISTANCE)
         
         positionAttr.setY(i, wave * distanceFade)
       }
@@ -187,7 +197,7 @@ function HolographicGrid() {
   })
   
   return (
-    <mesh ref={meshRef} position={[0, -12, 0]} rotation={[-Math.PI / 2.5, 0, 0]}>
+    <mesh ref={meshRef} position={[0, -15, 0]} rotation={[-Math.PI / 2.2, 0, 0]}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -205,10 +215,10 @@ function HolographicGrid() {
       <meshStandardMaterial
         color="#7b2fff"
         emissive="#7b2fff"
-        emissiveIntensity={0.15}
+        emissiveIntensity={0.25}
         wireframe
         transparent
-        opacity={0.25}
+        opacity={0.4}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -378,27 +388,51 @@ function HelixParticles() {
   )
 }
 
-// Animated Torus component with cyberpunk colors
+// Animated Torus component with wireframe for 3D depth effect
 function CyberpunkTorus({ position, color }: { position: [number, number, number], color: string }) {
   const meshRef = useRef<THREE.Mesh>(null!)
+  const wireRef = useRef<THREE.Mesh>(null!)
   
   useFrame((state) => {
-    meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.3
-    meshRef.current.rotation.y += 0.01
+    if (meshRef.current) {
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.3
+      meshRef.current.rotation.y += 0.01
+    }
+    if (wireRef.current) {
+      wireRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.3
+      wireRef.current.rotation.y += 0.01
+    }
   })
 
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-      <mesh ref={meshRef} position={position}>
-        <torusGeometry args={[1, 0.4, 16, 100]} />
-        <meshStandardMaterial 
-          color={color} 
-          emissive={color}
-          emissiveIntensity={0.5}
-          metalness={0.8}
-          roughness={0.2}
-        />
-      </mesh>
+      <group position={position}>
+        {/* Solid inner torus */}
+        <mesh ref={meshRef}>
+          <torusGeometry args={[1, 0.35, 16, 48]} />
+          <meshStandardMaterial 
+            color={color} 
+            emissive={color}
+            emissiveIntensity={0.6}
+            metalness={0.9}
+            roughness={0.1}
+            transparent
+            opacity={0.7}
+          />
+        </mesh>
+        {/* Wireframe outer for 3D depth */}
+        <mesh ref={wireRef}>
+          <torusGeometry args={[1.1, 0.4, 12, 36]} />
+          <meshStandardMaterial 
+            color={color} 
+            emissive={color}
+            emissiveIntensity={0.8}
+            wireframe
+            transparent
+            opacity={0.5}
+          />
+        </mesh>
+      </group>
     </Float>
   )
 }
@@ -511,7 +545,7 @@ function ParticleRing() {
   )
 }
 
-// Floating Orbs for depth - using deterministic positions based on index
+// Floating Orbs with wireframe for 3D depth
 function FloatingOrbs() {
   const orbConfigs = [
     { x: -12, y: 6, z: -18, scale: 0.6, speed: 1.0 },
@@ -532,19 +566,31 @@ function FloatingOrbs() {
     <>
       {orbConfigs.map((config, i) => (
         <Float key={i} speed={config.speed} floatIntensity={2.5}>
-          <mesh 
-            position={[config.x, config.y, config.z]} 
-            scale={config.scale}
-          >
-            <sphereGeometry args={[1, 16, 16]} />
-            <meshStandardMaterial
-              color={colors[i % 4]}
-              emissive={colors[i % 4]}
-              emissiveIntensity={0.9}
-              transparent
-              opacity={0.5}
-            />
-          </mesh>
+          <group position={[config.x, config.y, config.z]} scale={config.scale}>
+            {/* Inner glow sphere */}
+            <mesh>
+              <sphereGeometry args={[0.9, 12, 12]} />
+              <meshStandardMaterial
+                color={colors[i % 4]}
+                emissive={colors[i % 4]}
+                emissiveIntensity={0.8}
+                transparent
+                opacity={0.4}
+              />
+            </mesh>
+            {/* Wireframe outer sphere for 3D depth */}
+            <mesh>
+              <icosahedronGeometry args={[1, 1]} />
+              <meshStandardMaterial
+                color={colors[i % 4]}
+                emissive={colors[i % 4]}
+                emissiveIntensity={0.6}
+                wireframe
+                transparent
+                opacity={0.7}
+              />
+            </mesh>
+          </group>
         </Float>
       ))}
     </>
