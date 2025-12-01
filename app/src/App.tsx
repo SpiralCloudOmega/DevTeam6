@@ -4,58 +4,56 @@ import { Suspense, useRef, useState, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-// Gravity Field Mesh - Einstein-style spacetime curvature
-// Objects create "wells" in the mesh like mass curves spacetime
-function GravityFieldMesh() {
+// High-Resolution Perspective Grid - Creates deep 3D space with tight triangles
+// Designed for 8K-like resolution with compressed triangle mesh
+function PerspectiveGrid() {
   const meshRef = useRef<THREE.Mesh>(null!)
   
-  // Constants for gravity calculations
-  const GRAVITY_RADIUS_MULTIPLIER = 4
-  const GRAVITY_FALLOFF_POWER = 2.5
+  // High resolution grid configuration - tight triangles for quality
+  const GRID_WIDTH = 200
+  const GRID_DEPTH = 400
+  const SEGMENTS_X = 200  // High segment count for tight triangles
+  const SEGMENTS_Z = 400  // More segments for depth
   
-  // Gravity sources - positions and "mass" that warp the mesh
-  const gravitySources = useMemo(() => [
-    { x: 0, z: 0, mass: 5.0, radius: 8 },      // Center - main DevTeam6 logo
-    { x: -6, z: 3, mass: 2.5, radius: 4 },     // Left torus
-    { x: 6, z: 3, mass: 2.5, radius: 4 },      // Right torus
-    { x: 0, z: -5, mass: 2.0, radius: 3 },     // Core shape
-  ], [])
-  
-  const { positions, indices, uvs } = useMemo(() => {
-    const width = 80
-    const height = 100
-    const segments = 80
-    const positions = new Float32Array((segments + 1) * (segments + 1) * 3)
-    const uvs = new Float32Array((segments + 1) * (segments + 1) * 2)
+  const { positions, indices, colors } = useMemo(() => {
+    const positions = new Float32Array((SEGMENTS_X + 1) * (SEGMENTS_Z + 1) * 3)
+    const colors = new Float32Array((SEGMENTS_X + 1) * (SEGMENTS_Z + 1) * 3)
     const indices: number[] = []
     
-    for (let y = 0; y <= segments; y++) {
-      for (let x = 0; x <= segments; x++) {
-        const idx = (y * (segments + 1) + x)
+    for (let z = 0; z <= SEGMENTS_Z; z++) {
+      for (let x = 0; x <= SEGMENTS_X; x++) {
+        const idx = (z * (SEGMENTS_X + 1) + x)
         const posIdx = idx * 3
-        const uvIdx = idx * 2
         
-        positions[posIdx] = (x / segments - 0.5) * width
+        // Position in world space
+        const worldX = (x / SEGMENTS_X - 0.5) * GRID_WIDTH
+        const worldZ = (z / SEGMENTS_Z) * GRID_DEPTH - 50  // Start closer to camera
+        
+        positions[posIdx] = worldX
         positions[posIdx + 1] = 0
-        positions[posIdx + 2] = (y / segments - 0.5) * height
+        positions[posIdx + 2] = worldZ
         
-        uvs[uvIdx] = x / segments
-        uvs[uvIdx + 1] = y / segments
+        // Color gradient - cyan to purple based on depth
+        const depthFactor = z / SEGMENTS_Z
+        colors[posIdx] = 0 + depthFactor * 0.3      // R
+        colors[posIdx + 1] = 0.6 - depthFactor * 0.3  // G (cyan fades)
+        colors[posIdx + 2] = 0.8 + depthFactor * 0.2  // B (stays blue/purple)
       }
     }
     
-    for (let y = 0; y < segments; y++) {
-      for (let x = 0; x < segments; x++) {
-        const a = y * (segments + 1) + x
+    // Create triangle indices
+    for (let z = 0; z < SEGMENTS_Z; z++) {
+      for (let x = 0; x < SEGMENTS_X; x++) {
+        const a = z * (SEGMENTS_X + 1) + x
         const b = a + 1
-        const c = a + segments + 1
+        const c = a + SEGMENTS_X + 1
         const d = c + 1
         indices.push(a, c, b)
         indices.push(b, c, d)
       }
     }
     
-    return { positions, indices, uvs }
+    return { positions, indices, colors }
   }, [])
   
   useFrame((state) => {
@@ -68,101 +66,80 @@ function GravityFieldMesh() {
         const x = positionAttr.getX(i)
         const z = positionAttr.getZ(i)
         
-        // Calculate gravity well depth from all sources
-        let gravityDepth = 0
-        for (const source of gravitySources) {
-          const dx = x - source.x
-          const dz = z - source.z
-          const distance = Math.sqrt(dx * dx + dz * dz)
-          
-          // Inverse square-ish falloff with smooth edges
-          if (distance < source.radius * GRAVITY_RADIUS_MULTIPLIER) {
-            const normalizedDist = distance / (source.radius * GRAVITY_RADIUS_MULTIPLIER)
-            const wellDepth = source.mass * Math.pow(1 - normalizedDist, GRAVITY_FALLOFF_POWER)
-            gravityDepth += wellDepth
-          }
-        }
+        // Smooth wave animation - 45 degree angle waves
+        const wave1 = Math.sin((x + z) * 0.03 + time * 0.4) * 1.5  // Diagonal wave
+        const wave2 = Math.sin((x - z) * 0.02 + time * 0.3) * 1.0  // Counter diagonal
+        const wave3 = Math.sin(z * 0.015 - time * 0.5) * 2.0       // Forward moving wave
         
-        // Add subtle wave animation
-        const wave = Math.sin(x * 0.12 + time * 0.4) * Math.cos(z * 0.12 + time * 0.25) * 0.5
+        // Combine waves with distance fade
+        const distanceFade = Math.max(0, 1 - Math.abs(z + 50) / 350)
+        const finalY = (wave1 + wave2 + wave3) * distanceFade
         
-        // Combine gravity wells with wave
-        const finalY = -gravityDepth + wave
         positionAttr.setY(i, finalY)
       }
       
       positionAttr.needsUpdate = true
-      geometry.computeVertexNormals()
     }
   })
   
   return (
-    <group>
-      {/* Main visible wireframe mesh */}
-      <mesh ref={meshRef} position={[0, -2, 8]} rotation={[-Math.PI / 2.8, 0, 0]}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={positions.length / 3}
-            array={positions}
-            itemSize={3}
-          />
-          <bufferAttribute
-            attach="attributes-uv"
-            count={uvs.length / 2}
-            array={uvs}
-            itemSize={2}
-          />
-          <bufferAttribute
-            attach="index"
-            count={indices.length}
-            array={new Uint32Array(indices)}
-            itemSize={1}
-          />
-        </bufferGeometry>
-        <meshStandardMaterial
-          color="#00f0ff"
-          emissive="#00f0ff"
-          emissiveIntensity={0.4}
-          wireframe
-          transparent
-          opacity={0.6}
-          side={THREE.DoubleSide}
+    <mesh ref={meshRef} position={[0, -8, 0]} rotation={[-Math.PI / 2.5, 0, 0]}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
         />
-      </mesh>
-    </group>
+        <bufferAttribute
+          attach="attributes-color"
+          count={colors.length / 3}
+          array={colors}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="index"
+          count={indices.length}
+          array={new Uint32Array(indices)}
+          itemSize={1}
+        />
+      </bufferGeometry>
+      <meshBasicMaterial
+        vertexColors
+        wireframe
+        transparent
+        opacity={0.7}
+        side={THREE.DoubleSide}
+      />
+    </mesh>
   )
 }
 
-// Holographic Grid Floor - extends far down with visible depth
-function HolographicGrid() {
+// Secondary deeper grid layer for parallax depth
+function DeepSpaceGrid() {
   const meshRef = useRef<THREE.Mesh>(null!)
   
-  // Grid configuration constants
-  const GRID_WIDTH = 120
-  const GRID_DEPTH = 200
-  const WAVE_FADE_DISTANCE = 120
+  const GRID_SIZE = 300
+  const SEGMENTS = 150
   
   const { positions, indices } = useMemo(() => {
-    const segmentsX = 60
-    const segmentsZ = 100
-    const positions = new Float32Array((segmentsX + 1) * (segmentsZ + 1) * 3)
+    const positions = new Float32Array((SEGMENTS + 1) * (SEGMENTS + 1) * 3)
     const indices: number[] = []
     
-    for (let z = 0; z <= segmentsZ; z++) {
-      for (let x = 0; x <= segmentsX; x++) {
-        const idx = (z * (segmentsX + 1) + x) * 3
-        positions[idx] = (x / segmentsX - 0.5) * GRID_WIDTH
+    for (let z = 0; z <= SEGMENTS; z++) {
+      for (let x = 0; x <= SEGMENTS; x++) {
+        const idx = (z * (SEGMENTS + 1) + x) * 3
+        positions[idx] = (x / SEGMENTS - 0.5) * GRID_SIZE
         positions[idx + 1] = 0
-        positions[idx + 2] = (z / segmentsZ) * GRID_DEPTH - 30
+        positions[idx + 2] = (z / SEGMENTS) * GRID_SIZE * 2 - 100
       }
     }
     
-    for (let z = 0; z < segmentsZ; z++) {
-      for (let x = 0; x < segmentsX; x++) {
-        const a = z * (segmentsX + 1) + x
+    for (let z = 0; z < SEGMENTS; z++) {
+      for (let x = 0; x < SEGMENTS; x++) {
+        const a = z * (SEGMENTS + 1) + x
         const b = a + 1
-        const c = a + segmentsX + 1
+        const c = a + SEGMENTS + 1
         const d = c + 1
         indices.push(a, c, b)
         indices.push(b, c, d)
@@ -182,13 +159,11 @@ function HolographicGrid() {
         const x = positionAttr.getX(i)
         const z = positionAttr.getZ(i)
         
-        // Gentle waves that move toward viewer
-        const wave = Math.sin(z * 0.08 - time * 0.6) * 0.8 + 
-                     Math.sin(x * 0.06 + time * 0.4) * 0.5
+        // Slower, deeper waves for background layer
+        const wave = Math.sin((x + z) * 0.02 + time * 0.2) * 
+                     Math.cos((x - z) * 0.015 + time * 0.15) * 3
         
-        // Fade out waves in distance
-        const distanceFade = Math.max(0, 1 - Math.abs(z) / WAVE_FADE_DISTANCE)
-        
+        const distanceFade = Math.max(0, 1 - Math.abs(z + 100) / 500)
         positionAttr.setY(i, wave * distanceFade)
       }
       
@@ -197,7 +172,7 @@ function HolographicGrid() {
   })
   
   return (
-    <mesh ref={meshRef} position={[0, -15, 0]} rotation={[-Math.PI / 2.2, 0, 0]}>
+    <mesh ref={meshRef} position={[0, -20, -50]} rotation={[-Math.PI / 2.3, 0, 0]}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -212,13 +187,136 @@ function HolographicGrid() {
           itemSize={1}
         />
       </bufferGeometry>
-      <meshStandardMaterial
-        color="#7b2fff"
-        emissive="#7b2fff"
-        emissiveIntensity={0.25}
+      <meshBasicMaterial
+        color="#1a0a3e"
         wireframe
         transparent
         opacity={0.4}
+        side={THREE.DoubleSide}
+      />
+    </mesh>
+  )
+}
+
+// Gravity Field Mesh - Einstein-style spacetime curvature with high resolution
+function GravityFieldMesh() {
+  const meshRef = useRef<THREE.Mesh>(null!)
+  
+  // Constants for gravity calculations
+  const GRAVITY_RADIUS_MULTIPLIER = 4
+  const GRAVITY_FALLOFF_POWER = 2.5
+  
+  // Gravity sources - positions and "mass" that warp the mesh
+  const gravitySources = useMemo(() => [
+    { x: 0, z: 0, mass: 6.0, radius: 10 },     // Center - main DevTeam6 logo
+    { x: -6, z: 3, mass: 3.0, radius: 5 },     // Left torus
+    { x: 6, z: 3, mass: 3.0, radius: 5 },      // Right torus
+    { x: 0, z: -5, mass: 2.5, radius: 4 },     // Core shape
+  ], [])
+  
+  const { positions, indices, colors } = useMemo(() => {
+    const width = 100
+    const height = 120
+    const segments = 150  // Higher resolution for tighter triangles
+    const positions = new Float32Array((segments + 1) * (segments + 1) * 3)
+    const colors = new Float32Array((segments + 1) * (segments + 1) * 3)
+    const indices: number[] = []
+    
+    for (let y = 0; y <= segments; y++) {
+      for (let x = 0; x <= segments; x++) {
+        const idx = (y * (segments + 1) + x)
+        const posIdx = idx * 3
+        
+        positions[posIdx] = (x / segments - 0.5) * width
+        positions[posIdx + 1] = 0
+        positions[posIdx + 2] = (y / segments - 0.5) * height
+        
+        // Gradient colors based on position
+        const t = y / segments
+        colors[posIdx] = 0 + t * 0.2          // R
+        colors[posIdx + 1] = 0.94 - t * 0.4   // G (cyan)
+        colors[posIdx + 2] = 1                 // B
+      }
+    }
+    
+    for (let y = 0; y < segments; y++) {
+      for (let x = 0; x < segments; x++) {
+        const a = y * (segments + 1) + x
+        const b = a + 1
+        const c = a + segments + 1
+        const d = c + 1
+        indices.push(a, c, b)
+        indices.push(b, c, d)
+      }
+    }
+    
+    return { positions, indices, colors }
+  }, [])
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      const geometry = meshRef.current.geometry
+      const positionAttr = geometry.getAttribute('position')
+      const time = state.clock.elapsedTime
+      
+      for (let i = 0; i < positionAttr.count; i++) {
+        const x = positionAttr.getX(i)
+        const z = positionAttr.getZ(i)
+        
+        // Calculate gravity well depth from all sources
+        let gravityDepth = 0
+        for (const source of gravitySources) {
+          const dx = x - source.x
+          const dz = z - source.z
+          const distance = Math.sqrt(dx * dx + dz * dz)
+          
+          if (distance < source.radius * GRAVITY_RADIUS_MULTIPLIER) {
+            const normalizedDist = distance / (source.radius * GRAVITY_RADIUS_MULTIPLIER)
+            const wellDepth = source.mass * Math.pow(1 - normalizedDist, GRAVITY_FALLOFF_POWER)
+            gravityDepth += wellDepth
+          }
+        }
+        
+        // 45 degree diagonal wave animation
+        const wave1 = Math.sin((x + z) * 0.08 + time * 0.4) * 0.4
+        const wave2 = Math.sin((x - z) * 0.06 + time * 0.3) * 0.3
+        
+        const finalY = -gravityDepth + wave1 + wave2
+        positionAttr.setY(i, finalY)
+      }
+      
+      positionAttr.needsUpdate = true
+      geometry.computeVertexNormals()
+    }
+  })
+  
+  return (
+    <mesh ref={meshRef} position={[0, 0, 5]} rotation={[-Math.PI / 2.6, 0, 0]}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="attributes-color"
+          count={colors.length / 3}
+          array={colors}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="index"
+          count={indices.length}
+          array={new Uint32Array(indices)}
+          itemSize={1}
+        />
+      </bufferGeometry>
+      <meshBasicMaterial
+        vertexColors
+        wireframe
+        transparent
+        opacity={0.5}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -686,15 +784,22 @@ function DNAHelix() {
 function Scene() {
   return (
     <>
-      <ambientLight intensity={0.15} />
-      <pointLight position={[10, 10, 10]} intensity={1.2} color="#00f0ff" />
-      <pointLight position={[-10, -10, -10]} intensity={0.6} color="#ff00ff" />
-      <pointLight position={[0, 15, 0]} intensity={0.8} color="#00ff88" />
-      <spotLight position={[0, 20, 10]} intensity={0.6} color="#7b2fff" angle={0.4} />
+      {/* Stars in far background - render first so they appear behind everything */}
+      <Stars radius={300} depth={200} count={15000} factor={6} saturation={0} fade speed={0.5} />
       
-      {/* Gravity Field Mesh - Einstein-style curvature */}
+      {/* Lighting */}
+      <ambientLight intensity={0.12} />
+      <pointLight position={[10, 10, 10]} intensity={1.0} color="#00f0ff" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ff00ff" />
+      <pointLight position={[0, 15, 0]} intensity={0.6} color="#00ff88" />
+      <spotLight position={[0, 20, 10]} intensity={0.5} color="#7b2fff" angle={0.4} />
+      
+      {/* Deep background grid layers - rendered first for proper depth */}
+      <DeepSpaceGrid />
+      <PerspectiveGrid />
+      
+      {/* Gravity Field Mesh - Einstein-style curvature (in front of perspective grid) */}
       <GravityFieldMesh />
-      <HolographicGrid />
       <HolographicScanlines />
       <GravityText />
       
@@ -709,8 +814,6 @@ function Scene() {
       <CyberpunkTorus position={[-5, 0.5, 0]} color="#ff00ff" />
       <CyberpunkTorus position={[5, 0.5, 0]} color="#00ff88" />
       <CyberpunkTorus position={[0, 4, 0]} color="#7b2fff" />
-      
-      <Stars radius={150} depth={80} count={8000} factor={5} saturation={0} fade speed={0.8} />
       
       <OrbitControls 
         enableZoom={true}
