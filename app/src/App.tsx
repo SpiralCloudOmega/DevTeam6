@@ -290,6 +290,95 @@ function FloatingOrbs() {
   )
 }
 
+// DNA-like Double Helix structure
+function DNAHelix() {
+  const groupRef = useRef<THREE.Group>(null!)
+  const nodeCount = 20
+  const radius = 2
+  const height = 12
+  const barThickness = 0.05
+  
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.005
+    }
+  })
+  
+  const nodes = useMemo(() => {
+    const result = []
+    for (let i = 0; i < nodeCount; i++) {
+      const t = i / nodeCount
+      const angle = t * Math.PI * 4
+      const y = (t - 0.5) * height
+      
+      // First strand
+      result.push({
+        pos: [Math.cos(angle) * radius, y, Math.sin(angle) * radius] as [number, number, number],
+        color: '#00f0ff',
+        scale: 0.15
+      })
+      
+      // Second strand (offset by PI)
+      result.push({
+        pos: [Math.cos(angle + Math.PI) * radius, y, Math.sin(angle + Math.PI) * radius] as [number, number, number],
+        color: '#ff00ff',
+        scale: 0.15
+      })
+    }
+    return result
+  }, [])
+  
+  // Connecting bars between strands
+  const bars = useMemo(() => {
+    const result = []
+    for (let i = 0; i < nodeCount; i += 2) {
+      const t = i / nodeCount
+      const angle = t * Math.PI * 4
+      const y = (t - 0.5) * height
+      result.push({
+        y,
+        angle,
+        color: i % 4 === 0 ? '#00ff88' : '#7b2fff'
+      })
+    }
+    return result
+  }, [])
+  
+  return (
+    <group ref={groupRef} position={[8, 0, -5]}>
+      {/* DNA nodes */}
+      {nodes.map((node, i) => (
+        <mesh key={i} position={node.pos} scale={node.scale}>
+          <sphereGeometry args={[1, 16, 16]} />
+          <meshStandardMaterial
+            color={node.color}
+            emissive={node.color}
+            emissiveIntensity={0.8}
+          />
+        </mesh>
+      ))}
+      
+      {/* Connecting bars */}
+      {bars.map((bar, i) => (
+        <mesh 
+          key={`bar-${i}`} 
+          position={[0, bar.y, 0]}
+          rotation={[0, bar.angle, 0]}
+        >
+          <boxGeometry args={[radius * 2, barThickness, barThickness]} />
+          <meshStandardMaterial
+            color={bar.color}
+            emissive={bar.color}
+            emissiveIntensity={0.5}
+            transparent
+            opacity={0.7}
+          />
+        </mesh>
+      ))}
+    </group>
+  )
+}
+
 // Scene component
 function Scene() {
   return (
@@ -303,6 +392,7 @@ function Scene() {
       <ParametricBackground />
       <HelixParticles />
       <FloatingOrbs />
+      <DNAHelix />
       
       <CoreShape />
       <ParticleRing />
