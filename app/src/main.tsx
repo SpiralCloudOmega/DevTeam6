@@ -10,6 +10,7 @@ import ProjectRoadmap from './pages/ProjectRoadmap'
 import NodeGraphEditor from './pages/NodeGraphEditor'
 import VideoStorytelling from './pages/VideoStorytelling'
 import SemanticKnowledgeHub from './pages/SemanticKnowledgeHub'
+import RepoPilot from './pages/RepoPilot'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/node-graph" element={<NodeGraphEditor />} />
         <Route path="/videos" element={<VideoStorytelling />} />
         <Route path="/knowledge-hub" element={<SemanticKnowledgeHub />} />
+        <Route path="/repopilot" element={<RepoPilot />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

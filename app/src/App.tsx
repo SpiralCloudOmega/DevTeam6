@@ -803,6 +803,9 @@ function App() {
           <a href="/DevTeam6/onboarding" className="btn secondary" data-shortcut="8">
             🚀 Get Started
           </a>
+          <a href="/DevTeam6/repopilot" className="btn primary" data-shortcut="9">
+            🧠 AI Co-Pilot
+          </a>
         </div>
         
         {/* Keyboard Shortcuts Modal */}
