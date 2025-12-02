@@ -40,26 +40,75 @@ html, body, #root {
   transform: translateX(-50%);
   text-align: center;
   color: var(--color-cyan);
-  text-shadow: 0 0 20px var(--color-cyan), 0 0 40px var(--color-cyan);
+  text-shadow: 0 0 30px var(--color-cyan), 0 0 60px var(--color-cyan);
   pointer-events: auto;
+  background: linear-gradient(135deg, rgba(10, 10, 26, 0.7) 0%, rgba(26, 10, 46, 0.6) 50%, rgba(10, 10, 26, 0.7) 100%);
+  padding: 1.5rem 3rem;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 0 40px rgba(0, 240, 255, 0.2),
+    inset 0 0 60px rgba(0, 240, 255, 0.05),
+    0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: headerFloat 6s ease-in-out infinite;
+}
+
+@keyframes headerFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--color-cyan), transparent, var(--color-magenta), transparent, var(--color-cyan));
+  background-size: 400% 400%;
+  border-radius: 22px;
+  z-index: -1;
+  animation: holoBorder 8s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes holoBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 900;
-  letter-spacing: 0.1em;
-  background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta), var(--color-quantum));
+  letter-spacing: 0.15em;
+  background: linear-gradient(90deg, var(--color-cyan), #ffffff, var(--color-magenta), var(--color-quantum), var(--color-cyan));
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate, holoShimmer 5s linear infinite;
+  text-shadow: none;
+  position: relative;
+}
+
+@keyframes holoShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
 .header p {
   font-size: 1.2rem;
   color: var(--color-magenta);
   margin-top: 0.5rem;
-  opacity: 0.8;
+  opacity: 0.9;
+  letter-spacing: 0.15em;
 }
 
 @keyframes glow {
@@ -68,6 +117,33 @@ html, body, #root {
   }
   to {
     filter: drop-shadow(0 0 30px var(--color-magenta));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, inset 0 0 5px transparent;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, inset 0 0 10px rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -81,6 +157,8 @@ html, body, #root {
   pointer-events: auto;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 900px;
+  padding: 0 1rem;
 }
 
 .btn {
@@ -90,41 +168,67 @@ html, body, #root {
   font-family: inherit;
   font-weight: 600;
   border: 2px solid var(--color-cyan);
-  background: transparent;
+  background: rgba(0, 240, 255, 0.05);
   color: var(--color-cyan);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
   background: var(--color-cyan);
   color: var(--bg-dark);
-  box-shadow: 0 0 20px var(--color-cyan), 0 0 40px var(--color-cyan);
+  box-shadow: 0 0 30px var(--color-cyan), 0 0 60px var(--color-cyan);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .btn.primary {
   border-color: var(--color-magenta);
   color: var(--color-magenta);
+  background: rgba(255, 0, 255, 0.05);
 }
 
 .btn.primary:hover {
   background: var(--color-magenta);
   color: var(--bg-dark);
-  box-shadow: 0 0 20px var(--color-magenta), 0 0 40px var(--color-magenta);
+  box-shadow: 0 0 30px var(--color-magenta), 0 0 60px var(--color-magenta);
 }
 
 .btn.secondary {
   border-color: var(--color-orange);
   color: var(--color-orange);
+  background: rgba(255, 102, 0, 0.05);
 }
 
 .btn.secondary:hover {
   background: var(--color-orange);
   color: var(--bg-dark);
-  box-shadow: 0 0 20px var(--color-orange), 0 0 40px var(--color-orange);
+  box-shadow: 0 0 30px var(--color-orange), 0 0 60px var(--color-orange);
 }
 
 .stats {
@@ -135,11 +239,31 @@ html, body, #root {
   color: var(--color-green);
   font-size: 0.9rem;
   pointer-events: auto;
+  background: rgba(0, 255, 136, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .stats p {
-  margin: 0.3rem 0;
-  opacity: 0.8;
+  margin: 0.5rem 0;
+  opacity: 0.9;
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.stats p:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.stats p:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.stats p:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--color-green);
 }
 
 .loading {
@@ -831,4 +955,145 @@ html, body, #root {
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* ==================== KEYBOARD SHORTCUTS MODAL ==================== */
+
+.shortcuts-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 26, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: auto;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.shortcuts-content {
+  background: linear-gradient(145deg, #0d0d2a, #1a0a2e);
+  border: 2px solid var(--color-cyan);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.shortcuts-content h2 {
+  color: var(--color-cyan);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.shortcuts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.shortcut-item kbd {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid var(--color-cyan);
+  border-radius: 6px;
+  color: var(--color-cyan);
+  font-family: inherit;
+  font-size: 0.85rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.shortcuts-footer {
+  text-align: center;
+  color: #666;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* ==================== THEME INDICATOR ==================== */
+
+.theme-indicator {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.theme-indicator:hover {
+  opacity: 1;
+}
+
+.shortcut-hint {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  font-size: 0.8rem !important;
+  margin-top: 0.5rem !important;
+}
+
+.shortcut-hint:hover {
+  opacity: 1;
+  color: var(--color-cyan) !important;
+}
+
+/* ==================== BUTTON SHORTCUT BADGES ==================== */
+
+.btn[data-shortcut]::after {
+  content: attr(data-shortcut);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: var(--color-quantum);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.btn[data-shortcut]:hover::after {
+  opacity: 1;
+  transform: scale(1);
 }
