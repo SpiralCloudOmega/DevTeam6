@@ -27,7 +27,7 @@ function getSpaRedirectPath(): string | null {
 // Component that handles the redirect
 function SpaRedirect() {
   const redirectPath = getSpaRedirectPath()
-  if (redirectPath && redirectPath !== '/' && redirectPath !== '') {
+  if (redirectPath && redirectPath !== '/') {
     return <Navigate to={redirectPath} replace />
   }
   return <App />
