@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
-import { Suspense, useRef, useMemo } from 'react'
+import { Suspense, useRef, useMemo, useState, useCallback, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -700,8 +700,50 @@ function Scene() {
   )
 }
 
-// Main App with enhanced UI
+// Main App with enhanced UI and keyboard shortcuts
 function App() {
+  const [showShortcuts, setShowShortcuts] = useState(false)
+  const [theme, setTheme] = useState<'cyber' | 'neon' | 'quantum'>('cyber')
+  
+  // Keyboard shortcuts handler
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    // Press '?' to toggle shortcuts panel
+    if (e.key === '?') {
+      setShowShortcuts(prev => !prev)
+    }
+    // Press 'T' to cycle themes
+    if (e.key === 't' || e.key === 'T') {
+      setTheme(prev => prev === 'cyber' ? 'neon' : prev === 'neon' ? 'quantum' : 'cyber')
+    }
+    // Press '1-9' for quick navigation
+    const shortcuts: Record<string, string> = {
+      '1': '/DevTeam6/knowledge-hub',
+      '2': '/DevTeam6/landing',
+      '3': '/DevTeam6/genui',
+      '4': '/DevTeam6/node-graph',
+      '5': '/DevTeam6/videos',
+      '6': '/DevTeam6/gamification',
+      '7': '/DevTeam6/roadmap',
+      '8': '/DevTeam6/onboarding',
+    }
+    if (shortcuts[e.key]) {
+      window.location.href = shortcuts[e.key]
+    }
+  }, [])
+  
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+  
+  // Theme colors
+  const themeColors = {
+    cyber: { primary: '#00f0ff', secondary: '#ff00ff', accent: '#00ff88' },
+    neon: { primary: '#ff0066', secondary: '#ffcc00', accent: '#00ff88' },
+    quantum: { primary: '#7b2fff', secondary: '#00f0ff', accent: '#ff00ff' }
+  }
+  const colors = themeColors[theme]
+  
   return (
     <>
       <Canvas camera={{ position: [0, 3, 14], fov: 65 }}>
@@ -714,43 +756,71 @@ function App() {
         <div className="header">
           <h1>DevTeam6</h1>
           <p>THE OMEGA TOOL KIT • Interactive 3D Experience</p>
+          <span className="theme-indicator" style={{ color: colors.primary }}>
+            Theme: {theme.toUpperCase()} • Press T to change
+          </span>
         </div>
         
         <div className="stats">
           <p>1000+ Curated Resources</p>
           <p>500+ AI Tools</p>
           <p>300+ Awesome Lists</p>
+          <p className="shortcut-hint" onClick={() => setShowShortcuts(true)}>
+            ⌨️ Press ? for shortcuts
+          </p>
         </div>
         
         <div className="controls">
           <a href="https://github.com/SpiralCloudOmega/DevTeam6" target="_blank" rel="noopener noreferrer" className="btn">
             View Repository
           </a>
-          <a href="/DevTeam6/knowledge-hub" className="btn primary">
+          <a href="/DevTeam6/knowledge-hub" className="btn primary" data-shortcut="1">
             🧠 Knowledge Hub
           </a>
-          <a href="/DevTeam6/landing" className="btn secondary">
+          <a href="/DevTeam6/landing" className="btn secondary" data-shortcut="2">
             🌊 Landing
           </a>
-          <a href="/DevTeam6/genui" className="btn primary">
+          <a href="/DevTeam6/genui" className="btn primary" data-shortcut="3">
             🎨 GenUI
           </a>
-          <a href="/DevTeam6/node-graph" className="btn secondary">
+          <a href="/DevTeam6/node-graph" className="btn secondary" data-shortcut="4">
             ⚡ Node Graph
           </a>
-          <a href="/DevTeam6/videos" className="btn primary">
+          <a href="/DevTeam6/videos" className="btn primary" data-shortcut="5">
             🎬 Videos
           </a>
-          <a href="/DevTeam6/gamification" className="btn secondary">
+          <a href="/DevTeam6/gamification" className="btn secondary" data-shortcut="6">
             🏆 Leaderboard
           </a>
-          <a href="/DevTeam6/roadmap" className="btn primary">
+          <a href="/DevTeam6/roadmap" className="btn primary" data-shortcut="7">
             📋 Roadmap
           </a>
-          <a href="/DevTeam6/onboarding" className="btn secondary">
+          <a href="/DevTeam6/onboarding" className="btn secondary" data-shortcut="8">
             🚀 Get Started
           </a>
         </div>
+        
+        {/* Keyboard Shortcuts Modal */}
+        {showShortcuts && (
+          <div className="shortcuts-modal" onClick={() => setShowShortcuts(false)}>
+            <div className="shortcuts-content" onClick={e => e.stopPropagation()}>
+              <h2>⌨️ Keyboard Shortcuts</h2>
+              <div className="shortcuts-grid">
+                <div className="shortcut-item"><kbd>?</kbd> Toggle shortcuts</div>
+                <div className="shortcut-item"><kbd>T</kbd> Cycle themes</div>
+                <div className="shortcut-item"><kbd>1</kbd> Knowledge Hub</div>
+                <div className="shortcut-item"><kbd>2</kbd> Landing Page</div>
+                <div className="shortcut-item"><kbd>3</kbd> GenUI</div>
+                <div className="shortcut-item"><kbd>4</kbd> Node Graph</div>
+                <div className="shortcut-item"><kbd>5</kbd> Videos</div>
+                <div className="shortcut-item"><kbd>6</kbd> Leaderboard</div>
+                <div className="shortcut-item"><kbd>7</kbd> Roadmap</div>
+                <div className="shortcut-item"><kbd>8</kbd> Onboarding</div>
+              </div>
+              <p className="shortcuts-footer">Click anywhere to close</p>
+            </div>
+          </div>
+        )}
       </div>
     </>
   )

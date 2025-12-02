@@ -956,3 +956,144 @@ html, body, #root {
     align-items: center;
   }
 }
+
+/* ==================== KEYBOARD SHORTCUTS MODAL ==================== */
+
+.shortcuts-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 26, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: auto;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.shortcuts-content {
+  background: linear-gradient(145deg, #0d0d2a, #1a0a2e);
+  border: 2px solid var(--color-cyan);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.shortcuts-content h2 {
+  color: var(--color-cyan);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.shortcuts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.shortcut-item kbd {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid var(--color-cyan);
+  border-radius: 6px;
+  color: var(--color-cyan);
+  font-family: inherit;
+  font-size: 0.85rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.shortcuts-footer {
+  text-align: center;
+  color: #666;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* ==================== THEME INDICATOR ==================== */
+
+.theme-indicator {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.theme-indicator:hover {
+  opacity: 1;
+}
+
+.shortcut-hint {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  font-size: 0.8rem !important;
+  margin-top: 0.5rem !important;
+}
+
+.shortcut-hint:hover {
+  opacity: 1;
+  color: var(--color-cyan) !important;
+}
+
+/* ==================== BUTTON SHORTCUT BADGES ==================== */
+
+.btn[data-shortcut]::after {
+  content: attr(data-shortcut);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: var(--color-quantum);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.btn[data-shortcut]:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
