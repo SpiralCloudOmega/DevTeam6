@@ -707,6 +707,11 @@ function App() {
   
   // Keyboard shortcuts handler
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    // Press Escape to close shortcuts modal
+    if (e.key === 'Escape' && showShortcuts) {
+      setShowShortcuts(false)
+      return
+    }
     // Press '?' to toggle shortcuts panel
     if (e.key === '?') {
       setShowShortcuts(prev => !prev)
@@ -715,7 +720,7 @@ function App() {
     if (e.key === 't' || e.key === 'T') {
       setTheme(prev => prev === 'cyber' ? 'neon' : prev === 'neon' ? 'quantum' : 'cyber')
     }
-    // Press '1-9' for quick navigation
+    // Press '1-9' for quick navigation (using assign for intentional full page navigation)
     const shortcuts: Record<string, string> = {
       '1': '/DevTeam6/knowledge-hub',
       '2': '/DevTeam6/landing',
@@ -727,9 +732,9 @@ function App() {
       '8': '/DevTeam6/onboarding',
     }
     if (shortcuts[e.key]) {
-      window.location.href = shortcuts[e.key]
+      window.location.assign(shortcuts[e.key])
     }
-  }, [])
+  }, [showShortcuts])
   
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown)
