@@ -841,10 +841,17 @@ graph LR
 |---------|---------|------|
 | **GitHub** | Official GitHub channel | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GitHub) |
 | **GitHub Developer** | Technical deep dives | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GitHubDeveloper) |
+| **GitLab Unfiltered** | GitLab tutorials & DevOps | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GitLabUnfiltered) |
 | **OpenAI** | AI research & updates | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@OpenAI) |
 | **Google AI** | Google AI innovations | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@GoogleAI) |
 | **Anthropic** | Claude & AI safety | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@AnthropicAI) |
 | **Microsoft Developer** | Dev tools & Azure AI | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@MicrosoftDeveloper) |
+| **iZotope** | Audio production & mastering | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@iZotopeOfficial) |
+| **freeCodeCamp** | Free coding tutorials | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@freecodecamp) |
+| **Stanford Online** | University courses | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@stanfordonline) |
+| **Harvard** | Harvard University content | [![Website](https://img.shields.io/badge/Visit-00f0ff)](http://www.harvard.edu/) |
+| **Questiopedia** | Educational content | [![YouTube](https://img.shields.io/badge/Subscribe-ff0066?logo=youtube)](https://www.youtube.com/@Questiopedia) |
+| **Khan Academy** | Free world-class education | [![Website](https://img.shields.io/badge/Visit-00f0ff)](https://www.khanacademy.org/) |
 
 </div>
 
@@ -1069,6 +1076,18 @@ graph LR
   - [AI Video Generation](#-ai-video-generation)
   - [Audio Libraries & Tools](#️-audio-libraries--tools)
   - [Streaming & Broadcasting](#-streaming--broadcasting)
+  - [Music Production Software](#-music-production-software-from-awesome-music-production)
+  - [Digital Audio Workstations](#digital-audio-workstations-daws)
+  - [Live Coding & Algorithmic Music](#live-coding--algorithmic-music)
+  - [Software Synthesizers](#software-synthesizers)
+  - [Music Libraries & Programming](#music-libraries--programming)
+- [CAD & 3D Design](#-cad--3d-design)
+  - [Open Source CAD Software](#-open-source-cad-software)
+  - [3D Modeling & Animation](#-3d-modeling--animation)
+  - [Industrial & Engineering CAD](#-industrial--engineering-cad)
+  - [CAD Libraries & APIs](#-cad-libraries--apis)
+  - [3D Printing & Slicers](#️-3d-printing--slicers)
+  - [CAD for Game Development](#-cad-for-game-development)
 - [Design Tools](#-design-tools)
   - [UI/UX Design](#-uiux-design)
   - [Graphic Design](#-graphic-design)
@@ -1425,6 +1444,7 @@ curl http://localhost:11434/api/generate -d '{
 | Tool | Description | Link |
 |------|-------------|------|
 | **GitHub CLI** | GitHub from the command line | [cli.github.com](https://cli.github.com/) |
+| **GitHub CLI Manual** | Complete CLI documentation | [cli.github.com/manual](https://cli.github.com/manual/) |
 | **GitHub Copilot CLI** | AI-powered shell command suggestions | [github.com/github/gh-copilot](https://github.com/github/gh-copilot) |
 | **Warp AI** | AI-powered terminal commands | [warp.dev](https://www.warp.dev/) |
 | **Fig** | Terminal autocomplete & AI | [fig.io](https://fig.io/) |
@@ -1789,14 +1809,186 @@ alias ghce='gh copilot explain'
 | [airensoft/ovenmediaengine](https://github.com/airensoft/ovenmediaengine) | Sub-second latency streaming | 3k+ |
 | [bluenviron/mediamtx](https://github.com/bluenviron/mediamtx) | Real-time media server | 14k+ |
 
+### 🎹 Music Production Software (from [Awesome Music Production](https://github.com/ad-si/awesome-music-production))
+
+> **Comprehensive curated list of software, hardware, and resources to create music**
+
+#### Digital Audio Workstations (DAWs)
+
+| Software | Description | Link |
+|----------|-------------|------|
+| **Ableton Live** | Industry-standard DAW for production & live performance | [ableton.com](https://ableton.com/live) |
+| **FL Studio** | Complete software music production environment | [image-line.com](https://www.image-line.com/fl-studio/) |
+| **Logic Pro X** | Apple's professional DAW | [apple.com](https://www.apple.com/logic-pro/) |
+| **Bitwig** | Modern DAW with modular sound design | [bitwig.com](https://www.bitwig.com/) |
+| **Reaper** | Affordable, powerful DAW | [reaper.fm](http://reaper.fm) |
+| **LMMS** | Free, open-source DAW | [lmms.io](https://lmms.io/) |
+| **Ardour** | Professional open-source DAW | [ardour.org](https://ardour.org) |
+| **TuneFlow** | AI-powered free DAW | [tuneflow.com](https://tuneflow.com) |
+| **Stargate DAW** | All-in-one open-source DAW | [GitHub](https://github.com/stargatedaw/stargate) |
+| **Zrythm** | Cross-platform DAW | [zrythm.org](https://www.zrythm.org) |
+
+#### Live Coding & Algorithmic Music
+
+| Tool | Description | Link |
+|------|-------------|------|
+| **Sonic Pi** | Live coding music synth for everyone | [sonic-pi.net](https://github.com/samaaron/sonic-pi) |
+| **TidalCycles** | Language for polyrhythmic patterns | [tidalcycles.org](https://tidalcycles.org) |
+| **Strudel** | Web-based algorithmic patterns | [strudel.cc](https://strudel.cc) |
+| **Glicol** | Rust-based live coding DSP | [GitHub](https://github.com/chaosprint/glicol) |
+| **Orca** | Esoteric procedural sequencer | [GitHub](https://hundredrabbits.itch.io/orca) |
+| **Sardine** | Python music live coding | [GitHub](https://github.com/Bubobubobubobubo/sardine) |
+
+#### Software Synthesizers
+
+| Synthesizer | Description | Link |
+|-------------|-------------|------|
+| **Surge** | Open source hybrid synthesizer | [surge-synth-team.org](https://surge-synthesizer.github.io) |
+| **Helm** | GPL licensed polyphonic synth | [tytel.org](https://tytel.org/helm/) |
+| **VCV Rack** | Open source virtual modular | [vcvrack.com](https://vcvrack.com) |
+| **NSynth Super** | AI synth from Google Magenta | [Google](https://experiments.withgoogle.com/nsynth-super) |
+| **OpenUtau** | Open source vocal synthesis | [openutau.com](https://www.openutau.com) |
+
+#### Music Libraries & Programming
+
+| Library | Description | Link |
+|---------|-------------|------|
+| **Tone.js** | Web Audio framework for interactive music | [tonejs.github.io](https://github.com/Tonejs/Tone.js) |
+| **Magenta** | AI music generation (TensorFlow) | [magenta.tensorflow.org](https://magenta.tensorflow.org) |
+| **Tonal** | Functional music theory library | [GitHub](https://github.com/tonaljs/tonal) |
+| **Scribbletune** | Create music with JavaScript | [GitHub](https://github.com/scribbletune/scribbletune) |
+| **Aubio** | Audio segmentation & pitch detection | [aubio.org](https://aubio.org) |
+| **Faust** | Functional audio processing language | [faust.grame.fr](https://faust.grame.fr) |
+| **CSound** | Sound computing system | [csound.com](https://csound.com/index.html) |
+| **Overtone** | Clojure-based synthesizer toolkit | [GitHub](https://github.com/overtone/overtone) |
+
+#### AI Music Services
+
+| Service | Description | Link |
+|---------|-------------|------|
+| **Suno AI** | AI music composition platform | [suno.com](https://suno.com/) |
+| **Splash** | AI-powered music creation | [splashmusic.com](https://www.splashmusic.com) |
+| **Omnizart** | Transcribe vocals, drums, chords | [GitHub](https://github.com/Music-and-Culture-Technology-Lab/omnizart) |
+| **Landr** | Automatic audio mastering | [landr.com](https://www.landr.com) |
+
+#### Music Distribution
+
+| Platform | Description | Link |
+|----------|-------------|------|
+| **DistroKid** | Easy music distribution | [distrokid.com](https://distrokid.com) |
+| **BandCamp** | Artist-friendly platform | [bandcamp.com](https://bandcamp.com) |
+| **TuneCore** | Major platform distribution | [tunecore.com](https://www.tunecore.com) |
+| **Amuse** | Free distribution with premium options | [amuse.io](https://www.amuse.io/) |
+| **SoundCloud** | Artists platform | [soundcloud.com](https://artists.soundcloud.com) |
+
+#### MIDI Controllers & Hardware
+
+| Hardware | Description | Link |
+|----------|-------------|------|
+| **LinnStrument** | Expressive MPE controller | [rogerlinndesign.com](https://www.rogerlinndesign.com/linnstrument) |
+| **Lumatone** | Hexagonal isomorphic keyboard | [lumatone.io](https://www.lumatone.io) |
+| **Artiphon** | Guitar-like MPE controller | [artiphon.com](https://artiphon.com) |
+| **Sensel Morph** | Swappable interface controller | [sensel.com](https://sensel.com/pages/the-sensel-morph) |
+| **Teenage Engineering** | OP-1, Pocket Operators | [teenage.engineering](https://teenage.engineering/products/op-1) |
+
 ### 🎯 Awesome Audio/Video Lists
 
 | Repository | Description | Stars |
 |------------|-------------|-------|
+| [ad-si/awesome-music-production](https://github.com/ad-si/awesome-music-production) | Comprehensive music production resources | 1.3k+ |
 | [avelino/awesome-audio-visualization](https://github.com/avelino/awesome-audio-visualization) | Audio visualization resources | 4.5k+ |
 | [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) | (Audio/Video sections) | 68k+ |
 | [karlstav/cava](https://github.com/karlstav/cava) | Console audio visualizer | 4k+ |
 | [Shubham0211/Awesome-Audio-Processing](https://github.com/Shubham0211/Awesome-Audio-Processing) | Audio processing resources | 500+ |
+| [notthetup/awesome-webaudio](https://github.com/notthetup/awesome-webaudio) | Web Audio API resources | 1k+ |
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=1000&color=00F0FF&background=0A0A1AFF&vCenter=true&width=400&height=40&lines=CAD+%26+3D+DESIGN" alt="CAD & 3D Design" />
+
+> **🔧 Computer-Aided Design & 3D Modeling — From Engineering to Creative Design**
+
+<div align="center">
+
+[![FreeCAD](https://img.shields.io/badge/FreeCAD-Open_Source_CAD-red?style=for-the-badge)](https://www.freecadweb.org/)
+[![Blender](https://img.shields.io/badge/Blender-3D_Creation-E87D0D?style=for-the-badge&logo=blender&logoColor=white)](https://www.blender.org/)
+[![OpenSCAD](https://img.shields.io/badge/OpenSCAD-Programmers_CAD-yellow?style=for-the-badge)](https://openscad.org/)
+
+</div>
+
+### 🔧 Open Source CAD Software
+
+| Software | Description | Link |
+|----------|-------------|------|
+| **FreeCAD** | Parametric 3D CAD modeler | [freecadweb.org](https://www.freecadweb.org/) |
+| **OpenSCAD** | Programmer's 3D CAD modeler | [openscad.org](https://openscad.org/) |
+| **LibreCAD** | Free 2D CAD application | [librecad.org](https://librecad.org/) |
+| **BRL-CAD** | Solid modeling system | [brlcad.org](https://brlcad.org/) |
+| **Solvespace** | Parametric 2D/3D CAD | [solvespace.com](https://solvespace.com/) |
+| **KiCad** | Electronics design automation | [kicad.org](https://www.kicad.org/) |
+
+### 🎨 3D Modeling & Animation
+
+| Software | Description | Link |
+|----------|-------------|------|
+| **Blender** | Free 3D creation suite | [blender.org](https://www.blender.org/) |
+| **Wings 3D** | Subdivision modeler | [wings3d.com](http://www.wings3d.com/) |
+| **MeshLab** | 3D mesh processing | [meshlab.net](https://www.meshlab.net/) |
+| **Dust3D** | Quick 3D modeling | [dust3d.org](https://dust3d.org/) |
+| **MakeHuman** | Human character creation | [makehumancommunity.org](http://www.makehumancommunity.org/) |
+
+### 🏭 Industrial & Engineering CAD
+
+| Software | Description | Link |
+|----------|-------------|------|
+| **Fusion 360** | Cloud-based CAD/CAM (Autodesk) | [autodesk.com](https://www.autodesk.com/products/fusion-360/) |
+| **Onshape** | Cloud-native CAD | [onshape.com](https://www.onshape.com/) |
+| **SolidWorks** | Industry-standard mechanical CAD | [solidworks.com](https://www.solidworks.com/) |
+| **AutoCAD** | Classic 2D/3D CAD | [autodesk.com](https://www.autodesk.com/products/autocad/) |
+| **CATIA** | Enterprise CAD/CAM/CAE | [3ds.com](https://www.3ds.com/products-services/catia/) |
+| **Siemens NX** | Advanced product development | [siemens.com](https://www.plm.automation.siemens.com/global/en/products/nx/) |
+
+### 📐 CAD Libraries & APIs
+
+| Repository | Description | Stars |
+|------------|-------------|-------|
+| [FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) | Parametric 3D CAD modeler | 22k+ |
+| [openscad/openscad](https://github.com/openscad/openscad) | Programmer's solid 3D CAD | 7k+ |
+| [CadQuery/cadquery](https://github.com/CadQuery/cadquery) | Python parametric CAD | 3k+ |
+| [LibreCAD/LibreCAD](https://github.com/LibreCAD/LibreCAD) | 2D CAD application | 4k+ |
+| [KiCad/kicad-source-mirror](https://github.com/KiCad/kicad-source-mirror) | EDA suite | 3k+ |
+| [BRL-CAD/brlcad](https://github.com/BRL-CAD/brlcad) | Solid modeling system | 800+ |
+| [solvespace/solvespace](https://github.com/solvespace/solvespace) | Parametric 2D/3D CAD | 3k+ |
+| [trimesh/trimesh](https://github.com/mikedh/trimesh) | Python library for 3D meshes | 3k+ |
+| [opencascade/OCCT](https://github.com/Open-Cascade-SAS/OCCT) | Open CASCADE Technology | 1k+ |
+
+### 🖨️ 3D Printing & Slicers
+
+| Software | Description | Link |
+|----------|-------------|------|
+| **PrusaSlicer** | Feature-rich 3D print slicer | [prusa3d.com](https://www.prusa3d.com/prusaslicer/) |
+| **Cura** | Popular 3D printing slicer | [ultimaker.com](https://ultimaker.com/software/ultimaker-cura) |
+| **SuperSlicer** | Advanced slicer based on PrusaSlicer | [GitHub](https://github.com/supermerill/SuperSlicer) |
+| **OctoPrint** | Web interface for 3D printers | [octoprint.org](https://octoprint.org/) |
+
+### 🎮 CAD for Game Development
+
+| Tool | Description | Link |
+|------|-------------|------|
+| **Blockbench** | Low-poly 3D model editor | [blockbench.net](https://www.blockbench.net/) |
+| **Trenchbroom** | Level editor for Quake-engine games | [GitHub](https://github.com/TrenchBroom/TrenchBroom) |
+| **Tiled** | 2D level editor | [mapeditor.org](https://www.mapeditor.org/) |
+| **LDRAW** | LEGO CAD system | [ldraw.org](https://www.ldraw.org/) |
+
+### 📚 CAD Learning Resources
+
+| Resource | Description |
+|----------|-------------|
+| [FreeCAD Documentation](https://wiki.freecadweb.org/) | Official FreeCAD wiki |
+| [Blender Tutorials](https://www.blender.org/support/tutorials/) | Official Blender tutorials |
+| [OpenSCAD Tutorials](https://openscad.org/documentation.html) | OpenSCAD documentation |
+| [CadQuery Examples](https://cadquery.readthedocs.io/) | CadQuery documentation |
+| [KiCad Tutorials](https://docs.kicad.org/) | KiCad documentation |
 
 ---
 
