@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevTeam6 - Redirecting...</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        background: #0a0a1a;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #00f0ff;
+      }
+      .loader {
+        text-align: center;
+      }
+      .loader h1 {
+        font-size: 2rem;
+        background: linear-gradient(90deg, #00f0ff, #ff00ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+      }
+      .loader p {
+        color: #888;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #0a0a1a;
+        border-top-color: #00f0ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 1rem auto;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // This script handles the redirect from 404.html to index.html
+      // while preserving the path for React Router
+      (function() {
+        // Get the current path and search params
+        var location = window.location;
+        var repo = '/DevTeam6';
+        
+        // Store the original path (without the repo prefix) in sessionStorage
+        var path = location.pathname;
+        if (path.startsWith(repo)) {
+          path = path.slice(repo.length);
+        }
+        
+        // Redirect to the root with the original path stored
+        sessionStorage.setItem('spa-redirect-path', path + location.search + location.hash);
+        
+        // Redirect to the base URL
+        location.replace(
+          location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
+          repo + '/'
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="loader">
+      <h1>DevTeam6</h1>
+      <div class="spinner"></div>
+      <p>Redirecting to the experience...</p>
+    </div>
+  </body>
+</html>
