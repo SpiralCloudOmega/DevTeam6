@@ -730,6 +730,10 @@ function App() {
       '6': '/DevTeam6/gamification',
       '7': '/DevTeam6/roadmap',
       '8': '/DevTeam6/onboarding',
+      '9': '/DevTeam6/repomind',
+      '0': '/DevTeam6/repopilot',
+      c: '/DevTeam6/control-deck',
+      C: '/DevTeam6/control-deck'
     }
     if (shortcuts[e.key]) {
       window.location.assign(shortcuts[e.key])
@@ -803,8 +807,14 @@ function App() {
           <a href="/DevTeam6/onboarding" className="btn secondary" data-shortcut="8">
             🚀 Get Started
           </a>
-          <a href="/DevTeam6/repopilot" className="btn primary" data-shortcut="9">
+          <a href="/DevTeam6/repomind" className="btn primary" data-shortcut="9">
+            🧠 Repomind Workstation
+          </a>
+          <a href="/DevTeam6/repopilot" className="btn primary" data-shortcut="0">
             🧠 AI Co-Pilot
+          </a>
+          <a href="/DevTeam6/control-deck" className="btn secondary" data-shortcut="C">
+            🛰️ Control Deck
           </a>
         </div>
         
@@ -824,6 +834,9 @@ function App() {
                 <div className="shortcut-item"><kbd>6</kbd> Leaderboard</div>
                 <div className="shortcut-item"><kbd>7</kbd> Roadmap</div>
                 <div className="shortcut-item"><kbd>8</kbd> Onboarding</div>
+                <div className="shortcut-item"><kbd>9</kbd> Repomind Workstation</div>
+                <div className="shortcut-item"><kbd>0</kbd> AI Co-Pilot</div>
+                <div className="shortcut-item"><kbd>C</kbd> Control Deck</div>
               </div>
               <p className="shortcuts-footer">Click anywhere to close</p>
             </div>

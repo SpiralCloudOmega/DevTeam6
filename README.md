@@ -33,6 +33,8 @@
 [![Roadmap](https://img.shields.io/badge/📋_PROJECT_ROADMAP-ffcc00?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/roadmap)
 [![Node Graph](https://img.shields.io/badge/⚡_NODE_GRAPH-00f0ff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/node-graph)
 [![Videos](https://img.shields.io/badge/🎬_VIDEO_STORIES-ff0066?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/videos)
+[![Repomind](https://img.shields.io/badge/🧠_REPOMIND_WORKSTATION-00ff88?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/repomind)
+[![Control Deck](https://img.shields.io/badge/🛰️_CONTROL_DECK-7b2fff?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/control-deck)
 
 ---
 
@@ -65,6 +67,12 @@
 <a href="https://spiralcloudomega.github.io/DevTeam6/onboarding">
   <img src="https://img.shields.io/badge/🚀_ONBOARDING_WIZARD-00ff88?style=for-the-badge&logoColor=white" alt="Onboarding Wizard" />
 </a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/repomind">
+  <img src="https://img.shields.io/badge/🧠_REPOMIND_WORKSTATION-00ff88?style=for-the-badge&logoColor=white" alt="Repomind Workstation" />
+</a>
+<a href="https://spiralcloudomega.github.io/DevTeam6/control-deck">
+  <img src="https://img.shields.io/badge/🛰️_CONTROL_DECK-7b2fff?style=for-the-badge&logoColor=white" alt="Control Deck" />
+</a>
 
 *Experience DevTeam6 in immersive 3D • Navigate the Semantic Knowledge Hub • Generate UI with natural language • Explore Node Graph workflows • Watch video tutorials • Track contributions on the Leaderboard*
 
@@ -74,11 +82,13 @@
 | **Semantic Knowledge Hub** | AI-first knowledge graph with semantic search and completeness meters | NEW |
 | **Immersive Landing** | GSAP scroll-animated landing page with parallax effects | Live |
 | **GenUI Playground** | AI-powered component generator using natural language prompts | Live |
-| **Node Graph Editor** | n8n-style interactive workflow visualization with clickable nodes | Live |
+| **Node Graph Editor** | n8n-style interactive workflow visualization with clickable nodes, Tron halos, MCP widgets, and a Path Playbook route finder | Live |
 | **Video Storytelling** | Chapter-based video guides with interactive timeline navigation | Live |
 | **Gamification Dashboard** | Contributor leaderboard, achievements, and statistics | Live |
 | **Project Roadmap** | Interactive board/timeline/list view of project progress | Live |
 | **Onboarding Wizard** | Step-by-step contributor guide with progress tracking | Live |
+| **Repomind Workstation** | In-repo digital workstation with neon ribbons, UX Motion Lab, widget shelf, control center, pipelines, persona blender + YouTube player | NEW |
+| **Control Deck** | Static digital workstation control deck with docked panels, mission briefings/preview, status HUD, command palette, UX Motion Lab, macros, and low-power toggle | NEW |
 
 ---
 
