@@ -11,6 +11,8 @@ import NodeGraphEditor from './pages/NodeGraphEditor'
 import VideoStorytelling from './pages/VideoStorytelling'
 import SemanticKnowledgeHub from './pages/SemanticKnowledgeHub'
 import RepoPilot from './pages/RepoPilot'
+import Repomind from './pages/Repomind'
+import ControlDeck from './pages/ControlDeck'
 import './index.css'
 
 // Handle SPA redirect from 404.html
@@ -47,6 +49,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/videos" element={<VideoStorytelling />} />
         <Route path="/knowledge-hub" element={<SemanticKnowledgeHub />} />
         <Route path="/repopilot" element={<RepoPilot />} />
+        <Route path="/repomind" element={<Repomind />} />
+        <Route path="/control-deck" element={<ControlDeck />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
