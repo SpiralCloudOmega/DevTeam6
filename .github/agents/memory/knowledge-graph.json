@@ -1,0 +1,109 @@
+{
+  "version": "1.0.0",
+  "description": "Knowledge graph for agent relationships and concepts",
+  "created": "2025-12-05T20:50:00Z",
+  "updated": "2025-12-05T20:50:00Z",
+  "nodes": [
+    {
+      "id": "devteam6",
+      "type": "repository",
+      "label": "DevTeam6",
+      "properties": {
+        "description": "The Omega Tool Kit",
+        "techStack": ["React", "TypeScript", "Three.js", "Vite"]
+      }
+    },
+    {
+      "id": "agent-master",
+      "type": "agent",
+      "label": "@master",
+      "properties": {
+        "name": "The Architect",
+        "role": "Orchestrator"
+      }
+    },
+    {
+      "id": "agent-react",
+      "type": "agent",
+      "label": "@react",
+      "properties": {
+        "name": "Phoenix",
+        "role": "Frontend"
+      }
+    },
+    {
+      "id": "agent-python",
+      "type": "agent",
+      "label": "@python",
+      "properties": {
+        "name": "Serpent",
+        "role": "Backend/ML"
+      }
+    },
+    {
+      "id": "agent-devops",
+      "type": "agent",
+      "label": "@devops",
+      "properties": {
+        "name": "Forge",
+        "role": "Infrastructure"
+      }
+    },
+    {
+      "id": "agent-research",
+      "type": "agent",
+      "label": "@research",
+      "properties": {
+        "name": "Sage",
+        "role": "Documentation"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent-master",
+      "target": "devteam6",
+      "type": "manages"
+    },
+    {
+      "source": "agent-master",
+      "target": "agent-react",
+      "type": "coordinates"
+    },
+    {
+      "source": "agent-master",
+      "target": "agent-python",
+      "type": "coordinates"
+    },
+    {
+      "source": "agent-master",
+      "target": "agent-devops",
+      "type": "coordinates"
+    },
+    {
+      "source": "agent-master",
+      "target": "agent-research",
+      "type": "coordinates"
+    },
+    {
+      "source": "agent-react",
+      "target": "devteam6",
+      "type": "develops"
+    },
+    {
+      "source": "agent-python",
+      "target": "devteam6",
+      "type": "develops"
+    },
+    {
+      "source": "agent-devops",
+      "target": "devteam6",
+      "type": "operates"
+    },
+    {
+      "source": "agent-research",
+      "target": "devteam6",
+      "type": "documents"
+    }
+  ]
+}
