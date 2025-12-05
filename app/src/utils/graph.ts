@@ -66,7 +66,7 @@ export const filterNodesByCluster = (nodes: GraphNode[], clusterId: string): Gra
 /**
  * Compute a shortest directed path between two node ids using BFS.
  * Returns an ordered list of node ids including start and target, or [] when unreachable.
- * Returns empty array if start node has no outgoing edges in the graph.
+ * Returns empty array if start node does not exist in the graph.
  */
 export const computeShortestPath = (
   edges: GraphEdge[],
