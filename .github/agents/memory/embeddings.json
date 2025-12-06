@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "description": "Vector embeddings for semantic search and RAG",
+  "model": "text-embedding-3-small",
+  "dimensions": 1536,
+  "created": "2025-12-05T20:50:00Z",
+  "updated": "2025-12-05T20:50:00Z",
+  "embeddings": []
+}

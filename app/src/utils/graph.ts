@@ -55,15 +55,18 @@ export const computeClusterBounds = (
 
 /**
  * Filter nodes by cluster while preserving the original order for stable rendering.
+ * Returns empty array for null/undefined nodes input.
  */
 export const filterNodesByCluster = (nodes: GraphNode[], clusterId: string): GraphNode[] => {
-  if (clusterId === 'all') return nodes
+  if (!nodes || nodes.length === 0) return []
+  if (!clusterId || clusterId === 'all') return nodes
   return nodes.filter(node => node.cluster === clusterId)
 }
 
 /**
  * Compute a shortest directed path between two node ids using BFS.
  * Returns an ordered list of node ids including start and target, or [] when unreachable.
+ * Returns empty array if start node does not exist in the graph.
  */
 export const computeShortestPath = (
   edges: GraphEdge[],
@@ -72,6 +75,7 @@ export const computeShortestPath = (
 ): string[] => {
   if (!startId || !targetId) return []
   if (startId === targetId) return [startId]
+  if (!edges || edges.length === 0) return []
 
   const adjacency = new Map<string, string[]>()
 
@@ -79,6 +83,9 @@ export const computeShortestPath = (
     if (!adjacency.has(from)) adjacency.set(from, [])
     adjacency.get(from)!.push(to)
   })
+
+  // Return empty if start node is not in the graph
+  if (!adjacency.has(startId)) return []
 
   const visited = new Set<string>([startId])
   const queue: Array<{ node: string; path: string[] }> = [{ node: startId, path: [startId] }]
