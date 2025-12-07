@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
-import { computeClusterBounds, computeShortestPath, filterNodesByCluster } from '../utils/graph';
+import { computeClusterBounds, computeShortestPath, filterNodesByCluster, ClusterBounds } from '../utils/graph';
 
 // Custom Node Graph implementation (n8n-style interactive workflow)
 // Using SVG-based approach for maximum compatibility
