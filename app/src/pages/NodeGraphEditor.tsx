@@ -110,20 +110,23 @@ const controlPresets = [
   { id: 'vector', label: 'Vector Fog', description: 'Clusters framed for n8n' },
 ];
 
-// Generate edges from node connections
+// Optimize edge generation - use for loop instead of forEach for better performance
 const generateEdges = (nodes: Node[]): Edge[] => {
-  const edges: Edge[] = [];
-  nodes.forEach(node => {
-    node.connections.forEach(targetId => {
-      edges.push({
-        id: `${node.id}-${targetId}`,
-        from: node.id,
-        to: targetId,
-        animated: node.status === 'active',
+  const generatedEdges: Edge[] = [];
+  for (let nodeIndex = 0; nodeIndex < nodes.length; nodeIndex++) {
+    const currentNode = nodes[nodeIndex];
+    const nodeConnections = currentNode.connections;
+    for (let connectionIndex = 0; connectionIndex < nodeConnections.length; connectionIndex++) {
+      const targetNodeId = nodeConnections[connectionIndex];
+      generatedEdges.push({
+        id: `${currentNode.id}-${targetNodeId}`,
+        from: currentNode.id,
+        to: targetNodeId,
+        animated: currentNode.status === 'active',
       });
-    });
-  });
-  return edges;
+    }
+  }
+  return generatedEdges;
 };
 
 // Node Component
@@ -350,9 +353,16 @@ export default function NodeGraphEditor() {
     }
   }, [displayNodes, pathStart, pathTarget]);
 
-  const clusterBounds = useMemo(() => clusters
-    .map(cluster => ({ cluster, bounds: computeClusterBounds(nodes, cluster.id, backgroundStyle === 'vector' ? 64 : 48) }))
-    .filter(item => Boolean(item.bounds)), [clusters, nodes, backgroundStyle]);
+  // Optimize cluster bounds - cache computation with proper dependencies
+  const clusterBounds = useMemo(() => {
+    const boundsPadding = backgroundStyle === 'vector' ? 64 : 48;
+    return clusters
+      .map(cluster => {
+        const clusterBounds = computeClusterBounds(nodes, cluster.id, boundsPadding);
+        return clusterBounds ? { cluster, bounds: clusterBounds } : null;
+      })
+      .filter((item): item is { cluster: Cluster; bounds: ClusterBounds } => item !== null);
+  }, [clusters, nodes, backgroundStyle]);
 
   const handlePresetChange = useCallback((presetId: 'mindmap' | 'automation') => {
     const preset = presets.find(item => item.id === presetId);

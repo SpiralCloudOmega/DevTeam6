@@ -37,13 +37,13 @@ export const computeClusterBounds = (
   const scopedNodes = nodes.filter(node => node.cluster === clusterId)
   if (scopedNodes.length === 0) return null
 
-  const xs = scopedNodes.map(node => node.position.x)
-  const ys = scopedNodes.map(node => node.position.y)
+  const xCoordinates = scopedNodes.map(node => node.position.x)
+  const yCoordinates = scopedNodes.map(node => node.position.y)
 
-  const minX = Math.min(...xs) - padding
-  const maxX = Math.max(...xs) + padding
-  const minY = Math.min(...ys) - padding
-  const maxY = Math.max(...ys) + padding
+  const minX = Math.min(...xCoordinates) - padding
+  const maxX = Math.max(...xCoordinates) + padding
+  const minY = Math.min(...yCoordinates) - padding
+  const maxY = Math.max(...yCoordinates) + padding
 
   const width = maxX - minX
   const height = maxY - minY
@@ -77,29 +77,30 @@ export const computeShortestPath = (
   if (startId === targetId) return [startId]
   if (!edges || edges.length === 0) return []
 
-  const adjacency = new Map<string, string[]>()
+  const adjacencyList = new Map<string, string[]>()
 
   edges.forEach(({ from, to }) => {
-    if (!adjacency.has(from)) adjacency.set(from, [])
-    adjacency.get(from)!.push(to)
+    if (!adjacencyList.has(from)) adjacencyList.set(from, [])
+    adjacencyList.get(from)!.push(to)
   })
 
   // Return empty if start node is not in the graph
-  if (!adjacency.has(startId)) return []
+  if (!adjacencyList.has(startId)) return []
 
-  const visited = new Set<string>([startId])
-  const queue: Array<{ node: string; path: string[] }> = [{ node: startId, path: [startId] }]
+  const visitedNodes = new Set<string>([startId])
+  const searchQueue: Array<{ currentNode: string; currentPath: string[] }> = [{ currentNode: startId, currentPath: [startId] }]
 
-  while (queue.length > 0) {
-    const { node, path } = queue.shift() as { node: string; path: string[] }
-    const neighbors = adjacency.get(node) || []
+  while (searchQueue.length > 0) {
+    const { currentNode, currentPath } = searchQueue.shift() as { currentNode: string; currentPath: string[] }
+    const neighborNodes = adjacencyList.get(currentNode) || []
 
-    for (const neighbor of neighbors) {
-      if (visited.has(neighbor)) continue
-      const nextPath = [...path, neighbor]
-      if (neighbor === targetId) return nextPath
-      visited.add(neighbor)
-      queue.push({ node: neighbor, path: nextPath })
+    for (const neighborNode of neighborNodes) {
+      if (visitedNodes.has(neighborNode)) continue
+      // Optimize: Build new path with concat to avoid mutation issues
+      const nextPath = currentPath.concat(neighborNode)
+      if (neighborNode === targetId) return nextPath
+      visitedNodes.add(neighborNode)
+      searchQueue.push({ currentNode: neighborNode, currentPath: nextPath })
     }
   }
 
