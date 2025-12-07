@@ -51,7 +51,9 @@ class OllamaService:
         self,
         host: str = "http://localhost:11434",
         default_model: str = "llama3.2",
-        timeout: int = 120
+        timeout: int = 120,
+        max_connections: int = 100,
+        max_keepalive_connections: int = 20
     ):
         """
         Initialize Ollama service.
@@ -60,18 +62,29 @@ class OllamaService:
             host: Ollama API host
             default_model: Default model to use
             timeout: Request timeout in seconds
+            max_connections: Maximum concurrent connections
+            max_keepalive_connections: Keep-alive connections for reuse
         """
         self.host = host.rstrip("/")
         self.default_model = default_model
         self.timeout = timeout
+        self.max_connections = max_connections
+        self.max_keepalive_connections = max_keepalive_connections
         self._client: Optional[httpx.AsyncClient] = None
     
     async def _get_client(self) -> httpx.AsyncClient:
-        """Get or create async HTTP client."""
+        """
+        Get or create async HTTP client with connection pooling.
+        
+        Performance: Reuses connections via keep-alive to reduce overhead.
+        """
         if self._client is None or self._client.is_closed:
             self._client = httpx.AsyncClient(
                 timeout=httpx.Timeout(self.timeout),
-                limits=httpx.Limits(max_connections=10)
+                limits=httpx.Limits(
+                    max_connections=self.max_connections,
+                    max_keepalive_connections=self.max_keepalive_connections
+                )
             )
         return self._client
     

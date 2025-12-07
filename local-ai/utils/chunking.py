@@ -36,6 +36,8 @@ def chunk_text(
 
     Returns:
         List of TextChunk objects
+        
+    Performance: O(n) where n is text length. Avoids redundant string operations.
     """
     if not text:
         return []
@@ -43,19 +45,21 @@ def chunk_text(
     chunks = []
     start = 0
     index = 0
+    text_len = len(text)
+    sep_len = len(separator)
 
-    while start < len(text):
+    while start < text_len:
         # Find end of chunk
-        end = start + chunk_size
+        end = min(start + chunk_size, text_len)
 
         # Try to end at a separator
-        if end < len(text):
-            # Look for separator near end
+        if end < text_len:
+            # Look for separator near end (search backwards from end)
             sep_pos = text.rfind(separator, start, end)
             if sep_pos > start:
-                end = sep_pos + len(separator)
+                end = sep_pos + sep_len
             else:
-                # Fall back to space
+                # Fall back to space (search backwards)
                 space_pos = text.rfind(" ", start, end)
                 if space_pos > start:
                     end = space_pos + 1
@@ -80,12 +84,13 @@ def chunk_text(
 
         # Move start with overlap
         start = end - chunk_overlap
-        if start <= 0 or start >= len(text):
+        if start <= 0 or start >= text_len:
             break
 
-    # Update total chunks
+    # Update total chunks in single pass
+    total = len(chunks)
     for chunk in chunks:
-        chunk.metadata["total_chunks"] = len(chunks)
+        chunk.metadata["total_chunks"] = total
 
     return chunks
 

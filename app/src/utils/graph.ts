@@ -67,6 +67,9 @@ export const filterNodesByCluster = (nodes: GraphNode[], clusterId: string): Gra
  * Compute a shortest directed path between two node ids using BFS.
  * Returns an ordered list of node ids including start and target, or [] when unreachable.
  * Returns empty array if start node does not exist in the graph.
+ * 
+ * Performance: O(V + E) where V is vertices and E is edges.
+ * Uses parent tracking to reconstruct path instead of copying arrays at each step.
  */
 export const computeShortestPath = (
   edges: GraphEdge[],
@@ -88,18 +91,31 @@ export const computeShortestPath = (
   if (!adjacency.has(startId)) return []
 
   const visited = new Set<string>([startId])
-  const queue: Array<{ node: string; path: string[] }> = [{ node: startId, path: [startId] }]
+  const parent = new Map<string, string>()
+  const queue: string[] = [startId]
+  let queueIndex = 0 // Use index instead of shift() for O(1) dequeue
 
-  while (queue.length > 0) {
-    const { node, path } = queue.shift() as { node: string; path: string[] }
+  while (queueIndex < queue.length) {
+    const node = queue[queueIndex++]
+    
+    // Check if we reached target
+    if (node === targetId) {
+      // Reconstruct path from parent tracking
+      const path: string[] = []
+      let current: string | undefined = targetId
+      while (current !== undefined) {
+        path.unshift(current)
+        current = parent.get(current)
+      }
+      return path
+    }
+
     const neighbors = adjacency.get(node) || []
-
     for (const neighbor of neighbors) {
       if (visited.has(neighbor)) continue
-      const nextPath = [...path, neighbor]
-      if (neighbor === targetId) return nextPath
       visited.add(neighbor)
-      queue.push({ node: neighbor, path: nextPath })
+      parent.set(neighbor, node)
+      queue.push(neighbor)
     }
   }
 

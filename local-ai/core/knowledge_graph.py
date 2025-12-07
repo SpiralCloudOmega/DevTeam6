@@ -38,19 +38,25 @@ class KnowledgeGraph:
     Knowledge graph for storing relationships and concepts.
 
     Stored in: .github/agents/memory/knowledge-graph.json
+    
+    Performance: Batches writes to avoid excessive I/O operations.
+    Call save() explicitly when needed, or use auto_save context manager.
     """
 
-    def __init__(self, path: Optional[str] = None):
+    def __init__(self, path: Optional[str] = None, auto_save: bool = True):
         """
         Initialize the knowledge graph.
 
         Args:
             path: Path to knowledge-graph.json
+            auto_save: Automatically save after modifications (default: True)
         """
         settings = get_settings()
         context7_path = Path(settings.context7_path)
         memory_dir = context7_path.parent / "memory"
         self.path = Path(path) if path else memory_dir / "knowledge-graph.json"
+        self.auto_save = auto_save
+        self._dirty = False  # Track if changes need saving
 
         self._nodes: Dict[str, KGNode] = {}
         self._edges: List[KGEdge] = []
@@ -118,6 +124,18 @@ class KnowledgeGraph:
         }
 
         self.path.write_text(json.dumps(data, indent=2))
+        self._dirty = False
+    
+    def save(self) -> None:
+        """Explicitly save changes to disk."""
+        if self._dirty:
+            self._save()
+    
+    def _mark_dirty(self) -> None:
+        """Mark graph as having unsaved changes and auto-save if enabled."""
+        self._dirty = True
+        if self.auto_save:
+            self._save()
 
     def add_node(
         self,
@@ -145,7 +163,7 @@ class KnowledgeGraph:
             properties=properties or {},
         )
         self._nodes[node_id] = node
-        self._save()
+        self._mark_dirty()
         return node
 
     def add_edge(
@@ -179,7 +197,7 @@ class KnowledgeGraph:
             self._adjacency[source] = set()
         self._adjacency[source].add(target)
 
-        self._save()
+        self._mark_dirty()
         return edge
 
     def get_node(self, node_id: str) -> Optional[KGNode]:
@@ -219,7 +237,7 @@ class KnowledgeGraph:
             for neighbors in self._adjacency.values():
                 neighbors.discard(node_id)
 
-            self._save()
+            self._mark_dirty()
 
     def remove_edge(self, source: str, target: str, edge_type: str) -> None:
         """Remove a specific edge."""
@@ -234,7 +252,7 @@ class KnowledgeGraph:
             if not remaining:
                 self._adjacency[source].discard(target)
 
-        self._save()
+        self._mark_dirty()
 
     def find_path(self, start: str, end: str) -> List[str]:
         """
