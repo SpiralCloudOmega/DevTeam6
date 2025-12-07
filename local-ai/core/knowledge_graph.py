@@ -233,7 +233,7 @@ class KnowledgeGraph:
     def get_neighbors(self, node_id: str) -> List[KGNode]:
         """Get all nodes connected to the given node."""
         neighbor_ids = self._adjacency.get(node_id, set())
-        return [self._nodes[nid] for nid in neighbor_ids if nid in self._nodes]
+        return [self._nodes[neighbor_id] for neighbor_id in neighbor_ids if neighbor_id in self._nodes]
 
     def remove_node(self, node_id: str) -> None:
         """Remove a node and all its edges."""
@@ -242,8 +242,8 @@ class KnowledgeGraph:
 
             # Remove edges
             self._edges = [
-                e for e in self._edges
-                if e.source != node_id and e.target != node_id
+                edge for edge in self._edges
+                if edge.source != node_id and edge.target != node_id
             ]
 
             # Update adjacency
@@ -256,14 +256,14 @@ class KnowledgeGraph:
     def remove_edge(self, source: str, target: str, edge_type: str) -> None:
         """Remove a specific edge."""
         self._edges = [
-            e for e in self._edges
-            if not (e.source == source and e.target == target and e.type == edge_type)
+            edge for edge in self._edges
+            if not (edge.source == source and edge.target == target and edge.type == edge_type)
         ]
 
         if source in self._adjacency:
             # Only remove from adjacency if no other edges exist
-            remaining = [e for e in self._edges if e.source == source and e.target == target]
-            if not remaining:
+            remaining_edges = [edge for edge in self._edges if edge.source == source and edge.target == target]
+            if not remaining_edges:
                 self._adjacency[source].discard(target)
 
         self._mark_dirty()
@@ -313,34 +313,34 @@ class KnowledgeGraph:
         Returns:
             Subgraph data
         """
-        included_nodes: Set[str] = set(node_ids)
+        included_node_ids: Set[str] = set(node_ids)
 
         # Expand by depth
-        frontier = set(node_ids)
+        current_frontier = set(node_ids)
         for _ in range(depth):
             next_frontier: Set[str] = set()
-            for node_id in frontier:
-                for neighbor in self._adjacency.get(node_id, []):
-                    if neighbor not in included_nodes:
-                        next_frontier.add(neighbor)
-                        included_nodes.add(neighbor)
-            frontier = next_frontier
+            for node_id in current_frontier:
+                for neighbor_id in self._adjacency.get(node_id, []):
+                    if neighbor_id not in included_node_ids:
+                        next_frontier.add(neighbor_id)
+                        included_node_ids.add(neighbor_id)
+            current_frontier = next_frontier
 
         # Build subgraph
-        nodes = [self._nodes[nid] for nid in included_nodes if nid in self._nodes]
-        edges = [
-            e for e in self._edges
-            if e.source in included_nodes and e.target in included_nodes
+        subgraph_nodes = [self._nodes[node_id] for node_id in included_node_ids if node_id in self._nodes]
+        subgraph_edges = [
+            edge for edge in self._edges
+            if edge.source in included_node_ids and edge.target in included_node_ids
         ]
 
         return {
             "nodes": [
-                {"id": n.id, "type": n.type, "label": n.label, "properties": n.properties}
-                for n in nodes
+                {"id": node.id, "type": node.type, "label": node.label, "properties": node.properties}
+                for node in subgraph_nodes
             ],
             "edges": [
-                {"source": e.source, "target": e.target, "type": e.type}
-                for e in edges
+                {"source": edge.source, "target": edge.target, "type": edge.type}
+                for edge in subgraph_edges
             ],
         }
 

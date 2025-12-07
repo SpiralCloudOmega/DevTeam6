@@ -44,58 +44,58 @@ def chunk_text(
         return []
 
     chunks = []
-    start = 0
-    index = 0
-    text_len = len(text)
-    sep_len = len(separator)
+    chunk_start_position = 0
+    chunk_index = 0
+    text_length = len(text)
+    separator_length = len(separator)
 
-    while start < text_len:
+    while chunk_start_position < text_length:
         # Find end of chunk
-        end = start + chunk_size
+        chunk_end_position = chunk_start_position + chunk_size
         
         # Adjust if we exceed text length
-        if end > text_len:
-            end = text_len
+        if chunk_end_position > text_length:
+            chunk_end_position = text_length
 
         # Try to end at a separator
-        if end < text_len:
+        if chunk_end_position < text_length:
             # Look for separator near end (search backwards from end)
-            sep_pos = text.rfind(separator, start, end)
-            if sep_pos > start:
-                end = sep_pos + sep_len
+            separator_position = text.rfind(separator, chunk_start_position, chunk_end_position)
+            if separator_position > chunk_start_position:
+                chunk_end_position = separator_position + separator_length
             else:
                 # Fall back to space (search backwards)
-                space_pos = text.rfind(" ", start, end)
-                if space_pos > start:
-                    end = space_pos + 1
+                space_position = text.rfind(" ", chunk_start_position, chunk_end_position)
+                if space_position > chunk_start_position:
+                    chunk_end_position = space_position + 1
 
         # Get chunk content
-        content = text[start:end].strip()
+        chunk_content = text[chunk_start_position:chunk_end_position].strip()
 
-        if content:
+        if chunk_content:
             chunks.append(
                 TextChunk(
-                    content=content,
-                    index=index,
-                    start_char=start,
-                    end_char=end,
+                    content=chunk_content,
+                    index=chunk_index,
+                    start_char=chunk_start_position,
+                    end_char=chunk_end_position,
                     metadata={
-                        "chunk_index": index,
+                        "chunk_index": chunk_index,
                         "total_chunks": -1,  # Set after
                     },
                 )
             )
-            index += 1
+            chunk_index += 1
 
         # Move start with overlap
-        start = end - chunk_overlap
-        if start <= 0 or start >= text_len:
+        chunk_start_position = chunk_end_position - chunk_overlap
+        if chunk_start_position <= 0 or chunk_start_position >= text_length:
             break
 
     # Update total chunks in single pass
-    total = len(chunks)
+    total_chunks = len(chunks)
     for chunk in chunks:
-        chunk.metadata["total_chunks"] = total
+        chunk.metadata["total_chunks"] = total_chunks
 
     return chunks
 
@@ -149,5 +149,5 @@ def merge_chunks(chunks: List[TextChunk], separator: str = "\n\n") -> str:
         Merged text
     """
     # Sort by index
-    sorted_chunks = sorted(chunks, key=lambda c: c.index)
-    return separator.join(c.content for c in sorted_chunks)
+    sorted_chunks = sorted(chunks, key=lambda chunk: chunk.index)
+    return separator.join(chunk.content for chunk in sorted_chunks)

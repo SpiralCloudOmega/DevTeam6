@@ -34,16 +34,16 @@ export const computeClusterBounds = (
   clusterId: string,
   padding = 48
 ): ClusterBounds | null => {
-  const scopedNodes = nodes.filter(node => node.cluster === clusterId)
-  if (scopedNodes.length === 0) return null
+  const clusterNodes = nodes.filter(node => node.cluster === clusterId)
+  if (clusterNodes.length === 0) return null
 
-  const xs = scopedNodes.map(node => node.position.x)
-  const ys = scopedNodes.map(node => node.position.y)
+  const xCoordinates = clusterNodes.map(node => node.position.x)
+  const yCoordinates = clusterNodes.map(node => node.position.y)
 
-  const minX = Math.min(...xs) - padding
-  const maxX = Math.max(...xs) + padding
-  const minY = Math.min(...ys) - padding
-  const maxY = Math.max(...ys) + padding
+  const minX = Math.min(...xCoordinates) - padding
+  const maxX = Math.max(...xCoordinates) + padding
+  const minY = Math.min(...yCoordinates) - padding
+  const maxY = Math.max(...yCoordinates) + padding
 
   const width = maxX - minX
   const height = maxY - minY
@@ -80,42 +80,42 @@ export const computeShortestPath = (
   if (startId === targetId) return [startId]
   if (!edges || edges.length === 0) return []
 
-  const adjacency = new Map<string, string[]>()
+  const adjacencyList = new Map<string, string[]>()
 
   edges.forEach(({ from, to }) => {
-    if (!adjacency.has(from)) adjacency.set(from, [])
-    adjacency.get(from)!.push(to)
+    if (!adjacencyList.has(from)) adjacencyList.set(from, [])
+    adjacencyList.get(from)!.push(to)
   })
 
   // Return empty if start node is not in the graph
-  if (!adjacency.has(startId)) return []
+  if (!adjacencyList.has(startId)) return []
 
-  const visited = new Set<string>([startId])
-  const parent = new Map<string, string>()
+  const visitedNodes = new Set<string>([startId])
+  const parentMap = new Map<string, string>()
   const queue: string[] = [startId]
-  let queueIndex = 0 // Use index instead of shift() for O(1) dequeue
+  let queueReadIndex = 0 // Use index instead of shift() for O(1) dequeue
 
-  while (queueIndex < queue.length) {
-    const node = queue[queueIndex++]
+  while (queueReadIndex < queue.length) {
+    const currentNode = queue[queueReadIndex++]
     
     // Check if we reached target
-    if (node === targetId) {
+    if (currentNode === targetId) {
       // Reconstruct path from parent tracking
       const path: string[] = []
-      let current: string | undefined = targetId
-      while (current !== undefined) {
-        path.unshift(current)
-        current = parent.get(current)
+      let currentNodeId: string | undefined = targetId
+      while (currentNodeId !== undefined) {
+        path.unshift(currentNodeId)
+        currentNodeId = parentMap.get(currentNodeId)
       }
       return path
     }
 
-    const neighbors = adjacency.get(node) || []
-    for (const neighbor of neighbors) {
-      if (visited.has(neighbor)) continue
-      visited.add(neighbor)
-      parent.set(neighbor, node)
-      queue.push(neighbor)
+    const neighborNodes = adjacencyList.get(currentNode) || []
+    for (const neighborId of neighborNodes) {
+      if (visitedNodes.has(neighborId)) continue
+      visitedNodes.add(neighborId)
+      parentMap.set(neighborId, currentNode)
+      queue.push(neighborId)
     }
   }
 
