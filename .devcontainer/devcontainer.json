@@ -1,8 +1,15 @@
 {
   "name": "DevTeam6 Development Environment",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "8.0"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "customizations": {
     "vscode": {
@@ -14,21 +21,53 @@
         "shufo.vscode-blade-formatter",
         "pmneo.tsimporter",
         "dsznajder.es7-react-js-snippets",
-        "formulahendry.auto-rename-tag"
+        "formulahendry.auto-rename-tag",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin",
+        "github.copilot",
+        "github.copilot-chat"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[csharp]": {
+          "editor.defaultFormatter": "ms-dotnettools.csharp"
+        },
+        "[vue]": {
+          "editor.defaultFormatter": "vue.volar"
+        }
       }
     }
   },
-  "postCreateCommand": "cd app && npm install",
-  "forwardPorts": [3000],
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "forwardPorts": [3000, 5173, 5174, 5000, 5001],
   "portsAttributes": {
     "3000": {
-      "label": "3D Demo",
-      "onAutoForward": "openBrowser"
+      "label": "App - 3D Demo",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "React Starter",
+      "onAutoForward": "notify"
+    },
+    "5174": {
+      "label": "Vue 3 Starter",
+      "onAutoForward": "notify"
+    },
+    "5000": {
+      "label": ".NET 8 API (HTTP)",
+      "onAutoForward": "notify"
+    },
+    "5001": {
+      "label": ".NET 8 API (HTTPS)",
+      "onAutoForward": "notify"
     }
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
   }
 }
