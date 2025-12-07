@@ -95,36 +95,45 @@ class KnowledgeGraph:
                 self._adjacency[edge.source].add(edge.target)
 
     def _save(self) -> None:
-        """Save graph to file."""
-        self.path.parent.mkdir(parents=True, exist_ok=True)
+        """
+        Save graph to file.
+        
+        Raises:
+            IOError: If file cannot be written
+        """
+        try:
+            self.path.parent.mkdir(parents=True, exist_ok=True)
 
-        data = {
-            "version": "1.0.0",
-            "description": "Knowledge graph for agent relationships and concepts",
-            "created": datetime.utcnow().isoformat(),
-            "updated": datetime.utcnow().isoformat(),
-            "nodes": [
-                {
-                    "id": node.id,
-                    "type": node.type,
-                    "label": node.label,
-                    "properties": node.properties,
-                }
-                for node in self._nodes.values()
-            ],
-            "edges": [
-                {
-                    "source": edge.source,
-                    "target": edge.target,
-                    "type": edge.type,
-                    "properties": edge.properties,
-                }
-                for edge in self._edges
-            ],
-        }
+            data = {
+                "version": "1.0.0",
+                "description": "Knowledge graph for agent relationships and concepts",
+                "created": datetime.utcnow().isoformat(),
+                "updated": datetime.utcnow().isoformat(),
+                "nodes": [
+                    {
+                        "id": node.id,
+                        "type": node.type,
+                        "label": node.label,
+                        "properties": node.properties,
+                    }
+                    for node in self._nodes.values()
+                ],
+                "edges": [
+                    {
+                        "source": edge.source,
+                        "target": edge.target,
+                        "type": edge.type,
+                        "properties": edge.properties,
+                    }
+                    for edge in self._edges
+                ],
+            }
 
-        self.path.write_text(json.dumps(data, indent=2))
-        self._dirty = False
+            self.path.write_text(json.dumps(data, indent=2))
+            self._dirty = False
+        except (IOError, OSError) as e:
+            # Keep dirty flag set if save fails
+            raise IOError(f"Failed to save knowledge graph to {self.path}: {e}") from e
     
     def save(self) -> None:
         """

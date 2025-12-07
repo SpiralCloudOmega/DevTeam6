@@ -37,7 +37,8 @@ def chunk_text(
     Returns:
         List of TextChunk objects
         
-    Performance: O(n) where n is text length. Avoids redundant string operations.
+    Performance: O(n + c*k) where n is text length, c is number of chunks,
+    and k is average overlap size. Effectively linear for typical use cases.
     """
     if not text:
         return []

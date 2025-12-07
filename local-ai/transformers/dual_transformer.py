@@ -282,7 +282,8 @@ class DualTransformer:
         to_remove = max(1, len(self._cache) // 10)
         
         # Use min heap to find oldest entries efficiently
-        # Format: (timestamp, key) - tuples sorted by timestamp automatically
+        # Format: (timestamp, key)
+        # Tuples sort by first element (timestamp) by default
         oldest = heapq.nsmallest(
             to_remove,
             ((timestamp, key) for key, (_, timestamp) in self._cache.items())

@@ -123,10 +123,10 @@ def benchmark_cache_eviction():
     print("\n2. New method (heapq.nsmallest):")
     start = time.perf_counter()
     to_remove = len(cache) // 10
+    # Tuples sort by first element (timestamp) by default
     oldest = heapq.nsmallest(
         to_remove,
-        ((timestamp, key) for key, (_, timestamp) in cache.items()),
-        key=lambda x: x[0]
+        ((timestamp, key) for key, (_, timestamp) in cache.items())
     )
     new_keys = [key for _, key in oldest]
     end = time.perf_counter()
