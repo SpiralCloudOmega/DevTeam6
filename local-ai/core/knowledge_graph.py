@@ -127,7 +127,12 @@ class KnowledgeGraph:
         self._dirty = False
     
     def save(self) -> None:
-        """Explicitly save changes to disk."""
+        """
+        Explicitly save changes to disk.
+        
+        Only writes to disk if there are unsaved changes (dirty flag is set).
+        No-op if graph hasn't been modified since last save.
+        """
         if self._dirty:
             self._save()
     

@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 import hashlib
+import heapq
 import time
 
 from .token_transformer import TokenTransformer, TokenTransformResult, RouteType
@@ -282,7 +283,6 @@ class DualTransformer:
         
         # Use min heap to find oldest entries efficiently
         # Format: (timestamp, key)
-        import heapq
         oldest = heapq.nsmallest(
             to_remove,
             ((timestamp, key) for key, (_, timestamp) in self._cache.items()),
