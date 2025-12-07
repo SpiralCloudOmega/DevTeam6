@@ -1,0 +1,27 @@
+{
+  "name": "devteam6-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DevTeam6 Full Stack Workspace",
+  "scripts": {
+    "dev": "concurrently -n \"REACT,VUE,DOTNET\" -c \"blue,green,magenta\" \"npm run dev:react\" \"npm run dev:vue\" \"npm run dev:dotnet\"",
+    "dev:react": "cd templates/react-starter && npm run dev",
+    "dev:vue": "cd templates/vue3-starter && npm run dev",
+    "dev:dotnet": "cd templates/dotnet8-api && dotnet watch run",
+    "dev:app": "cd app && npm run dev",
+    "dev:projects": "cd projects && npm run dev",
+    "dev:frontend": "concurrently -n \"REACT,VUE\" -c \"blue,green\" \"npm run dev:react\" \"npm run dev:vue\"",
+    "build": "npm run build:react && npm run build:vue && npm run build:dotnet",
+    "build:react": "cd templates/react-starter && npm run build",
+    "build:vue": "cd templates/vue3-starter && npm run build",
+    "build:dotnet": "cd templates/dotnet8-api && dotnet build",
+    "install:all": "npm install && cd templates/react-starter && npm install && cd ../vue3-starter && npm install && cd ../dotnet8-api && dotnet restore",
+    "clean": "rm -rf templates/react-starter/node_modules templates/vue3-starter/node_modules templates/dotnet8-api/bin templates/dotnet8-api/obj"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
