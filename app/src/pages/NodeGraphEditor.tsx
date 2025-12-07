@@ -110,19 +110,21 @@ const controlPresets = [
   { id: 'vector', label: 'Vector Fog', description: 'Clusters framed for n8n' },
 ];
 
-// Generate edges from node connections
+// Optimize edge generation - use for loop instead of forEach for better performance
 const generateEdges = (nodes: Node[]): Edge[] => {
   const edges: Edge[] = [];
-  nodes.forEach(node => {
-    node.connections.forEach(targetId => {
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    const connections = node.connections;
+    for (let j = 0; j < connections.length; j++) {
       edges.push({
-        id: `${node.id}-${targetId}`,
+        id: `${node.id}-${connections[j]}`,
         from: node.id,
-        to: targetId,
+        to: connections[j],
         animated: node.status === 'active',
       });
-    });
-  });
+    }
+  }
   return edges;
 };
 
@@ -350,9 +352,16 @@ export default function NodeGraphEditor() {
     }
   }, [displayNodes, pathStart, pathTarget]);
 
-  const clusterBounds = useMemo(() => clusters
-    .map(cluster => ({ cluster, bounds: computeClusterBounds(nodes, cluster.id, backgroundStyle === 'vector' ? 64 : 48) }))
-    .filter(item => Boolean(item.bounds)), [clusters, nodes, backgroundStyle]);
+  // Optimize cluster bounds - cache computation with proper dependencies
+  const clusterBounds = useMemo(() => {
+    const padding = backgroundStyle === 'vector' ? 64 : 48;
+    return clusters
+      .map(cluster => {
+        const bounds = computeClusterBounds(nodes, cluster.id, padding);
+        return bounds ? { cluster, bounds } : null;
+      })
+      .filter((item): item is { cluster: Cluster; bounds: ClusterBounds } => item !== null);
+  }, [clusters, nodes, backgroundStyle]);
 
   const handlePresetChange = useCallback((presetId: 'mindmap' | 'automation') => {
     const preset = presets.find(item => item.id === presetId);

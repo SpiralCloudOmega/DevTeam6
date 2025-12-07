@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 
 // Types for the knowledge graph
 interface KnowledgeNode {
@@ -194,36 +194,64 @@ function SemanticSearch({ onSearch }: { onSearch: (query: string, results: Knowl
     'cloud': ['cloud-platforms', 'serverless']
   }
   
-  const handleSearch = (searchQuery: string) => {
+  const handleSearch = useCallback((searchQuery: string) => {
     setQuery(searchQuery)
     
     if (searchQuery.length > 0) {
-      // Find matching keywords
-      const matchedKeywords = Object.keys(semanticKeywords).filter(k => 
-        k.includes(searchQuery.toLowerCase()) || searchQuery.toLowerCase().includes(k)
-      )
-      setSuggestions(matchedKeywords.slice(0, 5))
+      const lowerQuery = searchQuery.toLowerCase()
       
-      // Find matching nodes
+      // Find matching keywords - optimize by early return
+      const matchedKeywords: string[] = []
+      const keywordList = Object.keys(semanticKeywords)
+      for (let i = 0; i < keywordList.length && matchedKeywords.length < 5; i++) {
+        const k = keywordList[i]
+        if (k.includes(lowerQuery) || lowerQuery.includes(k)) {
+          matchedKeywords.push(k)
+        }
+      }
+      setSuggestions(matchedKeywords)
+      
+      // Find matching nodes - optimize by building set once
       const matchedNodeIds = new Set<string>()
-      matchedKeywords.forEach(k => {
-        semanticKeywords[k].forEach(id => matchedNodeIds.add(id))
-      })
+      for (const keyword of matchedKeywords) {
+        const nodeIds = semanticKeywords[keyword]
+        for (const id of nodeIds) {
+          matchedNodeIds.add(id)
+        }
+      }
       
-      // Also search by label and description
-      const results = initialNodes.filter(node => 
-        matchedNodeIds.has(node.id) ||
-        node.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        node.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        node.resources.some(r => r.toLowerCase().includes(searchQuery.toLowerCase()))
-      )
+      // Also search by label and description - single pass
+      const results: KnowledgeNode[] = []
+      for (const node of initialNodes) {
+        if (matchedNodeIds.has(node.id)) {
+          results.push(node)
+          continue
+        }
+        
+        // Check label and description
+        const labelMatch = node.label.toLowerCase().includes(lowerQuery)
+        const descMatch = node.description.toLowerCase().includes(lowerQuery)
+        
+        if (labelMatch || descMatch) {
+          results.push(node)
+          continue
+        }
+        
+        // Check resources only if not already matched
+        for (const resource of node.resources) {
+          if (resource.toLowerCase().includes(lowerQuery)) {
+            results.push(node)
+            break
+          }
+        }
+      }
       
       onSearch(searchQuery, results)
     } else {
       setSuggestions([])
       onSearch('', [])
     }
-  }
+  }, [onSearch])
   
   return (
     <div className="semantic-search">
@@ -374,21 +402,24 @@ export default function SemanticKnowledgeHub() {
     isDragging.current = false
   }
   
-  // Calculate overall completeness
-  const overallCompleteness = Math.round(
-    nodes.reduce((sum, n) => sum + n.completeness, 0) / nodes.length
+  // Calculate overall completeness - memoize
+  const overallCompleteness = useMemo(() => 
+    Math.round(nodes.reduce((sum, n) => sum + n.completeness, 0) / nodes.length),
+    [nodes]
   )
   
-  // Render connections
-  const renderConnections = () => {
-    const connections: JSX.Element[] = []
+  // Render connections - memoize to avoid recreating on every render
+  const connections = useMemo(() => {
+    const result: JSX.Element[] = []
+    const hasHighlights = highlightedNodes.size > 0
+    
     nodes.forEach(node => {
       node.connections.forEach(targetId => {
         const target = nodes.find(n => n.id === targetId)
         if (target && node.id < targetId) {
-          const isHighlighted = highlightedNodes.size === 0 || 
+          const isHighlighted = !hasHighlights || 
             (highlightedNodes.has(node.id) && highlightedNodes.has(targetId))
-          connections.push(
+          result.push(
             <line
               key={`${node.id}-${targetId}`}
               x1={node.x}
@@ -404,14 +435,16 @@ export default function SemanticKnowledgeHub() {
         }
       })
     })
-    return connections
-  }
+    return result
+  }, [nodes, highlightedNodes])
   
-  // Render nodes
-  const renderNodes = () => {
+  // Render nodes - memoize
+  const nodeElements = useMemo(() => {
+    const hasHighlights = highlightedNodes.size > 0
+    
     return nodes.map(node => {
       const category = knowledgeCategories[node.category as keyof typeof knowledgeCategories]
-      const isHighlighted = highlightedNodes.size === 0 || highlightedNodes.has(node.id)
+      const isHighlighted = !hasHighlights || highlightedNodes.has(node.id)
       const isSelected = selectedNode?.id === node.id
       
       return (
@@ -486,7 +519,7 @@ export default function SemanticKnowledgeHub() {
         </g>
       )
     })
-  }
+  }, [nodes, highlightedNodes, selectedNode, handleNodeClick])
   
   return (
     <div className="semantic-knowledge-hub">
@@ -1022,12 +1055,12 @@ export default function SemanticKnowledgeHub() {
               
               {/* Connections */}
               <g filter="url(#glow)">
-                {renderConnections()}
+                {connections}
               </g>
               
               {/* Nodes */}
               <g filter="url(#glow)">
-                {renderNodes()}
+                {nodeElements}
               </g>
             </svg>
           </div>
