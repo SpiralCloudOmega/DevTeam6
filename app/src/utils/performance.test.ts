@@ -73,20 +73,24 @@ describe('Performance Benchmarks', () => {
   describe('Array operations benchmark', () => {
     it('concat vs spread operator performance', () => {
       const baseArray = Array.from({ length: 10 }, (_, i) => `item${i}`)
+      let result: string[] = []
 
       // Test concat (our optimization)
       const concatStart = performance.now()
       for (let i = 0; i < 1000; i++) {
-        const result = baseArray.concat('newItem')
+        result = baseArray.concat('newItem')
       }
       const concatDuration = performance.now() - concatStart
 
       // Test spread (old approach)
       const spreadStart = performance.now()
       for (let i = 0; i < 1000; i++) {
-        const result = [...baseArray, 'newItem']
+        result = [...baseArray, 'newItem']
       }
       const spreadDuration = performance.now() - spreadStart
+
+      // Prevent dead code elimination
+      expect(result.length).toBeGreaterThan(0)
 
       // concat should be at least as fast or faster
       // This is informational - actual performance may vary

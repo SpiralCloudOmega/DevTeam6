@@ -96,14 +96,10 @@ export const computeShortestPath = (
 
     for (const neighbor of neighbors) {
       if (visited.has(neighbor)) continue
-      // Optimize: Avoid spread operator - push directly and only build final path when found
-      if (neighbor === targetId) {
-        path.push(neighbor)
-        return path
-      }
-      visited.add(neighbor)
-      // Create new path by concat for intermediate nodes
+      // Optimize: Build new path with concat to avoid mutation issues
       const nextPath = path.concat(neighbor)
+      if (neighbor === targetId) return nextPath
+      visited.add(neighbor)
       queue.push({ node: neighbor, path: nextPath })
     }
   }

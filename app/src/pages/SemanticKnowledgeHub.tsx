@@ -376,10 +376,10 @@ export default function SemanticKnowledgeHub() {
     }
   }
   
-  // Handle node click
-  const handleNodeClick = (node: KnowledgeNode) => {
+  // Handle node click - wrapped in useCallback for stability
+  const handleNodeClick = useCallback((node: KnowledgeNode) => {
     setSelectedNode(node)
-  }
+  }, [])
   
   // Handle pan
   const handleMouseDown = (e: React.MouseEvent) => {
