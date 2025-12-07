@@ -15,6 +15,7 @@ import Repomind from './pages/Repomind'
 import ControlDeck from './pages/ControlDeck'
 import AIPlayground from './pages/AIPlayground'
 import CodeWorkstation from './pages/CodeWorkstation'
+import Dashboard from './pages/Dashboard'
 import './index.css'
 
 // Handle SPA redirect from 404.html
@@ -34,7 +35,7 @@ function SpaRedirect() {
   if (redirectPath && redirectPath !== '/') {
     return <Navigate to={redirectPath} replace />
   }
-  return <App />
+  return <Dashboard />
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
