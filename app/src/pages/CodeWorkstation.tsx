@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 import { Sandpack } from '@codesandbox/sandpack-react';
 import { GlassPanel } from '../components/ui';
 import { StackBlitzEmbed, VSCodeEmbed } from '../components/ide';
@@ -17,6 +18,19 @@ const templates = {
 export default function CodeWorkstation() {
   const [activeTool, setActiveTool] = useState<Tool>('sandpack');
   const [activeTemplate, setActiveTemplate] = useState<Template>('react');
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const toolParam = searchParams.get('tool');
+    const templateParam = searchParams.get('template');
+    
+    if (toolParam && ['sandpack', 'stackblitz', 'vscode'].includes(toolParam)) {
+      setActiveTool(toolParam as typeof activeTool);
+    }
+    if (templateParam && ['react', 'vue', 'dotnet'].includes(templateParam)) {
+      setActiveTemplate(templateParam as typeof activeTemplate);
+    }
+  }, [searchParams]);
 
   const loadTemplate = (template: Template) => {
     setActiveTemplate(template);
