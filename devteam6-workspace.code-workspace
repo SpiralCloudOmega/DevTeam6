@@ -1,0 +1,270 @@
+{
+  "folders": [
+    {
+      "name": "🏠 Root",
+      "path": "."
+    },
+    {
+      "name": "🎮 App - 3D Demo",
+      "path": "app"
+    },
+    {
+      "name": "📊 Projects - Vue Flow",
+      "path": "projects"
+    },
+    {
+      "name": "⚛️ React Starter",
+      "path": "templates/react-starter"
+    },
+    {
+      "name": "🟢 Vue 3 Starter",
+      "path": "templates/vue3-starter"
+    },
+    {
+      "name": "🔷 .NET 8 API",
+      "path": "templates/dotnet8-api"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/bin": true,
+      "**/obj": true,
+      "**/dist": true,
+      "**/.git": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bin": true,
+      "**/obj": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.vscode": true
+    },
+    "eslint.workingDirectories": [
+      { "directory": "./app", "changeProcessCWD": true },
+      { "directory": "./projects", "changeProcessCWD": true },
+      { "directory": "./templates/react-starter", "changeProcessCWD": true },
+      { "directory": "./templates/vue3-starter", "changeProcessCWD": true }
+    ],
+    "typescript.tsdk": "templates/react-starter/node_modules/typescript/lib",
+    "terminal.integrated.cwd": "${fileDirname}",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "Vue.volar"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "dsznajder.es7-react-js-snippets",
+      "ms-dotnettools.csdevkit",
+      "ms-dotnettools.csharp",
+      "vue.volar",
+      "vue.vscode-typescript-vue-plugin",
+      "github.copilot",
+      "github.copilot-chat",
+      "yoavbls.pretty-ts-errors",
+      "pmneo.tsimporter",
+      "formulahendry.auto-rename-tag"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "🎮 Launch App (3D Demo)",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceFolder:🎮 App - 3D Demo}/src",
+        "preLaunchTask": "dev:app"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "📊 Launch Projects (Vue Flow)",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceFolder:📊 Projects - Vue Flow}/src",
+        "preLaunchTask": "dev:projects"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "⚛️ Launch React Starter",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceFolder:⚛️ React Starter}/src",
+        "preLaunchTask": "dev:react"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "🟢 Launch Vue 3 Starter",
+        "url": "http://localhost:5174",
+        "webRoot": "${workspaceFolder:🟢 Vue 3 Starter}/src",
+        "preLaunchTask": "dev:vue"
+      },
+      {
+        "type": "coreclr",
+        "request": "launch",
+        "name": "🔷 Launch .NET 8 API",
+        "preLaunchTask": "build:dotnet",
+        "program": "${workspaceFolder:🔷 .NET 8 API}/bin/Debug/net8.0/dotnet8-api.dll",
+        "args": [],
+        "cwd": "${workspaceFolder:🔷 .NET 8 API}",
+        "stopAtEntry": false,
+        "serverReadyAction": {
+          "action": "openExternally",
+          "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+          "uriFormat": "%s/swagger"
+        },
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "sourceFileMap": {
+          "/Views": "${workspaceFolder:🔷 .NET 8 API}/Views"
+        }
+      }
+    ],
+    "compounds": [
+      {
+        "name": "🚀 Full Stack (All Apps)",
+        "configurations": [
+          "🎮 Launch App (3D Demo)",
+          "📊 Launch Projects (Vue Flow)",
+          "⚛️ Launch React Starter",
+          "🟢 Launch Vue 3 Starter",
+          "🔷 Launch .NET 8 API"
+        ],
+        "stopAll": true
+      },
+      {
+        "name": "⚛️ React + .NET",
+        "configurations": [
+          "⚛️ Launch React Starter",
+          "🔷 Launch .NET 8 API"
+        ],
+        "stopAll": true
+      },
+      {
+        "name": "🟢 Vue + .NET",
+        "configurations": [
+          "🟢 Launch Vue 3 Starter",
+          "🔷 Launch .NET 8 API"
+        ],
+        "stopAll": true
+      },
+      {
+        "name": "🌐 All Frontends",
+        "configurations": [
+          "🎮 Launch App (3D Demo)",
+          "📊 Launch Projects (Vue Flow)",
+          "⚛️ Launch React Starter",
+          "🟢 Launch Vue 3 Starter"
+        ],
+        "stopAll": true
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "dev:app",
+        "type": "npm",
+        "script": "dev",
+        "path": "app/",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "dev:projects",
+        "type": "npm",
+        "script": "dev",
+        "path": "projects/",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "dev:react",
+        "type": "npm",
+        "script": "dev",
+        "path": "templates/react-starter/",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "dev:vue",
+        "type": "npm",
+        "script": "dev",
+        "path": "templates/vue3-starter/",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "build:dotnet",
+        "type": "shell",
+        "command": "dotnet build",
+        "options": {
+          "cwd": "${workspaceFolder}/templates/dotnet8-api"
+        },
+        "problemMatcher": "$msCompile"
+      },
+      {
+        "label": "dev:dotnet",
+        "type": "shell",
+        "command": "dotnet run",
+        "options": {
+          "cwd": "${workspaceFolder}/templates/dotnet8-api"
+        },
+        "problemMatcher": "$msCompile",
+        "isBackground": true
+      },
+      {
+        "label": "build:all",
+        "dependsOn": [
+          "build:app",
+          "build:projects",
+          "build:react",
+          "build:vue",
+          "build:dotnet"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "build:app",
+        "type": "npm",
+        "script": "build",
+        "path": "app/",
+        "problemMatcher": []
+      },
+      {
+        "label": "build:projects",
+        "type": "npm",
+        "script": "build",
+        "path": "projects/",
+        "problemMatcher": []
+      },
+      {
+        "label": "build:react",
+        "type": "npm",
+        "script": "build",
+        "path": "templates/react-starter/",
+        "problemMatcher": []
+      },
+      {
+        "label": "build:vue",
+        "type": "npm",
+        "script": "build",
+        "path": "templates/vue3-starter/",
+        "problemMatcher": []
+      }
+    ]
+  }
+}
