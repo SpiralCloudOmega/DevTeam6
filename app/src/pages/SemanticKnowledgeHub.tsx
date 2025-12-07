@@ -198,55 +198,55 @@ function SemanticSearch({ onSearch }: { onSearch: (query: string, results: Knowl
     setQuery(searchQuery)
     
     if (searchQuery.length > 0) {
-      const lowerQuery = searchQuery.toLowerCase()
+      const lowercaseQuery = searchQuery.toLowerCase()
       
       // Find matching keywords - optimize by early return
       const matchedKeywords: string[] = []
       const keywordList = Object.keys(semanticKeywords)
-      for (let i = 0; i < keywordList.length && matchedKeywords.length < 5; i++) {
-        const k = keywordList[i]
-        if (k.includes(lowerQuery) || lowerQuery.includes(k)) {
-          matchedKeywords.push(k)
+      for (let keywordIndex = 0; keywordIndex < keywordList.length && matchedKeywords.length < 5; keywordIndex++) {
+        const keyword = keywordList[keywordIndex]
+        if (keyword.includes(lowercaseQuery) || lowercaseQuery.includes(keyword)) {
+          matchedKeywords.push(keyword)
         }
       }
       setSuggestions(matchedKeywords)
       
       // Find matching nodes - optimize by building set once
       const matchedNodeIds = new Set<string>()
-      for (const keyword of matchedKeywords) {
-        const nodeIds = semanticKeywords[keyword]
-        for (const id of nodeIds) {
-          matchedNodeIds.add(id)
+      for (const matchedKeyword of matchedKeywords) {
+        const nodeIds = semanticKeywords[matchedKeyword]
+        for (const nodeId of nodeIds) {
+          matchedNodeIds.add(nodeId)
         }
       }
       
       // Also search by label and description - single pass
-      const results: KnowledgeNode[] = []
+      const searchResults: KnowledgeNode[] = []
       for (const node of initialNodes) {
         if (matchedNodeIds.has(node.id)) {
-          results.push(node)
+          searchResults.push(node)
           continue
         }
         
         // Check label and description
-        const labelMatch = node.label.toLowerCase().includes(lowerQuery)
-        const descMatch = node.description.toLowerCase().includes(lowerQuery)
+        const labelMatch = node.label.toLowerCase().includes(lowercaseQuery)
+        const descriptionMatch = node.description.toLowerCase().includes(lowercaseQuery)
         
-        if (labelMatch || descMatch) {
-          results.push(node)
+        if (labelMatch || descriptionMatch) {
+          searchResults.push(node)
           continue
         }
         
         // Check resources only if not already matched
         for (const resource of node.resources) {
-          if (resource.toLowerCase().includes(lowerQuery)) {
-            results.push(node)
+          if (resource.toLowerCase().includes(lowercaseQuery)) {
+            searchResults.push(node)
             break
           }
         }
       }
       
-      onSearch(searchQuery, results)
+      onSearch(searchQuery, searchResults)
     } else {
       setSuggestions([])
       onSearch('', [])
@@ -410,7 +410,7 @@ export default function SemanticKnowledgeHub() {
   
   // Render connections - memoize to avoid recreating on every render
   const connections = useMemo(() => {
-    const result: JSX.Element[] = []
+    const connectionElements: JSX.Element[] = []
     const hasHighlights = highlightedNodes.size > 0
     
     nodes.forEach(node => {
@@ -419,7 +419,7 @@ export default function SemanticKnowledgeHub() {
         if (target && node.id < targetId) {
           const isHighlighted = !hasHighlights || 
             (highlightedNodes.has(node.id) && highlightedNodes.has(targetId))
-          result.push(
+          connectionElements.push(
             <line
               key={`${node.id}-${targetId}`}
               x1={node.x}
@@ -435,7 +435,7 @@ export default function SemanticKnowledgeHub() {
         }
       })
     })
-    return result
+    return connectionElements
   }, [nodes, highlightedNodes])
   
   // Render nodes - memoize

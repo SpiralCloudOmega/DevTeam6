@@ -112,20 +112,21 @@ const controlPresets = [
 
 // Optimize edge generation - use for loop instead of forEach for better performance
 const generateEdges = (nodes: Node[]): Edge[] => {
-  const edges: Edge[] = [];
-  for (let i = 0; i < nodes.length; i++) {
-    const node = nodes[i];
-    const connections = node.connections;
-    for (let j = 0; j < connections.length; j++) {
-      edges.push({
-        id: `${node.id}-${connections[j]}`,
-        from: node.id,
-        to: connections[j],
-        animated: node.status === 'active',
+  const generatedEdges: Edge[] = [];
+  for (let nodeIndex = 0; nodeIndex < nodes.length; nodeIndex++) {
+    const currentNode = nodes[nodeIndex];
+    const nodeConnections = currentNode.connections;
+    for (let connectionIndex = 0; connectionIndex < nodeConnections.length; connectionIndex++) {
+      const targetNodeId = nodeConnections[connectionIndex];
+      generatedEdges.push({
+        id: `${currentNode.id}-${targetNodeId}`,
+        from: currentNode.id,
+        to: targetNodeId,
+        animated: currentNode.status === 'active',
       });
     }
   }
-  return edges;
+  return generatedEdges;
 };
 
 // Node Component
@@ -354,11 +355,11 @@ export default function NodeGraphEditor() {
 
   // Optimize cluster bounds - cache computation with proper dependencies
   const clusterBounds = useMemo(() => {
-    const padding = backgroundStyle === 'vector' ? 64 : 48;
+    const boundsPadding = backgroundStyle === 'vector' ? 64 : 48;
     return clusters
       .map(cluster => {
-        const bounds = computeClusterBounds(nodes, cluster.id, padding);
-        return bounds ? { cluster, bounds } : null;
+        const clusterBounds = computeClusterBounds(nodes, cluster.id, boundsPadding);
+        return clusterBounds ? { cluster, bounds: clusterBounds } : null;
       })
       .filter((item): item is { cluster: Cluster; bounds: ClusterBounds } => item !== null);
   }, [clusters, nodes, backgroundStyle]);
