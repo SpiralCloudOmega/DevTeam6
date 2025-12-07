@@ -49,8 +49,12 @@ def chunk_text(
     sep_len = len(separator)
 
     while start < text_len:
-        # Find end of chunk (min ensures we don't exceed text bounds)
-        end = min(start + chunk_size, text_len)
+        # Find end of chunk
+        end = start + chunk_size
+        
+        # Adjust if we exceed text length
+        if end > text_len:
+            end = text_len
 
         # Try to end at a separator
         if end < text_len:

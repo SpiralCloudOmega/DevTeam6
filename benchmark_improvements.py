@@ -83,10 +83,13 @@ def benchmark_knowledge_graph():
         print(f"Time for {small_ops} nodes + {small_ops-1} edges: {immediate_time:.2f}ms")
         print(f"Average per operation: {immediate_time / (small_ops * 2):.3f}ms")
         
-        # Calculate speedup
-        normalized_immediate = (immediate_time / (small_ops * 2)) * (operations * 2)
-        speedup = normalized_immediate / batched_time
-        print(f"\n💡 Batched mode is {speedup:.1f}x faster!")
+        # Calculate speedup (avoid division by zero)
+        if batched_time > 0:
+            normalized_immediate = (immediate_time / (small_ops * 2)) * (operations * 2)
+            speedup = normalized_immediate / batched_time
+            print(f"\n💡 Batched mode is {speedup:.1f}x faster!")
+        else:
+            print(f"\n💡 Batched mode completed in < 1ms!")
         
     finally:
         if os.path.exists(temp_path):
