@@ -17,6 +17,7 @@ import AIPlayground from './pages/AIPlayground'
 import CodeWorkstation from './pages/CodeWorkstation'
 import Dashboard from './pages/Dashboard'
 import Templates from './pages/Templates'
+import Settings from './pages/Settings'
 import './index.css'
 
 // Handle SPA redirect from 404.html
@@ -58,6 +59,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/ai" element={<AIPlayground />} />
         <Route path="/code" element={<CodeWorkstation />} />
         <Route path="/templates" element={<Templates />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
