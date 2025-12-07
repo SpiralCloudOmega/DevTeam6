@@ -13,6 +13,7 @@
     "@codesandbox/sandpack-react": "^2.20.0",
     "@react-three/drei": "^9.92.0",
     "@react-three/fiber": "^8.15.12",
+    "@stackblitz/sdk": "^1.11.0",
     "chart.js": "^4.4.1",
     "framer-motion": "^12.23.25",
     "gsap": "^3.12.4",
