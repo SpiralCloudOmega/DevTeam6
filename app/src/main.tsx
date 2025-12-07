@@ -14,6 +14,7 @@ import RepoPilot from './pages/RepoPilot'
 import Repomind from './pages/Repomind'
 import ControlDeck from './pages/ControlDeck'
 import AIPlayground from './pages/AIPlayground'
+import CodeWorkstation from './pages/CodeWorkstation'
 import './index.css'
 
 // Handle SPA redirect from 404.html
@@ -53,6 +54,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/repomind" element={<Repomind />} />
         <Route path="/control-deck" element={<ControlDeck />} />
         <Route path="/ai" element={<AIPlayground />} />
+        <Route path="/code" element={<CodeWorkstation />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
