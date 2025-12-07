@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const items = [
   { id: 'home', icon: '🏠', label: 'Home', path: '/' },
   { id: 'ai', icon: '🤖', label: 'AI', path: '/ai' },
+  { id: 'workstation', icon: '🖥️', label: 'Workstation', path: '/code' },
   { id: 'graph', icon: '🧠', label: 'Graph', path: '/graph-editor' },
   { id: 'workflow', icon: '⚡', label: 'Workflow', path: '/workflow' },
   { id: 'templates', icon: '📦', label: 'Templates', path: '/templates' },
