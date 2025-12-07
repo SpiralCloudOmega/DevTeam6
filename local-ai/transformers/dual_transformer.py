@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 import hashlib
+import heapq
 import time
 
 from .token_transformer import TokenTransformer, TokenTransformResult, RouteType
@@ -269,19 +270,27 @@ class DualTransformer:
         self._cache[key] = (result, time.time())
     
     def _evict_oldest(self) -> None:
-        """Evict oldest cache entries."""
+        """
+        Evict oldest cache entries using efficient sorting.
+        
+        Performance: Uses a single pass to find and remove oldest 10% of entries.
+        """
         if not self._cache:
             return
         
-        # Find oldest entries
-        sorted_entries = sorted(
-            self._cache.items(),
-            key=lambda x: x[1][1]
+        # Calculate number to remove
+        to_remove = max(1, len(self._cache) // 10)
+        
+        # Use min heap to find oldest entries efficiently
+        # Format: (timestamp, key)
+        # Tuples sort by first element (timestamp) by default
+        oldest = heapq.nsmallest(
+            to_remove,
+            ((timestamp, key) for key, (_, timestamp) in self._cache.items())
         )
         
-        # Remove oldest 10%
-        to_remove = max(1, len(sorted_entries) // 10)
-        for key, _ in sorted_entries[:to_remove]:
+        # Remove oldest entries
+        for _, key in oldest:
             del self._cache[key]
     
     def route_to_handler(

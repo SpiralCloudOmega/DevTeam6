@@ -38,19 +38,25 @@ class KnowledgeGraph:
     Knowledge graph for storing relationships and concepts.
 
     Stored in: .github/agents/memory/knowledge-graph.json
+    
+    Performance: Batches writes to avoid excessive I/O operations.
+    Call save() explicitly when needed, or use auto_save context manager.
     """
 
-    def __init__(self, path: Optional[str] = None):
+    def __init__(self, path: Optional[str] = None, auto_save: bool = True):
         """
         Initialize the knowledge graph.
 
         Args:
             path: Path to knowledge-graph.json
+            auto_save: Automatically save after modifications (default: True)
         """
         settings = get_settings()
         context7_path = Path(settings.context7_path)
         memory_dir = context7_path.parent / "memory"
         self.path = Path(path) if path else memory_dir / "knowledge-graph.json"
+        self.auto_save = auto_save
+        self._dirty = False  # Track if changes need saving
 
         self._nodes: Dict[str, KGNode] = {}
         self._edges: List[KGEdge] = []
@@ -89,35 +95,61 @@ class KnowledgeGraph:
                 self._adjacency[edge.source].add(edge.target)
 
     def _save(self) -> None:
-        """Save graph to file."""
-        self.path.parent.mkdir(parents=True, exist_ok=True)
+        """
+        Save graph to file.
+        
+        Raises:
+            IOError: If file cannot be written
+        """
+        try:
+            self.path.parent.mkdir(parents=True, exist_ok=True)
 
-        data = {
-            "version": "1.0.0",
-            "description": "Knowledge graph for agent relationships and concepts",
-            "created": datetime.utcnow().isoformat(),
-            "updated": datetime.utcnow().isoformat(),
-            "nodes": [
-                {
-                    "id": node.id,
-                    "type": node.type,
-                    "label": node.label,
-                    "properties": node.properties,
-                }
-                for node in self._nodes.values()
-            ],
-            "edges": [
-                {
-                    "source": edge.source,
-                    "target": edge.target,
-                    "type": edge.type,
-                    "properties": edge.properties,
-                }
-                for edge in self._edges
-            ],
-        }
+            data = {
+                "version": "1.0.0",
+                "description": "Knowledge graph for agent relationships and concepts",
+                "created": datetime.utcnow().isoformat(),
+                "updated": datetime.utcnow().isoformat(),
+                "nodes": [
+                    {
+                        "id": node.id,
+                        "type": node.type,
+                        "label": node.label,
+                        "properties": node.properties,
+                    }
+                    for node in self._nodes.values()
+                ],
+                "edges": [
+                    {
+                        "source": edge.source,
+                        "target": edge.target,
+                        "type": edge.type,
+                        "properties": edge.properties,
+                    }
+                    for edge in self._edges
+                ],
+            }
 
-        self.path.write_text(json.dumps(data, indent=2))
+            self.path.write_text(json.dumps(data, indent=2))
+            self._dirty = False
+        except (IOError, OSError) as e:
+            # Keep dirty flag set if save fails
+            raise IOError(f"Failed to save knowledge graph to {self.path}: {e}") from e
+    
+    def save(self) -> None:
+        """
+        Explicitly save changes to disk.
+        
+        Only writes to disk if there are unsaved changes (dirty flag is set).
+        No-op if graph hasn't been modified since last save.
+        """
+        if self._dirty:
+            self._save()
+    
+    def _mark_dirty(self) -> None:
+        """Mark graph as having unsaved changes and auto-save if enabled."""
+        self._dirty = True
+        if self.auto_save:
+            self._save()
 
     def add_node(
         self,
@@ -145,7 +177,7 @@ class KnowledgeGraph:
             properties=properties or {},
         )
         self._nodes[node_id] = node
-        self._save()
+        self._mark_dirty()
         return node
 
     def add_edge(
@@ -179,7 +211,7 @@ class KnowledgeGraph:
             self._adjacency[source] = set()
         self._adjacency[source].add(target)
 
-        self._save()
+        self._mark_dirty()
         return edge
 
     def get_node(self, node_id: str) -> Optional[KGNode]:
@@ -201,7 +233,7 @@ class KnowledgeGraph:
     def get_neighbors(self, node_id: str) -> List[KGNode]:
         """Get all nodes connected to the given node."""
         neighbor_ids = self._adjacency.get(node_id, set())
-        return [self._nodes[nid] for nid in neighbor_ids if nid in self._nodes]
+        return [self._nodes[neighbor_id] for neighbor_id in neighbor_ids if neighbor_id in self._nodes]
 
     def remove_node(self, node_id: str) -> None:
         """Remove a node and all its edges."""
@@ -210,8 +242,8 @@ class KnowledgeGraph:
 
             # Remove edges
             self._edges = [
-                e for e in self._edges
-                if e.source != node_id and e.target != node_id
+                edge for edge in self._edges
+                if edge.source != node_id and edge.target != node_id
             ]
 
             # Update adjacency
@@ -219,22 +251,22 @@ class KnowledgeGraph:
             for neighbors in self._adjacency.values():
                 neighbors.discard(node_id)
 
-            self._save()
+            self._mark_dirty()
 
     def remove_edge(self, source: str, target: str, edge_type: str) -> None:
         """Remove a specific edge."""
         self._edges = [
-            e for e in self._edges
-            if not (e.source == source and e.target == target and e.type == edge_type)
+            edge for edge in self._edges
+            if not (edge.source == source and edge.target == target and edge.type == edge_type)
         ]
 
         if source in self._adjacency:
             # Only remove from adjacency if no other edges exist
-            remaining = [e for e in self._edges if e.source == source and e.target == target]
-            if not remaining:
+            remaining_edges = [edge for edge in self._edges if edge.source == source and edge.target == target]
+            if not remaining_edges:
                 self._adjacency[source].discard(target)
 
-        self._save()
+        self._mark_dirty()
 
     def find_path(self, start: str, end: str) -> List[str]:
         """
@@ -281,34 +313,34 @@ class KnowledgeGraph:
         Returns:
             Subgraph data
         """
-        included_nodes: Set[str] = set(node_ids)
+        included_node_ids: Set[str] = set(node_ids)
 
         # Expand by depth
-        frontier = set(node_ids)
+        current_frontier = set(node_ids)
         for _ in range(depth):
             next_frontier: Set[str] = set()
-            for node_id in frontier:
-                for neighbor in self._adjacency.get(node_id, []):
-                    if neighbor not in included_nodes:
-                        next_frontier.add(neighbor)
-                        included_nodes.add(neighbor)
-            frontier = next_frontier
+            for node_id in current_frontier:
+                for neighbor_id in self._adjacency.get(node_id, []):
+                    if neighbor_id not in included_node_ids:
+                        next_frontier.add(neighbor_id)
+                        included_node_ids.add(neighbor_id)
+            current_frontier = next_frontier
 
         # Build subgraph
-        nodes = [self._nodes[nid] for nid in included_nodes if nid in self._nodes]
-        edges = [
-            e for e in self._edges
-            if e.source in included_nodes and e.target in included_nodes
+        subgraph_nodes = [self._nodes[node_id] for node_id in included_node_ids if node_id in self._nodes]
+        subgraph_edges = [
+            edge for edge in self._edges
+            if edge.source in included_node_ids and edge.target in included_node_ids
         ]
 
         return {
             "nodes": [
-                {"id": n.id, "type": n.type, "label": n.label, "properties": n.properties}
-                for n in nodes
+                {"id": node.id, "type": node.type, "label": node.label, "properties": node.properties}
+                for node in subgraph_nodes
             ],
             "edges": [
-                {"source": e.source, "target": e.target, "type": e.type}
-                for e in edges
+                {"source": edge.source, "target": edge.target, "type": edge.type}
+                for edge in subgraph_edges
             ],
         }
 
