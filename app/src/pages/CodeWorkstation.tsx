@@ -2,84 +2,16 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sandpack } from '@codesandbox/sandpack-react';
 import { GlassPanel } from '../components/ui';
+import { StackBlitzEmbed, VSCodeEmbed } from '../components/ide';
+import { reactTemplate, vueTemplate, vanillaTemplate } from '../config/sandpackTemplates';
 
 type Tool = 'sandpack' | 'vscode' | 'stackblitz';
 type Template = 'react' | 'vue' | 'dotnet';
 
-const templates = {
-  react: {
-    files: {
-      '/App.tsx': `import { useState } from 'react';
-
-export default function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="app">
-      <h1>React Template</h1>
-      <button onClick={() => setCount(count + 1)}>
-        Count: {count}
-      </button>
-      <style>{\`
-        .app { padding: 2rem; font-family: sans-serif; }
-        button { padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; }
-      \`}</style>
-    </div>
-  );
-}`,
-      '/index.tsx': `import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);`,
-    },
-  },
-  vue: {
-    files: {
-      '/App.vue': `<template>
-  <div class="app">
-    <h1>Vue 3 Template</h1>
-    <button @click="count++">Count: {{ count }}</button>
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-const count = ref(0);
-</script>
-
-<style scoped>
-.app { padding: 2rem; font-family: sans-serif; }
-button { padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; }
-</style>`,
-      '/main.js': `import { createApp } from 'vue';
-import App from './App.vue';
-
-createApp(App).mount('#app');`,
-    },
-  },
-  dotnet: {
-    files: {
-      '/Program.cs': `using System;
-
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine(".NET 8 Template");
-        Console.WriteLine("Hello from C#!");
-        
-        var numbers = new[] { 1, 2, 3, 4, 5 };
-        var sum = numbers.Sum();
-        Console.WriteLine($"Sum: {sum}");
-    }
-}`,
-    },
-  },
+const templates = { 
+  react: reactTemplate, 
+  vue: vueTemplate, 
+  dotnet: vanillaTemplate 
 };
 
 export default function CodeWorkstation() {
@@ -185,41 +117,25 @@ export default function CodeWorkstation() {
       {/* Main Area */}
       <div className="flex-1 m-4 ml-0">
         {activeTool === 'vscode' && (
-          <iframe
-            src="https://vscode.dev/github/SpiralCloudOmega/DevTeam6"
-            className="w-full h-full rounded-xl border border-white/10"
-            title="VS Code Web"
+          <VSCodeEmbed 
+            path={
+              activeTemplate === 'react' 
+                ? 'templates/react-starter' 
+                : activeTemplate === 'vue' 
+                ? 'templates/vue3-starter' 
+                : 'templates/dotnet8-api'
+            }
+            height="100%"
           />
         )}
 
         {activeTool === 'stackblitz' && (
-          <iframe
-            src="https://stackblitz.com/github/SpiralCloudOmega/DevTeam6/tree/main/templates/react-starter?embed=1&theme=dark&file=src/App.tsx"
-            className="w-full h-full rounded-xl border border-white/10"
-            title="StackBlitz"
-          />
+          <StackBlitzEmbed template={activeTemplate} height="100%" />
         )}
 
         {activeTool === 'sandpack' && (
           <div className="w-full h-full">
-            <Sandpack
-              template={activeTemplate === 'vue' ? 'vue' : 'react'}
-              files={templates[activeTemplate].files}
-              theme="dark"
-              options={{
-                showNavigator: true,
-                showTabs: true,
-                showLineNumbers: true,
-                editorHeight: '100%',
-              }}
-              customSetup={{
-                dependencies: {
-                  react: activeTemplate === 'react' ? '^18.2.0' : undefined,
-                  'react-dom': activeTemplate === 'react' ? '^18.2.0' : undefined,
-                  vue: activeTemplate === 'vue' ? '^3.3.0' : undefined,
-                },
-              }}
-            />
+            <Sandpack {...templates[activeTemplate]} theme="dark" />
           </div>
         )}
       </div>
