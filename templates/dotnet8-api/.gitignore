@@ -1,0 +1,16 @@
+bin
+obj
+*.user
+*.suo
+.vs
+.vscode
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+appsettings.*.json
+!appsettings.Development.json
+!appsettings.json
+*.DotSettings.user
+.idea
