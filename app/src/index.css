@@ -7,6 +7,7 @@
   --color-quantum: #7b2fff;
   --bg-dark: #0a0a1a;
   --bg-darker: #050510;
+  --mobile-controls-height: 100px;
 }
 
 * {
@@ -965,7 +966,7 @@ html, body, #root {
   .stats {
     position: fixed;
     top: auto;
-    bottom: 120px;
+    bottom: calc(var(--mobile-controls-height) + 20px);
     right: 10px;
     left: 10px;
     text-align: center;

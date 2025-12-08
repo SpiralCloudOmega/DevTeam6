@@ -40,14 +40,15 @@ function ParticleField({ count = 3000 }) {
 // CSS gradient fallback for devices without WebGL
 function GradientFallback() {
   return (
-    <div 
-      className="fixed inset-0 -z-10"
-      style={{
-        background: 'linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%)',
-        animation: 'gradientShift 15s ease infinite',
-      }}
-    >
+    <>
       <style>{`
+        .gradient-fallback {
+          position: fixed;
+          inset: 0;
+          z-index: -10;
+          background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%);
+          animation: gradientShift 15s ease infinite;
+        }
         @keyframes gradientShift {
           0%, 100% { 
             background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%);
@@ -57,7 +58,8 @@ function GradientFallback() {
           }
         }
       `}</style>
-    </div>
+      <div className="gradient-fallback" />
+    </>
   );
 }
 
@@ -94,8 +96,8 @@ export function AnimatedBackground() {
           // Enable better performance on mobile
           gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         }}
-        onError={() => {
-          console.warn('WebGL error detected, falling back to CSS gradient');
+        onError={(error) => {
+          console.warn('WebGL initialization error, falling back to CSS gradient:', error?.message || 'Unknown error');
           setError(true);
         }}
       >
