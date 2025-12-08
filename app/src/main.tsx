@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import App from './App'
 import GamificationDashboard from './pages/GamificationDashboard'
 import OnboardingWizard from './pages/OnboardingWizard'
@@ -85,8 +85,8 @@ function Layout() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/DevTeam6">
+    <HashRouter>
       <Layout />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
