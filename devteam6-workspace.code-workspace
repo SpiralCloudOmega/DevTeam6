@@ -1,0 +1,143 @@
+{
+  "folders": [
+    { "path": ".", "name": "📁 DevTeam6 Root" },
+    { "path": "app", "name": "🔷 Main App" },
+    { "path": "projects", "name": "📊 Projects" },
+    { "path": "templates/react-starter", "name": "🔵 React Starter" },
+    { "path": "templates/vue3-starter", "name": "🟢 Vue 3 Starter" },
+    { "path": "templates/dotnet8-api", "name": "🟣 .NET 8 API" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/bin": true,
+      "**/obj": true,
+      "**/.git": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bin": true,
+      "**/obj": true,
+      "**/dist": true
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "Vue.volar"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "🔵 React App",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceFolder:🔵 React Starter}/src",
+        "preLaunchTask": "Start React Dev Server"
+      },
+      {
+        "name": "🟢 Vue 3 App",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceFolder:🟢 Vue 3 Starter}/src",
+        "preLaunchTask": "Start Vue Dev Server"
+      },
+      {
+        "name": "🟣 .NET API",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build-dotnet",
+        "program": "${workspaceFolder:🟣 .NET 8 API}/bin/Debug/net8.0/dotnet8-api.dll",
+        "args": [],
+        "cwd": "${workspaceFolder:🟣 .NET 8 API}",
+        "stopAtEntry": false,
+        "serverReadyAction": {
+          "action": "openExternally",
+          "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+        },
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      },
+      {
+        "name": "🚀 Full Stack (All Apps)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:📁 DevTeam6 Root}",
+        "console": "integratedTerminal"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "🔷 React + .NET",
+        "configurations": ["🔵 React App", "🟣 .NET API"],
+        "stopAll": true
+      },
+      {
+        "name": "🟢 Vue + .NET",
+        "configurations": ["🟢 Vue 3 App", "🟣 .NET API"],
+        "stopAll": true
+      },
+      {
+        "name": "🎨 All Frontends",
+        "configurations": ["🔵 React App", "🟢 Vue 3 App"],
+        "stopAll": true
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start React Dev Server",
+        "type": "npm",
+        "script": "dev:react",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "Start Vue Dev Server",
+        "type": "npm",
+        "script": "dev:vue",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "build-dotnet",
+        "command": "dotnet",
+        "type": "process",
+        "args": ["build", "${workspaceFolder:🟣 .NET 8 API}/dotnet8-api.csproj"],
+        "problemMatcher": "$msCompile"
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-dotnettools.csdevkit",
+      "ms-dotnettools.csharp",
+      "Vue.volar",
+      "dsznajder.es7-react-js-snippets",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "GitHub.copilot",
+      "eamodio.gitlens",
+      "humao.rest-client",
+      "bradlc.vscode-tailwindcss"
+    ]
+  }
+}

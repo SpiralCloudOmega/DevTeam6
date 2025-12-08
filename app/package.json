@@ -1,6 +1,6 @@
 {
   "name": "devteam6-3d-demo",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Interactive 3D demo with Semantic Knowledge Hub, GenUI Playground, Node Graph Editor, Video Storytelling, Gamification Dashboard for DevTeam6 - The Omega Tool Kit",
   "type": "module",
   "scripts": {
@@ -10,9 +10,12 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^2.20.0",
     "@react-three/drei": "^9.92.0",
     "@react-three/fiber": "^8.15.12",
+    "@stackblitz/sdk": "^1.11.0",
     "chart.js": "^4.4.1",
+    "framer-motion": "^12.23.25",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",

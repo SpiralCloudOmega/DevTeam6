@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { VueFlow, useVueFlow } from '@vue-flow/core'
+import type { NodeMouseEvent } from '@vue-flow/core'
 import { Background } from '@vue-flow/background'
 import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
@@ -8,6 +9,7 @@ import NodePalette from '@/components/graph/NodePalette.vue'
 import NodeEditor from '@/components/graph/NodeEditor.vue'
 import BaseNode from '@/components/nodes/BaseNode.vue'
 import { useWorkflowStore } from '@/stores/workflow'
+import type { WorkflowNode, NodeCategory } from '@/types'
 
 const workflowStore = useWorkflowStore()
 const { onConnect, addEdges, onNodesChange, onEdgesChange, applyNodeChanges, applyEdgeChanges } = useVueFlow()
@@ -21,52 +23,52 @@ onMounted(() => {
   workflowStore.createWorkflow('My First Workflow', 'A sample AI pipeline')
   
   // Add sample nodes
-  const startNode = {
+  const startNode: WorkflowNode = {
     id: 'start-1',
     type: 'custom',
     position: { x: 100, y: 200 },
     data: {
       id: 'start-1',
       type: 'start',
-      category: 'control',
+      category: 'control' as NodeCategory,
       label: 'Start',
       icon: '▶️',
       color: '#00f0ff',
       inputs: [],
-      outputs: [{ id: 'out', label: 'Output', type: 'any' }],
+      outputs: [{ id: 'out', label: 'Output', type: 'any' as const }],
       config: {},
     },
   }
   
-  const aiNode = {
+  const aiNode: WorkflowNode = {
     id: 'ai-1',
     type: 'custom',
     position: { x: 350, y: 200 },
     data: {
       id: 'ai-1',
       type: 'openai',
-      category: 'ai',
+      category: 'ai' as NodeCategory,
       label: 'GPT-4',
       icon: '🤖',
       color: '#ff00ff',
-      inputs: [{ id: 'in', label: 'Prompt', type: 'string', required: true }],
-      outputs: [{ id: 'out', label: 'Response', type: 'string' }],
+      inputs: [{ id: 'in', label: 'Prompt', type: 'string' as const, required: true }],
+      outputs: [{ id: 'out', label: 'Response', type: 'string' as const }],
       config: { model: 'gpt-4', temperature: 0.7 },
     },
   }
   
-  const outputNode = {
+  const outputNode: WorkflowNode = {
     id: 'output-1',
     type: 'custom',
     position: { x: 600, y: 200 },
     data: {
       id: 'output-1',
       type: 'console',
-      category: 'output',
+      category: 'output' as NodeCategory,
       label: 'Console Output',
       icon: '📤',
       color: '#00ff88',
-      inputs: [{ id: 'in', label: 'Data', type: 'any', required: true }],
+      inputs: [{ id: 'in', label: 'Data', type: 'any' as const, required: true }],
       outputs: [],
       config: {},
     },
@@ -110,8 +112,8 @@ onEdgesChange((changes) => {
   applyEdgeChanges(changes)
 })
 
-function onNodeClick(_: MouseEvent, node: any) {
-  selectedNode.value = node
+function onNodeClick(event: NodeMouseEvent) {
+  selectedNode.value = event.node
 }
 
 function togglePalette() {
