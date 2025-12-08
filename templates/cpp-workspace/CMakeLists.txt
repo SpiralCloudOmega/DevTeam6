@@ -56,7 +56,8 @@ add_executable(main
     src/main.cpp
 )
 
-# Link libraries (uncomment as needed)
+# Link libraries
+# Uncomment the sections below to link against libraries you want to use
 # if(OpenGL_FOUND)
 #     target_link_libraries(main PRIVATE OpenGL::GL OpenGL::GLU)
 # endif()

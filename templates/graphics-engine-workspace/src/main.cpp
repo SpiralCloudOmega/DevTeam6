@@ -134,15 +134,17 @@ private:
         vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &queueFamilyCount, 
                                                   queueFamilies.data());
 
-        uint32_t graphicsFamily = -1;
+        uint32_t graphicsFamily = 0;
+        bool foundGraphicsFamily = false;
         for (uint32_t i = 0; i < queueFamilies.size(); i++) {
             if (queueFamilies[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) {
                 graphicsFamily = i;
+                foundGraphicsFamily = true;
                 break;
             }
         }
 
-        if (graphicsFamily == -1) {
+        if (!foundGraphicsFamily) {
             throw std::runtime_error("Failed to find graphics queue family!");
         }
 

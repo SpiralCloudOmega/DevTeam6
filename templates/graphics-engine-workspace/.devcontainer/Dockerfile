@@ -12,7 +12,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     wget \
     gnupg2 \
     software-properties-common \
-    && wget -qO - https://packages.lunarg.com/lunarg-signing-key-pub.asc | apt-key add - \
+    && wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | \
+        gpg --dearmor -o /etc/apt/trusted.gpg.d/lunarg.gpg \
     && wget -qO /etc/apt/sources.list.d/lunarg-vulkan-jammy.list \
         https://packages.lunarg.com/vulkan/lunarg-vulkan-jammy.list \
     && apt-get update \
