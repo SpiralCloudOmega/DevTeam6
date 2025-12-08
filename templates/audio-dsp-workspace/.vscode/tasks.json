@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["-B", "build", "-DCMAKE_BUILD_TYPE=Release", "-G", "Ninja"],
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Configure CMake project with JUCE"
+    },
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "dependsOn": ["CMake: Configure"],
+      "detail": "Build audio plugin"
+    },
+    {
+      "label": "CMake: Clean",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--target", "clean"],
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Clean build artifacts"
+    },
+    {
+      "label": "Run: Standalone",
+      "type": "shell",
+      "command": "./build/AudioPlugin_artefacts/Standalone/AudioPlugin",
+      "group": "none",
+      "dependsOn": ["CMake: Build"],
+      "problemMatcher": [],
+      "detail": "Run standalone audio plugin"
+    }
+  ]
+}

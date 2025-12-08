@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Make: Build (Debug)",
+      "type": "shell",
+      "command": "make",
+      "args": ["debug"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build with Make in Debug mode"
+    },
+    {
+      "label": "Make: Build (Release)",
+      "type": "shell",
+      "command": "make",
+      "args": ["release"],
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "detail": "Build with Make in Release mode"
+    },
+    {
+      "label": "Make: Clean",
+      "type": "shell",
+      "command": "make",
+      "args": ["clean"],
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Clean build artifacts"
+    },
+    {
+      "label": "Make: Run",
+      "type": "shell",
+      "command": "make",
+      "args": ["run"],
+      "group": "none",
+      "problemMatcher": [],
+      "dependsOn": ["Make: Build (Debug)"],
+      "detail": "Build and run the program"
+    },
+    {
+      "label": "CMake: Configure (Debug)",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["-B", "build", "-DCMAKE_BUILD_TYPE=Debug"],
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Configure CMake project in Debug mode"
+    },
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build"],
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "dependsOn": ["CMake: Configure (Debug)"],
+      "detail": "Build with CMake"
+    },
+    {
+      "label": "Valgrind: Memory Check",
+      "type": "shell",
+      "command": "make",
+      "args": ["valgrind"],
+      "group": "test",
+      "problemMatcher": [],
+      "detail": "Run with Valgrind memory checker"
+    }
+  ]
+}

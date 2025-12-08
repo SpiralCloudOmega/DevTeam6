@@ -20,9 +20,6 @@ compile_commands.json
 *.obj
 
 # IDE
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
 *.swp
 *~
 

@@ -29,9 +29,6 @@ main
 tests
 
 # IDE
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
 .idea/
 *.swp
 *.swo

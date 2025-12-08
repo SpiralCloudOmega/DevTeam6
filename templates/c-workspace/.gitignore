@@ -22,9 +22,6 @@ cmake_install.cmake
 compile_commands.json
 
 # IDE
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
 *.swp
 *~
 

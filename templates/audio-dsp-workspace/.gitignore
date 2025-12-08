@@ -21,9 +21,6 @@ compile_commands.json
 *.component
 
 # IDE
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
 *.swp
 *~
 
