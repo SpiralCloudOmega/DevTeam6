@@ -1,0 +1,32 @@
+# Build directories
+build/
+AudioPlugin_artefacts/
+
+# JUCE
+JuceLibraryCode/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Compiled
+*.o
+*.so
+*.dylib
+*.dll
+*.a
+*.vst3
+*.component
+
+# IDE
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db

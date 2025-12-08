@@ -1,0 +1,31 @@
+# Build directories
+build/
+bin/
+
+# Executables
+graphics-engine
+*.exe
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Compiled shaders
+*.spv
+
+# Object files
+*.o
+*.obj
+
+# IDE
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
