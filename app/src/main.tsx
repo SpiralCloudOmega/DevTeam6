@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import App from './App'
 import GamificationDashboard from './pages/GamificationDashboard'
 import OnboardingWizard from './pages/OnboardingWizard'
@@ -18,6 +18,7 @@ import CodeWorkstation from './pages/CodeWorkstation'
 import Dashboard from './pages/Dashboard'
 import Templates from './pages/Templates'
 import Settings from './pages/Settings'
+import { AnimatedBackground, FloatingDock, CommandPalette } from './components/ui'
 import './index.css'
 
 // Handle SPA redirect from 404.html
@@ -40,9 +41,25 @@ function SpaRedirect() {
   return <Dashboard />
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter basename="/DevTeam6">
+// Layout wrapper with AnimatedBackground, FloatingDock, and CommandPalette
+function Layout() {
+  const navigate = useNavigate()
+  
+  const commands = [
+    { id: 'home', label: 'Dashboard', icon: '🏠', action: () => navigate('/') },
+    { id: 'ai', label: 'AI Playground', icon: '🤖', action: () => navigate('/ai') },
+    { id: 'code', label: 'Code Workstation', icon: '🖥️', action: () => navigate('/code') },
+    { id: 'graph', label: 'Graph Editor', icon: '🧠', action: () => navigate('/node-graph') },
+    { id: 'templates', label: 'Templates', icon: '📦', action: () => navigate('/templates') },
+    { id: 'settings', label: 'Settings', icon: '⚙️', action: () => navigate('/settings') },
+    { id: 'knowledge', label: 'Knowledge Hub', icon: '🧠', action: () => navigate('/knowledge-hub') },
+    { id: 'repomind', label: 'Repomind', icon: '🧠', action: () => navigate('/repomind') },
+  ]
+  
+  return (
+    <>
+      <AnimatedBackground />
+      <CommandPalette commands={commands} />
       <Routes>
         <Route path="/" element={<SpaRedirect />} />
         <Route path="/gamification" element={<GamificationDashboard />} />
@@ -61,6 +78,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/templates" element={<Templates />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
+      <FloatingDock />
+    </>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <BrowserRouter basename="/DevTeam6">
+      <Layout />
     </BrowserRouter>
   </React.StrictMode>,
 )
