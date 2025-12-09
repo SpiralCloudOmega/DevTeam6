@@ -1,0 +1,30 @@
+{
+  "name": "Audio DSP / JUCE Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "username": "vscode"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "twxs.cmake"
+      ],
+      "settings": {
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+        "cmake.configureOnOpen": true
+      }
+    }
+  },
+  "forwardPorts": [],
+  "postCreateCommand": "echo 'Audio/DSP Development Environment Ready! JUCE framework available.'",
+  "remoteUser": "vscode"
+}

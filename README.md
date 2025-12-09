@@ -235,6 +235,35 @@ npm install -g @google/gemini-cli
 
 ---
 
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00ff88&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=WORKSPACE+TEMPLATES;READY-TO-CODE;INSTANT+DEV+ENVIRONMENTS" alt="Workspace Templates" />
+
+<div align="center">
+
+### 🚀 Production-Ready Development Workspaces
+
+| Template | Description | Technologies |
+|----------|-------------|--------------|
+| **⚛️ React Starter** | Modern React with TypeScript | React 18, TypeScript, Vite |
+| **💚 Vue 3 Starter** | Vue.js with composition API | Vue 3, Pinia, Router |
+| **🟣 .NET 8 API** | ASP.NET Core REST API | .NET 8, Swagger, Web API |
+| **⚙️ C++ Workspace** | Professional C++ development | C++20, CMake, GCC/Clang, OpenGL, Vulkan, SDL2, Qt6 |
+| **🔧 C Workspace** | Pure C systems programming | C17, Make/CMake, GDB, Valgrind, SDL2 |
+| **🎵 Audio/DSP** | Audio plugin development | JUCE, VST3, AU, AAX, ALSA, JACK |
+| **🎨 Graphics Engine** | Real-time graphics with Vulkan | Vulkan 1.3, GLFW, GLSL, SPIR-V shaders |
+
+All templates include:
+- ✅ **Dev Containers** - Full development environment in Docker
+- ✅ **VS Code Integration** - Preconfigured tasks, debugging, extensions
+- ✅ **Build Systems** - CMake, Make, or framework-specific builds
+- ✅ **Testing** - Unit test frameworks and examples
+- ✅ **Documentation** - Comprehensive README with examples
+
+**Get Started:** Navigate to `templates/` directory or use the [Templates Page](https://spiralcloudomega.github.io/DevTeam6/templates) in the web app!
+
+</div>
+
+---
+
 ## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=2500&pause=800&color=00F0FF&background=0A0A1AFF&vCenter=true&width=750&height=45&lines=OMEGA+TOOL+KIT+-+MASTER+INDEX;THE+COMPLETE+DEV+UNIVERSE;YOUR+AI-POWERED+TOOLKIT" alt="Omega Tool Kit - Master Index" />
 
 > **The Complete Software Development Universe — From Concept to Deployment**

@@ -1,0 +1,35 @@
+# Build directories
+build/
+bin/
+lib/
+
+# Make
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# Executables
+main
+*.exe
+*.out
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# IDE
+*.swp
+*~
+
+# Debug
+*.dSYM/
+core
+vgcore.*
+
+# OS
+.DS_Store
+Thumbs.db

@@ -27,6 +27,38 @@ const templates = [
     tags: ['.NET 8', 'Swagger', 'Web API'],
     port: 5000,
   },
+  {
+    id: 'cpp',
+    icon: '⚙️',
+    title: 'C++ Workspace',
+    description: 'Modern C++20 + CMake + Vulkan/Qt6',
+    tags: ['C++20', 'CMake', 'OpenGL', 'Vulkan', 'SDL2', 'Qt6'],
+    port: 8080,
+  },
+  {
+    id: 'c',
+    icon: '🔧',
+    title: 'C Workspace',
+    description: 'Pure C17 + Make/CMake + SDL2',
+    tags: ['C17', 'Make', 'CMake', 'GDB', 'Valgrind'],
+    port: 8080,
+  },
+  {
+    id: 'audio-dsp',
+    icon: '🎵',
+    title: 'Audio/DSP',
+    description: 'JUCE Framework + VST3/AU/AAX',
+    tags: ['JUCE', 'VST3', 'Audio', 'DSP', 'Plugins'],
+    port: 0,
+  },
+  {
+    id: 'graphics-engine',
+    icon: '🎨',
+    title: 'Graphics Engine',
+    description: 'Vulkan + GLFW + Shaders',
+    tags: ['Vulkan', 'OpenGL', 'GLSL', 'SPIR-V', 'Rendering'],
+    port: 8080,
+  },
 ];
 
 const tools = [
@@ -91,11 +123,13 @@ export default function Templates() {
                 </div>
 
                 {/* Port Badge */}
-                <div className="text-center mb-4">
-                  <span className="text-xs text-cyan-400">
-                    Port: {template.port}
-                  </span>
-                </div>
+                {template.port > 0 && (
+                  <div className="text-center mb-4">
+                    <span className="text-xs text-cyan-400">
+                      Port: {template.port}
+                    </span>
+                  </div>
+                )}
 
                 {/* Tool Buttons */}
                 <div className="space-y-2">
