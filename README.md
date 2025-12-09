@@ -96,34 +96,34 @@
 ### ⚡ Repository Architecture (Node Graph Preview)
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#00f0ff', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#00f0ff', 'lineColor': '#ff00ff', 'secondaryColor': '#0a0a1a', 'tertiaryColor': '#1a0a2e', 'background': '#0a0a0f', 'mainBkg': '#0a0a1a', 'nodeBorder': '#00f0ff', 'clusterBkg': '#0d0d1a', 'clusterBorder': '#00f0ff', 'titleColor': '#ffffff', 'edgeLabelBackground':'#1a0a2e', 'fontFamily': 'JetBrains Mono, monospace'}}}%%
+%%{init: {'theme': 'dark'}}%%
 flowchart TB
-    subgraph ENTRY["🚀 DEVTEAM6 ENTRY"]
-        START([DevTeam6<br/>Repository]) --> README
+    subgraph ENTRY["DEVTEAM6 ENTRY"]
+        START([DevTeam6 Repository]) --> README
         START --> PAGES
     end
     
-    subgraph VISIBILITY["📄 VISIBILITY LAYER"]
-        README[README.md<br/>Dashboard]
-        README --> RESOURCES[📚 Resources<br/>1000+ Tools]
-        README --> NAV[🧭 Navigation]
-        README --> BADGES[🏅 Badges]
+    subgraph VISIBILITY["VISIBILITY LAYER"]
+        README[README.md Dashboard]
+        README --> RESOURCES[Resources - 1000+ Tools]
+        README --> NAV[Navigation]
+        README --> BADGES[Badges]
     end
     
-    subgraph INTERACTION["🌐 INTERACTION LAYER"]
-        PAGES[GitHub Pages<br/>Live Apps]
-        PAGES --> DEMO[🎮 3D Demo]
-        PAGES --> GENUI[🎨 GenUI]
-        PAGES --> GRAPH[⚡ Node Graph]
-        PAGES --> VIDEO[🎬 Videos]
-        PAGES --> DASH[📊 Dashboard]
+    subgraph INTERACTION["INTERACTION LAYER"]
+        PAGES[GitHub Pages Live Apps]
+        PAGES --> DEMO[3D Demo]
+        PAGES --> GENUI[GenUI]
+        PAGES --> GRAPH[Node Graph]
+        PAGES --> VIDEO[Videos]
+        PAGES --> DASH[Dashboard]
     end
     
-    subgraph AUTOMATION["⚡ GITHUB ACTIONS"]
-        DEPLOY[🚀 Deploy<br/>Pages CI/CD]
-        CVS[🔄 CVS Sync<br/>Hourly]
-        ROADMAP[📋 Roadmap Sync<br/>6hr]
-        NODEGRAPH[⚡ Graph Sync<br/>4hr]
+    subgraph AUTOMATION["GITHUB ACTIONS"]
+        DEPLOY[Deploy Pages CI/CD]
+        CVS[CVS Sync Hourly]
+        ROADMAP[Roadmap Sync 6hr]
+        NODEGRAPH[Graph Sync 4hr]
     end
     
     PAGES --> DEPLOY
