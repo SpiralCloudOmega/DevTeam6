@@ -35,6 +35,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -e  # Exit on error
+          
           # Get commit count
           COMMITS=$(git rev-list --count HEAD)
           echo "commits=$COMMITS" >> $GITHUB_OUTPUT
@@ -49,9 +51,9 @@ jobs:
           
           # Get lines of code (approximate)
           if command -v cloc &> /dev/null; then
-            LOC=$(cloc . --quiet --csv | tail -1 | cut -d',' -f5)
+            LOC=$(cloc . --quiet --csv 2>/dev/null | tail -1 | cut -d',' -f5 || echo "0")
           else
-            LOC=$(find . -name "*.md" -o -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" | xargs wc -l 2>/dev/null | tail -1 | awk '{print $1}')
+            LOC=$(find . -name "*.md" -o -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" 2>/dev/null | xargs wc -l 2>/dev/null | tail -1 | awk '{print $1}' || echo "0")
           fi
           echo "loc=$LOC" >> $GITHUB_OUTPUT
           
@@ -75,6 +77,8 @@ jobs:
           # Connections = relationships between components
           CONNECTIONS=$((WORKFLOWS * 2 + 10))
           echo "connections=$CONNECTIONS" >> $GITHUB_OUTPUT
+          
+          echo "✅ Successfully collected repository statistics"
       
       - name: Generate node graph metrics badge
         run: |
@@ -144,3 +148,26 @@ jobs:
           echo "| Files | ${{ steps.stats.outputs.files }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "✅ Sync completed at $(date -u)" >> $GITHUB_STEP_SUMMARY
+
+  notify-on-failure:
+    needs: sync-node-graph
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Create Issue on Failure
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            await github.rest.issues.create({
+              owner,
+              repo,
+              title: '⚠️ Node Graph Sync Workflow Failed',
+              body: `The node graph synchronization workflow failed.
+              
+              **Run ID:** ${context.runId}
+              **Workflow:** ${context.workflow}
+              
+              Please investigate the failure in the [Actions tab](https://github.com/${owner}/${repo}/actions).`,
+              labels: ['bug', 'automated', 'workflow-failure']
+            });
