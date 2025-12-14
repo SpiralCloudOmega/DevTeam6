@@ -55,13 +55,11 @@ _memory_system = None
 _rag_pipeline = None
 _context7_sync = None
 
-# Dependency injection functions
+# Dependency injection functions (return pre-initialized singletons)
 async def get_embedding_service():
-    """Get or create embedding service singleton."""
-    global _embedding_service
+    """Get embedding service singleton (initialized at startup)."""
     if _embedding_service is None:
-        from core.embedding_service import EmbeddingService
-        _embedding_service = EmbeddingService()
+        raise RuntimeError("Service not initialized. Application startup may have failed.")
     return _embedding_service
 
 # Optimized endpoint
@@ -80,21 +78,36 @@ async def generate_embedding(
 ```python
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan handler."""
-    # Startup - Initialize singletons once
+    """
+    Application lifespan handler.
+    
+    Initializes all service singletons at startup and cleans them up on shutdown.
+    This ensures thread-safe initialization before any requests are processed.
+    """
+    # Startup - Initialize all singletons (thread-safe, runs before request handling)
     global _embedding_service, _memory_system, _rag_pipeline, _context7_sync
     
-    _embedding_service = EmbeddingService()
-    _memory_system = MemorySystem()
-    _rag_pipeline = RAGPipeline()
-    _context7_sync = Context7Sync()
-    await _context7_sync.load()
-    
-    print("✅ Services initialized")
+    try:
+        from core.embedding_service import EmbeddingService
+        from core.memory_system import MemorySystem
+        from core.rag_pipeline import RAGPipeline
+        from core.context7_sync import Context7Sync
+        
+        _embedding_service = EmbeddingService()
+        _memory_system = MemorySystem()
+        _rag_pipeline = RAGPipeline()
+        _context7_sync = Context7Sync()
+        await _context7_sync.load()
+        
+        print("✅ Services initialized successfully")
+    except Exception as e:
+        print(f"❌ Service initialization failed: {e}")
+        raise
     
     yield
     
     # Shutdown - Cleanup resources properly
+    print("👋 Shutting down...")
     if _embedding_service:
         await _embedding_service.close()
     if _memory_system:
@@ -103,7 +116,6 @@ async def lifespan(app: FastAPI):
         await _rag_pipeline.close()
     if _context7_sync:
         await _context7_sync.save()
-    
     print("✅ Resources cleaned up")
 ```
 
@@ -141,9 +153,10 @@ All endpoints now use dependency injection:
 ## Best Practices Applied
 
 ### 1. Singleton Pattern
-- Services initialized once at startup
-- Shared across all requests
+- Services initialized once at startup (thread-safe)
+- Shared across all requests via dependency injection
 - Proper cleanup on shutdown
+- Single source of truth for service creation
 
 ### 2. Dependency Injection
 - FastAPI's `Depends()` mechanism

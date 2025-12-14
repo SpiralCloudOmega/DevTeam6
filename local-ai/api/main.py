@@ -97,68 +97,69 @@ class HealthResponse(BaseModel):
     memory_count: int
 
 
-# Dependency injection functions
+# Dependency injection functions (return pre-initialized singletons)
 async def get_embedding_service():
-    """Get or create embedding service singleton."""
-    global _embedding_service
+    """Get embedding service singleton (initialized at startup)."""
     if _embedding_service is None:
-        from core.embedding_service import EmbeddingService
-        _embedding_service = EmbeddingService()
+        raise RuntimeError("Service not initialized. Application startup may have failed.")
     return _embedding_service
 
 
 async def get_memory_system():
-    """Get or create memory system singleton."""
-    global _memory_system
+    """Get memory system singleton (initialized at startup)."""
     if _memory_system is None:
-        from core.memory_system import MemorySystem
-        _memory_system = MemorySystem()
+        raise RuntimeError("Service not initialized. Application startup may have failed.")
     return _memory_system
 
 
 async def get_rag_pipeline():
-    """Get or create RAG pipeline singleton."""
-    global _rag_pipeline
+    """Get RAG pipeline singleton (initialized at startup)."""
     if _rag_pipeline is None:
-        from core.rag_pipeline import RAGPipeline
-        _rag_pipeline = RAGPipeline()
+        raise RuntimeError("Service not initialized. Application startup may have failed.")
     return _rag_pipeline
 
 
 async def get_context7_sync():
-    """Get or create Context7 sync singleton."""
-    global _context7_sync
+    """Get Context7 sync singleton (initialized at startup)."""
     if _context7_sync is None:
-        from core.context7_sync import Context7Sync
-        _context7_sync = Context7Sync()
-        await _context7_sync.load()
+        raise RuntimeError("Service not initialized. Application startup may have failed.")
     return _context7_sync
 
 
 # Application lifespan
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan handler."""
+    """
+    Application lifespan handler.
+    
+    Initializes all service singletons at startup and cleans them up on shutdown.
+    This ensures thread-safe initialization before any requests are processed.
+    """
     # Startup
     settings = get_settings()
     print(f"🚀 Starting {settings.app_name} v{settings.app_version}")
     print(f"📊 ChromaDB: {settings.chroma_persist_dir}")
     print(f"🤖 Ollama: {settings.ollama_host}")
     
-    # Initialize singletons
+    # Initialize all singletons (thread-safe, runs before request handling)
     global _embedding_service, _memory_system, _rag_pipeline, _context7_sync
-    from core.embedding_service import EmbeddingService
-    from core.memory_system import MemorySystem
-    from core.rag_pipeline import RAGPipeline
-    from core.context7_sync import Context7Sync
     
-    _embedding_service = EmbeddingService()
-    _memory_system = MemorySystem()
-    _rag_pipeline = RAGPipeline()
-    _context7_sync = Context7Sync()
-    await _context7_sync.load()
-    
-    print("✅ Services initialized")
+    try:
+        from core.embedding_service import EmbeddingService
+        from core.memory_system import MemorySystem
+        from core.rag_pipeline import RAGPipeline
+        from core.context7_sync import Context7Sync
+        
+        _embedding_service = EmbeddingService()
+        _memory_system = MemorySystem()
+        _rag_pipeline = RAGPipeline()
+        _context7_sync = Context7Sync()
+        await _context7_sync.load()
+        
+        print("✅ Services initialized successfully")
+    except Exception as e:
+        print(f"❌ Service initialization failed: {e}")
+        raise
 
     yield
 
