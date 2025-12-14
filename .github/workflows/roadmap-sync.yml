@@ -167,6 +167,10 @@ jobs:
           | **Open Issues** | ${OPEN_ISSUES} |\\
           | **Last Updated** | ${LAST_UPDATE} |\\
           \\
+          #### 🎯 Phase Status\\
+          ![Foundation Phase Status](.github/badges/phase-foundation.svg) ![Expansion Phase Status](.github/badges/phase-expansion.svg) ![Visual Phase Status](.github/badges/phase-visual.svg) ![Interactive Phase Status](.github/badges/phase-interactive.svg)  \\
+          ![GenUI Phase Status](.github/badges/phase-genui.svg) ![Community Phase Status](.github/badges/phase-community.svg) ![AI Integration Phase Status](.github/badges/phase-ai-integration.svg)\\
+          \\
           <!-- ROADMAP-STATS-END -->" README.md
             
             echo "Updated README with live roadmap stats"
@@ -239,7 +243,7 @@ jobs:
   notify-on-failure:
     needs: sync-roadmap
     runs-on: ubuntu-latest
-    if: failure()
+    if: always() && failure()
     steps:
       - name: Create Issue on Failure
         uses: actions/github-script@v7

@@ -323,14 +323,23 @@ export default function NodeGraphEditor() {
     .filter(Boolean) as string[]
   ), [pathSequence]);
 
-  // Statistics
-  const stats = useMemo(() => ({
-    total: nodes.length,
-    completed: nodes.filter(n => n.status === 'completed').length,
-    active: nodes.filter(n => n.status === 'active').length,
-    pending: nodes.filter(n => n.status === 'pending').length,
-    visible: displayNodes.length,
-  }), [nodes, displayNodes]);
+  // Statistics - optimized to single pass instead of three separate filters
+  const stats = useMemo(() => {
+    const statusCounts = { completed: 0, active: 0, pending: 0 }
+    for (let i = 0; i < nodes.length; i++) {
+      const status = nodes[i].status
+      if (status && status in statusCounts) {
+        statusCounts[status as keyof typeof statusCounts]++
+      }
+    }
+    return {
+      total: nodes.length,
+      completed: statusCounts.completed,
+      active: statusCounts.active,
+      pending: statusCounts.pending,
+      visible: displayNodes.length,
+    }
+  }, [nodes, displayNodes]);
 
   const backgroundGradient = useMemo(() => {
     if (backgroundStyle === 'nebula') {
