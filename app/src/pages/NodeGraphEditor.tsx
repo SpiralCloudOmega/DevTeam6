@@ -328,8 +328,8 @@ export default function NodeGraphEditor() {
     const statusCounts = { completed: 0, active: 0, pending: 0 }
     for (let i = 0; i < nodes.length; i++) {
       const status = nodes[i].status
-      if (status && statusCounts.hasOwnProperty(status)) {
-        statusCounts[status]++
+      if (status && status in statusCounts) {
+        statusCounts[status as keyof typeof statusCounts]++
       }
     }
     return {

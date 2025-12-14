@@ -68,7 +68,7 @@ function GamificationDashboard() {
     const totalCount = achievements.length
     const completionPercentage = Math.round((unlockedCount / totalCount) * 100)
     return { unlockedCount, totalCount, completionPercentage }
-  }, [])
+  }, [achievements])
 
   useEffect(() => {
     // Animate scores on mount
