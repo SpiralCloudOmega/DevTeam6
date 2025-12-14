@@ -7,8 +7,8 @@ export function calculateGlowStrength(value: number, max: number = 100) {
     throw new Error('max must be greater than 0')
   }
 
-  const clamped = Math.min(Math.max(value, 0), max)
-  const intensity = clamped / max
+  const clampedValue = Math.min(Math.max(value, 0), max)
+  const intensity = clampedValue / max
   const hue = 180 + (1 - intensity) * 120 // Cyan (high) → Magenta (low)
   const alpha = 0.35 + intensity * 0.35
 

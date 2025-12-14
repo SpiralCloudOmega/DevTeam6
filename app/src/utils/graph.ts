@@ -34,16 +34,16 @@ export const computeClusterBounds = (
   clusterId: string,
   padding = 48
 ): ClusterBounds | null => {
-  const scopedNodes = nodes.filter(node => node.cluster === clusterId)
-  if (scopedNodes.length === 0) return null
+  const clusterNodes = nodes.filter(node => node.cluster === clusterId)
+  if (clusterNodes.length === 0) return null
 
-  const xCoordinates = scopedNodes.map(node => node.position.x)
-  const yCoordinates = scopedNodes.map(node => node.position.y)
+  const xPositions = clusterNodes.map(node => node.position.x)
+  const yPositions = clusterNodes.map(node => node.position.y)
 
-  const minX = Math.min(...xCoordinates) - padding
-  const maxX = Math.max(...xCoordinates) + padding
-  const minY = Math.min(...yCoordinates) - padding
-  const maxY = Math.max(...yCoordinates) + padding
+  const minX = Math.min(...xPositions) - padding
+  const maxX = Math.max(...xPositions) + padding
+  const minY = Math.min(...yPositions) - padding
+  const maxY = Math.max(...yPositions) + padding
 
   const width = maxX - minX
   const height = maxY - minY
@@ -88,10 +88,10 @@ export const computeShortestPath = (
   if (!adjacencyList.has(startId)) return []
 
   const visitedNodes = new Set<string>([startId])
-  const searchQueue: Array<{ currentNode: string; currentPath: string[] }> = [{ currentNode: startId, currentPath: [startId] }]
+  const breadthFirstQueue: Array<{ currentNode: string; currentPath: string[] }> = [{ currentNode: startId, currentPath: [startId] }]
 
-  while (searchQueue.length > 0) {
-    const { currentNode, currentPath } = searchQueue.shift() as { currentNode: string; currentPath: string[] }
+  while (breadthFirstQueue.length > 0) {
+    const { currentNode, currentPath } = breadthFirstQueue.shift() as { currentNode: string; currentPath: string[] }
     const neighborNodes = adjacencyList.get(currentNode) || []
 
     for (const neighborNode of neighborNodes) {
@@ -100,7 +100,7 @@ export const computeShortestPath = (
       const nextPath = currentPath.concat(neighborNode)
       if (neighborNode === targetId) return nextPath
       visitedNodes.add(neighborNode)
-      searchQueue.push({ currentNode: neighborNode, currentPath: nextPath })
+      breadthFirstQueue.push({ currentNode: neighborNode, currentPath: nextPath })
     }
   }
 
