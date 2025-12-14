@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { createBuildConfig } from '../../vite.config.shared'
 
 export default defineConfig({
   plugins: [vue()],
@@ -9,8 +10,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  server: {
+  ...createBuildConfig({
     port: 5173,
-    host: true
-  }
+  }),
 })

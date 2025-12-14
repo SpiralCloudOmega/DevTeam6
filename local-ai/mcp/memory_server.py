@@ -6,6 +6,13 @@ MCP server for memory operations.
 
 from typing import Dict, Any, List, Optional
 from .base_server import BaseMCPServer
+from .tool_schemas import (
+    create_tool_schema,
+    create_string_property,
+    create_integer_property,
+    create_object_property,
+    create_array_property,
+)
 from core.memory_system import MemorySystem
 
 
@@ -39,77 +46,50 @@ class MemoryMCPServer(BaseMCPServer):
         self.register_tool(
             name="store_memory",
             description="Store content in AI memory for later retrieval",
-            input_schema={
-                "type": "object",
-                "properties": {
-                    "content": {
-                        "type": "string",
-                        "description": "Content to store",
-                    },
-                    "category": {
-                        "type": "string",
-                        "description": "Category for organization",
-                        "default": "general",
-                    },
-                    "metadata": {
-                        "type": "object",
-                        "description": "Additional metadata",
-                    },
+            input_schema=create_tool_schema(
+                properties={
+                    "content": create_string_property("Content to store"),
+                    "category": create_string_property("Category for organization", default="general"),
+                    "metadata": create_object_property("Additional metadata"),
                 },
-                "required": ["content"],
-            },
+                required=["content"],
+            ),
             handler=self._store_memory,
         )
 
         self.register_tool(
             name="query_memory",
             description="Search memories using semantic similarity",
-            input_schema={
-                "type": "object",
-                "properties": {
-                    "query": {
-                        "type": "string",
-                        "description": "Search query",
-                    },
-                    "top_k": {
-                        "type": "integer",
-                        "description": "Number of results",
-                        "default": 5,
-                    },
-                    "category": {
-                        "type": "string",
-                        "description": "Filter by category",
-                    },
+            input_schema=create_tool_schema(
+                properties={
+                    "query": create_string_property("Search query"),
+                    "top_k": create_integer_property("Number of results", default=5),
+                    "category": create_string_property("Filter by category"),
                 },
-                "required": ["query"],
-            },
+                required=["query"],
+            ),
             handler=self._query_memory,
         )
 
         self.register_tool(
             name="forget_memory",
             description="Remove specific memories",
-            input_schema={
-                "type": "object",
-                "properties": {
-                    "doc_ids": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "description": "Document IDs to remove",
-                    },
+            input_schema=create_tool_schema(
+                properties={
+                    "doc_ids": create_array_property("Document IDs to remove", item_type="string"),
                 },
-                "required": ["doc_ids"],
-            },
+                required=["doc_ids"],
+            ),
             handler=self._forget_memory,
         )
 
         self.register_tool(
             name="memory_stats",
             description="Get memory system statistics",
-            input_schema={
-                "type": "object",
-                "properties": {},
-            },
+            input_schema=create_tool_schema(
+                properties={},
+                required=[],
+            ),
             handler=self._memory_stats,
         )
 

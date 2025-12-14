@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import { createBuildConfig } from '../vite.config.shared'
 
 export default defineConfig({
   plugins: [vue()],
@@ -9,12 +10,8 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  base: '/DevTeam6/projects/',
-  server: {
+  ...createBuildConfig({
+    base: '/DevTeam6/projects/',
     port: 5174,
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: true,
-  },
+  }),
 })

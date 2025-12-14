@@ -1,14 +1,11 @@
+import { normalize } from './math'
+
 /**
  * Calculates a normalized glow strength for UI meters and cards.
  * Values are clamped to avoid negative intensities and to keep gradients stable.
  */
 export function calculateGlowStrength(value: number, max: number = 100) {
-  if (max <= 0) {
-    throw new Error('max must be greater than 0')
-  }
-
-  const clampedValue = Math.min(Math.max(value, 0), max)
-  const intensity = clampedValue / max
+  const intensity = normalize(value, 0, max)
   const hue = 180 + (1 - intensity) * 120 // Cyan (high) → Magenta (low)
   const alpha = 0.35 + intensity * 0.35
 

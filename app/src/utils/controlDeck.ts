@@ -1,4 +1,5 @@
 import { extractYouTubeId } from './youtube'
+import { clamp } from './math'
 
 /**
  * Sanitize and normalize embed URLs for the Control Deck video hub.
@@ -15,7 +16,7 @@ export function sanitizeEmbedUrl(url: string): string | null {
  * Clamps load between 0 and 1 to avoid invalid percentages.
  */
 export function getLoadStatus(framesPerSecond: number, load: number) {
-  const normalizedLoad = Math.min(Math.max(load, 0), 1)
+  const normalizedLoad = clamp(load, 0, 1)
   if (normalizedLoad < 0.35) {
     return {
       label: 'Calm',
