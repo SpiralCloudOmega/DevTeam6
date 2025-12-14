@@ -25,7 +25,7 @@
 [![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 [![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
-![Roadmap Progress](.github/badges/roadmap-progress.svg)
+[![Roadmap Progress](.github/badges/roadmap-progress.svg)](https://spiralcloudomega.github.io/DevTeam6/roadmap)
 [![3D Demo](https://img.shields.io/badge/3D_DEMO-LIVE-ff0066?style=for-the-badge&logo=threedotjs&logoColor=white)](https://spiralcloudomega.github.io/DevTeam6/)
 [![Leaderboard](https://img.shields.io/badge/🏆_LEADERBOARD-ff6600?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/gamification)
 [![Onboarding](https://img.shields.io/badge/🚀_GET_STARTED-00ff88?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/onboarding)
@@ -169,13 +169,8 @@ flowchart TB
 | **Last Updated** | 2025-12-14 06:16 UTC |
 
 #### 🎯 Phase Status
-![Foundation](.github/badges/phase-foundation.svg)
-![Expansion](.github/badges/phase-expansion.svg)
-![Visual](.github/badges/phase-visual.svg)
-![Interactive](.github/badges/phase-interactive.svg)
-![GenUI](.github/badges/phase-genui.svg)
-![Community](.github/badges/phase-community.svg)
-![AI Integration](.github/badges/phase-ai-integration.svg)
+![Foundation](.github/badges/phase-foundation.svg) ![Expansion](.github/badges/phase-expansion.svg) ![Visual](.github/badges/phase-visual.svg) ![Interactive](.github/badges/phase-interactive.svg)  
+![GenUI](.github/badges/phase-genui.svg) ![Community](.github/badges/phase-community.svg) ![AI Integration](.github/badges/phase-ai-integration.svg)
 
 <!-- ROADMAP-STATS-END -->
 

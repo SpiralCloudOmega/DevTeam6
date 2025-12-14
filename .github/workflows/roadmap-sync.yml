@@ -168,13 +168,8 @@ jobs:
           | **Last Updated** | ${LAST_UPDATE} |\\
           \\
           #### 🎯 Phase Status\\
-          ![Foundation](.github/badges/phase-foundation.svg)\\
-          ![Expansion](.github/badges/phase-expansion.svg)\\
-          ![Visual](.github/badges/phase-visual.svg)\\
-          ![Interactive](.github/badges/phase-interactive.svg)\\
-          ![GenUI](.github/badges/phase-genui.svg)\\
-          ![Community](.github/badges/phase-community.svg)\\
-          ![AI Integration](.github/badges/phase-ai-integration.svg)\\
+          ![Foundation](.github/badges/phase-foundation.svg) ![Expansion](.github/badges/phase-expansion.svg) ![Visual](.github/badges/phase-visual.svg) ![Interactive](.github/badges/phase-interactive.svg)  \\
+          ![GenUI](.github/badges/phase-genui.svg) ![Community](.github/badges/phase-community.svg) ![AI Integration](.github/badges/phase-ai-integration.svg)\\
           \\
           <!-- ROADMAP-STATS-END -->" README.md
             
