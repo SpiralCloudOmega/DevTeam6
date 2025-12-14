@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         working-directory: ./app
         run: |
-          if [ -f package-lock.json ]; then
+          if [ -f ./package-lock.json ]; then
             npm ci
           else
             npm install
@@ -51,7 +51,9 @@ jobs:
             echo "Error: node_modules directory not found"
             exit 1
           fi
-          echo "Dependencies installed successfully"
+          echo "✅ Dependencies installed successfully"
+          echo "Installed packages:"
+          npm list --depth=0 || true
 
       - name: Build
         working-directory: ./app
