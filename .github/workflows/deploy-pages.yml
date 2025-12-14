@@ -37,7 +37,21 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./app
-        run: npm ci || npm install
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Verify installation
+        working-directory: ./app
+        run: |
+          if [ ! -d "node_modules" ]; then
+            echo "Error: node_modules directory not found"
+            exit 1
+          fi
+          echo "Dependencies installed successfully"
 
       - name: Build
         working-directory: ./app
