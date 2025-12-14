@@ -192,18 +192,42 @@ curl -X POST http://localhost:8000/embed \
 
 ### Identified but Not Implemented (Low Priority)
 
-1. **Bundle Size** (React)
+1. **KnowledgeGraph Singleton** (Python)
+   - Location: `/stats` endpoint
+   - Issue: Still instantiated per request
+   - Recommendation: Add to singleton pattern like other services
+   - Impact: Low - Stats endpoint not a hot path
+   - Effort: Low
+   - Status: Documented for future PR
+
+2. **Context7Sync Resource Cleanup** (Python)
+   - Location: Shutdown handler
+   - Issue: Only calls `save()`, may need `close()` for consistency
+   - Recommendation: Verify if additional cleanup needed, add `close()` method
+   - Impact: Low - Potential resource leak on shutdown
+   - Effort: Low
+   - Status: Needs investigation of Context7Sync implementation
+
+3. **Agent State Save Batching** (Python)
+   - Location: `/agents/sync` endpoint
+   - Issue: Calls `save()` on every update (I/O per request)
+   - Recommendation: Batch saves or use background task
+   - Impact: Low - Agent sync not high frequency
+   - Effort: Medium
+   - Status: Documented for future PR
+
+4. **Bundle Size** (React)
    - Current: 1.46 MB (417 KB gzipped)
    - Recommendation: Code splitting and lazy loading
    - Impact: Medium - Load time improvement
    - Effort: Medium
 
-2. **Connection Pooling Enhancement** (Python)
+5. **Connection Pooling Enhancement** (Python)
    - Add configurable connection pool limits
    - Impact: Low - Already optimal
    - Effort: Low
 
-3. **Caching Layer** (Python)
+6. **Caching Layer** (Python)
    ```python
    from functools import lru_cache
    
@@ -214,7 +238,7 @@ curl -X POST http://localhost:8000/embed \
    - Impact: Medium - For repeated queries
    - Effort: Low
 
-4. **Rate Limiting** (Python)
+7. **Rate Limiting** (Python)
    ```python
    from fastapi_limiter import FastAPILimiter
    

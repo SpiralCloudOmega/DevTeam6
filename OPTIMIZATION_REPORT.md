@@ -120,13 +120,28 @@ See [PERFORMANCE_OPTIMIZATION_FASTAPI.md](./PERFORMANCE_OPTIMIZATION_FASTAPI.md)
 
 ### Identified for Future Optimization
 
-1. **Inline Style Objects** (React)
-   - Found: 371 instances of `style={{...}}`
-   - Impact: Minor - creates new objects on each render
-   - Recommendation: Move to CSS classes or constant objects
-   - Status: ⚠️ Low priority, not critical
+1. **KnowledgeGraph Singleton** (Python) - Code Review Finding
+   - Location: `local-ai/api/main.py` - `/stats` endpoint
+   - Issue: Still instantiated per request while other services use singletons
+   - Impact: Low - Stats endpoint is not a hot path
+   - Recommendation: Add KnowledgeGraph to singleton pattern for consistency
+   - Status: ⚠️ Documented for future PR
 
-2. **Bundle Size**
+2. **Context7Sync Resource Cleanup** (Python) - Code Review Finding
+   - Location: `local-ai/api/main.py` - shutdown handler
+   - Issue: Only calls `save()`, may need `close()` method for consistency
+   - Impact: Low - Potential resource leak on shutdown
+   - Recommendation: Investigate and add `close()` if needed
+   - Status: ⚠️ Needs implementation verification
+
+3. **Agent State Save Batching** (Python) - Code Review Finding
+   - Location: `local-ai/api/main.py` - `/agents/sync` endpoint
+   - Issue: Calls `save()` on every update (I/O per request)
+   - Impact: Low - Agent sync not high frequency endpoint
+   - Recommendation: Implement batching or background save task
+   - Status: ⚠️ Documented for future PR
+
+4. **Bundle Size** (React)
    - Current: 1.46 MB (417 KB gzipped)
    - Recommendation: Consider code splitting and lazy loading
    - Status: ⚠️ Future optimization opportunity
