@@ -186,7 +186,7 @@ export default function ProjectRoadmap() {
     const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
     return { totalTasks, completedTasks, inProgressTasks, progress };
-  }, []);
+  }, [projectPhases]);
 
   const { totalTasks, completedTasks, inProgressTasks, progress } = stats;
 
