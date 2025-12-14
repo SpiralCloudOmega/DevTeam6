@@ -412,7 +412,9 @@ export default function SemanticKnowledgeHub() {
       totalResources += node.resources.length;
     }
 
-    const overallCompleteness = Math.round(totalCompleteness / nodes.length);
+    const overallCompleteness = nodes.length > 0 
+      ? Math.round(totalCompleteness / nodes.length) 
+      : 0;
 
     return { overallCompleteness, totalResources };
   }, [nodes]);
