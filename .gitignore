@@ -37,6 +37,14 @@ yarn-error.log*
 .cache/
 *.local
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
 # Lock files (keep package-lock.json for reproducibility)
 # yarn.lock
 # pnpm-lock.yaml

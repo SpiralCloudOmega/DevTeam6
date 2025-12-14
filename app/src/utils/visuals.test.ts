@@ -8,8 +8,8 @@ describe('visuals utils', () => {
   })
 
   it('rejects non-positive max values', () => {
-    expect(() => calculateGlowStrength(10, 0)).toThrowError('max must be greater than 0')
-    expect(() => calculateGlowStrength(10, -5)).toThrowError('max must be greater than 0')
+    expect(() => calculateGlowStrength(10, 0)).toThrowError('max must be greater than min')
+    expect(() => calculateGlowStrength(10, -5)).toThrowError('max must be greater than min')
   })
 
   it('returns pulse-friendly tones', () => {

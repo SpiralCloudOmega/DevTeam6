@@ -6,6 +6,13 @@ MCP server for Retrieval-Augmented Generation operations.
 
 from typing import Dict, Any, List, Optional
 from .base_server import BaseMCPServer
+from .tool_schemas import (
+    create_tool_schema,
+    create_string_property,
+    create_integer_property,
+    create_object_property,
+    create_array_property,
+)
 from core.rag_pipeline import RAGPipeline
 
 
@@ -39,81 +46,53 @@ class RAGMCPServer(BaseMCPServer):
         self.register_tool(
             name="rag_generate",
             description="Generate an answer using RAG (retrieval-augmented generation)",
-            input_schema={
-                "type": "object",
-                "properties": {
-                    "query": {
-                        "type": "string",
-                        "description": "Question or prompt",
-                    },
-                    "context_sources": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "description": "Filter by source categories",
-                    },
-                    "top_k": {
-                        "type": "integer",
-                        "description": "Number of context documents",
-                        "default": 5,
-                    },
+            input_schema=create_tool_schema(
+                properties={
+                    "query": create_string_property("Question or prompt"),
+                    "context_sources": create_array_property("Filter by source categories", item_type="string"),
+                    "top_k": create_integer_property("Number of context documents", default=5),
                 },
-                "required": ["query"],
-            },
+                required=["query"],
+            ),
             handler=self._rag_generate,
         )
 
         self.register_tool(
             name="semantic_search",
             description="Search for relevant documents using semantic similarity",
-            input_schema={
-                "type": "object",
-                "properties": {
-                    "query": {
-                        "type": "string",
-                        "description": "Search query",
-                    },
-                    "top_k": {
-                        "type": "integer",
-                        "description": "Number of results",
-                        "default": 5,
-                    },
+            input_schema=create_tool_schema(
+                properties={
+                    "query": create_string_property("Search query"),
+                    "top_k": create_integer_property("Number of results", default=5),
                     "score_threshold": {
                         "type": "number",
                         "description": "Minimum similarity score",
                         "default": 0.7,
                     },
                 },
-                "required": ["query"],
-            },
+                required=["query"],
+            ),
             handler=self._semantic_search,
         )
 
         self.register_tool(
             name="store_document",
             description="Store a document for later retrieval",
-            input_schema={
-                "type": "object",
-                "properties": {
-                    "content": {
-                        "type": "string",
-                        "description": "Document content",
-                    },
-                    "metadata": {
-                        "type": "object",
-                        "description": "Document metadata (title, source, etc.)",
-                    },
+            input_schema=create_tool_schema(
+                properties={
+                    "content": create_string_property("Document content"),
+                    "metadata": create_object_property("Document metadata (title, source, etc.)"),
                 },
-                "required": ["content"],
-            },
+                required=["content"],
+            ),
             handler=self._store_document,
         )
 
         self.register_tool(
             name="store_documents_batch",
             description="Store multiple documents at once",
-            input_schema={
-                "type": "object",
-                "properties": {
+            input_schema=create_tool_schema(
+                properties={
                     "documents": {
                         "type": "array",
                         "items": {
@@ -127,8 +106,8 @@ class RAGMCPServer(BaseMCPServer):
                         "description": "List of documents to store",
                     },
                 },
-                "required": ["documents"],
-            },
+                required=["documents"],
+            ),
             handler=self._store_batch,
         )
 
