@@ -1,14 +1,66 @@
 # 🤖 GitHub Copilot Agent Command Cheatsheet
 
-> **Quick reference for GitHub Copilot agent commands and context limits**
+> **Complete reference for GitHub Copilot agent commands and context limits - Feed this to any Copilot to help them understand their own command structure**
 
 ---
 
 ## 📋 Table of Contents
 
-1. [Core Agent Commands](#core-agent-commands)
-2. [Context Window Limits](#context-window-limits)
-3. [Quick Tips](#quick-tips)
+1. [All GitHub Copilot Commands](#all-github-copilot-commands)
+2. [Core Agent Commands](#core-agent-commands)
+3. [Context Window Limits](#context-window-limits)
+4. [Quick Tips](#quick-tips)
+
+---
+
+## 🎯 All GitHub Copilot Commands
+
+### Complete Command Structure
+
+GitHub Copilot supports the following command patterns:
+
+```bash
+# Agent invocation pattern
+@agent-name <prompt>
+
+# Slash commands (in chat)
+/explain <code or selection>
+/fix <problem description>
+/tests <code to test>
+/help <topic>
+/clear (clear conversation)
+
+# File references
+@workspace /path/to/file.ts: <prompt>
+#file:/path/to/file.ts <prompt>
+
+# Inline suggestions
+# Just start typing and Copilot suggests completions
+
+# Chat panel commands
+Ctrl+I / Cmd+I (inline chat)
+Ctrl+Shift+I / Cmd+Shift+I (chat panel)
+```
+
+### All Available Agents
+
+| Agent | Command | Purpose | Scope | When to Use |
+|-------|---------|---------|-------|-------------|
+| **@workspace** | `@workspace <prompt>` | Multi-file operations, architecture | Entire repository | Code search, refactoring across files, project-wide questions |
+| **@terminal** | `@terminal <command>` | CLI execution, shell operations | Terminal/shell | Running builds, tests, git commands, npm/pip installs |
+| **@vscode** | `@vscode <action>` | IDE operations | VS Code API | Settings, extensions, keybindings, editor actions |
+| **Custom agents** | `@agent-name <prompt>` | Specialized tasks | Defined in .github/agents/ | Domain-specific tasks (e.g., @react-agent, @python-agent) |
+
+### Slash Commands Reference
+
+| Command | Syntax | Purpose | Example |
+|---------|--------|---------|---------|
+| **/explain** | `/explain` | Explain selected code | `/explain how this function works` |
+| **/fix** | `/fix` | Fix bugs or issues | `/fix the memory leak in this component` |
+| **/tests** | `/tests` | Generate test cases | `/tests for the authentication module` |
+| **/help** | `/help [topic]` | Get help on Copilot features | `/help agents` |
+| **/clear** | `/clear` | Clear chat history | `/clear` |
+| **/new** | `/new` | Start new project/file | `/new React component` |
 
 ---
 
@@ -20,7 +72,7 @@
 @agent-name <your prompt here>
 ```
 
-### Built-in GitHub Copilot Agents
+### Built-in GitHub Copilot Agents (Detailed)
 
 | Agent | Command | Purpose | Context Access |
 |-------|---------|---------|----------------|
@@ -65,11 +117,10 @@ ls -la .github/agents/
 
 | Model/Agent | Context Window | Usable Context | Tokens/Request |
 |-------------|----------------|----------------|----------------|
-| **GPT-4** | 128K tokens | ~100K tokens | ~400K characters |
-| **GPT-4 Turbo** | 128K tokens | ~100K tokens | ~400K characters |
-| **Claude 3.5 Sonnet** | 200K tokens | ~180K tokens | ~720K characters |
-| **Claude 3 Opus** | 200K tokens | ~180K tokens | ~720K characters |
-| **GPT-3.5 Turbo** | 16K tokens | ~12K tokens | ~48K characters |
+| **GPT-5.2** | 200K tokens | ~180K tokens | ~720K characters |
+| **Claude Opus 4.5** | 200K tokens | ~180K tokens | ~720K characters |
+| **Claude Sonnet 4.5** | 200K tokens | ~180K tokens | ~720K characters |
+| **Gemini 3 Thinking** | 2M tokens | ~1.8M tokens | ~7.2M characters |
 
 ### Token Estimation
 
@@ -115,9 +166,18 @@ Too Large:        > 100K tokens    > 400K chars       Split into parts
 
 ---
 
-## 💡 Quick Tips
+## 💡 Quick Tips & Prompting Guide
 
-### Effective Prompts
+### Understanding Copilot's Architecture
+
+**GitHub Copilot consists of:**
+1. **Inline Suggestions** - Code completions as you type
+2. **Chat Interface** - Conversational coding assistant
+3. **Agent System** - Specialized agents for different scopes (@workspace, @terminal, @vscode)
+4. **Custom Agents** - Repository-specific agents defined in .github/agents/
+5. **Slash Commands** - Quick actions (/explain, /fix, /tests)
+
+### Effective Prompts (Feed Format)
 
 ```bash
 # ❌ Bad: Vague request
@@ -125,33 +185,135 @@ Too Large:        > 100K tokens    > 400K chars       Split into parts
 
 # ✅ Good: Specific with context
 @workspace Refactor /app/auth.ts to use async/await and add TypeScript types
+
+# ❌ Bad: No scope
+Explain the database code
+
+# ✅ Good: With file reference
+@workspace Explain the database connection pooling in /db/connection.ts
+
+# ❌ Bad: Too broad
+@workspace Review everything
+
+# ✅ Good: Focused scope
+@workspace Review authentication logic in /auth/ directory for security issues
 ```
 
 ### Managing Large Contexts
 
 ```bash
-# Break large tasks into chunks
-@workspace Analyze the /api directory structure
+# IMPORTANT: Context limits are PER REQUEST, not per session
+# Each new message to Copilot starts with limited context window
 
-# Then in a new request
+# Strategy 1: Break tasks into chunks
+@workspace Analyze the /api directory structure
+# Then in NEW request:
 @workspace Create a new endpoint for /api/users following the existing pattern
+
+# Strategy 2: Explicit file references
+@workspace Focus only on these files:
+- /app/auth.ts
+- /app/session.ts
+Refactor to use JWT tokens
+
+# Strategy 3: Progressive refinement
+# Request 1: High-level
+@workspace What's the best approach for caching?
+# Request 2: Implementation
+@workspace Implement Redis caching for user sessions
+# Request 3: Details
+@workspace Add error handling and retry logic to Redis cache
 ```
 
-### Best Practices
+### Best Practices (Copilot Command Structure)
 
 **DO:**
-- Be specific about files and requirements
-- Break large tasks into smaller requests  
-- Reference exact file paths
-- Specify your tech stack constraints
+- Use `@workspace` for multi-file or repo-wide operations
+- Use `@terminal` for running commands, builds, tests
+- Use `@vscode` for IDE-specific actions
+- Reference files explicitly: `/path/to/file.ts`
+- Break tasks into digestible chunks (< 50K tokens per request)
+- Specify your tech stack: "Using React 19, TypeScript, Tailwind"
+- Use slash commands for quick actions: `/explain`, `/fix`, `/tests`
 
 **DON'T:**
-- Assume unlimited context memory
-- Mix multiple unrelated tasks
-- Be vague about what you want
-- Expect the agent to remember earlier sessions
+- Mix agents (don't ask @terminal for code explanations)
+- Assume infinite context (each request has token limits)
+- Be vague ("fix it", "make it better")
+- Expect memory across separate chat sessions
+- Overload a single request with too many tasks
+- Forget that Copilot can't see your screen (describe what you see)
+
+### Context Window Best Practices
+
+**For GPT-5.2, Claude Opus/Sonnet 4.5 (~180K tokens):**
+- Can handle: 20-30 medium files, 1 large module, full feature analysis
+- Break up: Entire large codebases, multi-module refactors
+
+**For Gemini 3 Thinking (~1.8M tokens):**
+- Can handle: Entire small-to-medium repos, comprehensive architecture analysis
+- Break up: Very large monorepos, enterprise-scale codebases
 
 
+
+---
+
+## 📋 Copilot System Prompt Feed
+
+**Copy this section to feed to another Copilot to teach it about its own command structure:**
+
+```
+SYSTEM: GitHub Copilot Command Structure & Context Limits
+
+AVAILABLE COMMANDS:
+- @workspace <prompt> - Multi-file operations, entire repository scope
+- @terminal <command> - Execute shell commands, run builds/tests
+- @vscode <action> - IDE operations, settings, extensions
+- Custom: @agent-name <prompt> - Repository-specific agents in .github/agents/
+
+SLASH COMMANDS:
+- /explain - Explain code
+- /fix - Fix bugs or issues
+- /tests - Generate tests
+- /help - Get help
+- /clear - Clear chat history
+- /new - Create new files/components
+
+CONTEXT LIMITS PER REQUEST:
+- GPT-5.2: 180K tokens (~720K chars) - Use for comprehensive multi-file analysis
+- Claude Opus 4.5: 180K tokens (~720K chars) - Use for complex reasoning tasks
+- Claude Sonnet 4.5: 180K tokens (~720K chars) - Use for balanced speed/capacity
+- Gemini 3 Thinking: 1.8M tokens (~7.2M chars) - Use for entire codebase analysis
+
+TOKEN CONVERSION:
+1 token ≈ 4 characters ≈ 0.75 words
+100 lines code ≈ 500-1000 tokens
+Single file ≈ 200-5000 tokens
+Module/directory ≈ 10K-50K tokens
+
+IMPORTANT CONSTRAINTS:
+- Context limit is PER REQUEST, not per session
+- Each new message starts fresh with limited context window
+- Agent cannot remember previous chat sessions
+- Agent cannot see your screen - must describe visual issues
+- Break large tasks into chunks to stay within token limits
+- Always specify file paths explicitly
+- Declare tech stack constraints upfront
+
+PROMPTING BEST PRACTICES:
+✓ Specific: "@workspace Refactor /app/auth.ts to use async/await"
+✗ Vague: "@workspace Fix the code"
+✓ Scoped: "@workspace Review /auth/ directory for security"
+✗ Broad: "@workspace Review everything"
+✓ Sequential: Break into multiple focused requests
+✗ Overloaded: Put 10 tasks in one request
+
+AGENT SELECTION:
+- Use @workspace for: code search, multi-file refactoring, architecture questions
+- Use @terminal for: npm install, git commands, running tests, building
+- Use @vscode for: changing settings, installing extensions, editor actions
+- Use custom agents for: domain-specific tasks (React, Python, DevOps, etc.)
+```
 
 ---
 
@@ -167,6 +329,6 @@ Too Large:        > 100K tokens    > 400K chars       Split into parts
 
 **Made with 💙 by DevTeam6**
 
-*Quick reference v1.0 | Last updated: 2025-12-14*
+*v2.0 - Comprehensive Feed Format | Updated: 2025-12-14*
 
 </div>
