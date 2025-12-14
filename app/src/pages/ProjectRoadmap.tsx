@@ -171,24 +171,28 @@ export default function ProjectRoadmap() {
     let totalTasks = 0;
     let completedTasks = 0;
     let inProgressTasks = 0;
+    const phaseStats = new Map<string, number>();
 
     for (const phase of projectPhases) {
+      let phaseCompleted = 0;
       for (const task of phase.tasks) {
         totalTasks++;
         if (task.status === 'done') {
           completedTasks++;
+          phaseCompleted++;
         } else if (task.status === 'in-progress') {
           inProgressTasks++;
         }
       }
+      phaseStats.set(phase.id, phaseCompleted);
     }
 
     const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
-    return { totalTasks, completedTasks, inProgressTasks, progress };
+    return { totalTasks, completedTasks, inProgressTasks, progress, phaseStats };
   }, [projectPhases]);
 
-  const { totalTasks, completedTasks, inProgressTasks, progress } = stats;
+  const { totalTasks, completedTasks, inProgressTasks, progress, phaseStats } = stats;
 
   return (
     <div className="project-roadmap">
@@ -347,7 +351,7 @@ export default function ProjectRoadmap() {
                       width: `${100 / 7}%`
                     }}
                   >
-                    <span className="bar-label">{phase.tasks.filter(t => t.status === 'done').length}/{phase.tasks.length}</span>
+                    <span className="bar-label">{phaseStats.get(phase.id) || 0}/{phase.tasks.length}</span>
                   </div>
                 </div>
               </div>

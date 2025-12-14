@@ -234,9 +234,10 @@ const stats = useMemo(() => {
 ### Fixed Issues
 1. ✅ **GamificationDashboard** - Eliminated duplicate filter operations with useMemo
 2. ✅ **NodeGraphEditor** - Reduced triple filter to single-pass counting
-3. ✅ **ProjectRoadmap** - Combined multiple reduce operations into single pass
+3. ✅ **ProjectRoadmap** - Combined multiple reduce operations into single pass + per-phase stats
 4. ✅ **SemanticKnowledgeHub** - Memoized resource count calculation
 5. ✅ **VideoStorytelling** - Preprocessed chapter timings to eliminate repeated calculations
+6. ✅ **OnboardingWizard** - Memoized progress calculation
 
 ### Identified Issues (Not Fixed)
 1. ⚠️ **FastAPI Service Lifecycle** - Service instances created per request (recommended for future PR)
@@ -245,18 +246,20 @@ const stats = useMemo(() => {
 ### Performance Gains
 - **GamificationDashboard:** 50% reduction in filter operations (2→1)
 - **NodeGraphEditor:** 67% reduction in filter operations (3→1)
-- **ProjectRoadmap:** Eliminated 2 redundant reduce operations, single O(n+m) pass
+- **ProjectRoadmap:** Eliminated 2+ redundant reduce operations + per-phase filters
 - **SemanticKnowledgeHub:** 50% reduction in iterations (2→1), memoized
 - **VideoStorytelling:** O(n²) → O(n) for chapter timing calculations
+- **OnboardingWizard:** Memoized to prevent recalc on unrelated state changes
 - Documented best practices for future development
 - Identified optimization opportunities for future improvements
 
 ### Impact by Numbers
-- **Total redundant operations eliminated:** 8+ per render cycle across components
+- **Total redundant operations eliminated:** 10+ per render cycle across components
 - **Array iterations saved:** 50-67% reduction in most components, O(n²)→O(n) in VideoStorytelling
 - **Code maintainability:** Significantly improved with single-pass algorithms
 - **Memoization coverage:** All computational statistics now properly memoized
 - **Scalability:** Much better performance for large datasets (100+ items)
+- **Timeline rendering:** O(1) lookups instead of O(n) filters per phase
 
 ### Testing
 - ✅ No breaking changes
@@ -415,6 +418,86 @@ const chapterStart = timings[idx];
 - ✅ Single O(n) preprocessing instead of repeated calculations
 - ✅ Memoized, only recalculated when chapters change
 - ✅ Scales well for videos with many chapters
+
+### 7. OnboardingWizard.tsx - Unmemoized Progress Calculation ✅ FIXED
+
+**Location:** `app/src/pages/OnboardingWizard.tsx`
+
+**Problem:**
+```typescript
+// Lines 112-113 - filter operation recalculated on every render
+const completedCount = steps.filter(s => s.completed).length
+const progress = (completedCount / steps.length) * 100
+```
+
+Progress calculation was executed on every render, even when steps state hadn't changed. Since the component has other state (currentStep, copiedIndex), this caused unnecessary recalculations.
+
+**Impact:**
+- **Render Performance:** Eliminated redundant filter on unrelated state changes
+- **User Experience:** Smoother interactions when navigating steps
+
+**Solution:**
+```typescript
+// Memoize progress calculation
+const { completedCount, progress } = useMemo(() => {
+  const completed = steps.filter(s => s.completed).length
+  return {
+    completedCount: completed,
+    progress: (completed / steps.length) * 100
+  }
+}, [steps])
+```
+
+**Benefits:**
+- ✅ Only recalculates when steps array changes
+- ✅ Prevents unnecessary work on other state updates
+- ✅ Cleaner code structure
+
+### 8. ProjectRoadmap.tsx - Additional Timeline Filter ✅ FIXED
+
+**Location:** `app/src/pages/ProjectRoadmap.tsx` (Timeline view)
+
+**Problem:**
+```typescript
+// Line 350 - filter inside map, executed for each phase
+<span className="bar-label">{phase.tasks.filter(t => t.status === 'done').length}/{phase.tasks.length}</span>
+```
+
+Inside the timeline rendering, completed tasks were filtered for each phase on every render, even though we already calculate this data.
+
+**Impact:**
+- **Redundant Work:** Duplicate calculation of data already computed
+- **Timeline Rendering:** Multiple filters during render
+
+**Solution:**
+Extended the existing stats calculation to include per-phase completed counts:
+```typescript
+const stats = useMemo(() => {
+  // ... existing code ...
+  const phaseStats = new Map<string, number>();
+
+  for (const phase of projectPhases) {
+    let phaseCompleted = 0;
+    for (const task of phase.tasks) {
+      // ... count tasks ...
+      if (task.status === 'done') {
+        phaseCompleted++;
+      }
+    }
+    phaseStats.set(phase.id, phaseCompleted);
+  }
+  
+  return { ..., phaseStats };
+}, [projectPhases]);
+
+// Use in render
+<span className="bar-label">{phaseStats.get(phase.id) || 0}/{phase.tasks.length}</span>
+```
+
+**Benefits:**
+- ✅ No additional loops, computed in existing single pass
+- ✅ O(1) lookup instead of O(n) filter for each phase
+- ✅ Memoized with other stats
 
 ## Future Optimization Opportunities
 
