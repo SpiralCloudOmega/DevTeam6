@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 
 interface VideoChapter {
   id: string;
@@ -213,9 +213,22 @@ const DemoVideoPlayer = ({ video, currentChapter, onChapterChange }: {
   const intervalRef = useRef<number | null>(null);
   
   const chapter = video.chapters[currentChapter];
-  const totalDuration = video.chapters.reduce((sum, ch) => sum + ch.duration, 0);
-  const currentTime = video.chapters.slice(0, currentChapter).reduce((sum, ch) => sum + ch.duration, 0) + 
-    (progress / 100) * chapter.duration;
+  
+  // Memoize chapter timings - single pass through chapters
+  const chapterTimings = useMemo(() => {
+    const timings: number[] = [];
+    let totalDuration = 0;
+    
+    for (const ch of video.chapters) {
+      timings.push(totalDuration);
+      totalDuration += ch.duration;
+    }
+    
+    return { timings, totalDuration };
+  }, [video.chapters]);
+  
+  const { timings, totalDuration } = chapterTimings;
+  const currentTime = timings[currentChapter] + (progress / 100) * chapter.duration;
   
   useEffect(() => {
     if (isPlaying) {
@@ -367,7 +380,7 @@ const DemoVideoPlayer = ({ video, currentChapter, onChapterChange }: {
         }}>
           {/* Chapter markers */}
           {video.chapters.map((ch, idx) => {
-            const chapterStart = video.chapters.slice(0, idx).reduce((sum, c) => sum + c.duration, 0);
+            const chapterStart = timings[idx];
             return (
               <div
                 key={ch.id}
