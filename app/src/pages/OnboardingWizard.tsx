@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 interface Step {
   id: number
@@ -109,8 +109,14 @@ function OnboardingWizard() {
   const [currentStep, setCurrentStep] = useState(0)
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
-  const completedCount = steps.filter(s => s.completed).length
-  const progress = (completedCount / steps.length) * 100
+  // Memoize progress calculation
+  const { completedCount, progress } = useMemo(() => {
+    const completed = steps.filter(s => s.completed).length
+    return {
+      completedCount: completed,
+      progress: (completed / steps.length) * 100
+    }
+  }, [steps])
 
   const toggleStep = (stepId: number) => {
     setSteps(prev => prev.map(step => 

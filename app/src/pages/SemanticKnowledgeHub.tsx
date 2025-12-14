@@ -402,11 +402,24 @@ export default function SemanticKnowledgeHub() {
     isDragging.current = false
   }
   
-  // Calculate overall completeness - memoize
-  const overallCompleteness = useMemo(() => 
-    Math.round(nodes.reduce((sum, n) => sum + n.completeness, 0) / nodes.length),
-    [nodes]
-  )
+  // Calculate overall stats - memoize
+  const hubStats = useMemo(() => {
+    let totalCompleteness = 0;
+    let totalResources = 0;
+
+    for (const node of nodes) {
+      totalCompleteness += node.completeness;
+      totalResources += node.resources.length;
+    }
+
+    const overallCompleteness = nodes.length > 0 
+      ? Math.round(totalCompleteness / nodes.length) 
+      : 0;
+
+    return { overallCompleteness, totalResources };
+  }, [nodes]);
+
+  const { overallCompleteness, totalResources } = hubStats;
   
   // Render connections - memoize to avoid recreating on every render
   const connections = useMemo(() => {
@@ -988,7 +1001,7 @@ export default function SemanticKnowledgeHub() {
             <div className="stat-label">Coverage</div>
           </div>
           <div className="stat-item">
-            <div className="stat-value">{nodes.reduce((sum, n) => sum + n.resources.length, 0)}</div>
+            <div className="stat-value">{totalResources}</div>
             <div className="stat-label">Resources</div>
           </div>
         </div>
