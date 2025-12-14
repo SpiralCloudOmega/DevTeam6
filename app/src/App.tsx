@@ -5,19 +5,20 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 // Configuration constants for performance and visual tuning
+// Optimized for better performance while maintaining visual quality
 const GRID_CONFIG = {
   WIDTH: 400,
   DEPTH: 600,
-  SEGMENTS_X: 200,  // Higher = tighter triangles, more GPU intensive
-  SEGMENTS_Z: 300,
+  SEGMENTS_X: 150,  // Reduced from 200 for better performance
+  SEGMENTS_Z: 200,  // Reduced from 300 for better performance
   PERSPECTIVE_FACTOR: 0.6  // Controls how much the grid widens with distance
 }
 
 const PARTICLE_CONFIG = {
-  COUNT: 1200,  // Particle count - reduce for lower-end devices
+  COUNT: 800,  // Reduced from 1200 for better performance
   BOUNDS: 40,   // Z-axis bounds for particle wrapping
-  ELECTRON_ORBIT_COUNT: 30,  // Number of electron particles per orb
-  STAR_COUNT: 18000  // Background star count
+  ELECTRON_ORBIT_COUNT: 20,  // Reduced from 30 for better performance
+  STAR_COUNT: 12000  // Reduced from 18000 for better performance
 }
 
 const LIGHTING_CONFIG = {
