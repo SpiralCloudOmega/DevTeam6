@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -61,6 +61,14 @@ const rarityColors: Record<string, string> = {
 function GamificationDashboard() {
   const [selectedTab, setSelectedTab] = useState<'leaderboard' | 'achievements' | 'stats'>('leaderboard')
   const [animatedScores, setAnimatedScores] = useState<number[]>([])
+
+  // Memoize achievement stats to avoid duplicate filter operations
+  const achievementStats = useMemo(() => {
+    const unlockedCount = achievements.filter(a => a.unlocked).length
+    const totalCount = achievements.length
+    const completionPercentage = Math.round((unlockedCount / totalCount) * 100)
+    return { unlockedCount, totalCount, completionPercentage }
+  }, [])
 
   useEffect(() => {
     // Animate scores on mount
@@ -242,15 +250,15 @@ function GamificationDashboard() {
           <div className="achievements-section">
             <div className="achievements-summary">
               <div className="summary-card">
-                <span className="value">{achievements.filter(a => a.unlocked).length}</span>
+                <span className="value">{achievementStats.unlockedCount}</span>
                 <span className="label">Unlocked</span>
               </div>
               <div className="summary-card">
-                <span className="value">{achievements.length}</span>
+                <span className="value">{achievementStats.totalCount}</span>
                 <span className="label">Total</span>
               </div>
               <div className="summary-card">
-                <span className="value">{Math.round((achievements.filter(a => a.unlocked).length / achievements.length) * 100)}%</span>
+                <span className="value">{achievementStats.completionPercentage}%</span>
                 <span className="label">Completion</span>
               </div>
             </div>
