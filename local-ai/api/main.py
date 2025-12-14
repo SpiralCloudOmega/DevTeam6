@@ -6,11 +6,17 @@ Main API server for the Local AI system.
 
 from typing import Dict, Any, List, Optional
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from config.settings import get_settings
+
+# Global service instances (singleton pattern)
+_embedding_service = None
+_memory_system = None
+_rag_pipeline = None
+_context7_sync = None
 
 
 # Request/Response Models
@@ -91,6 +97,44 @@ class HealthResponse(BaseModel):
     memory_count: int
 
 
+# Dependency injection functions
+async def get_embedding_service():
+    """Get or create embedding service singleton."""
+    global _embedding_service
+    if _embedding_service is None:
+        from core.embedding_service import EmbeddingService
+        _embedding_service = EmbeddingService()
+    return _embedding_service
+
+
+async def get_memory_system():
+    """Get or create memory system singleton."""
+    global _memory_system
+    if _memory_system is None:
+        from core.memory_system import MemorySystem
+        _memory_system = MemorySystem()
+    return _memory_system
+
+
+async def get_rag_pipeline():
+    """Get or create RAG pipeline singleton."""
+    global _rag_pipeline
+    if _rag_pipeline is None:
+        from core.rag_pipeline import RAGPipeline
+        _rag_pipeline = RAGPipeline()
+    return _rag_pipeline
+
+
+async def get_context7_sync():
+    """Get or create Context7 sync singleton."""
+    global _context7_sync
+    if _context7_sync is None:
+        from core.context7_sync import Context7Sync
+        _context7_sync = Context7Sync()
+        await _context7_sync.load()
+    return _context7_sync
+
+
 # Application lifespan
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -100,11 +144,35 @@ async def lifespan(app: FastAPI):
     print(f"🚀 Starting {settings.app_name} v{settings.app_version}")
     print(f"📊 ChromaDB: {settings.chroma_persist_dir}")
     print(f"🤖 Ollama: {settings.ollama_host}")
+    
+    # Initialize singletons
+    global _embedding_service, _memory_system, _rag_pipeline, _context7_sync
+    from core.embedding_service import EmbeddingService
+    from core.memory_system import MemorySystem
+    from core.rag_pipeline import RAGPipeline
+    from core.context7_sync import Context7Sync
+    
+    _embedding_service = EmbeddingService()
+    _memory_system = MemorySystem()
+    _rag_pipeline = RAGPipeline()
+    _context7_sync = Context7Sync()
+    await _context7_sync.load()
+    
+    print("✅ Services initialized")
 
     yield
 
-    # Shutdown
+    # Shutdown - cleanup resources
     print("👋 Shutting down...")
+    if _embedding_service:
+        await _embedding_service.close()
+    if _memory_system:
+        await _memory_system.close()
+    if _rag_pipeline:
+        await _rag_pipeline.close()
+    if _context7_sync:
+        await _context7_sync.save()
+    print("✅ Resources cleaned up")
 
 
 # Create FastAPI app
@@ -162,15 +230,13 @@ async def root():
 
 # Embedding endpoint
 @app.post("/embed", response_model=EmbedResponse)
-async def generate_embedding(request: EmbedRequest):
+async def generate_embedding(
+    request: EmbedRequest,
+    service = Depends(get_embedding_service)
+):
     """Generate embedding for text."""
     try:
-        # Import here to avoid circular imports
-        from core.embedding_service import EmbeddingService
-
-        service = EmbeddingService()
         embedding = await service.embed(request.text)
-        await service.close()
 
         return EmbedResponse(
             embedding=embedding,
@@ -183,18 +249,17 @@ async def generate_embedding(request: EmbedRequest):
 
 # Store endpoint
 @app.post("/store", response_model=StoreResponse)
-async def store_content(request: StoreRequest):
+async def store_content(
+    request: StoreRequest,
+    memory = Depends(get_memory_system)
+):
     """Store content in vector database."""
     try:
-        from core.memory_system import MemorySystem
-
-        memory = MemorySystem()
         doc_id = await memory.store(
             content=request.content,
             category=request.category,
             metadata=request.metadata,
         )
-        await memory.close()
 
         return StoreResponse(doc_id=doc_id, status="stored")
     except Exception as e:
@@ -203,19 +268,18 @@ async def store_content(request: StoreRequest):
 
 # Query endpoint
 @app.post("/query", response_model=QueryResponse)
-async def query_content(request: QueryRequest):
+async def query_content(
+    request: QueryRequest,
+    memory = Depends(get_memory_system)
+):
     """Query content using semantic search."""
     try:
-        from core.memory_system import MemorySystem
-
-        memory = MemorySystem()
         results = await memory.query(
             query=request.query,
             top_k=request.top_k,
             category=request.category,
             score_threshold=request.score_threshold,
         )
-        await memory.close()
 
         return QueryResponse(
             results=[
@@ -235,19 +299,18 @@ async def query_content(request: QueryRequest):
 
 # RAG endpoint
 @app.post("/rag", response_model=RAGResponse)
-async def rag_generate(request: RAGRequest):
+async def rag_generate(
+    request: RAGRequest,
+    rag = Depends(get_rag_pipeline)
+):
     """Generate response using RAG."""
     try:
-        from core.rag_pipeline import RAGPipeline
-
-        rag = RAGPipeline()
         response = await rag.generate(
             query=request.query,
             context_sources=request.context_sources,
             top_k=request.top_k,
             system_prompt=request.system_prompt,
         )
-        await rag.close()
 
         return RAGResponse(
             answer=response.answer,
@@ -269,13 +332,12 @@ async def rag_generate(request: RAGRequest):
 
 # Agent sync endpoint
 @app.post("/agents/sync")
-async def sync_agent_state(request: AgentSyncRequest):
+async def sync_agent_state(
+    request: AgentSyncRequest,
+    sync = Depends(get_context7_sync)
+):
     """Sync agent state with Context7."""
     try:
-        from core.context7_sync import Context7Sync
-
-        sync = Context7Sync()
-        await sync.load()
         await sync.update_agent_state(request.agent_id, request.updates)
         await sync.save()
 
@@ -286,13 +348,11 @@ async def sync_agent_state(request: AgentSyncRequest):
 
 # Stats endpoint
 @app.get("/stats")
-async def get_stats():
+async def get_stats(memory = Depends(get_memory_system)):
     """Get system statistics."""
     try:
-        from core.memory_system import MemorySystem
         from core.knowledge_graph import KnowledgeGraph
 
-        memory = MemorySystem()
         kg = KnowledgeGraph()
 
         return {
