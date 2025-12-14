@@ -103,7 +103,7 @@ export class RAFQueue {
   
   private flush() {
     const callbacks = this.queue.splice(0)
-    callbacks.forEach(cb => cb())
+    callbacks.forEach(callback => callback())
     this.rafId = null
   }
   
@@ -136,9 +136,9 @@ export class PerformanceMarker {
     return duration
   }
   
-  measure(name: string, fn: () => void): number {
+  measure(name: string, functionToMeasure: () => void): number {
     this.start(name)
-    fn()
+    functionToMeasure()
     return this.end(name)
   }
 }
@@ -188,15 +188,15 @@ export function getMemoryUsage(): {
   limit: number
 } | null {
   if ('memory' in performance) {
-    const mem = (performance as unknown as { memory: { 
+    const memoryInfo = (performance as unknown as { memory: { 
       usedJSHeapSize: number
       totalJSHeapSize: number
       jsHeapSizeLimit: number
     }}).memory
     return {
-      used: mem.usedJSHeapSize,
-      total: mem.totalJSHeapSize,
-      limit: mem.jsHeapSizeLimit
+      used: memoryInfo.usedJSHeapSize,
+      total: memoryInfo.totalJSHeapSize,
+      limit: memoryInfo.jsHeapSizeLimit
     }
   }
   return null

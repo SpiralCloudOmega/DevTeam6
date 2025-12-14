@@ -2,19 +2,19 @@
  * Compose a persona-aware prompt for Repomind and Repomind Jr.
  * Ensures clean spacing and trims blank segments while preserving tone/focus.
  */
-export function composePersonaPrompt(base: string, tone: string, focus: string): string {
-  const parts = [base, tone, focus].map((part) => part.trim()).filter(Boolean)
-  if (parts.length === 0) {
+export function composePersonaPrompt(basePrompt: string, toneModifier: string, focusArea: string): string {
+  const promptParts = [basePrompt, toneModifier, focusArea].map((part) => part.trim()).filter(Boolean)
+  if (promptParts.length === 0) {
     return ''
   }
-  return parts.join(' — ')
+  return promptParts.join(' — ')
 }
 
 /**
  * Normalize a status label for display chips.
  */
-export function formatStatus(status: string): string {
-  const cleaned = status.trim()
-  if (!cleaned) return 'Unknown'
-  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1).toLowerCase()
+export function formatStatus(statusLabel: string): string {
+  const cleanedStatus = statusLabel.trim()
+  if (!cleanedStatus) return 'Unknown'
+  return cleanedStatus.charAt(0).toUpperCase() + cleanedStatus.slice(1).toLowerCase()
 }
