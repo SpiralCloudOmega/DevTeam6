@@ -240,6 +240,42 @@ npm install -g @google/gemini-cli
 
 ---
 
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=AA00FF&background=0A0A1AFF&vCenter=true&width=550&height=40&lines=ARCHITECTURE+%26+DOCUMENTATION;SYSTEM+DESIGN;INTEGRATION+GUIDES" alt="Architecture & Documentation" />
+
+<div align="center">
+
+### 📚 Comprehensive System Documentation
+
+DevTeam6 is more than a curated list—it's a complete AI-powered development platform with **~62,000 lines of implementation code** across **331 files**.
+
+[![Architecture Docs](https://img.shields.io/badge/📖_ARCHITECTURE_DOCS-00f0ff?style=for-the-badge)](docs/README.md)
+[![System Overview](https://img.shields.io/badge/🏗️_SYSTEM_OVERVIEW-ff00ff?style=for-the-badge)](docs/architecture/SYSTEM_OVERVIEW.md)
+[![AI Orchestration](https://img.shields.io/badge/🤖_AI_ORCHESTRATION-00ff88?style=for-the-badge)](docs/architecture/AI_ORCHESTRATION.md)
+[![Awesome Copilot](https://img.shields.io/badge/🚀_AWESOME_COPILOT-ff6600?style=for-the-badge)](docs/awesome-copilot/INTEGRATION_GUIDE.md)
+
+| Documentation | Description | Topics Covered |
+|---------------|-------------|----------------|
+| **[System Overview](docs/architecture/SYSTEM_OVERVIEW.md)** | Complete architecture guide | 4-layer architecture, components, data flow, metrics |
+| **[AI Orchestration](docs/architecture/AI_ORCHESTRATION.md)** | Multi-tier AI system | Query routing, RAG pipeline, agent coordination |
+| **[Awesome Copilot Integration](docs/awesome-copilot/INTEGRATION_GUIDE.md)** | GitHub Copilot ecosystem | 150+ agents, MCP servers, prompt library |
+| **[Local AI System](local-ai/README.md)** | Self-hosted AI backend | Vector RAG, embeddings, ChromaDB, Ollama |
+
+### 🎯 What's Inside
+
+```
+DevTeam6/
+├── 📚 Knowledge Hub      → 1000+ curated resources (README.md)
+├── 🧠 Local AI System    → RAG pipeline + vector search (~7k LOC)
+├── 🎨 Interactive Apps   → Vue/React workflow builders (~15k LOC)
+├── 📦 Template Library   → 7 production workspaces (~20k LOC)
+├── 🤖 MCP Servers        → Model Context Protocol integration
+└── 🔄 Context7 Agents    → Multi-agent orchestration (~3k LOC)
+```
+
+</div>
+
+---
+
 ## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=00ff88&background=0A0A1AFF&vCenter=true&width=500&height=40&lines=WORKSPACE+TEMPLATES;READY-TO-CODE;INSTANT+DEV+ENVIRONMENTS" alt="Workspace Templates" />
 
 <div align="center">
