@@ -1,5 +1,7 @@
 # GitHub Awesome Copilot Integration Guide
 
+> **Note**: This guide contains example implementations showing how to extend DevTeam6 with Awesome Copilot resources. Code examples demonstrate integration patterns and are meant to be adapted to your specific needs.
+
 ## 🎯 Overview
 
 This guide explains how to leverage resources from the [GitHub Awesome Copilot](https://github.com/topics/awesome-copilot) ecosystem with DevTeam6's local AI infrastructure.
