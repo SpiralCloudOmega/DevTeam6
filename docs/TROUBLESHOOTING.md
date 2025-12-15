@@ -715,29 +715,45 @@ When all else fails:
 ```bash
 #!/bin/bash
 # Nuclear option: complete reset
+# USE WITH CAUTION - This will delete all data
 
-# Stop everything
-docker-compose down -v
-pkill ollama
-pkill node
-pkill python
+set -e  # Exit on error
 
-# Clean all caches
+echo "⚠️  WARNING: This will delete all local data!"
+read -p "Continue? (yes/no): " confirm
+if [ "$confirm" != "yes" ]; then
+    echo "Aborted."
+    exit 0
+fi
+
+echo "Stopping services..."
+docker-compose down -v || true
+pkill ollama || true
+pkill node || true
+pkill python || true
+
+echo "Cleaning caches..."
 rm -rf node_modules
 rm -rf local-ai/data
 rm -rf local-ai/.venv
 rm -rf .vite
 rm -rf dist
 
-# Reinstall
+echo "Reinstalling dependencies..."
 npm install
-cd local-ai && python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
 
-# Restart services
-ollama serve &
-cd .. && npm run dev &
-cd local-ai && uvicorn api.main:app --reload
+echo "Setting up Python environment..."
+cd local-ai
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cd ..
+
+echo "✅ Reset complete!"
+echo "Start services manually:"
+echo "  1. ollama serve"
+echo "  2. cd local-ai && uvicorn api.main:app --reload"
+echo "  3. npm run dev"
 ```
 
 ---

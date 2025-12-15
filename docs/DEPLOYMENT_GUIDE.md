@@ -10,13 +10,11 @@ This guide covers deploying DevTeam6 components for both local development and p
 
 ### Prerequisites
 
-```bash
-# System requirements
+**System Requirements**:
 - Node.js 18+ (for frontend apps)
 - Python 3.10+ (for local-ai backend)
 - Docker (optional, for containerized deployment)
 - Git
-```
 
 ### Quick Start (5 minutes)
 
@@ -74,7 +72,7 @@ CHROMA_PERSIST_DIR=./data/chroma
 CHROMA_COLLECTION=devteam6
 
 # API Settings
-API_HOST=0.0.0.0
+API_HOST=127.0.0.1  # Use 0.0.0.0 only with proper firewall/reverse proxy
 API_PORT=8000
 EOF
 
