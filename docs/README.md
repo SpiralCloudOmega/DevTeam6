@@ -15,6 +15,8 @@ docs/
 ├── awesome-copilot/       # GitHub Awesome Copilot integration
 │   └── INTEGRATION_GUIDE.md      # Integration guide & examples
 │
+├── DEPLOYMENT_GUIDE.md    # Deployment from local to production
+├── QUICK_REFERENCE.md     # Fast access to commands & patterns
 └── README.md              # This file
 ```
 
@@ -28,6 +30,10 @@ docs/
 
 ### Integration Guides
 - **[Awesome Copilot Integration](awesome-copilot/INTEGRATION_GUIDE.md)** - How to integrate GitHub Awesome Copilot agents and prompts
+
+### Operational Guides
+- **[Deployment Guide](DEPLOYMENT_GUIDE.md)** - Local development to production deployment
+- **[Quick Reference](QUICK_REFERENCE.md)** - Commands, endpoints, and common patterns
 
 ### Component Documentation
 - **[Local AI System](../local-ai/README.md)** - Vector RAG foundation and MCP servers
