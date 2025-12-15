@@ -17,6 +17,7 @@ docs/
 │
 ├── DEPLOYMENT_GUIDE.md    # Deployment from local to production
 ├── QUICK_REFERENCE.md     # Fast access to commands & patterns
+├── TROUBLESHOOTING.md     # Common issues and solutions
 └── README.md              # This file
 ```
 
@@ -34,6 +35,7 @@ docs/
 ### Operational Guides
 - **[Deployment Guide](DEPLOYMENT_GUIDE.md)** - Local development to production deployment
 - **[Quick Reference](QUICK_REFERENCE.md)** - Commands, endpoints, and common patterns
+- **[Troubleshooting Guide](TROUBLESHOOTING.md)** - Common issues and solutions
 
 ### Component Documentation
 - **[Local AI System](../local-ai/README.md)** - Vector RAG foundation and MCP servers
