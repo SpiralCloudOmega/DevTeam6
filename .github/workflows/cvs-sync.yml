@@ -114,7 +114,9 @@ jobs:
           
           # Append stats section before the footer (look for the footer wave)
           if grep -q "capsule-render.*section=footer" README.md; then
-            sed -i "/capsule-render.*section=footer/i\\${STATS_SECTION}" README.md
+            # Use awk to insert before the footer pattern
+            awk -v stats="$STATS_SECTION" '/capsule-render.*section=footer/ {print stats} {print}' README.md > README.md.tmp
+            mv README.md.tmp README.md
           else
             # If no footer found, append at the end
             echo "${STATS_SECTION}" >> README.md
