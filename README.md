@@ -3371,6 +3371,25 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=28&duration=2000&pause=500&color=00F0FF&background=0A0A1AFF&center=true&vCenter=true&width=700&height=60&lines=DevTeam6+-+THE+OMEGA+TOOL+KIT;POWERED+BY+GPT-5.1+%26+CLAUDE+OPUS+4.5;10X+YOUR+AI+DEVELOPMENT;BUILD+ANYTHING+%7C+LEARN+EVERYTHING;1000%2B+CURATED+RESOURCES" alt="Footer Typing" />
 
+<!-- CVS-STATS-START -->
+<div align="center">
+
+### 📊 LIVE REPOSITORY STATS
+
+*Last synced: 2025-12-19 21:22 UTC*
+
+| Metric | Count |
+|--------|-------|
+| ⭐ Stars | 1 |
+| 🍴 Forks | 0 |
+| 👥 Contributors | 3 |
+| 📝 Commits | 295 |
+| 🐛 Open Issues | 5 |
+
+[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=SpiralCloudOmega&repo=DevTeam6&theme=react-dark&hide_border=true&area=true&custom_title=DevTeam6%20Contribution%20Activity)](https://github.com/SpiralCloudOmega/DevTeam6)
+
+</div>
+<!-- CVS-STATS-END -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,20:7b2fff,40:ff00ff,60:ff0066,80:aa00ff,100:00f0ff&height=120&section=footer&animation=twinkling" width="100%"/>
 
 <sub>Made with passion by <a href="https://github.com/SpiralCloudOmega">SpiralCloudOmega</a> | DevTeam6 - The Omega Tool Kit © 2025</sub>
