@@ -11,18 +11,35 @@
 
 | Server | Type | Endpoint | Status |
 |--------|------|----------|--------|
-| `context7` | HTTP | https://mcp.context7.com/mcp | 🟢 Active |
+| `context7` | HTTP | https://mcp.context7.com/mcp *(example)* | 🟡 External |
 | `memory-server` | Local | `local-ai/mcp/memory_server.py` | 🟢 Active |
 | `rag-server` | Local | `local-ai/mcp/rag_server.py` | 🟢 Active |
 
 ### MCP Tools Available
 
 Via Context7 Sync Engine (`local-ai/core/context7_sync.py`):
-- `sync_agent_state` - Synchronize agent state to Context7
-- `broadcast_message` - Broadcast to all agents
-- `handoff_task` - Transfer task between agents
-- `query_project_state` - Get current project state
-- `log_activity` - Log agent activity to `.github/agents/logs/`
+
+**Core Tools**:
+- `sync_agent_state(agent_id: str, updates: dict) -> dict`
+  - Synchronize agent state to Context7
+  - Returns: `{"status": "success", "agent_id": "...", "timestamp": "..."}`
+
+- `broadcast_message(message: str, sender: str) -> None`
+  - Broadcast message to all agents
+  - Logs to `.github/agents/logs/{agent}-agent.log.md`
+
+- `handoff_task(from_agent: str, to_agent: str, task: dict) -> None`
+  - Transfer task between agents
+  - Updates both agents' current_task fields
+  - Logs handoff_out and handoff_in events
+
+- `query_project_state() -> ProjectState`
+  - Get current project state
+  - Returns: `{active_tasks: [], recent_completions: [], pending_work: []}`
+
+- `log_activity(agent_id: str, activity_type: str, data: dict) -> None`
+  - Log agent activity to log files
+  - Activity types: state_update, broadcast, handoff_in, handoff_out
 
 ---
 
@@ -40,7 +57,9 @@ Via Context7 Sync Engine (`local-ai/core/context7_sync.py`):
 Agents communicate through Context7 Sync Engine:
 
 ```python
-from local_ai.core.context7_sync import Context7Sync
+# Note: Import path assumes local-ai is in PYTHONPATH
+# or use: sys.path.append('/path/to/DevTeam6/local-ai')
+from core.context7_sync import Context7Sync
 
 # Initialize
 sync = Context7Sync()
@@ -104,8 +123,12 @@ await sync.save()
 ### File Structure
 
 ```
+# MCP Server Registry (this file)
+context7/agents.md                  # Shared agent registry with MCP integration
+
+# GitHub Agent System (syncs TO here via Context7Sync)
 .github/agents/
-├── context7.agents.md          # Master agent registry (syncs FROM here)
+├── context7.agents.md          # Master agent registry (official source)
 ├── logs/                        # Agent activity logs
 │   ├── documentation-agent.log.md
 │   ├── workspace-agent.log.md
@@ -118,6 +141,8 @@ await sync.save()
     ├── react.rules.md
     └── python.rules.md
 ```
+
+**Note**: This file (`context7/agents.md`) is the local MCP-integrated registry. The official source is `.github/agents/context7.agents.md` which syncs here via Context7Sync engine.
 
 ### Sync Schedule
 
@@ -158,11 +183,44 @@ await sync.save()
 ### MCP Tool Schemas
 
 Defined in `local-ai/mcp/tool_schemas.py`:
-- Agent state updates
-- Task handoffs
-- Broadcast messages
-- Memory queries
-- Knowledge graph operations
+
+**Agent State Schema**:
+```json
+{
+  "id": "string (@agent-id)",
+  "name": "string",
+  "role": "string",
+  "status": "online|standby|offline",
+  "current_task": "string|null",
+  "last_sync": "ISO-8601 timestamp",
+  "metadata": {}
+}
+```
+
+**Task Handoff Schema**:
+```json
+{
+  "task_id": "string",
+  "from_agent": "@agent-id",
+  "to_agent": "@agent-id",
+  "task": {
+    "id": "TASK-XXX-001",
+    "description": "string",
+    "priority": "low|normal|high|critical",
+    "data": {}
+  }
+}
+```
+
+**Message Broadcast Schema**:
+```json
+{
+  "from": "@agent-id",
+  "message": "string",
+  "timestamp": "ISO-8601",
+  "recipients": "all|[@agent-id, ...]"
+}
+```
 
 ---
 
