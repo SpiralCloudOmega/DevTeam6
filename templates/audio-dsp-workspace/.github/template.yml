@@ -1,0 +1,15 @@
+name: Audio/DSP Plugin Development Workspace
+description: Professional audio plugin development environment with JUCE, VST3, AU, AAX, ALSA, and JACK support
+labels:
+  - audio
+  - dsp
+  - juce
+  - vst3
+  - plugin
+files:
+  - action: skip
+    glob: build/**
+  - action: skip
+    glob: Builds/**
+  - action: skip
+    glob: "*.o"

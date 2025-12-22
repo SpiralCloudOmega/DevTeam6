@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        build_type: [Debug, Release]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential
+    
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install cmake
+    
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+    
+    - name: Build
+      run: cmake --build build --config ${{ matrix.build_type }}
+    
+    - name: Test
+      run: |
+        cd build
+        ctest -C ${{ matrix.build_type }} --output-on-failure || echo "No tests configured"

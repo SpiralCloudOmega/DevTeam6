@@ -1,0 +1,14 @@
+name: React 18 + TypeScript + Vite Starter
+description: Production-ready React 18 starter template with TypeScript, Vite, and modern tooling
+labels:
+  - react
+  - typescript
+  - vite
+  - frontend
+files:
+  - action: skip
+    glob: node_modules/**
+  - action: skip
+    glob: dist/**
+  - action: skip
+    glob: .vite/**

@@ -1,0 +1,15 @@
+name: .NET 8 Web API Template
+description: Production-ready ASP.NET Core 8.0 Web API template with Swagger, minimal APIs, and modern patterns
+labels:
+  - dotnet
+  - csharp
+  - web-api
+  - rest-api
+  - backend
+files:
+  - action: skip
+    glob: bin/**
+  - action: skip
+    glob: obj/**
+  - action: skip
+    glob: "*.user"

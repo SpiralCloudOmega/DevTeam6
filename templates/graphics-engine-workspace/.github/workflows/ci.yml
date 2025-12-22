@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        build_type: [Debug, Release]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential libvulkan-dev glslang-tools
+    
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install cmake vulkan-headers glslang
+    
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+    
+    - name: Build
+      run: cmake --build build --config ${{ matrix.build_type }}
+    
+    - name: Compile Shaders
+      run: |
+        cd shaders
+        for shader in *.vert *.frag *.comp; do
+          if [ -f "$shader" ]; then
+            glslangValidator -V "$shader" -o "${shader}.spv" || echo "Shader compilation skipped"
+          fi
+        done

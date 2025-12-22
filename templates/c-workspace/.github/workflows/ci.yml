@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake
+    
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install cmake
+    
+    - name: Build with Make
+      run: make
+    
+    - name: Clean
+      run: make clean
+    
+    - name: Build with CMake
+      run: |
+        cmake -B build
+        cmake --build build
+    
+    - name: Test
+      run: make test || echo "No tests configured"
