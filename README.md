@@ -325,9 +325,9 @@ Binary files (PDFs, images, videos) are invisible to AI systems. DevTeam6 solves
 | **[FILE_INDEX.md](FILE_INDEX.md)** | Complete repository file listing and navigation | All 331+ files indexed |
 | **[AI_VISIBILITY_SOLUTION.md](AI_VISIBILITY_SOLUTION.md)** | Implementation guide for binary file discoverability | Pattern documentation |
 
-### 🔍 Featured Research
+### 🔍 Featured Research & Tools
 
-**QFaaS Triple-Transformer Systems** (54 pages)
+**QFaaS Triple-Transformer Systems** (54-page PDF)
 - Quantum Function as a Service architecture
 - Triple-Transformer design (Cognitive, Quantum, Storage)
 - Google Antigravity IDE integration
@@ -335,11 +335,19 @@ Binary files (PDFs, images, videos) are invisible to AI systems. DevTeam6 solves
 - Gemini Deep Research API with RAG planning
 - Token optimization strategies
 
-**Keywords**: QFaaS, Triple-Transformer, Sovereign AI, Google Conductor, Master Planner, RAG Planning, Gemini API
+**GitHub Spec-Kit** (Official Toolkit)
+- Spec-Driven Development methodology
+- Executable specifications drive implementation
+- Three command workflow: specify → plan → tasks
+- 15-minute feature spec (vs 12+ hours manual)
+- AI agent integration (Claude, GitHub Copilot)
+- Template-driven quality constraints
+
+**Keywords**: QFaaS, Triple-Transformer, Sovereign AI, Google Conductor, Master Planner, RAG Planning, Gemini API, Spec-Kit, SDD, Executable Specifications
 
 **Related Code**: `local-ai/transformers/`, `local-ai/mcp/`, `local-ai/core/context7_sync.py`
 
-*See [DOCUMENTS.md](DOCUMENTS.md) for complete metadata and abstracts*
+*See [DOCUMENTS.md](DOCUMENTS.md) for complete metadata and abstracts | [Spec-Kit Integration Guide](docs/SPEC_KIT_INTEGRATION.md) for implementation*
 
 </div>
 

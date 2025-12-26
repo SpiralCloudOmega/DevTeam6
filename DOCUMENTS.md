@@ -103,11 +103,168 @@ priority: "high"
 
 ---
 
+##### GitHub Spec-Kit - Spec-Driven Development Toolkit
+
+```yaml
+file: "https://github.com/github/spec-kit"
+type: "toolkit"
+subtype: "development-methodology"
+date_added: "2024-12-26"
+topics:
+  - "spec-driven-development"
+  - "executable-specifications"
+  - "ai-agents"
+  - "github-copilot"
+  - "development-methodology"
+  - "code-generation"
+  - "specification-first"
+keywords:
+  - "Spec-Kit"
+  - "Spec-Driven Development"
+  - "SDD"
+  - "Executable Specifications"
+  - "GitHub"
+  - "AI Agents"
+  - "Specify CLI"
+  - "Constitution"
+  - "Feature Planning"
+  - "Task Generation"
+  - "Template-Driven Development"
+description: |
+  GitHub's official toolkit for spec-driven development (SDD) where specifications 
+  become executable and directly generate working implementations. Instead of treating 
+  specifications as throwaway scaffolding, Spec-Kit makes them the primary artifact 
+  with code as an expression of the specification. Features the Specify CLI for 
+  automated feature specification, implementation planning, and task generation.
+abstract: |
+  Spec-Kit revolutionizes software development by flipping the traditional code-first 
+  approach. Specifications drive implementation through three powerful commands:
+  
+  1. **/speckit.specify** - Transforms feature descriptions into structured specifications 
+     with automatic branch creation and repository management
+  2. **/speckit.plan** - Converts specifications into detailed implementation plans with 
+     technical architecture and compliance checks
+  3. **/speckit.tasks** - Analyzes plans to generate executable task lists with 
+     parallelization markers
+  
+  The methodology emphasizes continuous refinement, research-driven context, and 
+  bidirectional feedback between production reality and specifications. Template-driven 
+  constraints guide AI behavior toward high-quality outcomes while preventing premature 
+  implementation details and forcing explicit uncertainty markers.
+  
+  Core principles include specifications as lingua franca, executable specifications, 
+  continuous validation, and branching for exploration. Integrates with GitHub Copilot, 
+  Claude, and other AI agents through the Specify CLI tool.
+sections:
+  - "What is Spec-Driven Development"
+  - "Get Started"
+  - "Supported AI Agents (Claude, GitHub Copilot, etc.)"
+  - "Specify CLI Reference"
+  - "Core Philosophy"
+  - "Development Phases"
+  - "Experimental Goals"
+  - "Prerequisites"
+  - "Detailed Process"
+  - "/speckit.specify Command"
+  - "/speckit.plan Command"
+  - "/speckit.tasks Command"
+  - "Template-Driven Quality"
+  - "Constitution Framework"
+  - "Feature Specification Template"
+  - "Implementation Plan Template"
+  - "Troubleshooting"
+  - "Maintainers & Support"
+components:
+  - "Specify CLI (uv tool)"
+  - "Constitution Framework"
+  - "Feature Specification Templates"
+  - "Implementation Plan Templates"
+  - "Task Generation System"
+  - "Research Agent Integration"
+  - "Version Control Integration"
+  - "AI Agent Support (Claude, Copilot)"
+commands:
+  - "/speckit.constitution - Create project governing principles"
+  - "/speckit.specify - Generate feature specifications with auto-branching"
+  - "/speckit.plan - Create implementation plans from specs"
+  - "/speckit.tasks - Generate executable task lists"
+  - "/speckit.check - Validate tool installation"
+related_code:
+  - "local-ai/transformers/"
+  - "local-ai/mcp/"
+  - "local-ai/core/context7_sync.py"
+  - ".github/agents/"
+  - "docs/architecture/AI_ORCHESTRATION.md"
+integration_points:
+  - "Context7 MCP - Agent coordination"
+  - "GitHub Copilot - AI-assisted development"
+  - "Master Planner - Task orchestration"
+  - "Google Conductor - Workflow management"
+  - "RAG Pipeline - Specification retrieval"
+  - "QFaaS Triple-Transformer - Planning optimization"
+status: "active"
+priority: "high"
+installation: |
+  # Persistent installation (recommended)
+  uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+  
+  # One-time usage
+  uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
+usage_example: |
+  # Initialize project
+  specify init my-project --ai claude
+  
+  # Create project constitution
+  /speckit.constitution Create principles for code quality and testing
+  
+  # Specify feature
+  /speckit.specify Real-time chat system with message history
+  
+  # Generate implementation plan
+  /speckit.plan WebSocket for real-time messaging, PostgreSQL for history
+  
+  # Generate tasks
+  /speckit.tasks
+benefits:
+  - "Specifications become executable artifacts"
+  - "Rapid iteration through specification regeneration"
+  - "Template-driven quality constraints for AI"
+  - "Automatic repository management"
+  - "15-minute complete feature specification (vs 12+ hours manual)"
+  - "Prevents premature implementation details"
+  - "Forces explicit uncertainty markers"
+  - "Bidirectional feedback loop"
+  - "Support for parallel development exploration"
+```
+
+**Key Features:**
+- **Specification-First Development**: Code generated from specs, not the other way around
+- **Three Command Workflow**: specify → plan → tasks in 15 minutes
+- **AI Agent Integration**: Works with Claude, GitHub Copilot, and custom agents
+- **Template-Driven Quality**: Constraints guide AI toward better outcomes
+- **Auto-Repository Management**: Automatic branching, numbering, and structure
+- **Constitution Framework**: Project governing principles for all development
+- **Research-Driven Context**: Integrated research agents for technical decisions
+- **Parallelization Support**: Marks independent tasks for concurrent execution
+
+**Integration with DevTeam6:**
+- Use with Context7 MCP for agent state synchronization
+- Integrate with Master Planner for task orchestration
+- Leverage RAG pipeline for specification retrieval and context
+- Apply QFaaS planning patterns to minimize token usage
+- Connect with Google Conductor for workflow management
+
+**Related Keywords:**
+spec-kit, spec-driven, sdd, executable-specifications, specify-cli, constitution, feature-planning, task-generation, template-driven, ai-agents, github-copilot, claude-integration
+
+---
+
 ## 📊 Statistics
 
-- **Total Documents**: 1
+- **Total Documents**: 2
 - **Total PDFs**: 1
-- **Total Pages**: 54
+- **Total Toolkits**: 1
+- **Total Pages**: 54 (from PDFs)
 - **Research Papers**: 1
 - **Integration Guides**: 0
 - **Whitepapers**: 0

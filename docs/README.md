@@ -17,6 +17,7 @@ docs/
 │
 ├── DEPLOYMENT_GUIDE.md    # Deployment from local to production
 ├── QUICK_REFERENCE.md     # Fast access to commands & patterns
+├── SPEC_KIT_INTEGRATION.md # GitHub Spec-Kit spec-driven development
 ├── TROUBLESHOOTING.md     # Common issues and solutions
 └── README.md              # This file
 ```
@@ -31,6 +32,7 @@ docs/
 
 ### Integration Guides
 - **[Awesome Copilot Integration](awesome-copilot/INTEGRATION_GUIDE.md)** - How to integrate GitHub Awesome Copilot agents and prompts
+- **[Spec-Kit Integration](SPEC_KIT_INTEGRATION.md)** - GitHub's Spec-Driven Development toolkit integration
 
 ### Operational Guides
 - **[Deployment Guide](DEPLOYMENT_GUIDE.md)** - Local development to production deployment
@@ -71,6 +73,16 @@ The **Integration Guide** covers:
 - Prompt library management
 - Agent orchestration examples
 - UI integration examples
+
+### Spec-Kit Integration
+
+The **Spec-Kit Integration Guide** explains:
+- Spec-Driven Development methodology
+- Three command workflow (specify → plan → tasks)
+- Context7 MCP task coordination
+- RAG-enhanced planning
+- QFaaS optimization patterns
+- Master Planner integration
 
 ---
 
