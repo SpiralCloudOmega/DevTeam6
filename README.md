@@ -25,6 +25,7 @@
 [![Last Commit](https://img.shields.io/github/last-commit/SpiralCloudOmega/DevTeam6?style=for-the-badge&logo=github&logoColor=white&color=00ff88)](https://github.com/SpiralCloudOmega/DevTeam6/commits)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6/pulls)
 [![AI Toolbox](https://img.shields.io/badge/AI-Toolbox-aa00ff?style=for-the-badge)](https://github.com/SpiralCloudOmega/DevTeam6)
+[![Agent Cheatsheet](https://img.shields.io/badge/🤖_AGENT_CHEATSHEET-7b2fff?style=for-the-badge)](AGENT_COMMAND_CHEATSHEET.md)
 [![Roadmap Progress Badge](.github/badges/roadmap-progress.svg)](https://spiralcloudomega.github.io/DevTeam6/roadmap)
 [![3D Demo](https://img.shields.io/badge/3D_DEMO-LIVE-ff0066?style=for-the-badge&logo=threedotjs&logoColor=white)](https://spiralcloudomega.github.io/DevTeam6/)
 [![Leaderboard](https://img.shields.io/badge/🏆_LEADERBOARD-ff6600?style=for-the-badge)](https://spiralcloudomega.github.io/DevTeam6/gamification)
@@ -2901,6 +2902,12 @@ Create a `.vscode/settings.json`:
 - [GitHub Docs](https://docs.github.com/)
 - [VS Code Docs](https://code.visualstudio.com/docs)
 - [Google AI Docs](https://ai.google.dev/docs)
+
+### 🤖 DevTeam6 Documentation
+
+- [**Agent Command Cheatsheet**](./AGENT_COMMAND_CHEATSHEET.md) - Complete guide to invoking agents, crafting effective prompts, and managing context windows
+- [Workspace Guide](./WORKSPACE_GUIDE.md) - Repository workspace setup and configuration
+- [Context7 Agent System](./context7/agents.md) - Multi-agent system documentation
 
 ### 🎓 Learning Resources
 
