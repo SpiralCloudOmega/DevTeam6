@@ -1,0 +1,15 @@
+name: Vue 3 + TypeScript + Composition API Starter
+description: Production-ready Vue 3 starter template with TypeScript, Composition API, Pinia, and Vue Router
+labels:
+  - vue
+  - vue3
+  - typescript
+  - frontend
+  - composition-api
+files:
+  - action: skip
+    glob: node_modules/**
+  - action: skip
+    glob: dist/**
+  - action: skip
+    glob: .vite/**

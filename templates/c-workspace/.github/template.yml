@@ -1,0 +1,17 @@
+name: C17 Professional Workspace
+description: Pure C systems programming environment with Make/CMake, GDB, Valgrind, and SDL2 support
+labels:
+  - c
+  - cmake
+  - make
+  - systems-programming
+  - sdl2
+files:
+  - action: skip
+    glob: build/**
+  - action: skip
+    glob: "*.o"
+  - action: skip
+    glob: "*.a"
+  - action: skip
+    glob: "*.out"

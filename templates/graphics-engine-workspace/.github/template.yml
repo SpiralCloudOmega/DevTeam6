@@ -1,0 +1,15 @@
+name: Graphics Engine Workspace (Vulkan 1.3)
+description: Real-time graphics development environment with Vulkan 1.3, GLFW, GLSL, and SPIR-V shader compilation
+labels:
+  - graphics
+  - vulkan
+  - opengl
+  - game-engine
+  - rendering
+files:
+  - action: skip
+    glob: build/**
+  - action: skip
+    glob: "*.o"
+  - action: skip
+    glob: "*.spv"
