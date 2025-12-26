@@ -182,6 +182,7 @@ flowchart TB
 [![Dev Tools](https://img.shields.io/badge/DEV_TOOLS-ff00ff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](#-cliide-tools--ai-coding-assistants)
 [![Cloud](https://img.shields.io/badge/CLOUD-00ff88?style=for-the-badge&logo=googlecloud&logoColor=white)](#-cloud-platforms)
 [![Security](https://img.shields.io/badge/SECURITY-ff0066?style=for-the-badge&logo=hackerone&logoColor=white)](#-security--testing)
+[![Documents](https://img.shields.io/badge/DOCUMENTS-ff0066?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](#-documents--research)
 [![3D/WebGL](https://img.shields.io/badge/3D/WebGL-7b2fff?style=for-the-badge&logo=threedotjs&logoColor=white)](#-3dwebgl--interactive-graphics)
 [![Awesome Lists](https://img.shields.io/badge/AWESOME_LISTS-aa00ff?style=for-the-badge&logo=awesome-lists&logoColor=white)](#-awesome-lists-of-awesome-lists)
 [![Learning](https://img.shields.io/badge/LEARNING-ffcc00?style=for-the-badge&logo=udemy&logoColor=white)](#-books--courses)
@@ -193,6 +194,7 @@ flowchart TB
 ![AI Resources](https://img.shields.io/badge/AI_Resources-500+-00f0ff?style=flat-square)
 ![Dev Tools](https://img.shields.io/badge/Dev_Tools-300+-ff00ff?style=flat-square)
 ![Frameworks](https://img.shields.io/badge/Frameworks-200+-00ff88?style=flat-square)
+![Documents](https://img.shields.io/badge/Research_Docs-1+-ff0066?style=flat-square)
 ![3D/WebGL](https://img.shields.io/badge/3D/WebGL-50+-7b2fff?style=flat-square)
 ![Awesome Lists](https://img.shields.io/badge/Awesome_Lists-300+-ff6600?style=flat-square)
 ![Cheatsheets](https://img.shields.io/badge/Cheatsheets-50+-aa00ff?style=flat-square)
@@ -300,6 +302,44 @@ All templates include:
 - ✅ **Documentation** - Comprehensive README with examples
 
 **Get Started:** Navigate to `templates/` directory or use the [Templates Page](https://spiralcloudomega.github.io/DevTeam6/templates) in the web app!
+
+</div>
+
+---
+
+## <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2000&pause=500&color=FF0066&background=0A0A1AFF&vCenter=true&width=600&height=40&lines=DOCUMENTS+%26+RESEARCH;BINARY+FILE+DISCOVERY;AI-SEARCHABLE+METADATA" alt="Documents & Research" />
+
+<div align="center">
+
+### 📚 AI-Discoverable Document Catalog
+
+Binary files (PDFs, images, videos) are invisible to AI systems. DevTeam6 solves this with **searchable metadata** that provides 100% AI discoverability for all research documents.
+
+[![Document Catalog](https://img.shields.io/badge/📖_DOCUMENT_CATALOG-00f0ff?style=for-the-badge)](DOCUMENTS.md)
+[![File Index](https://img.shields.io/badge/📇_FILE_INDEX-ff00ff?style=for-the-badge)](FILE_INDEX.md)
+[![AI Visibility](https://img.shields.io/badge/🤖_AI_VISIBILITY_GUIDE-00ff88?style=for-the-badge)](AI_VISIBILITY_SOLUTION.md)
+
+| Resource | Purpose | Coverage |
+|----------|---------|----------|
+| **[DOCUMENTS.md](DOCUMENTS.md)** | Comprehensive document catalog with YAML metadata | 100% AI searchable |
+| **[FILE_INDEX.md](FILE_INDEX.md)** | Complete repository file listing and navigation | All 331+ files indexed |
+| **[AI_VISIBILITY_SOLUTION.md](AI_VISIBILITY_SOLUTION.md)** | Implementation guide for binary file discoverability | Pattern documentation |
+
+### 🔍 Featured Research
+
+**QFaaS Triple-Transformer Systems** (54 pages)
+- Quantum Function as a Service architecture
+- Triple-Transformer design (Cognitive, Quantum, Storage)
+- Google Antigravity IDE integration
+- Master Planner orchestration
+- Gemini Deep Research API with RAG planning
+- Token optimization strategies
+
+**Keywords**: QFaaS, Triple-Transformer, Sovereign AI, Google Conductor, Master Planner, RAG Planning, Gemini API
+
+**Related Code**: `local-ai/transformers/`, `local-ai/mcp/`, `local-ai/core/context7_sync.py`
+
+*See [DOCUMENTS.md](DOCUMENTS.md) for complete metadata and abstracts*
 
 </div>
 
@@ -960,6 +1000,14 @@ graph LR
   - [Live YouTube Channels](#-live-channels--continuous-updates)
   - [Developer Podcasts](#-developer-podcasts)
   - [Tech News Sources](#-tech-news-sources)
+
+### 📚 Documents & Research
+- [Documents & Research](#-documents--research)
+  - [Document Catalog (DOCUMENTS.md)](DOCUMENTS.md)
+  - [File Index (FILE_INDEX.md)](FILE_INDEX.md)
+  - [AI Visibility Solution (AI_VISIBILITY_SOLUTION.md)](AI_VISIBILITY_SOLUTION.md)
+  - QFaaS Triple-Transformer Systems (54-page research paper)
+  - AI-searchable metadata for binary files
 
 ### 🤖 Artificial Intelligence
 - [OpenAI Official Repositories](#-openai-official-repositories)

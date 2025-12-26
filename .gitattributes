@@ -1,0 +1,92 @@
+# DevTeam6 Git Attributes Configuration
+
+# Mark PDFs as binary files (prevents Git from treating them as text)
+*.pdf binary
+
+# Mark PDFs as documentation for GitHub Linguist
+*.pdf linguist-documentation
+
+# Mark other binary formats
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.webm binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.ttf binary
+*.otf binary
+
+# Mark compiled binaries
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.a binary
+*.lib binary
+*.o binary
+*.obj binary
+*.pyc binary
+
+# Mark data files as binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+*.pkl binary
+*.pickle binary
+*.npy binary
+*.npz binary
+
+# Mark documentation files for GitHub Linguist
+*.md linguist-documentation
+*.markdown linguist-documentation
+DOCUMENTS.md linguist-documentation
+FILE_INDEX.md linguist-documentation
+AI_VISIBILITY_SOLUTION.md linguist-documentation
+
+# Mark package lock files as generated
+package-lock.json linguist-generated
+yarn.lock linguist-generated
+pnpm-lock.yaml linguist-generated
+Gemfile.lock linguist-generated
+Cargo.lock linguist-generated
+poetry.lock linguist-generated
+Pipfile.lock linguist-generated
+
+# Mark build outputs as generated
+dist/** linguist-generated
+build/** linguist-generated
+out/** linguist-generated
+target/** linguist-generated
+bin/** linguist-generated
+obj/** linguist-generated
+
+# Mark vendor/dependencies as vendored
+node_modules/** linguist-vendored
+vendor/** linguist-vendored
+packages/** linguist-vendored
+.venv/** linguist-vendored
+venv/** linguist-vendored
+
+# Line ending normalization
+* text=auto
+*.sh text eol=lf
+*.bash text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+# Windows specific files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
