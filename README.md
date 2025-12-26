@@ -16,6 +16,17 @@
 
 > **[Repomind](https://github.com/403errors/repomind)** - Transform your static repo into a living digital workstation! AI-powered repository analysis, interactive documentation, and intelligent code understanding.
 
+### 📚 DOCUMENTS & RESEARCH PAPERS
+
+<a href="DOCUMENTS.md">
+  <img src="https://img.shields.io/badge/📚_DOCUMENTS_CATALOG-AI_Discoverable_Files-ff6600?style=for-the-badge&logoColor=white" alt="Documents Catalog" />
+</a>
+
+> **[Documents Catalog](DOCUMENTS.md)** - AI-friendly index of all PDFs, research papers, and binary files. Includes metadata, descriptions, and keywords for semantic search.
+
+**Featured Research**:
+- 📄 **QFaaS Triple-Transformer Systems in Sovereign AI Computing** ([PDF](QFaaS%20Triple%E2%80%91Transformer%20Systems%20in%20Sovereign%20AI%20Computing.pdf)) - Research on Quantum Function as a Service, Triple-Transformer systems, and Sovereign AI architecture
+
 ---
 
 [![MIT License](https://img.shields.io/badge/License-MIT-00f0ff?style=for-the-badge&logoColor=white)](LICENSE)
@@ -178,6 +189,7 @@ flowchart TB
 
 ### QUICK NAVIGATION
 
+[![Documents](https://img.shields.io/badge/📚_DOCUMENTS-ff6600?style=for-the-badge)](DOCUMENTS.md)
 [![AI Tools](https://img.shields.io/badge/AI_TOOLS-00f0ff?style=for-the-badge&logo=openai&logoColor=white)](#-ai--machine-learning)
 [![Dev Tools](https://img.shields.io/badge/DEV_TOOLS-ff00ff?style=for-the-badge&logo=visualstudiocode&logoColor=white)](#-cliide-tools--ai-coding-assistants)
 [![Cloud](https://img.shields.io/badge/CLOUD-00ff88?style=for-the-badge&logo=googlecloud&logoColor=white)](#-cloud-platforms)
@@ -190,6 +202,7 @@ flowchart TB
 
 ### RESOURCE COUNTER
 
+![Documents](https://img.shields.io/badge/Documents-15+-ff6600?style=flat-square)
 ![AI Resources](https://img.shields.io/badge/AI_Resources-500+-00f0ff?style=flat-square)
 ![Dev Tools](https://img.shields.io/badge/Dev_Tools-300+-ff00ff?style=flat-square)
 ![Frameworks](https://img.shields.io/badge/Frameworks-200+-00ff88?style=flat-square)
@@ -917,6 +930,14 @@ graph LR
 > **The Complete GitHub Master Encyclopedia** — *A comprehensive index of the entire software development universe: from languages and frameworks to AI, cloud infrastructure, security, and research. Your one-stop reference for building anything from simple scripts to complex operating systems.*
 
 ---
+
+### 📚 Documents & Research
+- [Documents Catalog](DOCUMENTS.md)
+  - [Research Papers & PDFs](#-research-papers--pdfs)
+  - [QFaaS Triple-Transformer Systems](#qfaas-triple-transformer-systems-in-sovereign-ai-computing)
+  - [Documentation Files](#-documentation-files)
+  - [Chat & Conversation Logs](#-chat--conversation-logs)
+  - [AI Parsing Metadata](#-ai-parsing-metadata)
 
 ### 🎬 Media & Updates
 - [GitHub News & Developer Updates](#-github-news--developer-updates)

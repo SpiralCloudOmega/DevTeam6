@@ -1,0 +1,65 @@
+# Git Attributes for DevTeam6 Repository
+# Ensures proper handling of files for AI visibility and version control
+
+# ============================================================================
+# DOCUMENTATION FILES - Text-based, AI-readable
+# ============================================================================
+*.md linguist-detectable linguist-documentation
+*.txt linguist-documentation
+README* linguist-documentation
+
+# ============================================================================
+# PDF & BINARY DOCUMENTS - Mark for proper indexing
+# ============================================================================
+# PDFs are binary but should be tracked in Git
+*.pdf binary
+*.pdf -diff
+*.pdf linguist-documentation
+
+# Specifically mark the QFaaS document
+QFaaS*.pdf binary linguist-documentation
+
+# ============================================================================
+# DATA FILES - Structured, parseable
+# ============================================================================
+*.json linguist-data
+*.yaml linguist-data
+*.yml linguist-data
+*.toml linguist-data
+
+# Chat logs and conversation data
+Copilt.ChatFeed*.json linguist-data
+Copilt.ChatFeed*.md linguist-documentation
+
+# ============================================================================
+# SOURCE CODE FILES
+# ============================================================================
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.py linguist-language=Python
+*.rs linguist-language=Rust
+*.go linguist-language=Go
+
+# ============================================================================
+# CONFIGURATION FILES
+# ============================================================================
+*.config.* linguist-vendored
+package*.json linguist-vendored
+tsconfig*.json linguist-vendored
+vite.config.* linguist-vendored
+
+# ============================================================================
+# GENERATED/BUILD FILES - Exclude from language stats
+# ============================================================================
+dist/** linguist-generated
+build/** linguist-generated
+node_modules/** linguist-vendored
+*.min.js linguist-generated
+*.min.css linguist-generated
+
+# ============================================================================
+# GITHUB SPECIFIC
+# ============================================================================
+.github/** linguist-vendored
+.github/workflows/*.yml linguist-vendored
