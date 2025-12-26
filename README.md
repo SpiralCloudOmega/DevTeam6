@@ -21,8 +21,12 @@
 <a href="DOCUMENTS.md">
   <img src="https://img.shields.io/badge/📚_DOCUMENTS_CATALOG-AI_Discoverable_Files-ff6600?style=for-the-badge&logoColor=white" alt="Documents Catalog" />
 </a>
+<a href="FILE_INDEX.md">
+  <img src="https://img.shields.io/badge/📋_FILE_INDEX-Quick_Reference-aa00ff?style=for-the-badge&logoColor=white" alt="File Index" />
+</a>
 
-> **[Documents Catalog](DOCUMENTS.md)** - AI-friendly index of all PDFs, research papers, and binary files. Includes metadata, descriptions, and keywords for semantic search.
+> **[Documents Catalog](DOCUMENTS.md)** - AI-friendly index of all PDFs, research papers, and binary files. Includes metadata, descriptions, and keywords for semantic search.  
+> **[File Index](FILE_INDEX.md)** - Quick reference guide for AI systems to discover all repository files.
 
 **Featured Research**:
 - 📄 **QFaaS Triple-Transformer Systems in Sovereign AI Computing** ([PDF](QFaaS%20Triple%E2%80%91Transformer%20Systems%20in%20Sovereign%20AI%20Computing.pdf)) - Research on Quantum Function as a Service, Triple-Transformer systems, and Sovereign AI architecture
@@ -938,6 +942,7 @@ graph LR
   - [Documentation Files](#-documentation-files)
   - [Chat & Conversation Logs](#-chat--conversation-logs)
   - [AI Parsing Metadata](#-ai-parsing-metadata)
+- [File Index](FILE_INDEX.md) - Quick reference for AI discovery
 
 ### 🎬 Media & Updates
 - [GitHub News & Developer Updates](#-github-news--developer-updates)
