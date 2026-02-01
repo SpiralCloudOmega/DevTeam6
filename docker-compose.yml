@@ -1,0 +1,176 @@
+version: '3.8'
+
+services:
+  # ===========================
+  # Local AI Backend Service
+  # ===========================
+  local-ai:
+    build:
+      context: ./local-ai
+      dockerfile: Dockerfile
+    container_name: devteam6-local-ai
+    ports:
+      - "8000:8000"
+    environment:
+      # Ollama Configuration
+      - OLLAMA_HOST=http://ollama:11434
+      - OLLAMA_MODEL=llama3.2
+      
+      # Embedding Model
+      - EMBEDDING_MODEL=nomic-embed-text
+      - EMBEDDING_DIMENSIONS=768
+      
+      # ChromaDB
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - CHROMA_PERSIST_DIR=/data/chroma
+      - CHROMA_COLLECTION=devteam6
+      
+      # API Configuration
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_CORS_ORIGINS=http://localhost:5173,http://localhost:5174,http://localhost:3000
+      
+      # Context7 MCP
+      - CONTEXT7_SYNC_ENABLED=true
+      - CONTEXT7_LOG_DIR=/app/.github/agents/logs
+      
+      # Security
+      - SECRET_KEY=${SECRET_KEY:-dev-secret-key-change-in-production}
+      - JWT_ALGORITHM=HS256
+      - JWT_EXPIRE_MINUTES=60
+    
+    volumes:
+      - ./local-ai:/app
+      - chroma-data:/data/chroma
+      - ./.github:/app/.github
+    
+    depends_on:
+      - ollama
+      - chromadb
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    networks:
+      - devteam6-network
+
+  # ===========================
+  # Ollama LLM Service
+  # ===========================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: devteam6-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    networks:
+      - devteam6-network
+    
+    # Uncomment for GPU support (NVIDIA)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # ===========================
+  # ChromaDB Vector Store
+  # ===========================
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: devteam6-chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    
+    networks:
+      - devteam6-network
+
+  # ===========================
+  # Frontend App (Main UI)
+  # ===========================
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: devteam6-app
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+      - VITE_WS_URL=ws://localhost:8000/ws
+      - VITE_OLLAMA_URL=http://localhost:11434
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    
+    depends_on:
+      - local-ai
+    
+    networks:
+      - devteam6-network
+
+  # ===========================
+  # Projects Dashboard
+  # ===========================
+  projects:
+    build:
+      context: ./projects
+      dockerfile: Dockerfile
+    container_name: devteam6-projects
+    ports:
+      - "5174:5174"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    volumes:
+      - ./projects:/app
+      - /app/node_modules
+    
+    depends_on:
+      - local-ai
+    
+    networks:
+      - devteam6-network
+
+# ===========================
+# Volumes
+# ===========================
+volumes:
+  chroma-data:
+    name: devteam6-chroma-data
+  ollama-data:
+    name: devteam6-ollama-data
+
+# ===========================
+# Networks
+# ===========================
+networks:
+  devteam6-network:
+    name: devteam6-network
+    driver: bridge
