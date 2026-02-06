@@ -23,5 +23,9 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^8.2.0",
+    "@google-cloud/workflows": "^5.0.0"
   }
 }

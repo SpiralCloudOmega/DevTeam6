@@ -1,0 +1,1644 @@
+# RAG-Gym Design Token System + Master Build Prompt
+
+I'll create a **modular design token architecture** that you can use as both a configuration framework and implementation guide. Think of this as "Infrastructure as Code meets AI Systems Engineering."
+
+---
+
+## 🎯 Design Token Philosophy
+
+**Spatial Organization Principle:**
+```
+Z-Axis Layers (Vertical Stack):
+├─ Z0: Hardware Abstraction (CUDA, drivers)
+├─ Z1: Storage & Persistence (NVMe, HDD)
+├─ Z2: Compute Resources (GPU, memory pools)
+├─ Z3: Data Layer (vectors, documents, embeddings)
+├─ Z4: Model Serving (inference engines)
+├─ Z5: Agent Logic (reasoning, retrieval)
+├─ Z6: Orchestration (workflows, APIs)
+└─ Z7: User Interface (dashboards, chat)
+
+X-Axis: Horizontal Services (microservices)
+Y-Axis: Data Flow (input → processing → output)
+```
+
+---
+
+## 📋 Master Design Token Specification
+
+```yaml
+#═══════════════════════════════════════════════════════════
+# RAG-Gym Design Token: Complete System Specification
+# Version: 1.0.0
+# Hardware Profile: RTX 3090 (24GB) + Ryzen 16-core + 64GB RAM
+#═══════════════════════════════════════════════════════════
+
+system_metadata:
+  name: "RAG-Gym Production System"
+  architecture: "Agentic RAG with Process Supervision"
+  optimization_dimensions: ["prompt_engineering", "actor_tuning", "critic_training"]
+  target_performance:
+    f1_score: 0.60  # Paper baseline
+    latency_p95: 5000  # milliseconds
+    throughput: 12  # queries/minute
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z0: Hardware Abstraction
+#═══════════════════════════════════════════════════════════
+hardware_layer:
+  gpu:
+    model: "RTX 3090"
+    vram_gb: 24
+    cuda_version: "12.2"
+    compute_capability: "8.6"
+    driver_version: "535.xx"
+    memory_allocation:
+      actor_model: 8192  # MB
+      kv_cache: 4096
+      embeddings: 2048
+      critic_model: 3072
+      inference_buffer: 5120
+      reserved: 1536
+    
+  cpu:
+    model: "Ryzen 9 5950X"
+    cores: 16
+    threads: 32
+    base_clock_ghz: 3.4
+    boost_clock_ghz: 4.9
+    allocation:
+      docker_orchestration: 4  # cores
+      document_processing: 8
+      vector_indexing: 6
+      system_reserved: 4
+      training_workers: 10
+  
+  memory:
+    total_gb: 64
+    allocation:
+      os_system: 8192  # MB
+      vector_database: 16384
+      document_store: 12288
+      model_loading_buffer: 8192
+      docker_containers: 12288
+      training_cache: 6144
+      free_buffer: 1024
+    swap:
+      size_gb: 32
+      location: "/swapfile"
+      swappiness: 10
+  
+  storage:
+    nvme:
+      size_tb: 2
+      model: "Sony 980 Pro"
+      read_speed_mbps: 7000
+      write_speed_mbps: 5000
+      mount_point: "/nvme"
+      structure:
+        models: 300  # GB
+        vector_store: 500
+        datasets: 200
+        docker_volumes: 400
+        training_cache: 600
+    
+    hdd:
+      size_tb: 6
+      model: "WD Black"
+      read_speed_mbps: 150
+      mount_point: "/archive"
+      structure:
+        raw_documents: 2048  # GB
+        backups: 1024
+        experiments: 2048
+        cold_storage: 1024
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z1: Operating System & Container Runtime
+#═══════════════════════════════════════════════════════════
+os_layer:
+  distribution: "Ubuntu 22.04 LTS"
+  kernel: "6.5.x"
+  
+  required_packages:
+    system:
+      - "build-essential"
+      - "cmake"
+      - "git"
+      - "curl"
+      - "wget"
+      - "vim"
+      - "htop"
+      - "nvtop"
+      
+    nvidia_stack:
+      - "nvidia-driver-535"
+      - "nvidia-cuda-toolkit-12-2"
+      - "nvidia-cudnn"
+      - "nvidia-container-toolkit"
+    
+    python:
+      version: "3.11"
+      packages:
+        - "python3.11"
+        - "python3.11-venv"
+        - "python3.11-dev"
+        - "python3-pip"
+  
+  docker:
+    version: "24.0.x"
+    compose_version: "2.20.x"
+    daemon_config:
+      default_runtime: "nvidia"
+      log_driver: "json-file"
+      log_opts:
+        max_size: "100m"
+        max_file: "3"
+      storage_driver: "overlay2"
+      data_root: "/nvme/docker"
+    
+    network:
+      bridge_name: "rag_network"
+      subnet: "172.20.0.0/16"
+      gateway: "172.20.0.1"
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z2: Python Environment
+#═══════════════════════════════════════════════════════════
+python_environment:
+  venv_location: "/opt/rag_gym_env"
+  python_version: "3.11.7"
+  
+  dependencies:
+    # Core ML Framework
+    pytorch:
+      version: "2.2.0+cu122"
+      components: ["torch", "torchvision", "torchaudio"]
+      install_url: "https://download.pytorch.org/whl/cu122"
+    
+    # Transformer Libraries
+    transformers:
+      version: "4.38.0"
+      extras: ["accelerate", "bitsandbytes"]
+    
+    # RAG Frameworks
+    rag_frameworks:
+      langchain: "0.1.9"
+      llama_index: "0.10.12"
+      sentence_transformers: "2.3.1"
+      haystack: "2.0.0"
+    
+    # Vector Databases
+    vector_stores:
+      qdrant_client: "1.7.3"
+      chromadb: "0.4.22"
+      faiss_gpu: "1.7.2"
+      pgvector: "0.2.5"
+    
+    # Training & Optimization
+    training:
+      trl: "0.7.10"  # DPO, PPO implementations
+      peft: "0.8.2"  # LoRA, QLoRA
+      bitsandbytes: "0.42.0"
+      accelerate: "0.27.0"
+      deepspeed: "0.13.1"
+    
+    # Inference Optimization
+    inference:
+      vllm: "0.3.2"
+      text_generation_inference: "1.4.0"
+      ctranslate2: "3.24.0"
+    
+    # Document Processing
+    document_processing:
+      pypdf: "4.0.1"
+      pdfplumber: "0.10.3"
+      unstructured: "0.12.4"
+      python_docx: "1.1.0"
+      python_pptx: "0.6.23"
+    
+    # NLP Tools
+    nlp:
+      spacy: "3.7.4"
+      nltk: "3.8.1"
+      rank_bm25: "0.2.2"
+    
+    # Monitoring & Logging
+    observability:
+      wandb: "0.16.3"
+      tensorboard: "2.15.1"
+      prometheus_client: "0.19.0"
+      mlflow: "2.10.0"
+    
+    # Web Framework
+    web:
+      fastapi: "0.109.0"
+      uvicorn: "0.27.0"
+      websockets: "12.0"
+      pydantic: "2.5.3"
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z3: Model Specifications
+#═══════════════════════════════════════════════════════════
+model_registry:
+  actor_llm:
+    name: "Llama-3.1-8B-Instruct"
+    huggingface_id: "meta-llama/Llama-3.1-8B-Instruct"
+    local_path: "/nvme/models/llm/llama-3.1-8b"
+    size_gb: 16
+    quantization: "int8"  # Reduces to ~8GB VRAM
+    context_length: 4096
+    
+    loading_config:
+      load_in_8bit: true
+      device_map: "auto"
+      torch_dtype: "float16"
+      max_memory: {0: "8GB"}
+    
+    inference_config:
+      temperature: 0.7
+      top_p: 0.9
+      top_k: 50
+      repetition_penalty: 1.1
+      max_new_tokens: 512
+  
+  embedding_model:
+    name: "BGE-Base-EN-v1.5"
+    huggingface_id: "BAAI/bge-base-en-v1.5"
+    local_path: "/nvme/models/embeddings/bge-base"
+    size_gb: 1.5
+    embedding_dim: 768
+    max_seq_length: 512
+    
+    inference_config:
+      batch_size: 64
+      normalize_embeddings: true
+      device: "cuda"
+  
+  reranker_model:
+    name: "BGE-Reranker-Large"
+    huggingface_id: "BAAI/bge-reranker-large"
+    local_path: "/nvme/models/embeddings/reranker"
+    size_gb: 1.2
+    
+    inference_config:
+      batch_size: 32
+      top_n: 10
+  
+  critic_model:
+    name: "Llama-3.1-8B-Critic"
+    base_model: "meta-llama/Llama-3.1-8B-Instruct"
+    local_path: "/nvme/models/critic/llama-critic"
+    size_gb: 8
+    task: "regression"
+    num_labels: 1
+    
+    training_config:
+      learning_rate: 5e-6
+      epochs: 3
+      batch_size: 4
+      loss_function: "mse"
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z4: Docker Services Configuration
+#═══════════════════════════════════════════════════════════
+docker_services:
+  
+  # Service 1: Vector Database
+  qdrant:
+    image: "qdrant/qdrant:v1.7.4"
+    container_name: "rag-qdrant"
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - "/nvme/vector_store:/qdrant/storage"
+    environment:
+      QDRANT_ALLOW_RECOVERY_MODE: "true"
+    resources:
+      memory: "16G"
+      cpus: "4"
+    networks:
+      - "rag_network"
+  
+  # Service 2: Document Store (PostgreSQL + pgvector)
+  postgres:
+    image: "pgvector/pgvector:pg16"
+    container_name: "rag-postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "/nvme/postgres_data:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_DB: "rag_documents"
+      POSTGRES_USER: "rag_admin"
+      POSTGRES_PASSWORD: "rag_secure_pass_2024"
+      POSTGRES_INITDB_ARGS: "-E UTF8 --locale=en_US.UTF-8"
+    resources:
+      memory: "12G"
+      cpus: "4"
+    networks:
+      - "rag_network"
+  
+  # Service 3: Embedding Service
+  embedding_server:
+    build:
+      context: "./services/embeddings"
+      dockerfile: "Dockerfile"
+    container_name: "rag-embeddings"
+    ports:
+      - "8001:8001"
+    volumes:
+      - "/nvme/models/embeddings:/models"
+    environment:
+      MODEL_PATH: "/models/bge-base"
+      BATCH_SIZE: "64"
+      MAX_SEQ_LENGTH: "512"
+      DEVICE: "cuda"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: 1
+              capabilities: ["gpu"]
+    networks:
+      - "rag_network"
+  
+  # Service 4: vLLM Inference Server
+  vllm_server:
+    image: "vllm/vllm-openai:v0.3.2"
+    container_name: "rag-vllm"
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/nvme/models/llm:/models"
+    command: >
+      --model /models/llama-3.1-8b
+      --quantization int8
+      --gpu-memory-utilization 0.85
+      --max-model-len 4096
+      --trust-remote-code
+      --dtype float16
+    environment:
+      CUDA_VISIBLE_DEVICES: "0"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: 1
+              capabilities: ["gpu"]
+        limits:
+          memory: "12G"
+    networks:
+      - "rag_network"
+  
+  # Service 5: Agent Orchestrator
+  rag_agent:
+    build:
+      context: "./services/agent"
+      dockerfile: "Dockerfile"
+    container_name: "rag-agent"
+    ports:
+      - "8002:8002"
+    volumes:
+      - "./services/agent:/app"
+    depends_on:
+      - "vllm_server"
+      - "qdrant"
+      - "postgres"
+      - "embedding_server"
+    environment:
+      LLM_ENDPOINT: "http://vllm_server:8000/v1"
+      VECTOR_STORE_URL: "http://qdrant:6333"
+      EMBEDDING_SERVICE_URL: "http://embedding_server:8001"
+      DB_CONNECTION_STRING: "postgresql://rag_admin:rag_secure_pass_2024@postgres:5432/rag_documents"
+      AGENT_TYPE: "re2search_plus"
+      MAX_ITERATIONS: "5"
+    networks:
+      - "rag_network"
+  
+  # Service 6: Critic Server
+  critic_server:
+    build:
+      context: "./services/critic"
+      dockerfile: "Dockerfile"
+    container_name: "rag-critic"
+    ports:
+      - "8003:8003"
+    volumes:
+      - "/nvme/models/critic:/models"
+    environment:
+      MODEL_PATH: "/models/llama-critic"
+      DEVICE: "cuda"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: 1
+              capabilities: ["gpu"]
+    networks:
+      - "rag_network"
+  
+  # Service 7: Training Pipeline
+  trainer:
+    build:
+      context: "./services/trainer"
+      dockerfile: "Dockerfile"
+    container_name: "rag-trainer"
+    volumes:
+      - "/nvme/training_cache:/workspace/checkpoints"
+      - "/nvme/datasets:/workspace/data"
+      - "/nvme/models:/workspace/models"
+    environment:
+      WANDB_API_KEY: "${WANDB_API_KEY}"
+      TRAINING_MODE: "dpo"
+      BASE_MODEL_PATH: "/workspace/models/llm/llama-3.1-8b"
+      OUTPUT_DIR: "/workspace/checkpoints"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: 1
+              capabilities: ["gpu"]
+    networks:
+      - "rag_network"
+  
+  # Service 8: Web UI (FastAPI + React)
+  frontend:
+    build:
+      context: "./services/frontend"
+      dockerfile: "Dockerfile"
+    container_name: "rag-frontend"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "rag_agent"
+    environment:
+      AGENT_API_URL: "http://rag_agent:8002"
+    networks:
+      - "rag_network"
+  
+  # Service 9: Monitoring (Prometheus)
+  prometheus:
+    image: "prom/prometheus:v2.48.0"
+    container_name: "rag-prometheus"
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./config/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "/nvme/prometheus_data:/prometheus"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    networks:
+      - "rag_network"
+  
+  # Service 10: Visualization (Grafana)
+  grafana:
+    image: "grafana/grafana:10.2.0"
+    container_name: "rag-grafana"
+    ports:
+      - "3001:3000"
+    volumes:
+      - "/nvme/grafana_data:/var/lib/grafana"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: "rag_admin_2024"
+    networks:
+      - "rag_network"
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z5: Agent Architecture
+#═══════════════════════════════════════════════════════════
+agent_architecture:
+  agent_type: "Re2Search++"
+  
+  components:
+    reasoning_module:
+      description: "Analyzes question and decomposes into sub-problems"
+      prompt_template: |
+        You are analyzing a complex question that may require multiple information retrieval steps.
+        
+        Question: {question}
+        
+        Break down what information you need to answer this question.
+        List the key facts or entities required.
+      
+      max_tokens: 200
+      temperature: 0.3
+    
+    reflection_module:
+      description: "Identifies unverified claims in reasoning"
+      prompt_template: |
+        Review your reasoning and identify claims that need verification.
+        
+        Reasoning: {reasoning}
+        Retrieved Information: {context}
+        
+        Are there unverified claims? If yes, what is the FIRST missing piece of information?
+      
+      max_tokens: 150
+      temperature: 0.2
+    
+    query_generation_module:
+      description: "Generates targeted search queries"
+      prompt_template: |
+        Generate a specific search query to find: {needed_info}
+        
+        Previous queries: {query_history}
+        
+        Create a NEW query that hasn't been tried before.
+        Query should be: specific, concise, and searchable.
+      
+      max_tokens: 50
+      temperature: 0.5
+    
+    answer_synthesis_module:
+      description: "Synthesizes final answer from all retrieved context"
+      prompt_template: |
+        Using the information gathered from multiple searches, answer the question.
+        
+        Question: {question}
+        
+        Information History:
+        {formatted_history}
+        
+        Provide a concise, accurate answer citing the relevant information.
+      
+      max_tokens: 300
+      temperature: 0.4
+  
+  workflow:
+    max_iterations: 5
+    early_stopping:
+      enabled: true
+      confidence_threshold: 0.9
+    
+    iteration_steps:
+      - step: "reasoning"
+        module: "reasoning_module"
+      - step: "reflection"
+        module: "reflection_module"
+      - step: "query_generation"
+        module: "query_generation_module"
+        condition: "reflection.status == 'INSUFFICIENT'"
+      - step: "retrieval"
+        service: "hybrid_retriever"
+        top_k: 10
+      - step: "critic_scoring"
+        service: "critic_server"
+        enabled: true
+      - step: "answer_synthesis"
+        module: "answer_synthesis_module"
+        condition: "reflection.status == 'SUFFICIENT' OR iteration == max_iterations"
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z6: Retrieval Configuration
+#═══════════════════════════════════════════════════════════
+retrieval_system:
+  strategy: "hybrid"  # BM25 + Vector + Reranking
+  
+  bm25_retrieval:
+    k1: 1.5
+    b: 0.75
+    top_k: 50
+  
+  vector_retrieval:
+    embedding_model: "bge-base-en-v1.5"
+    similarity_metric: "cosine"
+    top_k: 50
+    filter_threshold: 0.5
+  
+  hybrid_fusion:
+    method: "rrf"  # Reciprocal Rank Fusion
+    weights:
+      bm25: 0.4
+      vector: 0.6
+    top_k: 20
+  
+  reranking:
+    enabled: true
+    model: "bge-reranker-large"
+    top_k_final: 10
+  
+  chunking_strategy:
+    method: "semantic"
+    chunk_size: 512
+    chunk_overlap: 50
+    separators: ["\n\n", "\n", ". ", " "]
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z7: Training Configuration
+#═══════════════════════════════════════════════════════════
+training_pipelines:
+  
+  # DPO Training (Actor)
+  actor_dpo:
+    algorithm: "dpo"
+    base_model: "/nvme/models/llm/llama-3.1-8b"
+    output_dir: "/nvme/training_cache/actor_dpo"
+    
+    data_config:
+      dataset_source: "custom_trajectories"
+      train_split: 0.9
+      eval_split: 0.1
+      min_reward_diff: 0.3  # Chosen vs Rejected
+    
+    hyperparameters:
+      num_train_epochs: 3
+      per_device_train_batch_size: 2
+      gradient_accumulation_steps: 8  # Effective batch = 16
+      learning_rate: 5.0e-6
+      lr_scheduler_type: "cosine"
+      warmup_ratio: 0.1
+      weight_decay: 0.01
+      max_grad_norm: 1.0
+      
+      # DPO specific
+      beta: 0.1
+      max_length: 1024
+      max_prompt_length: 512
+      
+      # Optimization
+      bf16: true
+      gradient_checkpointing: true
+      optim: "adamw_torch_fused"
+    
+    lora_config:
+      enabled: true
+      r: 16
+      lora_alpha: 32
+      lora_dropout: 0.05
+      target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+    
+    logging:
+      logging_steps: 10
+      save_steps: 100
+      eval_steps: 50
+      report_to: "wandb"
+  
+  # Critic Training
+  critic_training:
+    base_model: "/nvme/models/llm/llama-3.1-8b"
+    output_dir: "/nvme/training_cache/critic"
+    task: "regression"
+    
+    data_config:
+      reward_sources:
+        - "retrieval_relevance"
+        - "query_quality"
+        - "answer_correctness"
+      normalization: "min_max"  # [0, 1]
+    
+    hyperparameters:
+      num_train_epochs: 3
+      per_device_train_batch_size: 4
+      gradient_accumulation_steps: 4
+      learning_rate: 3.0e-5
+      warmup_ratio: 0.1
+      loss_function: "mse"
+      
+      bf16: true
+      gradient_checkpointing: true
+    
+    lora_config:
+      enabled: true
+      r: 8
+      lora_alpha: 16
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z8: Evaluation Benchmarks
+#═══════════════════════════════════════════════════════════
+evaluation:
+  benchmarks:
+    hotpotqa:
+      dataset: "hotpot_qa"
+      split: "validation"
+      metrics: ["f1", "exact_match"]
+      target_f1: 0.63
+    
+    2wikimultihopqa:
+      dataset: "2wikimultihopqa"
+      split: "test"
+      metrics: ["f1", "exact_match"]
+      target_f1: 0.59
+    
+    bamboogle:
+      dataset: "bamboogle"
+      split: "test"
+      metrics: ["f1", "exact_match"]
+      target_f1: 0.66
+    
+    medqa:
+      dataset: "medqa_usmle"
+      split: "test"
+      metrics: ["accuracy"]
+      target_accuracy: 0.74
+  
+  evaluation_protocol:
+    batch_size: 10
+    max_samples: 1000
+    sampling_strategy: "stratified"
+    report_format: "wandb_table"
+
+#═══════════════════════════════════════════════════════════
+# LAYER Z9: Monitoring & Observability
+#═══════════════════════════════════════════════════════════
+observability:
+  metrics:
+    system_level:
+      - "gpu_utilization"
+      - "gpu_memory_used"
+      - "gpu_temperature"
+      - "cpu_utilization"
+      - "ram_usage"
+      - "disk_io"
+    
+    application_level:
+      - "query_latency_p50"
+      - "query_latency_p95"
+      - "query_latency_p99"
+      - "queries_per_minute"
+      - "retrieval_latency"
+      - "llm_generation_latency"
+      - "embedding_generation_latency"
+    
+    quality_metrics:
+      - "retrieval_precision_at_10"
+      - "retrieval_recall_at_10"
+      - "answer_f1_score"
+      - "answer_exact_match"
+      - "average_iterations_per_query"
+      - "critic_score_distribution"
+  
+  logging:
+    level: "INFO"
+    format: "json"
+    destinations:
+      - "stdout"
+      - "/nvme/logs/rag_system.log"
+    rotation:
+      max_size_mb: 100
+      backup_count: 10
+  
+  alerting:
+    enabled: true
+    channels:
+      - "email"
+      - "slack"
+    rules:
+      - name: "high_gpu_memory"
+        condition: "gpu_memory_used > 0.95"
+        severity: "warning"
+      - name: "high_latency"
+        condition: "query_latency_p95 > 10000"
+        severity: "critical"
+      - name: "low_throughput"
+        condition: "queries_per_minute < 5"
+        severity: "warning"
+```
+
+---
+
+## 🚀 Master Build Prompt
+
+Now I'll convert this design token into **executable build instructions**:
+
+---
+
+### **COMPREHENSIVE BUILD PROMPT FOR RAG-GYM SYSTEM**
+
+```markdown
+# 🎯 OBJECTIVE
+Build a production-grade RAG-Gym system on RTX 3090 hardware that achieves:
+- F1 Score: 60%+ on HotpotQA
+- Query Latency: <5 seconds (P95)
+- Throughput: 12+ queries/minute
+- Full local deployment (no cloud dependencies)
+
+# 📐 ARCHITECTURE OVERVIEW
+
+## Spatial System Design (3D Mental Model)
+
+**Vertical Stack (Z-Axis):**
+```
+Layer 7 [UI]         → React Dashboard + FastAPI
+Layer 6 [Orchestrator] → Agent Controller + Workflow Engine
+Layer 5 [Logic]      → Re²Search Agent + Critic Model
+Layer 4 [Inference]  → vLLM Server + Embedding Service
+Layer 3 [Data]       → Qdrant Vector DB + PostgreSQL
+Layer 2 [Compute]    → GPU Memory Management + CPU Threading
+Layer 1 [Storage]    → NVMe (hot data) + HDD (cold data)
+Layer 0 [Foundation] → Ubuntu + CUDA + Docker
+```
+
+**Horizontal Services (X-Axis):**
+```
+Service 1: Vector Database (Qdrant)
+Service 2: Document Store (PostgreSQL+pgvector)
+Service 3: Embedding Server (BGE-Base)
+Service 4: LLM Server (vLLM + Llama-3.1-8B)
+Service 5: Agent Orchestrator (Re²Search++)
+Service 6: Critic Server (Process Reward Model)
+Service 7: Training Pipeline (DPO/SFT/PPO)
+Service 8: Web UI (Frontend)
+Service 9: Monitoring (Prometheus)
+Service 10: Visualization (Grafana)
+```
+
+---
+
+# 🔨 PHASE 1: Foundation Setup (Week 1)
+
+## Day 1-2: OS & Hardware Configuration
+
+### **Task 1.1: Ubuntu Installation**
+```bash
+# Boot from Ubuntu 22.04 LTS USB
+# Select options:
+# - Minimal installation
+# - Download updates during installation
+# - Install third-party software (NVIDIA drivers)
+
+# Partition scheme:
+# /boot:     2GB   (EXT4)
+# /:         200GB (EXT4) - on NVMe
+# /nvme:     1.8TB (EXT4) - on NVMe (remaining)
+# /archive:  6TB   (EXT4) - on HDD
+# swap:      32GB  (swap)
+
+# After installation, update system
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y build-essential cmake git curl wget vim htop nvtop
+```
+
+### **Task 1.2: NVIDIA Driver & CUDA Setup**
+```bash
+# Install NVIDIA driver 535 (CUDA 12.2 compatible)
+sudo apt install -y nvidia-driver-535
+
+# Reboot and verify
+sudo reboot
+nvidia-smi  # Should show RTX 3090, CUDA 12.2
+
+# Install CUDA Toolkit
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt update
+sudo apt install -y cuda-toolkit-12-2
+
+# Add to PATH
+echo 'export PATH=/usr/local/cuda-12.2/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+
+# Verify CUDA
+nvcc --version  # Should show 12.2
+```
+
+### **Task 1.3: Docker Installation**
+```bash
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Install NVIDIA Container Toolkit
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt update
+sudo apt install -y nvidia-container-toolkit
+
+# Configure Docker daemon
+sudo tee /etc/docker/daemon.json > /dev/null <<EOF
+{
+  "default-runtime": "nvidia",
+  "runtimes": {
+    "nvidia": {
+      "path": "nvidia-container-runtime",
+      "runtimeArgs": []
+    }
+  },
+  "data-root": "/nvme/docker"
+}
+EOF
+
+sudo systemctl restart docker
+
+# Test GPU in Docker
+docker run --rm --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi
+```
+
+## Day 3-4: Storage & Directory Structure
+
+### **Task 1.4: Create Directory Structure**
+```bash
+# NVMe directory structure
+sudo mkdir -p /nvme/{models,vector_store,datasets,docker_volumes,training_cache,logs,postgres_data,prometheus_data,grafana_data}
+
+# Models subdirectories
+sudo mkdir -p /nvme/models/{llm,embeddings,critic,checkpoints}
+
+# Archive directory structure
+sudo mkdir -p /archive/{raw_documents,backups,experiments,cold_storage}
+
+# Set permissions
+sudo chown -R $USER:$USER /nvme
+sudo chown -R $USER:$USER /archive
+
+# Create swap file (32GB)
+sudo fallocate -l 32G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+# Make swap permanent
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+# Configure swappiness
+echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
+## Day 5-7: Model Downloads
+
+### **Task 1.5: Download Base Models**
+```bash
+# Install Hugging Face CLI
+pip install -U "huggingface_hub[cli]"
+
+# Login (get token from huggingface.co/settings/tokens)
+huggingface-cli login
+
+# Download Llama-3.1-8B-Instruct (~16GB)
+huggingface-cli download \
+  meta-llama/Llama-3.1-8B-Instruct \
+  --local-dir /nvme/models/llm/llama-3.1-8b \
+  --local-dir-use-symlinks False
+
+# Download BGE-Base embeddings (~1.5GB)
+huggingface-cli download \
+  BAAI/bge-base-en-v1.5 \
+  --local-dir /nvme/models/embeddings/bge-base \
+  --local-dir-use-symlinks False
+
+# Download BGE Reranker (~1.2GB)
+huggingface-cli download \
+  BAAI/bge-reranker-large \
+  --local-dir /nvme/models/embeddings/reranker \
+  --local-dir-use-symlinks False
+
+# Copy Llama model for critic (or download separately)
+cp -r /nvme/models/llm/llama-3.1-8b /nvme/models/critic/llama-critic
+
+# Download benchmark datasets
+mkdir -p /nvme/datasets/benchmarks
+cd /nvme/datasets/benchmarks
+
+# HotpotQA
+wget https://nlp.stanford.edu/projects/hotpotqa/hotpot_dev_distractor_v1.json
+
+# 2WikiMultihopQA
+git clone https://github.com/Alab-NII/2wikimultihop.git
+
+# Bamboogle
+wget https://raw.githubusercontent.com/ofirpress/bamboogle/main/bamboogle.json
+
+# MedQA
+git clone https://github.com/jind11/MedQA.git
+```
+
+---
+
+# 🏗️ PHASE 2: Core Services (Week 2)
+
+## Day 8-9: Python Environment & Dependencies
+
+### **Task 2.1: Create Python Virtual Environment**
+```bash
+# Install Python 3.11
+sudo apt install -y python3.11 python3.11-venv python3.11-dev python3-pip
+
+# Create virtual environment
+python3.11 -m venv /opt/rag_gym_env
+source /opt/rag_gym_env/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip setuptools wheel
+
+# Install PyTorch with CUDA 12.2
+pip install torch==2.2.0+cu122 torchvision==0.17.0+cu122 torchaudio==2.2.0+cu122 \
+  --index-url https://download.pytorch.org/whl/cu122
+
+# Verify PyTorch GPU
+python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0))"
+# Should print: True, NVIDIA GeForce RTX 3090
+
+# Install core dependencies (save as requirements.txt)
+cat > /tmp/rag_requirements.txt << 'EOF'
+# Transformers & ML
+transformers==4.38.0
+sentence-transformers==2.3.1
+accelerate==0.27.0
+bitsandbytes==0.42.0
+peft==0.8.2
+
+# RAG Frameworks
+langchain==0.1.9
+llama-index==0.10.12
+
+# Vector Databases
+qdrant-client==1.7.3
+chromadb==0.4.22
+faiss-gpu==1.7.2
+psycopg2-binary==2.9.9
+pgvector==0.2.5
+
+# Inference
+vllm==0.3.2
+
+# Training
+trl==0.7.10
+deepspeed==0.13.1
+
+# Document Processing
+pypdf==4.0.1
+pdfplumber==0.10.3
+unstructured==0.12.4
+python-docx==1.1.0
+python-pptx==0.6.23
+
+# NLP
+spacy==3.7.4
+nltk==3.8.1
+rank-bm25==0.2.2
+
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+websockets==12.0
+pydantic==2.5.3
+
+# Monitoring
+wandb==0.16.3
+tensorboard==2.15.1
+prometheus-client==0.19.0
+mlflow==2.10.0
+
+# Utilities
+requests==2.31.0
+tqdm==4.66.1
+numpy==1.24.3
+pandas==2.0.3
+pyyaml==6.0.1
+EOF
+
+pip install -r /tmp/rag_requirements.txt
+
+# Download spaCy model
+python -m spacy download en_core_web_sm
+```
+
+## Day 10-12: Docker Services Setup
+
+### **Task 2.2: Create Project Structure**
+```bash
+mkdir -p ~/rag-gym-project
+cd ~/rag-gym-project
+
+# Create service directories
+mkdir -p services/{embeddings,agent,critic,trainer,frontend,retrieval}
+mkdir -p config
+```
+
+### **Task 2.3: Docker Compose File**
+```yaml
+# ~/rag-gym-project/docker-compose.yml
+version: '3.8'
+
+networks:
+  rag_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+services:
+  # ═══════════════════════════════════════════════════════
+  # Service 1: Qdrant Vector Database
+  # ═══════════════════════════════════════════════════════
+  qdrant:
+    image: qdrant/qdrant:v1.7.4
+    container_name: rag-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - /nvme/vector_store:/qdrant/storage
+    environment:
+      QDRANT__LOG_LEVEL: INFO
+    deploy:
+      resources:
+        limits:
+          memory: 16G
+        reservations:
+          cpus: '4'
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 2: PostgreSQL + pgvector
+  # ═══════════════════════════════════════════════════════
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: rag-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - /nvme/postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: rag_documents
+      POSTGRES_USER: rag_admin
+      POSTGRES_PASSWORD: rag_secure_pass_2024
+    deploy:
+      resources:
+        limits:
+          memory: 12G
+        reservations:
+          cpus: '4'
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 3: Embedding Service
+  # ═══════════════════════════════════════════════════════
+  embedding_server:
+    build:
+      context: ./services/embeddings
+      dockerfile: Dockerfile
+    container_name: rag-embeddings
+    ports:
+      - "8001:8001"
+    volumes:
+      - /nvme/models/embeddings:/models:ro
+    environment:
+      MODEL_PATH: /models/bge-base
+      BATCH_SIZE: 64
+      MAX_SEQ_LENGTH: 512
+      DEVICE: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 4: vLLM Inference Server
+  # ═══════════════════════════════════════════════════════
+  vllm_server:
+    image: vllm/vllm-openai:v0.3.2
+    container_name: rag-vllm
+    ports:
+      - "8000:8000"
+    volumes:
+      - /nvme/models/llm:/models:ro
+    command: >
+      --model /models/llama-3.1-8b
+      --quantization int8
+      --gpu-memory-utilization 0.85
+      --max-model-len 4096
+      --trust-remote-code
+      --dtype float16
+    environment:
+      CUDA_VISIBLE_DEVICES: "0"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+        limits:
+          memory: 12G
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 5: Agent Orchestrator
+  # ═══════════════════════════════════════════════════════
+  rag_agent:
+    build:
+      context: ./services/agent
+      dockerfile: Dockerfile
+    container_name: rag-agent
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./services/agent:/app
+    depends_on:
+      - vllm_server
+      - qdrant
+      - postgres
+      - embedding_server
+    environment:
+      LLM_ENDPOINT: http://vllm_server:8000/v1
+      VECTOR_STORE_URL: http://qdrant:6333
+      EMBEDDING_SERVICE_URL: http://embedding_server:8001
+      DB_CONNECTION_STRING: postgresql://rag_admin:rag_secure_pass_2024@postgres:5432/rag_documents
+      AGENT_TYPE: re2search_plus
+      MAX_ITERATIONS: 5
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 6: Critic Server
+  # ═══════════════════════════════════════════════════════
+  critic_server:
+    build:
+      context: ./services/critic
+      dockerfile: Dockerfile
+    container_name: rag-critic
+    ports:
+      - "8003:8003"
+    volumes:
+      - /nvme/models/critic:/models:ro
+    environment:
+      MODEL_PATH: /models/llama-critic
+      DEVICE: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 7: Prometheus Monitoring
+  # ═══════════════════════════════════════════════════════
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    container_name: rag-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - /nvme/prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - rag_network
+    restart: unless-stopped
+
+  # ═══════════════════════════════════════════════════════
+  # Service 8: Grafana Visualization
+  # ═══════════════════════════════════════════════════════
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: rag-grafana
+    ports:
+      - "3001:3000"
+    volumes:
+      - /nvme/grafana_data:/var/lib/grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: rag_admin_2024
+      GF_INSTALL_PLUGINS: "grafana-piechart-panel"
+    networks:
+      - rag_network
+    restart: unless-stopped
+```
+
+### **Task 2.4: Service Implementation - Embedding Server**
+```python
+# ~/rag-gym-project/services/embeddings/app.py
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from sentence_transformers import SentenceTransformer
+import torch
+import os
+from typing import List
+
+app = FastAPI(title="RAG-Gym Embedding Service")
+
+# Load model
+MODEL_PATH = os.getenv("MODEL_PATH", "/models/bge-base")
+BATCH_SIZE = int(os.getenv("BATCH_SIZE", "64"))
+MAX_SEQ_LENGTH = int(os.getenv("MAX_SEQ_LENGTH", "512"))
+DEVICE = os.getenv("DEVICE", "cuda")
+
+print(f"Loading embedding model from {MODEL_PATH}...")
+model = SentenceTransformer(MODEL_PATH, device=DEVICE)
+model.max_seq_length = MAX_SEQ_LENGTH
+print(f"Model loaded successfully on {DEVICE}")
+
+class EmbedRequest(BaseModel):
+    texts: List[str]
+    normalize: bool = True
+
+class EmbedResponse(BaseModel):
+    embeddings: List[List[float]]
+    model_name: str
+    dimension: int
+
+@app.post("/embed", response_model=EmbedResponse)
+async def embed_texts(request: EmbedRequest):
+    """Generate embeddings for input texts."""
+    try:
+        with torch.inference_mode():
+            embeddings = model.encode(
+                request.texts,
+                batch_size=BATCH_SIZE,
+                normalize_embeddings=request.normalize,
+                show_progress_bar=False,
+                device=DEVICE
+            )
+        
+        return EmbedResponse(
+            embeddings=embeddings.tolist(),
+            model_name=MODEL_PATH,
+            dimension=model.get_sentence_embedding_dimension()
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "model": MODEL_PATH,
+        "device": DEVICE,
+        "embedding_dim": model.get_sentence_embedding_dimension()
+    }
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8001)
+```
+
+```dockerfile
+# ~/rag-gym-project/services/embeddings/Dockerfile
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+RUN pip install --no-cache-dir \
+    fastapi==0.109.0 \
+    uvicorn[standard]==0.27.0 \
+    sentence-transformers==2.3.1 \
+    torch==2.2.0+cu122 \
+    --index-url https://download.pytorch.org/whl/cu122
+
+COPY app.py /app/
+
+EXPOSE 8001
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8001"]
+```
+
+---
+
+This is getting very long. Let me create a **condensed final version** that you can save as a single executable script:
+
+---
+
+## 🎯 **ULTRA-CONDENSED BUILD SCRIPT**
+
+I'll create a **single shell script** that orchestrates everything:
+
+```bash
+#!/bin/bash
+#═══════════════════════════════════════════════════════════════════════
+# RAG-Gym Production Setup Script
+# Hardware: RTX 3090 24GB + Ryzen 16-core + 64GB RAM
+# Estimated Runtime: 4-6 hours (excluding model downloads)
+#═══════════════════════════════════════════════════════════════════════
+
+set -e  # Exit on error
+
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'  # No Color
+
+log_info() { echo -e "${GREEN}[INFO]${NC} $1"; }
+log_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
+log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+
+#═══════════════════════════════════════════════════════════════════════
+# PHASE 1: System Prerequisites
+#═══════════════════════════════════════════════════════════════════════
+log_info "Phase 1: Installing system prerequisites..."
+
+# Update system
+sudo apt update && sudo apt upgrade -y
+
+# Install build tools
+sudo apt install -y build-essential cmake git curl wget vim htop nvtop
+
+# Install Python 3.11
+sudo apt install -y python3.11 python3.11-venv python3.11-dev python3-pip
+
+# Install NVIDIA drivers (if not already installed)
+if ! command -v nvidia-smi &> /dev/null; then
+    log_warn "NVIDIA driver not found. Installing..."
+    sudo apt install -y nvidia-driver-535
+    log_warn "Please reboot and re-run this script"
+    exit 0
+fi
+
+# Install CUDA Toolkit
+if [ ! -d "/usr/local/cuda-12.2" ]; then
+    log_info "Installing CUDA 12.2..."
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+    sudo dpkg -i cuda-keyring_1.1-1_all.deb
+    sudo apt update
+    sudo apt install -y cuda-toolkit-12-2
+fi
+
+# Install Docker
+if ! command -v docker &> /dev/null; then
+    log_info "Installing Docker..."
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
+    sudo usermod -aG docker $USER
+fi
+
+# Install Docker Compose
+if ! command -v docker-compose &> /dev/null; then
+    log_info "Installing Docker Compose..."
+    sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+fi
+
+# Install NVIDIA Container Toolkit
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt update
+sudo apt install -y nvidia-container-toolkit
+
+# Configure Docker for NVIDIA
+sudo tee /etc/docker/daemon.json > /dev/null <<EOF
+{
+  "default-runtime": "nvidia",
+  "runtimes": {
+    "nvidia": {
+      "path": "nvidia-container-runtime",
+      "runtimeArgs": []
+    }
+  },
+  "data-root": "/nvme/docker"
+}
+EOF
+
+sudo systemctl restart docker
+
+#═══════════════════════════════════════════════════════════════════════
+# PHASE 2: Directory Structure
+#═══════════════════════════════════════════════════════════════════════
+log_info "Phase 2: Creating directory structure..."
+
+# Create NVMe directories
+sudo mkdir -p /nvme/{models/{llm,embeddings,critic,checkpoints},vector_store,datasets,docker_volumes,training_cache,logs,postgres_data,prometheus_data,grafana_data}
+
+# Create archive directories
+sudo mkdir -p /archive/{raw_documents,backups,experiments,cold_storage}
+
+# Set permissions
+sudo chown -R $USER:$USER /nvme
+sudo chown -R $USER:$USER /archive
+
+# Create swap file if not exists
+if [ ! -f /swapfile ]; then
+    log_info "Creating 32GB swap file..."
+    sudo fallocate -l 32G /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+    echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+    echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+    sudo sysctl -p
+fi
+
+#═══════════════════════════════════════════════════════════════════════
+# PHASE 3: Python Environment
+#═══════════════════════════════════════════════════════════════════════
+log_info "Phase 3: Setting up Python environment..."
+
+# Create virtual environment
+python3.11 -m venv /opt/rag_gym_env
+source /opt/rag_gym_env/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip setuptools wheel
+
+# Install PyTorch
+pip install torch==2.2.0+cu122 torchvision==0.17.0+cu122 torchaudio==2.2.0+cu122 \
+  --index-url https://download.pytorch.org/whl/cu122
+
+# Install core dependencies
+cat > /tmp/rag_requirements.txt << 'EOF'
+transformers==4.38.0
+sentence-transformers==2.3.1
+accelerate==0.27.0
+bitsandbytes==0.42.0
+peft==0.8.2
+langchain==0.1.9
+llama-index==0.10.12
+qdrant-client==1.7.3
+faiss-gpu==1.7.2
+psycopg2-binary==2.9.9
+pgvector==0.2.5
+vllm==0.3.2
+trl==0.7.10
+pypdf==4.0.1
+pdfplumber==0.10.3
+spacy==3.7.4
+rank-bm25==0.2.2
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+wandb==0.16.3
+tensorboard==2.15.1
+prometheus-client==0.19.0
+requests==2.31.0
+tqdm==4.66.1
+numpy==1.24.3
+pandas==2.0.3
+pyyaml==6.0.1
+EOF
+
+pip install -r /tmp/rag_requirements.txt
+python -m spacy download en_core_web_sm
+
+log_info "Python environment ready!"
+
+#═══════════════════════════════════════════════════════════════════════
+# PHASE 4: Model Downloads
+#═══════════════════════════════════════════════════════════════════════
+log_info "Phase 4: Downloading models (this will take time)..."
+
+pip install -U "huggingface_hub[cli]"
+
+log_warn "Please run: huggingface-cli login (get token from huggingface.co/settings/tokens)"
+log_warn "Then download models with:"
+echo "  huggingface-cli download meta-llama/Llama-3.1-8B-Instruct --local-dir /nvme/models/llm/llama-3.1-8b --local-dir-use-symlinks False"
+echo "  huggingface-cli download BAAI/bge-base-en-v1.5 --local-dir /nvme/models/embeddings/bge-base --local-dir-use-symlinks False"
+echo "  huggingface-cli download BAAI/bge-reranker-large --local-dir /nvme/models/embeddings/reranker --local-dir-use-symlinks False"
+
+#═══════════════════════════════════════════════════════════════════════
+# PHASE 5: Project Structure
+#═══════════════════════════════════════════════════════════════════════
+log_info "Phase 5: Creating project structure..."
+
+mkdir -p ~/rag-gym-project
+cd ~/rag-gym-project
+mkdir -p services/{embeddings,agent,critic,trainer,frontend,retrieval}
+mkdir -p config
+
+# Save this entire script to the project
+cp "$0" ~/rag-gym-project/setup.sh
+
+log_info "✅ Setup complete! Next steps:"
+echo "1. Download models (see instructions above)"
+echo "2. Run: cd ~/rag-gym-project"
+echo "3. Create service Dockerfiles and code (see full documentation)"
+echo "4. Run: docker-compose up -d"
+
+log_info "Project location: ~/rag-gym-project"
+log_info "Python environment: /opt/rag_gym_env"
+log_info "Models directory: /nvme/models"
+```
+
+---
+
+Would you like me to:
+
+1. **Continue with the complete service implementations** (embedding server, agent, critic, etc.)?
+2. **Create a GitHub repository structure** you can clone?
+3. **Build a one-click deployment script** that automates everything?
+4. **Create a Jupyter notebook** for interactive development?
+
+I have the complete system mapped out - just tell me which format would be most useful for your workflow! 🚀nd 
