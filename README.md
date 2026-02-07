@@ -254,12 +254,14 @@ DevTeam6 is more than a curated list—it's a complete AI-powered development pl
 [![System Overview](https://img.shields.io/badge/🏗️_SYSTEM_OVERVIEW-ff00ff?style=for-the-badge)](docs/architecture/SYSTEM_OVERVIEW.md)
 [![AI Orchestration](https://img.shields.io/badge/🤖_AI_ORCHESTRATION-00ff88?style=for-the-badge)](docs/architecture/AI_ORCHESTRATION.md)
 [![Awesome Copilot](https://img.shields.io/badge/🚀_AWESOME_COPILOT-ff6600?style=for-the-badge)](docs/awesome-copilot/INTEGRATION_GUIDE.md)
+[![Development Environment](https://img.shields.io/badge/🛠️_DEV_ENVIRONMENT-7b2fff?style=for-the-badge)](DEVELOPMENT_ENVIRONMENT.md)
 
 | Documentation | Description | Topics Covered |
 |---------------|-------------|----------------|
 | **[System Overview](docs/architecture/SYSTEM_OVERVIEW.md)** | Complete architecture guide | 4-layer architecture, components, data flow, metrics |
 | **[AI Orchestration](docs/architecture/AI_ORCHESTRATION.md)** | Multi-tier AI system | Query routing, RAG pipeline, agent coordination |
 | **[Awesome Copilot Integration](docs/awesome-copilot/INTEGRATION_GUIDE.md)** | GitHub Copilot ecosystem | 150+ agents, MCP servers, prompt library |
+| **[Development Environment Setup](DEVELOPMENT_ENVIRONMENT.md)** | Complete dev tools checklist | Python, Node, Java, Go, Rust, C/C++, Docker, Kubernetes, Databases (Qdrant, PostgreSQL, Redis), Cloud CLIs, PowerShell, 100+ tools |
 | **[Local AI System](local-ai/README.md)** | Self-hosted AI backend | Vector RAG, embeddings, ChromaDB, Ollama |
 
 ### 🎯 What's Inside

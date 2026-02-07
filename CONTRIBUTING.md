@@ -16,6 +16,17 @@ cd DevTeam6
 
 ### 2. Set Up Development Environment
 
+**📋 Complete Environment Setup Guide**: See [DEVELOPMENT_ENVIRONMENT.md](DEVELOPMENT_ENVIRONMENT.md) for comprehensive setup instructions including all tools, dependencies, and platform-specific guides.
+
+**✅ Verify Your Environment**:
+```bash
+# Linux/macOS
+./scripts/verify-environment.sh
+
+# Windows PowerShell
+.\scripts\verify-environment.ps1
+```
+
 #### Option A: Docker Compose (Recommended)
 
 ```bash
