@@ -1,0 +1,158 @@
+# Azure Pipelines Configuration for DevTeam6
+# Continuously build, test, and deploy to any platform and cloud
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+      - feature/*
+  paths:
+    include:
+      - local-ai/**
+      - app/**
+      - projects/**
+      - templates/**
+
+pr:
+  branches:
+    include:
+      - main
+      - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  pythonVersion: '3.12'
+  nodeVersion: '22.x'
+  dotnetVersion: '8.0.x'
+
+stages:
+  - stage: Build
+    displayName: 'Build Stage'
+    jobs:
+      - job: BuildPython
+        displayName: 'Build Python Backend'
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '$(pythonVersion)'
+            displayName: 'Use Python $(pythonVersion)'
+          
+          - script: |
+              python -m pip install --upgrade pip
+              pip install -r local-ai/requirements.txt
+            displayName: 'Install Python dependencies'
+          
+          - script: |
+              cd local-ai
+              python -m pytest tests/ --junitxml=test-results.xml --cov=. --cov-report=xml
+            displayName: 'Run Python tests'
+          
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFiles: 'local-ai/test-results.xml'
+              testRunTitle: 'Python Tests'
+          
+          - task: PublishCodeCoverageResults@1
+            inputs:
+              codeCoverageTool: 'Cobertura'
+              summaryFileLocation: 'local-ai/coverage.xml'
+      
+      - job: BuildFrontend
+        displayName: 'Build Frontend Apps'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            displayName: 'Use Node $(nodeVersion)'
+          
+          - script: |
+              npm ci
+              npm run build
+            displayName: 'Build frontend'
+          
+          - script: |
+              npm test -- --coverage --watchAll=false
+            displayName: 'Run frontend tests'
+          
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFiles: '**/test-results.xml'
+              testRunTitle: 'Frontend Tests'
+      
+      - job: BuildTemplates
+        displayName: 'Build Templates'
+        strategy:
+          matrix:
+            ReactStarter:
+              templatePath: 'templates/react-starter'
+            Vue3Starter:
+              templatePath: 'templates/vue3-starter'
+            DotNet8API:
+              templatePath: 'templates/dotnet8-api'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '$(nodeVersion)'
+            condition: or(contains(variables['templatePath'], 'react'), contains(variables['templatePath'], 'vue'))
+          
+          - script: |
+              cd $(templatePath)
+              npm install
+              npm run build
+            displayName: 'Build $(templatePath)'
+            condition: or(contains(variables['templatePath'], 'react'), contains(variables['templatePath'], 'vue'))
+          
+          - task: UseDotNet@2
+            inputs:
+              version: '$(dotnetVersion)'
+            condition: contains(variables['templatePath'], 'dotnet')
+          
+          - script: |
+              cd $(templatePath)
+              dotnet restore
+              dotnet build --configuration Release
+            displayName: 'Build $(templatePath)'
+            condition: contains(variables['templatePath'], 'dotnet')
+
+  - stage: Docker
+    displayName: 'Docker Build'
+    dependsOn: Build
+    jobs:
+      - job: BuildDockerImages
+        displayName: 'Build Docker Images'
+        steps:
+          - task: Docker@2
+            inputs:
+              command: 'build'
+              dockerfile: 'local-ai/Dockerfile'
+              tags: 'devteam6-backend:$(Build.BuildId)'
+          
+          - task: Docker@2
+            inputs:
+              command: 'build'
+              dockerfile: 'app/Dockerfile'
+              tags: 'devteam6-frontend:$(Build.BuildId)'
+          
+          - task: Docker@2
+            inputs:
+              command: 'build'
+              dockerfile: 'projects/Dockerfile'
+              tags: 'devteam6-projects:$(Build.BuildId)'
+
+  - stage: Deploy
+    displayName: 'Deploy Stage'
+    dependsOn: Docker
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: DeployToProduction
+        displayName: 'Deploy to Production'
+        environment: 'production'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: echo "Deploying to production..."
+                  displayName: 'Deploy'

@@ -1,0 +1,208 @@
+# Restack AI Configuration for DevTeam6
+# Automatically build, test and deploy Restack AI applications
+
+name: Restack AI Deployment
+
+# Configuration
+config:
+  runtime: python3.12
+  region: us-central1
+  
+  # AI-specific settings
+  ai:
+    llm_provider: ollama
+    vector_store: chromadb
+    embedding_model: nomic-embed-text
+    
+  # Services to deploy
+  services:
+    - name: rag-pipeline
+      path: ./local-ai
+      port: 8000
+      env:
+        OLLAMA_BASE_URL: ${OLLAMA_URL}
+        CHROMA_HOST: ${CHROMA_HOST}
+        EMBEDDING_MODEL: nomic-embed-text
+      
+    - name: mcp-memory-server
+      path: ./local-ai/mcp
+      port: 3000
+      env:
+        CHROMA_HOST: ${CHROMA_HOST}
+    
+    - name: mcp-rag-server
+      path: ./local-ai/mcp
+      port: 3001
+      env:
+        OLLAMA_BASE_URL: ${OLLAMA_URL}
+        CHROMA_HOST: ${CHROMA_HOST}
+
+# Build steps
+build:
+  steps:
+    - name: Install Dependencies
+      run: |
+        pip install -r local-ai/requirements.txt
+    
+    - name: Run Tests
+      run: |
+        cd local-ai
+        pytest tests/ --cov=. --cov-report=xml
+    
+    - name: Build Docker Images
+      run: |
+        docker build -t devteam6-rag -f local-ai/Dockerfile .
+    
+    - name: Test AI Pipeline
+      run: |
+        python -m pytest local-ai/tests/test_rag_pipeline.py
+
+# Deployment configuration
+deploy:
+  # RAG Pipeline deployment
+  rag-pipeline:
+    image: devteam6-rag:latest
+    replicas: 2
+    resources:
+      cpu: "2"
+      memory: 4Gi
+    health_check:
+      path: /health
+      interval: 30s
+      timeout: 5s
+    
+  # Ollama LLM service
+  ollama:
+    image: ollama/ollama:latest
+    replicas: 1
+    resources:
+      cpu: "4"
+      memory: 16Gi
+      gpu: "1"
+    volumes:
+      - /models:/root/.ollama
+  
+  # ChromaDB vector store
+  chromadb:
+    image: chromadb/chroma:latest
+    replicas: 1
+    resources:
+      cpu: "1"
+      memory: 2Gi
+    volumes:
+      - /data:/chroma/data
+    persist: true
+
+# Monitoring & Observability
+monitoring:
+  enabled: true
+  metrics:
+    - name: llm_latency
+      type: histogram
+      description: LLM response latency
+    
+    - name: rag_queries_total
+      type: counter
+      description: Total RAG queries processed
+    
+    - name: vector_search_time
+      type: histogram
+      description: Vector search time
+  
+  logging:
+    level: INFO
+    format: json
+
+# Auto-scaling rules
+autoscaling:
+  rag-pipeline:
+    min_replicas: 1
+    max_replicas: 10
+    target_cpu_percent: 70
+    target_memory_percent: 80
+
+# Rollout strategy
+rollout:
+  type: blue-green
+  health_check_delay: 30s
+  rollback_on_failure: true
+
+# Environment-specific configurations
+environments:
+  development:
+    ollama:
+      replicas: 1
+      resources:
+        cpu: "2"
+        memory: 8Gi
+    
+  staging:
+    ollama:
+      replicas: 1
+      resources:
+        cpu: "4"
+        memory: 16Gi
+    
+  production:
+    rag-pipeline:
+      replicas: 5
+    ollama:
+      replicas: 2
+      resources:
+        cpu: "8"
+        memory: 32Gi
+        gpu: "2"
+
+# Testing configuration
+testing:
+  # Unit tests
+  unit:
+    framework: pytest
+    coverage_threshold: 80
+  
+  # Integration tests
+  integration:
+    - name: RAG Pipeline E2E
+      file: tests/test_rag_e2e.py
+      timeout: 300s
+    
+    - name: MCP Server Integration
+      file: tests/test_mcp_integration.py
+      timeout: 120s
+  
+  # Performance tests
+  performance:
+    - name: LLM Throughput
+      queries_per_second: 10
+      duration: 60s
+      success_rate_threshold: 95
+    
+    - name: Vector Search Performance
+      concurrent_searches: 100
+      target_p95_latency: 100ms
+
+# Secrets management
+secrets:
+  - name: OLLAMA_API_KEY
+    env_var: OLLAMA_API_KEY
+  
+  - name: OPENAI_API_KEY
+    env_var: OPENAI_API_KEY
+    required: false
+  
+  - name: CHROMA_AUTH_TOKEN
+    env_var: CHROMA_AUTH_TOKEN
+    required: false
+
+# Notifications
+notifications:
+  slack:
+    webhook_url: ${SLACK_WEBHOOK_URL}
+    on_deploy_success: true
+    on_deploy_failure: true
+    on_test_failure: true
+  
+  email:
+    recipients:
+      - devteam6@example.com
+    on_deploy_failure: true

@@ -1,0 +1,158 @@
+# Google Cloud Build Configuration for DevTeam6
+# Build, test, and deploy in a fast, consistent, and secure manner
+
+options:
+  machineType: 'N1_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: '1800s'
+
+steps:
+  # Build Python Backend
+  - name: 'python:3.12'
+    id: 'test-python'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install -r local-ai/requirements.txt
+        cd local-ai
+        pytest tests/ --junitxml=test-results.xml
+    waitFor: ['-']
+  
+  # Build Frontend
+  - name: 'node:22'
+    id: 'test-frontend'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        npm ci
+        npm test -- --watchAll=false
+    waitFor: ['-']
+  
+  # Build Backend Docker Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-backend'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/devteam6-backend:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/devteam6-backend:latest'
+      - '-f'
+      - 'local-ai/Dockerfile'
+      - '.'
+    waitFor: ['test-python']
+  
+  # Build Frontend Docker Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-frontend'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/devteam6-frontend:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/devteam6-frontend:latest'
+      - '-f'
+      - 'app/Dockerfile'
+      - '.'
+    waitFor: ['test-frontend']
+  
+  # Build Projects Dashboard Docker Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-projects'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/devteam6-projects:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/devteam6-projects:latest'
+      - '-f'
+      - 'projects/Dockerfile'
+      - '.'
+    waitFor: ['-']
+  
+  # Vulnerability Scanning
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'scan-backend'
+    args:
+      - 'container'
+      - 'images'
+      - 'scan'
+      - 'gcr.io/$PROJECT_ID/devteam6-backend:$COMMIT_SHA'
+    waitFor: ['build-backend']
+  
+  # Push Backend Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-backend'
+    args:
+      - 'push'
+      - '--all-tags'
+      - 'gcr.io/$PROJECT_ID/devteam6-backend'
+    waitFor: ['scan-backend']
+  
+  # Push Frontend Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-frontend'
+    args:
+      - 'push'
+      - '--all-tags'
+      - 'gcr.io/$PROJECT_ID/devteam6-frontend'
+    waitFor: ['build-frontend']
+  
+  # Push Projects Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-projects'
+    args:
+      - 'push'
+      - '--all-tags'
+      - 'gcr.io/$PROJECT_ID/devteam6-projects'
+    waitFor: ['build-projects']
+  
+  # Deploy to Cloud Run (Backend)
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'deploy-backend'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'devteam6-backend'
+      - '--image=gcr.io/$PROJECT_ID/devteam6-backend:$COMMIT_SHA'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars=OLLAMA_BASE_URL=${_OLLAMA_URL},CHROMA_HOST=${_CHROMA_HOST}'
+    waitFor: ['push-backend']
+  
+  # Deploy to Cloud Run (Frontend)
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'deploy-frontend'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'devteam6-frontend'
+      - '--image=gcr.io/$PROJECT_ID/devteam6-frontend:$COMMIT_SHA'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars=VITE_API_BASE_URL=${_API_URL}'
+    waitFor: ['push-frontend']
+
+images:
+  - 'gcr.io/$PROJECT_ID/devteam6-backend:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/devteam6-backend:latest'
+  - 'gcr.io/$PROJECT_ID/devteam6-frontend:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/devteam6-frontend:latest'
+  - 'gcr.io/$PROJECT_ID/devteam6-projects:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/devteam6-projects:latest'
+
+substitutions:
+  _OLLAMA_URL: 'http://ollama:11434'
+  _CHROMA_HOST: 'chromadb'
+  _API_URL: 'https://devteam6-backend-xxx.a.run.app'
+
+artifacts:
+  objects:
+    location: 'gs://${PROJECT_ID}_cloudbuild/artifacts'
+    paths:
+      - 'local-ai/test-results.xml'

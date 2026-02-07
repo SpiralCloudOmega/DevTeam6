@@ -1,0 +1,212 @@
+# Boring Cyborg Configuration for DevTeam6
+# Automatically label PRs, issues and perform boring operations
+
+# Label PRs based on file paths
+labelPRBasedOnFilePath:
+  ai:
+    - local-ai/**/*
+    - local-ai/mcp/**/*
+    - local-ai/transformers/**/*
+  
+  frontend:
+    - app/**/*
+    - projects/**/*
+    - '**/*.vue'
+    - '**/*.tsx'
+    - '**/*.jsx'
+  
+  backend:
+    - local-ai/api/**/*
+    - local-ai/core/**/*
+    - '**/*.py'
+  
+  documentation:
+    - docs/**/*
+    - '**/*.md'
+    - CONTRIBUTING.md
+    - README.md
+  
+  templates:
+    - templates/**/*
+  
+  docker:
+    - '**/Dockerfile'
+    - 'docker-compose.yml'
+    - '.devcontainer/**/*'
+  
+  ci-cd:
+    - .github/workflows/**/*
+    - .github/apps/**/*
+    - azure-pipelines.yml
+    - cloudbuild.yaml
+  
+  agents:
+    - .github/agents/**/*
+    - context7/**/*
+  
+  mcp:
+    - local-ai/mcp/**/*
+    - '**/mcp/**/*'
+  
+  tests:
+    - '**/*test*.py'
+    - '**/*test*.ts'
+    - '**/*test*.tsx'
+    - '**/tests/**/*'
+  
+  security:
+    - SECURITY.md
+    - '**/*security*'
+    - '**/*auth*'
+  
+  performance:
+    - PERFORMANCE*.md
+    - '**/*optimization*'
+  
+  config:
+    - '**/*.json'
+    - '**/*.yml'
+    - '**/*.yaml'
+    - '**/*.toml'
+    - .env.example
+
+# Label PRs based on size
+labelPRBasedOnSize:
+  xs:
+    maxLines: 10
+  small:
+    maxLines: 100
+  medium:
+    maxLines: 500
+  large:
+    maxLines: 1000
+  xl:
+    minLines: 1000
+
+# Welcome message for first-time contributors
+firstPRWelcomeComment: >
+  🎉 **Welcome to DevTeam6!** Thanks for opening your first pull request!
+  
+  
+  A maintainer will review your contribution soon. While you wait, please:
+  
+  - 📖 Check out our [Contributing Guide](https://github.com/SpiralCloudOmega/DevTeam6/blob/main/CONTRIBUTING.md)
+  
+  - 💬 Join our [Discussions](https://github.com/SpiralCloudOmega/DevTeam6/discussions)
+  
+  - 📚 Explore the [Documentation](https://github.com/SpiralCloudOmega/DevTeam6/blob/main/docs/README.md)
+  
+  - 🎮 Try our [Interactive Experiences](https://spiralcloudomega.github.io/DevTeam6/)
+  
+  
+  **Quick Tips:**
+  
+  - Ensure all tests pass before requesting review
+  
+  - Follow our code style guidelines
+  
+  - Add documentation for new features
+  
+  - Link to related issues in your PR description
+  
+  
+  Thanks for contributing! 🚀
+
+firstIssueWelcomeComment: >
+  👋 **Thanks for opening your first issue!**
+  
+  
+  We appreciate you taking the time to report this. A maintainer will look into it soon.
+  
+  
+  **Next Steps:**
+  
+  - Check if there are similar existing issues
+  
+  - Provide as much context as possible
+  
+  - Add steps to reproduce (for bugs)
+  
+  - Suggest a solution (for features)
+  
+  
+  Join our [Discussions](https://github.com/SpiralCloudOmega/DevTeam6/discussions) for questions!
+
+# Greeting for first PRs being merged
+firstPRMergeComment: >
+  🎊 **Congratulations on your first merged PR!**
+  
+  
+  You're now officially a DevTeam6 contributor! 🌟
+  
+  
+  **What's Next:**
+  
+  - Check out [Good First Issues](https://github.com/SpiralCloudOmega/DevTeam6/labels/good%20first%20issue)
+  
+  - Join our community discussions
+  
+  - Share your experience in Discussions
+  
+  - Help review other PRs
+  
+  
+  Thank you for your contribution! 🙏
+
+# Stale issues management
+daysUntilStale: 60
+daysUntilClose: 14
+staleLabel: 'stale'
+staleComment: >
+  This issue has been automatically marked as stale because it has not had
+  recent activity. It will be closed in 14 days if no further activity occurs.
+  
+  If this is still relevant, please comment to keep it open.
+
+exemptLabels:
+  - pinned
+  - security
+  - roadmap
+  - good-first-issue
+  - help-wanted
+  - enhancement
+  - bug
+
+closeComment: >
+  This issue has been automatically closed due to inactivity.
+  
+  Feel free to reopen if it's still relevant or create a new issue with updated context.
+
+# Auto-assign reviewers based on file paths
+requestInfoReplyComment: >
+  We would appreciate it if you could provide us with more info about this issue/pr!
+
+requestInfoLabelToAdd: 'needs-more-info'
+
+# Labels for specific types of changes
+labelOnPRTitle:
+  'feat:':
+    - 'feature'
+  'fix:':
+    - 'bug'
+  'docs:':
+    - 'documentation'
+  'refactor:':
+    - 'refactor'
+  'test:':
+    - 'tests'
+  'ci:':
+    - 'ci-cd'
+  'perf:':
+    - 'performance'
+  'chore:':
+    - 'maintenance'
+
+# Auto-assign based on paths
+assignees:
+  - local-ai/**:
+      - SpiralCloudOmega
+  - app/**:
+      - SpiralCloudOmega
+  - docs/**:
+      - SpiralCloudOmega

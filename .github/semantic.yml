@@ -1,0 +1,90 @@
+# Semantic Pull Requests Configuration for DevTeam6
+# Write semantic commit messages and let robots do versioning
+
+# Validate only the PR title (not individual commits)
+titleOnly: true
+
+# Allow merge commits (don't validate each commit message)
+allowMergeCommits: true
+
+# Allow revert commits
+allowRevertCommits: true
+
+# Commit types (based on Conventional Commits)
+types:
+  - feat      # New feature
+  - fix       # Bug fix
+  - docs      # Documentation only changes
+  - style     # Code style changes (formatting, etc.)
+  - refactor  # Code change that neither fixes a bug nor adds a feature
+  - perf      # Performance improvements
+  - test      # Adding or updating tests
+  - build     # Changes to build system or dependencies
+  - ci        # Changes to CI configuration files and scripts
+  - chore     # Other changes that don't modify src or test files
+  - revert    # Revert a previous commit
+
+# Scopes (components of the system)
+scopes:
+  - ai          # AI/ML components (local-ai, transformers, etc.)
+  - frontend    # Frontend applications (app, projects)
+  - backend     # Backend services (API, core)
+  - docker      # Docker and containers
+  - docs        # Documentation
+  - templates   # Project templates
+  - mcp         # MCP servers
+  - workflows   # CI/CD workflows
+  - agents      # GitHub agents
+  - security    # Security-related changes
+  - perf        # Performance optimizations
+  - deps        # Dependency updates
+  - config      # Configuration changes
+
+# Require scope to be specified
+requireScope: false
+
+# Subjects must not be sentence-case, start-case, pascal-case, or upper-case
+subjectPattern: '^(?![A-Z]).+$'
+subjectPatternError: |
+  The subject found in the pull request title should not be capitalized.
+  Valid: "fix: connection timeout"
+  Invalid: "fix: Connection Timeout"
+
+# Allow breaking changes (BREAKING CHANGE: or ! after type/scope)
+allowBreakingChanges:
+  - feat
+  - fix
+  - refactor
+  - perf
+
+# Examples of valid PR titles:
+# ✅ feat: add new RAG pipeline
+# ✅ feat(ai): add new RAG pipeline
+# ✅ fix(frontend): resolve CORS issue
+# ✅ docs: update installation guide
+# ✅ ci(docker): optimize build steps
+# ✅ refactor(mcp): restructure server code
+# ✅ perf(backend): improve query performance
+# ✅ test(ai): add unit tests for transformers
+# ✅ feat!: breaking change in API
+# ✅ feat(ai)!: breaking change in AI module
+#
+# ❌ Fix connection issue (no type)
+# ❌ feat Add feature (missing colon)
+# ❌ feat: Add Feature (capitalized subject)
+# ❌ feature: add feature (invalid type)
+# ❌ feat(invalid): add feature (invalid scope)
+
+# Automated versioning based on commit types
+# feat: -> minor version bump (1.0.0 -> 1.1.0)
+# fix: -> patch version bump (1.0.0 -> 1.0.1)
+# BREAKING CHANGE: or ! -> major version bump (1.0.0 -> 2.0.0)
+# Other types don't trigger version bumps
+
+# Integration with release automation
+# When PR is merged to main:
+# 1. semantic-release reads PR title
+# 2. Determines version bump based on type
+# 3. Updates CHANGELOG.md
+# 4. Creates GitHub release
+# 5. Publishes packages (if configured)

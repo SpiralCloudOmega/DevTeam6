@@ -16,6 +16,7 @@ docs/
 │   └── INTEGRATION_GUIDE.md      # Integration guide & examples
 │
 ├── DEPLOYMENT_GUIDE.md    # Deployment from local to production
+├── GITHUB_APPS_AND_EXTENSIONS.md # 16 GitHub Apps & Copilot Extensions
 ├── QUICK_REFERENCE.md     # Fast access to commands & patterns
 ├── SPEC_KIT_INTEGRATION.md # GitHub Spec-Kit spec-driven development
 ├── TROUBLESHOOTING.md     # Common issues and solutions
@@ -32,6 +33,7 @@ docs/
 
 ### Integration Guides
 - **[Awesome Copilot Integration](awesome-copilot/INTEGRATION_GUIDE.md)** - How to integrate GitHub Awesome Copilot agents and prompts
+- **[GitHub Apps & Extensions](GITHUB_APPS_AND_EXTENSIONS.md)** - 16 GitHub Apps and Copilot Extensions (CI/CD, AI, automation)
 - **[Spec-Kit Integration](SPEC_KIT_INTEGRATION.md)** - GitHub's Spec-Driven Development toolkit integration
 
 ### Operational Guides
@@ -73,6 +75,16 @@ The **Integration Guide** covers:
 - Prompt library management
 - Agent orchestration examples
 - UI integration examples
+
+### GitHub Apps & Extensions
+
+The **GitHub Apps & Extensions Guide** covers:
+- 16 powerful GitHub Apps and Copilot Extensions
+- CI/CD tools (Azure Pipelines, Google Cloud Build, Restack AI)
+- Development automation (Boring Cyborg, Semantic PRs, ChatGPTBot)
+- AI & Performance (Product Science, Sentry)
+- Copilot Extensions (M365 Toolkit, Docker, Mermaid, Perplexity, GitHub Models, Agentic Search, Pinecone)
+- Configuration templates and integration guides
 
 ### Spec-Kit Integration
 
