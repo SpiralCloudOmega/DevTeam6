@@ -1,0 +1,127 @@
+# Jules Agent Configuration
+# Full Virtual Machine Agent (20GB capacity)
+# Reference: https://github.com/gemini-cli-extensions/jules
+
+jules:
+  # VM Configuration
+  vm:
+    enabled: true
+    size: 20GB
+    path: ./jules_vm
+    snapshot_interval: 3600  # 1 hour
+    auto_snapshot: true
+    max_snapshots: 10
+    
+  # Agent Capabilities
+  capabilities:
+    code_execution: true
+    file_operations: true
+    network_access: true
+    package_install: true
+    system_commands: true
+    
+  # Language Support (from DEVELOPMENT_ENVIRONMENT.md)
+  languages:
+    python:
+      version: 3.12.11
+      manager: pyenv
+      tools: [pip, pipx, poetry, uv, black, mypy, pytest, ruff]
+      
+    nodejs:
+      version: 22.16.0
+      manager: nvm
+      tools: [npm, yarn, pnpm, eslint, prettier]
+      
+    java:
+      version: 21
+      tools: [maven, gradle]
+      
+    go:
+      version: 1.24.3
+      tools: [go]
+      
+    rust:
+      version: 1.87.0
+      tools: [rustc, cargo]
+      
+    cpp:
+      compilers: [gcc, clang]
+      tools: [cmake, ninja, conan]
+      
+  # Data Management (Token Optimization)
+  data:
+    skill_storage_path: ./skills/jules
+    max_skill_size: 5GB
+    auto_cache_dependencies: true
+    cache_strategies:
+      node_modules: true
+      python_venv: true
+      cargo_target: true
+      maven_cache: true
+      go_mod_cache: true
+      
+  # Performance
+  performance:
+    max_concurrent_tasks: 5
+    task_timeout: 1800  # 30 minutes
+    memory_limit: 18GB
+    cpu_limit: 8
+    io_priority: high
+    
+  # Skills System
+  skills:
+    # Antigravity Awesome Skills
+    antigravity:
+      enabled: true
+      repo: https://github.com/sickn33/antigravity-awesome-skills
+      path: ./skills/antigravity
+      auto_update: true
+      
+    # Planning with Files
+    planning:
+      enabled: true
+      repo: https://github.com/OthmanAdi/planning-with-files
+      path: ./skills/planning
+      auto_update: true
+      
+    # Custom skills
+    custom:
+      path: ./skills/custom
+      auto_load: true
+      
+  # Integration
+  integrations:
+    gemini_cli: true
+    conductor: true
+    spec_kit: true
+    antigravity_ide: true
+    rag_pipeline: true
+    
+  # Security
+  security:
+    sandbox_mode: true
+    allowed_domains:
+      - github.com
+      - googleapis.com
+      - pypi.org
+      - npmjs.com
+      - crates.io
+    network_restrictions: true
+    file_access_restrictions:
+      - ./
+      - /tmp
+      
+  # Logging
+  logging:
+    level: INFO
+    path: ./logs/jules.log
+    trace_execution: true
+    save_snapshots: true
+    max_log_size: 100MB
+    
+  # Docker support
+  docker:
+    enabled: true
+    version: 28.2.2
+    compose_version: v2.36.2
+    auto_cleanup: true

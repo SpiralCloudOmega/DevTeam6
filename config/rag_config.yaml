@@ -1,0 +1,146 @@
+# Procedural RAG/CAG Configuration
+# Retrieval-Augmented Generation with Context-Augmented Generation
+# Procedural Memory System
+
+rag:
+  # Core Settings
+  enabled: true
+  mode: procedural
+  provider: chromadb
+  
+  # Vector Database
+  vector_db:
+    type: chromadb
+    path: ./local-ai/chromadb
+    collection_name: devteam6_skills
+    persist: true
+    
+    # Qdrant Alternative
+    qdrant:
+      enabled: false
+      host: localhost
+      port: 6333
+      collection: skills
+      
+  # Embedding Configuration
+  embeddings:
+    model: all-MiniLM-L6-v2
+    dimension: 384
+    batch_size: 32
+    cache_embeddings: true
+    
+  # Document Processing
+  document_processing:
+    chunk_size: 512
+    chunk_overlap: 50
+    max_chunks_per_doc: 100
+    separators: ["\n\n", "\n", " ", ""]
+    
+  # Retrieval Settings
+  retrieval:
+    top_k: 5
+    similarity_threshold: 0.7
+    rerank_results: true
+    rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+    diversify_results: true
+    
+  # CAG (Context-Augmented Generation)
+  cag:
+    enabled: true
+    context_window: 100000
+    dynamic_context: true
+    context_priority: relevance
+    context_compression: true
+    
+  # Procedural Memory
+  procedural_memory:
+    enabled: true
+    path: ./local-ai/memory/procedural
+    max_size: 10GB
+    
+    # Memory Categories
+    categories:
+      skills: true
+      patterns: true
+      workflows: true
+      dependencies: true
+      benchmarks: true
+      
+    # Memory Retention
+    retention:
+      short_term: 24h
+      medium_term: 7d
+      long_term: 90d
+      permanent: true
+      
+  # Skill Caching (Token Optimization)
+  skill_cache:
+    enabled: true
+    path: ./skills/cache
+    max_size: 50GB
+    ttl: 604800  # 7 days
+    
+    # Cache Types
+    types:
+      code_templates: true
+      dependencies: true
+      documentation: true
+      patterns: true
+      benchmarks: true
+      configurations: true
+      
+    # Cache Strategy
+    strategy:
+      eviction: lru
+      compression: gzip
+      deduplication: true
+      
+  # Token Optimization
+  optimization:
+    reduce_context_size: true
+    summarize_long_docs: true
+    use_metadata_filters: true
+    compress_embeddings: false
+    deduplicate_chunks: true
+    
+  # Performance
+  performance:
+    num_workers: 4
+    async_indexing: true
+    batch_indexing: true
+    parallel_retrieval: true
+    cache_size: 1000
+    
+  # Integration
+  integrations:
+    gemini: true
+    jules: true
+    conductor: true
+    mcp_servers: true
+    chromadb: true
+    
+  # Indexing Strategy
+  indexing:
+    auto_index: true
+    index_interval: 3600  # 1 hour
+    incremental: true
+    full_reindex_interval: 86400  # 1 day
+    
+    # Index Sources
+    sources:
+      - path: ./skills
+        pattern: "**/*.{py,js,ts,md,yaml,json}"
+      - path: ./docs
+        pattern: "**/*.md"
+      - path: ./local-ai
+        pattern: "**/*.py"
+      - path: ./templates
+        pattern: "**/*"
+        
+  # Logging
+  logging:
+    level: INFO
+    path: ./logs/rag.log
+    metrics_enabled: true
+    log_queries: true
+    log_retrievals: true
