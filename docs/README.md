@@ -31,6 +31,9 @@ docs/
 - **[System Overview](architecture/SYSTEM_OVERVIEW.md)** - Complete system architecture, components, data flow, and technology stack
 - **[AI Orchestration](architecture/AI_ORCHESTRATION.md)** - Multi-tier AI architecture, RAG pipeline, and agent coordination
 
+### Strategic Planning
+- **[Strategic Plan 2026](../STRATEGIC_PLAN_2026.md)** - Comprehensive roadmap with 56 creative ideas, maturity assessment, and prioritized next steps
+
 ### Integration Guides
 - **[Awesome Copilot Integration](awesome-copilot/INTEGRATION_GUIDE.md)** - How to integrate GitHub Awesome Copilot agents and prompts
 - **[GitHub Apps & Extensions](GITHUB_APPS_AND_EXTENSIONS.md)** - 16 GitHub Apps and Copilot Extensions (CI/CD, AI, automation)
