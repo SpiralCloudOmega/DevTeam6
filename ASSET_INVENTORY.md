@@ -644,14 +644,16 @@ Organized into 9 categories. All cloned with `--depth 1` for space efficiency (7
 | **OpenAudio repos** (`~/OpenAudio/`) | **284** |
 | **Awesome-Linux + Free Apps repos** (`~/projects/awesome-linux/`) | **870** |
 | **Awesome-Containers repos** (`~/projects/awesome-containers/`) | **57** |
+| **Awesome Lists repos** (`~/projects/awesome-lists/`) | **690** |
 | Other repos (`~/projects/`) | 62 |
 | DevTeam6 repo (VS Code) | 1 |
-| **Total repos** | **1,412** |
+| **Total repos** | **2,102** |
 | OpenSearch disk usage | 7.1 GB |
 | OpenAudio disk usage | 36 GB |
 | Awesome-Linux disk usage | 73 GB |
 | Awesome-Containers disk usage | 1.5 GB |
-| Total disk usage | 199 GB / 1 TB |
+| Awesome Lists disk usage | 13 GB |
+| Total disk usage | 211 GB / 1 TB |
 | DevTeam6 app pages (React) | 16 |
 | DevTeam6 templates | 7 |
 | DevTeam6 GitHub agents | 22 |
@@ -1912,6 +1914,849 @@ Curated collection of Linux container tools, runtimes, security tools, and ecosy
 | 1 | awesome-docker | `veggiemonk/awesome-docker` | Curated Docker resources |
 | 2 | sysdig-container-ecosystem | `draios/sysdig-container-ecosystem` | Container ecosystem map |
 
+
+---
+
+## 🌟 Awesome Lists (Master Collection) — `~/projects/awesome-lists/` (690 repos)
+
+**Location**: `~/projects/awesome-lists/` (flat directory)
+**Catalog**: `DevTeam6/awesome/` (VS Code workspace)
+**Source**: [SpiralCloudOmega/awesome](https://github.com/SpiralCloudOmega/awesome) (fork of sindresorhus/awesome)
+**Disk**: 13 GB
+**Cloned**: `--depth 1`
+
+The master collection of all awesome lists — 690 curated lists covering platforms, programming languages, frameworks, tools, databases, gaming, security, and much more. Organized into 26 categories per the original awesome list structure.
+
+**Unavailable repos (5)**: `sponsors/sindresorhus` (not a repo), `catdevnull/awesome-zig` (replaced with `C-BJ/awesome-zig`), and 3 others marked with ⚠️ below.
+
+
+### Platforms (61 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-nodejs | `sindresorhus/awesome-nodejs` | Async non-blocking event-driven JavaScript runtime built on  |
+| 2 | awesome-cross-platform-nodejs | `bcoe/awesome-cross-platform-nodejs` | Writing cross-platform code on Node.js |
+| 3 | frontend-dev-bookmarks | `dypsilon/frontend-dev-bookmarks` | Awesome list |
+| 4 | awesome-ios | `vsouza/awesome-ios` | Mobile operating system for Apple phones and tablets |
+| 5 | awesome-android | `JStumpp/awesome-android` | Mobile operating system developed by Google |
+| 6 | awesome-IoT-hybrid | `weblancaster/awesome-IoT-hybrid` | Awesome list |
+| 7 | awesome-electron | `sindresorhus/awesome-electron` | Cross-platform native desktop apps using JavaScript/HTML/CSS |
+| 8 | awesome-cordova | `busterc/awesome-cordova` | JavaScript API for hybrid apps |
+| 9 | awesome-react-native | `jondot/awesome-react-native` | JavaScript framework for writing natively rendering mobile a |
+| 10 | awesome-xamarin | `XamSome/awesome-xamarin` | Mobile app development IDE, testing, and distribution |
+| 11 | awesome-linux ⚠️ | `inputsh/awesome-linux` | Awesome list |
+| 12 | awesome-linux-containers | `Friz-zy/awesome-linux-containers` | Awesome list |
+| 13 | awesome-ebpf | `zoidbergwill/awesome-ebpf` | Virtual machine that allows you to write more efficient and  |
+| 14 | Awesome-Arch | `PandaFoss/Awesome-Arch` | Linux distributions and projects based on Arch Linux |
+| 15 | awesome-appimage | `AppImage/awesome-appimage` | Package apps in a single file that works on various mainstre |
+| 16 | awesome-omarchy | `aorumbayev/awesome-omarchy` | Opinionated Arch Linux and Hyprland desktop environment from |
+| 17 | awesome-macos-screensavers | `agarrharr/awesome-macos-screensavers` | Awesome list |
+| 18 | awesome-mac | `jaywcjlove/awesome-mac` | Awesome list |
+| 19 | open-source-mac-os-apps | `serhii-londar/open-source-mac-os-apps` | Awesome list |
+| 20 | awesome-watchos | `yenchenlin/awesome-watchos` | Operating system for the Apple Watch |
+| 21 | awesome-jvm | `deephacks/awesome-jvm` | Awesome list |
+| 22 | awesome-salesforce | `mailtoharshit/awesome-salesforce` | Awesome list |
+| 23 | awesome-aws | `donnemartin/awesome-aws` | Awesome list |
+| 24 | awesome-windows | `0pandadev/awesome-windows` | Consumer desktop operating system |
+| 25 | awesome-powertoys-run-plugins | `hlaueriksson/awesome-powertoys-run-plugins` | Community plugins for the Windows quick launcher |
+| 26 | awesome-ipfs | `ipfs/awesome-ipfs` | P2P hypermedia protocol |
+| 27 | awesome-fuse | `fuse-compound/awesome-fuse` | Mobile development tools |
+| 28 | awesome-heroku | `ianstormtaylor/awesome-heroku` | Cloud platform as a service |
+| 29 | awesome-raspberry-pi | `thibmaek/awesome-raspberry-pi` | Credit card-sized computer aimed at teaching kids programmin |
+| 30 | awesome-qt | `JesseTG/awesome-qt` | Cross-platform GUI app framework |
+| 31 | Awesome-WebExtensions | `fregante/Awesome-WebExtensions` | Cross-browser extension system |
+| 32 | awesome-smart-tv | `vitalets/awesome-smart-tv` | Create apps for different TV platforms |
+| 33 | awesome-gnome | `Kazhnuz/awesome-gnome` | Simple and distraction-free desktop environment for Linux |
+| 34 | awesome-kde | `francoism90/awesome-kde` | A free software community dedicated to creating an open and  |
+| 35 | awesome-dotnet | `quozd/awesome-dotnet` | Awesome list |
+| 36 | awesome-dotnet-core | `thangchung/awesome-dotnet-core` | Awesome list |
+| 37 | awesome-roslyn | `ironcev/awesome-roslyn` | Open-source compilers and code analysis APIs for C# and VB.N |
+| 38 | awesome-amazon-alexa | `miguelmota/awesome-amazon-alexa` | Virtual home assistant |
+| 39 | awesome-digitalocean | `jonleibowitz/awesome-digitalocean` | Cloud computing platform designed for developers |
+| 40 | awesome-flutter | `Solido/awesome-flutter` | Google's mobile SDK for building native iOS and Android apps |
+| 41 | awesome-home-assistant | `frenck/awesome-home-assistant` | Open source home automation that puts local control and priv |
+| 42 | awesome-ibmcloud | `victorshinya/awesome-ibmcloud` | Cloud platform for developers and companies |
+| 43 | awesome-firebase | `jthegedus/awesome-firebase` | App development platform built on Google Cloud |
+| 44 | awesome-ros2 | `fkromer/awesome-ros2` | Set of software libraries and tools that help you build robo |
+| 45 | awesome-adafruitio | `adafruit/awesome-adafruitio` | Visualize and store data from any device |
+| 46 | awesome-cloudflare | `irazasyed/awesome-cloudflare` | CDN, DNS, DDoS protection, and security for your site |
+| 47 | awesome-actions-on-google | `ravirupareliya/awesome-actions-on-google` | Developer platform for Google Assistant |
+| 48 | awesome-esp | `agucova/awesome-esp` | Low-cost microcontrollers with WiFi and broad IoT applicatio |
+| 49 | awesome-deno | `denolib/awesome-deno` | A secure runtime for JavaScript and TypeScript that uses V8  |
+| 50 | awesome-dos | `balintkissdev/awesome-dos` | Operating system for x86-based personal computers that was p |
+| 51 | awesome-nix | `nix-community/awesome-nix` | Package manager for Linux and other Unix systems that makes  |
+| 52 | awesome-integration | `stn1slv/awesome-integration` | Linking together different IT systems (components) to functi |
+| 53 | awesome-nodered | `naimo84/awesome-nodered` | A programming tool for wiring together hardware devices, API |
+| 54 | awesome-low-code | `zenitysec/awesome-low-code` | Allowing business professionals to address their needs on th |
+| 55 | awesome-capacitor | `riderx/awesome-capacitor` | Cross-platform open source runtime for building Web Native a |
+| 56 | awesome-arcgis-developer | `Esri/awesome-arcgis-developer` | Mapping and location analysis platform for developers |
+| 57 | awesome-ble | `dotintent/awesome-ble` | Low-power wireless communication protocol ideal for IoT, wea |
+| 58 | awesome-uno-platform | `MartinZikmund/awesome-uno-platform` | Open-source .NET UI platform for building cross-platform app |
+| 59 | awesome-google-cloud | `GoogleCloudPlatform/awesome-google-cloud` | Cloud computing services by Google |
+| 60 | awesome-firebase-genkit | `xavidop/awesome-firebase-genkit` | An open-source framework for building AI-powered apps and fe |
+| 61 | awesome-backstage | `shano/awesome-backstage` | Open-source platform for building Internal Developer Portals |
+
+### Programming Languages (81 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-javascript | `sorrycc/awesome-javascript` | Awesome list |
+| 2 | awesome-promises | `wbinnssmith/awesome-promises` | Awesome list |
+| 3 | awesome-standard | `standard/awesome-standard` | Style guide and linter |
+| 4 | js-must-watch | `bolshchikov/js-must-watch` | Awesome list |
+| 5 | jstips | `loverajoel/jstips` | Awesome list |
+| 6 | awesome-network-js | `Kikobeats/awesome-network-js` | Awesome list |
+| 7 | awesome-micro-npm-packages | `parro-it/awesome-micro-npm-packages` | Awesome list |
+| 8 | awesome-mad-science | `feross/awesome-mad-science` | Impossible sounding projects that exist |
+| 9 | maintenance-modules | `maxogden/maintenance-modules` | For npm packages |
+| 10 | awesome-npm | `sindresorhus/awesome-npm` | Package manager |
+| 11 | awesome-ava | `avajs/awesome-ava` | Test runner |
+| 12 | awesome-eslint | `dustinspecker/awesome-eslint` | Linter |
+| 13 | awesome-fp-js | `stoeffel/awesome-fp-js` | Awesome list |
+| 14 | awesome-observables | `sindresorhus/awesome-observables` | Awesome list |
+| 15 | awesome-npm-scripts | `RyanZim/awesome-npm-scripts` | Task runner |
+| 16 | 30-seconds-of-code | `30-seconds/30-seconds-of-code` | Code snippets you can understand in 30 seconds |
+| 17 | awesome-ponyfills | `Richienb/awesome-ponyfills` | Like polyfills but without overriding native APIs |
+| 18 | awesome-swift | `matteocrippa/awesome-swift` | Apple's compiled programming language that is secure, modern |
+| 19 | Awesome-Swift-Education | `hsavit1/Awesome-Swift-Education` | Awesome list |
+| 20 | Awesome-Swift-Playgrounds | `uraimo/Awesome-Swift-Playgrounds` | Awesome list |
+| 21 | awesome-python | `vinta/awesome-python` | General-purpose programming language designed for readabilit |
+| 22 | awesome-asyncio | `timofurrer/awesome-asyncio` | Asynchronous I/O in Python 3 |
+| 23 | awesome-python-scientific-audio | `faroit/awesome-python-scientific-audio` | Scientific research in audio/music |
+| 24 | awesome-circuitpython | `adafruit/awesome-circuitpython` | A version of Python for microcontrollers |
+| 25 | awesome-python-data-science | `krzjoa/awesome-python-data-science` | Data analysis and machine learning |
+| 26 | awesome-python-typing | `typeddjango/awesome-python-typing` | Optional static typing for Python |
+| 27 | awesome-micropython | `mcauser/awesome-micropython` | A lean and efficient implementation of Python 3 for microcon |
+| 28 | awesome-rust | `rust-unofficial/awesome-rust` | Awesome list |
+| 29 | awesome-pest | `pest-parser/awesome-pest` | Parser generator |
+| 30 | awesome-haskell | `krispo/awesome-haskell` | Awesome list |
+| 31 | awesome-purescript | `passy/awesome-purescript` | Awesome list |
+| 32 | awesome-go | `avelino/awesome-go` | Awesome list |
+| 33 | awesome-scala | `lauris/awesome-scala` | Awesome list |
+| 34 | awesome-scala-native | `tindzk/awesome-scala-native` | Optimizing ahead-of-time compiler for Scala based on LLVM |
+| 35 | awesome-ruby | `markets/awesome-ruby` | Awesome list |
+| 36 | awesome-clojure | `razum2um/awesome-clojure` | Awesome list |
+| 37 | awesome-clojurescript | `hantuzun/awesome-clojurescript` | Awesome list |
+| 38 | awesome-elixir | `h4cc/awesome-elixir` | Awesome list |
+| 39 | awesome-elm | `sporto/awesome-elm` | Awesome list |
+| 40 | awesome-erlang | `drobakowski/awesome-erlang` | Awesome list |
+| 41 | Julia.jl | `svaksha/Julia.jl` | High-level dynamic programming language designed to address  |
+| 42 | awesome-lua | `LewisJEllis/awesome-lua` | Awesome list |
+| 43 | awesome-c | `inputsh/awesome-c` | Awesome list |
+| 44 | awesome-cpp | `fffaraz/awesome-cpp` | General-purpose language with a bias toward system programmi |
+| 45 | awesome-R | `qinwf/awesome-R` | Functional programming language and environment for statisti |
+| 46 | awesome-r-learning-resources | `iamericfletcher/awesome-r-learning-resources` | Awesome list |
+| 47 | awesome-d | `dlang-community/awesome-d` | Awesome list |
+| 48 | awesome-cl | `CodyReichert/awesome-cl` | Powerful dynamic multiparadigm language that facilitates ite |
+| 49 | awesome-common-lisp-learning | `GustavBertram/awesome-common-lisp-learning` | Awesome list |
+| 50 | awesome-perl | `hachiojipm/awesome-perl` | Awesome list |
+| 51 | awesome-groovy | `kdabir/awesome-groovy` | Awesome list |
+| 52 | awesome-dart | `yissachar/awesome-dart` | Awesome list |
+| 53 | awesome-java | `akullpp/awesome-java` | Popular secure object-oriented language designed for flexibi |
+| 54 | awesome-rxjava | `eleventigers/awesome-rxjava` | Awesome list |
+| 55 | awesome-j2me | `hstsethi/awesome-j2me` | Java specification designed for old keypad phones and PDAs |
+| 56 | awesome-kotlin | `KotlinBy/awesome-kotlin` | Awesome list |
+| 57 | awesome-ocaml | `ocaml-community/awesome-ocaml` | Awesome list |
+| 58 | awesome-coldfusion | `seancoyne/awesome-coldfusion` | Awesome list |
+| 59 | awesome-fortran | `rabbiabram/awesome-fortran` | Awesome list |
+| 60 | awesome-php | `ziadoz/awesome-php` | Server-side scripting language |
+| 61 | awesome-composer | `jakoch/awesome-composer` | Package manager |
+| 62 | awesome-pascal | `Fr0sT-Brutal/awesome-pascal` | Awesome list |
+| 63 | awesome-AutoHotkey | `ahkscript/awesome-AutoHotkey` | Awesome list |
+| 64 | awesome-AutoIt | `J2TeaM/awesome-AutoIt` | Awesome list |
+| 65 | awesome-crystal | `veelenga/awesome-crystal` | Awesome list |
+| 66 | awesome-frege | `sfischer13/awesome-frege` | Haskell for the JVM |
+| 67 | awesome-cmake | `onqtam/awesome-cmake` | Build, test, and package software |
+| 68 | awesome-actionscript3 | `robinrodricks/awesome-actionscript3` | Object-oriented language targeting Adobe AIR |
+| 69 | awesome-eta | `sfischer13/awesome-eta` | Functional programming language for the JVM |
+| 70 | awesome-idris | `joaomilho/awesome-idris` | General purpose pure functional programming language with de |
+| 71 | awesome-ada | `ohenley/awesome-ada` | Modern programming language designed for large, long-lived a |
+| 72 | awesome-qsharp | `ebraminio/awesome-qsharp` | Domain-specific programming language used for expressing qua |
+| 73 | awesome-imba | `koolamusic/awesome-imba` | Programming language inspired by Ruby and Python and compile |
+| 74 | awesome-vala | `desiderantes/awesome-vala` | Programming language designed to take full advantage of the  |
+| 75 | awesome-coq | `coq-community/awesome-coq` | Formal language and environment for programming and specific |
+| 76 | awesome-v | `vlang/awesome-v` | Simple, fast, safe, compiled language for developing maintai |
+| 77 | awesome-zig | `catdevnull/awesome-zig` | General-purpose programming language and toolchain for maint |
+| 78 | awesome-move | `MystenLabs/awesome-move` | Domain-specific programming language for writing safe smart  |
+| 79 | awesome-esolangs | `angrykoala/awesome-esolangs` | Programming languages designed for experimentation or as jok |
+| 80 | awesome-vba | `sancarn/awesome-vba` | An event-driven version of Visual Basic 6.0 built into most  |
+| 81 | awesome-fsharp | `fsprojects/awesome-fsharp` | A .NET-based language with focus on functional programming |
+
+### Front-End Development (85 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | es6-tools | `addyosmani/es6-tools` | Awesome list |
+| 2 | awesome-wpo | `davidsonfellipe/awesome-wpo` | Awesome list |
+| 3 | tools | `lvwzhen/tools` | Awesome list |
+| 4 | awesome-css | `awesome-css-group/awesome-css` | Style sheet language that specifies how HTML elements are di |
+| 5 | critical-path-css-tools | `addyosmani/critical-path-css-tools` | Awesome list |
+| 6 | scalable-css-reading-list | `davidtheclark/scalable-css-reading-list` | Awesome list |
+| 7 | must-watch-css | `AllThingsSmitty/must-watch-css` | Awesome list |
+| 8 | css-protips | `AllThingsSmitty/css-protips` | Awesome list |
+| 9 | awesome-css-frameworks | `troxler/awesome-css-frameworks` | Awesome list |
+| 10 | awesome-react | `enaqx/awesome-react` | JavaScript library for building user interfaces |
+| 11 | awesome-relay | `expede/awesome-relay` | Framework for building data-driven React apps |
+| 12 | awesome-react-hooks | `glauberfc/awesome-react-hooks` | Lets you use state and other React features without writing  |
+| 13 | awesome-web-components | `web-padawan/awesome-web-components` | Awesome list |
+| 14 | awesome-polymer | `Granze/awesome-polymer` | JavaScript library to develop Web Components |
+| 15 | awesome-angular | `PatrickJS/awesome-angular` | App framework |
+| 16 | awesome-backbone | `sadcitizen/awesome-backbone` | App framework |
+| 17 | awesome-html5 | `diegocard/awesome-html5` | Markup language used for websites & web apps |
+| 18 | awesome-svg | `willianjusten/awesome-svg` | XML-based vector image format |
+| 19 | awesome-canvas | `raphamorim/awesome-canvas` | Awesome list |
+| 20 | awesome-knockout | `dnbard/awesome-knockout` | JavaScript library |
+| 21 | awesome-dojo | `petk/awesome-dojo` | JavaScript toolkit |
+| 22 | Inspire | `NoahBuscher/Inspire` | Awesome list |
+| 23 | awesome-ember | `ember-community-russia/awesome-ember` | App framework |
+| 24 | awesome-android-ui | `wasabeef/awesome-android-ui` | Awesome list |
+| 25 | awesome-ios-ui | `cjwirth/awesome-ios-ui` | Awesome list |
+| 26 | awesome-meteor | `Urigo/awesome-meteor` | Awesome list |
+| 27 | BEM-resources | `sturobson/BEM-resources` | Awesome list |
+| 28 | awesome-flexbox | `afonsopacifer/awesome-flexbox` | Awesome list |
+| 29 | typography | `deanhume/typography` | Awesome list |
+| 30 | awesome-a11y | `brunopulis/awesome-a11y` | Awesome list |
+| 31 | awesome-material | `sachin1092/awesome-material` | Awesome list |
+| 32 | awesome-d3 | `wbkd/awesome-d3` | Library for producing dynamic, interactive data visualizatio |
+| 33 | awesome-emails | `jonathandion/awesome-emails` | Awesome list |
+| 34 | awesome-jquery | `petk/awesome-jquery` | Easy to use JavaScript library for DOM manipulation |
+| 35 | jquery-tips-everyone-should-know | `AllThingsSmitty/jquery-tips-everyone-should-know` | Awesome list |
+| 36 | awesome-webaudio | `notthetup/awesome-webaudio` | Awesome list |
+| 37 | offline-first | `pazguille/offline-first` | Awesome list |
+| 38 | awesome-static-website-services | `agarrharr/awesome-static-website-services` | Awesome list |
+| 39 | awesome-cyclejs | `cyclejs-community/awesome-cyclejs` | Functional and reactive JavaScript framework |
+| 40 | awesome-text-editing | `dok/awesome-text-editing` | Awesome list |
+| 41 | motion-ui-design | `fliptheweb/motion-ui-design` | Awesome list |
+| 42 | awesome-vue | `vuejs/awesome-vue` | App framework |
+| 43 | awesome-marionette | `sadcitizen/awesome-marionette` | App framework |
+| 44 | awesome-aurelia | `aurelia-contrib/awesome-aurelia` | App framework |
+| 45 | awesome-charting | `zingchart/awesome-charting` | Awesome list |
+| 46 | awesome-ionic | `candelibas/awesome-ionic` | Awesome list |
+| 47 | awesome-chrome-devtools | `ChromeDevTools/awesome-chrome-devtools` | Awesome list |
+| 48 | awesome-postcss | `jdrgomes/awesome-postcss` | CSS tool |
+| 49 | awesome-draft-js | `nikgraf/awesome-draft-js` | Rich text editor framework for React |
+| 50 | awesome-service-workers | `TalAter/awesome-service-workers` | Awesome list |
+| 51 | awesome-progressive-web-apps | `TalAter/awesome-progressive-web-apps` | Awesome list |
+| 52 | awesome-choo | `choojs/awesome-choo` | App framework |
+| 53 | awesome-redux | `brillout/awesome-redux` | State container for JavaScript apps |
+| 54 | awesome-browserify | `browserify/awesome-browserify` | Module bundler |
+| 55 | awesome-sass | `Famolus/awesome-sass` | CSS preprocessor |
+| 56 | awesome-ant-design | `websemantics/awesome-ant-design` | Enterprise-class UI design language |
+| 57 | awesome-less | `LucasBassetti/awesome-less` | CSS preprocessor |
+| 58 | awesome-webgl | `sjfricke/awesome-webgl` | JavaScript API for rendering 3D graphics |
+| 59 | awesome-preact | `preactjs/awesome-preact` | App framework |
+| 60 | progressive-enhancement-resources | `jbmoelker/progressive-enhancement-resources` | Awesome list |
+| 61 | awesome-nextjs | `unicodeveloper/awesome-nextjs` | Framework for server-rendered React apps |
+| 62 | awesome-lit | `web-padawan/awesome-lit` | Library for building web components with a declarative templ |
+| 63 | awesome-jamstack | `automata/awesome-jamstack` | Modern web development architecture based on client-side Jav |
+| 64 | awesome-wordpress-gatsby | `henrikwirth/awesome-wordpress-gatsby` | Web development technology stack with WordPress as a back en |
+| 65 | awesome-mobile-web-development | `myshov/awesome-mobile-web-development` | Creating a great mobile web experience |
+| 66 | awesome-storybook | `lauthieb/awesome-storybook` | Development environment for UI components |
+| 67 | awesome-blazor | `AdrienTorris/awesome-blazor` | .NET web framework using C#/Razor and HTML that runs in the  |
+| 68 | awesome-pagespeed-metrics | `csabapalfi/awesome-pagespeed-metrics` | Metrics to help understand page speed and user experience |
+| 69 | awesome-tailwindcss | `aniftyco/awesome-tailwindcss` | Utility-first CSS framework for rapid UI development |
+| 70 | awesome-seed-rs | `seed-rs/awesome-seed-rs` | Rust framework for creating web apps running in WebAssembly |
+| 71 | awesome-web-performance-budget | `pajaydev/awesome-web-performance-budget` | Techniques to ensure certain performance metrics for a websi |
+| 72 | awesome-web-animation | `sergey-pimenov/awesome-web-animation` | Animations in the browser with JavaScript, CSS, SVG, etc |
+| 73 | awesome-yew | `jetli/awesome-yew` | Rust framework inspired by Elm and React for creating multi- |
+| 74 | awesome-material-ui | `nadunindunil/awesome-material-ui` | Material Design React components for faster and easier web d |
+| 75 | awesome-building-blocks-for-web-apps | `componently-com/awesome-building-blocks-for-web-apps` | Standalone features to be integrated into web apps |
+| 76 | awesome-svelte | `TheComputerM/awesome-svelte` | App framework |
+| 77 | awesome-design-systems | `klaufel/awesome-design-systems` | Collection of reusable components, guided by rules that ensu |
+| 78 | awesome-inertiajs | `innocenzi/awesome-inertiajs` | Make single-page apps without building an API |
+| 79 | awesome-mdbootstrap | `mdbootstrap/awesome-mdbootstrap` | Templates, layouts, components, and widgets to rapidly build |
+| 80 | awesome-master-css | `master-co/awesome-master-css` | A virtual CSS language with enhanced syntax |
+| 81 | awesome-hydrogen | `shopify/awesome-hydrogen` | Edge-first framework for building Shopify storefronts with R |
+| 82 | awesome-tiny-js | `thoughtspile/awesome-tiny-js` | Frontend libraries that fit into 2 kB with dependencies |
+| 83 | awesome-frontend-gis | `joewdavies/awesome-frontend-gis` | Geographic Information Systems (GIS) for web browsers |
+| 84 | awesome-webgpu | `mikbry/awesome-webgpu` | JavaScript API for rendering and compute on GPUs |
+| 85 | awesome-webassembly | `idematos/awesome-webassembly` | A portable binary format for running code efficiently across |
+
+### Back-End Development (33 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-flask | `mjhea0/awesome-flask` | Python framework |
+| 2 | awesome-docker ⚠️ | `veggiemonk/awesome-docker` | Awesome list |
+| 3 | awesome-vagrant | `iJackUA/awesome-vagrant` | Automation virtual machine environment |
+| 4 | awesome-pyramid | `uralbash/awesome-pyramid` | Python framework |
+| 5 | awesome-play1 | `PerfectCarl/awesome-play1` | Awesome list |
+| 6 | awesome-cakephp | `friendsofcake/awesome-cakephp` | PHP framework |
+| 7 | awesome-symfony | `sitepoint-editors/awesome-symfony` | PHP framework |
+| 8 | awesome-symfony-education | `pehapkari/awesome-symfony-education` | Awesome list |
+| 9 | awesome-laravel | `chiraggude/awesome-laravel` | PHP framework |
+| 10 | Awesome-Laravel-Education | `fukuball/Awesome-Laravel-Education` | Awesome list |
+| 11 | awesome-tall-stack | `livewire/awesome-tall-stack` | Full-stack development solution featuring libraries built by |
+| 12 | awesome-rails | `gramantin/awesome-rails` | Web app framework for Ruby |
+| 13 | awesome-rails-gem | `hothero/awesome-rails-gem` | Packages |
+| 14 | awesome-phalcon | `phalcon/awesome-phalcon` | PHP framework |
+| 15 | htaccess | `phanan/htaccess` | Awesome list |
+| 16 | nginx-resources | `fcambus/nginx-resources` | Web server |
+| 17 | awesome-dropwizard | `stve/awesome-dropwizard` | Java framework |
+| 18 | awesome-kubernetes | `ramitsurana/awesome-kubernetes` | Open-source platform that automates Linux container operatio |
+| 19 | awesome-lumen | `unicodeveloper/awesome-lumen` | PHP micro-framework |
+| 20 | awesome-serverless | `pmuens/awesome-serverless` | Serverless computing and serverless architectures |
+| 21 | awesome-wicket | `PhantomYdn/awesome-wicket` | Java web app framework |
+| 22 | vertx-awesome | `vert-x3/vertx-awesome` | Toolkit for building reactive apps on the JVM |
+| 23 | awesome-terraform | `shuaibiyy/awesome-terraform` | Tool for building, changing, and versioning infrastructure |
+| 24 | awesome-vapor | `vapor-community/awesome-vapor` | Server-side development in Swift |
+| 25 | awesome-dash | `ucg8j/awesome-dash` | Python web app framework |
+| 26 | awesome-fastapi | `mjhea0/awesome-fastapi` | Python web app framework |
+| 27 | awesome-cdk | `kolomied/awesome-cdk` | Open-source software development framework for defining clou |
+| 28 | awesome-iam | `kdeldycke/awesome-iam` | User accounts, authentication and authorization |
+| 29 | awesome-slim | `nekofar/awesome-slim` | PHP framework |
+| 30 | awesome-fiber | `gofiber/awesome-fiber` | Web framework built on top of Fasthttp, the fastest HTTP eng |
+| 31 | awesome-kustomize | `DevOpsHiveHQ/awesome-kustomize` | Kubernetes native declarative configuration management tool |
+| 32 | awesome-opentofu | `virtualroot/awesome-opentofu` | Open-source infrastructure as code tool |
+| 33 | awesome-reflex | `reflex-dev/awesome-reflex` | Python web framework for building both your frontend and bac |
+
+### Computer Science (38 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-courses | `prakhar1989/awesome-courses` | Awesome list |
+| 2 | awesome-datascience | `academic/awesome-datascience` | Awesome list |
+| 3 | awesome-learn-datascience | `siboehm/awesome-learn-datascience` | Awesome list |
+| 4 | awesome-machine-learning | `josephmisiti/awesome-machine-learning` | Awesome list |
+| 5 | Machine-Learning-Tutorials | `ujjwalkarn/Machine-Learning-Tutorials` | Awesome list |
+| 6 | machine-learning-with-ruby | `arbox/machine-learning-with-ruby` | Learning, implementing, and applying Machine Learning using  |
+| 7 | Awesome-CoreML-Models | `likedan/Awesome-CoreML-Models` | Models for Apple's machine learning framework |
+| 8 | awesome-h2o | `h2oai/awesome-h2o` | Open source distributed machine learning platform written in |
+| 9 | awesome-seml | `SE-ML/awesome-seml` | From experiment to production-level machine learning |
+| 10 | awesome-ai-in-finance | `georgezouq/awesome-ai-in-finance` | Solving problems in finance with machine learning |
+| 11 | awesome-jax | `n2cholas/awesome-jax` | Automatic differentiation and XLA compilation brought togeth |
+| 12 | awesome-xai | `altamiracorp/awesome-xai` | Providing insight, explanations, and interpretability to mac |
+| 13 | speech-language-processing | `edobashira/speech-language-processing` | Awesome list |
+| 14 | awesome-spanish-nlp | `dav009/awesome-spanish-nlp` | Awesome list |
+| 15 | nlp-with-ruby | `arbox/nlp-with-ruby` | Awesome list |
+| 16 | awesome-qa | `seriousran/awesome-qa` | The science of asking and answering in natural language with |
+| 17 | awesome-nlg | `accelerated-text/awesome-nlg` | Generation of text used in data-to-text, conversational agen |
+| 18 | awesome-linguistics | `theimpossibleastronaut/awesome-linguistics` | Awesome list |
+| 19 | awesome-cryptography | `sobolevn/awesome-cryptography` | Awesome list |
+| 20 | awesome-crypto-papers | `pFarb/awesome-crypto-papers` | Theory basics for using cryptography by non-cryptographers |
+| 21 | awesome-computer-vision | `jbhuang0604/awesome-computer-vision` | Awesome list |
+| 22 | awesome-deep-learning | `ChristosChristofidis/awesome-deep-learning` | Neural networks |
+| 23 | awesome-tensorflow | `jtoy/awesome-tensorflow` | Library for machine intelligence |
+| 24 | awesome-tensorflow-js | `aaronhma/awesome-tensorflow-js` | WebGL-accelerated machine learning JavaScript library for tr |
+| 25 | awesome-tensorflow-lite | `margaretmz/awesome-tensorflow-lite` | Framework that optimizes TensorFlow models for on-device mac |
+| 26 | awesome-deep-learning-papers | `terryum/awesome-deep-learning-papers` | The most cited deep learning papers |
+| 27 | awesome-deep-learning-resources | `guillaume-chevalier/awesome-deep-learning-resources` | Awesome list |
+| 28 | awesome-deep-vision | `kjw0612/awesome-deep-vision` | Awesome list |
+| 29 | computer-science | `ossu/computer-science` | Awesome list |
+| 30 | awesome-functional-programming | `lucasviola/awesome-functional-programming` | Awesome list |
+| 31 | awesome-msr | `dspinellis/awesome-msr` | Evidence-based research on software systems |
+| 32 | static-analysis | `analysis-tools-dev/static-analysis` | Awesome list |
+| 33 | awesome-information-retrieval | `harpribot/awesome-information-retrieval` | Learn to develop your own search engine |
+| 34 | awesome-quantum-computing | `desireevl/awesome-quantum-computing` | Computing that utilizes quantum mechanics and qubits on quan |
+| 35 | awesome-theoretical-computer-science | `mostafatouny/awesome-theoretical-computer-science` | The interplay of computer science and pure mathematics, dist |
+| 36 | awesome-conversational-ai | `jyguyomarch/awesome-conversational-ai` | Build awesome chatbots and digital assistants |
+| 37 | awesome-generative-ai | `steven2358/awesome-generative-ai` | Automatically generates a wide range of unique content in te |
+| 38 | awesome-position-based-quantum-cryptography | `Renaller/awesome-position-based-quantum-cryptography` | Theory on quantum cryptography that utilizes special relativ |
+
+### Big Data (9 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-bigdata | `0xnr/awesome-bigdata` | Awesome list |
+| 2 | awesome-public-datasets | `awesomedata/awesome-public-datasets` | Awesome list |
+| 3 | awesome-hadoop | `youngwookim/awesome-hadoop` | Framework for distributed storage and processing of very lar |
+| 4 | awesome-data-engineering | `igorbarinov/awesome-data-engineering` | Awesome list |
+| 5 | awesome-streaming | `manuzhang/awesome-streaming` | Awesome list |
+| 6 | awesome-spark | `awesome-spark/awesome-spark` | Unified engine for large-scale data processing |
+| 7 | awesome-qlik | `ambster-public/awesome-qlik` | Business intelligence platform for data visualization, analy |
+| 8 | awesome-splunk | `sduff/awesome-splunk` | Platform for searching, monitoring, and analyzing structured |
+| 9 | awesome-network-analysis | `briatte/awesome-network-analysis` | Awesome list |
+
+### Theory (14 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | papers-we-love | `papers-we-love/papers-we-love` | Awesome list |
+| 2 | awesome-talks | `JanVanRyswyck/awesome-talks` | Awesome list |
+| 3 | awesome-algorithms | `tayllan/awesome-algorithms` | Awesome list |
+| 4 | awesome-algorithms-education | `gaerae/awesome-algorithms-education` | Learning and practicing |
+| 5 | algovis | `enjalot/algovis` | Awesome list |
+| 6 | awesome-artificial-intelligence | `owainlewis/awesome-artificial-intelligence` | Awesome list |
+| 7 | search-engine-optimization | `marcobiedermann/search-engine-optimization` | Awesome list |
+| 8 | awesome-competitive-programming | `lnishan/awesome-competitive-programming` | Awesome list |
+| 9 | awesome-math | `rossant/awesome-math` | Awesome list |
+| 10 | awesome-recursion-schemes | `passy/awesome-recursion-schemes` | Traversing nested data structures |
+| 11 | awesome-audit-algorithms | `erwanlemerrer/awesome-audit-algorithms` | Algorithmic audits of algorithms |
+| 12 | awesome-agi-cocosci | `YuzheSHI/awesome-agi-cocosci` | The reciprocation of Artificial General Intelligence (AGI) a |
+| 13 | awesome-complexity | `sellisd/awesome-complexity` | The scientific field studying systems with multiple interact |
+| 14 | awesome-vlm-architectures | `gokayfem/awesome-vlm-architectures` | Vision Language Model architectures |
+
+### Books (6 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | free-programming-books | `EbookFoundation/free-programming-books` | Awesome list |
+| 2 | GoBooks | `dariubs/GoBooks` | Awesome list |
+| 3 | rbooks | `RomanTsegelskyi/rbooks` | Awesome list |
+| 4 | Mind-Expanding-Books | `hackerkid/Mind-Expanding-Books` | Awesome list |
+| 5 | awesome-book-authoring | `TalAter/awesome-book-authoring` | Awesome list |
+| 6 | ElixirBooks | `sger/ElixirBooks` | Awesome list |
+
+### Editors (6 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | sublime-bookmarks | `dreikanter/sublime-bookmarks` | Awesome list |
+| 2 | vim-galore | `mhinz/vim-galore` | Awesome list |
+| 3 | awesome-neovim | `rockerBOO/awesome-neovim` | Vim-fork focused on extensibility and usability |
+| 4 | awesome-emacs | `emacs-tw/awesome-emacs` | Awesome list |
+| 5 | awesome-atom | `mehcode/awesome-atom` | Open-source and hackable text editor |
+| 6 | awesome-vscode | `viatsko/awesome-vscode` | Cross-platform open-source text editor |
+
+### Gaming (29 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | magictools | `ellisonleao/magictools` | Awesome list |
+| 2 | awesome-gametalks | `hzoo/awesome-gametalks` | Awesome list |
+| 3 | awesome-godot | `godotengine/awesome-godot` | Game engine |
+| 4 | awesome-open-source-games | `michelpereira/awesome-open-source-games` | Awesome list |
+| 5 | awesome-unity | `RyanNielson/awesome-unity` | Game engine |
+| 6 | awesome-chess | `hkirat/awesome-chess` | Awesome list |
+| 7 | awesome-love2d | `love2d-community/awesome-love2d` | Game engine |
+| 8 | awesome-PICO-8 | `pico-8/awesome-PICO-8` | Fantasy console |
+| 9 | awesome-gbdev | `gbdev/awesome-gbdev` | Awesome list |
+| 10 | awesome-construct | `ConstructCommunity/awesome-construct` | Game engine |
+| 11 | awesome-gideros | `stetso/awesome-gideros` | Game engine |
+| 12 | awesome-minecraft | `bs-community/awesome-minecraft` | Sandbox video game |
+| 13 | awesome-computercraft | `tomodachi94/awesome-computercraft` | Minecraft mod that adds programmable computers |
+| 14 | game-datasets | `leomaurodesenv/game-datasets` | Materials and datasets for Artificial Intelligence in games |
+| 15 | awesome-haxe-gamedev | `Dvergar/awesome-haxe-gamedev` | A high-level strongly typed programming language used to pro |
+| 16 | awesome-libgdx | `rafaskb/awesome-libgdx` | Java game framework |
+| 17 | awesome-playcanvas | `playcanvas/awesome-playcanvas` | Game engine |
+| 18 | awesome-game-remakes | `radek-sprta/awesome-game-remakes` | Actively maintained open-source game remakes |
+| 19 | awesome-flame | `flame-engine/awesome-flame` | Game engine for Flutter |
+| 20 | awesome-discord-communities | `mhxion/awesome-discord-communities` | Chat with friends and communities |
+| 21 | awesome-chip-8 | `tobiasvl/awesome-chip-8` | Virtual computer game machine from the 70s |
+| 22 | awesome-games-of-coding | `michelpereira/awesome-games-of-coding` | Learn a programming language by making games |
+| 23 | awesome-esports | `strift/awesome-esports` | Video games played as a sport |
+| 24 | awesome-learn-gamedev | `notpresident35/awesome-learn-gamedev` | The craft of video game creation |
+| 25 | awesome-game-engine-dev | `stevinz/awesome-game-engine-dev` | Building software to speed up game creation |
+| 26 | awesome-gamemaker | `bytecauldron/awesome-gamemaker` | Game engine |
+| 27 | awesome-game-production | `vhladiienko/awesome-game-production` | Leading the process of designing, developing, testing and di |
+| 28 | awesome-babylonjs | `Symbitic/awesome-babylonjs` | Game engine for cross-platform web and native game developme |
+| 29 | awesome-roblox | `awesome-roblox/awesome-roblox` | Immersive platform for hosting millions of diverse experienc |
+
+### Development Environment (23 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | quick-look-plugins | `sindresorhus/quick-look-plugins` | For macOS |
+| 2 | awesome-devenv | `jondot/awesome-devenv` | Awesome list |
+| 3 | awesome-dotfiles | `webpro/awesome-dotfiles` | Awesome list |
+| 4 | awesome-shell | `alebcay/awesome-shell` | Awesome list |
+| 5 | awsm.fish | `jorgebucaran/awsm.fish` | User-friendly shell |
+| 6 | awesome-cli-apps | `agarrharr/awesome-cli-apps` | Awesome list |
+| 7 | awesome-zsh-plugins | `unixorn/awesome-zsh-plugins` | Awesome list |
+| 8 | awesome-github | `phillipadsmith/awesome-github` | Hosting service for Git repositories |
+| 9 | awesome-browser-extensions-for-github | `stefanbuck/awesome-browser-extensions-for-github` | Awesome list |
+| 10 | github-cheat-sheet | `tiimgreen/github-cheat-sheet` | Awesome list |
+| 11 | awesome-pinned-gists | `matchai/awesome-pinned-gists` | Dynamic pinned gists for your GitHub profile |
+| 12 | git-cheat-sheet | `arslanbilal/git-cheat-sheet` | Awesome list |
+| 13 | tips | `git-tips/tips` | Awesome list |
+| 14 | awesome-git-addons | `stevemao/awesome-git-addons` | Enhance the `git` CLI |
+| 15 | awesome-git-hooks | `compscilauren/awesome-git-hooks` | Scripts for automating tasks during `git` workflows |
+| 16 | awesome-ssh | `moul/awesome-ssh` | Awesome list |
+| 17 | FOSS-for-Dev | `tvvocold/FOSS-for-Dev` | Awesome list |
+| 18 | awesome-hyper | `bnb/awesome-hyper` | Cross-platform terminal app built on web technologies |
+| 19 | awesome-powershell | `janikvonrotz/awesome-powershell` | Cross-platform object-oriented shell |
+| 20 | awesome-alfred-workflows | `alfred-workflows/awesome-alfred-workflows` | Productivity app for macOS |
+| 21 | terminals-are-sexy | `k4m4/terminals-are-sexy` | Awesome list |
+| 22 | awesome-actions | `sdras/awesome-actions` | Create tasks to automate your workflow and share them with o |
+| 23 | awesome-wezterm | `michaelbrusegard/awesome-wezterm` | Powerful cross-platform terminal emulator |
+
+### Entertainment (5 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-scifi | `sindresorhus/awesome-scifi` | Scifi |
+| 2 | awesome-fantasy | `RichardLitt/awesome-fantasy` | Awesome list |
+| 3 | awesome-geek-podcasts | `ayr-ton/awesome-geek-podcasts` | Awesome list |
+| 4 | awesome-newsletters | `zudochkin/awesome-newsletters` | Awesome list |
+| 5 | awesome-it-quotes | `victorlaerte/awesome-it-quotes` | Awesome list |
+
+### Databases (19 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-db | `numetriclabz/awesome-db` | Awesome list |
+| 2 | awesome-mysql | `shlomi-noach/awesome-mysql` | Awesome list |
+| 3 | awesome-sqlalchemy | `dahlia/awesome-sqlalchemy` | Awesome list |
+| 4 | awesome-influxdb | `mark-rushakoff/awesome-influxdb` | Awesome list |
+| 5 | awesome-neo4j | `neueda/awesome-neo4j` | Awesome list |
+| 6 | awesome-mongodb | `ramnes/awesome-mongodb` | NoSQL database |
+| 7 | awesome-rethinkdb | `d3viant0ne/awesome-rethinkdb` | Awesome list |
+| 8 | awesome-tinkerpop | `mohataher/awesome-tinkerpop` | Graph computing framework |
+| 9 | awesome-postgres | `dhamaniasad/awesome-postgres` | Object-relational database |
+| 10 | awesome-couchdb | `quangv/awesome-couchdb` | Document-oriented NoSQL database |
+| 11 | awesome-hbase | `rayokota/awesome-hbase` | Distributed, scalable, big data store |
+| 12 | awesome-nosql-guides | `erictleung/awesome-nosql-guides` | Help on using non-relational, distributed, open-source, and  |
+| 13 | awesome-db-tools | `mgramin/awesome-db-tools` | Everything that makes working with databases easier |
+| 14 | typedb-awesome | `vaticle/typedb-awesome` | Logical database to organize large and complex networks of d |
+| 15 | awesome-cassandra | `Anant/awesome-cassandra` | Open-source, distributed, wide column store, NoSQL database  |
+| 16 | awesome-tdengine | `taosdata/awesome-tdengine` | An open-source time-series database with high-performance, s |
+| 17 | awesome-supabase | `lyqht/awesome-supabase` | An open-source alternative to Firebase |
+| 18 | awesome-pocketbase | `benallfree/awesome-pocketbase` | An open-source, Go-based backend in one file |
+| 19 | awesome-neon | `tyaga001/awesome-neon` | An open-source alternative to AWS Aurora |
+
+### Media (14 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-fonts | `brabadu/awesome-fonts` | Awesome list |
+| 2 | codeface | `chrissimpkins/codeface` | Text editor fonts |
+| 3 | awesome-stock-resources | `neutraltone/awesome-stock-resources` | Awesome list |
+| 4 | awesome-gif | `davisonio/awesome-gif` | Image format known for animated images |
+| 5 | awesome-music | `ciconia/awesome-music` | Awesome list |
+| 6 | awesome-opensource-documents | `44bits/awesome-opensource-documents` | Awesome list |
+| 7 | awesome-audio-visualization | `willianjusten/awesome-audio-visualization` | Awesome list |
+| 8 | awesome-broadcasting | `ebu/awesome-broadcasting` | Awesome list |
+| 9 | awesome-pixel-art | `Siilwyn/awesome-pixel-art` | Pixel-level digital art |
+| 10 | awesome-ffmpeg | `transitive-bullshit/awesome-ffmpeg` | Cross-platform solution to record, convert and stream audio  |
+| 11 | awesome-icons | `notlmn/awesome-icons` | Downloadable SVG/PNG/font icon projects |
+| 12 | awesome-audiovisual | `stingalleman/awesome-audiovisual` | Lighting, audio and video in professional environments |
+| 13 | awesome-vlc | `mfkl/awesome-vlc` | Cross-platform media player software and streaming server |
+| 14 | awesome-aoip | `Mo-way/awesome-aoip` | Reliably transmit uncompressed, low-latency audio over an IP |
+
+### Learn (16 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-workshopper | `therebelrobot/awesome-workshopper` | Interactive tutorials |
+| 2 | learn-to-program | `karlhorky/learn-to-program` | Awesome list |
+| 3 | awesome-speaking | `matteofigus/awesome-speaking` | Awesome list |
+| 4 | awesome-tech-videos | `lucasviola/awesome-tech-videos` | Awesome list |
+| 5 | dive-into-machine-learning | `hangtwenty/dive-into-machine-learning` | Awesome list |
+| 6 | awesome-computer-history | `watson/awesome-computer-history` | Awesome list |
+| 7 | awesome-programming-for-kids | `HollyAdele/awesome-programming-for-kids` | Awesome list |
+| 8 | awesome-steam | `RahulBirCodes/awesome-steam` | Supplements for specific science, technology, engineering, a |
+| 9 | awesome-educational-games | `yrgo/awesome-educational-games` | Learn while playing |
+| 10 | awesome-javascript-learning | `micromata/awesome-javascript-learning` | Awesome list |
+| 11 | awesome-css-learning | `micromata/awesome-css-learning` | Mainly about CSS – the language and the modules |
+| 12 | awesome-product-management | `dend/awesome-product-management` | Learn how to be a better product manager |
+| 13 | awesome-roadmaps | `liuchong/awesome-roadmaps` | Gives you a clear route to improve your knowledge and skills |
+| 14 | awesome-youtubers | `JoseDeFreitas/awesome-youtubers` | Watch video tutorials from YouTubers that teach you about te |
+| 15 | awesome-hackathon | `dribdat/awesome-hackathon` | Running fun and productive hackathons |
+| 16 | awesome-certificates | `PanXProject/awesome-certificates` | Free computer science certifications to showcase your knowle |
+
+### Security (28 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-appsec | `paragonie/awesome-appsec` | Awesome list |
+| 2 | awesome-security | `sbilly/awesome-security` | Awesome list |
+| 3 | awesome-ctf | `apsdehal/awesome-ctf` | Capture The Flag |
+| 4 | awesome-cyber-security-university | `brootware/awesome-cyber-security-university` | Free educational resources that focus on learning by doing |
+| 5 | awesome-malware-analysis | `rshipp/awesome-malware-analysis` | Awesome list |
+| 6 | android-security-awesome | `ashishb/android-security-awesome` | Awesome list |
+| 7 | awesome-hacking | `carpedm20/awesome-hacking` | Awesome list |
+| 8 | awesome-hacking-locations | `daviddias/awesome-hacking-locations` | Awesome list |
+| 9 | awesome-honeypots | `paralax/awesome-honeypots` | Deception trap, designed to entice an attacker into attempti |
+| 10 | awesome-incident-response | `meirwah/awesome-incident-response` | Awesome list |
+| 11 | awesome-vehicle-security | `jaredthecoder/awesome-vehicle-security` | Awesome list |
+| 12 | awesome-web-security | `qazbnm456/awesome-web-security` | Security of web apps & services |
+| 13 | awesome-lockpicking | `fabacab/awesome-lockpicking` | The art of unlocking a lock by manipulating its components w |
+| 14 | awesome-cybersecurity-blueteam | `fabacab/awesome-cybersecurity-blueteam` | Groups of individuals who identify security flaws in informa |
+| 15 | awesome-fuzzing | `cpuu/awesome-fuzzing` | Automated software testing technique that involves feeding p |
+| 16 | awesome-embedded-and-iot-security | `fkie-cad/awesome-embedded-and-iot-security` | Awesome list |
+| 17 | awesome-gdpr | `bakke92/awesome-gdpr` | Regulation on data protection and privacy for all individual |
+| 18 | awesome-devsecops | `TaptuIT/awesome-devsecops` | Integration of security practices into [DevOps](https://en.w |
+| 19 | awesome-executable-packing | `dhondta/awesome-executable-packing` | Packing and unpacking executable formats |
+| 20 | awesome-malware-persistence | `Karneades/awesome-malware-persistence` | Techniques that adversaries use to keep access to systems ac |
+| 21 | awesome-evm-security | `kareniel/awesome-evm-security` | Understanding the Ethereum Virtual Machine security ecosyste |
+| 22 | awesome-password-cracking | `n0kovo/awesome-password-cracking` | The process of recovering passwords from data that has been  |
+| 23 | awesome-security-card-games | `Karneades/awesome-security-card-games` | Train your skills and discuss various security topics |
+| 24 | awesome-suricata | `satta/awesome-suricata` | Intrusion detection/prevention system and network security m |
+| 25 | awesome-prompt-injection | `FonduAI/awesome-prompt-injection` | A type of vulnerability that specifically targets machine le |
+| 26 | awesome-detection-engineering | `infosecB/awesome-detection-engineering` | Design, build, and operate detective cybersecurity controls |
+| 27 | awesome-annual-security-reports | `jacobdjwilson/awesome-annual-security-reports` | Exploring cybersecurity trends, insights, and challenges |
+| 28 | awesome-cicd-attacks | `TupleType/awesome-cicd-attacks` | Offensive research of systems and processes related to devel |
+
+### Content Management Systems (11 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-umbraco | `umbraco-community/awesome-umbraco` | Awesome list |
+| 2 | awesome-refinerycms | `refinerycms-contrib/awesome-refinerycms` | Ruby on Rails CMS |
+| 3 | awesome-wagtail | `springload/awesome-wagtail` | Django CMS focused on flexibility and user experience |
+| 4 | awesome-textpattern | `drmonkeyninja/awesome-textpattern` | Lightweight PHP-based CMS |
+| 5 | awesome-drupal | `nirgn975/awesome-drupal` | Extensible PHP-based CMS |
+| 6 | awesome ⚠️ | `craftcms/awesome` | Content-first CMS |
+| 7 | Awesome-Sitecore | `MartinMiles/Awesome-Sitecore` | .NET digital marketing platform that combines CMS with tools |
+| 8 | awesome-silverstripe-cms | `wernerkrauss/awesome-silverstripe-cms` | PHP MVC framework that serves as a classic or headless CMS |
+| 9 | awesome-directus | `directus-community/awesome-directus` | A real-time API and app dashboard for managing SQL database  |
+| 10 | awesome-plone | `collective/awesome-plone` | Open source Python CMS |
+| 11 | awesome-payload | `DanailMinchev/awesome-payload` | Next.js native and open source headless CMS |
+
+### Hardware (11 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-robotics | `Kiloreux/awesome-robotics` | Awesome list |
+| 2 | awesome-iot | `HQarroum/awesome-iot` | Awesome list |
+| 3 | awesome-electronics | `kitspace/awesome-electronics` | For electronic engineers and hobbyists |
+| 4 | awesome-beacon | `rabschi/awesome-beacon` | Awesome list |
+| 5 | guitarspecs | `gitfrage/guitarspecs` | Checklist for building your own electric guitar |
+| 6 | awesome-plotters | `beardicus/awesome-plotters` | Computer-controlled drawing machines and other visual art ro |
+| 7 | awesome-robotic-tooling | `protontypes/awesome-robotic-tooling` | Free and open tools for professional robotic development |
+| 8 | awesome-lidar | `szenergy/awesome-lidar` | Sensor for measuring distances by illuminating the target wi |
+| 9 | awesome-open-hardware | `delftopenhardware/awesome-open-hardware` | Open-source hardware projects |
+| 10 | awesome-adsb | `rickstaa/awesome-adsb` | Technology broadcasting aircraft's identity, position, and d |
+| 11 | awesome-flying-fpv | `Matthias84/awesome-flying-fpv` | Open hardware and software related to drones / UAVs |
+
+### Business (12 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-open-company | `opencompany/awesome-open-company` | Awesome list |
+| 2 | PlacesToPostYourStartup | `mmccaff/PlacesToPostYourStartup` | Awesome list |
+| 3 | awesome-okr | `domenicosolazzo/awesome-okr` | Goal setting & communication best practices |
+| 4 | awesome-indie | `mezod/awesome-indie` | Independent developer businesses |
+| 5 | ToolsOfTheTrade | `cjbarber/ToolsOfTheTrade` | Tools used by companies on Hacker News |
+| 6 | awesome-clean-tech | `nglgzz/awesome-clean-tech` | Fighting climate change with technology |
+| 7 | awesome-wardley-maps | `wardley-maps-community/awesome-wardley-maps` | Provides high situational awareness to help improve strategi |
+| 8 | awesome-social-enterprise | `RayBB/awesome-social-enterprise` | Building an organization primarily focused on social impact  |
+| 9 | awesome-engineering-team-management | `kdeldycke/awesome-engineering-team-management` | How to transition from software development to engineering m |
+| 10 | awesome-developer-first | `agamm/awesome-developer-first` | Products that target developers as the user |
+| 11 | awesome-billing | `kdeldycke/awesome-billing` | Payments, invoicing, pricing, accounting, marketplace, fraud |
+| 12 | awesome-engineering-strategy | `aleixmorgadas/awesome-engineering-strategy` | How to design and execute engineering strategies for tech le |
+
+### Work (9 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-slack | `matiassingers/awesome-slack` | Team collaboration |
+| 2 | awesome-slack | `filipelinhares/awesome-slack` | Awesome list |
+| 3 | awesome-remote-job | `lukasz-madon/awesome-remote-job` | Awesome list |
+| 4 | awesome-productivity | `jyguyomarch/awesome-productivity` | Awesome list |
+| 5 | awesome-job-boards | `tramcar/awesome-job-boards` | Awesome list |
+| 6 | awesome-interview-questions | `DopplerHQ/awesome-interview-questions` | Awesome list |
+| 7 | awesome-code-review | `joho/awesome-code-review` | Reviewing code |
+| 8 | awesome-creative-technology | `j0hnm4r5/awesome-creative-technology` | Businesses & groups that specialize in combining computing,  |
+| 9 | awesome-internships | `lodthe/awesome-internships` | CV writing guides and companies that hire interns |
+
+### Networking (6 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-sdn | `sdnds-tw/awesome-sdn` | Awesome list |
+| 2 | awesome-pcaptools | `caesar0301/awesome-pcaptools` | Awesome list |
+| 3 | awesome-rtc | `rtckit/awesome-rtc` | Network protocols for near simultaneous exchange of media an |
+| 4 | awesome-snmp | `eozer/awesome-snmp` | A protocol for collecting, modifying, and organizing informa |
+| 5 | awesome-scapy | `secdev/awesome-scapy` | Python-based interactive packet manipulation |
+| 6 | awesome-cilium | `seifrajhi/awesome-cilium` | Provides networking and security capabilities for containeri |
+
+### Decentralized Systems (17 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-bitcoin | `igorbarinov/awesome-bitcoin` | Bitcoin services and tools for software developers |
+| 2 | awesome-ripple | `vhpoet/awesome-ripple` | Open source distributed settlement network |
+| 3 | awesome-non-financial-blockchain | `machinomy/awesome-non-financial-blockchain` | Non-financial blockchain applications |
+| 4 | awesome-mastodon | `hyperupcall/awesome-mastodon` | Open source decentralized microblogging network |
+| 5 | Awesome-Ethereum | `ttumiel/Awesome-Ethereum` | Distributed computing platform for smart contract developmen |
+| 6 | awesome-blockchain-ai | `steven2358/awesome-blockchain-ai` | Blockchain projects for artificial intelligence and machine  |
+| 7 | awesome-eosio | `DanailMinchev/awesome-eosio` | A decentralized operating system supporting industrial-scale |
+| 8 | awesome-corda | `chainstack/awesome-corda` | Open source blockchain platform designed for business |
+| 9 | awesome-waves | `msmolyakov/awesome-waves` | Open source blockchain platform and development toolset for  |
+| 10 | awesome-substrate | `substrate-developer-hub/awesome-substrate` | Framework for writing scalable, upgradeable blockchains in R |
+| 11 | awesome-golem | `golemfactory/awesome-golem` | Open source peer-to-peer marketplace for computing resources |
+| 12 | awesome-stacks-chain | `friedger/awesome-stacks-chain` | A smart contract platform secured by Bitcoin |
+| 13 | awesome-algorand | `aorumbayev/awesome-algorand` | An open-source, proof of stake blockchain and smart contract |
+| 14 | awesome-zeronet | `zolagonano/awesome-zeronet` | A decentralized web-like network of peer-to-peer users |
+| 15 | awesome-cosmos | `cosmos/awesome-cosmos` | Modular framework for building app-specific blockchains in G |
+| 16 | awesome-tor | `polycarbohydrate/awesome-tor` | A free overlay network for enabling anonymous communication |
+| 17 | awesome-atproto | `atblueprints/awesome-atproto` | Open, decentralized network for building social apps |
+
+### Health and Social Science (13 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-bioie | `caufieldjh/awesome-bioie` | How to extract information from unstructured biomedical data |
+| 2 | awesome-computational-neuroscience | `eselkin/awesome-computational-neuroscience` | A multidisciplinary science which uses computational approac |
+| 3 | awesome-diversity | `folkswhocode/awesome-diversity` | Creating a more inclusive and diverse tech community |
+| 4 | awesome-digital-history | `maehr/awesome-digital-history` | Computer-aided scientific investigation of history |
+| 5 | empathy-in-engineering | `KimberlyMunoz/empathy-in-engineering` | Building and promoting more compassionate engineering cultur |
+| 6 | awesome-healthcare | `kakoni/awesome-healthcare` | Open source healthcare software for facilities, providers, d |
+| 7 | awesome-humane-tech | `humanetech-community/awesome-humane-tech` | Open source projects that help improve society |
+| 8 | awesome-mental-health | `dreamingechoes/awesome-mental-health` | Mental health awareness and self-care in the software indust |
+| 9 | awesome-neuroscience | `analyticalmonk/awesome-neuroscience` | Study of the nervous system and brain |
+| 10 | awesome-digital-humanities | `dh-tech/awesome-digital-humanities` | Software for humanities scholars using quantitative or compu |
+| 11 | awesome-lucid-dreams | `IAmCoder/awesome-lucid-dreams` | A dream where one becomes aware they are dreaming |
+| 12 | awesome-neuroimaging | `NPACore/awesome-neuroimaging` | Software for analyzing brain data from living subjects |
+| 13 | awesome-transgender | `cvyl/awesome-transgender` | Someone whose gender identity differs from their assigned bi |
+
+### Events (3 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-creative-tech-events | `danvoyce/awesome-creative-tech-events` | Events around the globe for creative coding, tech, design, m |
+| 2 | awesome-italy-events | `ildoc/awesome-italy-events` | Tech-related events in Italy |
+| 3 | awesome-netherlands-events | `awkward/awesome-netherlands-events` | Tech-related events in the Netherlands |
+
+### Testing (11 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-testing | `TheJambo/awesome-testing` | Software testing |
+| 2 | awesome-regression-testing | `mojoaxel/awesome-regression-testing` | Ensures changes did not break the functionality or style |
+| 3 | awesome-selenium | `christian-bromann/awesome-selenium` | Open-source browser automation framework and ecosystem |
+| 4 | awesome-appium | `SrinivasanTarget/awesome-appium` | Test automation tool for apps |
+| 5 | awesome-tap | `sindresorhus/awesome-tap` | Test Anything Protocol |
+| 6 | awesome-jmeter | `aliesbelik/awesome-jmeter` | Load testing and performance measurement tool |
+| 7 | awesome-k6 | `grafana/awesome-k6` | Open-source, developer-centric performance monitoring and lo |
+| 8 | awesome-playwright | `mxschmitt/awesome-playwright` | Node.js library to automate Chromium, Firefox and WebKit wit |
+| 9 | awesome-quality-assurance-roadmap | `fityanos/awesome-quality-assurance-roadmap` | How to start & build a career in software testing |
+| 10 | awesome-gatling | `aliesbelik/awesome-gatling` | Open-source load and performance testing framework based on  |
+| 11 | awesome-coderabbit | `coderabbitai/awesome-coderabbit` | AI-powered code review platform |
+
+### Miscellaneous (135 repos)
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | awesome-scientific-writing | `writing-resources/awesome-scientific-writing` | Distraction-free scientific writing with Markdown, reStructu |
+| 2 | awesome-json | `burningtree/awesome-json` | Text based data interchange format |
+| 3 | awesome-geojson | `tmcw/awesome-geojson` | Awesome list |
+| 4 | awesome-json-datasets | `jdorfman/awesome-json-datasets` | Awesome list |
+| 5 | awesomeCSV | `secretGeek/awesomeCSV` | A text file format that stores tabular data and uses a comma |
+| 6 | discount-for-student-dev | `AchoArnold/discount-for-student-dev` | Awesome list |
+| 7 | awesome-radio | `kyleterry/awesome-radio` | Awesome list |
+| 8 | awesome ⚠️ | `sindresorhus/awesome` | Recursion illustrated |
+| 9 | awesome-analytics | `0xnr/awesome-analytics` | Awesome list |
+| 10 | awesome-rest | `marmelab/awesome-rest` | Awesome list |
+| 11 | awesome-ciandcd | `cicdops/awesome-ciandcd` | Awesome list |
+| 12 | services-engineering | `mmcgrana/services-engineering` | Awesome list |
+| 13 | free-for-dev | `ripienaar/free-for-dev` | Awesome list |
+| 14 | awesome-answers | `cyberglot/awesome-answers` | Stack Overflow, Quora, etc |
+| 15 | awesome-sketch | `diessica/awesome-sketch` | Design app for macOS |
+| 16 | awesome-projects-boilerplates | `melvin0008/awesome-projects-boilerplates` | Awesome list |
+| 17 | awesome-readme | `matiassingers/awesome-readme` | Awesome list |
+| 18 | awesome-github-wiki | `MyHoneyBadger/awesome-github-wiki` | Comprehensive documentation on GitHub beyond README |
+| 19 | guides | `NARKOZ/guides` | Awesome list |
+| 20 | engineering-blogs | `kilimchoi/engineering-blogs` | Awesome list |
+| 21 | awesome-selfhosted ⚠️ | `awesome-selfhosted/awesome-selfhosted` | Awesome list |
+| 22 | awesome-foss-apps | `DataDaoDe/awesome-foss-apps` | Awesome list |
+| 23 | awesome-gulp | `alferov/awesome-gulp` | Task runner |
+| 24 | amas | `sindresorhus/amas` | Ask Me Anything |
+| 25 | awesome-ama-answers | `stoeffel/awesome-ama-answers` | Awesome list |
+| 26 | awesome-OpenSourcePhotography | `ibaaj/awesome-OpenSourcePhotography` | Awesome list |
+| 27 | awesome-opengl | `eug/awesome-opengl` | Cross-platform API for rendering 2D and 3D graphics |
+| 28 | awesome-graphql | `chentsulin/awesome-graphql` | Awesome list |
+| 29 | urban-and-regional-planning-resources | `APA-Technology-Division/urban-and-regional-planning-resources` | Concerning the built environment and communities |
+| 30 | awesome-transit | `CUTR-at-USF/awesome-transit` | Awesome list |
+| 31 | awesome-research | `emptymalei/awesome-research` | Awesome list |
+| 32 | awesome-dataviz | `javierluraschi/awesome-dataviz` | Awesome list |
+| 33 | awesome-microservices | `mfornos/awesome-microservices` | Awesome list |
+| 34 | Awesome-Unicode | `jagracey/Awesome-Unicode` | Unicode standards, quirks, packages and resources |
+| 35 | awesome-codepoints | `Codepoints/awesome-codepoints` | Awesome list |
+| 36 | awesome-for-beginners | `MunGell/awesome-for-beginners` | Awesome list |
+| 37 | awesome-katas | `gamontal/awesome-katas` | Awesome list |
+| 38 | toolsforactivism | `drewrwilson/toolsforactivism` | Awesome list |
+| 39 | citizen-science | `dylanrees/citizen-science` | For community-based and non-institutional scientists |
+| 40 | awesome-mqtt | `hobbyquaker/awesome-mqtt` | "Internet of Things" connectivity protocol |
+| 41 | awesome4girls | `cristianoliveira/awesome4girls` | Awesome list |
+| 42 | awesome-vorpal | `vorpaljs/awesome-vorpal` | Node.js CLI framework |
+| 43 | awesome-vulkan | `vinjn/awesome-vulkan` | Low-overhead, cross-platform 3D graphics and compute API |
+| 44 | awesome-LaTeX | `egeerardyn/awesome-LaTeX` | Typesetting language |
+| 45 | awesome-economics | `antontarasenko/awesome-economics` | An economist's starter kit |
+| 46 | awesome-funny-markov | `sublimino/awesome-funny-markov` | Awesome list |
+| 47 | Awesome-Bioinformatics | `danielecook/Awesome-Bioinformatics` | Awesome list |
+| 48 | awesome-cheminformatics | `hsiaoyi0504/awesome-cheminformatics` | Informatics techniques applied to problems in chemistry |
+| 49 | Colorful | `Siddharth11/Colorful` | Choose your next color scheme |
+| 50 | awesome-steam | `scholtzm/awesome-steam` | Digital distribution platform |
+| 51 | bots | `hackerkid/bots` | Building bots |
+| 52 | awesome-sre | `dastergon/awesome-sre` | Awesome list |
+| 53 | awesome-dtrace | `xen0l/awesome-dtrace` | Dynamic tracing framework |
+| 54 | awesome-userscripts | `bvolpato/awesome-userscripts` | Enhance your browsing experience |
+| 55 | awesome-pokemon | `tobiasbueschel/awesome-pokemon` | Pokémon and Pokémon GO |
+| 56 | awesome-chatops | `exAspArk/awesome-chatops` | Managing technical and business operations through a chat |
+| 57 | awesome-falsehood | `kdeldycke/awesome-falsehood` | Falsehoods programmers believe in |
+| 58 | awesome-ddd | `heynickc/awesome-ddd` | Software development approach for complex needs by connectin |
+| 59 | awesome-quantified-self | `woop/awesome-quantified-self` | Self-tracking through technology |
+| 60 | awesome-saltstack | `hbokh/awesome-saltstack` | Python-based config management system |
+| 61 | awesome-web-design | `nicolesaidy/awesome-web-design` | For digital designers |
+| 62 | awesome-creative-coding | `terkelg/awesome-creative-coding` | Programming something expressive instead of something functi |
+| 63 | awesome-no-login-web-apps | `aviaryan/awesome-no-login-web-apps` | Web apps that work without login |
+| 64 | awesome-free-software | `johnjago/awesome-free-software` | Free as in freedom |
+| 65 | awesome-framer | `podo/awesome-framer` | Prototyping interactive UI designs |
+| 66 | awesome-markdown | `BubuAnabelas/awesome-markdown` | Markup language |
+| 67 | awesome-dev-fun | `mislavcimpersak/awesome-dev-fun` | Funny developer projects |
+| 68 | awesome-magento2 | `DavidLambauer/awesome-magento2` | Open Source eCommerce built with PHP |
+| 69 | awesome-tikz | `xiaohanyu/awesome-tikz` | Graph drawing packages for TeX/LaTeX/ConTeXt |
+| 70 | awesome-ad-free | `johnjago/awesome-ad-free` | Ad-free alternatives |
+| 71 | awesome-prometheus | `roaldnefs/awesome-prometheus` | Open-source monitoring system |
+| 72 | awesome-homematic | `homematic-community/awesome-homematic` | Smart home devices |
+| 73 | awesome-ledger | `sfischer13/awesome-ledger` | Double-entry accounting on the command-line |
+| 74 | awesome-web-monetization | `thomasbnt/awesome-web-monetization` | A free open web standard service that allows you to send mon |
+| 75 | awesome-uncopyright | `johnjago/awesome-uncopyright` | Public domain works |
+| 76 | awesome-coins | `Zheaoli/awesome-coins` | Digital currency where encryption is used to regulate the ge |
+| 77 | awesome-open-source-supporters | `zachflower/awesome-open-source-supporters` | Companies that offer their tools and services for free to op |
+| 78 | awesome-design-principles | `robinstickel/awesome-design-principles` | Create better and more consistent designs and experiences |
+| 79 | awesome-theravada | `johnjago/awesome-theravada` | Teachings from the Theravada Buddhist tradition |
+| 80 | awesome-inspectit | `inspectit-labs/awesome-inspectit` | Open source Java app performance management tool |
+| 81 | awesome-maintainers | `nayafia/awesome-maintainers` | The experience of being an open source maintainer |
+| 82 | awesome-calculators | `xxczaki/awesome-calculators` | Calculators for every platform |
+| 83 | awesome-captcha | `ZYSzys/awesome-captcha` | A type of challenge–response test used in computing to deter |
+| 84 | awesome-jupyter | `markusschanta/awesome-jupyter` | Create and share documents that contain code, equations, vis |
+| 85 | awesome-frc | `andrewda/awesome-frc` | International high school robotics championship |
+| 86 | awesome-speakers | `karlhorky/awesome-speakers` | Conference and meetup speakers in the programming and design |
+| 87 | awesome-board-games | `edm00se/awesome-board-games` | Table-top gaming fun for all |
+| 88 | awesome-software-patreons | `uraimo/awesome-software-patreons` | Fund individual programmers or the development of open sourc |
+| 89 | awesome-parasite | `ecohealthalliance/awesome-parasite` | Parasites and host-pathogen interactions |
+| 90 | awesome-food | `jzarca01/awesome-food` | Food-related projects on GitHub |
+| 91 | awesome-bitcoin-payment-processors | `alexk111/awesome-bitcoin-payment-processors` | Start accepting Bitcoin |
+| 92 | awesome-scientific-computing | `nschloe/awesome-scientific-computing` | Solving complex scientific problems using computers |
+| 93 | awesome-amazon-seller | `ScaleLeap/awesome-amazon-seller` | Awesome list |
+| 94 | awesome-agriculture | `brycejohnston/awesome-agriculture` | Open source technology for farming and gardening |
+| 95 | awesome-product-design | `ttt30ga/awesome-product-design` | Design a product from the initial concept to production |
+| 96 | awesome-prisma | `catalinmiron/awesome-prisma` | Turn your database into a GraphQL API |
+| 97 | awesome-software-architecture | `simskij/awesome-software-architecture` | The discipline of designing and building software |
+| 98 | awesome-connectivity-info | `stevesong/awesome-connectivity-info` | Better understand who has access to telecommunication and in |
+| 99 | awesome-stacks | `stackshareio/awesome-stacks` | Tech stacks for building different apps and features |
+| 100 | awesome-cytodata | `cytodata/awesome-cytodata` | Image-based profiling of biological phenotypes for computati |
+| 101 | awesome-irc | `davisonio/awesome-irc` | Open source messaging protocol |
+| 102 | awesome-ads | `cenoura/awesome-ads` | Advertising and programmatic media for websites |
+| 103 | awesome-earth | `philsturgeon/awesome-earth` | Find ways to resolve the climate crisis |
+| 104 | awesome-naming | `gruhn/awesome-naming` | Naming things in computer science done right |
+| 105 | awesome-web-archiving | `iipc/awesome-web-archiving` | An effort to preserve the Web for future generations |
+| 106 | awesome-wp-cli | `schlessera/awesome-wp-cli` | Command-line interface for WordPress |
+| 107 | awesome-credit-modeling | `mourarthur/awesome-credit-modeling` | Methods for classifying credit applicants into risk classes |
+| 108 | awesome-ansible | `ansible-community/awesome-ansible` | A Python-based, open-source IT configuration management and  |
+| 109 | awesome-biological-visualizations | `keller-mark/awesome-biological-visualizations` | Interactive visualization of biological data on the web |
+| 110 | awesome-qr-code | `make-github-pseudonymous-again/awesome-qr-code` | A type of matrix barcode that can be used to store and share |
+| 111 | awesome-veganism | `sdassow/awesome-veganism` | Making the plant-based lifestyle easy and accessible |
+| 112 | awesome-translations | `mbiesiad/awesome-translations` | The transfer of the meaning of a text from one language to a |
+| 113 | awesome-scriptable | `dersvenhesse/awesome-scriptable` | An iOS app for automation in JavaScript |
+| 114 | awesome-webxr | `msub2/awesome-webxr` | Enables immersive virtual reality and augmented reality cont |
+| 115 | awesome-computational-geometry | `atkirtland/awesome-computational-geometry` | Computational approaches for problems in geometry |
+| 116 | awesome-openstreetmap | `osmlab/awesome-openstreetmap` | An open data mapping project utilized by many apps and devic |
+| 117 | awesome-computational-biology | `inoue0426/awesome-computational-biology` | Computational approaches applied to problems in biology |
+| 118 | awesome-read-the-docs | `readthedocs-examples/awesome-read-the-docs` | Example documentation projects to inspire and help bootstrap |
+| 119 | awesome-quarto | `mcanouil/awesome-quarto` | Scientific and technical open-source publishing system built |
+| 120 | awesome-biological-image-analysis | `hallvaaw/awesome-biological-image-analysis` | Interpreting biological phenomena using images |
+| 121 | awesome-chatgpt | `sindresorhus/awesome-chatgpt` | Artificial intelligence chatbot developed by OpenAI |
+| 122 | awesome-whisper | `sindresorhus/awesome-whisper` | Open-source AI-powered speech recognition system developed b |
+| 123 | awesome-stock-trading | `shi-rudo/awesome-stock-trading` | Purchase and sale of equities of publicly traded companies t |
+| 124 | awesome-steam-deck | `airscripts/awesome-steam-deck` | A handheld gaming computer developed by Valve |
+| 125 | awesome-astrophotography | `lunohodov/awesome-astrophotography` | Photography of astronomical objects, celestial events, or ar |
+| 126 | awesome-hpc | `dstdev/awesome-hpc` | High Performance Computing |
+| 127 | awesome-geocaching | `FoxFil/awesome-geocaching` | Outdoor treasure-hunting activity that uses GPS-enabled devi |
+| 128 | awesome-regex | `slevithan/awesome-regex` | Specialized language for matching patterns in text |
+| 129 | awesome-event-driven-architecture | `lutzh/awesome-event-driven-architecture` | A software architecture approach where services collaborate  |
+| 130 | awesome-permacomputing | `idematos/awesome-permacomputing` | Resilient and regenerative computing practices inspired by p |
+| 131 | awesome-standards | `donBarbos/awesome-standards` | Standards and proposals that define and enhance software, la |
+| 132 | awesome-claude-code | `hesreallyhim/awesome-claude-code` | Terminal-based AI coding assistant by Anthropic |
+| 133 | awesome-gemini-cli | `Piebald-AI/awesome-gemini-cli` | Terminal-based AI coding assistant by Google |
+| 134 | awesome-sap-commerce | `eminyagiz42/awesome-sap-commerce` | An e-commerce platform built with Java, Spring MVC, and Angu |
+| 135 | awesome-tech-ethics | `sampart/awesome-tech-ethics` | Mitigating and avoiding the potential negative effects of te |
+
+**Cloned**: 690 | **Unavailable/Skipped**: 5
+
 ---
 
 ## 🧠 RLM Environment Variables
@@ -1931,9 +2776,10 @@ All resources are exposed as environment variables — symbolic pointers that ag
 | `OPENAUDIO_HOME` | `~/OpenAudio` | 284 audio repos |
 | `AWESOME_LINUX_HOME` | `~/projects/awesome-linux` | 870 Linux/free app repos |
 | `AWESOME_CONTAINERS_HOME` | `~/projects/awesome-containers` | 57 container repos |
+| `AWESOME_LISTS_HOME` | `~/projects/awesome-lists` | 690 awesome list repos |
 | `CYBORGDB_API_URL` | `http://localhost:8100` | CyborgDB vector DB |
 | `OPENCLAW_GATEWAY` | `http://localhost:18789` | OpenClaw AI gateway |
-| `REPO_COUNT_TOTAL` | `1410` | Total cloned repos |
+| `REPO_COUNT_TOTAL` | `2102` | Total cloned repos |
 
 ### Shell Functions
 
