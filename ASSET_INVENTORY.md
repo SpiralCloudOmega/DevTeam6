@@ -645,15 +645,18 @@ Organized into 9 categories. All cloned with `--depth 1` for space efficiency (7
 | **Awesome-Linux + Free Apps repos** (`~/projects/awesome-linux/`) | **870** |
 | **Awesome-Containers repos** (`~/projects/awesome-containers/`) | **57** |
 | **Awesome Lists repos** (`~/projects/awesome-lists/`) | **690** |
+| **Awesome WSL repos** (`~/projects/awesome-wsl/`) | **71** |
+| **Awesome Bash repos** (`~/projects/awesome-bash/`) | **28** |
 | Other repos (`~/projects/`) | 62 |
 | DevTeam6 repo (VS Code) | 1 |
-| **Total repos** | **2,102** |
+| **Total repos** | **2,201** |
 | OpenSearch disk usage | 7.1 GB |
 | OpenAudio disk usage | 36 GB |
 | Awesome-Linux disk usage | 73 GB |
 | Awesome-Containers disk usage | 1.5 GB |
 | Awesome Lists disk usage | 13 GB |
-| Total disk usage | 211 GB / 1 TB |
+| Awesome WSL + Bash disk usage | 2.9 GB |
+| Total disk usage | 214 GB / 1 TB |
 | DevTeam6 app pages (React) | 16 |
 | DevTeam6 templates | 7 |
 | DevTeam6 GitHub agents | 22 |
@@ -2757,6 +2760,130 @@ The master collection of all awesome lists — 690 curated lists covering platfo
 
 **Cloned**: 690 | **Unavailable/Skipped**: 5
 
+
+---
+
+## 🖥️ Awesome WSL & Linux Bash Commands — 99 repos
+
+**Source catalogs**:
+- [SpiralCloudOmega/awesome-wsl](https://github.com/SpiralCloudOmega/awesome-wsl) → `DevTeam6/awesome-wsl/`
+- [SpiralCloudOmega/Linux-Bash-Commands](https://github.com/SpiralCloudOmega/Linux-Bash-Commands) → `DevTeam6/Linux-Bash-Commands/`
+**Disk**: 2.9 GB | **Cloned**: `--depth 1`
+**Unavailable**: 2 repos (`0xbadfca11/miniwsl`, `Awesome-Windows/Awesome`)
+
+### `~/projects/awesome-wsl/` — WSL Tools & Distros (71 repos)
+
+Comprehensive collection of WSL distributions (Alpine, Arch, Fedora, Manjaro, etc.), WSL utilities (wslu, wslpath, wslgit), terminal tools, SSH agents, GUI integration, and the Microsoft WSL kernel source.
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | WSL | `Microsoft/WSL` | Official WSL issue tracker |
+| 2 | WSL2-Linux-Kernel | `microsoft/WSL2-Linux-Kernel` | WSL2 Linux kernel source |
+| 3 | WSL-DistroLauncher | `Microsoft/WSL-DistroLauncher` | Distro launcher template |
+| 4 | terminal | `microsoft/terminal` | Windows Terminal |
+| 5 | cuda-samples | `NVIDIA/cuda-samples` | NVIDIA CUDA samples |
+| 6 | ArchWSL | `yuk7/ArchWSL` | Arch Linux on WSL |
+| 7 | AlpineWSL | `yuk7/AlpineWSL` | Alpine Linux on WSL |
+| 8 | CentWSL | `yuk7/CentWSL` | CentOS on WSL |
+| 9 | FedoraWSL | `yosukes-dev/FedoraWSL` | Fedora on WSL |
+| 10 | ManjaroWSL2 | `sileshn/ManjaroWSL2` | Manjaro on WSL2 |
+| 11 | AmazonWSL | `yosukes-dev/AmazonWSL` | Amazon Linux on WSL |
+| 12 | DevuanWSL | `VPraharsha03/DevuanWSL` | Devuan on WSL |
+| 13 | GentooWSL | `imaandrew/GentooWSL` | Gentoo on WSL |
+| 14 | RHWSL | `yosukes-dev/RHWSL` | Red Hat on WSL |
+| 15 | WSLackware | `Mohsens22/WSLackware` | Slackware on WSL |
+| 16 | WSLFedoraRemix | `WhitewaterFoundry/WSLFedoraRemix` | Fedora Remix for WSL |
+| 17 | Pengwin | `WhitewaterFoundry/Pengwin` | Pengwin WSL distro |
+| 18 | Pengwin-Enterprise | `WhitewaterFoundry/Pengwin-Enterprise` | Pengwin Enterprise |
+| 19 | wsldl | `yuk7/wsldl` | WSL distro launcher |
+| 20 | LxRunOffline | `DDoSolitary/LxRunOffline` | WSL distro management |
+| 21 | wsl2-distro-manager | `bostrot/wsl2-distro-manager` | WSL2 distro manager GUI |
+| 22 | easyWSL | `redcode-labs/easyWSL` | Easy WSL distro installer |
+| 23 | WSLInstall | `Biswa96/WSLInstall` | WSL installer tools |
+| 24 | WSL_Reverse | `Biswa96/WSL_Reverse` | WSL reverse engineering |
+| 25 | WSL-Distribution-Switcher | `RoliSoft/WSL-Distribution-Switcher` | Switch WSL distros |
+| 26 | wslu | `wslutilities/wslu` | WSL utilities collection |
+| 27 | wslpy | `wslutilities/wslpy` | Python WSL utilities |
+| 28 | wslgit | `andy-5/wslgit` | Use git from WSL in Windows |
+| 29 | wslpath | `laurent22/wslpath` | Path conversion tool |
+| 30 | wslexec | `int128/wslexec` | Execute Windows apps from WSL |
+| 31 | wslbridge | `rprichard/wslbridge` | WSL bridge tool |
+| 32 | wsl-vpnkit | `sakai135/wsl-vpnkit` | VPN networking for WSL2 |
+| 33 | wsl-proxy | `watzon/wsl-proxy` | WSL proxy tool |
+| 34 | wsl-open | `4U6U57/wsl-open` | Open files from WSL in Windows |
+| 35 | wsl-open-jbwfu | `jbwfu/wsl-open` | WSL open fork |
+| 36 | wsl-gui-tool | `emeric-martineau/wsl-gui-tool` | WSL GUI management |
+| 37 | wsl-gui-bins | `Konfekt/wsl-gui-bins` | WSL GUI binary helpers |
+| 38 | wsl-ui | `octasoft-ltd/wsl-ui` | WSL user interface |
+| 39 | wsl-terminal | `goreliu/wsl-terminal` | Terminal for WSL |
+| 40 | wsltty | `mintty/wsltty` | Mintty-based WSL terminal |
+| 41 | wsl-dotfiles | `Xyene/wsl-dotfiles` | WSL dotfiles |
+| 42 | WSL-config | `hsab/WSL-config` | WSL config tool |
+| 43 | WSL-Hello-sudo | `nullpo-head/WSL-Hello-sudo` | Windows Hello sudo auth |
+| 44 | WSL-Programs | `ethanhs/WSL-Programs` | WSL program list |
+| 45 | OpenInWSL-Source | `Opticos/OpenInWSL-Source` | Open In WSL utility |
+| 46 | FluentTerminal | `felixse/FluentTerminal` | Fluent design terminal |
+| 47 | extraterm | `sedwards2009/extraterm` | Feature-rich terminal |
+| 48 | WinCryptSSHAgent | `buptczq/WinCryptSSHAgent` | SSH agent for Windows |
+| 49 | wsl2-ssh-pageant | `BlackReloaded/wsl2-ssh-pageant` | SSH pageant for WSL2 |
+| 50 | weasel-pageant | `vuori/weasel-pageant` | Pageant for WSL |
+| 51 | pinentry-wsl-ps1 | `diablodale/pinentry-wsl-ps1` | GPG pinentry for WSL |
+| 52 | xclip-xsel-WSL | `Konfekt/xclip-xsel-WSL` | Clipboard integration |
+| 53 | xdg-open-wsl | `cpbotha/xdg-open-wsl` | xdg-open for WSL |
+| 54 | vim-wsl-copy-paste | `Konfekt/vim-wsl-copy-paste` | Vim clipboard in WSL |
+| 55 | gowinbridge | `Sibikrish3000/gowinbridge` | Go Windows bridge |
+| 56 | is-wsl | `sindresorhus/is-wsl` | Detect if running in WSL |
+| 57 | setup-wsl | `Vampire/setup-wsl` | GitHub Action for WSL |
+| 58 | Ansible-WSL | `Wintus/Ansible-WSL` | Ansible playbooks for WSL |
+| 59 | BootShellCredentialProvider | `NathanCastle/BootShellCredentialProvider` | Boot to bash from Windows |
+| 60 | community.wsl.sdk | `Gitii/community.wsl.sdk` | WSL SDK for .NET |
+| 61 | Windows-Subsystem-For-Linux-Setup | `michaeltreat/Windows-Subsystem-For-Linux-Setup` | WSL setup guide |
+| 62 | ubuntu-win-bootstrap | `seapagan/ubuntu-win-bootstrap` | Ubuntu WSL bootstrap |
+| 63 | cmd-colors-solarized | `neilpa/cmd-colors-solarized` | Solarized for cmd |
+| 64 | acme-wsl | `elrzn/acme-wsl` | Acme editor for WSL |
+| 65 | Awesome-UNIX | `sirredbeard/Awesome-UNIX` | Awesome UNIX list |
+| 66 | awesome-bash | `awesome-lists/awesome-bash` | Awesome Bash list |
+| 67 | awesome-command-line-apps | `herrbischoff/awesome-command-line-apps` | CLI apps list |
+| 68 | awesome-wsl | `sirredbeard/awesome-wsl` | This awesome list |
+| 69 | curated-programming-resources | `Michael0x2a/curated-programming-resources` | Programming resources |
+| 70 | portable-node-guide | `ehmicky/portable-node-guide` | Cross-platform Node.js guide |
+| 71 | the-art-of-command-line | `jlevy/the-art-of-command-line` | Master the command line |
+
+### `~/projects/awesome-bash/` — Bash Scripting & CLI Tools (28 repos)
+
+Shell scripting tutorials, cheat sheets, AI-enhanced CLI tools (aichat, aider, plandex, shell_gpt), and curated CLI resource collections.
+
+| # | Repo | Source | Description |
+|---|------|--------|-------------|
+| 1 | pure-bash-bible | `dylanaraps/pure-bash-bible` | Pure bash snippets for common tasks |
+| 2 | bash-it | `bash-it/bash-it` | Community Bash framework |
+| 3 | Bash-Snippets | `alexanderepstein/Bash-Snippets` | Useful bash script collection |
+| 4 | DevOps-Bash-tools | `HariSekhon/DevOps-Bash-tools` | 1000+ DevOps bash scripts |
+| 5 | bash-utils | `pirate/bash-utils` | Hand-crafted bash utilities |
+| 6 | introduction-to-bash-scripting | `bobbyiliev/introduction-to-bash-scripting` | Free bash scripting eBook |
+| 7 | shell-scripting-tutorial | `techarkit/shell-scripting-tutorial` | Shell scripting guide |
+| 8 | 100-shell-script-examples | `epety/100-shell-script-examples` | 100 shell script examples |
+| 9 | simple-bash-scripts | `ruanyf/simple-bash-scripts` | Simple bash scripts |
+| 10 | shell-examples | `qjcg/shell-examples` | Shell scripting examples |
+| 11 | cheat.sh | `chubin/cheat.sh` | Unified cheat sheet service |
+| 12 | cheat.sheets | `chubin/cheat.sheets` | Community cheat sheets |
+| 13 | awesome-cheatsheets | `LeCoupa/awesome-cheatsheets` | Multi-language cheat sheets |
+| 14 | Bash-Cheat-Sheet | `RehanSaeed/Bash-Cheat-Sheet` | Bash cheat sheet |
+| 15 | go-lang-cheat-sheet | `a8m/go-lang-cheat-sheet` | Go cheat sheet |
+| 16 | learnxinyminutes-docs | `adambard/learnxinyminutes-docs` | Learn X in Y Minutes |
+| 17 | aichat | `sigoden/aichat` | All-in-one LLM CLI tool |
+| 18 | shell_gpt | `TheR1D/shell_gpt` | GPT-powered CLI tool |
+| 19 | aider | `paul-gauthier/aider` | AI pair programming |
+| 20 | plandex | `plandex-ai/plandex` | AI-driven terminal development |
+| 21 | awesome-terminals | `cdleon/awesome-terminals` | Terminal emulators list |
+| 22 | awesome-console-services | `chubin/awesome-console-services` | Console web services |
+| 23 | awesome-fetch | `beucismis/awesome-fetch` | System info fetch tools |
+| 24 | awesome-ttygames | `ligurio/awesome-ttygames` | Unix ASCII terminal games |
+| 25 | awesome-tuis | `rothgar/awesome-tuis` | Terminal user interfaces |
+| 26 | cli-apps | `toolleeo/cli-apps` | CLI/TUI application list |
+| 27 | open-source-badges | `ellerbrock/open-source-badges` | Open source badges |
+| 28 | perl1line.txt | `pkrumins/perl1line.txt` | Perl one-liners |
+
 ---
 
 ## 🧠 RLM Environment Variables
@@ -2777,9 +2904,11 @@ All resources are exposed as environment variables — symbolic pointers that ag
 | `AWESOME_LINUX_HOME` | `~/projects/awesome-linux` | 870 Linux/free app repos |
 | `AWESOME_CONTAINERS_HOME` | `~/projects/awesome-containers` | 57 container repos |
 | `AWESOME_LISTS_HOME` | `~/projects/awesome-lists` | 690 awesome list repos |
+| `AWESOME_WSL_HOME` | `~/projects/awesome-wsl` | 71 WSL repos |
+| `AWESOME_BASH_HOME` | `~/projects/awesome-bash` | 28 Bash/CLI repos |
 | `CYBORGDB_API_URL` | `http://localhost:8100` | CyborgDB vector DB |
 | `OPENCLAW_GATEWAY` | `http://localhost:18789` | OpenClaw AI gateway |
-| `REPO_COUNT_TOTAL` | `2102` | Total cloned repos |
+| `REPO_COUNT_TOTAL` | `2201` | Total cloned repos |
 
 ### Shell Functions
 
