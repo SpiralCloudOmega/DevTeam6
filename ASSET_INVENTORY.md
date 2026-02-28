@@ -657,6 +657,10 @@ Organized into 9 categories. All cloned with `--depth 1` for space efficiency (7
 | Awesome Lists disk usage | 13 GB |
 | Awesome WSL + Bash disk usage | 2.9 GB |
 | Total disk usage | 214 GB / 1 TB |
+| **AI Tools** | Ollama 0.15.1, Claude CLI 2.1.62, OpenCode 1.2.10 |
+| **Ollama Cloud Models** | 4 (kimi-k2.5, glm-5, deepseek-v3.2, minimax-m2.5) |
+| **Ollama Local Models** | qwen3-coder:30b (19 GB) |
+| **Integration Configs** | 16 (4 integrations × 4 models) |
 | DevTeam6 app pages (React) | 16 |
 | DevTeam6 templates | 7 |
 | DevTeam6 GitHub agents | 22 |
@@ -2886,6 +2890,89 @@ Shell scripting tutorials, cheat sheets, AI-enhanced CLI tools (aichat, aider, p
 
 ---
 
+## 🤖 AI Tools & Models
+
+### Installed Tools
+
+| Tool | Version | Install Method | Location |
+|------|---------|---------------|----------|
+| **Ollama** | 0.15.1 | snap | `/snap/ollama/105/bin/ollama` |
+| **Claude Code CLI** | 2.1.62 | curl install.sh | `~/.claude/local/claude` |
+| **OpenCode** | 1.2.10 | curl install.sh | `~/.opencode/bin/opencode` |
+
+### Ollama Models
+
+| Model | Type | Size | Purpose |
+|-------|------|------|---------|
+| `kimi-k2.5:cloud` | Cloud (Moonshot AI) | — | Cloud-routed inference via Ollama |
+| `glm-5:cloud` | Cloud (Zhipu AI) | — | Cloud-routed inference via Ollama |
+| `deepseek-v3.2:cloud` | Cloud (DeepSeek) | — | Cloud-routed inference via Ollama |
+| `minimax-m2.5:cloud` | Cloud (MiniMax) | — | Cloud-routed inference via Ollama |
+| `qwen3-coder:30b` | Local (Alibaba) | ~19 GB | Local code generation (RTX 3090 24GB) |
+
+> **Note**: Cloud models require Ollama account authentication. Run `ollama run <model>` and follow the sign-in URL to activate.
+
+### Ollama Integration Configurations
+
+All 4 integrations configured with all 4 cloud models via `ollama launch <integration> --model <model> --config`:
+
+| Integration | Description | Config Location |
+|-------------|-------------|-----------------|
+| `claude` | Claude Code CLI | `~/.claude/.claude.json` |
+| `opencode` | OpenCode AI | `~/snap/ollama/105/.config/opencode/opencode.json` |
+| `codex` | OpenAI Codex CLI | codex config |
+| `droid` | Droid AI Assistant | `~/snap/ollama/105/.factory/settings.json` |
+
+**Configured model × integration matrix** (16 combinations):
+
+| Model | claude | opencode | codex | droid |
+|-------|--------|----------|-------|-------|
+| `kimi-k2.5:cloud` | ✅ | ✅ | ✅ | ✅ |
+| `glm-5:cloud` | ✅ | ✅ | ✅ | ✅ |
+| `deepseek-v3.2:cloud` | ✅ | ✅ | ✅ | ✅ |
+| `minimax-m2.5:cloud` | ✅ | ✅ | ✅ | ✅ |
+
+### API Endpoints
+
+| Endpoint | URL | Description |
+|----------|-----|-------------|
+| Ollama API | `http://localhost:11434` | Local model serving |
+| Ollama Chat | `http://localhost:11434/api/chat` | Chat completions |
+| OpenAI-compat | `http://localhost:11434/v1` | OpenAI-compatible API |
+
+### Environment Variables (AI)
+
+| Variable | Value | Purpose |
+|----------|-------|---------|
+| `ANTHROPIC_AUTH_TOKEN` | `ollama` | Ollama auth token |
+| `ANTHROPIC_API_KEY` | `44af...500ef0c.p8MN...` | API key for Anthropic routing |
+| `ANTHROPIC_BASE_URL` | `http://localhost:11434` | Route Anthropic calls to Ollama |
+
+### Quick Reference
+
+```bash
+# Run a cloud model interactively
+ollama run kimi-k2.5:cloud
+
+# Launch Claude Code with a specific model
+ollama launch claude --model deepseek-v3.2:cloud
+
+# Launch OpenCode with a model
+ollama launch opencode --model glm-5:cloud
+
+# API call to local model
+curl http://localhost:11434/api/chat \
+  -d '{"model":"qwen3-coder:30b","messages":[{"role":"user","content":"Hello!"}]}'
+
+# OpenCode web UI (from WSL)
+opencode web --hostname 0.0.0.0
+
+# OpenCode serve (for Desktop app connection)
+opencode serve --hostname 0.0.0.0 --port 4096
+```
+
+---
+
 ## 🧠 RLM Environment Variables
 
 **File**: `~/projects/devteam6-env.sh` (auto-sourced via `~/.bashrc`)
@@ -2908,6 +2995,9 @@ All resources are exposed as environment variables — symbolic pointers that ag
 | `AWESOME_BASH_HOME` | `~/projects/awesome-bash` | 28 Bash/CLI repos |
 | `CYBORGDB_API_URL` | `http://localhost:8100` | CyborgDB vector DB |
 | `OPENCLAW_GATEWAY` | `http://localhost:18789` | OpenClaw AI gateway |
+| `ANTHROPIC_AUTH_TOKEN` | `ollama` | Ollama auth routing |
+| `ANTHROPIC_API_KEY` | `44af...500ef0c...` | Anthropic API key |
+| `ANTHROPIC_BASE_URL` | `http://localhost:11434` | Route to Ollama |
 | `REPO_COUNT_TOTAL` | `2201` | Total cloned repos |
 
 ### Shell Functions
