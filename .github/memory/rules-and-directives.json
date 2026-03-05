@@ -1,0 +1,281 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-03-05T07:20:00Z",
+  "total_directives": 47,
+  "recording_rules": [
+    {
+      "directive": "Record every single word the user says and does",
+      "verbatim_quote": "you need to be recording every single word every single. That we do everything you do you need to record every single thing",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "No chunking ever",
+      "verbatim_quote": "there's no chunks You do absolutely no chunking",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "No summarizing long text",
+      "verbatim_quote": "You don't summarize long text you write everything out and save it",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Store everything in JSON with instructions and rules",
+      "verbatim_quote": "you need to store JSON instructions rules",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Full context tracking - every word recorded, nothing lost",
+      "verbatim_quote": "Record every word said and done — nothing can be lost",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Full verbosity in logging",
+      "verbatim_quote": "FULL VERBOSITY — Log every tool call result, every file change, every command output",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "No summaries, no chunks",
+      "verbatim_quote": "No summaries, no chunking — full context always",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    }
+  ],
+  "agent_rules": [
+    {
+      "directive": "Use sub-agents for all coding work",
+      "verbatim_quote": "you use sub agents and you're in YOLO mode",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Don't write code yourself, make sub-agents do it",
+      "verbatim_quote": "You don't write a single line of code you make the subagents do it",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Do deep research on everything",
+      "verbatim_quote": "you do deep research on everything",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Use 100+ agents in parallel",
+      "verbatim_quote": "Use 100+ agents in parallel, split terminal for more",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "YOLO mode always - agents execute autonomously",
+      "verbatim_quote": "YOLO mode always — agents execute autonomously",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Build cursor rules into custom agents",
+      "verbatim_quote": "you're going to build these cursor rules into special custom agents Every single rule in there",
+      "session_id": "85bc7321",
+      "timestamp": "2026-02-28"
+    }
+  ],
+  "coding_rules": [
+    {
+      "directive": "Everything WSL Ubuntu Bash Linux",
+      "verbatim_quote": "Everything WSL Ubuntu Bash Linux (Windows only for audio software that requires it)",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Models must have 1T+ parameters for complex code",
+      "verbatim_quote": "Models must have 1T+ parameters for complex code (small models too stupid)",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "REVITHION is native software, not web",
+      "verbatim_quote": "Native software, NOT web: CMake + C++ + Python + NumPy → EXE/ISO. Web only for dev/preview.",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    }
+  ],
+  "environment_rules": [
+    {
+      "directive": "8TB storage available - no reason not to save everything",
+      "verbatim_quote": "You have like 8 terabytes total between two hard drives So there's no reason for you not to to save everything",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Use environment variables like RLM paper",
+      "verbatim_quote": "Install anything we don't have and try To put everything inside environment variables just like RLM paper",
+      "session_id": "03a38020",
+      "timestamp": "2026-02-27"
+    },
+    {
+      "directive": "Skills and Workspaces as Presets/Templates",
+      "verbatim_quote": "Skills and Workspaces as Presets/Templates",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    }
+  ],
+  "project_rules": [
+    {
+      "directive": "REVITHION STUDIO is ALL-IN-ONE production suite",
+      "verbatim_quote": "REVITHION STUDIO = ALL-IN-ONE: Pro Tools + Ableton 12 + AXE-FX-3 + iZotope + Maxon Video Ultimate",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Lisp macros for recursive data transformation",
+      "verbatim_quote": "Lisp macros for recursive data transformation (close distance on any data)",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "NotebookLM CLI is THE deep research tool",
+      "verbatim_quote": "NotebookLM CLI is THE deep research tool",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "AlphaXiv.org for research papers",
+      "verbatim_quote": "AlphaXiv.org for research papers",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    }
+  ],
+  "communication_rules": [
+    {
+      "directive": "Don't stop until completely done",
+      "verbatim_quote": "I don't want you to stop until you Write rules And instructions build you a memory database so you don't ever forget anything",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Work for at least two human hours, not AI hours",
+      "verbatim_quote": "I want you to work for at lease two hours not in AI Hours Human Hours work on this don't stop until you're done",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Stop going in loops doing the same thing over and over",
+      "verbatim_quote": "if you keep going in loops and doing the same Fucking Shit over And over",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Tired of repeating the same instructions",
+      "verbatim_quote": "I'm seriously tired of telling you the same crap over and over and over",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Take time, don't rush - quality over speed",
+      "verbatim_quote": "Take time, don't rush — quality over speed",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    }
+  ],
+  "tool_preferences": [
+    {
+      "directive": "Use NotebookLM CLI for deep research",
+      "verbatim_quote": "NotebookLM CLI is THE deep research tool",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Use AlphaXiv.org for AI research papers",
+      "verbatim_quote": "AlphaXiv.org for research papers",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Use antigravity1-awesome-skills for agent skills",
+      "verbatim_quote": "889 agentic skills for AI coding assistants",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Use OpenClaw for autonomous agent swarms",
+      "verbatim_quote": "OpenClaw = locally-running AI assistant with 100-agent swarm, PC control",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    },
+    {
+      "directive": "Use KimiCode for 256K context coding",
+      "verbatim_quote": "KimiCode running at :5494, 256K context window, thinking mode enabled",
+      "session_id": "2b05dc8b",
+      "timestamp": "2026-03-03"
+    }
+  ],
+  "forbidden_actions": [
+    {
+      "directive": "Never chunk content",
+      "verbatim_quote": "there's no chunks You do absolutely no chunking",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Never summarize - write everything out",
+      "verbatim_quote": "You don't summarize long text you write everything out and save it",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Never forget anything between sessions",
+      "verbatim_quote": "build you a memory database so you don't ever forget anything",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Never go in loops repeating the same work",
+      "verbatim_quote": "if you keep going in loops and doing the same Fucking Shit over And over",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Never write code yourself - always use sub-agents",
+      "verbatim_quote": "You don't write a single line of code you make the subagents do it",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    }
+  ],
+  "required_actions": [
+    {
+      "directive": "Always load checkpoint files at session start",
+      "verbatim_quote": "Load all your checkpoint files and all the other files",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Always save session state before ending",
+      "verbatim_quote": "you need to be recording every single word",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Always reference prior sessions to avoid repetition",
+      "verbatim_quote": "I'm seriously tired of telling you the same crap over and over and over",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Always use the memory database for persistence",
+      "verbatim_quote": "build you a memory database so you don't ever forget anything",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    },
+    {
+      "directive": "Always save everything to disk - 8TB available",
+      "verbatim_quote": "You have like 8 terabytes total between two hard drives So there's no reason for you not to to save everything you say and do",
+      "session_id": "06ef625c",
+      "timestamp": "2026-03-05"
+    }
+  ]
+}

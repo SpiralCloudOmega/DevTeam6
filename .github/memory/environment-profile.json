@@ -1,0 +1,356 @@
+{
+  "profile_version": "2.0",
+  "last_updated": "2026-03-05T07:20:00Z",
+  "user": {
+    "github": "SpiralCloudOmega",
+    "wsl_user": "autom",
+    "project_codename": "REVITHION STUDIO"
+  },
+  "hardware": {
+    "cpu": "AMD Ryzen 9 5950X (16C/32T)",
+    "ram": "64GB DDR4",
+    "gpu": "NVIDIA RTX 3090 24GB VRAM",
+    "audio": "Sound Blaster AE-9",
+    "storage": {
+      "c_drive": { "total": "1.9TB", "used": "830GB", "free": "1.1TB" },
+      "d_drive": { "total": "5.5TB", "used": "1.4TB", "free": "4.2TB" },
+      "wsl_vhd": { "total": "1TB", "used": "272GB", "free": "685GB" }
+    }
+  },
+  "operating_systems": {
+    "windows": "Windows 11",
+    "wsl_distros": [
+      "Ubuntu (default, running)",
+      "Arch (stopped)",
+      "docker-desktop (stopped)",
+      "kali-linux (stopped)"
+    ]
+  },
+  "wsl_config": {
+    "memory": "40GB",
+    "swap": "8GB",
+    "processors": 12,
+    "auto_memory_reclaim": "gradual"
+  },
+  "languages_and_runtimes": {
+    "python": "3.13.11 (miniconda3)",
+    "node": "22.22.0 (nvm)",
+    "go": "1.22.2",
+    "rust": "1.93.1",
+    "java": "OpenJDK 21.0.10",
+    "bun": "1.3.9",
+    "deno": "2.6.10",
+    "haskell_ghc": "9.6.7",
+    "julia": "1.12.5",
+    "ruby": "3.2.3",
+    "cmake": "3.28.3",
+    "gcc": "11.5.0",
+    "cuda": "13.1",
+    "dotnet": "installed (Windows)",
+    "lua": "installed",
+    "perl": "installed",
+    "nim": "choosenim installed"
+  },
+  "package_managers": {
+    "pip3_packages": 273,
+    "conda_packages": 333,
+    "npm_global": "via nvm",
+    "cargo": "via rustup",
+    "go_modules": true
+  },
+  "repos": {
+    "total": 2713,
+    "breakdown": {
+      "projects_standalone": 65,
+      "awesome_linux": 870,
+      "awesome_lists": 690,
+      "awesome_python": 497,
+      "opensearch": 138,
+      "awesome_wsl": 71,
+      "awesome_containers": 57,
+      "awesome_bash": 28,
+      "open_audio": 284,
+      "ace_step_org": 8,
+      "kimi": 4,
+      "devteam6_workspace": 24,
+      "hise": 1,
+      "pinokio": 2,
+      "awesome_efficient_agents": 1
+    },
+    "key_repos": {
+      "openDAW": {
+        "path": "~/projects/openDAW",
+        "tech": "TypeScript monorepo (Turbo/Lerna)",
+        "desc": "Web-based DAW - target for REVITHION"
+      },
+      "ACE-Step-1.5": {
+        "path": "~/projects/ACE-Step-1.5",
+        "tech": "Python/PyTorch",
+        "desc": "AI music generation model"
+      },
+      "ACE-Step-DAW": {
+        "path": "DevTeam6/ACE-Step-DAW",
+        "tech": "React/TS",
+        "desc": "Browser DAW with ACE-Step integration"
+      },
+      "CopilotKit": {
+        "path": "~/projects/CopilotKit",
+        "tech": "TypeScript monorepo",
+        "desc": "AI copilot framework"
+      },
+      "HISE": {
+        "path": "~/HISE",
+        "tech": "C++/JUCE",
+        "desc": "Audio plugin framework"
+      },
+      "Kimi-Audio": {
+        "path": "DevTeam6/Kimi-Audio",
+        "tech": "Python/PyTorch",
+        "desc": "Audio AI from MoonshotAI"
+      },
+      "notebooklm-cli": {
+        "path": "DevTeam6/notebooklm-cli",
+        "tech": "Python",
+        "desc": "Google NotebookLM CLI for deep research"
+      },
+      "cyborgdb": {
+        "path": "~/cyborgdb",
+        "tech": "Docker/Node/Go",
+        "desc": "Encrypted vector DB v0.14.0"
+      }
+    }
+  },
+  "services": {
+    "ollama": { "port": 11434, "models": ["qwen3:8b", "qwen3-coder:30b", "cloud models"] },
+    "openclaw": { "port": 18789, "type": "systemd service" },
+    "gitea": { "port": 3000, "type": "self-hosted git" },
+    "ace_step_api": { "port": 8001 },
+    "ace_step_backend": { "port": 3001 },
+    "ace_step_frontend": { "port": 3002 },
+    "copilotkit": { "port": 3003 },
+    "opendaw": { "port": 8080 },
+    "postgresql": { "port": 5432, "extensions": ["pgvector"] },
+    "cyborgdb": { "port": 8100 }
+  },
+  "windows_software": {
+    "game_engines": [
+      "Unreal Engine 5.7",
+      "Twinmotion 2025.2",
+      "Unity Hub",
+      "Cocos Dashboard"
+    ],
+    "3d_vfx": [
+      "Houdini Engine",
+      "Cinema 4D 2025.2 (D:\\New Downloads)",
+      "Maya 2023.2 (D:\\)",
+      "3ds Max 2023.2 (D:\\)",
+      "V-Ray 7.20 (D:\\)",
+      "DaVinci Resolve Studio 20.3.1 (D:\\)"
+    ],
+    "audio_production": {
+      "daws": ["Ableton Live Suite 12.3 (D:\\New Downloads)"],
+      "plugins": {
+        "neural_dsp": [
+          "Archetype Cory Wong X",
+          "John Mayer X",
+          "Mateus Asato",
+          "Misha Mansoor X",
+          "Petrucci X",
+          "Rabea X",
+          "Tim Henson X",
+          "Fortin Nameless Suite X",
+          "Mantra",
+          "Morgan Amps Suite",
+          "Parallax X",
+          "Soldano SLO-100 X"
+        ],
+        "native_instruments": ["Kontakt 8", "Guitar Rig 7"],
+        "arturia": ["V Collection 11 Pro", "Pigments v7"],
+        "fabfilter": ["Total Bundle v2026.01"],
+        "ik_multimedia": ["AmpliTube 5", "MixBox"],
+        "antares": ["Auto-Tune Unlimited"],
+        "other": [
+          "Pulsar Audio Bundle",
+          "Brainworx/Plugin Alliance",
+          "Black Rooster Audio All Bundle",
+          "Blue Cats All Pack",
+          "KORG Modwave Native",
+          "Dawesome Myth",
+          "Minimal Audio Current",
+          "Newfangled Audio Elevate/Invigorate",
+          "PSPaudioware",
+          "Drumforge Complete",
+          "Ample Sound Guitar/Lapsteel",
+          "Soundiron libraries"
+        ]
+      }
+    },
+    "adobe": [
+      "After Effects 2026",
+      "Premiere Pro 2026",
+      "Photoshop 2026",
+      "Lightroom Classic 2026",
+      "Media Encoder 2026",
+      "Substance 3D Designer 15"
+    ],
+    "dev_tools": [
+      "VS Code",
+      "Visual Studio",
+      "Docker Desktop",
+      "Git",
+      "GitHub CLI",
+      "MSSQL Server Management Studio 22",
+      "VMware Workstation"
+    ],
+    "security": [
+      "IDA Pro 9.1 (D:\\New Downloads)",
+      "Kali Linux (WSL)"
+    ]
+  },
+  "custom_projects": {
+    "axetrhill_studio": {
+      "path": "C:\\AxETrhill_Studio",
+      "modules": [
+        "omega_agent_mesh",
+        "omega_audio_forge",
+        "omega_cad_compiler",
+        "omega_container_engine",
+        "omega_core_bus",
+        "omega_core_consciousness",
+        "omega_integration_core",
+        "omega_particle_physics",
+        "omega_video_engine",
+        "omega_voice_kernel",
+        "omega_vr_cockpit"
+      ]
+    },
+    "ai_os_project": {
+      "path": "D:\\AI-OS-Project",
+      "modules": [
+        "omega-core",
+        "omega-ui",
+        "omega-agents",
+        "omega-quantum",
+        "intelligent-files",
+        "multi-agent-os",
+        "nemo-agent-toolkit"
+      ]
+    },
+    "qbuddy": { "path": "D:\\QBuddy_Core" },
+    "eiden_system": {
+      "path": "D:\\EIDEN_SYSTEM",
+      "modules": [
+        "DIMENSIONAL_OS",
+        "EIDEN-GX",
+        "JASON_PROTOCOL"
+      ]
+    },
+    "revithion_cmake": { "path": "C:\\Users\\autom\\source\\repos\\CMakeProject1_REVITHION" }
+  },
+  "vscode": {
+    "active_extensions": 87,
+    "disabled_extensions": 255,
+    "mcp_servers": 14,
+    "github_agents": 218,
+    "github_workflows": 7,
+    "workspace_file": "devteam6-workspace.code-workspace"
+  },
+  "ai_tools": {
+    "copilot_cli": { "version": "0.0.421", "model": "claude-opus-4.6" },
+    "ollama": { "models": ["qwen3:8b", "qwen3-coder:30b"] },
+    "kimi": { "tools": ["kimi-cli", "Kimi-Audio", "Kimi-Linear", "Kimi Code CLI"] },
+    "notebooklm_cli": { "desc": "Google NotebookLM CLI - 600 resources, mind maps, audio podcasts, video, reports, slides" },
+    "openclaw": { "desc": "100-agent swarm, fully autonomous, PC control" },
+    "alphaxiv": { "url": "https://alphaxiv.org", "desc": "AI version of arXiv for research papers" },
+    "copilotkit": { "desc": "AI copilot framework for React apps" },
+    "autogen": "Microsoft multi-agent framework",
+    "crewai": "CrewAI agent framework",
+    "langchain": "LangChain LLM framework",
+    "llama_index": "LlamaIndex RAG framework",
+    "semantic_kernel": "Microsoft Semantic Kernel",
+    "adk_python": "Google ADK Python",
+    "a2a": "Agent-to-Agent protocol"
+  },
+  "memory_system": {
+    "memory_db": ".github/memory/spiralcloud-memory.db",
+    "environment_profile": ".github/memory/environment-profile.json",
+    "rules_and_directives": ".github/memory/rules-and-directives.json",
+    "copilot_instructions": ".github/copilot-instructions.md",
+    "session_bootstrap_sh": ".github/scripts/session-bootstrap.sh",
+    "session_bootstrap_py": ".github/scripts/session-bootstrap.py",
+    "custom_agents": {
+      "memory_keeper": ".github/agents/memory-keeper.agent.md",
+      "session_recorder": ".github/agents/session-recorder.agent.md",
+      "context_loader": ".github/agents/context-loader.agent.md"
+    }
+  },
+  "session_history": [
+    {"id": "06ef625c", "date": "2026-03-05", "summary": "Memory system build"},
+    {"id": "211f8c50", "date": "2026-03-05", "summary": "Fleet deployment notification"},
+    {"id": "cc119dec", "date": "2026-03-05", "summary": "Session (no summary)"},
+    {"id": "2b05dc8b", "date": "2026-03-03", "summary": "Master plan, extensions fixed, environment profile"},
+    {"id": "85bc7321", "date": "2026-02-28", "summary": "Massive workspace build, ACE-Step, REVITHION plan"},
+    {"id": "bc5f89ff", "date": "2026-02-28", "summary": "Session (no summary)"},
+    {"id": "f82b16d7", "date": "2026-02-28", "summary": "Install CUDA Toolkit in WSL"},
+    {"id": "ee4f47c4", "date": "2026-02-28", "summary": "awesome-nodejs exploration"},
+    {"id": "03a38020", "date": "2026-02-27", "summary": "Install assets from inventory, 2712 repos"},
+    {"id": "1d979ea8", "date": "2026-02-25", "summary": "OpenSearch + OpenAudio repos, checkpoint recovery"},
+    {"id": "5606e500", "date": "2026-02-23", "summary": "Find checkpoint folder"},
+    {"id": "c8c35ce6", "date": "2026-02-23", "summary": "Session (no summary)"},
+    {"id": "e48d233a", "date": "2026-02-22", "summary": "Session (no summary)"},
+    {"id": "0ffd350b", "date": "2026-02-22", "summary": "NeMo + CyborgDB setup"},
+    {"id": "1d109fed", "date": "2026-02-21", "summary": "WSL dev environment, OpenClaw, full toolchain"},
+    {"id": "e204b696", "date": "2026-02-21", "summary": "Session (no summary)"}
+  ],
+  "ebook_library": {
+    "count": 54,
+    "location": "DevTeam6 workspace root",
+    "topics": [
+      "Python",
+      "Rust",
+      "Go",
+      "C++",
+      "Linux admin",
+      "Kali/pentesting",
+      "quantum computing",
+      "AI/ML",
+      "Arduino/Raspberry Pi",
+      "Django",
+      "FastAPI",
+      "LangChain",
+      "Blender",
+      "Unreal Engine 5",
+      "AutoCAD",
+      "JUCE audio plugins",
+      "digital forensics",
+      "prompt engineering",
+      "GPU programming"
+    ]
+  },
+  "d_new_downloads": {
+    "total_files": 1186,
+    "audio_plugins": 129,
+    "courses": 130,
+    "ebooks": 78,
+    "installers": 214,
+    "archives": 156,
+    "adobe_suite": 13
+  },
+  "copilot_sessions": {
+    "total_sessions": 13,
+    "sessions_with_checkpoints": 7,
+    "total_checkpoints": 11,
+    "plan_files": 6,
+    "key_plan": "85bc7321/plan.md - Full REVITHION STUDIO architecture (965 lines)"
+  },
+  "environment_variables": {
+    "CYBORGDB_API_KEY": "set",
+    "CYBORGDB_SERVICE_URL": "http://localhost:8100",
+    "CYBORGDB_DB_TYPE": "postgres",
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "SIDEFX_DIR": "/opt/sidefx",
+    "HFS": "/opt/hfs",
+    "CUDA_PATH": "/usr/local/cuda-13.1",
+    "devteam6_env": "~/projects/devteam6-env.sh"
+  }
+}
