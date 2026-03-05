@@ -48,3 +48,6 @@ __pycache__/
 # Lock files (keep package-lock.json for reproducibility)
 # yarn.lock
 # pnpm-lock.yaml
+
+# API Keys and Secrets
+.secrets/

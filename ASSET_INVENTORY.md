@@ -34,6 +34,10 @@
 | gcc | installed | `/usr/bin/gcc` |
 | ripgrep | installed | `/usr/bin/rg` |
 | jq / yq | installed | `/usr/bin/jq`, `~/.local/bin/yq` |
+| Houdini | 21.0 (env ready) | `/opt/hfs` (download installer from sidefx.com) |
+| Pinokio | 6.0.10 | `DevTeam6/pinokio/` (Electron AI app launcher) |
+| CopilotKit | monorepo | `DevTeam6/CopilotKit/` (pnpm + turbo) |
+| pnpm | installed | global (for CopilotKit monorepo) |
 
 ### Key Services
 
@@ -42,6 +46,13 @@
 | CyborgDB | 8100 | Not running (start with `cyborgdb-service`) |
 | OpenClaw Gateway | 18789 | ✅ Running (systemd) |
 | PostgreSQL 16 | 5432 | Installed (pgvector enabled) |
+| Gitea | 3000 | ✅ Running (systemd) — [http://localhost:3000](http://localhost:3000) |
+| ACE-Step API | 8001 | AI music generation model (RTX 3090, tier6b) |
+| ACE-Step Backend | 3001 | Express API + SQLite database |
+| ACE-Step Frontend | 3002 | [http://localhost:3002](http://localhost:3002) — Spotify-like music UI |
+| CopilotKit | 3003 | [http://localhost:3003](http://localhost:3003) — AI copilot (Ollama qwen3:8b) |
+| OpenDAW Studio | 8080 | [https://localhost:8080](https://localhost:8080) — Web-based DAW |
+| Ollama LLM | 11434 | Local LLM server (qwen3:8b, kimi-k2.5:cloud, deepseek-v3.2:cloud) |
 
 ### Key Environment Variables (`~/.bashrc`)
 
@@ -2888,6 +2899,199 @@ Shell scripting tutorials, cheat sheets, AI-enhanced CLI tools (aichat, aider, p
 | 27 | open-source-badges | `ellerbrock/open-source-badges` | Open source badges |
 | 28 | perl1line.txt | `pkrumins/perl1line.txt` | Perl one-liners |
 
+### `DevTeam6/antigravity1-awesome-skills/` — Copilot Skills Catalog (945 skills)
+
+**GitHub:** [`SpiralCloudOmega/antigravity1-awesome-skills`](https://github.com/SpiralCloudOmega/antigravity1-awesome-skills)
+**Path (Windows):** `C:\Users\autom\VS Code GitHub Repos\DevTeam6\antigravity1-awesome-skills`
+**Path (WSL):** `/mnt/c/Users/autom/VS Code GitHub Repos/DevTeam6/antigravity1-awesome-skills`
+
+Curated catalog of 945 GitHub Copilot custom skills with a web-app interface, automated categorization, validation scripts, and a full CI/CD pipeline.
+
+#### File Tree
+
+```
+antigravity1-awesome-skills/
+├── .github/                  # Workflows, issue templates, CI config
+├── assets/                   # Project assets (star history)
+├── bin/                      # Install scripts (install.js)
+├── data/                     # Structured data
+│   ├── aliases.json
+│   ├── bundles.json
+│   ├── catalog.json
+│   ├── skills_index.json
+│   ├── workflows.json
+│   └── package.json
+├── docs/                     # 24 documentation files
+│   ├── AUDIT.md
+│   ├── BUNDLES.md
+│   ├── COMMUNITY_GUIDELINES.md
+│   ├── FAQ.md
+│   ├── GETTING_STARTED.md
+│   ├── KIRO_INTEGRATION.md
+│   ├── QUALITY_BAR.md
+│   ├── SECURITY_GUARDRAILS.md
+│   ├── SKILL_ANATOMY.md
+│   ├── SKILL_TEMPLATE.md
+│   ├── SOURCES.md
+│   ├── USAGE.md
+│   └── ... (12 more)
+├── lib/                      # Utility library (skill-utils.js)
+├── scripts/                  # Build & validation scripts
+│   ├── auto_categorize_skills.py
+│   ├── build-catalog.js
+│   ├── fix_dangling_links.py
+│   ├── generate_index.py
+│   ├── generate_skills_report.py
+│   ├── normalize-frontmatter.js
+│   ├── validate-skills.js
+│   ├── validate_skills.py
+│   └── tests/
+├── skills/                   # 945 skill definitions
+│   ├── 00-andruia-consultant/
+│   ├── 10-andruia-skill-smith/
+│   ├── agent-orchestration-multi-agent-optimize/
+│   ├── ... (942 more skills)
+│   └── README.md
+├── web-app/                  # React/Vite web interface
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
+├── CATALOG.md                # Full skills catalog (232 KB)
+├── CHANGELOG.md              # Release history
+├── CONTRIBUTING.md           # Contribution guidelines
+├── LICENSE                   # MIT License
+├── README.md                 # Main documentation
+├── SECURITY.md               # Security policy
+├── SKILLS_UPDATE_GUIDE.md    # Skills update guide
+├── START_APP.bat             # Windows app launcher
+├── package.json              # Root Node.js config
+├── package-lock.json
+└── skills_index.json         # Master skills index (399 KB)
+```
+
+---
+
+### Downloaded Awesome Lists & Reference Repos (56 workspace folders)
+
+These repos were downloaded and added to the DevTeam6 workspace as proper folders with real files.
+
+| # | Folder | Description |
+|---|--------|-------------|
+| 1 | `500-AI-ML-DL-CV-NLP-Projects` | 500 AI/ML/DL/CV/NLP projects with code |
+| 2 | `A-to-Z-Resources-for-Students` | A-to-Z resources for students |
+| 3 | `Awesome-Design-Tools` | Curated list of design tools |
+| 4 | `Awesome-Hacking1` | Awesome hacking resources |
+| 5 | `awesome-actions` | GitHub Actions curated list |
+| 6 | `awesome-ai-agents` | AI agents and autonomous systems |
+| 7 | `awesome-android-ui` | Android UI components and libraries |
+| 8 | `awesome-claude-code` | Claude Code tips and resources |
+| 9 | `awesome-compose` | Docker Compose examples |
+| 10 | `awesome-courses` | University CS courses list |
+| 11 | `awesome-cpp` | Awesome C++ frameworks and libraries |
+| 12 | `awesome-cursorrules` | Cursor AI rules (178 rules + 18 .mdc) → converted to 196 custom agents |
+| 13 | `awesome-deep-learning` | Deep learning resources |
+| 14 | `awesome-deepseek-integration` | DeepSeek AI integration tools |
+| 15 | `awesome-design-patterns` | Software design patterns |
+| 16 | `awesome-docker` | Docker resources and tools |
+| 17 | `awesome-dotnet` | .NET framework resources |
+| 18 | `awesome-dotnet-core` | .NET Core resources |
+| 19 | `awesome-electron` | Electron.js resources |
+| 20 | `awesome-falsehood` | Falsehoods programmers believe |
+| 21 | `awesome-flipperzero` | Flipper Zero resources |
+| 22 | `awesome-flutter` | Flutter development resources |
+| 23 | `awesome-generative-ai-guide` | Generative AI comprehensive guide |
+| 24 | `awesome-github-profile-readme` | GitHub profile README examples |
+| 25 | `awesome-go` | Go libraries and frameworks |
+| 26 | `awesome-ios` | iOS development resources |
+| 27 | `awesome-java` | Java frameworks and libraries |
+| 28 | `awesome-jupyter` | Jupyter notebook resources |
+| 29 | `awesome-linux-customization` | Linux desktop customization |
+| 30 | `awesome-machine-learning` | Machine learning resources |
+| 31 | `awesome-nodejs` | Node.js frameworks and tools |
+| 32 | `awesome-openclaw-skills` | OpenClaw skills collection |
+| 33 | `awesome-pentest` | Penetration testing resources |
+| 34 | `awesome-php` | PHP frameworks and libraries |
+| 35 | `awesome-pydantic` | Pydantic validation resources |
+| 36 | `awesome-python` | Python frameworks, libraries, resources (499 GitHub repos) |
+| 37 | `awesome-quant` | Quantitative finance libraries |
+| 38 | `awesome-react` | React ecosystem resources |
+| 39 | `awesome-react-components` | React component libraries |
+| 40 | `awesome-rust` | Rust language resources |
+| 41 | `awesome-scalability` | Scalability patterns and resources |
+| 42 | `awesome-selfhosted` | Self-hosted services |
+| 43 | `awesome-shell` | Shell scripting tools and frameworks |
+| 44 | `awesome-sysadmin` | System administration tools |
+| 45 | `awesome-system-design-resources` | System design learning resources |
+| 46 | `awesome-vscode` | VS Code extensions and resources |
+| 47 | `css-protips` | CSS professional tips |
+| 48 | `dashy` | Self-hosted dashboard application |
+| 49 | `data-engineer-handbook` | Data engineering handbook |
+| 50 | `epub-reader-vscode` | EPUB reader for VS Code |
+| 51 | `frontend-dev-bookmarks` | Frontend development bookmarks |
+| 52 | `github-cheat-sheet` | GitHub tips and tricks |
+| 53 | `the-book-of-secret-knowledge` | Collection of IT knowledge |
+| 54 | `vscode` | VS Code source code |
+| 55 | `vscode-copilot-chat` | VS Code Copilot Chat extension |
+| 56 | `wifi-densepose` | WiFi-based body pose estimation |
+
+### Custom Copilot Agents (196 agents from awesome-cursorrules)
+
+All 196 cursor rules were converted into GitHub Copilot custom agent files stored in `.github/agents/`.
+
+**Location:** `DevTeam6/.github/agents/`
+
+**Rule Categories:**
+- **Frontend**: React, Next.js, Vue, Svelte, Angular, Astro, Qwik, Solid.js (40+ agents)
+- **Backend**: Python/FastAPI/Django/Flask, Node.js, Go, Java/Spring, PHP/Laravel, Rails, Elixir (30+ agents)
+- **Mobile**: Flutter, React Native, Swift/UIKit, Android Jetpack Compose (8 agents)
+- **Testing**: Cypress, Playwright, Jest, Vitest (12 agents)
+- **DevOps**: Docker, Kubernetes, Terraform, CI/CD (10+ agents)
+- **Languages**: TypeScript, Python, Rust, Go, C++, Scala, Kotlin, R, Solidity (20+ agents)
+- **Frameworks**: HTMX, Tailwind, Shadcn UI, Material UI, Chakra UI (15+ agents)
+- **General**: Code quality, design patterns, documentation, security (20+ agents)
+- **Modern (.mdc)**: Updated rules for Python, React, TypeScript, Vue, Svelte, Rust, etc. (18 agents)
+
+---
+
+### ACE-Step Ecosystem (9 repos — complete org clone)
+
+| Repo | Stars | Description |
+|------|-------|-------------|
+| `ACE-Step-1.5/` | ★6567 | Main music generation model (installed in `~/projects/ACE-Step-1.5/`) |
+| `ACE-Step/` | ★4147 | Original ACE-Step model |
+| `ace-step-skills/` | ★37 | Skills & presets for ACE-Step |
+| `ACE-Step-ComfyUI/` | ★34 | ComfyUI node integration |
+| `ACE-Step-DAW/` | ★0 | DAW integration (new) |
+| `acestep.cpp/` | ★5 | Portable C++17 implementation |
+| `awesome-ace-step/` | ★17 | Curated community resources |
+| `ace-step.github.io/` | ★0 | Project website |
+| `ace-step-v1.5.github.io/` | ★12 | v1.5 website |
+
+### Kimi / Moonshot AI Repos
+
+| Repo | Description |
+|------|-------------|
+| `Kimi-Audio/` | Kimi-Audio-7B: audio understanding, generation & conversation model |
+| `Kimi-Linear/` | Kimi Linear 48B-A3B: efficient hybrid linear attention architecture |
+
+### AI Research & Tools
+
+| Repo | Description |
+|------|-------------|
+| `clawdbot_report/` | ClawdBot research report |
+| `rlm/` | Recursive Language Models — task-agnostic infinite context inference |
+| `GitNexus/` | Code intelligence platform — knowledge graph for AI agents (MCP) |
+| `RAG-Anything/` | Multimodal RAG system (text, images, tables, equations) |
+| `notebooklm-cli/` | CLI for Google NotebookLM — deep research, podcasts, quizzes |
+
+### Secrets Management
+
+API keys stored in `.secrets/` folder (git-ignored):
+- `.secrets/api-keys.env` — LLM API keys (OpenAI, Anthropic, Google, Moonshot)
+- `.secrets/services.env` — Local service URLs and ports
+
 ---
 
 ## 🤖 AI Tools & Models
@@ -2909,6 +3113,7 @@ Shell scripting tutorials, cheat sheets, AI-enhanced CLI tools (aichat, aider, p
 | `deepseek-v3.2:cloud` | Cloud (DeepSeek) | — | Cloud-routed inference via Ollama |
 | `minimax-m2.5:cloud` | Cloud (MiniMax) | — | Cloud-routed inference via Ollama |
 | `qwen3-coder:30b` | Local (Alibaba) | ~19 GB | Local code generation (RTX 3090 24GB) |
+| `qwen3:8b` | Local (Alibaba) | 5.2 GB | CopilotKit default agent model |
 
 > **Note**: Cloud models require Ollama account authentication. Run `ollama run <model>` and follow the sign-in URL to activate.
 
@@ -2969,6 +3174,42 @@ opencode web --hostname 0.0.0.0
 
 # OpenCode serve (for Desktop app connection)
 opencode serve --hostname 0.0.0.0 --port 4096
+```
+
+### Ubuntu Server (WSL2)
+
+**Metapackage**: `ubuntu-server` 1.539.2 installed on Ubuntu 24.04.4 LTS (WSL2)
+
+| Category | Packages |
+|----------|----------|
+| **Core** | `ubuntu-server`, `cloud-init`, `landscape-common`, `unattended-upgrades` |
+| **Remote Access** | `openssh-server`, `byobu`, `tmux`, `screen` |
+| **Networking** | `ufw`, `fail2ban`, `net-tools`, `ethtool`, `vlan`, `ifenslave`, `nfs-common`, `cifs-utils`, `chrony` |
+| **Storage/RAID** | `lvm2`, `mdadm`, `smartmontools`, `multipath-tools`, `open-iscsi` |
+| **Monitoring** | `htop`, `iotop`, `sysstat`, `lm-sensors` |
+| **Maintenance** | `logrotate`, `rsync` |
+
+### LibreOffice Build Environment (WSL2)
+
+**Source**: `~/projects/libreoffice/core/` (1.9 GB, 148K+ files)
+**Guide**: [DocumentFoundation WSL Build Guide](https://dev.blog.documentfoundation.org/2024/10/17/wsl-for-building-libreoffice/)
+
+| Tool | Version |
+|------|---------|
+| GCC/G++ | 11.5.0 |
+| GNU Make | 4.3 |
+| OpenJDK | 21.0.10 |
+| ccache | 4.9.1 |
+| autoconf/automake/libtool | installed |
+| ant | installed |
+
+**Dev Libraries**: GTK3, GStreamer, X11, CUPS, D-Bus, XRandr, Xrender, Xslt, SSL, PNG, JPEG, Expat, cURL + all LibreOffice `build-dep` packages.
+
+```bash
+# Build LibreOffice for Linux on WSL2
+cd ~/projects/libreoffice/core
+./autogen.sh
+make
 ```
 
 ---

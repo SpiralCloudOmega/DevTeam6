@@ -1,104 +1,159 @@
 {
   "folders": [
-    { "path": ".", "name": "📁 DevTeam6 Root" },
-    { "path": "app", "name": "🔷 Main App" },
-    { "path": "projects", "name": "📊 Projects" },
-    { "path": "templates/react-starter", "name": "🔵 React Starter" },
-    { "path": "templates/vue3-starter", "name": "🟢 Vue 3 Starter" },
-    { "path": "templates/dotnet8-api", "name": "🟣 .NET 8 API" }
+    {
+      "path": ".",
+      "name": "DevTeam6 Root",
+    },
   ],
   "settings": {
     "files.exclude": {
       "**/node_modules": true,
       "**/bin": true,
       "**/obj": true,
-      "**/.git": true
+      "**/.git": true,
+      "**/__pycache__": true,
+      "**/.venv": true,
+      "**/dist": true,
+      "**/.next": true,
+      "**/build": true,
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/dist/**": true,
+      "**/.next/**": true,
+      "**/build/**": true,
+      "**/__pycache__/**": true,
+      "**/.venv/**": true,
+      "**/venv/**": true,
+      "**/.tox/**": true,
+      "**/coverage/**": true,
+      "**/.turbo/**": true,
+      "**/target/**": true,
+      "**/.cache/**": true,
+      "**/Omnisphere*/**": true,
+      "**/Kontakt*/**": true,
+      "**/Steinberg*/**": true,
+      "**/Native Instruments*/**": true,
+      "**/Toontrack*/**": true,
+      "**/*.iso": true,
+      "**/*.nki": true,
+      "**/*.nkx": true,
     },
     "search.exclude": {
       "**/node_modules": true,
       "**/bin": true,
       "**/obj": true,
-      "**/dist": true
+      "**/dist": true,
+      "**/.next": true,
+      "**/build": true,
+      "**/__pycache__": true,
+      "**/coverage": true,
+      "**/.turbo": true,
     },
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "typescript.tsdk": "node_modules/typescript/lib",
     "[csharp]": {
-      "editor.defaultFormatter": "ms-dotnettools.csharp"
+      "editor.defaultFormatter": "ms-dotnettools.csharp",
     },
     "[vue]": {
-      "editor.defaultFormatter": "Vue.volar"
+      "editor.defaultFormatter": "Vue.volar",
     },
     "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "liveServer.settings.multiRootWorkspaceName": "DevTeam6 Root",
+    "inlineChat.notebookAgent": true,
+    "chat.viewProgressBadge.enabled": true,
+    "chat.useNestedAgentsMdFiles": true,
+    "chat.useClaudeHooks": true,
+    "chat.unifiedAgentsBar.enabled": false,
+    "chat.restoreLastPanelSession": true,
+    "chat.mcp.gallery.enabled": true,
+    "chat.mcp.assisted.nuget.enabled": true,
+    "chat.includeReferencedInstructions": true,
+    "chat.experimental.useSkillAdherencePrompt": true,
+    "chat.editing.explainChanges.enabled": true,
+    "chat.customAgentInSubagent.enabled": true,
+    "python.defaultInterpreterPath": "/home/autom/miniconda3/bin/python3",
+    "dotnet.server.suppressLSP": false,
+    "python.analysis.autoSearchPaths": false,
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "omnisharp.enableAsyncCompletion": false,
+    "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": false,
+    "liveshare.audio.enabled": false,
+    "python.analysis.indexing": false,
+    "python.analysis.enablePytestSupport": false,
+    "omnisharp.enableRoslynAnalyzers": false,
+    "omnisharp.enableEditorConfigSupport": false,
+    "omnisharp.enableImportCompletion": false,
+    "dotnet.automaticallyCreateSolutionInWorkspace": false,
+    "nuget.autoRestore": false,
   },
   "launch": {
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "🔵 React App",
-        "type": "chrome",
-        "request": "launch",
-        "url": "http://localhost:3000",
-        "webRoot": "${workspaceFolder:🔵 React Starter}/src",
-        "preLaunchTask": "Start React Dev Server"
-      },
-      {
-        "name": "🟢 Vue 3 App",
+        "name": "React App",
         "type": "chrome",
         "request": "launch",
         "url": "http://localhost:5173",
-        "webRoot": "${workspaceFolder:🟢 Vue 3 Starter}/src",
-        "preLaunchTask": "Start Vue Dev Server"
+        "webRoot": "${workspaceFolder:Main App}",
       },
       {
-        "name": "🟣 .NET API",
+        "name": "Vue 3 App",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:5174",
+        "webRoot": "${workspaceFolder:Vue 3 Starter}",
+      },
+      {
+        "name": ".NET API",
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build-dotnet",
-        "program": "${workspaceFolder:🟣 .NET 8 API}/bin/Debug/net8.0/dotnet8-api.dll",
-        "args": [],
-        "cwd": "${workspaceFolder:🟣 .NET 8 API}",
-        "stopAtEntry": false,
+        "program": "${workspaceFolder:.NET 8 API}/bin/Debug/net8.0/dotnet8-api.dll",
+        "cwd": "${workspaceFolder:.NET 8 API}",
         "serverReadyAction": {
           "action": "openExternally",
-          "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+          "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
         },
         "env": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
-        }
+          "ASPNETCORE_ENVIRONMENT": "Development",
+        },
       },
       {
-        "name": "🚀 Full Stack (All Apps)",
+        "name": "Full Stack",
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
         "runtimeArgs": ["run", "dev"],
-        "cwd": "${workspaceFolder:📁 DevTeam6 Root}",
-        "console": "integratedTerminal"
-      }
+        "cwd": "${workspaceFolder:DevTeam6 Root}",
+        "console": "integratedTerminal",
+      },
     ],
     "compounds": [
       {
-        "name": "🔷 React + .NET",
-        "configurations": ["🔵 React App", "🟣 .NET API"],
-        "stopAll": true
+        "name": "React + .NET",
+        "configurations": ["React App", ".NET API"],
+        "stopAll": true,
       },
       {
-        "name": "🟢 Vue + .NET",
-        "configurations": ["🟢 Vue 3 App", "🟣 .NET API"],
-        "stopAll": true
+        "name": "Vue + .NET",
+        "configurations": ["Vue 3 App", ".NET API"],
+        "stopAll": true,
       },
       {
-        "name": "🎨 All Frontends",
-        "configurations": ["🔵 React App", "🟢 Vue 3 App"],
-        "stopAll": true
-      }
-    ]
+        "name": "All Frontends",
+        "configurations": ["React App", "Vue 3 App"],
+        "stopAll": true,
+      },
+    ],
   },
   "tasks": {
     "version": "2.0.0",
@@ -108,23 +163,23 @@
         "type": "npm",
         "script": "dev:react",
         "problemMatcher": [],
-        "isBackground": true
+        "isBackground": true,
       },
       {
         "label": "Start Vue Dev Server",
         "type": "npm",
         "script": "dev:vue",
         "problemMatcher": [],
-        "isBackground": true
+        "isBackground": true,
       },
       {
         "label": "build-dotnet",
         "command": "dotnet",
         "type": "process",
-        "args": ["build", "${workspaceFolder:🟣 .NET 8 API}/dotnet8-api.csproj"],
-        "problemMatcher": "$msCompile"
-      }
-    ]
+        "args": ["build", "${workspaceFolder:.NET 8 API}/dotnet8-api.csproj"],
+        "problemMatcher": "$msCompile",
+      },
+    ],
   },
   "extensions": {
     "recommendations": [
@@ -137,7 +192,7 @@
       "GitHub.copilot",
       "eamodio.gitlens",
       "humao.rest-client",
-      "bradlc.vscode-tailwindcss"
-    ]
-  }
+      "bradlc.vscode-tailwindcss",
+    ],
+  },
 }
