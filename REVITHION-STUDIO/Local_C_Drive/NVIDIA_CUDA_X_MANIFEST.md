@@ -283,3 +283,28 @@ python -c "import torch; print(torch.backends.cudnn.version())"
 
 *Installation session: `06ef625c` — All libraries installed/verified during this session.*
 *Manifest path: `REVITHION-STUDIO/Local_C_Drive/NVIDIA_CUDA_X_MANIFEST.md`*
+
+---
+
+## Addendum — Additional Conda Environments (added session 06ef625c cont.)
+
+### tensorrt (Python 3.11.14)
+- Path: `/home/autom/miniconda3/envs/tensorrt`
+- **TensorRT**: 10.15.1.29 ✅
+- Activate: `conda activate tensorrt`
+
+### tensorrt-py310 (Python 3.10.19)
+- Path: `/home/autom/miniconda3/envs/tensorrt-py310`
+- **TensorRT**: 10.15.1.29 ✅
+- **TensorRT-LLM**: 0.13.0 (download pending — 1.9GB wheel, retry when network is clear)
+- Activate: `conda activate tensorrt-py310`
+
+### System Python
+- `/usr/bin/python` → python3 (via `python-is-python3` package)
+- `/usr/bin/python3` → Python 3.12.3 (system)
+- Windows: Python 3.14 at `C:\Users\autom\AppData\Local\Programs\Python\`
+
+### VS Code Configuration
+- `python.defaultInterpreterPath`: `/home/autom/miniconda3/bin/python`
+- `python.condaPath`: `/home/autom/miniconda3/bin/conda`
+- Configured at: workspace, WSL machine, and global levels
