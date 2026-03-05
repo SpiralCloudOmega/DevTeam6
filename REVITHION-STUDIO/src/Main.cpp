@@ -43,6 +43,12 @@ public:
         boxGraph = std::make_unique<BoxGraph>();
         audioGraph = std::make_unique<AudioGraph>();
 
+        // Initialize audio playback
+        formatManager.registerBasicFormats();
+        deviceManager.initialiseWithDefaultDevices(0, 2);
+        deviceManager.addAudioCallback(&sourcePlayer);
+        sourcePlayer.setSource(&transportSource);
+
         // Check ACE-STEP health on startup (background thread)
         std::thread([this]() {
             bool healthy = aceBridge.checkHealth();
@@ -59,6 +65,11 @@ public:
     ~RevithionMainComponent() override
     {
         stopTimer();
+        transportSource.stop();
+        transportSource.setSource(nullptr);
+        readerSource.reset();
+        sourcePlayer.setSource(nullptr);
+        deviceManager.removeAudioCallback(&sourcePlayer);
     }
 
     //==========================================================================
@@ -197,9 +208,15 @@ private:
         setupTransportBtn(recordButton, "REC", kSecondary);
 
         playButton.onClick = [this]() {
+            if (readerSource != nullptr)
+            {
+                transportSource.setPosition(0.0);
+                transportSource.start();
+            }
             statusLabel.setText("Transport: Playing", juce::dontSendNotification);
         };
         stopButton.onClick = [this]() {
+            transportSource.stop();
             statusLabel.setText("Transport: Stopped", juce::dontSendNotification);
             positionLabel.setText("00:00:00.000", juce::dontSendNotification);
         };
@@ -399,9 +416,18 @@ private:
 
                 if (result.success)
                 {
-                    statusLabel.setText("Generated successfully! (" +
-                        juce::String(result.audioData.size() / 1024) + " KB)",
-                        juce::dontSendNotification);
+                    if (!result.audioData.empty())
+                    {
+                        loadAndPlayAudio(result.audioData);
+                        statusLabel.setText("Playing generated audio (" +
+                            juce::String(result.audioData.size() / 1024) + " KB)",
+                            juce::dontSendNotification);
+                    }
+                    else
+                    {
+                        statusLabel.setText("Generation complete (no audio data returned)",
+                            juce::dontSendNotification);
+                    }
                     statusLabel.setColour(juce::Label::textColourId, juce::Colour(kSuccess));
                 }
                 else
@@ -415,6 +441,27 @@ private:
     }
 
     //==========================================================================
+    // Audio playback
+    //==========================================================================
+    void loadAndPlayAudio(const std::vector<uint8_t>& audioData)
+    {
+        transportSource.stop();
+        transportSource.setSource(nullptr);
+        readerSource.reset();
+
+        lastGeneratedAudio = juce::MemoryBlock(audioData.data(), audioData.size());
+        auto inputStream = std::make_unique<juce::MemoryInputStream>(lastGeneratedAudio, false);
+        auto* reader = formatManager.createReaderFor(std::move(inputStream));
+
+        if (reader != nullptr)
+        {
+            readerSource = std::make_unique<juce::AudioFormatReaderSource>(reader, true);
+            transportSource.setSource(readerSource.get(), 0, nullptr, reader->sampleRate);
+            transportSource.start();
+        }
+    }
+
+    //==========================================================================
     // Members
     //==========================================================================
 
@@ -423,6 +470,14 @@ private:
     std::unique_ptr<BoxGraph>         boxGraph;
     std::unique_ptr<AudioGraph>       audioGraph;
     bool                              aceConnected = false;
+
+    // Audio playback
+    juce::AudioDeviceManager                       deviceManager;
+    juce::AudioFormatManager                       formatManager;
+    juce::AudioTransportSource                     transportSource;
+    juce::AudioSourcePlayer                        sourcePlayer;
+    std::unique_ptr<juce::AudioFormatReaderSource> readerSource;
+    juce::MemoryBlock                              lastGeneratedAudio;
 
     // Top bar
     juce::Label titleLabel;
