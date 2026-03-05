@@ -24,7 +24,7 @@ credentials.json
 *.djvu
 
 # ── DIAGNOSTICS (contains sensitive info) ───────────────────────
-## Chat Customization Diagnostics.md
+\#\# Chat Customization Diagnostics.md
 
 # ── CLONED REPOSITORIES (reference only, not part of project) ──
 # ACE-STEP ecosystem (reference — main code in ~/projects/)
@@ -302,4 +302,4 @@ yarn-error.log*
 *.local
 .npm/
 .yarn/
-## Chat Customization Diagnostics.md
+\#\# Chat Customization Diagnostics.md
