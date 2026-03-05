@@ -1,0 +1,24 @@
+# Build
+build/
+cmake-build-*/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Models (large files)
+models/*.gguf
+models/*.pt
+models/*.safetensors
+models/*.bin
+
+# Training data
+training/data/
+training/output/
+
+# OS
+.DS_Store
+Thumbs.db
