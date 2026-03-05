@@ -1,53 +1,304 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
+# ══════════════════════════════════════════════════════════════════
+# REVITHION STUDIO / DevTeam6 — Master .gitignore
+# SpiralCloudOmega © 2026
+# ══════════════════════════════════════════════════════════════════
 
-# Build outputs
+# ── SECRETS (NEVER COMMIT) ──────────────────────────────────────
+.secrets/
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.json
+credentials.json
+**/api-keys*
+**/tokens.txt
+
+# ── DOCUMENTS / EBOOKS / PAPERS (too large + copyrighted) ──────
+*.pdf
+*.epub
+*.azw3
+*.mobi
+*.djvu
+
+# ── DIAGNOSTICS (contains sensitive info) ───────────────────────
+## Chat Customization Diagnostics.md
+
+# ── CLONED REPOSITORIES (reference only, not part of project) ──
+# ACE-STEP ecosystem (reference — main code in ~/projects/)
+ACE-Step/
+ACE-Step-ComfyUI/
+ACE-Step-DAW/
+ace-step-skills/
+ace-step-ui/
+ace-step-v1.5.github.io/
+ace-step.github.io/
+acestep.cpp/
+awesome-ace-step/
+
+# Awesome-* collections (reference libraries)
+500-AI-ML-DL-CV-NLP-Projects/
+A-to-Z-Resources-for-Students/
+Awesome-Design-Tools/
+Awesome-Efficient-Agents/
+Awesome-Hacking1/
+awesome-actions/
+awesome-ai-agents/
+awesome-android-ui/
+awesome-claude-code/
+awesome-compose/
+awesome-courses/
+awesome-cpp/
+awesome-cursorrules/
+awesome-deep-learning/
+awesome-deepseek-integration/
+awesome-design-patterns/
+awesome-docker/
+awesome-dotnet/
+awesome-dotnet-core/
+awesome-electron/
+awesome-falsehood/
+awesome-flipperzero/
+awesome-flutter/
+awesome-free-apps/
+awesome-generative-ai-guide/
+awesome-github-profile-readme/
+awesome-go/
+awesome-ios/
+awesome-java/
+awesome-jupyter/
+awesome-linux-customization/
+awesome-machine-learning/
+awesome-nodejs/
+awesome-openclaw-skills/
+awesome-pentest/
+awesome-php/
+awesome-pydantic/
+awesome-python/
+awesome-quant/
+awesome-react/
+awesome-react-components/
+awesome-rust/
+awesome-scalability/
+awesome-selfhosted/
+awesome-shell/
+awesome-sysadmin/
+awesome-system-design-resources/
+awesome-vscode/
+
+# Other cloned repos
+antigravity1-awesome-skills/
+app/
+clawdbot_report/
+CopilotKit/
+css-protips/
+dashy/
+data-engineer-handbook/
+epub-reader-vscode/
+frontend-dev-bookmarks/
+gimp/
+github-cheat-sheet/
+GitNexus/
+HeroicGamesLauncher/
+inkscape/
+Kimi-Audio/
+Kimi-Linear/
+local-ai/
+media/
+notebooklm-cli/
+openDAW/
+OpenAudio/
+Oracle OpenJDK/
+pinokio/
+RAG-Anything/
+rlm/
+syncthing/
+templates/
+the-book-of-secret-knowledge/
+vscode/
+vscode-copilot-chat/
+wifi-densepose/
+
+# ── AGENT FILES (from awesome-cursorrules, too many) ────────────
+# Keep only our custom my-*.agent.md files, ignore imported ones
+.github/agents/android-*.agent.md
+.github/agents/angular-*.agent.md
+.github/agents/ascii-*.agent.md
+.github/agents/aspnet-*.agent.md
+.github/agents/astro-*.agent.md
+.github/agents/beefree*.agent.md
+.github/agents/chrome-*.agent.md
+.github/agents/clean-*.agent.md
+.github/agents/code-*.agent.md
+.github/agents/codequality-*.agent.md
+.github/agents/convex.agent.md
+.github/agents/cpp-*.agent.md
+.github/agents/cursor*.agent.md
+.github/agents/cypress-*.agent.md
+.github/agents/database-*.agent.md
+.github/agents/deno-*.agent.md
+.github/agents/dragonruby-*.agent.md
+.github/agents/drupal-*.agent.md
+.github/agents/elixir-*.agent.md
+.github/agents/engineering-*.agent.md
+.github/agents/es-module-*.agent.md
+.github/agents/fastapi-*.agent.md
+.github/agents/flutter-*.agent.md
+.github/agents/gherkin-*.agent.md
+.github/agents/git-*.agent.md
+.github/agents/github-*.agent.md
+.github/agents/gitflow-*.agent.md
+.github/agents/go-*.agent.md
+.github/agents/graphical-*.agent.md
+.github/agents/how-to-*.agent.md
+.github/agents/html-*.agent.md
+.github/agents/htmx-*.agent.md
+.github/agents/java-*.agent.md
+.github/agents/javascript-*.agent.md
+.github/agents/jest-*.agent.md
+.github/agents/knative-*.agent.md
+.github/agents/kotlin-*.agent.md
+.github/agents/kubernetes-*.agent.md
+.github/agents/laravel-*.agent.md
+.github/agents/manifest-*.agent.md
+.github/agents/medusa*.agent.md
+.github/agents/nativescript*.agent.md
+.github/agents/netlify-*.agent.md
+.github/agents/next-*.agent.md
+.github/agents/nextjs-*.agent.md
+.github/agents/nextjs15-*.agent.md
+.github/agents/node-*.agent.md
+.github/agents/nodejs-*.agent.md
+.github/agents/optimize-*.agent.md
+.github/agents/pandas-*.agent.md
+.github/agents/plasticode-*.agent.md
+.github/agents/playwright-*.agent.md
+.github/agents/pr-template.agent.md
+.github/agents/project-epic-*.agent.md
+.github/agents/py-*.agent.md
+.github/agents/pyqt6-*.agent.md
+.github/agents/python-*.agent.md
+.github/agents/pytorch-*.agent.md
+.github/agents/qa-*.agent.md
+.github/agents/qwik-*.agent.md
+.github/agents/r-*.agent.md
+.github/agents/rails.agent.md
+.github/agents/react-*.agent.md
+.github/agents/rust-*.agent.md
+.github/agents/salesforce-*.agent.md
+.github/agents/scala-*.agent.md
+.github/agents/solidity-*.agent.md
+.github/agents/solidjs-*.agent.md
+.github/agents/svelte-*.agent.md
+.github/agents/sveltekit-*.agent.md
+.github/agents/swift-*.agent.md
+.github/agents/swiftui-*.agent.md
+.github/agents/tailwind-*.agent.md
+.github/agents/tauri-*.agent.md
+.github/agents/temporal-*.agent.md
+.github/agents/testrail-*.agent.md
+.github/agents/typescript-*.agent.md
+.github/agents/typo3cms-*.agent.md
+.github/agents/uikit-*.agent.md
+.github/agents/unity-*.agent.md
+.github/agents/vitest-*.agent.md
+.github/agents/vscode-*.agent.md
+.github/agents/vue-*.agent.md
+.github/agents/vue3-*.agent.md
+.github/agents/web-app-*.agent.md
+.github/agents/webassembly-*.agent.md
+.github/agents/wordpress-*.agent.md
+.github/agents/xian-*.agent.md
+.github/agents/xray-*.agent.md
+
+# Keep our custom agents
+!.github/agents/my-*.agent.md
+!.github/agents/context7.agents.md
+!.github/agents/linux-nvidia-cuda-python.agent.md
+
+# ── BUILD ARTIFACTS ─────────────────────────────────────────────
 dist/
 build/
 out/
 *.tsbuildinfo
-
-# Testing
+node_modules/
+.pnp
+.pnp.js
 coverage/
 
-# Environment
-.env
-.env.local
-.env.*.local
-
-# IDE
+# ── IDE / EDITOR ────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# ── OS FILES ────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local development
-.cache/
-*.local
-
-# Python
+# ── PYTHON ──────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
 *.egg-info/
+*.egg
+.venv/
+venv/
+ENV/
 
-# Lock files (keep package-lock.json for reproducibility)
-# yarn.lock
-# pnpm-lock.yaml
+# ── LOGS ────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
 
-# API Keys and Secrets
-.secrets/
+# ── LARGE BINARY FILES ─────────────────────────────────────────
+*.gguf
+*.safetensors
+*.bin
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.tar.gz
+*.tar.bz2
+*.zip
+*.7z
+*.rar
+*.iso
+*.img
+*.dmg
+*.exe
+*.msi
+*.deb
+*.rpm
+*.AppImage
+*.torrent
+
+# ── MEDIA (large files) ────────────────────────────────────────
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.aac
+*.m4a
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# ── WORKSPACE FILES ─────────────────────────────────────────────
+*.code-workspace
+
+# ── CACHE / LOCAL ───────────────────────────────────────────────
+.cache/
+*.local
+.npm/
+.yarn/
