@@ -50,6 +50,7 @@ file(GLOB_RECURSE REVITHION_SOURCES CONFIGURE_DEPENDS
     src/plugins/*.cpp
     src/dsp/*.cpp
     src/settings/*.cpp
+    src/rack/*.cpp
     src/ui/*.cpp
 )
 
