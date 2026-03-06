@@ -18,6 +18,10 @@ Compilation options: -lang cpp -ct 1 -cn Vocoder -es 1 -mcd 16 -mdd 1024 -mdy 33
 #include <cstdint>
 #include <math.h>
 
+#include <faust/dsp/dsp.h>
+#include <faust/gui/UI.h>
+#include <faust/gui/meta.h>
+
 #ifndef FAUSTCLASS 
 #define FAUSTCLASS Vocoder
 #endif
