@@ -134,7 +134,7 @@ void SettingsPanel::populateCombos() {
     presetCombo_.addItem("(Custom)", 1);
     id = 2;
     for (const auto& p : kAllPresets) {
-        juce::String label(p.name);
+        juce::String label(std::string(p.name));
         if (p.recommended) label += juce::String::fromUTF8(" \xe2\x98\x85");  // ★
         presetCombo_.addItem(label, id++);
     }

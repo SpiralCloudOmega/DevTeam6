@@ -49,6 +49,7 @@ file(GLOB_RECURSE REVITHION_SOURCES CONFIGURE_DEPENDS
     src/neural/*.cpp
     src/plugins/*.cpp
     src/dsp/*.cpp
+    src/settings/*.cpp
     src/ui/*.cpp
 )
 
@@ -63,6 +64,8 @@ if(REVITHION_BUILD_STANDALONE)
         PLUGIN_MANUFACTURER_CODE "SpCO"
         PLUGIN_CODE         "Rvth"
     )
+
+    juce_generate_juce_header(RevithionStudio)
 
     target_sources(RevithionStudio PRIVATE
         src/Main.cpp

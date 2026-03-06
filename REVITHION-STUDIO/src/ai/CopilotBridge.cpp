@@ -103,7 +103,7 @@ public:
         juce::URL url(cfg.ollamaUrl + endpoint);
         url = url.withPOSTData(jsonBody);
         auto options = juce::URL::InputStreamOptions(
-                           juce::URL::ParameterHandling::inPostBody)
+                           juce::URL::ParameterHandling::inPostData)
                            .withExtraHeaders("Content-Type: application/json")
                            .withConnectionTimeoutMs(120000);
         auto stream = url.createInputStream(options);
@@ -119,7 +119,7 @@ public:
         juce::URL url(cfg.ollamaUrl + endpoint);
         url = url.withPOSTData(jsonBody);
         auto options = juce::URL::InputStreamOptions(
-                           juce::URL::ParameterHandling::inPostBody)
+                           juce::URL::ParameterHandling::inPostData)
                            .withExtraHeaders("Content-Type: application/json")
                            .withConnectionTimeoutMs(120000);
         auto stream = url.createInputStream(options);

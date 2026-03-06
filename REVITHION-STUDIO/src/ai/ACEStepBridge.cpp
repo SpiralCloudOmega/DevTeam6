@@ -29,7 +29,7 @@ public:
         
         url = url.withPOSTData(jsonBody);
         
-        auto options = juce::URL::InputStreamOptions(juce::URL::ParameterHandling::inPostBody)
+        auto options = juce::URL::InputStreamOptions(juce::URL::ParameterHandling::inPostData)
                            .withExtraHeaders("Content-Type: application/json")
                            .withConnectionTimeoutMs(120000); // 2 min for generation
         
