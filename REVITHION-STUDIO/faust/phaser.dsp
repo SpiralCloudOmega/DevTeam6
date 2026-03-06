@@ -44,40 +44,26 @@ with {
 allpass_chain(n, fc) = seq(i, n, allpass1(fc));
 
 // ---------- phaser channel --------------------------------------------------
-phaser_channel(x, phase_offset) = x_out
+phaser_channel(phase_offset) = _ <: *(1 - mix), phased_path : +
 with {
     // LFO drives the notch frequency
-    mod   = lfo(phase_offset);
-    freq  = lfo2freq(mod);
+    mod  = lfo(phase_offset);
+    freq = lfo2freq(mod);
 
-    // Number of actual allpass stages = stages * 2 (2/4/6/8/10/12)
-    n_stg = stages * 2;
+    // Feedback normalization
+    norm = 1.0 / (1.0 + abs(fb));
 
-    // Allpass chain with feedback
-    phased = x_fb : allpass_chain(12, freq)  // run max 12 stages
-    with {
-        x_fb = x + phased * fb : *(1.0 / (1.0 + abs(fb)));
-    };
-
-    // Stage selection: crossfade based on stages parameter
-    // Each pair of allpass stages adds a notch
-    // We use all 12 stages but attenuate unused ones by mixing back dry
-    stg_mix = min(1.0, stages / 6.0);
-
-    x_out = x * (1 - mix) + phased * mix;
+    // Allpass chain with feedback using ~ operator
+    // 12 cascaded allpass stages (max) with feedback loop
+    phased_path = (+ : *(norm) : allpass_chain(12, freq)) ~ (*(fb)) : *(mix);
 };
 
 // ---------- main process ----------------------------------------------------
-stereo_phaser(l, r) = (l_out, r_out)
+stereo_phaser = _, _ :
+    (phaser_channel(0), phaser_channel(offset))
 with {
     // Phase offset for stereo spread
     offset = st_width * 0.5;
-
-    l_phased = phaser_channel(l, 0);
-    r_phased = phaser_channel(r, offset);
-
-    l_out = l_phased;
-    r_out = r_phased;
 };
 
 process = ba.bypass2(bypass, stereo_phaser);

@@ -71,24 +71,16 @@ fb_filter = fi.highpass(2, fb_locut) : fi.lowpass(2, fb_hicut);
 // ---------- stereo tape delay -----------------------------------------------
 tape_delay(l, r) = (l_out, r_out)
 with {
-    // Delay with modulation and feedback
-    l_delayed = l_del_fb
-    with {
-        d = max(0, eff_delay_l + lfo_l);
-        l_del_fb = de.delay(MAX_DELAY, d, l + fb_l)
-        with {
-            fb_l = l_del_fb * feedback : fb_filter : saturate(sat_drive);
-        };
-    };
+    // Modulated delay times in samples
+    d_l = max(0, eff_delay_l + lfo_l);
+    d_r = max(0, eff_delay_r + lfo_r);
 
-    r_delayed = r_del_fb
-    with {
-        d = max(0, eff_delay_r + lfo_r);
-        r_del_fb = de.delay(MAX_DELAY, d, r + fb_r)
-        with {
-            fb_r = r_del_fb * feedback : fb_filter : saturate(sat_drive);
-        };
-    };
+    // Feedback processing chain
+    fb_chain = *(feedback) : fb_filter : saturate(sat_drive);
+
+    // Delay lines with feedback using ~ operator
+    l_delayed = l : (+ : de.delay(MAX_DELAY, d_l)) ~ fb_chain;
+    r_delayed = r : (+ : de.delay(MAX_DELAY, d_r)) ~ fb_chain;
 
     // Dry/wet mixing
     l_out = l * (1 - mix) + l_delayed * mix;

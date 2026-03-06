@@ -32,47 +32,19 @@ makeup(i) = hslider("h:Multiband Comp/h:Band %i/[4]Makeup [unit:dB][style:knob]"
                      0, -20, 20, 0.1);
 
 // ---------- crossover (Linkwitz-Riley 4th order) ----------------------------
-// Split a mono signal into 4 bands using cascaded crossovers
-split4(x) = (b1, b2, b3, b4)
-with {
-    lo  = fi.lowpass(4, xf1, x);
-    hi  = fi.highpass(4, xf1, x);
-    mid_lo = fi.lowpass(4, xf2, hi);
-    mid_hi = fi.highpass(4, xf2, hi);
-    b1 = lo;
-    b2 = mid_lo;
-    b3 = fi.lowpass(4, xf3, mid_hi);
-    b4 = fi.highpass(4, xf3, mid_hi);
-};
+// 1 input → 4 band outputs via cascaded crossover filters
+split4 = _ <:
+    fi.lowpass(4, xf1),
+    (fi.highpass(4, xf1) : fi.lowpass(4, xf2)),
+    (fi.highpass(4, xf1) : fi.highpass(4, xf2) : fi.lowpass(4, xf3)),
+    (fi.highpass(4, xf1) : fi.highpass(4, xf2) : fi.highpass(4, xf3));
 
-// ---------- per-band compressor with linked stereo detection -----------------
-// Takes left band, right band; returns compressed left, right
-comp_band(i, l, r) = (l_out, r_out)
-with {
-    // Linked detection: average of both channels
-    detector = 0.5 * (abs(l) + abs(r));
-    env      = co.compression_gain_mono(ratio(i), thresh(i), att(i), rel(i), detector);
-    gain_lin = env * ba.db2linear(makeup(i));
-    l_out    = l * gain_lin;
-    r_out    = r * gain_lin;
-};
+// ---------- per-band compressor (mono) with makeup gain ---------------------
+comp_mono(i) = _ <: _, co.compression_gain_mono(ratio(i), thresh(i), att(i), rel(i))
+               : * : *(ba.db2linear(makeup(i)));
 
 // ---------- main process ----------------------------------------------------
-multiband_comp(l, r) = (l_sum, r_sum)
-with {
-    // Split each channel into 4 bands
-    (l1, l2, l3, l4) = split4(l);
-    (r1, r2, r3, r4) = split4(r);
-
-    // Compress each band with linked detection
-    (lc1, rc1) = comp_band(1, l1, r1);
-    (lc2, rc2) = comp_band(2, l2, r2);
-    (lc3, rc3) = comp_band(3, l3, r3);
-    (lc4, rc4) = comp_band(4, l4, r4);
-
-    // Sum bands back together
-    l_sum = lc1 + lc2 + lc3 + lc4;
-    r_sum = rc1 + rc2 + rc3 + rc4;
-};
+// Stereo: split each channel into 4 bands, compress each, sum back
+multiband_comp = par(c, 2, split4 : par(i, 4, comp_mono(i+1)) :> _);
 
 process = ba.bypass2(bypass, multiband_comp);

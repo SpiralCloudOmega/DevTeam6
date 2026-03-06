@@ -54,51 +54,42 @@ with {
 // Feedback coefficient derived from decay time
 fb_coef = min(0.98, decay / 10.0);
 
-tank(x) = (out_l, out_r)
-    letrec {
-        // Left side of tank
-        'tank_l = (x + tank_r * fb_coef)
-                  : fi.allpass_comb(sd(672), sd(672), -diffusion * 0.6)
-                  : de.delay(8192, sd(4453))
-                  : damp(damping)
-                  : fi.allpass_comb(sd(1800), sd(1800), diffusion * 0.6)
-                  : de.delay(8192, sd(3720));
+// Left processing chain
+left_chain =
+    fi.allpass_comb(672, sd(672), -diffusion * 0.6) :
+    de.delay(8192, sd(4453)) :
+    damp(damping) :
+    fi.allpass_comb(1800, sd(1800), diffusion * 0.6) :
+    de.delay(8192, sd(3720));
 
-        // Right side of tank
-        'tank_r = (x + tank_l * fb_coef)
-                  : fi.allpass_comb(sd(908), sd(908), -diffusion * 0.6)
-                  : de.delay(8192, sd(4217))
-                  : damp(damping)
-                  : fi.allpass_comb(sd(2656), sd(2656), diffusion * 0.6)
-                  : de.delay(8192, sd(3163));
-    }
-with {
-    // Tap outputs from different points for decorrelation
-    out_l = tank_l;
-    out_r = tank_r;
-};
+// Right processing chain
+right_chain =
+    fi.allpass_comb(908, sd(908), -diffusion * 0.6) :
+    de.delay(8192, sd(4217)) :
+    damp(damping) :
+    fi.allpass_comb(2656, sd(2656), diffusion * 0.6) :
+    de.delay(8192, sd(3163));
+
+// Cross-coupled feedback: swap channels and scale by fb_coef
+cross_fb = route(2, 2, (2,1), (1,2)) : (*(fb_coef), *(fb_coef));
+
+// Tank core: (fb_l, fb_r, x, x) → add feedback to input → process chains
+tank_core = route(4, 4, (1,1), (3,2), (2,3), (4,4)) : (+, +) : (left_chain, right_chain);
+
+// Complete tank: mono input → stereo output
+tank = _ <: _, _ : tank_core ~ cross_fb;
 
 // ---------- main process ----------------------------------------------------
-plate_reverb(l, r) = (l_out, r_out)
-with {
-    // Mono sum for reverb input
-    mono_in = (l + r) * 0.5;
+// Reverb input chain: mono sum → pre-delay → filtering → diffusion → tank
+reverb_chain = + : *(0.5)
+    : de.delay(19201, ms2samp(predelay))
+    : fi.highpass(2, locut) : fi.lowpass(2, hicut)
+    : input_diffusion : tank;
 
-    // Pre-delay
-    pd = de.delay(19201, ms2samp(predelay), mono_in);
-
-    // Input filtering
-    filtered = fi.highpass(2, locut, pd) : fi.lowpass(2, hicut);
-
-    // Diffusion
-    diffused = input_diffusion(filtered);
-
-    // Tank
-    (rev_l, rev_r) = tank(diffused);
-
-    // Dry/wet mixing
-    l_out = l * (1 - mix) + rev_l * mix;
-    r_out = r * (1 - mix) + rev_r * mix;
-};
+// Stereo dry/wet mix: (dry_l, dry_r, wet_l, wet_r) → (l_out, r_out)
+plate_reverb = _, _ <:
+    (*(1 - mix), *(1 - mix)),
+    (reverb_chain : (*(mix), *(mix)))
+    : route(4, 4, (1,1), (3,2), (2,3), (4,4)) : (+, +);
 
 process = ba.bypass2(bypass, plate_reverb);
