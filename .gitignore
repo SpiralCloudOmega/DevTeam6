@@ -303,3 +303,5 @@ yarn-error.log*
 .npm/
 .yarn/
 \#\# Chat Customization Diagnostics.md
+REVITHION-STUDIO/external/JUCE
+REVITHION-STUDIO/external/RTNeural
