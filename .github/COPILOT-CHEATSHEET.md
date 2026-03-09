@@ -3,6 +3,9 @@
 
 > **Purpose:** Everything a Copilot agent needs to write proper prompts, stay within context limits,
 > understand this codebase's unique architecture, and avoid silent truncation failures.
+>
+> 🏗️ **For the agent's own architecture, tools, and limits (not repo-specific):**
+> see [`.github/COPILOT-AGENT-ARCHITECTURE.md`](COPILOT-AGENT-ARCHITECTURE.md)
 
 ---
 
