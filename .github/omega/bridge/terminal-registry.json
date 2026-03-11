@@ -1,0 +1,274 @@
+{
+  "$schema": "omega-terminal-registry/v1",
+  "version": "1.0.0",
+  "description": "Omega Terminal Registry — maps terminal names to CLI commands, ports, capabilities, and health checks. Read by http-bridge.py at startup.",
+  "terminals": {
+    "gemini": {
+      "name": "Gemini CLI",
+      "description": "Google Gemini CLI for deep research and NotebookLM integration",
+      "binary": "/usr/local/bin/gemini",
+      "type": "cli",
+      "protocol": "stdio",
+      "capabilities": [
+        "deep-research",
+        "notebooklm",
+        "code-generation",
+        "analysis",
+        "summarization",
+        "multi-modal",
+        "long-context"
+      ],
+      "health_check": {
+        "method": "exec",
+        "command": "gemini --version",
+        "timeout": 5,
+        "expected_exit_code": 0
+      },
+      "max_sessions": 5,
+      "timeout_default": 300,
+      "models": [
+        "gemini-2.5-pro",
+        "gemini-2.5-flash"
+      ],
+      "env": {
+        "GEMINI_LOG_LEVEL": "info"
+      }
+    },
+    "opencode": {
+      "name": "OpenCode",
+      "description": "Fast multi-model coding agent with file editing, LSP, and terminal access",
+      "binary": "~/.opencode/bin/opencode",
+      "type": "cli",
+      "protocol": "stdio",
+      "capabilities": [
+        "code-generation",
+        "code-editing",
+        "lsp-integration",
+        "terminal-exec",
+        "multi-model",
+        "file-management",
+        "git-operations"
+      ],
+      "health_check": {
+        "method": "exec",
+        "command": "~/.opencode/bin/opencode --version",
+        "timeout": 5,
+        "expected_exit_code": 0
+      },
+      "max_sessions": 8,
+      "timeout_default": 120,
+      "models": [
+        "claude-sonnet-4",
+        "gpt-4.1",
+        "gemini-2.5-pro"
+      ],
+      "env": {
+        "OPENCODE_NON_INTERACTIVE": "1"
+      }
+    },
+    "jules": {
+      "name": "Jules",
+      "description": "GitHub's async coding agent with full 20GB Ubuntu VM execution environment",
+      "binary": "/usr/bin/jules",
+      "type": "cli",
+      "protocol": "stdio",
+      "capabilities": [
+        "code-generation",
+        "code-editing",
+        "full-vm-execution",
+        "dependency-install",
+        "test-execution",
+        "build-systems",
+        "multi-file-changes",
+        "git-operations"
+      ],
+      "health_check": {
+        "method": "exec",
+        "command": "jules --version",
+        "timeout": 10,
+        "expected_exit_code": 0
+      },
+      "max_sessions": 3,
+      "timeout_default": 600,
+      "models": [
+        "gemini-2.5-pro"
+      ],
+      "env": {
+        "JULES_WORKSPACE": "/tmp/jules-workspaces"
+      }
+    },
+    "openclaw": {
+      "name": "OpenClaw",
+      "description": "100-agent swarm orchestrator for massive parallel task execution",
+      "binary": "/usr/bin/openclaw",
+      "type": "http",
+      "protocol": "http",
+      "host": "127.0.0.1",
+      "port": 18789,
+      "base_url": "http://127.0.0.1:18789",
+      "capabilities": [
+        "multi-agent-swarm",
+        "parallel-execution",
+        "task-decomposition",
+        "skill-routing",
+        "agent-coordination",
+        "code-generation",
+        "research"
+      ],
+      "health_check": {
+        "method": "http",
+        "endpoint": "/health",
+        "timeout": 10,
+        "expected_status": 200
+      },
+      "max_sessions": 100,
+      "timeout_default": 300,
+      "models": [],
+      "env": {
+        "OPENCLAW_MAX_AGENTS": "100",
+        "OPENCLAW_SKILL_PATH": "~/.openclaw/skills"
+      }
+    },
+    "ollama": {
+      "name": "Ollama",
+      "description": "Local model inference server for on-device LLM execution",
+      "binary": "/usr/local/bin/ollama",
+      "type": "http",
+      "protocol": "http",
+      "host": "127.0.0.1",
+      "port": 11434,
+      "base_url": "http://127.0.0.1:11434",
+      "capabilities": [
+        "local-inference",
+        "code-generation",
+        "text-generation",
+        "embedding",
+        "chat-completion",
+        "model-management"
+      ],
+      "health_check": {
+        "method": "http",
+        "endpoint": "/api/tags",
+        "timeout": 5,
+        "expected_status": 200
+      },
+      "max_sessions": 4,
+      "timeout_default": 120,
+      "models": [
+        "qwen3:8b",
+        "qwen3-coder:30b"
+      ],
+      "env": {
+        "OLLAMA_HOST": "127.0.0.1:11434",
+        "OLLAMA_NUM_PARALLEL": "4",
+        "OLLAMA_MAX_LOADED_MODELS": "2"
+      }
+    },
+    "gh": {
+      "name": "GitHub CLI",
+      "description": "Official GitHub CLI for PRs, issues, actions, repos, and API operations",
+      "binary": "/usr/bin/gh",
+      "type": "cli",
+      "protocol": "stdio",
+      "capabilities": [
+        "pull-requests",
+        "issues",
+        "actions",
+        "repos",
+        "gists",
+        "releases",
+        "api-calls",
+        "auth",
+        "codespaces",
+        "extensions"
+      ],
+      "health_check": {
+        "method": "exec",
+        "command": "gh auth status",
+        "timeout": 10,
+        "expected_exit_code": 0
+      },
+      "max_sessions": 10,
+      "timeout_default": 60,
+      "models": [],
+      "env": {
+        "GH_PAGER": "",
+        "NO_COLOR": "1"
+      }
+    },
+    "kimi": {
+      "name": "KimiCode",
+      "description": "256K context multiagent coding system with deep codebase understanding",
+      "binary": "/usr/local/bin/kimicode",
+      "type": "http",
+      "protocol": "http",
+      "host": "127.0.0.1",
+      "port": 5494,
+      "base_url": "http://127.0.0.1:5494",
+      "capabilities": [
+        "long-context",
+        "multi-agent",
+        "code-generation",
+        "code-editing",
+        "codebase-search",
+        "refactoring",
+        "architecture-analysis"
+      ],
+      "health_check": {
+        "method": "http",
+        "endpoint": "/api/health",
+        "timeout": 10,
+        "expected_status": 200
+      },
+      "max_sessions": 6,
+      "timeout_default": 180,
+      "models": [
+        "kimi-coder-256k"
+      ],
+      "env": {
+        "KIMI_CONTEXT_SIZE": "262144",
+        "KIMI_MULTI_AGENT": "true"
+      }
+    }
+  },
+  "defaults": {
+    "timeout": 120,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "session_ttl": 3600,
+    "log_level": "info",
+    "workspace_base": "/tmp/omega-workspaces",
+    "stdio_encoding": "utf-8",
+    "http_connect_timeout": 10,
+    "http_read_timeout": 300
+  },
+  "bridge": {
+    "host": "127.0.0.1",
+    "port": 18800,
+    "cors": {
+      "enabled": true,
+      "origins": [
+        "http://localhost:*",
+        "http://127.0.0.1:*",
+        "vscode-webview://*"
+      ],
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "headers": ["Content-Type", "Authorization", "X-Omega-Session"]
+    },
+    "auth": {
+      "enabled": false,
+      "method": "bearer",
+      "token_env": "OMEGA_BRIDGE_TOKEN"
+    },
+    "websocket": {
+      "enabled": true,
+      "path": "/ws",
+      "ping_interval": 30
+    },
+    "rate_limit": {
+      "enabled": true,
+      "requests_per_minute": 120,
+      "burst": 20
+    }
+  }
+}

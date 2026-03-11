@@ -658,16 +658,23 @@ Organized into 9 categories. All cloned with `--depth 1` for space efficiency (7
 | **Awesome Lists repos** (`~/projects/awesome-lists/`) | **690** |
 | **Awesome WSL repos** (`~/projects/awesome-wsl/`) | **71** |
 | **Awesome Bash repos** (`~/projects/awesome-bash/`) | **28** |
-| Other repos (`~/projects/`) | 62 |
-| DevTeam6 repo (VS Code) | 1 |
-| **Total repos** | **2,201** |
+| **Awesome LISP repos** (`~/projects/awesome-lisp/`) | **736** |
+| **Awesome AI/ML repos** (`~/projects/awesome-ai-ml/`) | **416** |
+| **Awesome Python repos** (`~/projects/awesome-python/`) | **497** |
+| **Revithion Resources** (`~/projects/revithion-resources/`) | **28** |
+| Other repos (`~/projects/`) | 81 |
+| DevTeam6 repo (VS Code) | 25 |
+| **Total repos** | **~4,200** |
 | OpenSearch disk usage | 7.1 GB |
-| OpenAudio disk usage | 36 GB |
+| OpenAudio disk usage | 62 GB |
 | Awesome-Linux disk usage | 73 GB |
 | Awesome-Containers disk usage | 1.5 GB |
 | Awesome Lists disk usage | 13 GB |
 | Awesome WSL + Bash disk usage | 2.9 GB |
-| Total disk usage | 214 GB / 1 TB |
+| Awesome LISP disk usage | 7 GB |
+| Awesome AI/ML disk usage | 16 GB |
+| Awesome Python disk usage | 12 GB |
+| Total disk usage | ~651 GB / 1 TB |
 | **AI Tools** | Ollama 0.15.1, Claude CLI 2.1.62, OpenCode 1.2.10 |
 | **Ollama Cloud Models** | 4 (kimi-k2.5, glm-5, deepseek-v3.2, minimax-m2.5) |
 | **Ollama Local Models** | qwen3-coder:30b (19 GB) |
@@ -3239,7 +3246,7 @@ All resources are exposed as environment variables — symbolic pointers that ag
 | `ANTHROPIC_AUTH_TOKEN` | `ollama` | Ollama auth routing |
 | `ANTHROPIC_API_KEY` | `44af...500ef0c...` | Anthropic API key |
 | `ANTHROPIC_BASE_URL` | `http://localhost:11434` | Route to Ollama |
-| `REPO_COUNT_TOTAL` | `2201` | Total cloned repos |
+| `REPO_COUNT_TOTAL` | `4200` | Total cloned repos (updated 2025-07) |
 
 ### Shell Functions
 

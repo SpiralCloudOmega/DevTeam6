@@ -1,0 +1,7 @@
+{
+  "$schema": "omega-bridge-v1",
+  "system": "REVITHION Omega",
+  "version": "1.0.0",
+  "bridges": [],
+  "agent_endpoints": []
+}

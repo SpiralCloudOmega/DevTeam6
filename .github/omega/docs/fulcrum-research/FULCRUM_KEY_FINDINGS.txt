@@ -1,0 +1,634 @@
+================================================================================
+FULCRUM PROJECT - KEY FINDINGS SUMMARY
+================================================================================
+
+DEEP RESEARCH COMPLETED - See detailed analysis in:
+- /mnt/c/Users/autom/VS Code GitHub Repos/DevTeam6/FULCRUM_TECHNICAL_ANALYSIS.md (860 lines)
+- /mnt/c/Users/autom/VS Code GitHub Repos/DevTeam6/FULCRUM_QUICK_REFERENCE.md (350 lines)
+
+================================================================================
+1. WHAT IS FULCRUM?
+================================================================================
+
+✓ AI-powered command center for shipping software
+✓ Orchestrates multiple agents (Claude Code, OpenCode) in parallel
+✓ Single-user workflow tool designed for solopreneurs + CTOs
+✓ Version: 4.7.1 (React 19 + Hono on Bun)
+✓ Licensed under PolyForm Perimeter 1.0.0 (can build/sell software using it)
+
+Key Tagline: "Harness Attention. Orchestrate Agents. Leverage Your Time Wisely."
+
+================================================================================
+2. ARCHITECTURE - 3 LAYER STACK
+================================================================================
+
+FRONTEND (React 19 + TanStack Router)
+├── Kanban board (5 status columns: TO_DO, IN_PROGRESS, IN_REVIEW, DONE, CANCELED)
+├── Terminal tabs (xterm.js for agent I/O)
+├── Task details + dependencies visualization
+├── Calendar + messaging + monitoring
+└── Chat UI (Claude + OpenCode integrated)
+
+BACKEND (Hono on Bun + SQLite + Drizzle ORM)
+├── REST API (/api/*)
+├── WebSocket multiplexing (/ws/terminal)
+├── MCP HTTP endpoint (/mcp)
+├── 100+ MCP tools across 20 categories
+├── Multi-service support (calendar, messaging, notifications)
+└── Terminal + PTY management (dtach-backed, persistent sessions)
+
+DATABASE (SQLite, single-file, portable)
+├── 30+ tables covering: tasks, terminals, agents, messaging, calendars
+├── FTS5 full-text search (memory, conversations, tasks)
+├── Task dependencies, recurrence, tags, attachments
+└── Chat sessions, messages, artifacts (from assistant conversations)
+
+================================================================================
+3. KANBAN SYSTEM - FULLY IMPLEMENTED
+================================================================================
+
+Task Status Workflow:
+  TO_DO → IN_PROGRESS → IN_REVIEW → DONE
+                    ↘ CANCELED ↙
+
+Task Types:
+  • WORKTREE: Git-isolated work (separate branch per task)
+  • SCRATCH: Directory-isolated work (non-git, for scripts/analysis)
+  • MANUAL: Tracking-only (no agent, no directory)
+
+Task Properties:
+  ✓ Title, description, priority (high/medium/low)
+  ✓ Status, position (in column), pinned (to top)
+  ✓ Due date (color-coded: red=overdue, orange=today, yellow=tomorrow)
+  ✓ Time estimate (hours)
+  ✓ Tags (M:M relationship, reusable across tasks/projects)
+  ✓ Dependencies (task relationships - depends_on, relates_to, subtask)
+  ✓ Links (PRs, issues, docs, design files)
+  ✓ Attachments (file uploads, 50MB max)
+  ✓ Recurrence (daily/weekly/biweekly/monthly/quarterly/yearly)
+  ✓ Agent assignment (claude, opencode, or manual)
+  ✓ Project association (nullable - null = "Inbox")
+
+Kanban Board Features:
+  ✓ Drag-and-drop between columns
+  ✓ Bulk operations (select multiple → move/delete/tag)
+  ✓ Filtering by: project, tags, status, date range, search
+  ✓ Calendar integration (see due dates on calendar)
+  ✓ Dependency graph visualization (interactive)
+  ✓ Full-text search across all task content
+  ✓ Recurrence handling (auto-create next task when marked DONE)
+
+Key Files:
+  • Schema: server/db/schema.ts (tasks, taskRelationships, taskLinks, taskAttachments)
+  • Services: server/services/task-service.ts, server/services/task-status.ts
+  • API: server/routes/tasks.ts
+  • Frontend: frontend/routes/tasks/, frontend/components/kanban/
+
+================================================================================
+4. AGENT WORKSPACES - PER-TASK ISOLATION COMPLETE
+================================================================================
+
+Isolation Mechanism:
+  
+  WORKTREE TASKS:
+    ~/.fulcrum/repos/{repo-path}/.git/worktrees/
+    └── {task-id}-{branch-name}/
+        ├── .git (separate git state)
+        ├── src/, package.json, etc.
+        └── [Claude/OpenCode runs here]
+  
+  SCRATCH TASKS:
+    ~/.fulcrum/scratch/{task-id}/
+    ├── (free-form file structure)
+    └── [Agent can work with any files]
+
+Terminal Management:
+  • Each task gets unique PTY (pseudo-terminal)
+  • Backed by dtach socket (survives server restart)
+  • Stored in: terminals table (id, cwd, tmuxSession, status, exitCode)
+  • Organized in tabs: terminalTabs (persistent tab structure)
+  • UI state: terminalViewState (singleton, tracks active tab + focused terminals)
+
+Workspace Persistence:
+  ✓ Session survives Fulcrum server restart (dtach backing)
+  ✓ Can close laptop, agent keeps working on remote server
+  ✓ SSH port forwarding recommended (http://localhost:7777)
+
+Configuration Per Workspace:
+  • Task-level overrides: agentOptions, opencodeModel
+  • Repo-level defaults: defaultAgent, claudeOptions, opencodeOptions
+  • Project-level defaults: defaultAgent, claudeOptions, opencodeOptions
+  • Global defaults: settings (fnox)
+  • Hierarchy: Task > Repo > Project > Global
+
+Key Files:
+  • Terminal: server/terminal/ (pty-manager.ts, dtach-service.ts, tab-manager.ts)
+  • PTY: server/terminal/pty-manager.ts
+  • WebSocket: server/websocket/terminal-ws.ts
+  • Database: server/db/schema.ts (terminals, terminalTabs, terminalViewState)
+
+================================================================================
+5. CLAUDE CODE INTEGRATION - COMPLETE
+================================================================================
+
+Plugin Location: plugins/fulcrum/ (skills, hooks, commands)
+
+Status Sync Mechanism:
+  Claude stops (idle event)
+    ↓ Plugin Stop hook fires
+    ↓ Runs: fulcrum current-task review
+    ↓ Auto-detects task from worktree path
+    ↓ HTTP POST /api/tasks/{id}/status → IN_REVIEW
+    ↓ Task moves to IN_REVIEW column in Fulcrum
+    ↓ Notification sent to user (if configured)
+
+User Responds → Plugin UserPromptSubmit hook fires → fulcrum current-task in-progress
+
+MCP Tool Access:
+  ✓ Claude calls MCP tools via HTTP /mcp endpoint
+  ✓ 100+ tools available (create_task, move_task, send_notification, etc.)
+  ✓ No context bloat: core tools only (~8), others discovered via search_tools
+
+Key Integration Points:
+  • Plugin hooks: plugins/fulcrum/hooks/hooks.json
+  • Skill documentation: plugins/fulcrum/skills/fulcrum/SKILL.md
+  • Commands: plugins/fulcrum/commands/ (notify, pr, task-info)
+  • Service: server/services/assistant-service.ts
+  • Routes: server/routes/assistant.ts
+  • MCP tools: cli/src/mcp/tools/tasks.ts (move_task, create_task, etc.)
+
+Installation:
+  claude plugin marketplace add knowsuchagency/fulcrum
+  claude plugin install fulcrum@fulcrum --scope user
+
+================================================================================
+6. OPENCODE INTEGRATION - COMPLETE
+================================================================================
+
+Plugin Location: plugins/fulcrum-opencode/index.ts
+
+SDK Integration:
+  • Auto-starts OpenCode server on localhost:4096 if not running
+  • Maintains client singleton
+  • Maps Fulcrum session ID ↔ OpenCode SDK session ID
+
+Status Tracking:
+  • Monitors events: chat.message, session.idle, session.status, tool.execute
+  • Activity tracking: recordActivity() prevents false idle
+  • Debounces status changes (500ms) to avoid thrashing
+  • Subagent support: ignores subagent idles, only main session controls task status
+
+Event Flow:
+  User input → setStatus("in-progress")
+  OpenCode idle (1.5s debounce) → scheduleIdleTransition() → setStatus("review")
+
+Chat Service:
+  • Location: server/services/opencode-chat-service.ts
+  • Lazy-loads OpenCode client on first message
+  • Builds page-context system prompts
+  • Streams responses via SSE
+  • Supports attachments (images, files)
+
+Installation:
+  fulcrum opencode install
+
+Key Difference from Claude:
+  • OpenCode uses SDK (not CLI hooks)
+  • Supports model selection (provider/model format)
+  • Lower cost (uses other LLM providers, not just Anthropic)
+  • Same MCP tool access as Claude
+
+================================================================================
+7. MCP (MODEL CONTEXT PROTOCOL) IMPLEMENTATION - 100+ TOOLS
+================================================================================
+
+Tool Categories (20+):
+  ✓ core (search_tools, list_tasks, etc.)
+  ✓ tasks (CRUD, dependencies, links, attachments)
+  ✓ projects (CRUD, links, attachments)
+  ✓ repositories (management, scanning)
+  ✓ apps (Docker Compose deployment)
+  ✓ filesystem (browse, read, write)
+  ✓ exec (shell commands with persistent sessions)
+  ✓ notifications (multi-channel)
+  ✓ settings (config read/update)
+  ✓ backup (database snapshot/restore)
+  ✓ email (Gmail management)
+  ✓ messaging (WhatsApp, Discord, Telegram, Slack)
+  ✓ assistant (chat session management)
+  ✓ caldav (calendar sync, event management)
+  ✓ gmail (Google account management)
+  ✓ memory (knowledge store, master file)
+  ✓ jobs (systemd/launchd timer management)
+  ✓ search (unified FTS5 full-text search)
+
+Transport Modes:
+  1. HTTP (stateless per-request) - POST /mcp → used by external agents
+  2. Stdio (persistent) - fulcrum mcp → used by CLI
+  3. HTTP Restricted - POST /mcp/observer → observer-mode tools only
+
+Deferred Loading:
+  • Core tools: always loaded (~8 tools)
+  • Deferred tools: discovered via search_tools (~92 tools)
+  • Benefit: reduces token budget, prevents context bloat
+  • Pattern: Agent calls search_tools("task"), then can use returned tools
+
+Key Files:
+  • Registry: cli/src/mcp/registry.ts (tool metadata, categories, keywords)
+  • Tools: cli/src/mcp/tools/ (20+ modules)
+  • Server (stdio): cli/src/mcp/index.ts
+  • Server (HTTP): server/routes/mcp.ts
+  • Client: cli/src/client.ts (HTTP client for /api/* calls)
+
+================================================================================
+8. KEY EXTENSION POINTS FOR OMEGA
+================================================================================
+
+GOOD NEWS: Fulcrum is already designed for multiple agents!
+
+1. AGENT PROVIDER ABSTRACTION (Recommended Pattern)
+   
+   Create: server/services/agent-provider.ts
+   
+   interface AgentProvider {
+     name: string
+     startSession(options: SessionOptions): Promise<AgentSession>
+     sendMessage(sessionId: string, message: string): Promise<void>
+     onStatusChange(handler: (status: TaskStatus) => void): void
+   }
+   
+   Implementations: ClaudeProvider, OpencodeProvider, OmegaProvider
+
+2. STATUS TRACKING SERVICE (Already Exists for Claude/OpenCode)
+   
+   Pattern: Monitor agent events → map to task status
+   Can generalize: server/services/agent-status-tracker.ts
+   
+   Works by: Plugin hooks / SDK events / MCP tool calls
+   All methods already supported by Fulcrum
+
+3. PLUGIN HOOK SYSTEM (Already Exists)
+   
+   Claude: Stop hook, UserPromptSubmit hook
+   OpenCode: SDK event listeners
+   Omega: Similar hooks or SDK pattern
+   
+   All hooks eventually call: fulcrum current-task {status}
+
+4. MCP TOOLS ARE ALREADY AGENT-AGNOSTIC
+   
+   ✓ No hardcoded Claude/OpenCode references in tools
+   ✓ FulcrumClient makes HTTP calls back to /api/*
+   ✓ Works for any agent that can call HTTP
+   ✓ Just add Omega to supported agent types in schema
+
+5. TERMINAL ISOLATION ALREADY GENERIC
+   
+   ✓ PTY manager doesn't care which agent runs in terminal
+   ✓ Works for any agent with shell access
+   ✓ Already supports worktrees + scratch dirs
+
+6. CONFIGURATION HIERARCHY READY
+   
+   ✓ agent field: 'claude' | 'opencode' → add 'omega'
+   ✓ agentOptions: JSON → store omega-specific flags
+   ✓ Settings already have agent.defaultAgent
+   ✓ Just add agent.omegaOptions to settings schema
+
+INTEGRATION CHECKLIST:
+  □ Create OmegaChatService (echo OpenCodeChatService pattern)
+  □ Add 'omega' to agent enum in schema
+  □ Add agent detection to assistant routes (like OpenCode check)
+  □ Create status tracker (plugin hooks or SDK pattern)
+  □ Optional: Create Omega plugin (plugins/omega/)
+  □ Update settings schema with omegaOptions
+
+NO MAJOR CHANGES NEEDED - Fulcrum was designed for this!
+
+================================================================================
+9. CRITICAL FILES & ENTRY POINTS
+================================================================================
+
+SERVER STARTUP:
+  server/index.ts - Main entry point
+    ├── initPTYManager() - Terminal management
+    ├── createApp() - Hono app
+    ├── startMessagingChannels() - WhatsApp, Discord, etc.
+    ├── startAssistantScheduler() - Daily rituals, sweeps
+    ├── startPRMonitor() - GitHub integration
+    ├── startCaldavSync() - Calendar sync
+    └── serve() on port 7777
+
+APP SETUP:
+  server/app.ts - Route mounting
+    ├── /api/tasks/*
+    ├── /api/assistant/*
+    ├── /api/projects/*
+    ├── /api/repositories/*
+    ├── /api/search
+    ├── /api/memory*
+    ├── /api/messaging/*
+    ├── /mcp (MCP HTTP)
+    ├── /ws/terminal (WebSocket)
+    └── Frontend (SPA)
+
+KANBAN BOARD:
+  frontend/routes/tasks/ - Task pages
+  frontend/components/kanban/ - Board components
+
+AGENT INTEGRATION:
+  server/services/assistant-service.ts - Claude + OpenCode
+  server/services/opencode-chat-service.ts - OpenCode SDK
+  server/routes/assistant.ts - Chat API
+  plugins/fulcrum/ - Claude plugin
+  plugins/fulcrum-opencode/ - OpenCode plugin
+
+MCP TOOLS:
+  cli/src/mcp/ - Tool registration
+  cli/src/mcp/registry.ts - Tool metadata
+  cli/src/mcp/tools/ - 20+ tool modules
+  server/routes/mcp.ts - HTTP transport
+  server/routes/mcp-restricted.ts - Observer mode
+
+DATABASE:
+  server/db/schema.ts - 30+ tables
+  drizzle/migrations/ - SQL migrations
+  ~/.fulcrum/fulcrum.db - SQLite database
+
+CONFIGURATION:
+  server/lib/settings/fnox.ts - Config wrapper
+  server/lib/settings/types.ts - Settings schema
+  ~/.fulcrum/.fnox.toml - Single source of truth
+  ~/.fulcrum/age.txt - Encryption key
+
+================================================================================
+10. TECH STACK SUMMARY
+================================================================================
+
+Frontend:
+  • React 19
+  • TanStack Router (file-based routing)
+  • TanStack Query (server state)
+  • TanStack Virtual (virtualization)
+  • shadcn/ui v4 (UI components)
+  • xterm.js (terminal emulation)
+  • Atlaskit Pragmatic DnD (drag-and-drop)
+  • Dagre (dependency graph visualization)
+  • Recharts (system metrics charts)
+
+Backend:
+  • Hono (web framework on Bun)
+  • Bun (JavaScript runtime)
+  • SQLite + Drizzle ORM
+  • bun-pty (PTY management)
+  • Model Context Protocol SDK
+
+Integrations:
+  • Claude Agent SDK (v0.2.72)
+  • OpenCode SDK (v1.1.34)
+  • Baileys (WhatsApp)
+  • Discord.js
+  • Telegram Bot API
+  • Slack Bolt
+  • Google APIs (Calendar, Gmail)
+  • CalDAV
+  • fnox (encrypted config)
+  • age (encryption)
+
+Build:
+  • Vite
+  • TypeScript 5.9
+  • Mise (task runner)
+  • Drizzle Kit (migrations)
+
+================================================================================
+11. DEPLOYMENT MODES
+================================================================================
+
+Development:
+  mise run dev              # Frontend + backend dev servers
+  Uses http://localhost:5173 (frontend) → proxies to localhost:7777 (backend)
+
+Production (CLI):
+  npx @knowsuchagency/fulcrum@latest up     # Start daemon
+  npx @knowsuchagency/fulcrum@latest down   # Stop daemon
+
+Desktop App:
+  Download DMG (macOS) or AppImage (Linux)
+  Bundles server executable (no Bun dependency needed)
+
+Remote Server:
+  curl -fsSL https://raw.githubusercontent.com/knowsuchagency/fulcrum/main/install.sh | bash
+  SSH port forwarding: ssh -L 7777:localhost:7777 your-server
+
+Production Deployment:
+  Docker Compose (with Traefik + Cloudflare DNS/tunnels)
+  Auto-deploy on git changes (git-watcher)
+
+================================================================================
+12. DATABASE SCHEMA (30+ Tables)
+================================================================================
+
+Core:
+  • tasks - Task CRUD + status + agent + recurrence
+  • taskRelationships - Dependencies (replaces taskDependencies)
+  • taskLinks - URL references (PR, issue, design doc, etc.)
+  • taskAttachments - File uploads
+  • taskTags - M:M relationship between tasks and tags
+  • tags - Reusable labels
+
+Projects & Repos:
+  • projects - Project entity
+  • projectRepositories - 1:N join table
+  • projectTags - M:M relationship
+  • projectLinks - URL references
+  • projectAttachments - File uploads
+  • repositories - Git repos with agent config
+  • apps - Docker Compose applications
+  • appServices - Services within apps
+  • deployments - Deployment history
+  • tunnels - Cloudflare Tunnels
+
+Agents & Chat:
+  • chatSessions - Conversations (provider: 'claude'|'opencode'|'omega')
+  • chatMessages - Message history
+  • artifacts - Generated content (charts, markdown, code)
+  • sweepRuns - Observer/scheduler runs (internal)
+
+Terminal:
+  • terminals - PTY sessions
+  • terminalTabs - Tab organization
+  • terminalViewState - UI state (singleton)
+
+Messaging:
+  • messagingConnections - Channel auth state
+  • messagingSessionMappings - User→session mapping
+  • channelMessages - All channel messages (unified)
+
+Calendar:
+  • caldavAccounts - Account credentials
+  • caldavCalendars - Synced calendars
+  • caldavEvents - Calendar events
+  • caldavCopyRules - Auto-copy rules between calendars
+  • caldavCopiedEvents - Track copied events (avoid duplicates)
+  • googleAccounts - Google API accounts (Calendar + Gmail)
+  • gmailDrafts - Gmail draft cache
+
+Memory & Search:
+  • memories - FTS5 searchable knowledge
+  • observerInvocations - Message processing tracking
+
+Monitoring:
+  • systemMetrics - CPU/memory/disk history
+
+================================================================================
+13. CONFIGURATION (80+ Settings in .fnox.toml)
+================================================================================
+
+Sections:
+  • server - Port configuration
+  • paths - Default directories
+  • editor - VS Code / Cursor / Windsurf / Zed integration
+  • integrations - GitHub, Cloudflare, Google OAuth credentials
+  • agent - AI agent defaults (Claude, OpenCode, Omega)
+  • tasks - Task creation defaults
+  • appearance - UI theme, language
+  • assistant - Model, provider, observer settings
+  • caldav - Calendar sync configuration
+  • notifications - Multi-channel notification settings
+  • zai - z.ai integration settings
+
+Encryption:
+  • Sensitive values: API keys, tokens, webhook URLs
+  • Encrypted with age (in ~/.fulcrum/age.txt)
+  • Non-sensitive values: readable via fnox export
+
+Precedence:
+  Environment variable > fnox setting > built-in default
+
+================================================================================
+14. PERFORMANCE & DESIGN PATTERNS
+================================================================================
+
+Terminal I/O:
+  • WebSocket multiplexing (single connection handles multiple terminals)
+  • TTY buffer management (prevents memory leaks)
+  • Optimistic client updates (tempId → realId transitions)
+
+Task Updates:
+  • Broadcast via WebSocket on status change
+  • Kanban board re-renders in real-time
+  • All connected clients see updates simultaneously
+
+MCP Tool Discovery:
+  • Deferred loading (only core tools in context)
+  • search_tools returns metadata (small payload)
+  • Agent discovers tools on demand
+
+Message Processing:
+  • Async (doesn't block API responses)
+  • Circuit breaker on observers (prevents API abuse)
+  • Aggregate stats tracking (success/error rates)
+
+Agent Idle Detection:
+  • Claude: Plugin hooks (Stop event)
+  • OpenCode: SDK event listeners + debouncing (1.5s)
+  • Omega: TBD (can mirror OpenCode pattern)
+
+================================================================================
+15. SECURITY & LIMITS
+================================================================================
+
+File Uploads:
+  • MIME type whitelist (PDF, images, docs, spreadsheets, etc.)
+  • 50MB size limit per file
+  • Stored in ~/.fulcrum/uploads/tasks/{taskId}/
+
+API Rate Limiting:
+  • No explicit rate limiting (single-user tool)
+  • Observer mode uses circuit breaker to prevent abuse
+
+Secret Encryption:
+  • age encryption (modern, auditable)
+  • Key in ~/.fulcrum/age.txt (never committed)
+  • Environment variables can override
+
+Input Validation:
+  • SQL injection prevention (Drizzle ORM)
+  • Path traversal prevention (normalized paths)
+  • XSS prevention (React escaping)
+
+================================================================================
+16. NEXT STEPS FOR OMEGA INTEGRATION
+================================================================================
+
+RECOMMENDED APPROACH:
+
+1. Copy OpenCode pattern:
+   • server/services/opencode-chat-service.ts → omega-chat-service.ts
+   • plugins/fulcrum-opencode/index.ts → plugins/omega/index.ts
+   • Replace OpenCode SDK with Omega SDK
+
+2. Update schema:
+   • Add 'omega' to agent enum
+   • Add 'omega' to provider enum
+   • Create omegaOptions field in settings
+
+3. Update routes:
+   • server/routes/assistant.ts - Add omega provider check
+   • Reuse existing streaming/message infrastructure
+
+4. Create MCP tools:
+   • Omega can use existing 100+ tools
+   • No changes needed to tool registry
+
+5. Status tracking:
+   • Create agent-status-tracker.ts
+   • Register hooks or SDK callbacks
+   • Call fulcrum current-task {status}
+
+TOTAL EFFORT: ~3-4 days for basic integration
+• Day 1: Create OmegaChatService + routes
+• Day 2: Database + settings schema
+• Day 3: Status tracking + plugin
+• Day 4: Testing + documentation
+
+ALREADY SUPPORTED (no work needed):
+  ✓ Terminal isolation (worktrees + scratch)
+  ✓ Task CRUD (all MCP tools)
+  ✓ Message persistence (chatSessions)
+  ✓ Memory store (master file + FTS5)
+  ✓ Notifications (multi-channel)
+  ✓ Calendar (CalDAV + Google)
+  ✓ Messaging (WhatsApp, Discord, etc.)
+  ✓ File attachments
+  ✓ Task dependencies
+  ✓ Project management
+  ✓ And 80+ more features
+
+================================================================================
+SUMMARY
+================================================================================
+
+Fulcrum is a COMPLETE, PRODUCTION-READY platform for AI agent orchestration.
+
+✓ Fully-implemented kanban system with task dependencies, recurrence, and metadata
+✓ Per-task agent workspaces (worktrees + scratch dirs)
+✓ Two agents already integrated (Claude Code + OpenCode) with proven patterns
+✓ 100+ MCP tools with deferred loading (minimal context bloat)
+✓ Messaging, memory, calendar, notifications all built-in
+✓ Database migrations, config management, logging ready
+✓ React + Hono stack is modern and maintainable
+
+KEY ARCHITECTURAL STRENGTH:
+  The system was explicitly designed for MULTIPLE AGENTS.
+  Claude and OpenCode are proof-of-concept implementations.
+  Adding Omega requires ~1000 LOC, no major refactoring needed.
+
+Documentation generated in:
+  • FULCRUM_TECHNICAL_ANALYSIS.md (14,000+ words)
+  • FULCRUM_QUICK_REFERENCE.md (5,000+ words)
+
+Ready for Omega agent orchestration system design!
+
+================================================================================
