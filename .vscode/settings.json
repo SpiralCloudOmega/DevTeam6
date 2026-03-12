@@ -1,5 +1,5 @@
 {
-  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.defaultInterpreterPath": "${userHome}/miniconda3/bin/python3",
   "python.terminal.activateEnvironment": false,
   "git.repositoryScanMaxDepth": 0,
   "git.autoRepositoryDetection": false,
