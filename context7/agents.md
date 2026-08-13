@@ -1,6 +1,9 @@
 # 🤖 DevTeam6 Agent Registry
 
-> Every agent MUST read this file and update it when adding capabilities. 
+> Every agent MUST read this file and update it when adding capabilities.
+>
+> 📖 **Prompt writing guide + context limits:** [`context7/prompt-guide.md`](prompt-guide.md)
+> 📖 **Full architecture cheat sheet:** [`.github/COPILOT-CHEATSHEET.md`](../.github/COPILOT-CHEATSHEET.md)
 
 ## Active Agents
 
@@ -18,7 +21,7 @@
 | projects/ | Vue 3 Workflow Editor |
 | templates/ | Codespace starters |
 | local-ai/ | Python AI services |
-| context7/ | Shared agent context |
+| context7/ | Shared agent context, prompt guide, agent registry |
 
 ## Design System
 
@@ -49,4 +52,4 @@
 - [ ] Phase 5: Learning Hub (future)
 - [ ] WebLLM integration (future)
 
-Last Updated: 2024-12-08
+Last Updated: 2026-03-09
